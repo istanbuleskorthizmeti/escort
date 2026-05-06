@@ -37,15 +37,13 @@ async function delay(ms: number) {
 }
 
 async function conquer() {
-    console.log("🔥 HYDRA CONQUEROR BAŞLATILDI 🔥");
-    await TelegramReporter.sendMessage("🚀 <b>HYDRA CONQUEROR OTONOM SİSTEMİ BAŞLATILDI</b>\n\nSistem tüm domainleri sırasıyla tarayıp, Gemini 3.1 Pro (Copywriter) metinlerini enjekte edecektir.");
+    console.log("🔥 HYDRA CONQUEROR DÖNGÜSÜ BAŞLADI 🔥");
 
     // 0. PURGE DELETED DOMAINS FROM DATABASE
     try {
         console.log("🧹 Veritabanı Temizliği Başlıyor (Silinen Alan Adları İçin)...");
         const { execSync } = require('child_process');
         execSync('npx tsx scripts/db-purge-domains.ts', { stdio: 'inherit' });
-        await TelegramReporter.sendMessage("🧹 <b>Veritabanı Temizliği Tamamlandı.</b>\nSistemde yetkisi olmayan tüm alan adları silindi.");
     } catch (e: any) {
         console.error("🚨 Veritabanı temizliği sırasında hata:", e);
     }
@@ -61,7 +59,6 @@ async function conquer() {
             
             if (!healthRes) {
                 console.log(`❌ ${domain} ULAŞILAMAZ DURUMDA!`);
-                await TelegramReporter.sendAlert("Hydra Conqueror", `${domain} ulaşılamaz durumda. Atlanıyor.`);
                 continue;
             }
 

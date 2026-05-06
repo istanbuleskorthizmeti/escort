@@ -114,8 +114,21 @@ async function conquer() {
         await delay(5000);
     }
 
-    console.log("\n✅ TÜM OPERASYON TAMAMLANDI.");
-    await TelegramReporter.sendMessage("🏁 <b>TÜM OPERASYON TAMAMLANDI</b> 🏁\n\nHydra Ağı'ndaki tüm domainler başarıyla özgünleştirildi ve güncellendi.");
+    console.log("\n✅ TÜM OPERASYON TAMAMLANDI. 12 SAAT BEKLENİYOR...");
+    await TelegramReporter.sendMessage("🏁 <b>TÜM OPERASYON TAMAMLANDI</b> 🏁\n\nHydra Ağı'ndaki tüm domainler başarıyla özgünleştirildi. Sistem 12 saat uyku moduna geçiyor.");
 }
 
-conquer().catch(console.error);
+async function startAutonomousConqueror() {
+    while (true) {
+        try {
+            await conquer();
+        } catch (error) {
+            console.error("Beklenmeyen hata oluştu:", error);
+        }
+        // 12 hours delay
+        console.log("💤 12 saatlik uyku döngüsü başladı...");
+        await delay(12 * 60 * 60 * 1000);
+    }
+}
+
+startAutonomousConqueror().catch(console.error);

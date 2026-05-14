@@ -1,7 +1,7 @@
 import { DOMAIN_MATRIX } from '../../config/domains';
 
 /**
- * 🕸️ SOVEREIGN WEB MESH
+ * 🕸️ DRKCNAY WEB MESH
  * Uydular arasındaki "Komşu Semt" link hiyerarşisini belirler.
  */
 

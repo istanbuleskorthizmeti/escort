@@ -1,7 +1,16 @@
 export const vitrinImages = [
   {
-    "title": "ELİT RUS MODEL 1",
-    "src": "/vitrin/seo_0_pinterest_aesthetic_1.jpg"
+    "title": "Melissa",
+    "src": "/vitrin/istanbul-kaporasiz-escort-melissa-1.jpg",
+    "phone": "905330892496",
+    "niche": "Elite VIP Partner",
+    "isAd": true,
+    "gallery": [
+      "/vitrin/istanbul-kaporasiz-escort-melissa-1.jpg",
+      "/vitrin/istanbul-kaporasiz-escort-melissa-2.jpg",
+      "/vitrin/istanbul-kaporasiz-escort-melissa-3.jpg",
+      "/vitrin/istanbul-kaporasiz-escort-melissa-4.jpg"
+    ]
   },
   {
     "title": "ÜNİVERSİTELİ SEÇKİ 2",

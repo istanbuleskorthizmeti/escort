@@ -131,10 +131,18 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
                   <div className="absolute inset-0 z-0 overflow-hidden bg-zinc-900">
                     <div className="flex h-full w-[200%]" style={{ animation: 'var(--animate-scroll-images)' }}>
                       {[0, 1, 2, 0, 1, 2].map((offset, scrollIdx) => {
-                        const currentSafeIdx = (safeIdx + offset * 13) % 310 + 1;
-                        const currSeoPath = isCustomImage && offset === 0 
-                            ? item.src 
-                            : `/${domainPrefix}-${slugify(city)}-kaporasiz-escort-bayan-${currentSafeIdx}.webp`;
+                        let currSeoPath = '';
+                        
+                        if (item.gallery && item.gallery.length > 0) {
+                           // If profile has a specific gallery (like Melissa), loop through those images
+                           currSeoPath = item.gallery[offset % item.gallery.length];
+                        } else {
+                           // Default behavior for other profiles
+                           const currentSafeIdx = (safeIdx + offset * 13) % 310 + 1;
+                           currSeoPath = isCustomImage && offset === 0 
+                              ? item.src 
+                              : `/${domainPrefix}-${slugify(city)}-kaporasiz-escort-bayan-${currentSafeIdx}.webp`;
+                        }
                         
                         return (
                           <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111]">
@@ -156,6 +164,16 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
                       })}
                     </div>
                   </div>
+
+                  {/* 🔴 AD BADGE */}
+                  {item.isAd && (
+                    <div className="absolute top-3 left-3 z-20">
+                      <div className="bg-[#ffcc00] text-black text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded shadow-lg flex items-center gap-1 border border-black/20">
+                        <AlertTriangle className="w-3 h-3" />
+                        REKLAM
+                      </div>
+                    </div>
+                  )}
 
                   {/* Pink Overlay */}
                   <div 

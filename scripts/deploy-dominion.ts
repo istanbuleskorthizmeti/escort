@@ -18,7 +18,7 @@ async function deployDominion() {
 
     console.log('⚡ [ULTRA-PACK] Shrinking project bundle (including .next)...');
     
-    const tarCmd = `tar.exe -czf ${tarFile} --exclude=node_modules --exclude=.git --exclude=out --exclude=temp --exclude=*.zip --exclude=*.tar.gz --exclude=artifacts --exclude=.gemini .`;
+    const tarCmd = `tar.exe -czf ${tarFile} --exclude=.next --exclude=node_modules --exclude=.git --exclude=out --exclude=temp --exclude=*.zip --exclude=*.tar.gz --exclude=artifacts --exclude=.gemini .`;
     
     execSync(tarCmd, { stdio: 'inherit' });
     

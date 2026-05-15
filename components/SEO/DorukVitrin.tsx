@@ -11,7 +11,17 @@ import { getActiveProfiles } from '../../app/actions/vitrin';
 import { siteConfig } from '../../config/site';
 import { ThemeEngine } from '../../lib/theme-engine';
 
-export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { city?: string, isEmbed?: boolean, host?: string }) {
+export function DorukVitrin({ 
+  city = 'İstanbul', 
+  isEmbed = false, 
+  host, 
+  serverProfiles = [] 
+}: { 
+  city?: string, 
+  isEmbed?: boolean, 
+  host?: string,
+  serverProfiles?: any[]
+}) {
   const [isMounted, setIsMounted] = useState(false);
   
   // 🛡️ [GOD-MODE] DYNAMIC THEME ENGINE INJECTION
@@ -24,10 +34,18 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
     return vitrinImages.slice(0, 20);
   }, []);
 
-  const [displayedImages, setDisplayedImages] = useState<any[]>(initialImages);
+  const [displayedImages, setDisplayedImages] = useState<any[]>(() => {
+    if (serverProfiles && serverProfiles.length > 0) {
+      const pool = vitrinImages.filter(img => !serverProfiles.some(m => m.src === img.src));
+      return [...serverProfiles, ...pool.slice(0, Math.max(0, 20 - serverProfiles.length))];
+    }
+    return initialImages;
+  });
+  const [hasLoaded, setHasLoaded] = useState(serverProfiles && serverProfiles.length > 0);
 
   useEffect(() => {
     setIsMounted(true);
+    if (hasLoaded) return;
     
     getActiveProfiles().then((dbProfiles) => {
       const masters = dbProfiles.map(m => ({
@@ -39,12 +57,13 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
       
       const pool = vitrinImages.filter(img => !masters.some(m => m.src === img.src));
       setDisplayedImages([...masters, ...pool.slice(0, Math.max(0, 20 - masters.length))]);
+      setHasLoaded(true);
     }).catch(e => {
       setDisplayedImages(vitrinImages.slice(0, 20));
     });
-  }, []);
+  }, [hasLoaded]);
 
-  const imagesToRender = isMounted ? displayedImages : initialImages;
+  const imagesToRender = displayedImages;
 
   if (!imagesToRender || imagesToRender.length === 0) return null;
 
@@ -151,13 +170,10 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
                         return (
                           <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111] overflow-hidden">
                             {/* Blurred background layer */}
-                            <Image 
-                              src={currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`} 
-                              alt="bg"
-                              fill
-                              unoptimized={true}
-                              className="object-cover blur-xl opacity-30 scale-125"
-                              onError={(e: any) => { e.target.style.display = 'none'; }}
+                            {/* 🔱 GOD-MODE: Optimized Background Blur (CSS-driven) */}
+                            <div 
+                              className="absolute inset-0 bg-cover bg-center opacity-30 scale-125 blur-xl pointer-events-none"
+                              style={{ backgroundImage: `url(${currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`})` }}
                             />
                             {/* Main contained image */}
                             <Image 
@@ -165,9 +181,8 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
                               alt={`${altTag} - Poz ${offset + 1}`}
                               title={`${domainPrefix} ${firstName} ${domainLsi}`}
                               fill
-                              unoptimized={true}
-                              sizes="(max-width: 600px) 33vw, 200px"
-                              priority={idx < 4 && scrollIdx < 3}
+                              sizes="(max-width: 600px) 33vw, (max-width: 1200px) 15vw, 200px"
+                              priority={idx < 2 && scrollIdx < 2}
                               className="object-contain object-top contrast-[1.05] brightness-95 relative z-10 drop-shadow-2xl"
                               onError={(e: any) => {
                                 if (e.target.dataset.failed) return;

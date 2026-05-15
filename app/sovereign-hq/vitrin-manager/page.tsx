@@ -118,16 +118,16 @@ export default function VitrinManager() {
                  </div>
                  <div>
                    <label className="text-[10px] text-zinc-500 uppercase tracking-widest block mb-2">Görsel URL</label>
-                   <input type="text" value={image} onChange={e => setImage(e.target.value)} className="w-full bg-black border border-zinc-800 text-white p-3 focus:border-purple-500 outline-none" required />
+                   <input type="text" value={image} onChange={e => setImage(e.target.value)} title="Görsel URL" placeholder="URL" className="w-full bg-black border border-zinc-800 text-white p-3 focus:border-purple-500 outline-none" required />
                  </div>
                  <div className="grid grid-cols-2 gap-4">
                     <div>
                       <label className="text-[10px] text-zinc-500 uppercase tracking-widest block mb-2">Yaş</label>
-                      <input type="number" value={age} onChange={e => setAge(e.target.value)} className="w-full bg-black border border-zinc-800 text-white p-3 focus:border-purple-500 outline-none" required />
+                      <input type="number" value={age} onChange={e => setAge(e.target.value)} title="Yaş" placeholder="Yaş" className="w-full bg-black border border-zinc-800 text-white p-3 focus:border-purple-500 outline-none" required />
                     </div>
                     <div>
                       <label className="text-[10px] text-zinc-500 uppercase tracking-widest block mb-2">Niş / Kategori</label>
-                      <input type="text" value={tier} onChange={e => setTier(e.target.value)} className="w-full bg-black border border-zinc-800 text-white p-3 focus:border-purple-500 outline-none" required />
+                      <input type="text" value={tier} onChange={e => setTier(e.target.value)} title="Kategori" placeholder="Kategori" className="w-full bg-black border border-zinc-800 text-white p-3 focus:border-purple-500 outline-none" required />
                     </div>
                  </div>
                  <button type="submit" className="mt-4 bg-purple-900 hover:bg-purple-800 text-white font-black uppercase tracking-widest p-4 transition-colors">

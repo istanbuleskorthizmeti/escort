@@ -4,7 +4,7 @@ import React, { use } from 'react';
 import { siteConfig } from "@/config/site";
 import Navbar from "@/components/UI/Navbar";
 import { UltraFooter } from "@/components/SEO/UltraFooter";
-import { MessageCircle, ShieldCheck, Star, Image as ImageIcon, CheckCircle2, Crown } from "lucide-react";
+import { MessageCircle, Star, Image as ImageIcon, CheckCircle2, Crown } from "lucide-react";
 import { generateUltraGraphSchema } from "@/lib/seo-schema";
 import { SEOContentEngine } from "@/components/SEO/SEOContentEngine";
 import { VIPBridge } from "@/components/UI/VIPBridge";
@@ -111,7 +111,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                initial={{ opacity: 0, x: -50 }}
                animate={{ opacity: 1, x: 0 }}
                transition={{ duration: 0.8 }}
-               className="relative rounded-[3rem] overflow-hidden border border-zinc-900 shadow-glow-rose aspect-[3/4.5] group"
+               className="relative rounded-[3rem] overflow-hidden border border-zinc-900 shadow-glow-rose aspect-3/4.5 group"
              >
                 <Image 
                   src={mainImageSrc.startsWith('http') ? mainImageSrc : `${siteConfig.cdnUrl}${mainImageSrc}`} 
@@ -119,7 +119,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                   title={`${domainPrefix.toUpperCase()} ${name} ${city} VIP`}
                   fill
                   unoptimized={true}
-                  className="object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
+                  className="object-cover group-hover:scale-110 transition-transform duration-2000"
                   priority
                 />
                 <div className="absolute top-8 left-8 bg-black/60 backdrop-blur-xl px-6 py-2 rounded-full border border-rose-600/30 text-rose-600 text-[10px] font-black tracking-[0.2em] flex items-center gap-3">
@@ -146,7 +146,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                      {name}
                   </h1>
                   <div className="text-2xl font-black text-rose-600 uppercase tracking-widest italic opacity-80">
-                     {city.toUpperCase()} // DRKCNAY ELITE
+                     {city.toUpperCase()} {"//"} DRKCNAY ELITE
                   </div>
                 </div>
 

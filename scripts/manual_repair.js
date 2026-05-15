@@ -22,20 +22,20 @@ async function repair() {
     }
 
     // 1. Upload fixed Nginx configs
-    await uploadFileViaExec('c:/Users/onurk/esc/sovereign-hydra.conf', '/etc/nginx/sites-available/escortvip');
+    await uploadFileViaExec(path.join(process.cwd(), 'sovereign-hydra.conf'), '/etc/nginx/sites-available/escortvip');
     await ssh.execCommand('ln -sf /etc/nginx/sites-available/escortvip /etc/nginx/sites-enabled/');
 
     // 2. Upload fixed files
-    await uploadFileViaExec('c:/Users/onurk/esc/next.config.ts', '/root/esc/next.config.ts');
-    await uploadFileViaExec('c:/Users/onurk/esc/app/[city]/[district]/page.tsx', '/root/esc/app/[city]/[district]/page.tsx');
-    await uploadFileViaExec('c:/Users/onurk/esc/lib/ai-provider.ts', '/root/esc/lib/ai-provider.ts');
-    await uploadFileViaExec('c:/Users/onurk/esc/lib/ai-seo.ts', '/root/esc/lib/ai-seo.ts');
-    await uploadFileViaExec('c:/Users/onurk/esc/lib/crm/telegram.ts', '/root/esc/lib/crm/telegram.ts');
-    await uploadFileViaExec('c:/Users/onurk/esc/lib/utils.ts', '/root/esc/lib/utils.ts');
-    await uploadFileViaExec('c:/Users/onurk/esc/lib/vitrin-images.ts', '/root/esc/lib/vitrin-images.ts');
-    await uploadFileViaExec('c:/Users/onurk/esc/app/sitemap.ts', '/root/esc/app/sitemap.ts');
-    await uploadFileViaExec('c:/Users/onurk/esc/app/robots.ts', '/root/esc/app/robots.ts');
-    await uploadFileViaExec('c:/Users/onurk/esc/ecosystem.config.js', '/root/esc/ecosystem.config.js');
+    await uploadFileViaExec(path.join(process.cwd(), 'next.config.ts'), '/root/esc/next.config.ts');
+    await uploadFileViaExec(path.join(process.cwd(), 'app/[city]/[district]/page.tsx'), '/root/esc/app/[city]/[district]/page.tsx');
+    await uploadFileViaExec(path.join(process.cwd(), 'lib/ai-provider.ts'), '/root/esc/lib/ai-provider.ts');
+    await uploadFileViaExec(path.join(process.cwd(), 'lib/ai-seo.ts'), '/root/esc/lib/ai-seo.ts');
+    await uploadFileViaExec(path.join(process.cwd(), 'lib/crm/telegram.ts'), '/root/esc/lib/crm/telegram.ts');
+    await uploadFileViaExec(path.join(process.cwd(), 'lib/utils.ts'), '/root/esc/lib/utils.ts');
+    await uploadFileViaExec(path.join(process.cwd(), 'lib/vitrin-images.ts'), '/root/esc/lib/vitrin-images.ts');
+    await uploadFileViaExec(path.join(process.cwd(), 'app/sitemap.ts'), '/root/esc/app/sitemap.ts');
+    await uploadFileViaExec(path.join(process.cwd(), 'app/robots.ts'), '/root/esc/app/robots.ts');
+    await uploadFileViaExec(path.join(process.cwd(), 'ecosystem.config.js'), '/root/esc/ecosystem.config.js');
 
     // 3. Server-side cleanup and build
     console.log('🧹 Cleaning up and building on server...');

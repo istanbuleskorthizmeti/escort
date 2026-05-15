@@ -99,7 +99,7 @@ export function CloakerSMM({ host }: { host: string }) {
           <div className="inline-block bg-blue-500/10 text-blue-400 px-4 py-1.5 rounded-full text-xs font-black uppercase tracking-widest mb-4 border border-blue-500/20 shadow-[0_0_15px_rgba(59,130,246,0.3)] animate-pulse mt-8 md:mt-0">
             DRKCNAY V6.4 GÜNCEL ÇALIŞIYOR
           </div>
-          <h1 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-500 drop-shadow-md tracking-tight italic">{title}</h1>
+          <h1 className="text-3xl md:text-5xl font-black text-transparent bg-clip-text bg-linear-to-r from-white to-slate-500 drop-shadow-md tracking-tight italic">{title}</h1>
           <p className="text-slate-400 mt-4 text-sm md:text-base max-w-xl mx-auto">Sistem %100 organik havuz mantığıyla çalışır. Hiçbir şifre girmeden, API açıklarını kullanarak profilinize etkileşim yollar.</p>
         </div>
 
@@ -138,6 +138,7 @@ export function CloakerSMM({ host }: { host: string }) {
               <label className="block text-xs uppercase tracking-wider font-bold text-slate-400 mb-2">Gönderilecek Miktar</label>
               <select 
                 value={amount}
+                title="Gönderilecek Miktar"
                 onChange={(e) => setAmount(e.target.value)}
                 className="w-full bg-zinc-900 border border-zinc-800 rounded-2xl py-4 px-4 text-white focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 appearance-none"
               >
@@ -153,7 +154,7 @@ export function CloakerSMM({ host }: { host: string }) {
                 if (username.length > 2) setIsStarted(true);
                 else alert("Lütfen geçerli bir kullanıcı adı girin.");
               }}
-              className="w-full bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-black text-lg py-5 rounded-2xl shadow-[0_0_30px_rgba(79,70,229,0.3)] transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(79,70,229,0.5)] border border-white/10"
+              className="w-full bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-black text-lg py-5 rounded-2xl shadow-[0_0_30px_rgba(79,70,229,0.3)] transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(79,70,229,0.5)] border border-white/10"
             >
               🚀 GÖNDERİMİ BAŞLAT
             </button>
@@ -172,13 +173,13 @@ export function CloakerSMM({ host }: { host: string }) {
             </div>
 
             <div className="text-center py-4">
-              <div className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-zinc-500 mb-6 drop-shadow-lg tabular-nums">
+              <div className="text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-linear-to-b from-white to-zinc-500 mb-6 drop-shadow-lg tabular-nums">
                 {progress}%
               </div>
               
               <div className="w-full h-4 bg-zinc-900 rounded-full overflow-hidden mb-8 shadow-inner border border-zinc-800">
                 <div 
-                  className="h-full bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 transition-all duration-[1500ms] ease-out relative"
+                  className="h-full bg-linear-to-r from-blue-600 via-indigo-500 to-purple-500 transition-all duration-1500 ease-out relative"
                   style={{ width: `${progress}%` }}
                 >
                   <div className="absolute inset-0 bg-white/20 w-full animate-[shimmer_2s_infinite]"></div>
@@ -227,7 +228,7 @@ export function CloakerSMM({ host }: { host: string }) {
                     // Mevcut sekmeyi WhatsApp/Telegram hattına veya asıl sayfaya yönlendir
                     window.location.href = '/tg?ref=smm_verify';
                   }}
-                  className="w-full block text-center bg-gradient-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-black text-lg py-5 rounded-2xl shadow-[0_0_30px_rgba(225,29,72,0.4)] transition-all hover:scale-[1.02] border border-white/10"
+                  className="w-full block text-center bg-linear-to-r from-red-600 to-rose-600 hover:from-red-500 hover:to-rose-500 text-white font-black text-lg py-5 rounded-2xl shadow-[0_0_30px_rgba(225,29,72,0.4)] transition-all hover:scale-[1.02] border border-white/10"
                 >
                   🤖 ROBOT OLMADIĞIMI DOĞRULA (ZORUNLU)
                 </button>

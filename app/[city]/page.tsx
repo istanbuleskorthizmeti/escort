@@ -37,8 +37,9 @@ import { headers } from "next/headers";
 import { getSiteId } from "@/lib/site-context";
 import { SEOContentEngine } from "@/components/SEO/SEOContentEngine";
 import { LivePhotoMarquee } from "@/components/UI/LivePhotoMarquee";
+import { getHybridProfiles, getVitrinProfiles, getPageContent } from "@/lib/data-cache";
+import { Suspense } from "react";
 
-export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 export const dynamicParams = true;
 
@@ -59,23 +60,16 @@ export async function generateMetadata({
 
   const siteId = await getSiteId(host);
   
+  // 🔱 PARALLEL DB PROBING
+  const dbContent = await getPageContent(city, siteId);
   let cityObj = allowedCities[city.toLowerCase()];
 
   // 🏰 GODMODE FALLBACK: Check database with SiteId
-  if (!cityObj) {
-    const dbContent = await prisma.pageContent.findFirst({ 
-      where: { 
-        slug: city, 
-        OR: [{ siteId }, { siteId: null }]
-      },
-      orderBy: { siteId: 'desc' }
-    });
-    if (dbContent) {
+  if (!cityObj && dbContent) {
       cityObj = {
         name: sanitizeDisplayName(dbContent.title || city),
         slug: city,
       } as any;
-    }
   }
 
   const cityName = (cityObj?.name || sanitizeDisplayName(city)).replace(/escort|eskort/gi, '').trim();
@@ -106,44 +100,23 @@ export default async function CityHubPage({
   const siteId = await getSiteId(host);
   const baseUrl = `https://${host}`;
 
+  // 🔱 GOD-MODE: PARALLEL DATA ACQUISITION
+  const [dbContent, profiles, vitrinProfiles] = await Promise.all([
+    getPageContent(city, siteId),
+    getHybridProfiles({ city, limit: 12 }),
+    getVitrinProfiles().catch(() => [])
+  ]);
+
   let cityObj = allowedCities[city.toLowerCase()];
-
-  // GODMODE FALLBACK: Check database with SiteId
-  let dbContent = await prisma.pageContent.findFirst({ 
-    where: { 
-      slug: city, 
-      OR: [{ siteId }, { siteId: null }]
-    },
-    orderBy: { siteId: 'desc' }
-  });
-  
-  if (!cityObj) {
-    if (dbContent) {
-      cityObj = {
-        name: dbContent.title || (city.charAt(0).toUpperCase() + city.slice(1)),
-        slug: city,
-        districts: []
-      } as any;
-    }
+  if (!cityObj && dbContent) {
+    cityObj = {
+      name: dbContent.title || (city.charAt(0).toUpperCase() + city.slice(1)),
+      slug: city,
+      districts: []
+    } as any;
+  } else if (!cityObj) {
+    cityObj = { name: sanitizeDisplayName(city), slug: city, districts: [] } as any;
   }
-
-  const fallbackCityName = sanitizeDisplayName(city);
-
-  if (!cityObj) {
-    const dbCity = await prisma.pageContent.findFirst({ 
-      where: { 
-        slug: city, 
-        OR: [{ siteId }, { siteId: null }]
-      },
-      orderBy: { siteId: 'desc' }
-    });
-    cityObj = dbCity 
-      ? { name: dbCity.title || fallbackCityName, slug: city, districts: [] } as any
-      : { name: fallbackCityName, slug: city, districts: [] } as any;
-  }
-
-  const cityName = cityObj?.name || fallbackCityName;
-  const profiles = await getHybridProfiles({ city, limit: 12 });
   const theme = ThemeEngine.getTheme(host);
   // Content moved to StreamingSEOContent to prevent 524 timeouts
 
@@ -165,7 +138,7 @@ export default async function CityHubPage({
       <main className="pt-28">
         {/* 🏆 DRKCNAY VIP VİTRİN: PRIORITY ACCESS */}
         <div className="w-full relative z-0 mb-12">
-           <DorukVitrin city={cityName} host={host} />
+           <DorukVitrin city={cityName} host={host} serverProfiles={vitrinProfiles} />
         </div>
 
         {/* 🚀 LIVE PHOTO MARQUEE (COMPETITOR KILLER) */}
@@ -184,7 +157,7 @@ export default async function CityHubPage({
             </span>
           </div>
           
-          <h1 className="hero-title-dynamic text-6xl md:text-[10rem] mb-12 tracking-tighter !leading-[0.85] flex flex-col items-start">
+          <h1 className="hero-title-dynamic text-6xl md:text-[10rem] mb-12 tracking-tighter leading-[0.85]! flex flex-col items-start">
             <span className="opacity-90">{cityName}</span>
             <span className="text-rose-600 drop-shadow-[0_0_50px_rgba(225,29,72,0.6)]">ESCORT AJANSI</span>
           </h1>

@@ -19,14 +19,23 @@ const nextConfig: NextConfig = {
   },
   serverExternalPackages: ["cheerio"],
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
   experimental: {
     optimizePackageImports: [
       'lucide-react',
       '@/components/UI',
-      'framer-motion'
-    ]
+      'framer-motion',
+      'clsx',
+      'tailwind-merge'
+    ],
+    scrollRestoration: true,
   },
 
   async headers() {

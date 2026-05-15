@@ -39,7 +39,8 @@ async function run() {
     }
 
     console.log('Uploading vitrin_cdn.zip in chunks...');
-    await uploadChunked('C:\\Users\\onurk\\Desktop\\vitrin_cdn.zip', '/root/vitrin_cdn.zip');
+    const desktopPath = process.env.LOCAL_DESKTOP_PATH || path.join(require('os').homedir(), 'Desktop');
+    await uploadChunked(path.join(desktopPath, 'vitrin_cdn.zip'), '/root/vitrin_cdn.zip');
     
     console.log('Extracting CDN...');
     await ssh.execCommand('mkdir -p /var/www/cdn/vitrin');

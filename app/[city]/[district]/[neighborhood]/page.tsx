@@ -170,7 +170,7 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
             </span>
           </div>
 
-          <h1 className="hero-title-dynamic text-6xl md:text-[10rem] mb-12 tracking-tighter !leading-[0.85] flex flex-col items-start uppercase italic">
+          <h1 className="hero-title-dynamic text-6xl md:text-[10rem] mb-12 tracking-tighter leading-[0.85]! flex flex-col items-start uppercase italic">
             <span className="opacity-90">{nName}</span>
             <span className="text-rose-600 drop-shadow-[0_0_50px_rgba(225,29,72,0.6)]">ESCORT AJANSI</span>
           </h1>

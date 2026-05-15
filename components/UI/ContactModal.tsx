@@ -34,7 +34,7 @@ export function ContactModal({ isOpen, onClose, whatsappLink, phoneNumber, title
   if (!isRendered) return null;
 
   return (
-    <div className={`fixed inset-0 z-[100] flex items-center justify-center p-4 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
+    <div className={`fixed inset-0 z-100 flex items-center justify-center p-4 transition-all duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'}`}>
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/90 backdrop-blur-xl"
@@ -50,7 +50,8 @@ export function ContactModal({ isOpen, onClose, whatsappLink, phoneNumber, title
         <div className="p-8 text-center relative">
           <button
             onClick={onClose}
-            className="absolute top-6 right-6 text-zinc-500 hover:text-white transition-colors"
+            title="Kapat"
+            className="absolute top-4 right-4 text-zinc-500 hover:text-white bg-zinc-900/50 hover:bg-zinc-800 p-2 rounded-full transition-all"
           >
             <X className="w-6 h-6" />
           </button>

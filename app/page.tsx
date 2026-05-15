@@ -22,8 +22,10 @@ import { DorukVitrin } from "@/components/SEO/DorukVitrin";
 import { MathematicalSEO } from "@/components/SEO/MathematicalSEO";
 import { SEOContentEngine } from "@/components/SEO/SEOContentEngine";
 import { IstanbulConquestMatrix } from "@/components/SEO/IstanbulConquestMatrix";
+import { getVitrinProfiles } from "@/lib/data-cache";
+import { Suspense } from "react";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
   const host = (await headers()).get("host") || siteConfig.domain;
@@ -51,7 +53,8 @@ export default async function HomePage() {
     : "İSTANBUL";
   
   const siteId = await getSiteId(host);
-  
+  const vitrinProfiles = await getVitrinProfiles().catch(() => []);
+
   const schema = generateUltraGraphSchema({
     locationName: district,
     city: "İstanbul",
@@ -79,7 +82,7 @@ export default async function HomePage() {
       ) : (
         <>
           <div className="w-full relative z-0 mb-20">
-             <DorukVitrin city={district} host={host} />
+             <DorukVitrin city={district} host={host} serverProfiles={vitrinProfiles} />
           </div>
 
           {/* 🔱 HERO: BRAND Gateway (Moved Below Vitrin for UX) */}
@@ -109,15 +112,21 @@ export default async function HomePage() {
           <VIPBridge />
           
           <div className="max-w-7xl mx-auto px-6 mb-32">
-             <IstanbulConquestMatrix />
+             <Suspense fallback={null}>
+               <IstanbulConquestMatrix />
+             </Suspense>
           </div>
         </>
       )}
 
-      <SEOContentEngine cityName={district} host={host} />
+      <Suspense fallback={null}>
+        <SEOContentEngine cityName={district} host={host} />
+      </Suspense>
       <MathematicalSEO district={district} role={domainConfig?.role} />
       
-      <UltraFooter host={host} cityName="İstanbul" districtName={district} />
+      <Suspense fallback={<div className="h-screen bg-black" />}>
+        <UltraFooter host={host} cityName="İstanbul" districtName={district} />
+      </Suspense>
 
       <footer className="py-20 border-t border-zinc-900 bg-zinc-950/50 backdrop-blur-xl">
          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">

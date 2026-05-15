@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { Metadata } from "next";
 import { sanitizeDisplayName } from "@/lib/utils";
 import { cities, getCitiesForHost, Neighborhood } from "@/lib/locations";
@@ -24,18 +25,10 @@ import { generateGodModeContent } from "@/lib/seo-content";
 import { generateUltraGraphSchema } from "@/lib/seo-schema";
 import { taxonomyCategories } from "@/lib/taxonomy";
 import EventAwareBanner from "@/components/UI/EventAwareBanner";
-import { getHybridProfiles } from "@/lib/ad-service";
-import { HybridProfileGrid } from "@/components/UI/HybridProfileGrid";
-import { prisma } from "@/lib/prisma";
-import { LocalTrustHub } from "@/components/UI/LocalTrustHub";
-import { GrowthWidgets } from "@/components/UI/GrowthWidgets";
-import { getCityGeo, GBP_LOCATIONS } from "@/lib/geo-data";
-import { HYDRA_NODES } from "@/lib/hydra-engine";
-import { DRKCNAYGeoMap } from "@/components/UI/DRKCNAYGeoMap";
+import { getHybridProfiles, getVitrinProfiles, getPageContent } from "@/lib/data-cache";
 import { getSiteId } from "@/lib/site-context";
 import { LivePhotoMarquee } from "@/components/UI/LivePhotoMarquee";
 
-export const dynamic = "force-dynamic";
 export const revalidate = 3600;
 export const dynamicParams = true;
 
@@ -61,39 +54,19 @@ export async function generateMetadata({
 
   const siteId = await getSiteId(host);
   
+  // 🔱 PARALLEL DB PROBING
+  const [dbCity, dbDist] = await Promise.all([
+    getPageContent(city.toLowerCase(), siteId),
+    getPageContent(district.includes(city) ? district : `${city}-${district}`, siteId)
+  ]);
+
   let cityObj = (allowedCities as any)[city.toLowerCase()];
-
-  // 🏰 CITY DB FALLBACK
-  if (!cityObj) {
-    const dbCity = await prisma.pageContent.findFirst({
-      where: { 
-        slug: city, 
-        OR: [{ siteId }, { siteId: null }]
-      },
-      orderBy: { siteId: 'desc' }
-    });
-    if (dbCity) {
-      cityObj = { name: sanitizeDisplayName(dbCity.title || city), slug: city, districts: [], landmarks: [] } as any;
-    }
+  if (!cityObj && dbCity) {
+    cityObj = { name: sanitizeDisplayName(dbCity.title || city), slug: city, districts: [], landmarks: [] } as any;
   }
 
-  let distObj = cityObj?.districts?.find((d: any) => d.slug === district);
+  let distObj = cityObj?.districts?.find((d: any) => d.slug === district) || (dbDist ? { name: sanitizeDisplayName(dbDist.title || district), slug: district } as any) : null;
   let landmarkObj = cityObj?.landmarks?.find((l: any) => l.slug === district);
-  
-  // 🏰 DISTRICT DB FALLBACK
-  if (!distObj && !landmarkObj) {
-    const targetSlug = district.includes(city) ? district : `${city}-${district}`;
-    const dbDist = await prisma.pageContent.findFirst({ 
-      where: { 
-        slug: targetSlug, 
-        OR: [{ siteId }, { siteId: null }]
-      },
-      orderBy: { siteId: 'desc' }
-    });
-    if (dbDist) {
-      distObj = { name: sanitizeDisplayName(dbDist.title || district), slug: district } as any;
-    }
-  }
 
   if (!cityObj || (!distObj && !landmarkObj)) {
     const formattedCity = city.replace(/-/g, ' ').replace(/escort|eskort/gi, '').trim().toUpperCase();
@@ -145,42 +118,28 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
 
   const siteId = await getSiteId(host);
   
-  let cityObj = (allowedCities as any)[city];
+  // 🔱 PARALLEL DB PROBING
+  const [dbCity, dbDistRaw] = await Promise.all([
+    getPageContent(city, siteId),
+    getPageContent(district.includes(city) ? district : `${city}-${district}`, siteId)
+  ]);
 
-  const whitelist = ['escort', 'vip', 'partner', 'bayan', 'elit', 'masaj', 'kiz', 'hatun', 'turbanli', 'yabanci', 'rus', 'kaporasiz', 'gecelik', 'sinirsiz', 'otele', 'eve', 'profil', 'istanbul', 'ankara', 'izmir', 'antalya', 'bursa', 'sisli', 'kadikoy', 'besiktas', 'beylikduzu', 'esenyurt', 'cerkezkoy', 'sariyer', 'avcilar', 'atasehir', 'izmit', 'gebze', 'taksim', 'beyoglu'];
-
-  // 🏰 ZERO-404 FALLBACK LOGIC
   const fallbackCityName = sanitizeDisplayName(city);
   const fallbackDistName = sanitizeDisplayName(district);
 
-  if (!cityObj) {
-    const dbCity = await prisma.pageContent.findFirst({ 
-      where: { 
-        slug: city, 
-        OR: [{ siteId }, { siteId: null }]
-      },
-      orderBy: { siteId: 'desc' }
-    });
-    cityObj = dbCity 
-      ? { name: dbCity.title || fallbackCityName, slug: city, districts: [], landmarks: [] } as any
-      : { name: fallbackCityName, slug: city, districts: [], landmarks: [] } as any;
+  let cityObj = (allowedCities as any)[city];
+  if (!cityObj && dbCity) {
+    cityObj = { name: dbCity.title || fallbackCityName, slug: city, districts: [], landmarks: [] } as any;
+  } else if (!cityObj) {
+    cityObj = { name: fallbackCityName, slug: city, districts: [], landmarks: [] } as any;
   }
 
   let distObj = cityObj?.districts?.find((d: any) => d.slug === district);
   const landmarkObj = cityObj?.landmarks?.find((l: any) => l.slug === district);
 
   if (!distObj && !landmarkObj) {
-     const targetSlug = district.includes(city) ? district : `${city}-${district}`;
-     let dbContent = await prisma.pageContent.findFirst({ 
-       where: { 
-         slug: targetSlug, 
-         OR: [{ siteId }, { siteId: null }]
-       },
-       orderBy: { siteId: 'desc' }
-     });
-     
-     distObj = dbContent 
-       ? { name: sanitizeDisplayName(dbContent.title || fallbackDistName), slug: district, neighborhoods: [] } as any
+     distObj = dbDistRaw 
+       ? { name: sanitizeDisplayName(dbDistRaw.title || fallbackDistName), slug: district, neighborhoods: [] } as any
        : { name: fallbackDistName, slug: district, neighborhoods: [] } as any;
   }
 
@@ -192,13 +151,13 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
   const safeCityName = typeof cityName === 'string' ? cityName : "İstanbul";
   const safeDistName = typeof dName === 'string' ? dName : "Escort";
 
-  // Pre-fetch but catch errors to prevent page crash
-  let profiles = [];
-  try {
-    profiles = await getHybridProfiles({ city, district, limit: 8 });
-  } catch (e) {
-    console.error("Profile fetch failed");
-  }
+  // 🔱 GOD-MODE: PARALLEL DATA ACQUISITION
+  const [profilesResult, vitrinProfiles] = await Promise.all([
+    getHybridProfiles({ city, district, limit: 8 }).catch(() => []),
+    getVitrinProfiles().catch(() => [])
+  ]);
+  
+  const profiles = profilesResult;
   const theme = ThemeEngine.getTheme(host);
   const currentYear = new Date().getFullYear();
 
@@ -223,7 +182,7 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
       <main className="pt-28">
         {/* 🏆 DRKCNAY VIP VİTRİN: DISTRICT PRIORITY */}
         <div className="w-full relative z-0 mb-12">
-            <DorukVitrin city={String(safeCityName)} host={host} />
+            <DorukVitrin city={String(safeCityName)} host={host} serverProfiles={vitrinProfiles} />
         </div>
 
         {/* 🔱 HERO SECTION: DISTRICT AUTHORITY v10.0 */}
@@ -239,7 +198,7 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
             </span>
           </div>
 
-          <h1 className="hero-title-dynamic text-6xl md:text-[10rem] mb-12 tracking-tighter !leading-[0.85] flex flex-col items-start">
+          <h1 className="hero-title-dynamic text-6xl md:text-[10rem] mb-12 tracking-tighter leading-[0.85]! flex flex-col items-start">
             <span className="opacity-90">{String(safeCityName)}</span>
             <span className="text-rose-600 drop-shadow-[0_0_50px_rgba(225,29,72,0.6)]">ESCORT AJANSI</span>
           </h1>
@@ -267,23 +226,31 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
         <VIPBridge />
 
         {/* 📝 LONG FORM CONTENT: AI-DRIVEN STREAMING SEO */}
-        <StreamingSEOContent 
-          city={city} 
-          district={district}
-          neighborhood={isLandmark ? String(landmarkObj.name) : undefined}
-          host={host} 
-          cityName={String(safeDistName)} 
-        />
+        <Suspense fallback={<div className="h-96 bg-zinc-950/20 animate-pulse rounded-[5rem] mx-6 mb-40" />}>
+          <StreamingSEOContent 
+            city={city} 
+            district={district}
+            neighborhood={isLandmark ? String(landmarkObj.name) : undefined}
+            host={host} 
+            cityName={String(safeDistName)} 
+          />
+        </Suspense>
 
         {/* 💣 ISTANBUL DOMINATION HUB (Conditional) */}
-        {String(safeCityName).toLowerCase() === 'istanbul' && <IstanbulConquestMatrix />}
+        <Suspense fallback={null}>
+          {String(safeCityName).toLowerCase() === 'istanbul' && <IstanbulConquestMatrix />}
+        </Suspense>
 
         {/* 🔱 AGGRESSIVE SEO ENGINE: CONTENT & TAGS */}
-        <SEOContentEngine cityName={String(safeCityName)} districtName={String(safeDistName)} host={host} />
+        <Suspense fallback={null}>
+          <SEOContentEngine cityName={String(safeCityName)} districtName={String(safeDistName)} host={host} />
+        </Suspense>
 
       </main>
 
-      <UltraFooter host={host} cityName={String(safeCityName)} districtName={String(safeDistName)} />
+      <Suspense fallback={<div className="h-screen bg-black" />}>
+        <UltraFooter host={host} cityName={String(safeCityName)} districtName={String(safeDistName)} />
+      </Suspense>
     </div>
   );
 }

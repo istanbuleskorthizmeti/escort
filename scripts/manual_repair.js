@@ -7,9 +7,9 @@ async function repair() {
     console.log('🚀 [GOD MODE] Manual Repair Sequence (No SFTP) Initialized...');
     
     await ssh.connect({
-      host: '213.232.235.181',
-      username: 'root',
-      password: '4TVuj7qiHMfh7CxH6K!'
+      host: process.env.SSH_HOST || '213.232.235.181',
+      username: process.env.SSH_USER || 'root',
+      password: process.env.SSH_PASSWORD
     });
     
     console.log('📡 Connected to 213.232.235.181');

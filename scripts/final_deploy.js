@@ -6,7 +6,12 @@ const ssh = new NodeSSH();
 async function run() {
   try {
     console.log('Connecting to Server...');
-    await ssh.connect({host: '213.232.235.181', username: 'root', password: '4TVuj7qiHMfh7CxH6K!', readyTimeout: 20000});
+    await ssh.connect({
+      host: process.env.SSH_HOST || '213.232.235.181',
+      username: process.env.SSH_USER || 'root',
+      password: process.env.SSH_PASSWORD,
+      readyTimeout: 20000
+    });
     
     console.log('Uploading .env and ecosystem...');
     await ssh.putFile(path.join(process.cwd(), '.env'), '/root/esc/.env');

@@ -39,14 +39,21 @@ export class ThemeEngine {
     static getTheme(host: string): ThemeConfig {
         const hash = this.hashDomain(host);
 
-        // 🎨 [HYDRA-PALETTE] Nuclear HEX Palettes for direct injection
+        // 🎨 [HYDRA-PALETTE] Nuclear HEX Palettes for direct injection (12+ Options for 56 Domains)
         const palettes = [
             { primary: '#e11d48', secondary: 'rgba(225,29,72,0.1)', bg: '#000000', text: '#d4d4d8', glow: 'rgba(225,29,72,0.3)' }, // Rose (Elite)
             { primary: '#f59e0b', secondary: 'rgba(245,158,11,0.1)', bg: '#09090b', text: '#d6d3d1', glow: 'rgba(245,158,11,0.3)' }, // Amber (Gold)
             { primary: '#a855f7', secondary: 'rgba(168,85,247,0.1)', bg: '#020617', text: '#cbd5e1', glow: 'rgba(168,85,247,0.3)' }, // Purple (Mystic)
             { primary: '#10b981', secondary: 'rgba(16,185,129,0.1)', bg: '#022c22', text: '#d1d5db', glow: 'rgba(16,185,129,0.3)' }, // Emerald (Safe)
             { primary: '#3b82f6', secondary: 'rgba(59,130,246,0.1)', bg: '#0a0a0a', text: '#94a3b8', glow: 'rgba(59,130,246,0.3)' }, // Blue (VIP)
-            { primary: '#ff8600', secondary: 'rgba(255,134,0,0.1)', bg: '#000000', text: '#a1a1aa', glow: 'rgba(255,134,0,0.4)' }  // Orange (Fire)
+            { primary: '#ff8600', secondary: 'rgba(255,134,0,0.1)', bg: '#000000', text: '#a1a1aa', glow: 'rgba(255,134,0,0.4)' }, // Orange (Fire)
+            { primary: '#06b6d4', secondary: 'rgba(6,182,212,0.1)', bg: '#083344', text: '#cffafe', glow: 'rgba(6,182,212,0.4)' }, // Cyan (Cyber)
+            { primary: '#ec4899', secondary: 'rgba(236,72,153,0.1)', bg: '#500724', text: '#fce7f3', glow: 'rgba(236,72,153,0.4)' }, // Pink (Candy)
+            { primary: '#ef4444', secondary: 'rgba(239,68,68,0.1)', bg: '#450a0a', text: '#fee2e2', glow: 'rgba(239,68,68,0.4)' }, // Red (Danger/Aggressive)
+            { primary: '#84cc16', secondary: 'rgba(132,204,22,0.1)', bg: '#1a2e05', text: '#ecfccb', glow: 'rgba(132,204,22,0.4)' }, // Lime (Neon Green)
+            { primary: '#eab308', secondary: 'rgba(234,179,8,0.1)', bg: '#422006', text: '#fef08a', glow: 'rgba(234,179,8,0.4)' },  // Yellow (Sun/VIP)
+            { primary: '#6366f1', secondary: 'rgba(99,102,241,0.1)', bg: '#1e1b4b', text: '#e0e7ff', glow: 'rgba(99,102,241,0.4)' }, // Indigo (Deep Royal)
+            { primary: '#f43f5e', secondary: 'rgba(244,63,94,0.1)', bg: '#4c0519', text: '#ffe4e6', glow: 'rgba(244,63,94,0.4)' }  // Rose/Pink Hybrid (Sensual)
         ];
 
         // 🔡 [HYDRA-TYPO] Multi-font bridge to trick footprinting

@@ -4,7 +4,7 @@
  */
 
 export const SEO_NICHE_CLUSTERS = {
-  GENERAL: ["escort", "vip escort transfer", "escort ajansı", "vip transfer ilanları", "ajans", "numaraları"],
+  GENERAL: ["escort", "vip escort transfer", "escort hizmetleri", "vip transfer ilanları", "ajans", "numaraları"],
   VIP: ["vip escort", "elit escort", "manken escort", "model escort", "premium escort", "kaliteli escort"],
   SAFETY: ["kaporasız escort", "doğrulanmış escort", "gerçek escort", "güvenilir escort", "gizli escort"],
   NICHES: ["rus escort", "üniversiteli escort", "sarışın escort", "olgun escort", "çıtır escort", "türbanlı escort", "yabancı escort"],
@@ -66,7 +66,7 @@ export function getStatisticalDensityText(district: string = "İstanbul", role: 
   }
 
   return `
-    ${district} escort ajansı olarak, bölgenin en yüksek otorite puanına sahip elit escort platformuyuz.
+    ${district} escort hizmetleri olarak, bölgenin en yüksek otorite puanına sahip elit escort platformuyuz.
     İstatistiki verilere göre ${lsi[0]} ve ${lsi[1]} segmentinde ${district} genelinde %99 gerçek escort memnuniyeti sağlıyoruz.
     Aradığınız gerçek ${lsi[2]} deneyimi için ${lsi[3]} ve ${lsi[4]} escort protokollerimiz 2026 standartlarındadır.
     ${lsi.slice(5, 15).join(", ")} gibi agresif niş kategorilerde, AI arama motorları tarafından doğrulanmış en güvenilir ${district} eskort rehberiyiz.

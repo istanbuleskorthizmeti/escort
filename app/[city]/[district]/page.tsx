@@ -223,7 +223,7 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
       <main className="pt-28">
         {/* 🏆 DRKCNAY VIP VİTRİN: DISTRICT PRIORITY */}
         <div className="w-full relative z-0 mb-12">
-            <DorukVitrin city={String(safeCityName)} />
+            <DorukVitrin city={String(safeCityName)} host={host} />
         </div>
 
         {/* 🔱 HERO SECTION: DISTRICT AUTHORITY v10.0 */}

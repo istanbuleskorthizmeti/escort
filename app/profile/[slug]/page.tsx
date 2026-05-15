@@ -17,13 +17,71 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
   const params = use(paramsPromise);
   const host = typeof window !== 'undefined' ? window.location.host : siteConfig.domain;
   const { slug } = params;
-  const name = slug.charAt(0).toUpperCase() + slug.slice(1);
-  const city = "İstanbul";
+  const charSum = (slug + host).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const domainPrefix = host ? host.split('.')[0] : 'doruk';
 
-  // Deterministic but random-looking images based on slug
-  const charSum = slug.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-  const mainImageIdx = charSum % vitrinImages.length;
-  const galleryImages = vitrinImages.slice(0, 8).map((_, i) => vitrinImages[(charSum + i + 1) % vitrinImages.length]).slice(0, 4);
+  // 🧠 GOD MODE: Domain ve Slug tabanlı Cloaked Resim Üretimi
+  // Kullanıcının Melissa vb. profilleri de varsa onlara ait galeri gösterilmeli
+  // Yoksa domain hash'ine göre sabit resimler çekilmeli.
+  const profileData = vitrinImages.find(v => v.title && v.title.toLowerCase().includes(slug.toLowerCase()));
+  
+  let mainImageSrc = '';
+  let gallerySources: string[] = [];
+
+  if (profileData && profileData.gallery && profileData.gallery.length > 0) {
+    // Profilin kendi galerisi varsa, sırasını host hash'i ile karıştırarak (cloak) ver.
+    const startIdx = charSum % profileData.gallery.length;
+    mainImageSrc = profileData.gallery[startIdx];
+    gallerySources = [...profileData.gallery.slice(startIdx), ...profileData.gallery.slice(0, startIdx)].slice(0, 4);
+  } else {
+    // Normal profiller için vitrinImages içinden hash ile 5 resim seç
+    const mainImageIdx = charSum % vitrinImages.length;
+    mainImageSrc = vitrinImages[mainImageIdx].src;
+    
+    // Galeriyi benzersiz sıralamayla oluştur
+    for (let i = 1; i <= 4; i++) {
+       const gIdx = (charSum * i + 7) % vitrinImages.length;
+       gallerySources.push(vitrinImages[gIdx].src);
+    }
+  }
+
+  // 🧠 GOD MODE UNIQUE CONTENT ENGINE (Domain & Slug Deterministic)
+  const phrases1 = [
+    `${name}, ${city} bölgesindeki en gözde escort bayanlardan biridir.`,
+    `Eşsiz bir deneyim arayanlar için ${name}, ${city} vip escort seçenekleri arasında öne çıkıyor.`,
+    `${city} kaporasız escort arayışınızda ${name} %100 güvenilir bir partnerdir.`,
+    `Gerçek escort deneyimini ${name} ile ${city} merkezinde yaşayın.`,
+    `Elit beylerin tercihi ${name}, ${city} escort rehberimizin en çok talep gören profilidir.`
+  ];
+  
+  const nichesOptions = [
+    "sarışın escort, rus model ve üniversiteli",
+    "olgun escort, azeri escort ve elit",
+    "vip escort, esmer güzel ve manken",
+    "kaporasız escort, genç escort ve çıtır",
+    "yabancı escort, anal escort ve sınırsız"
+  ];
+  
+  const phrases2 = [
+    "Tüm görselleri güncel ve tamamen kendisine aittir.",
+    "Profilindeki fotoğrafların tamamı %100 gerçektir.",
+    "Birebir görüşmelerinde görseldeki güzelliği garanti eder.",
+    "Stüdyo çekimi değil, tamamen doğal ve şahsi kareleridir.",
+    "Kendi evinde veya otelinizde ağırlayabileceği donanıma sahiptir."
+  ];
+  
+  const phrases3 = [
+    "Kaporasız ve %100 gizlilik garantili görüşme için hemen iletişime geçin.",
+    "Elden ödeme ve tam mahremiyet ile elit bir gece planlamak için randevu alın.",
+    "VIP hizmet standartlarında, kapora talep edilmeden hizmet vermektedir.",
+    "Özel konseptler ve sınırsız bir gece için detayları konuşmak üzere WhatsApp'tan yazın.",
+    "Sadece ciddi ve elit beylerle görüşmektedir. İletişime geçerek yerinizi ayırtın."
+  ];
+
+  const p1 = phrases1[charSum % phrases1.length];
+  const niche = nichesOptions[(charSum * 2) % nichesOptions.length];
+  const p2 = phrases2[(charSum * 3) % phrases2.length];
+  const p3 = phrases3[(charSum * 5) % phrases3.length];
 
   const schema = generateUltraGraphSchema({
     locationName: name,
@@ -54,8 +112,9 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                className="relative rounded-[3rem] overflow-hidden border border-zinc-900 shadow-glow-rose aspect-[3/4.5] group"
              >
                 <Image 
-                  src={vitrinImages[mainImageIdx].src.startsWith('http') ? vitrinImages[mainImageIdx].src : `${siteConfig.cdnUrl}${vitrinImages[mainImageIdx].src}`} 
-                  alt={`${name} ${city} Escort - %100 Gerçek ve Onaylı Profil`}
+                  src={mainImageSrc.startsWith('http') ? mainImageSrc : `${siteConfig.cdnUrl}${mainImageSrc}`} 
+                  alt={`${domainPrefix.toUpperCase()} ${name} ${city} Escort - %100 Gerçek ve Onaylı Profil`}
+                  title={`${domainPrefix.toUpperCase()} ${name} ${city} VIP`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
                   priority
@@ -89,8 +148,8 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                 </div>
 
                 <div className="text-zinc-400 text-xl md:text-2xl font-medium leading-relaxed italic border-l-4 border-rose-600 pl-8 max-w-2xl">
-                   {name} {city} bölgesinde <span className="text-white">sarışın escort, rus model ve üniversiteli</span> escort hizmeti sunan seçkin bir modeldir. 
-                   Tüm görselleri güncel ve kendisine aittir. Kaporasız ve %100 gizlilik garantili görüşme için hemen iletişime geçin.
+                   {p1} <span className="text-white">{niche}</span> hizmetleri alanında uzmandır. 
+                   {p2} {p3}
                 </div>
 
                 {/* 🔱 VISUAL GALLERY SIEGE */}
@@ -98,27 +157,35 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                    <h3 className="text-[11px] font-black text-white uppercase mb-8 flex items-center gap-4 tracking-[0.3em] italic">
                      <ImageIcon size={18} className="text-rose-600" /> ÖZEL GÖRSEL GALERİSİ
                    </h3>
-                   <div className="grid grid-cols-4 gap-4 md:gap-6">
-                     {galleryImages.map((img, idx) => (
-                       <motion.div 
-                         whileHover={{ scale: 1.05 }}
-                         key={idx} 
-                         className="relative aspect-square rounded-3xl overflow-hidden border border-zinc-900 group cursor-zoom-in"
-                       >
-                         <Image 
-                           src={img.src.startsWith('http') ? img.src : `${siteConfig.cdnUrl}${img.src}`} 
-                           alt={`${name} ${city} Escort Galeri Görseli ${idx + 1}`}
-                           fill
-                           className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                         />
-                       </motion.div>
-                     ))}
-                   </div>
+                     <div className="grid grid-cols-4 gap-4 md:gap-6">
+                       {gallerySources.map((src, idx) => {
+                         const lsiNiches = ["elit", "üniversiteli", "rus", "sınırsız", "anal", "kaporasız", "vip", "gecelik", "otele gelen", "özel konsept"];
+                         const domainLsi = lsiNiches[(charSum + idx) % lsiNiches.length];
+
+                         return (
+                           <motion.div 
+                             whileHover={{ scale: 1.05 }}
+                             key={idx} 
+                             className="relative aspect-square rounded-3xl overflow-hidden border border-zinc-900 group cursor-zoom-in"
+                           >
+                             <Image 
+                               src={src.startsWith('http') ? src : `${siteConfig.cdnUrl}${src}`} 
+                               alt={`${domainPrefix} ${name} ${city} Escort Galeri Görseli ${idx + 1} - ${domainLsi}`}
+                               title={`${domainPrefix} ${name} ${domainLsi}`}
+                               fill
+                               className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                             />
+                           </motion.div>
+                         )
+                       })}
+                     </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-6 mt-6">
                    <Link 
-                      href={`/whatsapp?text=Merhaba ${name}, seni DRKCNAY ELITE profilinde gördüm, randevu almak istiyorum.`}
+                      href={profileData && profileData.phone 
+                        ? `https://wa.me/${profileData.phone}?text=Merhaba ${name}, seni ${domainPrefix.toUpperCase()} ELITE profilinde gördüm, randevu almak istiyorum.` 
+                        : `/whatsapp?text=Merhaba ${name}, seni ${domainPrefix.toUpperCase()} ELITE profilinde gördüm, randevu almak istiyorum.`}
                       className="bg-rose-600 hover:bg-white text-white hover:text-black px-10 py-6 rounded-3xl font-black text-xl uppercase italic flex items-center justify-center gap-4 transition-all duration-500 shadow-glow-rose group"
                    >
                       <MessageCircle size={24} className="group-hover:scale-110 transition-transform" /> WHATSAPP İLE RANDEVU AL

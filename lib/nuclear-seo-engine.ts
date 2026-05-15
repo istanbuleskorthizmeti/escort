@@ -7,7 +7,7 @@ import { BRANCHES } from './gbp-pinning-data';
  */
 
 const AGGRESSIVE_KEYWORDS = [
-    "Escort", "Escort Ajansı", "Elite Hizmet", "Bayan", "VIP Escort", "Sınırsız", "Gizlilik", "Lüks", "Model"
+    "Escort", "Escort Hizmetleri", "Elite Hizmet", "Bayan", "VIP Escort", "Sınırsız", "Gizlilik", "Lüks", "Model"
 ];
 
 export const ISTANBUL_DISTRICTS = [
@@ -25,8 +25,8 @@ export function generateAggressiveSemanticCloud() {
 export function generateNuclearMetadata(city: string): Metadata {
     const cloud = generateAggressiveSemanticCloud();
     return {
-        title: `${city} VIP Escort Ajansı | %100 Gizlilik | DRKCNAY`,
-        description: `${city} bölgesinde en elit, profesyonel ve gizlilik odaklı VIP escort ajansı sunumları. ${cloud}`,
+        title: `${city} VIP Escort Hizmetleri | %100 Gizlilik | DRKCNAY`,
+        description: `${city} bölgesinde en elit, profesyonel ve gizlilik odaklı VIP escort hizmetleri sunumları. ${cloud}`,
         keywords: cloud,
         openGraph: {
             title: `${city} VIP Escort`,
@@ -44,7 +44,7 @@ export function generateAllDistrictsSchema() {
         "@context": "https://schema.org",
         "@graph": ISTANBUL_DISTRICTS.map(district => ({
             "@type": "LocalBusiness",
-            "name": `${district} VIP Escort Ajansı`,
+            "name": `${district} VIP Escort Hizmetleri`,
             "address": {
                 "@type": "PostalAddress",
                 "addressLocality": district,

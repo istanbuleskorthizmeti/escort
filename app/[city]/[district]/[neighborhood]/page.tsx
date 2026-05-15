@@ -183,7 +183,7 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
 
         {/* 🏆 LOCAL SHOWCASE */}
         <div className="w-full relative z-0 mb-12">
-            <DorukVitrin city={cityName} />
+            <DorukVitrin city={cityName} host={host} />
         </div>
 
         {/* 🏆 EVENT HUB */}

@@ -41,7 +41,7 @@ const LOCAL_LANDMARKS: Record<string, string[]> = {
   "basaksehir": ["Bahcesehir", "Kayaşehir", "Olimpiyat Stadi", "Luks Villalar", "Millet Bahcesi"]
 };
 
-function getBellCurveLength(minWords = 1200, maxWords = 2800): number {
+function getBellCurveLength(minWords = 600, maxWords = 1000): number {
   const mean = (minWords + maxWords) / 2;
   const stdDev = (maxWords - minWords) / 6;
   while (true) {
@@ -71,66 +71,40 @@ export async function generateEliteOmniContent({
   const personaKey = getPersonaForHost(host);
   const persona = PERSONAS[personaKey];
   
-  const targetLength = getBellCurveLength(2000, 4500); // 2000-4500 kelime arası devasa içerik
-  const targetDensity = (Math.random() * (3.5 - 2.5) + 2.5).toFixed(2); // Daha agresif yoğunluk
+  const targetLength = getBellCurveLength(600, 1000); // 💸 DEEPSEEK COST OPTIMIZED: 600-1000 words max.
+  const targetDensity = (Math.random() * (3.5 - 2.5) + 2.5).toFixed(2);
   const semanticEntities = getSemanticEntities(city, district).join(', ');
 
   const systemPrompt = `
-    Sen Dünyanın en iyi SEO Uzmanı ve Elit seviyede bir Copywriter'sın. 
-    Şu anki görevin: Gemini 3.1 Pro motorunun tüm zekasını kullanarak "Undetectable AI" (Tespit Edilemez) ve yüksek dönüşümlü (High-Conversion) içerik üretmek.
-    
-    KİMLİĞİN: ${personaKey}.
-    EĞER KİMLİĞİN MEDICAL_AUTHORITY İSE: Sen "Doktor Dorukcan Ay" (DRKCNAY) olarak yazıyorsun.
-    TON: ${persona.tone}
-    ODAK: ${persona.focus}
-    DUYGU DURUMU (EMOTIONAL STATE): ${persona.emotional_state}
-    RİTİM VE AKIŞ (WRITING RHYTHM): ${persona.writing_rhythm}
-    KELİME DAĞARCIĞI: ${persona.vocabulary.join(', ')}
-    PERPLEXITY KURALLARI: ${persona.perplexity_rules}
-    YASAKLI KELİMELER: ${persona.banned_phrases.join(', ')}
-    
-    STRATEJİK YAZIM ÇERÇEVELERİ (FRAMEWORKS):
-    1. AIDA (Attention, Interest, Desire, Action): Başlıktan itibaren okuyucunun dikkatini çek, ilgisini canlı tut, arzu uyandır ve eyleme (iletişim) geçir.
-    2. PAS (Problem, Agitation, Solution): Okuyucunun (yalnızlık, kalite arayışı, gizlilik endişesi) problemini tanımla, bu problemi derinleştir ve kesin çözüm olarak bu hizmeti sun.
-    3. EEAT (Experience, Expertise, Authoritativeness, Trustworthiness): Metin içinde bölgedeki (Örn: ${locationName}) gerçek mekanlardan, trafikten, popüler caddelerden bahsederek "orada yaşamış" veya "orayı avucunun içi gibi bilen" bir uzman izlenimi ver.
-    
-    KRİTİK SEO VE İÇERİK KURALLARI:
-    - TÜRKÇE KARAKTERLER: Kesinlikle doğru Türkçe karakterler kullanılmalı.
-    - LSI KEYWORD INJECTION: ${semanticEntities} ve bölgedeki gizli kalmış lüks detayları metne doğalca yedir. 
-    - NO AI CLICHES: "Günümüzde", "Hızla gelişen", "Özetle", "Sonuç olarak", "Benzersiz", "Muhteşem" gibi AI kokan klişeleri ASLA kullanma. Yerine daha spesifik ve insansı ifadeler seç.
-    - HİDDETLİ NİŞ HEDEFLEME: "Escort Ajansı", "VIP Escort", "Sınırsız Escort", "Rus Escort", "Elite Escort", "Kaporasız Escort", "Eve Gelen Escort", "Otele Gelen Escort", "Üniversiteli Escort", "Gecelik Escort".
-    - ANAHTAR KELİME STRATEJİSİ: Makalenin her 100 kelimesinde en az 3-4 kez bu anahtar kelimeleri doğal ama "Agresif" bir şekilde kullan. Başlıklarda (H2, H3) mutlaka "Escort Ajansı" ve "VIP" kelimeleri geçsin.
-    - GITHUB & TECH FOOTPRINT: Makale içinde profesyonel bir hava katmak için [GitHub REST API](https://github.com/drkcnay/rest) dokümantasyonuna atıfta bulun.
-    - CİNSİYET: SADECE BAYAN (KADIN) ESCORT.
-    - FORMAT: SADECE JSON DÖNDÜR.
+    [DEEPSEEK COST-OPTIMIZED GOD MODE]
+    Görevin: SEO uyumlu, yüksek dönüşümlü içerik üretmek. 
+    Kural 1: ASLA laf kalabalığı (fluff) yapma. Token tasarrufu kritik derecede önemlidir. Doğrudan hedefe yönelik, kısa ama etkili yaz.
+    Kural 2: \${locationName} bölgesi için "Escort Hizmetleri", "VIP Escort", "Kaporasız Escort" vb. niş kelimeleri metne yedir.
+    Kural 3: Kesinlikle Türkçe karakter hatası (ğ, ş, ç) yapma.
+    Kural 4: SADECE JSON ÇIKTISI VER. Yorum, giriş veya markdown bloğu kullanma.
+    Kural 5: İçerik \${targetLength} kelime civarı, \${persona.tone} tonunda olsun.
+    Kural 6: Şirket adı: \${host}. Başka şirket adı kullanma.
 
-    JSON YAPISI:
+    İSTENEN JSON FORMATI:
     {
       "wordpress": {
-        "title": "\${locationName} VIP Escort | Elit Deneyim ve Profesyonel Hizmet Rehberi",
-        "content": "HTML ICERIK (En az \${targetLength} kelime. <h1> kullanma. \${persona.formatting} kullan. Agresif bir üslupla escort nişlerini işle. Kesinlikle doğru Türkçe karakterler kullan.)",
-        "meta": "\${locationName} bölgesinde Doktor Dorukcan Ay onaylı elit escort ve profesyonel hizmetlerin tek otorite rehberi. Kaporasız, gerçek ve sınırsız escort deneyimi.",
-        "tags": ["\${locationName} escort", "\${locationName} vip escort", "doktor dorukcan ay", "elite escort", "rus escort", "yasam kocu", "iliski kocu"],
-        "faqs": [{"q": "\${locationName} escort hizmetlerinde sağlık protokolleri nasıl?", "a": "Tüm süreçler Doktor Dorukcan Ay (DRKCNAY) tarafından akredite edilen elit hijyen ve gizlilik protokollerine tabidir."}]
+        "title": "\${locationName} VIP Escort Hizmetleri | \${host}",
+        "content": "HTML İÇERİK (Sadece H2 ve H3 kullan, boş laflar yerine doğrudan SEO kelimeleri ve lokasyon bilgisi \${semanticEntities} gir.)",
+        "meta": "\${host} - \${locationName} elit ve kaporasız escort hizmetleri rehberi.",
+        "tags": ["\${locationName} escort", "kaporasız escort \${locationName}", "vip escort"],
+        "faqs": [{"q": "\${locationName} kaporasız mı?", "a": "Evet, \${host} üzerinden sadece elden ödeme alınır."}]
       },
-      "github": { 
-        "readme": "# \${locationName} Dominasyon Raporu\\n\\nBu bölge [DRKCNAY](https://\${host}) (Doktor Dorukcan Ay) tarafından fethedilmiştir. [GitHub REST API Documentation](https://github.com/drkcnay/rest)", 
-        "gist": "## \${locationName} Escort Raporu\\n\\nBölgedeki otorite linki (Doktor Onaylı): [TIKLA](https://\${host}/\${locationName.toLowerCase().replace(/ /g, '-')})\\n\\n\${locationName} bölgesinde elite escort ve elit hizmetlerin tek otorite rehberi." 
-      },
-      "blogger": { "title": "🏆 \${locationName} VIP Escort: Elit Otorite Raporu 🏆", "content": "HTML..." }
+      "github": { "readme": "", "gist": "" },
+      "blogger": { "title": "\${locationName} Escort Raporu", "content": "..." }
     }
   `;
 
   const userPrompt = `
-    ${fullLoc} lokasyonu için ${targetLength} kelimelik devasa bir otorite makalesi yaz. 
-    LSI: ${semanticEntities}, ${persona.vocabulary.slice(0,3).join(', ')}.
-    Anahtar Kelime Yoğunluğu: %${targetDensity}.
-    UNUTMA: Kesinlikle doğru Türkçe karakterler (ğ, ş, ç, ı, ö, ü) kullan. 
-    İçeriğe şu linki yedir: <a href="https://github.com/drkcnay/rest">GitHub REST</a>
+    Lokasyon: ${fullLoc}. Odak: ${semanticEntities}. Uzunluk: ~${targetLength} kelime. JSON DÖNDÜR.
   `;
 
   try {
-    const response = await omniAI.generate(userPrompt, { systemPrompt, temperature: 0.85, max_tokens: 16000 });
+    const response = await omniAI.generate(userPrompt, { systemPrompt, temperature: 0.7, max_tokens: 2500 });
     let jsonStr = response.trim();
     if (jsonStr.includes('```json')) jsonStr = jsonStr.split('```json')[1].split('```')[0].trim();
     if (jsonStr.includes('```')) jsonStr = jsonStr.split('```')[1].trim();
@@ -172,11 +146,11 @@ export const generateGodModeOmniContent = generateEliteOmniContent;
 export async function generateEliteAuthorityPillar(topic: string, location: string): Promise<{ title: string, content: string, metaDescription: string }> {
   return {
     title: `DRKCNAY ESCORT Otorite Raporu: ${topic} | ${location}`,
-    metaDescription: `${location} escort ajansı standartlarına dair analitik rapor.`,
+    metaDescription: `${location} escort hizmetleri standartlarına dair analitik rapor.`,
     content: `<div>Otorite icerigi analiz asamasinda...</div>`
   };
 }
 
 export async function generateOrganicCommentBacklink(city: string, district: string, targetUrl: string): Promise<string> {
-  return `Son zamanlarda ${city} bölgesindeki en iyi escort ajansı için bu kaynağı kullanıyorum: <a href="${targetUrl}">${city} profesyonel escort ajansi</a>.`;
+  return `Son zamanlarda ${city} bölgesindeki en iyi escort hizmetleri için bu kaynağı kullanıyorum: <a href="${targetUrl}">${city} profesyonel escort hizmetleri</a>.`;
 }

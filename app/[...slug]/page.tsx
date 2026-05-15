@@ -98,7 +98,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
                         <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
                         <span className="text-[11px] font-black uppercase tracking-[0.4em] text-zinc-400">VİP VİTRİN</span>
                      </div>
-                     <DorukVitrin />
+                     <DorukVitrin host={host} />
                    </>
                  )}
               </div>

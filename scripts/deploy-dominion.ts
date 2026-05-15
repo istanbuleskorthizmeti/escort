@@ -39,10 +39,18 @@ async function deployDominion() {
     console.log('📦 [NPM INSTALL] Installing production dependencies...');
     await ssh.execCommand('npm install --force', { cwd: '/root/esc' });
 
-    console.log('🗄️ [PRISMA GENERATE] Generating Prisma Client...');
+    console.log('🛑 [PM2 STOP] Stopping PM2 to free up memory for build...');
+    await ssh.execCommand('pm2 stop all', { cwd: '/root/esc' });
+
+    console.log('⚙️ [BUILD] Building Next.js production bundle...');
+    const buildResult = await ssh.execCommand('npm run build', { cwd: '/root/esc' });
+    console.log(buildResult.stdout);
+    if(buildResult.stderr) console.warn(buildResult.stderr);
+
+    console.log('🔗 [PRISMA GENERATE] Generating Prisma Client...');
     await ssh.execCommand('npx prisma generate', { cwd: '/root/esc' });
 
-    console.log('🔥 [LAUNCH] Restarting PM2 Cluster...');
+    console.log('🚀 [LAUNCH] Restarting PM2 Cluster...');
     const pm2Result = await ssh.execCommand('pm2 restart all || pm2 start ecosystem.config.js --env production', { cwd: '/root/esc' });
     console.log(pm2Result.stdout);
     if(pm2Result.stderr) console.warn(pm2Result.stderr);

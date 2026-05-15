@@ -46,7 +46,7 @@ export const TelegramBroadcaster = {
 
     const SITE_URL = 'https://vipescorthizmeti.com';
     const captions = [
-      `🔥 <b>VIP Escort Ajansı - Sınırsız Hizmet</b>\n\nİstanbul'un en elit ve gizli hizmeti. Gerçek profiller, %100 memnuniyet garantisi.\n\n🔗 <a href="${SITE_URL}">Tüm Kızlarımızı Gör (Tıkla Sitemize Git)</a>`,
+      `🔥 <b>VIP Escort Hizmetleri - Sınırsız Hizmet</b>\n\nİstanbul'un en elit ve gizli hizmeti. Gerçek profiller, %100 memnuniyet garantisi.\n\n🔗 <a href="${SITE_URL}">Tüm Kızlarımızı Gör (Tıkla Sitemize Git)</a>`,
       `✨ <b>Lüks ve İhtiras Bir Arada</b>\n\nSıradanlığı unutun. En özel anlar için özenle seçilmiş elit kadromuzla tanışın.\n\n🔗 <a href="${SITE_URL}">Kataloğu İncele</a>\n📲 <b>VIP İletişim:</b> <a href="${WHATSAPP_LINK}">WhatsApp'tan Randevu Al</a>`,
       `💎 <b>Premium Escort Deneyimi</b>\n\nGizlilik, kalite ve sınırsız eğlence. Özel görüşmeleriniz için buradayız.\n\n🔗 <b>Web Sitemiz:</b> <a href="${SITE_URL}">vipescorthizmeti.com</a>`,
       `🔥 <b>Yeni Vitrin Görsellerimiz Güncellendi!</b>\n\nEn iyi kalite ve sınırsız deneyim. Yeni kızlarımız vitrinde yerini aldı.\n\n🔗 <a href="${SITE_URL}">Resme Tıkla Sitemize Git!</a>\n📲 <a href="${WHATSAPP_LINK}">Hemen WhatsApp'tan Ulaşın</a>`

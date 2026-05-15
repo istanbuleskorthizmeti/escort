@@ -127,7 +127,7 @@ export default async function SubdomainPage({ params }: any) {
 
       {/* DORUK VITRIN: THE SHOWCASE */}
       <div className="my-0 w-full max-w-[1200px] mx-auto bg-black">
-        <DorukVitrin city={location} />
+        <DorukVitrin city={location} host={host} />
       </div>
 
       <article className="max-w-5xl mx-auto p-6 md:p-12 mt-4 bg-zinc-950/50 backdrop-blur-xl rounded-xl shadow-2xl border border-zinc-900/50">

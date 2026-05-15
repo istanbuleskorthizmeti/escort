@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Copyright } from 'lucide-react';
 import { slugify } from '@/lib/utils';
+import { LocalAuthority } from './LocalAuthority';
 
 interface UltraFooterProps {
   host: string;
@@ -167,6 +168,8 @@ export function UltraFooter({ host, cityName, districtName, neighborhoodName }: 
              </div>
           </div>
         </div>
+        
+        <LocalAuthority />
       </div>
     </footer>
   );

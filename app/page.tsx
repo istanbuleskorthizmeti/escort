@@ -79,7 +79,7 @@ export default async function HomePage() {
       ) : (
         <>
           <div className="w-full relative z-0 mb-20">
-             <DorukVitrin city={district} />
+             <DorukVitrin city={district} host={host} />
           </div>
 
           {/* 🔱 HERO: BRAND Gateway (Moved Below Vitrin for UX) */}

@@ -168,7 +168,6 @@ export default async function RootLayout({
       </head>
       <body className={`font-sans min-h-full flex flex-col text-white antialiased`} style={{ backgroundColor: theme.bgColor }}>
         <BrowserIntelligence />
-        <LocalAuthority />
         <div className="flex-1 flex flex-col">
           {children}
         </div>

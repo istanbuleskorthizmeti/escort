@@ -12,18 +12,19 @@ export const TRAFFIC_CONFIG = {
  * 📸 GOLDEN ALT TAG GENERATOR
  * Generates SEO-rich, randomized ALT tags for images to dominate Image Search.
  */
-export function generateGoldenAlt(location: string): string {
+export function generateGoldenAlt(location: string, idx: number = 0): string {
   const years = ["2025", "2026"];
   const prefixes = ["Gerçek", "VIP", "Elit", "Yeni", "Doğrulanmış", "Premium", "Özel", "Seçkin", "Lüks", "Kaporasız", "Garantili", "Şahane"];
   const suffixes = ["Resimleri", "Kataloğu", "Profilleri", "Numaraları", "İlanları", "Seçenekleri", "Görselleri", "Deneyimi", "Partnerleri"];
   const niches = ["Rus", "Sarışın", "Üniversiteli", "Olgun", "Model", "Manken", "Genç", "Ateşli"];
   
-  const year = years[Math.floor(Math.random() * years.length)];
-  const prefix = prefixes[Math.floor(Math.random() * prefixes.length)];
-  const suffix = suffixes[Math.floor(Math.random() * suffixes.length)];
-  const niche = niches[Math.floor(Math.random() * niches.length)];
+  const seed = idx + location.length;
+  const year = years[seed % years.length];
+  const prefix = prefixes[(seed * 2) % prefixes.length];
+  const suffix = suffixes[(seed * 3) % suffixes.length];
+  const niche = niches[(seed * 5) % niches.length];
   
-  return `${year} ${location} ${prefix} ${niche} Escort Bayan ${suffix} - DRKCNAY ELITE %100 GERÇEK`;
+  return `DORUK ${year} ${location} ${prefix} ${niche} Escort Bayan ${suffix} - DRKCNAY ELITE %100 GERÇEK`;
 }
 
 /**

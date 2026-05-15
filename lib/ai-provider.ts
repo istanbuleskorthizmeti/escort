@@ -91,7 +91,7 @@ class GeminiUltraProvider {
   }
 
   private getFallbackContent(): string {
-    return `İstanbul'un en seçkin escort ajansı ağı. Profesyonel hizmet, gerçek profiller ve %100 gizlilik garantisi.`;
+    return `İstanbul'un en seçkin escort hizmetleri ağı. Profesyonel hizmet, gerçek profiller ve %100 gizlilik garantisi.`;
   }
 }
 

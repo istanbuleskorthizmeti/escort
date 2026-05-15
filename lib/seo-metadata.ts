@@ -81,7 +81,7 @@ export function generateLocationMetadata({
   const descriptions = [
     `${fullLoc} bölgesinde en hiddetli VIP escort deneyimi için DRKCNAY farkıyla tanışın. %100 gerçek görselli kaporasız rus escort, eve gelen çıtır bayanlar ve otele servis modeller. ${currentMonth} ${currentYear} güncel rehber.`,
     `🔥 ${fullLoc} escort bayanlar: Kaporasız ve %100 gerçek görselli elit escortlar. Otele ve eve servis sağlayan en iyi escortlar. ${fullLoc} bölgesinin en seçkin ve hiddetli escort vitrini burada!`,
-    `👑 DRKCNAY ${fullLoc} VIP escort ajansı: Bölgenin en kaliteli, kaporasız ve gizlilik odaklı escort modelleri. Seçkin etkinlikler için lüks rus escortlar ve üniversiteli VIP çıtır bayanlar.`,
+    `👑 DRKCNAY ${fullLoc} VIP escort hizmetleri: Bölgenin en kaliteli, kaporasız ve gizlilik odaklı escort modelleri. Seçkin etkinlikler için lüks rus escortlar ve üniversiteli VIP çıtır bayanlar.`,
     `💎 ${fullLoc} escort arayışınızda lüks ve güvenilirlik. Yüksek gizlilik, %100 gerçek fotoğraflı ve kaporasız ${fullLoc} elit escort deneyimi için hemen kataloğu incele ve 7/24 hiddetli modellerimizi ara.`,
     `🛡️ %100 Doğrulanmış ${fullLoc} escort profilleri. DRKCNAY güvencesiyle kaporasız, fotoğrafları onaylı ve yüksek gizlilik standartlı otele gelen escort hizmetleriyle ${currentYear} yılının en iyisi.`,
     `🔞 ${fullLoc} bölgesinde VIP concierge ve elit escort bayanlar. Rus, Ukraynalı ve yerli üniversiteli çıtırlarla prestijli buluşma. ${currentMonth} ayı özel kaporasız escort kataloğu şimdi yayında.`,
@@ -182,7 +182,7 @@ export function generateStructuredData(params: MetaParams) {
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": `${locName} VIP Escort Ajansı`,
+      "name": `${locName} VIP Escort Hizmetleri`,
       "description": `${locName} lokasyonunda profesyonel kaporasız escort, rus escort ve üniversiteli lüks eşlik hizmeti.`,
       "url": url,
       "telephone": "+905520949245",

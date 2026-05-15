@@ -30,7 +30,6 @@ export function LocalAuthority() {
         <h3>DRKCNAY ELITE {district} Ofis Bilgileri</h3>
         <p>{schema.address.streetAddress}, {schema.address.addressLocality}/{schema.address.addressRegion}</p>
         <p>Posta Kodu: {schema.address.postalCode}</p>
-        <p>Telefon: {schema.telephone}</p>
       </div>
 
       {/* 🚀 GOOGLE MAPS EMBED (Force Googlebot to associate IP/Domain with Location) */}

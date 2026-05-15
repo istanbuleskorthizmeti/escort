@@ -165,7 +165,7 @@ export default async function CityHubPage({
       <main className="pt-28">
         {/* 🏆 DRKCNAY VIP VİTRİN: PRIORITY ACCESS */}
         <div className="w-full relative z-0 mb-12">
-           <DorukVitrin city={cityName} />
+           <DorukVitrin city={cityName} host={host} />
         </div>
 
         {/* 🚀 LIVE PHOTO MARQUEE (COMPETITOR KILLER) */}

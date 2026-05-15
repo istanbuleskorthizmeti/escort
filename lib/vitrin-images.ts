@@ -1,15 +1,15 @@
 export const vitrinImages = [
   {
     "title": "Melissa",
-    "src": "/vitrin/istanbul-kaporasiz-escort-melissa-1.jpg",
+    "src": "/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
     "phone": "905330892496",
     "niche": "Elite VIP Partner",
     "isAd": true,
     "gallery": [
-      "/vitrin/istanbul-kaporasiz-escort-melissa-1.jpg",
-      "/vitrin/istanbul-kaporasiz-escort-melissa-2.jpg",
-      "/vitrin/istanbul-kaporasiz-escort-melissa-3.jpg",
-      "/vitrin/istanbul-kaporasiz-escort-melissa-4.jpg"
+      "/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-melissa-2.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-melissa-3.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-melissa-4.webp"
     ]
   },
   {

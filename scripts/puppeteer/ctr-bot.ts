@@ -113,6 +113,5 @@ async function runCtrAttack() {
   }
 }
 
-// Ensure Telegram Notification of bot start
-TelegramService.sendSeoNotification("🐺 [SAHTE_ORDU] CTR Botu Aktif. Rakiplerin Tıklama Oranları manipüle ediliyor...");
+// Bot is running silently
 runCtrAttack();

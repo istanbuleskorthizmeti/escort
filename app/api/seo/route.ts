@@ -59,15 +59,29 @@ Sitemap: https://${host}/feed.xml
       // 🛡️ Fetch pages specifically for this SiteId
       const pages = await prisma.pageContent.findMany({
         where: { siteId, content: { not: null } },
-        take: 1000, // Safe limit for fast serving
+        take: 5000, // Increased limit for massive Hydra indexing
         select: { slug: true, updatedAt: true }
       });
 
       const urlEntries = pages.map((p: any) => {
-          const slugPrefix = p.slug.startsWith('/') ? '' : '/';
+          let finalSlug = p.slug;
+          
+          // 🔱 HYDRA SMART MAPPING: Convert 'city-district' slugs back to '/city/district' paths
+          // This ensures Sitemap URL matches the Canonical URL exactly.
+          if (finalSlug.includes('-')) {
+             const parts = finalSlug.split('-');
+             // If first part is a known city, we format it as /city/district
+             const potentialCity = parts[0].toLowerCase();
+             const knownCities = ['istanbul', 'ankara', 'izmir', 'antalya', 'bursa', 'adana', 'eskisehir', 'kocaeli', 'mugla'];
+             if (knownCities.includes(potentialCity)) {
+                finalSlug = `${potentialCity}/${parts.slice(1).join('-')}`;
+             }
+          }
+
+          const slugPrefix = finalSlug.startsWith('/') ? '' : '/';
           return `
   <url>
-    <loc>https://${host}${slugPrefix}${p.slug}</loc>
+    <loc>https://${host}${slugPrefix}${finalSlug}</loc>
     <lastmod>${p.updatedAt.toISOString()}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>

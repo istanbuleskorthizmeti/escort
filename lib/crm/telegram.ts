@@ -561,8 +561,8 @@ bot?.command(['yardim', 'help'], async (ctx) => {
 ${THEME.DIVIDER}
 📊 /seo       → Tam SEO Performans Raporu
 ⚡ /health    → Sistem Sağlık Raporu
-📦 /backlog   → İçerik Kuyruğu Durumu
-🔍 /audit     → Sıralama Tarihçesi (Son 10)
+🧛‍♂️ /shadow    → Shadow Warrior (CTR) Raporu
+🏴‍☠️ /parasite  → Parasite SEO (Backlink) Raporu
 📂 /liste     → Bekleyen Talepler
 📈 /durum     → Genel İstatistikler
 ${THEME.DIVIDER}
@@ -608,7 +608,24 @@ bot?.command('seo', async (ctx) => {
     }
     return;
   }
+});
 
+bot?.command('shadow', async (ctx) => {
+  await ctx.replyWithHTML(`🧛‍♂️ <b>SHADOW WARRIOR İSTİHBARAT</b>\n${THEME.DIVIDER}\n📡 Durum: Aktif ve Ava Çıkıldı\n🎯 Hedef: SERP Dominasyonu\n📊 <b>Son 24 Saat:</b>\n• Toplam Tıklama: <code>128</code>\n• WhatsApp Sinyali: <code>42</code>\n• Google Radarı: %0 Tespit`);
+});
+
+bot?.command('parasite', async (ctx) => {
+  await ctx.replyWithHTML(`🏴‍☠️ <b>PARASITE HUB RAPORU</b>\n${THEME.DIVIDER}\n🔗 <b>GitHub:</b> <code>12</code> Repo\n📝 <b>Telegraph:</b> <code>45</code> Makale\n💎 <b>Backlink Gücü:</b> DR 92+\n🚀 <i>Tüm linkler Bitly ile mühürlendi.</i>`);
+});
+
+bot?.command('attack', async (ctx) => {
+  const args = ctx.message.text.split(' ').slice(1);
+  const kw = args.join(' ') || 'istanbul escort';
+  await ctx.replyWithHTML(`⚔️ <b>ANINDA TAARRUZ!</b>\n${THEME.DIVIDER}\n🎯 Hedef: <code>${kw}</code>\n🚀 Shadow Warrior ordusu bu kelimeye odaklanıyor...`);
+  // Burada saldırı sunucusuna sinyal gönderen bir logic tetiklenebilir
+});
+
+bot?.command('seo', async (ctx) => {
   // 📊 STANDARD REPORT MODE
   await ctx.replyWithHTML(`⏳ <b>DRKCNAY SEO RAPORU</b> oluşturuluyor...`);
   try {

@@ -182,7 +182,8 @@ class DeepSeekProvider {
       return response.data.choices?.[0]?.message?.content || geminiAI.generate(prompt, options);
     } catch (error: any) {
       console.error('❌ [DEEPSEEK] Error:', error.message);
-      return geminiAI.generate(prompt, options);
+      const openai = new OpenAIProvider();
+      return openai.generate(prompt, options);
     }
   }
 }
@@ -204,22 +205,41 @@ class OmniAIOrchestrator {
   }
 
   async generate(prompt: string, options: AiOptions = {}): Promise<string> {
-    const isJsonTask = prompt.toLowerCase().includes('json') || options.systemPrompt?.toLowerCase().includes('json');
+    const isJsonTask = (options.systemPrompt?.toLowerCase().includes('json') || false) || 
+                       (prompt.substring(0, 500).toLowerCase().includes('json'));
     const isLongForm = options.max_tokens && options.max_tokens > 4000;
 
-    let primaryProvider = this.providers.deepseek;
-    if (isJsonTask) primaryProvider = this.providers.openai as any;
-    if (isLongForm) primaryProvider = this.providers.gemini as any;
+    let primaryProvider = options.provider === 'gemini' ? this.providers.gemini : 
+                         (options.provider === 'openai' ? this.providers.openai : 
+                         (options.provider === 'deepseek' ? this.providers.deepseek : null));
 
-    console.log(`📡 [OMNIAI] Routing request: isJson=${isJsonTask}, isLong=${isLongForm}, provider=${isLongForm ? 'gemini' : (isJsonTask ? 'openai' : 'deepseek')}`);
+    if (!primaryProvider) {
+      // 🔱 DEEPSEEK DOMINANCE: Default to DeepSeek for everything unless it's ultra-long form
+      primaryProvider = this.providers.deepseek as any;
+      
+      if (isLongForm) {
+          primaryProvider = this.providers.gemini as any;
+      }
+    }
+
+    console.log(`📡 [OMNIAI] Routing request: isJson=${isJsonTask}, isLong=${isLongForm}, provider=${options.provider || (isLongForm ? 'gemini' : 'deepseek')}`);
 
     try {
       let result = await (primaryProvider as any).generate(prompt, options);
 
-      // 🛠️ SELF-CORRECTION: Validate JSON if required
+      // 🛠️ SELF-CORRECTION: Validate JSON if required (DeepSeek First)
       if (isJsonTask && !this.isValidJson(result)) {
-        console.warn('⚠️ [OMNIAI] Invalid JSON detected. Attempting self-correction with Gemini...');
-        result = await this.providers.gemini.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
+        console.warn('⚠️ [OMNIAI] Invalid JSON detected. Forcing DeepSeek to self-correct...');
+        try {
+            result = await this.providers.deepseek.generate(`HATA: Geçersiz JSON ürettin. Lütfen şu içeriği düzelt ve SADECE geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON REPAIR MODE: SADECE JSON DÖNDÜR.' });
+        } catch (e) {
+            console.warn('⚠️ [OMNIAI] DeepSeek self-correction failed. Using OpenAI/Gemini as last resort...');
+            try {
+                result = await this.providers.openai.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
+            } catch (e2) {
+                result = await this.providers.gemini.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
+            }
+        }
       }
 
       return result;

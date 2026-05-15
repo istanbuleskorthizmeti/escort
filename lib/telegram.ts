@@ -28,6 +28,36 @@ export async function sendTelegramReport(message: string) {
   }
 }
 
+export async function sendTelegramPhoto(photoPath: string, caption?: string) {
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  if (!token || !chatId) return;
+
+  try {
+    const fs = await import('fs/promises');
+    const fileBuffer = await fs.readFile(photoPath);
+    const blob = new Blob([fileBuffer]);
+    
+    const formData = new FormData();
+    formData.append('chat_id', chatId);
+    formData.append('photo', blob, 'screenshot.png');
+    if (caption) formData.append('caption', caption);
+
+    const url = `https://api.telegram.org/bot${token}/sendPhoto`;
+    const response = await fetch(url, {
+      method: 'POST',
+      body: formData
+    });
+
+    if (!response.ok) {
+      console.error("❌ Telegram fotoğrafı gönderilemedi:", await response.text());
+    }
+  } catch (err) {
+    console.error("❌ Telegram Fotoğraf API hatası:", err);
+  }
+}
+
 export function formatReportMessage(type: string, data: any) {
   const timestamp = new Date().toLocaleString('tr-TR');
   const serverNode = process.env.NODE_NAME || process.env.HOSTNAME || 'DRKCNAY-Main';

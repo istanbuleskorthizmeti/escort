@@ -1,10 +1,19 @@
 export const siteConfig = {
   name: "DORUKCAN AY ELITE ESCORT AJANSI",
+  version: "10.0-GOD-MODE",
   domain: "dorukcanay.digital",
   apiUrl: "https://dorukcanay.digital",
   satelliteDomain: "https://vipescorthizmeti.com",
-  cdnUrl: "", // 🚀 Load from current domain to bypass Cloudflare WhatsApp redirects
+  cdnUrl: "", 
   description: "Türkiye'nin en kapsamlı DRKCNAY ELITE VIP escort ajansı rehberi. En iyi escort bayan profilleri.",
+
+  // 🧛‍♂️ GOD MODE SETTINGS
+  performance: {
+    cacheTTL: 3600, // 1 hour
+    staleWhileRevalidate: 86400, // 1 day
+    sitemapLimit: 5000,
+    maxDbPoolSize: 20
+  },
 
   // Merkezi İletişim Bilgileri
   contact: {
@@ -26,10 +35,13 @@ export const siteConfig = {
 
   features: {
     enableProfileShowcase: true,
+    enableDeepSeekSiege: true,
+    enableStealthCloaker: true
   },
 
   seo: {
     defaultTitle: "Türkiye Escort Hizmetleri 2026 | 81 İlde DORUKCAN AY ELITE Escort Ajansı Rehberi",
-    author: "DORUKCAN AY ELITE ESCORT"
+    author: "DORUKCAN AY ELITE ESCORT",
+    cloakingDomains: ['patron', 'xsportv', 'taraftar', 'futbol', 'canlimaclinki', 'kesintisizizle']
   }
 };

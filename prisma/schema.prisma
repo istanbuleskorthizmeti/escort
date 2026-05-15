@@ -53,6 +53,8 @@ model AdProfile {
   updatedAt     DateTime  @updatedAt
 
   @@index([isActive])
+  @@index([citySlugs])
+  @@index([districtSlugs])
 }
 
 model AdminOTP {
@@ -102,6 +104,7 @@ model PageContent {
   @@index([isTikTokPosted, updatedAt])
   @@index([isYouTubePosted, updatedAt])
   @@index([isIndexed, updatedAt])
+  @@index([siteId])
 }
 
 model SystemSetting {

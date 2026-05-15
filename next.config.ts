@@ -45,15 +45,15 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: 'X-DNS-Prefetch-Control',
-            value: 'off'
+            value: 'on'
           },
           {
             key: 'X-Frame-Options',
-            value: 'ALLOWALL'
+            value: 'DENY'
           },
           {
             key: 'Content-Security-Policy',
-            value: "frame-ancestors *"
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-src 'none'; object-src 'none';"
           },
           {
             key: 'Strict-Transport-Security',
@@ -72,12 +72,8 @@ const nextConfig: NextConfig = {
             value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()'
           },
           {
-            key: 'Access-Control-Allow-Origin',
-            value: '*'
-          },
-          {
-            key: 'Access-Control-Allow-Methods',
-            value: 'GET, OPTIONS'
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
           }
         ],
       },

@@ -1,0 +1,1 @@
+İstanbul'un en seçkin escort hizmetleri ağı. Profesyonel hizmet, gerçek profiller ve %100 gizlilik garantisi.

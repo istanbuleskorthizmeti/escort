@@ -110,7 +110,7 @@ import { yalovaCity } from "./locations-registry/yalova";
 import { yozgatCity } from "./locations-registry/yozgat";
 import { zonguldakCity } from "./locations-registry/zonguldak";
 
-import { DOMAIN_MATRIX } from "@/config/domains";
+import { DOMAIN_MATRIX } from "../config/domains";
 
 export const cities: Record<string, City> = {
   "adana": adanaCity,

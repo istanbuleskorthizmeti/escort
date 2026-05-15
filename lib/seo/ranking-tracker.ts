@@ -85,6 +85,7 @@ ${statusIcon} <b>SIRALAMA GÜNCELLENDİ! [${icon}]</b>
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 🎯 <b>Keyword:</b> <code>${keyword}</code>
 ⭐ <b>Yeni Pozisyon:</b> <code>${(Number(newPos) || 0).toFixed(1)}</code>
+🖱️ <b>Toplam Tıklama:</b> <code>${current.clicks || 0}</code>
 🔄 <b>Değişim:</b> <code>${delta > 0 ? '+' : ''}${(Number(delta) || 0).toFixed(1)}</code> basamak
 📉 <b>Eski Pozisyon:</b> ${(Number(oldPos) || 0).toFixed(1)}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

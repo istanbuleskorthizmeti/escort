@@ -1,0 +1,15 @@
+{
+  "location": "Cihangir, Şeftali Sk. No:38, 34310 Avcılar/İstanbul",
+  "nodes": [
+    {
+      "id": "lobby",
+      "type": "360_PANORAMA",
+      "linked_to": "street_entrance"
+    },
+    {
+      "id": "vip_lounge",
+      "type": "360_PANORAMA",
+      "linked_to": "lobby"
+    }
+  ]
+}

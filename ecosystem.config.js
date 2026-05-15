@@ -1,0 +1,50 @@
+module.exports = {
+  apps: [
+    {
+      name: "drkcnay-web-cluster",
+      script: "node_modules/.bin/next",
+      args: "start -p 3001",
+      cwd: "/root/esc",
+      instances: 2,
+      exec_mode: "cluster",
+      max_memory_restart: "1G",
+      node_args: "--max-old-space-size=1024",
+      exp_backoff_restart_delay: 1000,
+      max_restarts: 10,
+      min_uptime: "20s",
+      autorestart: true,
+      env: {
+        NODE_ENV: "production",
+        PORT: "3001"
+      }
+    },
+    {
+      name: "hydra-telegram-bot",
+      script: "npx",
+      args: "tsx scripts/master/telegram-master.ts",
+      interpreter: "none",
+      autorestart: true,
+      env: {
+        NODE_ENV: "production"
+      }
+    },
+    {
+      name: "hydra-auto-index",
+      script: "npx",
+      args: "tsx scripts/master/indexing-sniper.ts",
+      interpreter: "none",
+      autorestart: false,
+      cron_restart: "0 4 * * *", // 🕒 RUN EVERY DAY AT 4 AM
+      env: {
+        NODE_ENV: "production"
+      }
+    },
+    {
+      name: "hydra-audit-watchdog",
+      script: "npx",
+      args: "tsx scripts/master/audit-engine.ts",
+      interpreter: "none",
+      autorestart: true
+    }
+  ]
+}

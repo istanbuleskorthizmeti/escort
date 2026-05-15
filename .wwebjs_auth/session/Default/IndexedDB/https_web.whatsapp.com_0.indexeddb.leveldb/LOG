@@ -1,0 +1,5 @@
+2026/04/25-13:51:49.373 4d2c Creating DB C:\Users\onurk\esc\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb since it was missing.
+2026/04/25-13:51:49.381 4d2c Reusing MANIFEST C:\Users\onurk\esc\.wwebjs_auth\session\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2026/04/25-15:05:47.597 4d2c Level-0 table #5: started
+2026/04/25-15:05:47.620 4d2c Level-0 table #5: 1004980 bytes OK
+2026/04/25-15:05:47.622 4d2c Delete type=0 #3

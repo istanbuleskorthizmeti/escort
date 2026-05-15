@@ -1,0 +1,9 @@
+{
+  "title": "DRKCNAY Hydra: Black Hat OPSEC & Full Automation Protocol",
+  "summary": "This knowledge item contains the mandatory operational security (OPSEC) rules for Google Business Profile (GBP) network expansion, specifically detailing 'Ghost Node' methodologies (eSIM IP rotation, physical location spoofing) and the roadmap for Phase 3: Headless API Automation.",
+  "createdAt": "2026-05-03T14:00:00Z",
+  "references": [
+    "User Conversation: dcb6669c-b577-416f-835d-fe563a5cb44a"
+  ],
+  "tags": ["opsec", "gbp", "automation", "blackhat", "DRKCNAY-hydra"]
+}

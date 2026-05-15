@@ -1,0 +1,71 @@
+upstream drkcnay_nextjs {
+    server 127.0.0.1:3001 max_fails=3 fail_timeout=10s;
+    keepalive 64;
+}
+
+server {
+    listen 80;
+    listen 443 ssl http2;
+    ssl_certificate /etc/ssl/certs/drkcnay-selfsigned.crt;
+    ssl_certificate_key /etc/ssl/private/drkcnay-selfsigned.key;
+    ssl_protocols TLSv1.2 TLSv1.3;
+    ssl_ciphers HIGH:!aNULL:!MD5;
+    server_name 213.232.235.181 avrupayakasiescort.shop *.avrupayakasiescort.shop bagcilarescort.shop *.bagcilarescort.shop besiktasescort.blog *.besiktasescort.blog besiktasescort.fun *.besiktasescort.fun besiktasescorthizmeti.shop *.besiktasescorthizmeti.shop beylikduzuescortlistesi.shop *.beylikduzuescortlistesi.shop bucaescorthizmeti.shop *.bucaescorthizmeti.shop esenyurtescort.blog *.esenyurtescort.blog esenyurtescorthizmeti.shop *.esenyurtescorthizmeti.shop iqostobacco.net *.iqostobacco.net istanbulescort.blog *.istanbulescort.blog istanbulescorthizmeti.shop *.istanbulescorthizmeti.shop izmitescorthizmeti.shop *.izmitescorthizmeti.shop kadikoyescort.shop *.kadikoyescort.shop kucukcekmecescort.shop *.kucukcekmecescort.shop pendikescorthizmeti.shop *.pendikescorthizmeti.shop sefakoyescorthizmeti.shop *.sefakoyescorthizmeti.shop sisliescort.shop *.sisliescort.shop taksimescorthizmeti.shop *.taksimescorthizmeti.shop vipescorthizmeti.com *.vipescorthizmeti.com vipescorthizmeti.shop *.vipescorthizmeti.shop sariyerdrkcnay.shop *.sariyerdrkcnay.shop leventdrkcnay.shop *.leventdrkcnay.shop istanbuldrkcnay.shop *.istanbuldrkcnay.shop istanbulescortkaporasiz.shop *.istanbulescortkaporasiz.shop shopistanbulescortkaporasiz.site *.shopistanbulescortkaporasiz.site dorukcanay.digital *.dorukcanay.digital escortcoin.space *.escortcoin.space magazinifsa.site *.magazinifsa.site sokhaberifsa.shop *.sokhaberifsa.shop dilanpolatifsa.shop *.dilanpolatifsa.shop sansursuzturkifsa.shop *.sansursuzturkifsa.shop exxvideos.shop *.exxvideos.shop telegramifsaizle.shop *.telegramifsaizle.shop turkifsalar.shop *.turkifsalar.shop turkifsapremium.shop *.turkifsapremium.shop onlyfansizle.shop *.onlyfansizle.shop santajci-tespit.site *.santajci-tespit.site plakasorgula.shop *.plakasorgula.shop casus-yazilim-sil.xyz *.casus-yazilim-sil.xyz sanalsms.site *.sanalsms.site kazandiranborsatuyolari.site *.kazandiranborsatuyolari.site tiktokhilesi.sbs *.tiktokhilesi.sbs bedavahesap.site *.bedavahesap.site instacoz.site *.instacoz.site canlimaclinki.shop *.canlimaclinki.shop kesintisizizle.shop *.kesintisizizle.shop fullapkoyun.shop *.fullapkoyun.shop fragmanizle.shop *.fragmanizle.shop konumbulucu.xyz *.konumbulucu.xyz dizicehennemi.site *.dizicehennemi.site yardimbasvurusu.online *.yardimbasvurusu.online;
+
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-XSS-Protection "1; mode=block" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header X-DRKCNAY-Node "Hydra-Alpha" always;
+
+    # 🧊 CENTRAL MEDIA / CDN PATHS
+    location ^~ /_media/vitrin/ {
+        alias /var/www/cdn/vitrin/;
+        expires 30d;
+        add_header Cache-Control "public, no-transform";
+        add_header X-Served-By "Hydra-CDN-Master";
+    }
+
+    # 🕸️ HYDRA SEO IMAGE DOMINATION (URL MASKING)
+    # Serves symlinked SEO images directly from the CDN
+    location ~* /(?:istanbul-vip-escort-bayan|kaporasiz-escort-resimleri|en-iyi-escort-profilleri|vip-escort-ilan)-[0-9]+\.webp$ {
+        root /var/www/cdn/vitrin;
+        try_files $uri =404;
+        expires 30d;
+        add_header Cache-Control "public, no-transform";
+        add_header X-Served-By "Hydra-SEO-Proxy";
+    }
+
+    location ^~ /assets/img/ {
+        alias /var/www/cdn/vitrin/;
+        expires 30d;
+        add_header Cache-Control "public, no-transform";
+    }
+
+    # 🌊 NEXT.JS STATIC FILES
+    location /_next/static/ {
+        alias /root/esc/.next/static/;
+        expires 30d;
+        access_log off;
+    }
+
+    location /_next/ {
+        proxy_pass http://drkcnay_nextjs;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+
+    location / {
+        proxy_pass http://drkcnay_nextjs;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}

@@ -1,0 +1,252 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Lead {
+  id            String     @id @default(cuid())
+  status        LeadStatus @default(PENDING)
+  cityName      String
+  districtName  String
+  category      String
+  claimerId     String?
+  claimerName   String?
+  paymentAmount Float?
+  details       String?
+  source        String?
+  externalRef   String?
+  createdAt     DateTime   @default(now())
+  updatedAt     DateTime   @updatedAt
+  logs          LeadLog[]
+
+  @@index([status])
+  @@index([cityName])
+}
+
+model LeadLog {
+  id        String   @id @default(cuid())
+  leadId    String
+  action    String
+  details   String
+  adminId   String?
+  timestamp DateTime @default(now())
+  lead      Lead     @relation(fields: [leadId], references: [id], onDelete: Cascade)
+}
+
+model AdProfile {
+  id            String    @id @default(cuid())
+  name          String
+  age           Int
+  phone         String
+  image         String?
+  tier          String    @default("VIP")
+  citySlugs     String[]
+  districtSlugs String[]
+  features      String[]
+  isActive      Boolean   @default(true)
+  expiryDate    DateTime?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  @@index([isActive])
+}
+
+model AdminOTP {
+  id        String   @id @default(cuid())
+  code      String
+  expiresAt DateTime
+  isUsed    Boolean  @default(false)
+  createdAt DateTime @default(now())
+
+  @@index([code])
+}
+
+model PageContent {
+  id                String    @id @default(cuid())
+  siteId            String?
+  slug              String
+  title             String?
+  content           String?
+  updatedAt         DateTime  @updatedAt
+  bloggerPostUrl    String?
+  isBloggerPosted   Boolean   @default(false)
+  isIndexed         Boolean   @default(false)
+  isTumblrPosted    Boolean   @default(false)
+  lastIndexedAt     DateTime?
+  tumblrPostUrl     String?
+  isWordPressPosted Boolean   @default(false)
+  wordPressPostUrl  String?
+  bloggerPostId     String?
+  tumblrPostId      String?
+  wordPressPostId   String?
+  isTelegraphPosted Boolean   @default(false)
+  telegraphPostUrl  String?
+  telegraphPostId   String?
+  isPinterestPosted Boolean   @default(false)
+  pinterestPostUrl  String?
+  isTikTokPosted    Boolean   @default(false)
+  tikTokPostUrl     String?
+  isYouTubePosted   Boolean   @default(false)
+  youTubePostUrl    String?
+  site              Site?     @relation(fields: [siteId], references: [id])
+
+  @@unique([slug, siteId])
+  @@index([isBloggerPosted, updatedAt])
+  @@index([isTumblrPosted, updatedAt])
+  @@index([isWordPressPosted, updatedAt])
+  @@index([isTelegraphPosted, updatedAt])
+  @@index([isTikTokPosted, updatedAt])
+  @@index([isYouTubePosted, updatedAt])
+  @@index([isIndexed, updatedAt])
+}
+
+model SystemSetting {
+  key       String   @id
+  value     String
+  updatedAt DateTime @updatedAt
+}
+
+model SystemLog {
+  id        String   @id @default(cuid())
+  level     String
+  message   String
+  metadata  Json?
+  createdAt DateTime @default(now())
+}
+
+model RankingDelta {
+  id        String   @id @default(cuid())
+  keyword   String
+  position  Float
+  clicks    Int      @default(0)
+  change    Float?   @default(0)
+  timestamp DateTime @default(now())
+
+  @@index([keyword, timestamp])
+}
+
+model BotLock {
+  id       String   @id @default("singleton")
+  masterIp String
+  lastPing DateTime @default(now())
+  isActive Boolean  @default(true)
+}
+
+model BotAccount {
+  id          String    @id @default(cuid())
+  username    String    @unique
+  email       String?
+  platform    String    @default("X")
+  authPayload String?
+  proxyUrl    String?
+  city        String?
+  district    String?
+  lastActive  DateTime?
+  status      String    @default("ALIVE")
+  metadata    Json?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+
+  @@index([platform])
+  @@index([status])
+  @@index([city, district])
+}
+
+model ApiIntegration {
+  id           String    @id
+  name         String    @unique
+  status       String    @default("ACTIVE")
+  dailyLimit   Int       @default(100)
+  currentUsage Int       @default(0)
+  resetAt      DateTime?
+  errorMessage String?
+  credentials  String?
+  updatedAt    DateTime  @updatedAt
+}
+
+model WhatsAppClick {
+  id        String   @id @default(cuid())
+  ip        String?
+  referer   String?
+  city      String?
+  timestamp DateTime @default(now())
+
+  @@index([referer])
+}
+
+model ShortLink {
+  id        String   @id
+  targetUrl String
+  clicks    Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model AuthorityAsset {
+  id          String   @id @default(cuid())
+  url         String   @unique
+  title       String?
+  dr          Int      @default(0)
+  type        String   @default("NEWS")
+  status      String   @default("PENDING")
+  contentBody String?
+  isIndexed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([status])
+  @@index([isIndexed])
+}
+
+model SocialSignal {
+  id           String   @id @default(cuid())
+  platform     String
+  postUrl      String   @unique
+  targetUrl    String
+  reach        Int      @default(0)
+  interactions Int      @default(0)
+  status       String   @default("ACTIVE")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([platform])
+  @@index([targetUrl])
+}
+
+model Site {
+  id               String           @id @default(cuid())
+  domain           String           @unique
+  status           String           @default("ACTIVE")
+  ga4MeasurementId String?
+  gscVerified      Boolean          @default(false)
+  healthScore      Int              @default(100)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+  blogs            BloggerSetting[]
+  pages            PageContent[]
+}
+
+model BloggerSetting {
+  id        String   @id @default(cuid())
+  blogId    String   @unique
+  siteId    String
+  city      String
+  district  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  site      Site     @relation(fields: [siteId], references: [id])
+}
+
+enum LeadStatus {
+  PENDING
+  CLAIMED
+  LOCATION_SENT
+  IN_SESSION
+  PAYMENT_RECEIVED
+  COMPLETED
+  CANCELLED
+  EXTERNAL_HUB
+}

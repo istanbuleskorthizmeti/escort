@@ -1,0 +1,11 @@
+# Targeting modern browsers to remove legacy polyfills like Array.prototype.at, Object.hasOwn, etc.
+# This saves ~14KiB of JS and reduces main thread work.
+
+defaults
+last 2 versions
+> 1%
+not dead
+not op_mini all
+not ie 11
+not explorer <= 11
+not safari < 13

@@ -1,0 +1,15 @@
+﻿[
+  {
+    "accountId": "simulated_local_guide_87",
+    "cookies": [
+      {
+        "name": "SID",
+        "value": "simulated_sid_token_x99",
+        "domain": ".google.com",
+        "path": "/",
+        "secure": true,
+        "httpOnly": true
+      }
+    ]
+  }
+]

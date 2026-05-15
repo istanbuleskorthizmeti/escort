@@ -1,0 +1,132 @@
+export const districtLandmarks: Record<string, string[]> = {
+  adalar: ["Büyükada İskelesi", "Aya Yorgi Kilisesi", "Splendid Palace", "Heybeliada Ruhban Okulu", "Prinkipo Palas", "Dilburnu Tabiat Parkı"],
+  arnavutkoy: ["İstanbul Havalimanı", "Terkos Gölü", "Hadımköy İstasyon Caddesi", "Karaburun Sahili", "Anadolu Mahallesi Meydanı"],
+  atasehir: ["Watergarden İstanbul", "Metropol İstanbul", "Varyap Meridian", "Palladium AVM", "İstanbul Finans Merkezi", "Ülker Spor Etkinlik Salonu", "Sheraton Grand"],
+  avcilar: ["Pelican Mall", "Avcılar Sahil Parkı", "İstanbul Üniversitesi Yerleşkesi", "Ambarlı Limanı", "Gümüşpala Gölü"],
+  bagcilar: ["Güneşli Meydanı", "Bağcılar Meydan", "212 Power Outlet", "Mahmutbey Kavşağı", "Batışehir"],
+  bahcelievler: ["Metroport AVM", "Kadir Has AVM", "Yenibosna Metrobüs", "Bahçelievler Devlet Hastanesi", "Ömür Plaza"],
+  bakirkoy: ["Galleria AVM", "Capacity AVM", "Atatürk Deniz Köşkü", "İstanbul Akvaryum", "Hyatt Regency Ataköy", "JW Marriott Marmara Sea", "Florya Sahil", "Sinan Erdem Spor Salonu"],
+  basaksehir: ["Çam ve Sakura Şehir Hastanesi", "Başakşehir Fatih Terim Stadyumu", "Mall of Istanbul", "Bahçeşehir Gölet", "Millet Bahçesi"],
+  bayrampasa: ["Forum İstanbul", "IKEA Bayrampaşa", "Adapark", "Ora AVM", "Bayrampaşa Şehir Parkı"],
+  besiktas: ["Zorlu Center", "Çırağan Palace Kempinski", "Four Seasons Bosphorus", "Dolmabahçe Sarayı", "Bebek Sahili", "Ortaköy Meydanı", "Yıldız Parkı", "Shangri-La Bosphorus"],
+  beykoz: ["Hıdiv Kasrı", "Anadolu Hisarı", "Kavacık İş Merkezleri", "Acarkent", "Beykoz Kundura Fabrikası", "Yuşa Tepesi"],
+  beylikduzu: ["West Istanbul Marina", "Yaşam Vadisi", "Perlavista AVM", "Marmara Park", "Beylikdüzü Meydan"],
+  beyoglu: ["Galataport", "İstiklal Caddesi", "Galata Kulesi", "Soho House Istanbul", "Pera Palace", "The Ritz-Carlton", "InterContinental", "CVK Park Bosphorus"],
+  buyukcekmece: ["Tüyap Fuar Merkezi", "Büyükçekmece Sahili", "Kaya Ramada", "Eser Premium", "Mimar Sinan Köprüsü"],
+  catalca: ["İnceğiz Mağaraları", "Flamingo Köyü", "Çanakça Sahili", "Çatalca Meydanı"],
+  cekmekoy: ["Özyeğin Üniversitesi", "Şile Yolu Bağlantısı", "Taşdelen Mesire Alanı", "Park Of İstanbul"],
+  esenler: ["Esenler Otogarı", "Meydan İstanbul", "Yıldız Teknik Üniversitesi Davutpaşa", "Dörtyol Meydanı"],
+  esenyurt: ["Akbatı AVM", "City Center Esenyurt", "Esenyurt Meydan", "Termal Tesisler"],
+  eyupsultan: ["Eyüp Sultan Camii", "Pierre Loti Tepesi", "Vialand (Isfanbul)", "Göktürk Göleti", "Kemer Country"],
+  fatih: ["Sultanahmet Camii", "Ayasofya-i Kebir Cami-i Şerifi", "Kapalıçarşı", "Mısır Çarşısı", "Topkapı Sarayı", "Haliç Sosyal Tesisleri"],
+  gaziosmanpasa: ["Venezia Mega Outlet", "GOP Meydan", "Avrupa Konutları TEM", "Pierre Loti Panoraması"],
+  gungoren: ["Kale Center", "Merter Tekstil Merkezi", "Güngören Park", "Yıldız Teknik Üniversitesi İİBF"],
+  kadikoy: ["Haydarpaşa Garı", "Moda Sahili", "Bağdat Caddesi", "Süreyya Operası", "Akasya AVM", "Wyndham Grand Kalamış", "Hilton Kozyatağı"],
+  kagithane: ["Axis İstanbul", "Skyland Istanbul", "Vadi İstanbul Çevresi", "Kağıthane Merkez", "Cendere Vadisi"],
+  kartal: ["İstMarina AVM", "Kartal Sahili", "Aydos Ormanı", "Dragos Tepesi", "Anadolu Adliyesi"],
+  kucukcekmece: ["Küçükçekmece Gölü", "ArmoniPark", "ArenaPark", "Halkalı Meydanı", "Sabahattin Zaim Üniversitesi"],
+  maltepe: ["Maltepe Sahil Parkı", "Piazza AVM", "Ritim İstanbul", "Hilltown AVM", "Maltepe Üniversitesi"],
+  pendik: ["Viaport Asia", "Pendik Marina", "Sabiha Gökçen Havalimanı", "Pendik Sahili", "Divan Istanbul Asia"],
+  sancaktepe: ["Sancaktepe Rings AVM", "Prof. Dr. İlhan Varank Hastanesi", "Sancaktepe Meydan", "Samandıra Havalimanı Çevresi"],
+  sariyer: ["İstinye Park", "Vadistanbul", "Six Senses Kocataş", "The Grand Tarabya", "Rumeli Hisarı", "Emirgan Korusu", "Belgrad Ormanı", "Maslak 1453"],
+  silivri: ["Silivri Sahili", "Klassis Resort", "Maxi AVM", "Silivri Cezaevi Kampüsü Çevresi", "Gümüşyaka Plajı"],
+  sultanbeyli: ["Plato AVM", "Aydos Kalesi", "Sultanbeyli Gölet Parkı", "Merkez Meydan"],
+  sultangazi: ["Cebeci Şehir Parkı", "Mimar Sinan Kent Ormanı", "Sultangazi Belediyesi", "Haseki Şehir Hastanesi"],
+  sile: ["Şile Kalesi", "Şile Deniz Feneri", "Ayazma Plajı", "Saklıgöl", "Ağva Plajı"],
+  sisli: ["Hilton Istanbul Bomonti", "Cevahir AVM", "Nişantaşı City's", "The St. Regis Istanbul", "Park Hyatt Macka Palas", "Bomontiada", "İstanbul Kongre Merkezi", "Trump Towers"],
+  tuzla: ["Viaport Marina", "Tuzla Sahili", "İTÜ Denizcilik Fakültesi", "Tuzla Tersaneler Bölgesi", "Radisson Blu Hotel"],
+  umraniye: ["Buyaka AVM", "Meydan İstanbul", "Canpark", "IKEA Ümraniye", "Ümraniye Çarşı"],
+  uskudar: ["Kız Kulesi", "Çamlıca Camii", "Beylerbeyi Sarayı", "Kuzguncuk Sahili", "Capitol AVM", "Emaar Square Mall"],
+  zeytinburnu: ["Olivium Outlet", "Fişekhane", "Panorama 1453 Müzesi", "Zeytinburnu Sahili", "Topkapı Kültür Parkı"],
+};
+
+export const transportProfiles: Record<string, string> = {
+  adalar: "Vapur ve motor seferleri ile deniz üzerinden nostaljik ve huzurlu bir erişim hattı.",
+  arnavutkoy: "İstanbul Havalimanı'na en yakın bölge; otoyol bağlantıları ve havalimanı metrosu ile global erişim.",
+  atasehir: "M4 Metro hattı ve yeni açılacak Finans Merkezi bağlantılarıyla Anadolu Yakası'nın ulaşım kalbi.",
+  avcilar: "Metrobüs hattı ve otoyol bağlantılarıyla Avrupa Yakası'nın batı kapısı.",
+  bagcilar: "M1, M3 ve M7 metro hatlarının kesiştiği, toplu taşımanın en yoğun olduğu merkezlerden biri.",
+  bahcelievler: "Metrobüs, M1 Metro ve Marmaray bağlantılarıyla şehrin her yerine kesintisiz ulaşım.",
+  bakirkoy: "Marmaray, Metrobüs ve hızlı feribot bağlantılarıyla hem havalimanına hem de Marmara Denizi'ne komşu.",
+  basaksehir: "M3 Metro hattı, otoyollar ve geniş bulvarlarla modern bir ulaşım altyapısı.",
+  bayrampasa: "M1 Metro hattı ve Otogar bağlantısıyla İstanbul'un merkezi aktarma noktası.",
+  besiktas: "M7 Metro hattı, Gayrettepe aktarma merkezi ve vapur iskeleleri ile her yöne kesintisiz erişim.",
+  beykoz: "Fatih Sultan Mehmet Köprüsü bağlantısı ve vapur seferleriyle doğa ile hızı birleştiren hat.",
+  beylikduzu: "Metrobüs ana durağı ve otoyol bağlantılarıyla kesintisiz batı aksı ulaşımı.",
+  beyoglu: "Şişhane/Taksim Metrosu, nostaljik tramvay ve tarihi tünel ile nostalji ve hızı birleştiren ağ.",
+  buyukcekmece: "E-5 ve TEM bağlantılarıyla geniş otoyol ağının merkezinde.",
+  catalca: "Kuzey Marmara Otoyolu bağlantısıyla şehirden uzak ama otoyola yakın konforlu erişim.",
+  cekmekoy: "M5 Metro hattı ve Şile Yolu üzerinden hızlı trafik akışı.",
+  esenler: "Esenler Otogarı ve M1 Metro hattı ile ana ulaşım arteri.",
+  esenyurt: "Metrobüs ve E-5/TEM bağlantılarıyla Avrupa Yakası'nın dinamik ulaşım aksı.",
+  eyupsultan: "T5 Tramvay, M7 Metro ve Teleferik hatlarıyla Haliç ve kuzey aksına erişim.",
+  fatih: "Marmaray, M2 Metro ve vapur hatlarıyla İstanbul'un tarihi kalbinde en güçlü ağ.",
+  gaziosmanpasa: "T4 Tramvay ve M7 Metro bağlantılarıyla hızlı şehir içi ulaşımı.",
+  gungoren: "Tramvay ve Metrobüs bağlantılarıyla sanayi ve ticaretin merkezine erişim.",
+  kadikoy: "Marmaray, M4 Metro, Metrobüs ve vapur iskeleleriyle İstanbul'un en güçlü ulaşım ağı.",
+  kagithane: "M7 Metro hattı ve tünel bağlantılarıyla Beşiktaş ve Şişli'ye 5 dakika mesafede.",
+  kartal: "M4 Metro ve Marmaray hattıyla Anadolu Yakası'nın sahil ve merkez bağlantısı.",
+  kucukcekmece: "Marmaray ve Metrobüs'ün kesiştiği, göl manzaralı stratejik ulaşım noktası.",
+  maltepe: "M4 Metro, Marmaray ve sahil yoluyla üç koldan güçlü erişim.",
+  pendik: "Sabiha Gökçen Havalimanı bağlantısı, Marmaray ve YHT ile uluslararası transfer merkezi.",
+  sancaktepe: "M5 Metro uzatması ve otoyol bağlantılarıyla hızla gelişen doğu aksı.",
+  sariyer: "M2 Metrosu, tüneller ve Yavuz Sultan Selim Köprüsü bağlantısıyla trafiğe takılmadan hızlı ulaşım.",
+  silivri: "E-5 ve TEM otoyolları üzerinden uzun mesafe ama akıcı ulaşım imkanı.",
+  sultanbeyli: "TEM otoyolu bağlantısı ve yeni metro çalışmalarıyla Anadolu Yakası'nın dış kapısı.",
+  sultangazi: "T4 Tramvay hattı ve otoyol bağlantılarıyla kuzey aksı erişimi.",
+  sile: "Şile otoyolu üzerinden sahil kasabası atmosferinde kesintisiz sürüş.",
+  sisli: "M2 Yenikapı-Hacıosman metrosu, Metrobüs ve tünel bağlantılarıyla şehrin her noktasına dakikalar içinde ulaşım.",
+  tuzla: "Marmaray ve otoyol bağlantılarıyla sanayi ve sahilin buluştuğu nokta.",
+  umraniye: "M5 Metro hattı ve iki köprüye de yakın otoyol bağlantılarıyla iş dünyasının kalbi.",
+  uskudar: "M5 Metro, Marmaray ve vapur hatlarıyla Boğaz'ın en güçlü aktarma merkezi.",
+  zeytinburnu: "Tramvay, Marmaray, Metrobüs ve deniz otobüsüyle dört koldan erişim imkanı.",
+};
+
+export const vibes: Record<string, string[]> = {
+  luxury: [
+    "Elite segmentin en üst basamağı",
+    "Tavizsiz gizlilik ve yüksek protokol standartları",
+    "Göz kamaştırıcı mimari ve VIP rezidans konseptleri",
+    "Şehrin en seçkin lokasyonlarında kusursuz bir sığınak",
+  ],
+  nightlife: [
+    "Gece hayatının nabzını tutan dinamik atmosfer",
+    "7/24 yaşayan sokaklar ve elite kulüpler",
+    "Sınırsız eğlence ve yüksek enerji",
+    "İstanbul'un uyumayan yüzünü keşfedin",
+  ],
+  business: [
+    "İş dünyasının zirve noktası",
+    "Modern finans merkezleri ve prestijli ofis kuleleri",
+    "Executive yaşam tarzı ve yüksek verimlilik",
+    "Başarının lüksle birleştiği stratejik merkezler",
+  ],
+  coastal: [
+    "Denizin mavisiyle VIP konforun buluştuğu sahil hattı",
+    "Yat limanları ve elit deniz manzaralı rezidanslar",
+    "Huzur ve lüksün harmonisi",
+    "İstanbul'un en ikonik sahil dokuları",
+  ],
+  historic: [
+    "Tarihin derinliğinden gelen asil bir yaşam tarzı",
+    "Modern konforun tarihi dokuyla kusursuz uyumu",
+    "Geleneksel motiflerin lüksle yorumlandığı mekanlar",
+    "İstanbul'un köklü mirasında eşsiz bir deneyim",
+  ],
+};
+
+// --- Prestij PROTOCOL: HIGH-DENSITY NLP CONTENT BLOCKS ---
+// These blocks are designed to drastically increase the TF-IDF scores 
+// for 'Luxury', 'Concierge', 'VIP', 'Discretion', and 'Protocol'.
+
+export const historicContexts: string[] = [
+  "Bölgenin tarihsel gelişimi, Osmanlı'nın son dönem aristokrasisinden Cumhuriyet dönemi modernleşmesine kadar uzanan köklü bir transformasyon sürecini yansıtır. Günümüzde bu tarihi doku, ultra-lüks rezidanslar ve yüksek güvenlikli kompleksler ile harmanlanarak, hem kültürel bir miras hem de çağdaş bir VIP sığınağı haline gelmiştir. Bölgenin mimari yapısı, gizliliği maksimize eden avlulu tasarımlardan, modern akıllı bina sistemlerine kadar geniş bir yelpazede, seçkin sakinlerinin tüm mahremiyet ihtiyaçlarını karşılamak üzere evrimleşmiştir.",
+  "Şehrin en eski ticaret ve diplomasi rotalarından biri üzerinde konumlanan bu eşsiz mahalle, yüzyıllardır elitlerin ve bürokratların tercih ettiği bir merkez olagelmiştir. Bugün ise, uluslararası standartlarda hizmet veren premium concierge firmalarının, Michelin yıldızlı gastronomi duraklarının ve haute couture butiklerin kesişim noktasındadır. Bu kültürel derinlik, sunulan VIP rehberlik hizmetlerine sıradanlığın ötesinde, entelektüel ve sofistike bir boyut katmaktadır.",
+  "Eskiden imparatorluk köşklerine ve elçilik yazlıklarına ev sahipliği yapan bölge, güncel kentsel dönüşüm vizyonu ile tamamen modernize edilmiş olup, İstanbul'un en prestijli 'Safe-Zone' niteliğini taşımaktadır. Mimarideki neo-klasik dokunuşlar, son teknoloji güvenlik protokolleri ile desteklenerek, misafirlerimize hem zarafeti hem de mutlak güvenliği aynı anda deneyimleme fırsatı sunmaktadır."
+];
+
+export const lifestyleEncyclopedias: string[] = [
+  "Elit Protocol standartlarındaki lüks yaşam anlayışı, yalnızca fiziksel konforla sınırlı kalmayıp, zamanın ve gizliliğin en yüksek değer olduğu bir felsefeyi benimser. Kapsamlı concierge ağımız, havaalanı transferinden (VIP Vito/Maybach entegrasyonu) başlayarak, rezervasyonu imkansız mekanlara erişim ve 7/24 kesintisiz kişisel rehberlik hizmetlerine kadar tüm detayları mikroskobik bir hassasiyetle planlar. Bu ekosistemde 'hayır' kelimesi yoktur; yalnızca sizin tercihlerinize göre uyarlanmış yaratıcı çözümler vardır. Mahremiyet (discretion) kuralı, tüm hizmet sağlayıcılarımız için yasal sözleşmelerle güvence altına alınmış olup, dijital ayak izinizin sıfıra indirilmesi (Tam Gizlilik) sağlanır.",
+  "VIP konaklama ve eşlik protokollerinde mükemmeliyet, detaylara duyulan saplantılı bir özenle ölçülür. Seçkin üyelerimiz için hazırlanan her randevu, kişisel asistanlar seviyesinde planlanarak, olası tüm senaryolara karşı stratejik olarak yapılandırılır. Kullanılan özel şoförlü transfer araçları kapalı garaj protokolleriyle hareket eder, konaklama sağlanan rezidanslar akıllı bina şifreleme sistemleri ile izole edilir. İstanbul'un yorucu temposu, bu özel protokol sayesinde yerini sadece keyfe ve dinginliğe bırakır. Sunduğumuz 'Elite Escort' deneyimi, yalnızca bir eşlik değil, aynı zamanda şehrin en iyi saklanan sırlarını sizinle paylaşan profesyonel bir yaşam rehberliği (Lifestyle Management) niteliğindedir.",
+  "Modern metropol yaşantısının en rafine hali olan Elit-Grade hizmetler, bireysel ihtiyaçların öngörülmesini (predictive service) temel alır. Siz daha talep etmeden, iklimlendirilmiş araçlar hazır bekler, güzergahlar trafik yoğunluğuna göre algoritmik olarak optimize edilir ve seçtiğiniz rehber profiliniz, belirlediğiniz spesifik atmosfere tam uyum sağlayacak şekilde brife edilir. Bu kusursuz operasyonel güç, uluslararası VIP güvenlik protokollerini bilen, sofistike iletişim yeteneklerine sahip ve çok dilli profesyonellerden oluşan devasa bir arka plan ekibi tarafından yönetilmektedir."
+];

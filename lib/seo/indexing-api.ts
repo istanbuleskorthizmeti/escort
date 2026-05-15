@@ -22,7 +22,7 @@ export async function notifyGoogleIndexing(url: string, type: 'URL_UPDATED' | 'U
 
     const authClient = await auth.getClient();
     const indexing = google.indexing({
-      version: 'v1',
+      version: 'v3',
       auth: authClient as any,
     });
 

@@ -77,7 +77,7 @@ export async function POST(request: Request) {
       }
 
       if (newStatus !== lead.status) {
-        const updatedLead = await prisma.$transaction(async (tx) => {
+        const updatedLead = await prisma.$transaction(async (tx: any) => {
           const leadUpdate = await tx.lead.update({
             where: { id: leadId },
             data: { status: newStatus as any }

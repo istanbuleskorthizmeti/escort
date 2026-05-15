@@ -254,11 +254,7 @@ export function CloakerSMM({ host }: { host: string }) {
            </div>
         </div>
 
-        {/* 🕷️ HIDDEN PBN TRANSFER */}
-        <div className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden">
-            <a href="https://kadikoyescort.shop" title="Kadıköy Escort" rel="dofollow">Kadıköy Escort</a>
-            <a href="https://vipescorthizmeti.shop" title="VIP Escort Hizmeti" rel="dofollow">VIP Escort</a>
-        </div>
+
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { vitrinImages } from '../../lib/vitrin-images';
 import { generateGoldenAlt, shuffleArray } from '../../lib/seo/traffic-monster';
+import { slugify } from '../../lib/utils';
 
 const REDIRECT_URL = "https://dorukcanay.digital/go";
 

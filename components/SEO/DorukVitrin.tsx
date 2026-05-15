@@ -3,13 +3,14 @@
 import React, { useEffect, useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { MessageCircle, ShieldCheck } from 'lucide-react';
+import { MessageCircle, ShieldCheck, Home, User, CalendarHeart, AlertTriangle } from 'lucide-react';
 import { vitrinImages } from '../../lib/vitrin-images';
-import { siteConfig } from '../../config/site';
 import { slugify } from '../../lib/utils';
 import { generateGoldenAlt } from '../../lib/seo/traffic-monster';
+import { getActiveProfiles } from '../../app/actions/vitrin';
+import { siteConfig } from '../../config/site';
 
-export function DorukVitrin({ city = 'İstanbul' }: { city?: string }) {
+export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { city?: string, isEmbed?: boolean, host?: string }) {
   const [isMounted, setIsMounted] = useState(false);
   
   // 🛡️ [GOD-MODE] SSR-SAFE SELECTION
@@ -22,10 +23,25 @@ export function DorukVitrin({ city = 'İstanbul' }: { city?: string }) {
 
   useEffect(() => {
     setIsMounted(true);
-    // 🛡️ [HYDRA-DIVERSIFY] Optimized for Mobile Performance
-    // Instead of 60, we load 20 high-quality images initially to satisfy PageSpeed LCP metrics
-    const shuffled = [...vitrinImages].sort(() => Math.random() - 0.5);
-    setDisplayedImages(shuffled.slice(0, 20));
+    
+    // Fetch DB profiles
+    getActiveProfiles().then((dbProfiles) => {
+      // Map DB profiles
+      const masters = dbProfiles.map(m => ({
+        title: m.name,
+        src: m.image,
+        phone: m.phone,
+        niche: m.niche
+      }));
+      
+      // Filter out images from the pool that match DB profiles
+      const pool = vitrinImages.filter(img => !masters.some(m => m.src === img.src));
+      
+      setDisplayedImages([...masters, ...pool.slice(0, Math.max(0, 20 - masters.length))]);
+    }).catch(e => {
+      // Fallback if DB fetch fails
+      setDisplayedImages(vitrinImages.slice(0, 20));
+    });
   }, []);
 
   // Show at least the initial 20 images even before hydration
@@ -34,39 +50,56 @@ export function DorukVitrin({ city = 'İstanbul' }: { city?: string }) {
   if (!imagesToRender || imagesToRender.length === 0) return null;
 
   return (
-    <div className="w-full bg-black text-zinc-100 py-16 px-4 md:px-0 font-sans select-none overflow-hidden">
-      <div className="max-w-7xl mx-auto flex flex-col">
-        
-        {/* 🔱 GRID HEADER: CONTEXTUAL AUTHORITY */}
-        <div className="flex items-center justify-between mb-12 border-b border-zinc-900 pb-8">
-           <div className="flex items-center gap-4">
-              <ShieldCheck className="text-rose-600 w-8 h-8" />
-              <h2 className="text-2xl md:text-3xl font-black uppercase italic tracking-tighter">
-                {city.toUpperCase()} <span className="text-rose-600">VİP VİTRİN</span>
-              </h2>
-           </div>
-           <div className="hidden md:flex items-center gap-2 text-[10px] font-black text-zinc-600 uppercase tracking-[0.4em]">
-              🛡️ %100 GERÇEK VE ONAYLI PROFİLLER
-           </div>
+    <div 
+      className="w-full text-zinc-100 pb-20 pt-8 font-sans select-none overflow-hidden relative" 
+      style={{ 
+        backgroundImage: 'radial-gradient(circle at 50% 0%, #2a081a 0%, #050204 60%)', 
+        backgroundColor: '#050204',
+        minHeight: '100vh'
+      }}
+    >
+      <div className="max-w-xl mx-auto flex flex-col pt-4">
+
+        {/* 🔱 INFO BANNER */}
+        <div className="bg-[linear-gradient(90deg,#ff0055,#9900ff,#ff0055)] bg-[length:200%_auto] rounded-[20px] p-4 text-center mb-10 border border-white/40 max-w-[90%] mx-auto flex flex-col gap-3 shadow-2xl"
+             style={{ animation: 'var(--animate-pulse-glow)' }}>
+            <div className="text-white text-[13px] font-black leading-tight tracking-wider" style={{ textShadow: '0px 2px 4px rgba(0,0,0,0.9)' }}>
+                BU SİTEDE BULUNAN BAYANLAR TAMAMEN ELDEN ÖDEME İLE ÇALIŞMAKTADIRLAR.
+            </div>
+            
+            <div className="bg-black/50 border-[1.5px] border-dashed border-[#ffcc00] rounded-xl p-3 text-white text-[11px] font-extrabold leading-snug tracking-wide" 
+                 style={{ textShadow: '1px 1px 2px #000', animation: 'var(--animate-pulse-warning-box)' }}>
+                <AlertTriangle className="inline-block text-[#ffcc00] w-4 h-4 mr-1 relative -top-0.5" style={{ animation: 'var(--animate-warning-blink)' }} /> 
+                YANINIZA GELMEDEN ÖNCE HERHANGİ BİR NEDENLE ATM'DEN VEYA HESABA HAVALE <span className="text-[#ffcc00] text-[13px] underline underline-offset-4" style={{ textShadow: '0 0 10px rgba(255, 204, 0, 0.8)' }}>İSTEMEZLER!</span>
+            </div>
         </div>
 
-        {/* 🔱 PROFILE GRID: GOD MODE MAPPING */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 w-full">
+        {/* 🔱 CARDS LIST */}
+        <div className="flex flex-col gap-8 w-full px-4">
           {imagesToRender.map((item, idx) => {
             if (!item || !item.src) return null;
             const firstName = (item.title || 'VIP').split(' ')[0];
             const profileSlug = slugify(firstName);
             
             // 🔥 AGGRESSIVE SEO NICHES
-            const niches = ['Rus Model', 'Üniversiteli', 'Sarışın', 'Olgun Lady', 'Analiz Edilmiş', 'VIP Model', 'Kaporasız', 'Manken'];
-            const niche = niches[idx % niches.length];
-            const isOnline = (idx + (isMounted ? 1 : 0)) % 3 === 0;
+            const fallbackNiches = ['Ev Otel Rez.', 'Özel Konsept', 'Manken', 'Sınırsız'];
+            const niche = item.niche || fallbackNiches[idx % fallbackNiches.length];
+            const age = 19 + (idx % 7); // Randomize age between 19-25
 
-            // 🔥 SEO-OPTIMIZED IMAGE PATHS
-            const imageName = item.src.split('/').pop() || '';
-            const imageId = imageName.replace(/[^0-9]/g, '').slice(0, 5) || idx;
-            const seoImagePath = `${siteConfig.cdnUrl}/${slugify(city)}-kaporasiz-escort-bayan-${imageId}.webp`;
-            const altTag = generateGoldenAlt(city);
+            // 🔥 SEO-OPTIMIZED IMAGE PATHS (DOMAIN UNIQUE & ULTRA FAST LOCAL CDN)
+            const domainPrefix = host ? host.split('.')[0] : 'doruk';
+            const safeIdx = (idx % 310) + 1; // Map to vip-profil-1 to vip-profil-314
+            
+            // If the image is custom (e.g. from Admin DB or external), keep it. 
+            // Otherwise, use the ultra-fast local WebP rewrite cache.
+            const isCustomImage = item.src && (item.src.startsWith('http') || item.src.includes('uploads'));
+            
+            // Matches next.config.ts rewrite: /:city-kaporasiz-escort-bayan-:id.webp -> /_media/vitrin/vip-profil-:id.webp
+            const seoImagePath = isCustomImage 
+                ? item.src 
+                : `/${domainPrefix}-${slugify(city)}-kaporasiz-escort-bayan-${safeIdx}.webp`;
+            
+            const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city)} - ${firstName}`;
 
             const handleTrack = () => {
               fetch('/api/track', {
@@ -76,75 +109,108 @@ export function DorukVitrin({ city = 'İstanbul' }: { city?: string }) {
               }).catch(() => {});
             };
 
+            const whatsappUrl = item.phone 
+              ? `https://wa.me/${item.phone}?text=Merhaba ${firstName}, görüşme için bilgi verir misin?` 
+              : `${siteConfig.contact.whatsappLink}?text=Merhaba ${firstName}, görüşme için bilgi verir misin?`;
+
             return (
-              <div key={`${idx}-${isMounted}`} className="glass-card flex flex-col group rounded-[2.5rem] overflow-hidden border-zinc-900/50 hover:border-rose-600/40 transition-all duration-700 shadow-2xl bg-zinc-950/20">
-                
-                {/* Image Container */}
-                <Link href={`/profile/${profileSlug}`} title={`${firstName} ${city} ${niche} Escort Detaylı Profil`} className="relative flex-1 block overflow-hidden aspect-[3/4.5]">
-                  <Image 
-                    src={seoImagePath} 
-                    alt={altTag}
-                    title={`${firstName} | ${city} ${niche} Elite Model | %100 Gerçek ve Kaporasız`}
-                    fill
-                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 20vw"
-                    priority={idx < 4}
-                    className="object-cover group-hover:scale-110 transition-transform duration-[2000ms] ease-out grayscale-[0.3] group-hover:grayscale-0"
-                    onError={(e: any) => {
-                      // Fallback to original path if SEO alias fails
-                      e.target.src = item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`;
-                    }}
-                  />
+              <a 
+                key={`${idx}-${isMounted}`}
+                href={whatsappUrl}
+                onClick={handleTrack}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-inherit transition-transform duration-300 active:scale-95 group"
+              >
+                <div 
+                  className="relative h-[220px] bg-black rounded-2xl overflow-hidden border-[1.5px] border-white/15" 
+                  style={{ boxShadow: '0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px rgba(255, 0, 85, 0.25)' }}
+                >
                   
-                  {/* Status Badges */}
-                  <div className="absolute top-5 left-5 flex flex-col gap-2 z-20">
-                    <div className="bg-black/60 backdrop-blur-xl text-rose-600 text-[9px] font-black px-4 py-1.5 rounded-full border border-rose-600/30 uppercase tracking-[0.2em]">
-                       VERIFIED
+                  {/* Scrolling Images Wrapper */}
+                  <div className="absolute inset-0 z-0 overflow-hidden bg-zinc-900">
+                    <div className="flex h-full w-[200%]" style={{ animation: 'var(--animate-scroll-images)' }}>
+                      {[0, 1, 2, 0, 1, 2].map((offset, scrollIdx) => {
+                        const currentSafeIdx = (safeIdx + offset * 13) % 310 + 1;
+                        const currSeoPath = isCustomImage && offset === 0 
+                            ? item.src 
+                            : `/${domainPrefix}-${slugify(city)}-kaporasiz-escort-bayan-${currentSafeIdx}.webp`;
+                        
+                        return (
+                          <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111]">
+                            <Image 
+                              src={currSeoPath} 
+                              alt={`${altTag} - Poz ${offset + 1}`}
+                              fill
+                              sizes="(max-width: 600px) 33vw, 200px"
+                              priority={idx < 4 && scrollIdx < 3}
+                              className="object-cover object-top contrast-[1.05] brightness-95"
+                              onError={(e: any) => {
+                                if (e.target.dataset.failed) return;
+                                e.target.dataset.failed = 'true';
+                                e.target.src = isCustomImage && offset === 0 ? item.src : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
+                              }}
+                            />
+                          </div>
+                        );
+                      })}
                     </div>
-                    {isOnline && (
-                      <div className="bg-emerald-500/20 backdrop-blur-xl text-emerald-400 text-[9px] font-black px-4 py-1.5 rounded-full border border-emerald-500/30 uppercase tracking-[0.2em] flex items-center gap-2">
-                        <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" /> ONLINE
-                      </div>
-                    )}
                   </div>
 
-                  {/* Profile Info Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-8 bg-linear-to-t from-black via-black/90 to-transparent z-10 translate-y-2 group-hover:translate-y-0 transition-transform duration-700">
-                    <div className="text-white font-black italic text-2xl uppercase tracking-tighter group-hover:text-rose-600 transition-colors duration-500">
+                  {/* Pink Overlay */}
+                  <div 
+                    className="absolute left-0 top-0 bottom-0 w-[42%] bg-[linear-gradient(135deg,rgba(255,0,85,0.85)_0%,rgba(138,0,204,0.8)_100%)] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-white/30" 
+                    style={{ clipPath: 'ellipse(130% 130% at -20% 50%)', boxShadow: '20px 0 40px rgba(0,0,0,0.8)' }}
+                  >
+                    <div 
+                      className="font-[family-name:var(--font-heading)] italic text-[28px] text-white font-bold tracking-widest mb-3 leading-none drop-shadow-2xl" 
+                      style={{ textShadow: '0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px #ff0055, 0 4px 5px rgba(0,0,0,0.8)' }}
+                    >
                       {firstName}
                     </div>
-                    <div className="text-rose-600 text-[10px] font-black uppercase tracking-[0.3em] mt-2 opacity-80 flex items-center gap-2">
-                      <span className="w-1 h-1 bg-rose-600 rounded-full" /> {niche} // {city.toUpperCase()}
+
+                    <div className="flex flex-col gap-1.5 mb-5 w-full">
+                      <span className="text-[10px] text-white font-bold tracking-wide bg-[linear-gradient(90deg,rgba(255,255,255,0.2),rgba(255,255,255,0.05))] border border-white/30 border-l-[3px] border-l-[#ffb3d9] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.9)', boxShadow: '0 4px 10px rgba(0,0,0,0.3)' }}>
+                          <Home className="w-[11px] h-[11px] text-[#ffd700]" style={{ filter: 'drop-shadow(0 0 2px rgba(255,215,0,0.8))' }} /> {niche.length > 15 ? 'Ev Otel Rez' : niche}
+                      </span>
+                      <span className="text-[10px] text-white font-bold tracking-wide bg-[linear-gradient(90deg,rgba(255,255,255,0.2),rgba(255,255,255,0.05))] border border-white/30 border-l-[3px] border-l-[#ffb3d9] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.9)', boxShadow: '0 4px 10px rgba(0,0,0,0.3)' }}>
+                          <User className="w-[11px] h-[11px] text-[#ffd700]" style={{ filter: 'drop-shadow(0 0 2px rgba(255,215,0,0.8))' }} /> Bireysel
+                      </span>
+                      <span className="text-[10px] text-white font-bold tracking-wide bg-[linear-gradient(90deg,rgba(255,255,255,0.2),rgba(255,255,255,0.05))] border border-white/30 border-l-[3px] border-l-[#ffb3d9] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5" style={{ textShadow: '1px 1px 2px rgba(0,0,0,0.9)', boxShadow: '0 4px 10px rgba(0,0,0,0.3)' }}>
+                          <CalendarHeart className="w-[11px] h-[11px] text-[#ffd700]" style={{ filter: 'drop-shadow(0 0 2px rgba(255,215,0,0.8))' }} /> Yaş {age}
+                      </span>
+                    </div>
+
+                    <div 
+                      className="bg-[linear-gradient(90deg,#25D366,#128C7E)] text-white py-1.5 px-4 rounded-full text-[11px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 border-[1.5px] border-white"
+                      style={{ animation: 'var(--animate-neon-pulse)' }}
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" /> İletişim
                     </div>
                   </div>
-                </Link>
 
-                {/* 🟢 WHATSAPP ACTION BUTTON */}
-                <a 
-                  href={`${siteConfig.contact.whatsappLink}?text=Merhaba ${firstName}, seni ${city} vitrininde gördüm, randevu almak istiyorum.`}
-                  onClick={handleTrack}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-zinc-950 hover:bg-rose-600 text-zinc-500 hover:text-white p-6 text-center text-[10px] font-black uppercase tracking-[0.3em] flex items-center justify-center gap-3 transition-all duration-500 italic border-t border-zinc-900 group-hover:border-rose-600/50"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  WHATSAPP'TAN YAZ
-                </a>
-              </div>
+                </div>
+              </a>
             );
           })}
         </div>
 
         {/* 🚀 GLOBAL CTA */}
-        <div className="mt-20 mb-32 flex justify-center">
+        <div className="mt-16 mb-20 flex justify-center px-4">
           <Link 
             href={siteConfig.contact.whatsappLink} 
-            className="rose-button px-20 py-8 rounded-[2.5rem] text-xl font-black shadow-glow-rose group relative overflow-hidden"
+            className="rose-button w-full md:w-auto px-10 py-5 rounded-[2rem] text-sm font-black shadow-glow-rose group relative overflow-hidden text-center"
+            target={isEmbed ? "_blank" : undefined}
           >
-             <span className="relative z-10 flex items-center gap-4">
-                TÜM KATALOĞU GÖR VE RANDEVU AL <span className="opacity-50 tracking-tighter">>>></span>
+             <span className="relative z-10 flex items-center justify-center gap-3">
+                TÜM KATALOĞU GÖR <span className="opacity-50 tracking-tighter">{'>>>'}</span>
              </span>
              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
           </Link>
+        </div>
+
+        <div className="text-center text-zinc-600 text-[10px] tracking-[5px] font-[family-name:var(--font-heading)] font-black pb-10 uppercase">
+          {host ? host.split('.')[0] : 'VIP'} CLUB &copy; 2026
         </div>
 
       </div>

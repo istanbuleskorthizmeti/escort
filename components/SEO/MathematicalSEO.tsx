@@ -1,8 +1,9 @@
 import { getStatisticalDensityText, getSemanticBridge } from '@/lib/mathematical-seo';
 
-export function MathematicalSEO({ district = "İstanbul" }: { district?: string }) {
-  const content = getStatisticalDensityText(district);
-  const bridge = getSemanticBridge(district);
+export function MathematicalSEO({ district = "İstanbul", role = "MONEY_SITE" }: { district?: string, role?: string }) {
+  const content = getStatisticalDensityText(district, role);
+  const bridge = getSemanticBridge(district, role);
+  const isCloaker = role === 'CLOAKER';
 
   return (
     <div style={{ 
@@ -17,7 +18,7 @@ export function MathematicalSEO({ district = "İstanbul" }: { district?: string 
       opacity: 0.001,
       pointerEvents: 'none'
     }}>
-      <h2>{district} Agresif Escort SEO Matrisi // Matematiksel Algoritma v16.0</h2>
+      <h2>{district} {isCloaker ? 'Sansürsüz Arşiv SEO Matrisi' : 'Agresif Escort SEO Matrisi'} // Matematiksel Algoritma v16.0</h2>
       <p>{content}</p>
       <div id="semantic-bridge">
         {bridge}
@@ -25,7 +26,12 @@ export function MathematicalSEO({ district = "İstanbul" }: { district?: string 
       <div>
         {/* Hidden Keyword Bridge: AI Search Engine Optimization (GEO) */}
         {[...Array(10)].map((_, i) => (
-           <span key={i}>{district} escort bayan {i}, vip escort ajansı {district}, {district} escort ilanları, gerçek escort {district}, elit {district} escortlar.</span>
+           <span key={i}>
+             {isCloaker 
+               ? `${district} ifşa video ${i}, sansürsüz skandal arşivi ${district}, ${district} telegram sızıntısı, gerçek ifşa ${district}, gizli ${district} kasetleri.`
+               : `${district} escort bayan ${i}, vip escort ajansı ${district}, ${district} escort ilanları, gerçek escort ${district}, elit ${district} escortlar.`
+             }
+           </span>
         ))}
       </div>
     </div>

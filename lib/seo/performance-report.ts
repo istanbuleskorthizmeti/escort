@@ -80,14 +80,14 @@ export class PerformanceReportEngine {
               this.gsc.getPagePerformance(sevenDaysAgo, yesterday, siteUrl),
             ]);
 
-            const totalClicks = keywordRows.reduce((acc, r) => acc + (r.clicks ?? 0), 0);
-            const totalImpressions = keywordRows.reduce((acc, r) => acc + (r.impressions ?? 0), 0);
+            const totalClicks = keywordRows.reduce((acc: any, r) => acc + (r.clicks ?? 0), 0);
+            const totalImpressions = keywordRows.reduce((acc: any, r) => acc + (r.impressions ?? 0), 0);
             const avgPosition = keywordRows.length > 0
-                ? keywordRows.reduce((acc, r) => acc + (r.position ?? 0), 0) / keywordRows.length
+                ? keywordRows.reduce((acc: any, r) => acc + (r.position ?? 0), 0) / keywordRows.length
                 : 0;
 
             const topKeywords = [...keywordRows]
-              .sort((a, b) => (b.clicks ?? 0) - (a.clicks ?? 0))
+              .sort((a: any, b: any) => (b.clicks ?? 0) - (a.clicks ?? 0))
               .slice(0, 5)
               .map((r) => ({
                 keyword: r.keys?.[0] ?? "N/A",
@@ -109,13 +109,13 @@ export class PerformanceReportEngine {
       );
 
       // 3. Aggregate totals
-      const aggregateClicks = domains.reduce((sum, d) => sum + d.totalClicks, 0);
-      const aggregateImpressions = domains.reduce((sum, d) => sum + d.totalImpressions, 0);
+      const aggregateClicks = domains.reduce((sum, d: any) => sum + d.totalClicks, 0);
+      const aggregateImpressions = domains.reduce((sum, d: any) => sum + d.totalImpressions, 0);
 
       return {
         aggregateClicks,
         aggregateImpressions,
-        domains: domains.sort((a, b) => b.totalClicks - a.totalClicks),
+        domains: domains.sort((a: any, b: any) => b.totalClicks - a.totalClicks),
         isAvailable: domains.length > 0,
       };
     } catch (e) {
@@ -135,7 +135,7 @@ export class PerformanceReportEngine {
       take: 5,
     });
 
-    return deltas.map((d) => ({
+    return deltas.map((d: any) => ({
       keyword: d.keyword,
       position: d.position,
       change: d.change ?? 0,

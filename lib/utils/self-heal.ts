@@ -16,7 +16,6 @@ export async function autoFix(error: any, moduleName: string): Promise<boolean> 
   if (!CHAT_ID) return false;
 
   try {
-  try {
     if (bot && CHAT_ID) {
         // 1. Prisma / Database Connection Drops
         if (errMsg.includes('database server') || errMsg.includes('connection limit') || errMsg.includes('primsa')) {

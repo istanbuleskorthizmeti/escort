@@ -30,8 +30,8 @@ export async function getGlobalContact(): Promise<ContactInfo> {
       }
     });
 
-    const number = settings.find(s => s.key === CONTACT_SETTING_KEY)?.value || DEFAULT_WHATSAPP;
-    const shortLink = settings.find(s => s.key === SHORTLINK_SETTING_KEY)?.value || DEFAULT_SHORTLINK;
+    const number = settings.find((s: any) => s.key === CONTACT_SETTING_KEY)?.value || DEFAULT_WHATSAPP;
+    const shortLink = settings.find((s: any) => s.key === SHORTLINK_SETTING_KEY)?.value || DEFAULT_SHORTLINK;
     
     return {
       number,

@@ -63,7 +63,7 @@ Sitemap: https://${host}/feed.xml
         select: { slug: true, updatedAt: true }
       });
 
-      const urlEntries = pages.map(p => {
+      const urlEntries = pages.map((p: any) => {
           const slugPrefix = p.slug.startsWith('/') ? '' : '/';
           return `
   <url>

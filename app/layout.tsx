@@ -35,7 +35,6 @@ export async function generateMetadata(): Promise<Metadata> {
     description,
     metadataBase: new URL(`https://${host}`),
     alternates: { canonical: "/", languages: { 'tr-TR': '/' } },
-    other: { 'google': 'notranslate' },
     openGraph: {
       title,
       description,
@@ -106,9 +105,8 @@ export default async function RootLayout({
             font-family: var(--heading-font);
           }
           .glass-card {
-             background: rgba(255, 255, 255, 0.03);
-             backdrop-filter: blur(10px);
-             border: 1px solid rgba(255, 255, 255, 0.05);
+             background: #09090b;
+             border: 1px solid #18181b;
           }
           .text-primary { color: var(--primary-color); }
           .bg-primary { background-color: var(--primary-color); }

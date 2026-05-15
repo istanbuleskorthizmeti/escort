@@ -13,6 +13,7 @@ export interface TelegraphPost {
 
 class TelegraphService {
   private accessToken: string | null = null;
+  private apiBase: string = 'api.telegra.ph';
 
   /**
    * Initializes a Telegraph account to get an access_token.

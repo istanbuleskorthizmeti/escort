@@ -15,7 +15,7 @@ export async function GET() {
       where: { status: 'COMPLETED' },
       select: { paymentAmount: true }
     });
-    const totalRevenue = leads.reduce((acc, lead) => acc + (lead.paymentAmount || 0), 0);
+    const totalRevenue = leads.reduce((acc: any, lead: any) => acc + (lead.paymentAmount || 0), 0);
 
     // District breakdown logic
     const cityGroups = await prisma.lead.groupBy({
@@ -24,11 +24,11 @@ export async function GET() {
       _sum: { paymentAmount: true }
     });
 
-    const regions = cityGroups.map(group => ({
+    const regions = cityGroups.map((group: any) => ({
       name: group.cityName,
       count: group._count._all,
       revenue: group._sum.paymentAmount || 0
-    })).sort((a, b) => b.revenue - a.revenue);
+    })).sort((a: any, b: any) => b.revenue - a.revenue);
 
     const recentLogs = await prisma.leadLog.findMany({
       take: 10,
@@ -45,7 +45,7 @@ export async function GET() {
         activeAds: activeAdsCount
       },
       regions,
-      recentActions: recentLogs.map(log => ({
+      recentActions: recentLogs.map((log: any) => ({
         id: log.id,
         time: formatRelativeTime(log.timestamp),
         action: log.action,

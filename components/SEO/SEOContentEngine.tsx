@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { slugify } from '@/lib/utils';
+import { getDomainConfig } from '@/config/domains';
 
 interface SEOContentEngineProps {
   cityName: string;
@@ -11,21 +12,27 @@ interface SEOContentEngineProps {
 
 export function SEOContentEngine({ cityName, districtName, neighborhoodName, host }: SEOContentEngineProps) {
   const currentLoc = neighborhoodName || districtName || cityName;
+  const config = getDomainConfig(host);
+  const isCloaker = config.role === 'CLOAKER';
   
-  const lsiKeywords = [
-    "Vip Deneyim", "Sınırsız Hizmet", "Gizli Buluşma", "Elite Escort", 
-    "Gerçek Görseller", "Kaporasız İlanlar", "Otele Servis", "Eve Gelen Escort",
-    "Gecelik Escort", "Saatlik Buluşma", "Üniversiteli Çıtır", "Olgun Lady"
-  ];
+  const lsiKeywords = isCloaker 
+    ? ["Sansürsüz Video", "Gizli Çekim", "VIP İfşa", "Skandal Görüntüler", "Yasak Aşk", "Telegram Kanalı", "Magazin", "Sızdırılan Kaset"]
+    : ["Vip Deneyim", "Sınırsız Hizmet", "Gizli Buluşma", "Elite Escort", "Gerçek Görseller", "Kaporasız İlanlar", "Otele Servis", "Eve Gelen Escort"];
 
-  const tags = [
-    `${currentLoc} Escort`, `${currentLoc} Vip Escort`, `${currentLoc} Escort Ajansı`,
-    `${currentLoc} Bayan Escort`, `${currentLoc} Rus Escort`, `${currentLoc} Üniversiteli Escort`,
-    `${currentLoc} Kaporasız Escort`, `${currentLoc} En İyi Escort`, `${currentLoc} Eve Gelen Escort`,
-    `${currentLoc} Otele Gelen Escort`, `${currentLoc} %100 Gerçek Escort`, `${currentLoc} Elit Escort`,
-    `${cityName} Escort`, `${districtName || cityName} Escort`,
-    ...lsiKeywords.map(k => `${currentLoc} ${k}`)
-  ];
+  const tags = isCloaker
+    ? [
+        `${currentLoc} İfşa`, `${currentLoc} Skandal`, `${currentLoc} Gizli Çekim`,
+        `${currentLoc} Sansürsüz`, `${currentLoc} Telegram İfşa`, `${currentLoc} Kaset Skandalı`,
+        `${cityName} İfşa`, `${districtName || cityName} Skandal`,
+        ...lsiKeywords.map(k => `${currentLoc} ${k}`)
+      ]
+    : [
+        `${currentLoc} Escort`, `${currentLoc} Vip Escort`, `${currentLoc} Escort Ajansı`,
+        `${currentLoc} Bayan Escort`, `${currentLoc} Rus Escort`, `${currentLoc} Üniversiteli Escort`,
+        `${currentLoc} Kaporasız Escort`, `${currentLoc} Eve Gelen Escort`, `${currentLoc} Elit Escort`,
+        `${cityName} Escort`, `${districtName || cityName} Escort`,
+        ...lsiKeywords.map(k => `${currentLoc} ${k}`)
+      ];
 
   return (
     <section className="relative py-24 px-6 bg-zinc-950/20">
@@ -35,35 +42,69 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-24">
           <div className="lg:col-span-2 space-y-10">
             <div className="space-y-6">
-              <h2 className="text-4xl md:text-5xl font-black italic tracking-tighter text-white uppercase border-l-8 border-rose-600 pl-8">
-                {currentLoc} ESCORT <span className="text-rose-600">PROFESYONEL HİZMET</span>
+              <h2 className={`text-4xl md:text-5xl font-black italic tracking-tighter text-white uppercase border-l-8 ${isCloaker ? 'border-red-600' : 'border-rose-600'} pl-8`}>
+                {currentLoc} {isCloaker ? 'ŞOK İFŞA' : 'ESCORT'} <span className={isCloaker ? 'text-red-600' : 'text-rose-600'}>
+                  {isCloaker ? 'SKANDAL GÖRÜNTÜLER' : 'PROFESYONEL HİZMET'}
+                </span>
               </h2>
               <p className="text-zinc-400 text-lg leading-relaxed text-justify font-medium italic">
-                {cityName} bölgesinin en seçkin <span className="text-white font-black underline decoration-rose-600/50">{currentLoc} escort</span> portföyüne hoş geldiniz. 
-                DRKCNAY ELITE ağının bir parçası olan <span className="text-rose-600 font-bold">{host}</span>, size sadece bir refakatçi değil, 
-                unutulmaz bir VIP escort deneyimi sunar. {neighborhoodName ? `${neighborhoodName} mahallesinde` : `${districtName} ilçesinde`} 
-                bulunan elit escort modellerimizle, kaporasız ve %100 gizlilik garantili buluşmalar sizi bekliyor.
+                {isCloaker ? (
+                  <>
+                    {cityName} sosyetesini sarsan en yeni <span className="text-white font-black underline decoration-red-600/50">{currentLoc} ifşa</span> ve skandal haberlerine hoş geldiniz. 
+                    <span className="text-red-600 font-bold"> {host}</span> üzerinden sızdırılan bu gizli çekimler ve telegram kasetleri, 
+                    {neighborhoodName ? `${neighborhoodName} mahallesindeki` : `${districtName} ilçesindeki`} lüks villalarda yaşanan yasak aşkları gözler önüne seriyor. 
+                    Tüm sansürsüz içerikler ve 18+ VIP sızıntılar burada.
+                  </>
+                ) : (
+                  <>
+                    {cityName} bölgesinin en seçkin <span className="text-white font-black underline decoration-rose-600/50">{currentLoc} escort</span> portföyüne hoş geldiniz. 
+                    DRKCNAY ELITE ağının bir parçası olan <span className="text-rose-600 font-bold">{host}</span>, size sadece bir refakatçi değil, 
+                    unutulmaz bir VIP escort deneyimi sunar. {neighborhoodName ? `${neighborhoodName} mahallesinde` : `${districtName} ilçesinde`} 
+                    bulunan elit escort modellerimizle, kaporasız ve %100 gizlilik garantili buluşmalar sizi bekliyor.
+                  </>
+                )}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className="glass-card p-8 rounded-[2rem] border-rose-600/10 hover:border-rose-600/30 transition-all duration-500 group">
-                <h4 className="text-rose-600 font-black uppercase tracking-widest mb-4 flex items-center gap-3">
-                   <span className="w-2 h-2 bg-rose-600 rounded-full animate-pulse" />
-                   {cityName.toUpperCase()} ESCORT HİZMET STANDARTLARI
+              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-rose-600/10 hover:border-rose-600/30'} transition-all duration-500 group`}>
+                <h4 className={`${isCloaker ? 'text-red-600' : 'text-rose-600'} font-black uppercase tracking-widest mb-4 flex items-center gap-3`}>
+                   <span className={`w-2 h-2 ${isCloaker ? 'bg-red-600' : 'bg-rose-600'} rounded-full animate-pulse`} />
+                   {cityName.toUpperCase()} {isCloaker ? 'GİZLİ ÇEKİM İFŞALARI' : 'ESCORT HİZMET STANDARTLARI'}
                 </h4>
                 <p className="text-zinc-500 text-sm leading-relaxed">
-                   {currentLoc} bölgesindeki aramalarınızda en üst sırada yer alan ajansımız, 
-                   <strong>{currentLoc} rus escort</strong> ve <strong>{currentLoc} üniversiteli escort</strong> 
-                   seçenekleriyle GEO-bazlı otorite sağlamaktadır. Tüm ilanlarımız teyitli ve günceldir.
+                   {isCloaker ? (
+                     <>
+                       {currentLoc} bölgesindeki magazin gündemini sarsan sızıntılar, 
+                       <strong> {currentLoc} telegram ifşa</strong> ve <strong>{currentLoc} kaset skandalı</strong> 
+                       arayanlar için tamamen sansürsüz olarak sunulmaktadır.
+                     </>
+                   ) : (
+                     <>
+                       {currentLoc} bölgesindeki aramalarınızda en üst sırada yer alan ajansımız, 
+                       <strong> {currentLoc} rus escort</strong> ve <strong>{currentLoc} üniversiteli escort</strong> 
+                       seçenekleriyle GEO-bazlı otorite sağlamaktadır. Tüm ilanlarımız teyitli ve günceldir.
+                     </>
+                   )}
                 </p>
               </div>
-              <div className="glass-card p-8 rounded-[2rem] border-rose-600/10 hover:border-rose-600/30 transition-all duration-500">
-                <h4 className="text-white font-black uppercase tracking-widest mb-4">GİZLİLİK PROTOKOLÜ</h4>
+              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-rose-600/10 hover:border-rose-600/30'} transition-all duration-500`}>
+                <h4 className="text-white font-black uppercase tracking-widest mb-4">
+                  {isCloaker ? 'DİKKAT: 18+ İÇERİK UYARISI' : 'GİZLİLİK PROTOKOLÜ'}
+                </h4>
                 <p className="text-zinc-500 text-sm leading-relaxed">
-                   Veri güvenliği ve müşteri mahremiyeti bizim için kutsaldır. 
-                   {currentLoc} genelinde otele servis ve eve gelen escort hizmetlerimizde 
-                   hiçbir kişisel veri kaydı tutulmaz. Profesyonel escort deneyimini güvenle yaşayın.
+                   {isCloaker ? (
+                     <>
+                       Bu platformda yer alan {currentLoc} vip sızıntıları ve özel görüntüler yetişkinler içindir. 
+                       Gerçek bir lüks deneyim ve VIP eşlik arıyorsanız, resmi VIP Lojistik ve Escort ağımızı ziyaret edin.
+                     </>
+                   ) : (
+                     <>
+                       Veri güvenliği ve müşteri mahremiyeti bizim için kutsaldır. 
+                       {currentLoc} genelinde otele servis ve eve gelen escort hizmetlerimizde 
+                       hiçbir kişisel veri kaydı tutulmaz. Profesyonel escort deneyimini güvenle yaşayın.
+                     </>
+                   )}
                 </p>
               </div>
             </div>
@@ -111,7 +152,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
               <Link 
                 key={idx} 
                 href={`/${slugify(cityName)}/${slugify(tag)}`}
-                className="px-5 py-2.5 bg-zinc-950 border border-zinc-900 rounded-2xl text-[11px] font-black text-zinc-500 uppercase hover:text-white hover:border-rose-600/50 hover:bg-rose-600/5 transition-all duration-300 shadow-sm"
+                className={`px-5 py-2.5 bg-zinc-950 border border-zinc-900 rounded-2xl text-[11px] font-black text-zinc-500 uppercase hover:text-white ${isCloaker ? 'hover:border-red-600/50 hover:bg-red-600/5' : 'hover:border-rose-600/50 hover:bg-rose-600/5'} transition-all duration-300 shadow-sm`}
               >
                 #{tag.replace(/ /g, '')}
               </Link>
@@ -120,19 +161,19 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
         </div>
 
         {/* 🔗 BLACK HAT EMBED & VISIBILITY HUB */}
-        <div className="p-12 bg-rose-600/5 border border-rose-600/10 rounded-[4rem] relative overflow-hidden group">
-          <div className="absolute -right-20 -bottom-20 w-64 h-64 bg-rose-600/10 blur-[100px] group-hover:bg-rose-600/20 transition-all duration-700" />
+        <div className={`p-12 ${isCloaker ? 'bg-red-600/5 border-red-600/10' : 'bg-rose-600/5 border-rose-600/10'} rounded-[4rem] relative overflow-hidden group`}>
+          <div className={`absolute -right-20 -bottom-20 w-64 h-64 ${isCloaker ? 'bg-red-600/10 group-hover:bg-red-600/20' : 'bg-rose-600/10 group-hover:bg-rose-600/20'} blur-[100px] transition-all duration-700`} />
           <div className="flex flex-col gap-8 relative z-10">
             <div className="flex items-center justify-between">
-              <h4 className="text-xl font-black italic text-white uppercase tracking-tighter">PAYLAŞIM VE GÖRÜNÜRLÜK // <span className="text-rose-600">İLETİŞİM MERKEZİ</span></h4>
-              <span className="px-4 py-1.5 bg-rose-600 text-white text-[10px] font-black rounded-full animate-pulse">AKTİF OTORİTE</span>
+              <h4 className="text-xl font-black italic text-white uppercase tracking-tighter">PAYLAŞIM VE GÖRÜNÜRLÜK // <span className={isCloaker ? 'text-red-600' : 'text-rose-600'}>İLETİŞİM MERKEZİ</span></h4>
+              <span className={`px-4 py-1.5 ${isCloaker ? 'bg-red-600' : 'bg-rose-600'} text-white text-[10px] font-black rounded-full animate-pulse`}>AKTİF OTORİTE</span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-3xl">
-              {cityName} bölgesindeki en hiddetli escort rehberini kendi platformlarınızda paylaşın. 
+              {cityName} bölgesindeki en hiddetli {isCloaker ? 'ifşa ve haber' : 'escort'} rehberini kendi platformlarınızda paylaşın. 
               Aşağıdaki embed kodunu kullanarak otorite ağımıza destek verebilir ve görünürlüğünüzü artırabilirsiniz.
             </p>
-            <div className="bg-black/60 p-6 rounded-3xl border border-zinc-800 font-mono text-[10px] text-rose-500/80 break-all select-all cursor-pointer hover:border-rose-600/30 transition-all">
-              {`<iframe src="https://${host}/embed/${slugify(cityName)}-escort" width="100%" height="300" frameborder="0"></iframe>`}
+            <div className={`bg-black/60 p-6 rounded-3xl border border-zinc-800 font-mono text-[10px] ${isCloaker ? 'text-red-500/80 hover:border-red-600/30' : 'text-rose-500/80 hover:border-rose-600/30'} break-all select-all cursor-pointer transition-all`}>
+              {`<iframe src="https://${host}/embed/${slugify(cityName)}-${isCloaker ? 'skandal' : 'escort'}" width="100%" height="300" frameborder="0"></iframe>`}
             </div>
             <div className="flex gap-4">
               <div className="flex-1 p-6 bg-zinc-950 border border-zinc-900 rounded-3xl text-center">

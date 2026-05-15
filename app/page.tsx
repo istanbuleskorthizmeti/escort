@@ -1,25 +1,27 @@
 import Link from "next/link";
 import { headers } from "next/headers";
+import dynamic from "next/dynamic";
 import { siteConfig } from "@/config/site";
 import { prisma } from "@/lib/prisma";
 import { getSiteId } from "@/lib/site-context";
 import Navbar from "@/components/UI/Navbar";
-import { DorukVitrin } from "@/components/SEO/DorukVitrin";
 import { UltraFooter } from "@/components/SEO/UltraFooter";
 import { SecureHTML } from "@/components/SecureHTML";
 import { GrowthWidgets } from "@/components/UI/GrowthWidgets";
 import { ThemeEngine } from "@/lib/theme-engine";
 import { ShieldCheck, Trophy, Send } from "lucide-react";
-import { MathematicalSEO } from "@/components/SEO/MathematicalSEO";
 import { generateUltraGraphSchema } from "@/lib/seo-schema";
-import { SEOContentEngine } from "@/components/SEO/SEOContentEngine";
 import { VIPBridge } from "@/components/UI/VIPBridge";
 import { VIPEventHub } from "@/components/SEO/VIPEventHub";
-import { IstanbulConquestMatrix } from "@/components/SEO/IstanbulConquestMatrix";
 import { getDomainConfig } from "@/config/domains";
 import { generateLocationMetadata } from "@/lib/seo-metadata";
 import { Metadata } from "next";
-import { LivePhotoMarquee } from "@/components/UI/LivePhotoMarquee";
+import { CloakerFrontend } from "@/components/UI/CloakerFrontend";
+
+import { DorukVitrin } from "@/components/SEO/DorukVitrin";
+import { MathematicalSEO } from "@/components/SEO/MathematicalSEO";
+import { SEOContentEngine } from "@/components/SEO/SEOContentEngine";
+import { IstanbulConquestMatrix } from "@/components/SEO/IstanbulConquestMatrix";
 
 export const dynamic = "force-dynamic";
 
@@ -62,22 +64,8 @@ export default async function HomePage() {
   const theme = ThemeEngine.getTheme(host);
   const brandName = theme.brandName;
   const slogan = theme.slogan;
-
-  // 1. Fetch Home Data
-  const pageData = await prisma.pageContent.findFirst({
-    where: { slug: "home", siteId },
-  });
-
-  // 2. Fetch Neighborhood/District SEO Links for the Matrix
-  const neighborhoodLinks = await prisma.pageContent.findMany({
-    where: { 
-      siteId,
-      slug: { notIn: ["home", "about", "contact", "whatsapp"] }
-    },
-    select: { slug: true, title: true },
-    take: 48,
-    orderBy: { updatedAt: 'desc' }
-  });
+  
+  const isCloaker = domainConfig?.role === 'CLOAKER';
 
   const cityName = "İstanbul"; // Global context
 
@@ -86,61 +74,48 @@ export default async function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
       
-      {/* 🚀 LIVE PHOTO MARQUEE (COMPETITOR KILLER) */}
-      <div className="pt-28">
-         <LivePhotoMarquee />
-      </div>
+      {isCloaker ? (
+        <CloakerFrontend districtName={district} />
+      ) : (
+        <>
+          <div className="w-full relative z-0 mb-20">
+             <DorukVitrin city={district} />
+          </div>
 
-      <div className="max-w-7xl mx-auto px-6 mb-20 mt-8">
-         <div className="glass-card p-12 rounded-[3rem] mb-12 flex flex-col md:flex-row items-center justify-between gap-10 group hover:border-rose-600/40 transition-all duration-700 shadow-glow-rose">
-            <div className="flex items-center gap-6">
-               <div className="p-4 bg-rose-600/10 rounded-2xl border border-rose-600/20">
-                  <ShieldCheck className="text-rose-600 w-10 h-10 animate-glow-pulse" />
-               </div>
-               <div>
-                  <h3 className="text-2xl font-black uppercase italic text-white tracking-widest underline decoration-rose-600/50 decoration-4 underline-offset-8">GÜNCEL VİTRİN</h3>
-                  <p className="text-xs font-bold text-zinc-600 uppercase tracking-widest mt-1">ONAYLI ELİT MODELLER</p>
-               </div>
+          {/* 🔱 HERO: BRAND Gateway (Moved Below Vitrin for UX) */}
+          <section className="pb-32 px-6 max-w-7xl mx-auto relative overflow-hidden text-center md:text-left mt-10">
+            <div className="absolute top-0 left-0 w-full h-full opacity-5 blur-[150px] rounded-full -z-10" style={{ backgroundColor: theme.primaryColor }} />
+            
+            <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-white/10 px-8 py-3 rounded-full mb-12 animate-fade-in shadow-2xl" style={{ borderColor: `${theme.primaryColor}33` }}>
+              <span className="w-2.5 h-2.5 rounded-full animate-glow-pulse" style={{ backgroundColor: theme.primaryColor, boxShadow: `0 0 15px ${theme.primaryColor}` }} />
+              <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
+                 {district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()} // GERÇEK VİTRİN
+              </span>
             </div>
-            <div className="flex items-center gap-5 text-sm font-black text-white uppercase tracking-[0.4em] italic">
-               🛡️ %100 DOĞRULANMIŞ {district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()} VİTRİNİ
+
+            <h1 className="text-6xl md:text-[10rem] font-black italic tracking-tighter leading-[0.8] mb-12 flex flex-col items-center md:items-start drop-shadow-2xl">
+              <span className="opacity-90">{brandName.toUpperCase()}</span>
+              <span className="text-primary drop-shadow-2xl" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 40px ${theme.primaryColor}88)` }}>{district === "İSTANBUL" ? "İSTANBUL" : district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()}</span>
+            </h1>
+
+            <div className="max-w-4xl border-l-8 pl-12 py-4 mx-auto md:mx-0" style={{ borderColor: theme.primaryColor }}>
+               <p className="text-zinc-400 text-xl md:text-2xl font-black uppercase italic tracking-widest leading-relaxed">
+                 {slogan}. <br className="hidden md:block"/>
+                 {district.replace(/[-\u2013\u2014]/g, ' ')} bölgesinin en seçkin vitrini. <span className="text-white underline underline-offset-8" style={{ textDecorationColor: `${theme.primaryColor}88` }}>Kaporasız</span> ve elit.
+               </p>
             </div>
-         </div>
-         <DorukVitrin city={district} />
-      </div>
+          </section>
 
-      {/* 🔱 HERO: BRAND GATEWAY (Moved Below Vitrin for UX) */}
-      <section className="pb-32 px-6 max-w-7xl mx-auto relative overflow-hidden text-center md:text-left mt-10">
-        <div className="absolute top-0 left-0 w-full h-full opacity-5 blur-[150px] rounded-full -z-10" style={{ backgroundColor: theme.primaryColor }} />
-        
-        <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-white/10 px-8 py-3 rounded-full mb-12 animate-fade-in shadow-2xl" style={{ borderColor: `${theme.primaryColor}33` }}>
-          <span className="w-2.5 h-2.5 rounded-full animate-glow-pulse" style={{ backgroundColor: theme.primaryColor, boxShadow: `0 0 15px ${theme.primaryColor}` }} />
-          <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
-             {district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()} // GERÇEK VİTRİN
-          </span>
-        </div>
-
-        <h1 className="text-6xl md:text-[10rem] font-black italic tracking-tighter leading-[0.8] mb-12 flex flex-col items-center md:items-start drop-shadow-2xl">
-          <span className="opacity-90">{brandName.toUpperCase()}</span>
-          <span className="text-primary drop-shadow-2xl" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 40px ${theme.primaryColor}88)` }}>{district === "İSTANBUL" ? "İSTANBUL" : district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()}</span>
-        </h1>
-
-        <div className="max-w-4xl border-l-8 pl-12 py-4 mx-auto md:mx-0" style={{ borderColor: theme.primaryColor }}>
-           <p className="text-zinc-400 text-xl md:text-2xl font-black uppercase italic tracking-widest leading-relaxed">
-             {slogan}. <br className="hidden md:block"/>
-             {district.replace(/[-\u2013\u2014]/g, ' ')} bölgesinin en seçkin vitrini. <span className="text-white underline underline-offset-8" style={{ textDecorationColor: `${theme.primaryColor}88` }}>Kaporasız</span> ve elit.
-           </p>
-        </div>
-      </section>
-
-      <VIPBridge />
-      
-      <div className="max-w-7xl mx-auto px-6 mb-32">
-         <IstanbulConquestMatrix />
-      </div>
+          <VIPBridge />
+          
+          <div className="max-w-7xl mx-auto px-6 mb-32">
+             <IstanbulConquestMatrix />
+          </div>
+        </>
+      )}
 
       <SEOContentEngine cityName={district} host={host} />
-      <MathematicalSEO district={district} />
+      <MathematicalSEO district={district} role={domainConfig?.role} />
       
       <UltraFooter host={host} cityName="İstanbul" districtName={district} />
 

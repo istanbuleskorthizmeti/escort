@@ -138,8 +138,16 @@ export default function CommandHQ() {
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </button>
 
-                  <Link href="/DRKCNAY-hq/pivot" className="w-full bg-black border border-zinc-800 hover:border-emerald-900 hover:bg-emerald-900/10 text-zinc-400 hover:text-emerald-500 transition-all py-3 px-4 text-xs tracking-widest uppercase flex justify-between items-center group">
+                  <Link href="/sovereign-hq/pivot" className="w-full bg-black border border-zinc-800 hover:border-emerald-900 hover:bg-emerald-900/10 text-zinc-400 hover:text-emerald-500 transition-all py-3 px-4 text-xs tracking-widest uppercase flex justify-between items-center group">
                     <span>🔄 Pivot Yönetimi</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  </Link>
+
+                  <Link href="/sovereign-hq/vitrin-manager" className="w-full bg-black border border-purple-900/50 hover:border-purple-500 hover:bg-purple-900/10 text-zinc-100 hover:text-purple-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(168,85,247,0.1)]">
+                    <span className="flex items-center gap-3">
+                      <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
+                      VİTRİN MANAGER (God Mode)
+                    </span>
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </Link>
 

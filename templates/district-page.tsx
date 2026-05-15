@@ -27,9 +27,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { city, district } = await params;
   const cityObj = cities[city];
-  const distObj = cityObjŞ.districts.find((d) => d.slug === district);
+  const distObj = cityObj?.districts.find((d) => d.slug === district);
   
-  if ('cityObj || 'distObj) return { title: "Bölge Bulunamadı" };
+  if (!cityObj || !distObj) return { title: "Bölge Bulunamadı" };
 
   return generateLocationMetadata({
     city,
@@ -46,9 +46,9 @@ export default async function DistrictHubPage({
 }) {
   const { city, district } = await params;
   const cityObj = cities[city];
-  const distObj = cityObjŞ.districts.find((d) => d.slug === district);
+  const distObj = cityObj?.districts.find((d) => d.slug === district);
 
-  if ('cityObj || 'distObj) notFound();
+  if (!cityObj || !distObj) notFound();
 
   const dName = distObj.name.replace(" VIP", "");
   const cityName = cityObj.name;
@@ -79,7 +79,7 @@ export default async function DistrictHubPage({
   const profiles = getProfilesByDistrict();
   const adminProfile = cityAdmins[city] || defaultAdmin;
   const waMessage = encodeURIComponent(adminProfile.whatsappMessage(dName));
-  const waLink = `https://wa.me/${siteConfig.contact.whatsappNumber}Ştext=${waMessage}`;
+  const waLink = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${waMessage}`;
 
   const breadcrumbs = [
     { name: "Ana Sayfa", item: "https://vipescorthizmeti.com" },
@@ -129,10 +129,10 @@ export default async function DistrictHubPage({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": `${dName} bölgesinde VIP rezervasyon süreci nasıl ilerlerŞ`,
+                  "name": `${dName} bölgesinde VIP rezervasyon süreci nasıl ilerler?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `EscortVIP platformu üzerinden ${dName} lokasyonundaki temsilcimiz ${adminProfile.name} ile iletişime geçerek tamamen gizli ve uçtan uca şŞifreli bir süreç başlatabilirsiniz.`
+                    "text": `EscortVIP platformu üzerinden ${dName} lokasyonundaki temsilcimiz ${adminProfile.name} ile iletişime geçerek tamamen gizli ve uçtan uca şifreli bir süreç başlatabilirsiniz.`
                   }
                 }
               ]
@@ -180,7 +180,7 @@ export default async function DistrictHubPage({
         </section>
 
         {/* VITRIN: GLASSMORPHISM PROFILE GRID (AÇILIP KAPANABİLİR) */}
-        {siteConfig.features.enableProfileShowcase Ş (
+        {siteConfig.features.enableProfileShowcase ? (
           <section className="mb-40">
             <div className="flex items-center justify-between mb-12">
               <h2 className="text-3xl font-black tracking-tighter uppercase italic text-zinc-200">Onaylı VIP Seçkisi</h2>
@@ -217,7 +217,7 @@ export default async function DistrictHubPage({
                       </div>
                       <div>
                          <span className="text-xs font-bold text-red-500/80 uppercase tracking-widest mb-1 block">✖ KESİN YASAK</span>
-                         <p className="text-zinc-600 text-sm">{p.adultBoundaries.excluded.join(" "¢ ")}</p>
+                         <p className="text-zinc-600 text-sm">{p.adultBoundaries.excluded.join(", ")}</p>
                       </div>
                     </div>
 
@@ -276,7 +276,7 @@ export default async function DistrictHubPage({
            <div className="space-y-4">
              <details className="group bg-zinc-950 border border-zinc-900 rounded-2xl [&_summary::-webkit-details-marker]:hidden">
                <summary className="cursor-pointer p-6 font-bold text-lg hover:text-rose-600 transition-colors outline-hidden">
-                 {dName} bölgesinde rezervasyon ve planlama süreci nasıl işlerŞ
+                 {dName} bölgesinde rezervasyon ve planlama süreci nasıl işler?
                </summary>
                <div className="p-6 pt-0 text-zinc-400 leading-relaxed">
                  EscortVIP ağı üzerinden yaptığınız tüm işlemler {adminProfile.name} yönetimi altında uçtan uca şifrelenir. {cityName} şehrinin dinamiklerine tam hakimiyetimiz sayesinde, {dName} içindeki en lüks otel, residence veya gizli mekan yönlendirmeleri tarafımızca sağlanır. Bize sadece zamanı iletin, geri kalan her bir lüks detayı ajansımız yapılandırsın.
@@ -285,7 +285,7 @@ export default async function DistrictHubPage({
 
              <details className="group bg-zinc-950 border border-zinc-900 rounded-2xl [&_summary::-webkit-details-marker]:hidden">
                <summary className="cursor-pointer p-6 font-bold text-lg hover:text-rose-600 transition-colors outline-hidden">
-                 Görüşmelerde güvenlik ve gizlilik protokolleri vipescorthizmeti.com güvencesinde miŞ
+                 Görüşmelerde güvenlik ve gizlilik protokolleri vipescorthizmeti.com güvencesinde mi?
                </summary>
                <div className="p-6 pt-0 text-zinc-400 leading-relaxed">
                  Kesinlikle. Elit Executive kod adıyla yürüttüğümüz bu sistemde; telefon numaralarınız maskelenir, veriler 24 saat içinde sistemimizden tamamen silinir. Hem profil onayları hem de beyefendilerin güvenliği açısından Türkiye&apos;nin tartışmasız en sıkı protokolünü uyguluyoruz. İş çıkışı veya özel kaçamaklarınız escortvip markasının çelik kasasındadır.
@@ -303,7 +303,7 @@ export default async function DistrictHubPage({
           <div className="text-[10px] font-black tracking-[1em] text-zinc-700 uppercase italic">
             VIP PARTNER ARCHITECTURE // ESCORTVIP.NET
           </div>
-         <p className="mt-4 text-xs text-zinc-800 uppercase tracking-widest">Arama ve eşleştirme süreciniz vipescorthizmeti.com&apos;in tamamen şŞifreli özel protokolü altındadır.</p>
+         <p className="mt-4 text-xs text-zinc-800 uppercase tracking-widest">Arama ve eşleştirme süreciniz vipescorthizmeti.com&apos;in tamamen şifreli özel protokolü altındadır.</p>
       </footer>
     </div>
   );

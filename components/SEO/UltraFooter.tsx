@@ -86,7 +86,7 @@ export function UltraFooter({ host, cityName, districtName, neighborhoodName }: 
                <div className="flex items-center gap-4">
                   <h4 className="text-white text-xl font-black uppercase tracking-widest italic">NETWORK NODES // <span className="text-rose-600">ÖZEL NETWORK</span></h4>
                </div>
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+               <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem' }}>
                   {[
                     'vipescorthizmeti.shop', 'bagcilarescort.shop', 'esenyurtescort.blog', 
                     'beylikduzuescortlistesi.shop', 'besiktasescort.fun', 'taksimescorthizmeti.shop',
@@ -99,8 +99,9 @@ export function UltraFooter({ host, cityName, districtName, neighborhoodName }: 
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group p-5 bg-zinc-950/30 border border-zinc-900/30 rounded-2xl hover:border-rose-600/40 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl"
+                      style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
-                      <span className="text-[10px] font-black text-zinc-600 group-hover:text-white uppercase tracking-[0.2em] italic block transition-colors">
+                      <span className="text-[10px] font-black text-zinc-600 group-hover:text-white uppercase tracking-[0.2em] italic block transition-colors" style={{ color: '#52525b' }}>
                         {node}
                       </span>
                     </a>
@@ -112,14 +113,15 @@ export function UltraFooter({ host, cityName, districtName, neighborhoodName }: 
                <div className="flex items-center gap-4">
                   <h4 className="text-white text-xl font-black uppercase tracking-widest italic">BÖLGESEL HİZMET AĞI // <span className="text-rose-600">İSTANBUL SEÇKİSİ</span></h4>
                </div>
-               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+               <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem' }}>
                   {districts.map(area => (
                     <Link 
                       key={area} 
                       href={`/${area.toLowerCase().replace(' ', '-')}-escort`} 
                       className="group p-5 bg-zinc-950/30 border border-zinc-900/30 rounded-2xl hover:border-rose-600/40 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl"
+                      style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
-                      <span className="text-[10px] font-black text-zinc-600 group-hover:text-white uppercase tracking-[0.2em] italic block transition-colors">
+                      <span className="text-[10px] font-black text-zinc-600 group-hover:text-white uppercase tracking-[0.2em] italic block transition-colors" style={{ color: '#52525b' }}>
                         {area}
                       </span>
                     </Link>

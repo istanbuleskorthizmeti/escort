@@ -317,7 +317,8 @@ export function CloakerIfsa({ host, mode = 'TRAP' }: { host: string, mode?: 'TRA
         </div>
 
         {/* Aggressive Black SEO Text Block for Long-Tail Trap */}
-        <article className="mt-20 md:mt-32 prose prose-invert max-w-none bg-gradient-to-b from          <h2 className="text-red-500 text-xl md:text-3xl font-black mb-6 uppercase tracking-tighter">Kesintisiz Türk İfşa, Vahşi Escort Gizli Çekim ve Sınırsız Seksi Arşivi</h2>
+        <article className="mt-20 md:mt-32 prose prose-invert max-w-none">
+          <h2 className="text-red-500 text-xl md:text-3xl font-black mb-6 uppercase tracking-tighter">Kesintisiz Türk İfşa, Vahşi Escort Gizli Çekim ve Sınırsız Seksi Arşivi</h2>
           <div className="text-zinc-400 leading-relaxed text-xs md:text-sm columns-1 md:columns-2 gap-8 text-justify">
             <p className="mb-4">
               Türkiye'nin en derin ve güncel <strong className="text-zinc-200">vahşi escort ifşa</strong>, <strong>sınırsız seksi gizli çekim</strong>, ve <em>onlyfans sızıntıları</em> veritabanına ulaştınız. Sistemimizdeki tüm <strong>vahşi escort izle</strong> linkleri 1080p Full HD kalitesindedir. Şişli, Kadıköy, Beşiktaş ve Avrupa Yakası'nda hizmet veren elit profillerin sızdırılmış otel kasetleri, ev partisi görüntüleri ve <strong className="text-zinc-200">çılgın escort kaporasız</strong> buluşmalarının gizli kamera kayıtları günlük olarak sunucularımıza yüklenmektedir.
@@ -339,18 +340,7 @@ export function CloakerIfsa({ host, mode = 'TRAP' }: { host: string, mode?: 'TRA
              </div>
           </div>
 
-          {/* 🕷️ BLACK SEO: HIDDEN PBN DOMAIN AUTHORITY TRANSFER & LSI BOMBARDMENT */}
-          <div className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden" aria-hidden="true">
-             <a href="https://avrupayakasiescort.shop" title="Vahşi Avrupa Yakası Escort" rel="dofollow">Avrupa Yakası Escort</a>
-             <a href="https://vipescorthizmeti.com" title="Vahşi VIP Escort" rel="dofollow">VIP Escort</a>
-             <a href="https://istanbulescortkaporasiz.shop" title="Vahşi Kaporasız Escort" rel="dofollow">Kaporasız Escort</a>
-             {/* Invisible LSI Layer */}
-             <p>istanbul escort, rus escort istanbul, üniversiteli escort, çıtır escort, kaporasız escort, evli escort ifşa, otel odası gizli çekim, türk ifşa indir, sansürsüz ifşa izle, beşiktaş escort, kadıköy escort, şişli escort, esenyurt escort, beylikdüzü escort, ataşehir escort, ümraniye escort, bakırköy escort, florya escort, yeşilköy escort, levent escort, maslak escort, mecidiyeköy escort, taksim escort, beyoğlu escort, ortaköy escort, bebek escort, kaporasız garantili escort, fotoğrafları gerçek escort, videoları gerçek escort, sesli onaylı escort, rus modeller istanbul, yabancı escort istanbul, ukraynalı escort istanbul, azeri escort istanbul, iranlı escort istanbul, özbek escort istanbul, türkmen escort istanbul, gizli kaçamak istanbul, gece hayatı istanbul, vip escort rehberi, escort bayan numaraları, whatsapp escort numaraları, telegram ifşa kanalları, onlyfans ücretsiz sızıntı, escort ifşa videoları, gizli çekim ifşa, skandal ifşa, magazin ifşa, ünlü ifşaları, fenomen ifşaları</p>
-          </div>
-ort.shop" title="Agresif Avrupa Yakası Escort" rel="dofollow">Avrupa Yakası Escort</a>
-             <a href="https://vipescorthizmeti.com" title="Agresif VIP Escort" rel="dofollow">VIP Escort</a>
-             <a href="https://istanbulescortkaporasiz.shop" title="Agresif Kaporasız Escort" rel="dofollow">Kaporasız Escort</a>
-          </div>
+
         </article>
       </main>
 

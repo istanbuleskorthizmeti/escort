@@ -8,7 +8,13 @@ export const metadata: Metadata = {
   description: 'Türkiye\'nin elit escort ve vip partner sektörüne yön veren "Elit" prensipleri, gizlilik terimleri ve üst düzey hizmet lügatı.',
 };
 
-const terms = [
+type EncyclopediaTerm = {
+  term: string;
+  definition: string;
+  deepLink?: string;
+};
+
+const terms: EncyclopediaTerm[] = [
   {
     term: "Tam Gizlilik (Sıfır-İz)",
     definition: "Dijital veya fiziksel hiçbir ayak izi bırakmadan sürecin baştan sona kapalı devre iletişim (WhatsApp/Telegram kripto modları) üzerinden yürütülüp sonlandırılması. İş dünyasından isimler için en kritik kuraldır.",
@@ -36,6 +42,7 @@ const terms = [
   {
     term: "GFE (Girlfriend Experience)",
     definition: "Randevunun yalnızca fiziksel bir birleşmeden ibaret olmadığı; sohbet, şefkat, restoranda yemek gibi 'gerçek sevgili' dinamiklerini barındıran üst düzey konsept.",
+    deepLink: "/ansiklopedi/iliski-simyasi"
   },
   {
     term: "CIM / COB (Tabu Protokolleri)",
@@ -44,6 +51,7 @@ const terms = [
   {
     term: "BDSM & Dominatrix",
     definition: "Bağlama, disiplin, tahakküm ve itaat sınırlarının güvenli kelimeler (safe word) eşliğinde test edildiği; iş hayatında çok yorulan 'Alfa' erkeklerin kontrolü devrettiği psikolojik rahatlama yöntemi.",
+    deepLink: "/ansiklopedi/fantezi-arkeolojisi"
   },
   {
     term: "Incall / Outcall",
@@ -92,6 +100,7 @@ const terms = [
   {
     term: "Tam Gizlilik Matrix",
     definition: "Müşterinin dijital, finansal ve lokasyon bazlı tüm verilerinin görüşme anında şifrelenip, işlem bittiğinde merkezi algoritma tarafından geri döndürülemez şekilde silinmesi.",
+    deepLink: "/ansiklopedi/gizlilik-matrisi"
   },
   {
     term: "VIP Escort Lojistiği",
@@ -104,10 +113,12 @@ const terms = [
   {
     term: "Biyo-Hacking Seansı",
     definition: "Dr. DRKCNAY'ın geliştirdiği tekniklerle, randevu öncesi ve anında erkeğin performansını ve zindeliğini artıran mikro-besin ve atmosfer yönetimi.",
+    deepLink: "/ansiklopedi/biyo-hacking"
   },
   {
     term: "Dirty Talk Linguistiği",
     definition: "Sözcüklerin frekans bazlı uyarılmaya dönüştüğü, zihinsel bariyerlerin Eda Nur metotlarıyla aşıldığı erotik iletişim sanatı.",
+    deepLink: "/ansiklopedi/erotik-linguistik"
   }
 ];
 
@@ -121,17 +132,17 @@ export default function EncyclopediaPage() {
       <main className="max-w-5xl mx-auto py-24 px-6 md:px-12 relative">
         {/* Floating Index (Desktop Only) */}
         <nav className="fixed left-12 top-1/2 -translate-y-1/2 hidden xl:flex flex-col gap-4 z-40">
-           {indexTerms.map((t, idx) => (
-             <a 
-              key={idx} 
+          {indexTerms.map((t, idx) => (
+            <a
+              key={idx}
               href={`#${t.term.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
               className="w-2 h-2 rounded-full bg-zinc-800 hover:bg-rose-600 hover:scale-150 transition-all duration-300 group relative"
-             >
-                <span className="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-[8px] font-black uppercase tracking-widest text-zinc-500">
-                  {t.term}
-                </span>
-             </a>
-           ))}
+            >
+              <span className="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-[8px] font-black uppercase tracking-widest text-zinc-500">
+                {t.term}
+              </span>
+            </a>
+          ))}
         </nav>
 
         <div className="mb-32 text-center">
@@ -150,22 +161,15 @@ export default function EncyclopediaPage() {
         <div className="space-y-12">
           {terms.map((t, idx) => {
             const anchorId = t.term.toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            // Mapping for deep links
-            let deepLink = "";
-            if (t.term.includes("Dirty Talk")) deepLink = "/ansiklopedi/erotik-linguistik";
-            if (t.term.includes("Biyo-Hacking")) deepLink = "/ansiklopedi/biyo-hacking";
-            if (t.term.includes("Gizlilik Matrix")) deepLink = "/ansiklopedi/gizlilik-matrisi";
-            if (t.term.includes("GFE")) deepLink = "/ansiklopedi/iliski-simyasi";
-            if (t.term.includes("BDSM")) deepLink = "/ansiklopedi/fantezi-arkeolojisi";
 
             return (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 id={anchorId}
                 className="bg-zinc-950/40 backdrop-blur-3xl border border-zinc-900 p-8 md:p-16 rounded-[3rem] hover:border-rose-600/50 transition-all duration-700 group relative overflow-hidden"
               >
                 <div className="absolute top-0 right-0 p-8 opacity-0 group-hover:opacity-10 transition-opacity text-rose-600 font-black italic text-8xl -z-10">
-                   {t.term[0]}
+                  {t.term[0]}
                 </div>
                 <h2 className="text-3xl md:text-5xl font-black italic text-rose-500 mb-6 group-hover:text-rose-400 transition-colors tracking-tighter uppercase">
                   {t.term}
@@ -173,9 +177,9 @@ export default function EncyclopediaPage() {
                 <p className="text-zinc-400 text-lg md:text-2xl leading-relaxed font-medium italic border-l-4 border-zinc-900 group-hover:border-rose-600 pl-8 transition-colors">
                   {t.definition}
                 </p>
-                {deepLink && (
-                  <Link 
-                    href={deepLink} 
+                {t.deepLink && (
+                  <Link
+                    href={t.deepLink}
                     className="mt-8 inline-block text-[10px] font-black uppercase tracking-widest text-white border-b-2 border-rose-600 pb-1 hover:text-rose-600 transition-colors"
                   >
                     Detaylı İncelemeyi Oku (God Mode) →
@@ -189,7 +193,7 @@ export default function EncyclopediaPage() {
         <div className="mt-40 text-center space-y-12">
           <div className="h-px bg-linear-to-r from-transparent via-zinc-900 to-transparent"></div>
           <Link href="/protokol" className="group text-zinc-500 hover:text-rose-500 font-black tracking-[0.4em] uppercase italic text-sm transition-all duration-500">
-             TAM KATILIM <span className="text-white group-hover:text-rose-600">PROTOKOLÜNÜ</span> OKU →
+            TAM KATILIM <span className="text-white group-hover:text-rose-600">PROTOKOLÜNÜ</span> OKU →
           </Link>
         </div>
       </main>

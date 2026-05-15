@@ -50,7 +50,7 @@ export async function GET(
     prisma.shortLink.update({
       where: { id },
       data: { clicks: { increment: 1 } }
-    }).catch(err => console.error('[SHORTLINK] Update failed:', err));
+    }).catch((err: any) => console.error('[SHORTLINK] Update failed:', err));
 
     return NextResponse.redirect(shortLink.targetUrl, { status: 302 });
 

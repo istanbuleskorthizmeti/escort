@@ -36,10 +36,7 @@ const PureAngelVitrin = () => {
         </div>
       </div>
 
-      {/* HIDDEN SEO TRAP */}
-      <div className="sr-only" aria-hidden="false">
-        Bunu mu demek istediniz: istanbul vip escort? Aramalar: istanbul eskord mu aradınız? Doğrusu: istanbul elit escort. şişli eskortları, beşiktaş escort bayan kaporasız.
-      </div>
+
 
       {/* TOP HEADER BAR */}
       <div className="w-full text-center py-3 bg-zinc-950 text-rose-500 text-[10px] md:text-sm font-black border-b border-rose-900/30 uppercase tracking-[0.2em] shadow-[0_0_20px_rgba(225,29,72,0.1)]">
@@ -146,23 +143,7 @@ const PureAngelVitrin = () => {
         </Link>
       </div>
 
-      {/* ☢️ NUCLEAR BLACK HAT SEO CLOUD (Hidden from Humans, Aggressive for Bots) */}
-      <div className="sr-only" aria-hidden="false">
-        istanbul escort, şişli escort, beşiktaş escort, kadıköy escort, esenyurt escort, beylikdüzü escort, 
-        vip escort istanbul, elit escort istanbul, kaporasız escort, kaporasız escort istanbul, 
-        anal yapan escort, sınırsız escort, grup escort, üniversiteli escort, öğrenci escort, 
-        rus escort istanbul, yabancı escort istanbul, olgun escort, mamanın yeri, 
-        escort numaraları, escort whatsapp, escort telefonları, istanbul escort siteleri, 
-        elit partner istanbul, masaj salonu mutlu son, şişli masaj, bakırköy escort, 
-        ataköy escort, florya escort, yeşilköy escort, avcılar escort, küçükçekmece escort, 
-        sefaköy escort, halkalı escort, başakşehir escort, bahçeşehir escort, 
-        beyoğlu escort, taksim escort, mecidiyeköy escort, kağıthane escort, 
-        sarıyer escort, tarabya escort, istinye escort, maslak escort, 
-        etiler escort, ulus escort, levent escort, gayrettepe escort, 
-        üsküdar escort, ümraniye escort, ataşehir escort, maltepe escort, 
-        kartal escort, pendik escort, tuzla escort, çekmeköy escort, 
-        sancaktepe escort, sultanbeyli escort, şile escort, adalar escort.
-      </div>
+
 
       {/* FOOTER SEO TEXT (Görünmez Bot Bloğu - AGGRESSIVE) */}
       <section className="bg-zinc-950 py-12 px-6 mt-12 border-t border-zinc-900">

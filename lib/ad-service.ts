@@ -38,7 +38,7 @@ export async function getHybridProfiles({
     });
 
     // 2. Map Database ads to Persona format
-    const realProfiles = ads.map(ad => ({
+    const realProfiles = ads.map((ad: any) => ({
       id: ad.id,
       name: ad.name,
       age: ad.age,

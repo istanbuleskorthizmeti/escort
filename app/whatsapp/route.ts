@@ -28,7 +28,7 @@ export async function GET(request: Request) {
   
   // 🛡️ CRITICAL: Await the report to ensure delivery before redirect terminates the process
   console.log(`📡 [WHATSAPP] Sending Telegram report for host: ${host}`);
-  await sendTelegramReport(report).catch(err => {
+  await sendTelegramReport(report).catch((err: any) => {
     console.error("❌ [WHATSAPP] Telegram Delivery Failed:", err);
   });
 
@@ -39,7 +39,7 @@ export async function GET(request: Request) {
       referer,
       city,
     }
-  }).catch(err => console.error('[WHATSAPP] DB Logging failed:', err));
+  }).catch((err: any) => console.error('[WHATSAPP] DB Logging failed:', err));
 
   const text = encodeURIComponent(`Merhaba, ${host} üzerinden ulaşıyorum. Bilgi almak istiyorum.`);
   const whatsappLink = `https://wa.me/905520949245?text=${text}`;

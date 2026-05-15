@@ -80,7 +80,7 @@ ${THEME.FOOTER}
       [Markup.button.callback(`${THEME.PULSE} Sahiplen`, `claim_${lead.id}`)]
     ]);
 
-    return await bot.telegram.sendMessage(CHAT_ID!, message, {
+    return await bot?.telegram.sendMessage(CHAT_ID!, message, {
       parse_mode: 'HTML',
       link_preview_options: { is_disabled: true },
       ...keyboard
@@ -154,12 +154,12 @@ ${THEME.FOOTER}
 
     try {
       if (keyboard) {
-        await bot.telegram.editMessageText(CHAT_ID!, messageId, undefined, message, {
+        await bot?.telegram.editMessageText(CHAT_ID!, messageId, undefined, message, {
           parse_mode: 'HTML',
           ...keyboard
         });
       } else {
-        await bot.telegram.editMessageText(CHAT_ID!, messageId, undefined, message, {
+        await bot?.telegram.editMessageText(CHAT_ID!, messageId, undefined, message, {
           parse_mode: 'HTML'
         });
       }
@@ -170,7 +170,7 @@ ${THEME.FOOTER}
 
   async handleUpdate(update: any) {
     try {
-      await bot.handleUpdate(update);
+      await bot?.handleUpdate(update);
     } catch (e) {
       console.error("[TG Update Error]:", e);
     }
@@ -179,7 +179,7 @@ ${THEME.FOOTER}
   async sendMessage(text: string) {
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID) return;
     try {
-      await bot.telegram.sendMessage(CHAT_ID, text, { parse_mode: 'HTML' });
+      await bot?.telegram.sendMessage(CHAT_ID, text, { parse_mode: 'HTML' });
     } catch (e) {
       console.error("TG Send Error:", e);
     }
@@ -207,7 +207,7 @@ ${stats.regions.map(r => `• ${r.name}: <code>${r.count}</code> Seans`).join('\
 ${THEME.DIVIDER}
 ${THEME.FOOTER}
     `.trim();
-    return await bot.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML' });
+    return await bot?.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML' });
   },
 
   async sendSystemHealthReport() {
@@ -250,7 +250,7 @@ ${onlineCount >= 8 ? THEME.SUCCESS : THEME.WARNING} <i>Sistem %${Math.round(onli
 ${THEME.DIVIDER}
     `.trim();
 
-    return await bot.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML' });
+    return await bot?.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML' });
   },
 
   async sendHydrationBatchReport(data: { totalProcessed: number, batchSize: number, items: { slug: string, title: string, tags: string[] }[] }) {
@@ -295,7 +295,7 @@ ${THEME.FOOTER}
 ${THEME.DIVIDER}
     `.trim();
 
-    return await bot.telegram.sendMessage(CHAT_ID!, message, {
+    return await bot?.telegram.sendMessage(CHAT_ID!, message, {
       parse_mode: 'HTML',
       link_preview_options: { is_disabled: true }
     });
@@ -315,7 +315,7 @@ ${THEME.DIVIDER}
 ${THEME.FOOTER}
     `.trim();
 
-    return await bot.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML' });
+    return await bot?.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML' });
   },
 
   async sendBloggerReport(report: { platform: string, title: string, url: string, location: string }) {
@@ -335,7 +335,7 @@ ${THEME.DIVIDER}
 ${THEME.FOOTER}
     `.trim();
 
-    return await bot.telegram.sendMessage(CHAT_ID!, message, {
+    return await bot?.telegram.sendMessage(CHAT_ID!, message, {
       parse_mode: 'HTML',
       link_preview_options: { is_disabled: true }
     });
@@ -378,7 +378,7 @@ ${THEME.FOOTER}
     message += `${THEME.DIVIDER}\n`;
     message += `${THEME.FOOTER}`;
 
-    return await bot.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML', link_preview_options: { is_disabled: true } });
+    return await bot?.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML', link_preview_options: { is_disabled: true } });
   },
 
   async reportError(title: string, error: string) {
@@ -392,7 +392,7 @@ ${THEME.DIVIDER}
 ${THEME.DIVIDER}
     `.trim();
     try {
-      await bot.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML' });
+      await bot?.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML' });
     } catch (e) {
       console.error("TG Error Report Failed:", e);
     }
@@ -436,7 +436,7 @@ ${report.executionTimeMs ? `⏱️ <b>Süre:</b> ${(Number(report.executionTimeM
     message += `\n${THEME.DIVIDER}\n${THEME.FOOTER}`;
 
     try {
-      await bot.telegram.sendMessage(CHAT_ID!, message.trim(), { parse_mode: 'HTML' });
+      await bot?.telegram.sendMessage(CHAT_ID!, message.trim(), { parse_mode: 'HTML' });
     } catch (e) {
       console.error("TG Orchestrator Report Failed:", e);
     }
@@ -451,7 +451,7 @@ const checkAuth = (ctx: any) => {
   return senderId === CHAT_ID || senderId === process.env.ADMIN_TG_ID || ctx.chat?.id.toString() === CHAT_ID;
 };
 
-bot.action(/claim_(.+)/, async (ctx) => {
+bot?.action(/claim_(.+)/, async (ctx) => {
   if (!checkAuth(ctx)) return ctx.answerCbQuery("⚠️ Yetkisiz Erişim.");
   const leadId = ctx.match[1];
   const adminName = ctx.from?.username || ctx.from?.first_name || 'Admin';
@@ -466,7 +466,7 @@ bot.action(/claim_(.+)/, async (ctx) => {
   } catch (e) { await ctx.answerCbQuery("❌ Hata."); }
 });
 
-bot.action(/loc_sent_(.+)/, async (ctx) => {
+bot?.action(/loc_sent_(.+)/, async (ctx) => {
   if (!checkAuth(ctx)) return;
   const leadId = ctx.match[1];
   const lead = await prisma.lead.update({ where: { id: leadId }, data: { status: 'LOCATION_SENT' } });
@@ -474,7 +474,7 @@ bot.action(/loc_sent_(.+)/, async (ctx) => {
   await ctx.answerCbQuery("📍 Konum iletildi.");
 });
 
-bot.action(/in_session_(.+)/, async (ctx) => {
+bot?.action(/in_session_(.+)/, async (ctx) => {
   if (!checkAuth(ctx)) return;
   const leadId = ctx.match[1];
   const lead = await prisma.lead.update({ where: { id: leadId }, data: { status: 'IN_SESSION' } });
@@ -482,7 +482,7 @@ bot.action(/in_session_(.+)/, async (ctx) => {
   await ctx.answerCbQuery("🔥 Seans başladı.");
 });
 
-bot.action(/payment_(.+)/, async (ctx) => {
+bot?.action(/payment_(.+)/, async (ctx) => {
   if (!checkAuth(ctx)) return;
   const leadId = ctx.match[1];
   const lead = await prisma.lead.update({ where: { id: leadId }, data: { status: 'PAYMENT_RECEIVED' } });
@@ -490,7 +490,7 @@ bot.action(/payment_(.+)/, async (ctx) => {
   await ctx.answerCbQuery("💰 Ödeme alındı.");
 });
 
-bot.action(/complete_(.+)/, async (ctx) => {
+bot?.action(/complete_(.+)/, async (ctx) => {
   if (!checkAuth(ctx)) return;
   const leadId = ctx.match[1];
   const lead = await prisma.lead.update({ where: { id: leadId }, data: { status: 'COMPLETED' } });
@@ -498,7 +498,7 @@ bot.action(/complete_(.+)/, async (ctx) => {
   await ctx.answerCbQuery("✅ Bitti.");
 });
 
-bot.action(/cancel_(.+)/, async (ctx) => {
+bot?.action(/cancel_(.+)/, async (ctx) => {
   if (!checkAuth(ctx)) return;
   const leadId = ctx.match[1];
   const lead = await prisma.lead.update({ where: { id: leadId }, data: { status: 'CANCELLED' } });
@@ -506,7 +506,7 @@ bot.action(/cancel_(.+)/, async (ctx) => {
   await ctx.answerCbQuery("❌ İptal.");
 });
 
-bot.on('text', async (ctx) => {
+bot?.on('text', async (ctx) => {
   if (!checkAuth(ctx)) return;
 
   const msg = ctx.message as any;
@@ -553,9 +553,9 @@ bot.on('text', async (ctx) => {
 /**
  * 🛰️ COMMANDS
  */
-bot.start((ctx) => ctx.replyWithHTML(THEME.HEADER + "\nElite Protokol Aktif. /yardim yazarak başlayın."));
+bot?.start((ctx) => ctx.replyWithHTML(THEME.HEADER + "\nElite Protokol Aktif. /yardim yazarak başlayın."));
 
-bot.command(['yardim', 'help'], async (ctx) => {
+bot?.command(['yardim', 'help'], async (ctx) => {
   const helpMsg = `
 🛡️ <b>DRKCNAY KOMUTA MERKEZİ</b>
 ${THEME.DIVIDER}
@@ -576,22 +576,22 @@ ${THEME.FOOTER}
   await ctx.replyWithHTML(helpMsg);
 });
 
-bot.command(['durum', 'status'], async (ctx) => {
+bot?.command(['durum', 'status'], async (ctx) => {
   try {
     const leadCount = await prisma.lead.count();
     await ctx.replyWithHTML(`📊 <b>SİSTEM STATS</b>\n${THEME.DIVIDER}\nTalepler: ${leadCount}\nProxy: Aktif`);
   } catch (e) { await ctx.reply("Hata."); }
 });
 
-bot.command(['liste', 'leads'], async (ctx) => {
+bot?.command(['liste', 'leads'], async (ctx) => {
   const leads = await prisma.lead.findMany({ where: { status: 'PENDING' }, take: 5 });
   if (leads.length === 0) return ctx.reply("Sıfır talep.");
   let msg = `📂 <b>BEKLEYENLER</b>\n`;
-  leads.forEach(l => msg += `🆔 ${l.id} | ${l.cityName}\n`);
+  leads.forEach((l: any) => msg += `🆔 ${l.id} | ${l.cityName}\n`);
   await ctx.replyWithHTML(msg);
 });
 
-bot.command('seo', async (ctx) => {
+bot?.command('seo', async (ctx) => {
   const args = ctx.message.text.split(' ').slice(1);
   const keyword = args.join(' ');
 
@@ -644,7 +644,7 @@ ${domain.topKeywords.map((k, i) => `${i + 1}. <code>${k.keyword}</code> -> #${k.
 
     const deltaBlock = latestDeltas.length > 0
       ? `\n📉 <b>Son Sıralama Hareketleri:</b>\n` +
-        latestDeltas.map(d => {
+        latestDeltas.map((d: any) => {
           const icon = (d.change ?? 0) > 0 ? '🚀' : (d.change ?? 0) < 0 ? '📉' : '➡️';
           return `${icon} <code>${d.keyword}</code>: #${(Number(d.position) || 0).toFixed(1)} (${(d.change ?? 0) > 0 ? '+' : ''}${(Number(d.change) || 0).toFixed(1)})`;
         }).join('\n')
@@ -658,7 +658,7 @@ ${domain.topKeywords.map((k, i) => `${i + 1}. <code>${k.keyword}</code> -> #${k.
 
     let recentPagesBlock = '\n🌐 <b>Son Oluşturulan Uydu Sayfalar (Subdomain/Hedefler):</b>\n';
     if (latestPages.length > 0) {
-        latestPages.forEach(p => {
+        latestPages.forEach((p: any) => {
             recentPagesBlock += `• <code>${p.slug}</code> - ${p.title}\n`;
         });
     } else {
@@ -697,7 +697,7 @@ ${THEME.FOOTER}
   }
 });
 
-bot.command('health', async (ctx) => {
+bot?.command('health', async (ctx) => {
   await TelegramService.sendSystemHealthReport();
 });
 
@@ -705,7 +705,7 @@ bot.command('health', async (ctx) => {
 // 🚀 GERİLLA SEO KOMUTLARI (TELEFONDAN KONTROL)
 // ==========================================
 
-bot.command('pbn_saldir', async (ctx) => {
+bot?.command('pbn_saldir', async (ctx) => {
   const args = ctx.message.text.split(' ').slice(1);
   const district = args.join(' ') || 'Şişli';
   const city = 'İstanbul';
@@ -728,7 +728,7 @@ bot.command('pbn_saldir', async (ctx) => {
 });
 
 /*
-bot.command('pinterest_pin', async (ctx) => {
+bot?.command('pinterest_pin', async (ctx) => {
   const args = ctx.message.text.split(' ').slice(1);
   const district = args.join(' ') || 'Şişli';
   const city = 'İstanbul';
@@ -747,7 +747,7 @@ bot.command('pinterest_pin', async (ctx) => {
 });
 */
 
-bot.command('reddit_saldir', async (ctx) => {
+bot?.command('reddit_saldir', async (ctx) => {
   await ctx.replyWithHTML(`🛸 <b>REDDIT ENGAGEMENT POD AKTİFLEŞTİRİLİYOR!</b>\n${THEME.DIVIDER}\n📡 Durum: Subredditler taranıyor...`);
   
   try {
@@ -765,7 +765,7 @@ bot.command('reddit_saldir', async (ctx) => {
 // 👑 MEGA-SIEGE COMMAND CENTER
 // ==========================================
 
-bot.command('profil_yayinla', async (ctx) => {
+bot?.command('profil_yayinla', async (ctx) => {
   await ctx.replyWithHTML(`📸 <b>VIP PROFİL YAYINLANIYOR!</b>\n${THEME.DIVIDER}\n📡 Durum: Profil seçiliyor ve ağlara dağıtılıyor...`);
   
   try {
@@ -810,7 +810,7 @@ Hemen iletişime geçin ve randevunuzu oluşturun:
   }
 });
 
-bot.command('hedef', async (ctx) => {
+bot?.command('hedef', async (ctx) => {
   const keyword = ctx.message.text.replace('/hedef', '').trim();
   
   if (!keyword) {
@@ -835,7 +835,7 @@ bot.command('hedef', async (ctx) => {
 });
 
 // ==========================================
-bot.command('gsc_bas', async (ctx) => {
+bot?.command('gsc_bas', async (ctx) => {
   await ctx.replyWithHTML(`🚀 <b>GSC & SITEMAP DOMİNASYONU BAŞLATILIYOR!</b>\n${THEME.DIVIDER}\n📡 Durum: Tüm matrix alan adları Google Search Console'a ekleniyor ve sitemap'ler gönderiliyor...`);
   
   try {
@@ -854,7 +854,7 @@ bot.command('gsc_bas', async (ctx) => {
   }
 });
 
-bot.command('backlog', async (ctx) => {
+bot?.command('backlog', async (ctx) => {
   const pendingBlogger = await prisma.pageContent.count({ where: { isBloggerPosted: false } });
   const pendingTumblr = await prisma.pageContent.count({ where: { isTumblrPosted: false } });
   const pendingWP = await prisma.pageContent.count({ where: { isWordPressPosted: false } });
@@ -875,7 +875,7 @@ ${THEME.DIVIDER}
   await ctx.replyWithHTML(msg);
 });
 
-bot.command('audit', async (ctx) => {
+bot?.command('audit', async (ctx) => {
   try {
     const deltas = await prisma.rankingDelta.findMany({
       orderBy: { timestamp: 'desc' },
@@ -887,7 +887,7 @@ bot.command('audit', async (ctx) => {
     }
 
     let msg = `🔍 <b>SIRALAMALAR: SON 10 HAREKET</b>\n${THEME.DIVIDER}\n`;
-    deltas.forEach((d, i) => {
+    deltas.forEach((d: any, i: any) => {
       const changeIcon = (d.change ?? 0) > 0 ? '🚀' : (d.change ?? 0) < 0 ? '📉' : '➡️';
       const changeStr = (d.change ?? 0) !== 0
         ? ` <b>${(d.change ?? 0) > 0 ? '+' : ''}${(Number(d.change) || 0).toFixed(1)}</b>`

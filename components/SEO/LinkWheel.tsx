@@ -92,7 +92,7 @@ export function LinkWheel({ currentHost }: LinkWheelProps) {
       <h3 className="text-xs font-bold text-zinc-500 uppercase tracking-widest mb-6 opacity-70">
         {dynamicHeader}
       </h3>
-      <div className={layoutStyle}>
+      <div className={layoutStyle} style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}>
         {pickedDomains.map((domain, index) => {
           const location = domain.targetDistrict 
             ? `${domain.targetDistrict.charAt(0).toUpperCase() + domain.targetDistrict.slice(1)}` 
@@ -120,6 +120,7 @@ export function LinkWheel({ currentHost }: LinkWheelProps) {
               href={`https://${domain.host}`}
               className="text-[11px] text-zinc-400 hover:text-white transition-all duration-300 border border-zinc-800 hover:border-rose-800 px-4 py-2 rounded bg-zinc-950/30 hover:bg-rose-950/20 text-center shadow-sm"
               title={anchorText}
+              style={{ textDecoration: 'none', color: '#a1a1aa', display: 'inline-block' }}
             >
               {anchorText}
             </Link>

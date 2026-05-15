@@ -196,12 +196,7 @@ export function CloakerStream({ host }: { host: string }) {
            </div>
         </div>
 
-        {/* 🕷️ BLACK SEO: HIDDEN PBN DOMAIN AUTHORITY TRANSFER */}
-        <div className="absolute opacity-0 pointer-events-none w-0 h-0 overflow-hidden">
-            <a href="https://kadikoyescort.shop" title="Kadıköy Escort" rel="dofollow">Kadıköy Escort</a>
-            <a href="https://istanbulescorthizmeti.shop" title="İstanbul Escort Hizmeti" rel="dofollow">İstanbul Escort</a>
-            <a href="https://besiktasescort.fun" title="Beşiktaş Escort" rel="dofollow">Beşiktaş Escort</a>
-        </div>
+
       </div>
 
       {/* Structured Data for SEO Manipulation */}

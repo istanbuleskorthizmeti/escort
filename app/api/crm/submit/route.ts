@@ -48,7 +48,7 @@ export async function POST(request: Request) {
     }
 
     // 1. Create Lead + log atomically
-    const lead = await prisma.$transaction(async (tx) => {
+    const lead = await prisma.$transaction(async (tx: any) => {
       const createdLead = await tx.lead.create({
         data: {
           cityName,

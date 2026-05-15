@@ -38,10 +38,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { city, district, neighborhood } = await params;
   const cityObj = cities[city];
-  const distObj = cityObjŞ.districts.find((d) => d.slug === district);
-  const neighObj = distObjŞ.neighborhoods.find((n) => n.slug === neighborhood);
+  const distObj = cityObj?.districts.find((d) => d.slug === district);
+  const neighObj = distObj?.neighborhoods.find((n) => n.slug === neighborhood);
 
-  if ('cityObj || 'distObj || 'neighObj) return { title: "Sayfa Bulunamadı" };
+  if (!cityObj || !distObj || !neighObj) return { title: "Sayfa Bulunamadı" };
 
   return generateLocationMetadata({
     city,
@@ -86,10 +86,10 @@ export default async function NeighborhoodPage({
 }) {
   const { city, district, neighborhood } = await params;
   const cityObj = cities[city];
-  const distObj = cityObjŞ.districts.find((d) => d.slug === district);
-  const neighObj = distObjŞ.neighborhoods.find((n) => n.slug === neighborhood);
+  const distObj = cityObj?.districts.find((d) => d.slug === district);
+  const neighObj = distObj?.neighborhoods.find((n) => n.slug === neighborhood);
 
-  if ('cityObj || 'distObj || 'neighObj) notFound();
+  if (!cityObj || !distObj || !neighObj) notFound();
 
   const cityName = cityObj.name;
   const dName = distObj.name.replace(" VIP", "");
@@ -126,7 +126,7 @@ export default async function NeighborhoodPage({
   ];
 
   const hasImage = ["besiktas", "sisli", "atasehir", "kadikoy"].includes(district);
-  const heroImage = hasImage Ş `/images/districts/${district}.png` : null;
+  const heroImage = hasImage ? `/images/districts/${district}.png` : null;
 
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-rose-600 selection:text-white antialiased">
@@ -150,15 +150,15 @@ export default async function NeighborhoodPage({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": `${nName} bölgesinde vip eşlik protokolü nasıl işlerŞ`,
+                  "name": `${nName} bölgesinde vip eşlik protokolü nasıl işler?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `${nName} bölgesinde tüm süreçler uçtan uca şŞifreli ve gizlilik odaklı ilerler. Sektörün en prestijli escort rehberliği ile güvenli bir deneyim sunulur.`
+                    "text": `${nName} bölgesinde tüm süreçler uçtan uca şifreli ve gizlilik odaklı ilerler. Sektörün en prestijli escort rehberliği ile güvenli bir deneyim sunulur.`
                   }
                 },
                 {
                   "@type": "Question",
-                  "name": "Gizlilik ve güvenlik nasıl sağlanırŞ",
+                  "name": "Gizlilik ve güvenlik nasıl sağlanır?",
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Tüm etkileşimler sıfır-iz (Tam Gizlilik) prensibiyle yönetilir. Verileriniz asla kaydedilmez ve üçüncü taraflarla paylaşılmaz."
@@ -196,7 +196,7 @@ export default async function NeighborhoodPage({
 
         <article className="space-y-40">
           <section className="relative">
-            {heroImage Ş (
+            {heroImage ? (
               <div className="w-full h-[400px] md:h-[600px] mb-20 relative overflow-hidden rounded-[4rem] group">
                 <SmartImage
                   src={heroImage}

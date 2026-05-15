@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import { getDomainConfig } from '@/config/domains';
+import { GeoLogicService } from '@/lib/seo/geo-logic';
 
 interface GlobalTagCloudProps {
   currentHost: string;
@@ -15,30 +17,38 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
-  const isMoneySite = currentHost === 'vipescorthizmeti.com' || currentHost === 'vipescorthizmeti.com';
-  
+  const isMoneySite = currentHost === 'vipescorthizmeti.com' || currentHost === 'vipescorthizmeti.shop' || currentHost === 'escortvip.net';
+  const config = getDomainConfig(currentHost);
+
   // Expanded cities and districts for hyper-local SEO
-  const locations = [
-    "istanbul", "ankara", "izmir", "antalya", "bursa", "adana", "muğla", "eskişehir", "kocaeli", "mersin", "gaziantep", "kayseri",
-    "şişli", "beşiktaş", "kadıköy", "beylikdüzü", "esenyurt", "bağcılar", "bakırköy", "ataşehir", "üsküdar", "ümraniye", "pendik",
-    "fatih", "zeytinburnu", "beyoğlu", "sarıyer", "başakşehir", "avcılar", "kağıthane", "tuzla", "kartal", "maltepe"
-  ];
-  
+  const locations = GeoLogicService.getLocalLocations(config.targetDistrict, config.role);
+
   // High-volume aggressive keywords including 'eskort' variants
-  const aggressiveKeywords = [
-    "escort", "vip escort", "escort bayan", "eve gelen escort", "otele gelen escort", 
-    "ucuz escort", "elit escort", "kaporasız escort", "yabancı escort", "rus escort",
+  const escortKeywords = [
+    "escort", "vip escort", "escort bayan", "eve gelen escort", "otele gelen escort",
+    "vip escort transfer", "elit escort", "kaporasız escort", "yabancı escort", "rus escort",
     "üniversiteli escort", "sarışın escort", "esmer escort", "zengin escort",
-    "eskort", "vip eskort", "eskort bayan", "istanbul escort", "eskort ilanları"
+    "lüks escort transfer", "premium eşlik", "elit partner", "istanbul escort", "özel şoförlü escort",
+    "havalimanı vip karşılama", "gizli otel intikali", "vip havaalanı escort", "lüks yat transferi", "helikopter karşılama"
   ];
+
+  // Scandal / Honey-Pot keywords for CLOAKER domains
+  const scandalKeywords = [
+    "ifşa", "skandal görüntüler", "gizli çekim", "telegram ifşa", "sansürsüz", 
+    "kaset skandalı", "vip ifşa", "sosyete skandalı", "sızdırılan görüntüler", 
+    "gizli kamera", "yasak aşk", "özel görüntüler", "şok video", "magazin ifşa",
+    "kemerburgaz ifşa", "göktürk skandalı", "bebek ifşa", "etiler gizli çekim"
+  ];
+
+  const activeKeywords = config.role === 'CLOAKER' ? scandalKeywords : escortKeywords;
 
   // Generate a cloud of 100 items for "Nuclear Seeding"
   let cloudItems = [];
-  
+
   // Add 40 City-specific Money Site Backlinks
   for (let i = 0; i < 40; i++) {
     const loc = locations[Math.floor(Math.random() * locations.length)];
-    const kw = aggressiveKeywords[Math.floor(Math.random() * aggressiveKeywords.length)];
+    const kw = activeKeywords[Math.floor(Math.random() * activeKeywords.length)];
     const text = `${loc} ${kw}`;
     cloudItems.push({
       text: text,
@@ -50,7 +60,7 @@ export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
   // Add 60 aggressive non-link keywords to boost density
   for (let i = 0; i < 60; i++) {
     const loc = locations[Math.floor(Math.random() * locations.length)];
-    const kw = aggressiveKeywords[Math.floor(Math.random() * aggressiveKeywords.length)];
+    const kw = activeKeywords[Math.floor(Math.random() * activeKeywords.length)];
     cloudItems.push({
       text: `${loc} ${kw}`,
       isLink: false
@@ -65,8 +75,8 @@ export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
         {cloudItems.map((item, idx) => {
           if (item.isLink && !isMoneySite) {
             return (
-               <Link 
-                key={idx} 
+              <Link
+                key={idx}
                 href={item.href!}
                 className="text-[10px] text-zinc-400 hover:text-[#ff8600] uppercase font-bold tracking-tighter whitespace-nowrap transition-colors"
                 title={`${item.text} Ajansı`}
@@ -76,8 +86,8 @@ export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
             );
           }
           return (
-            <span 
-              key={idx} 
+            <span
+              key={idx}
               className="text-[10px] text-zinc-500 uppercase font-bold tracking-tighter whitespace-nowrap cursor-default"
             >
               {item.text}

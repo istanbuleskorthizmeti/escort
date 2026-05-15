@@ -163,28 +163,13 @@ export default async function CityHubPage({
       <Navbar />
       
       <main className="pt-28">
-        {/* 🚀 LIVE PHOTO MARQUEE (COMPETITOR KILLER) */}
-        <LivePhotoMarquee />
-
         {/* 🏆 DRKCNAY VIP VİTRİN: PRIORITY ACCESS */}
-        <div className="max-w-7xl mx-auto mb-20 px-6 mt-8">
-           <div className="glass-card p-12 rounded-[3rem] mb-12 flex flex-col md:flex-row items-center justify-between gap-10 group hover:border-rose-600/40 transition-all duration-700 shadow-glow-rose">
-              <div className="flex items-center gap-6">
-                 <div className="p-4 bg-rose-600/10 rounded-2xl border border-rose-600/20">
-                    <ShieldCheck className="text-rose-600 w-10 h-10 animate-glow-pulse" />
-                 </div>
-                 <div>
-                    <h3 className="text-2xl font-black uppercase italic text-white tracking-widest underline decoration-rose-600/50 decoration-4 underline-offset-8">GÜNCEL VİTRİN</h3>
-                    <p className="text-xs font-bold text-zinc-600 uppercase tracking-widest mt-1">DRKCNAY ONAYLI ESCORTLAR</p>
-                 </div>
-              </div>
-              <div className="h-px w-full md:w-px md:h-16 bg-zinc-800" />
-              <div className="flex items-center gap-5 text-sm font-black text-white uppercase tracking-[0.4em] italic">
-                 🛡️ %100 DOĞRULANMIŞ ESCORT AJANSI // {cityName.toUpperCase()} ESCORTLARI
-              </div>
-           </div>
+        <div className="w-full relative z-0 mb-12">
            <DorukVitrin city={cityName} />
         </div>
+
+        {/* 🚀 LIVE PHOTO MARQUEE (COMPETITOR KILLER) */}
+        <LivePhotoMarquee />
 
         {/* 🔱 HERO SECTION: REGIONAL AUTHORITY v10.0 */}
         <section className="max-w-7xl mx-auto px-6 mb-32 mt-20 relative">

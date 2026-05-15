@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { city } = await params;
   const cityObj = cities[city];
 
-  if ('cityObj) return { title: "Şehir Bulunamadı" };
+  if (!cityObj) return { title: "Şehir Bulunamadı" };
 
   return generateLocationMetadata({
     city,
@@ -38,7 +38,7 @@ export default async function CityHubPage({
   const { city } = await params;
   const cityObj = cities[city];
 
-  if ('cityObj) notFound();
+  if (!cityObj) notFound();
 
   const cityName = cityObj.name;
   const districts = cityObj.districts;
@@ -82,7 +82,7 @@ export default async function CityHubPage({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": `${cityName} VIP escort ve mutlu son rehberi detayları nelerdirŞ`,
+                  "name": `${cityName} VIP escort ve mutlu son rehberi detayları nelerdir?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": `${cityName} genelinde sunulan tüm hizmetler, en katı gizlilik protokollerimiz ve %100 doğrulanmış profillerimizle güvence altındadır.`
@@ -90,7 +90,7 @@ export default async function CityHubPage({
                 },
                 {
                   "@type": "Question",
-                  "name": "Hizmet garantisi var mıŞ",
+                  "name": "Hizmet garantisi var mı?",
                   "acceptedAnswer": {
                     "@type": "Answer",
                     "text": "Evet, tüm süreçler deneyimli ekibimizce denetlenir ve her bir partnerin hizmet kalitesi EscortVIP standartlarındadır."

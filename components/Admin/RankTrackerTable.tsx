@@ -54,7 +54,7 @@ export function RankTrackerTable() {
                       )}
                       <div className="flex gap-2 text-[10px] text-zinc-500">
                         <span>Rakipler:</span>
-                        {res.topCompetitors.map((comp, idx) => (
+                        {res.topCompetitors.map((comp: any, idx: any) => (
                           <span key={idx} className="px-1.5 py-0.5 bg-black rounded border border-white/5">{comp}</span>
                         ))}
                       </div>

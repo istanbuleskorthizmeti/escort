@@ -91,8 +91,8 @@ export default async function GalleryPage() {
                   <span className="text-[var(--brand-color)]">📍</span> {profile.district}
                 </div>
                 
-                {/* Hidden LSI Keywords for Googlebot */}
-                <p className="sr-only">
+                {/* LSI Keywords for Context */}
+                <p className="text-zinc-600 text-[10px] mt-2 leading-snug">
                   {profile.tags.join(", ")} - VIP {profile.district} escort hizmetleri. {profile.description}
                 </p>
               </div>

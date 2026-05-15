@@ -18,7 +18,7 @@ export function LocalAuthority() {
   const mapUrl = getDistrictMapEmbedUrl(district);
 
   return (
-    <div className="hidden sr-only" aria-hidden="true">
+    <div className="mt-12 text-zinc-500 text-xs text-center border-t border-zinc-900 pt-6" aria-hidden="false">
       {/* 🚀 SCHEMA.ORG INJECTION */}
       <script
         type="application/ld+json"

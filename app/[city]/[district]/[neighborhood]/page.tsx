@@ -182,23 +182,8 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
         </section>
 
         {/* 🏆 LOCAL SHOWCASE */}
-        <div className="max-w-7xl mx-auto mb-32 px-6">
-           <div className="glass-card p-12 rounded-[3rem] mb-16 flex flex-col md:flex-row items-center justify-between gap-10 group hover:border-rose-600/40 transition-all duration-700 shadow-glow-rose">
-              <div className="flex items-center gap-6">
-                 <div className="p-4 bg-rose-600/10 rounded-2xl border border-rose-600/20">
-                    <ShieldCheck className="text-rose-600 w-10 h-10 animate-glow-pulse" />
-                 </div>
-                 <div>
-                    <h3 className="text-2xl font-black uppercase italic text-white tracking-widest">YEREL OTORİTE</h3>
-                    <p className="text-xs font-bold text-zinc-600 uppercase tracking-widest mt-1">Sadece {nName} Bölgesi Escortları</p>
-                 </div>
-              </div>
-              <div className="h-px w-full md:w-px md:h-16 bg-zinc-800" />
-              <div className="flex items-center gap-5 text-sm font-black text-white uppercase tracking-[0.4em] italic">
-                 🛡️ %100 GERÇEK İLANLAR // {nName.toUpperCase()} ESCORT REHBERİ
-              </div>
-           </div>
-           <DorukVitrin city={cityName} />
+        <div className="w-full relative z-0 mb-12">
+            <DorukVitrin city={cityName} />
         </div>
 
         {/* 🏆 EVENT HUB */}

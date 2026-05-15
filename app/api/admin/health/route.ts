@@ -44,7 +44,7 @@ export async function GET() {
         },
         worker_health: {
           last_update: recentActivity[0]?.updatedAt || new Date(),
-          recent_slugs: recentActivity.map(a => a.slug)
+          recent_slugs: recentActivity.map((a: any) => a.slug)
         }
       }
     });

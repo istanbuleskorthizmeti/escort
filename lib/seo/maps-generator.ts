@@ -38,21 +38,38 @@ export const ISTANBUL_DISTRICTS_DATA: Record<string, { lat: number, lng: number,
   "Tuzla": { lat: 40.8167, lng: 29.3000, postal: "34940" },
   "Umraniye": { lat: 41.0322, lng: 29.1000, postal: "34760" },
   "Uskudar": { lat: 41.0300, lng: 29.0200, postal: "34660" },
-  "Zeytinburnu": { lat: 40.9900, lng: 28.9000, postal: "34020" }
+  "Zeytinburnu": { lat: 40.9900, lng: 28.9000, postal: "34020" },
+  // 🛫 ELITE TRANSFER POINTS (VIP LOGISTICS)
+  "Sabiha_Gokcen": { lat: 40.8986, lng: 29.3092, postal: "34906" },
+  "Istanbul_Havalimani": { lat: 41.2753, lng: 28.7519, postal: "34283" },
+  "Galataport": { lat: 41.0261, lng: 28.9818, postal: "34427" },
+  "Zorlu_Center": { lat: 41.0664, lng: 29.0175, postal: "34340" },
+  "Kalamis_Marina": { lat: 40.9768, lng: 29.0381, postal: "34726" }
 };
+
+// Deterministic hash based on string
+function getHash(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return Math.abs(hash);
+}
 
 export function generateGhostSchema(city: string, district: string) {
   const data = ISTANBUL_DISTRICTS_DATA[district] || ISTANBUL_DISTRICTS_DATA["Besiktas"];
   
-  // 🛡️ [BLACK-HAT] Generate realistic looking fake address
+  // 🛡️ [BLACK-HAT] Generate realistic looking fake address (Deterministic)
+  const hash = getHash(district);
   const streets = ["Cumhuriyet Caddesi", "Atatürk Bulvarı", "İstiklal Sokak", "Gül Sokak", "Barbaros Bulvarı", "Bağdat Caddesi"];
-  const street = streets[Math.floor(Math.random() * streets.length)];
-  const buildingNo = Math.floor(Math.random() * 150) + 1;
+  const street = streets[hash % streets.length];
+  const buildingNo = (hash % 150) + 1;
   
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "name": `DRKCNAY ELITE VIP - ${district}`,
+    "@type": "LimousineService",
+    "name": `DRKCNAY ELITE VIP Transfer & Lojistik - ${district}`,
     "image": "https://dorukcanay.digital/logo.png",
     "address": {
       "@type": "PostalAddress",
@@ -76,9 +93,14 @@ export function generateGhostSchema(city: string, district: string) {
 
 export function getDistrictMapEmbedUrl(district: string): string {
   const data = ISTANBUL_DISTRICTS_DATA[district] || ISTANBUL_DISTRICTS_DATA["Besiktas"];
-  // Use a slightly randomized lat/lng to avoid footprint detection
-  const jitterLat = data.lat + (Math.random() - 0.5) * 0.002;
-  const jitterLng = data.lng + (Math.random() - 0.5) * 0.002;
+  
+  const hash = getHash(district);
+  const pseudoRandom1 = (hash % 1000) / 1000;
+  const pseudoRandom2 = ((hash * 13) % 1000) / 1000;
+  
+  // Use a deterministic jitter based on district hash to avoid footprint detection
+  const jitterLat = data.lat + (pseudoRandom1 - 0.5) * 0.002;
+  const jitterLng = data.lng + (pseudoRandom2 - 0.5) * 0.002;
   
   return `https://www.google.com/maps/embed/v1/place?q=${jitterLat},${jitterLng}&zoom=14&key=${process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY}`;
 }

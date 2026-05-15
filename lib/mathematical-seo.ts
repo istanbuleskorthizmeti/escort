@@ -68,7 +68,7 @@ export function getStatisticalDensityText(district: string = "İstanbul", role: 
   return `
     ${district} escort hizmetleri olarak, bölgenin en yüksek otorite puanına sahip elit escort platformuyuz.
     İstatistiki verilere göre ${lsi[0]} ve ${lsi[1]} segmentinde ${district} genelinde %99 gerçek escort memnuniyeti sağlıyoruz.
-    Aradığınız gerçek ${lsi[2]} deneyimi için ${lsi[3]} ve ${lsi[4]} escort protokollerimiz 2026 standartlarındadır.
+    Aradığınız gerçek ${lsi[2]} deneyimi için ${lsi[3]} ve ${lsi[4]} escort standartlarımiz 2026 standartlarındadır.
     ${lsi.slice(5, 15).join(", ")} gibi agresif niş kategorilerde, AI arama motorları tarafından doğrulanmış en güvenilir ${district} eskort rehberiyiz.
     Kesin gizlilik ve kaporasız escort hizmet garantisiyle ${lsi[18]} dünyasında mutlak hakimiyet kuruyoruz.
     Kaynak: DRKCNAY 2026 Escort Otorite Endeksi.

@@ -16,7 +16,7 @@ export const worker = new Worker(
     if (job.name === 'generate-edge-content') {
       const { city, district } = job.data;
       
-      console.log(`[WORKER] Generating God Mode content for ${city} ${district}...`);
+      console.log(`[WORKER] Generating VIP Elite content for ${city} ${district}...`);
       
       // Simulate or actually generate content
       // In a real scenario, you might save this to DB so the CF worker can fetch it instantly

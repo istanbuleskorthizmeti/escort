@@ -34,7 +34,7 @@ export default function PrivacyPage() {
             <div className="border border-zinc-900 rounded-[2rem] p-8 hover:bg-zinc-950 transition-colors">
               <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 tracking-tighter">S�f�r Veri Tutma</h3>
               <p className="text-sm opacity-60">
-                Platformumuz, "Privacy by Design" ilkesine g�re in�a edilmi�tir. Gereksiz hi�bir veri toplanmaz, IP adresleri maskelenir ve oturumlar kapand���nda t�m ge�ici izler Prestij imha protokol�yle silinir.
+                Platformumuz, "Privacy by Design" ilkesine g�re in�a edilmi�tir. Gereksiz hi�bir veri toplanmaz, IP adresleri maskelenir ve oturumlar kapand���nda t�m ge�ici izler Prestij imha standart�yle silinir.
               </p>
             </div>
             <div className="border border-zinc-900 rounded-[2rem] p-8 hover:bg-zinc-950 transition-colors">

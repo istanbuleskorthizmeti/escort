@@ -72,7 +72,7 @@ export class PDFGenerator {
         // Add the actual clickable backlink anchor
         doc.fillColor('#1d4ed8')
            .fontSize(16)
-           .text(`🔥 ${data.city} ${data.district} VIP İlanları İçin Tıklayın`, 50, boxTop + 45, { 
+           .text(`🔥 ${data.city} ${data.district} VIP Escort İlanlarıı İçin Tıklayın`, 50, boxTop + 45, { 
              align: 'center', 
              link: data.targetUrl,
              underline: true

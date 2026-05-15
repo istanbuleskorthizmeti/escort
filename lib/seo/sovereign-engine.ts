@@ -11,7 +11,7 @@ import { AUTHORITY_HUBS, getRandomAuthorityHub } from '../../config/authority-hu
 
 
 /**
- * DRKCNAY ELITE: SEO ORCHESTRATION ENGINE (GOD MODE v2.0)
+ * DRKCNAY ELITE: SEO ORCHESTRATION ENGINE (VIP Elite v2.0)
  * High-performance multi-platform distribution pipeline.
  * Platforms: Tumblr, Blogger, Google Indexing.
  */
@@ -64,7 +64,7 @@ class DRKCNAYSEOEngine {
     console.log(`🚀 [ENGINE] Multi-Platform Engage: ${locationLabel} | Hub: ${hub.name}`);
 
     try {
-      // 1. Generate Ultra Elite Content (Gemini Ultra God Mode)
+      // 1. Generate Ultra Elite Content (Gemini Ultra VIP Elite)
       const aiContent = await generateUltraContextualContent({
         host: rootUrl,
         city: params.city,

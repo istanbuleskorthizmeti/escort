@@ -38,7 +38,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
     <section className="relative py-24 px-6 bg-zinc-950/20">
       <div className="max-w-7xl mx-auto">
         
-        {/* 🔱 GOD MODE SEMANTIC ENGINE v10.0 */}
+        {/* 🔱 VIP Elite SEMANTIC ENGINE v10.0 */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-24">
           <div className="lg:col-span-2 space-y-10">
             <div className="space-y-6">

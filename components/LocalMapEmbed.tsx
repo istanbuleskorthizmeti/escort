@@ -10,7 +10,7 @@ interface MapEmbedProps {
 }
 
 /**
- * ☠️ LOCAL SEO EMBED COMPONENT (GOD MODE)
+ * ☠️ LOCAL SEO EMBED COMPONENT (VIP Elite)
  * Embeds verified Google Maps (and their branches) directly into the Next.js site.
  * This establishes massive NAP (Name, Address, Phone) consistency and Local SEO authority.
  */

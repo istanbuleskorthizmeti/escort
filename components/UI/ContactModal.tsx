@@ -103,7 +103,7 @@ export function ContactModal({ isOpen, onClose, whatsappLink, phoneNumber, title
         {/* Footer */}
         <div className="bg-black/40 p-6 text-center border-t border-white/5">
           <p className="text-[8px] font-black text-zinc-600 uppercase tracking-[0.5em]">
-            Gizlilik ve Güvenlik Protokolü Aktif
+            Gizlilik ve Güvenlik Standartları Aktif
           </p>
         </div>
       </div>

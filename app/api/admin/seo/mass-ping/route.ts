@@ -11,7 +11,7 @@ import { siteConfig } from '@/config/site';
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
-  // Security Check (God Mode Key)
+  // Security Check (VIP Elite Key)
   const authHeader = request.headers.get('Authorization');
   if (authHeader !== `Bearer ${process.env.ADMIN_SECRET_KEY}`) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });

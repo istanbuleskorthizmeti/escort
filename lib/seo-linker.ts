@@ -38,7 +38,7 @@ const linkRules: LinkRule[] = [
   
   // Rehber / Ansiklopedi
   { term: "Tam Gizlilik", slug: "/ansiklopedi#gizlilik" },
-  { term: "Kaporasız", slug: "/ansiklopedi#guvenli-protokol" },
+  { term: "Kaporasız", slug: "/ansiklopedi#guvenli-standart" },
   { term: "Elit Seviye", slug: "/ansiklopedi#elit-seviye" }
 ];
 

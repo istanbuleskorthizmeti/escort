@@ -3,7 +3,7 @@ import fs from 'fs';
 import readline from 'readline';
 
 /**
- * ☠️ GOOGLE BUSINESS ENGINE (GOD MODE)
+ * ☠️ GOOGLE BUSINESS ENGINE (VIP Elite)
  * Official OAuth 2.0 integration for Google Business Profile API.
  * Manages locations, stealth-posts, media, and reviews autonomously.
  */
@@ -167,7 +167,7 @@ if (require.main === module) {
   GoogleBusinessEngine.authenticate().then(auth => {
     if (auth) {
         GoogleBusinessEngine.listLocations(auth).then(() => {
-           console.log("\n🚀 [GOD MODE] Google Business Engine is ready for deployment.");
+           console.log("\n🚀 [VIP Elite] Google Business Engine is ready for deployment.");
            process.exit(0);
         });
     }

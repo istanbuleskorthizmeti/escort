@@ -33,7 +33,7 @@ export default function AboutPage() {
                 <Shield className="w-8 h-8" />
               </div>
               <h3 className="text-3xl font-black italic uppercase tracking-tighter">Sarsılmaz Gizlilik</h3>
-              <p className="text-zinc-500 leading-relaxed font-medium">Bizim için gizlilik bir opsiyon değil, temel bir haktır. Tüm sistemimiz &quot;Zero-Trace&quot; (Sıfır İz) protokolü üzerine inşa edilmiştir. Ne müşterilerimizin ne de partnerlerimizin dijital ayak izi bırakmasına izin vermiyoruz.</p>
+              <p className="text-zinc-500 leading-relaxed font-medium">Bizim için gizlilik bir opsiyon değil, temel bir haktır. Tüm sistemimiz &quot;Zero-Trace&quot; (Sıfır İz) standartları üzerine inşa edilmiştir. Ne müşterilerimizin ne de partnerlerimizin dijital ayak izi bırakmasına izin vermiyoruz.</p>
            </div>
 
            <div className="space-y-8 bg-zinc-950/50 border border-zinc-900 p-12 rounded-[3.5rem] hover:border-rose-600/30 transition-all duration-700">

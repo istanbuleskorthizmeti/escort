@@ -5,7 +5,7 @@ import fs from 'node:fs';
 import { googleAuth } from '../google-auth';
 
 /**
- * 🧛‍♂️ ELİT GSC SERVİSİ (God Mode Analytics & Indexing)
+ * 🧛‍♂️ ELİT GSC SERVİSİ (VIP Elite Analytics & Indexing)
  * Google Search Console verilerini ve sitemap otomasyonunu yönetir.
  */
 export class GSCService {

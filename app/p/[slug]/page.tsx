@@ -154,7 +154,7 @@ export default async function ProfilePage({ params }: PageProps) {
                   WHATSAPP İLE ULAŞ
                 </a>
                 <Link 
-                  href="/protokol" 
+                  href="/standart" 
                   className="block w-full text-center bg-zinc-900 border border-white/10 text-zinc-300 py-4 rounded-full font-bold italic text-lg hover:bg-zinc-800 transition-all"
                 >
                   GÜVENLİK PROTOKOLÜ

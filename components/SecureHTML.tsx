@@ -1,6 +1,6 @@
 import React from 'react';
 
-// GOD MODE: High-Performance O(1) Memory Safe HTML Sanitization Wrapper (ZERO DEPENDENCY)
+// VIP Elite: High-Performance O(1) Memory Safe HTML Sanitization Wrapper (ZERO DEPENDENCY)
 export function SecureHTML({ 
   html, 
   className = "" 

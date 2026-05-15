@@ -82,7 +82,7 @@ export const ConciergeChat = () => {
         setChatStep('final');
         addChatMessage({
           role: 'assistant',
-          content: 'Talebiniz elit protokol ağımızda analiz edildi. Size en uygun premium profilleri WhatsApp üzerinden "God Mode" gizlilik standartlarıyla ileteceğim. Operasyonu başlatmak için onayınız gerekiyor.'
+          content: 'Talebiniz elit standart ağımızda analiz edildi. Size en uygun premium profilleri WhatsApp üzerinden "VIP Elite" gizlilik standartlarıyla ileteceğim. Operasyonu başlatmak için onayınız gerekiyor.'
         });
       }
       setIsTyping(false);

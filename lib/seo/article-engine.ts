@@ -21,9 +21,9 @@ export function generateAggressiveEscortArticle(city: string, district: string) 
         Günün karmaşasından ve yoğun iş temposundan uzaklaşmak isteyen elit beyefendiler için, <b>${loc}</b> bölgesindeki en seçkin ve vizyoner hanımefendilerle tanışma fırsatı sunuyoruz. DRKCNAY Elite portföyü, yalnızca güzelliğiyle değil, kültürel birikimi ve zarafetiyle de öne çıkan özel profillerden oluşur. ${city} elit yaşam tarzının gereksinimlerini tam olarak karşılayan partnerlerimizle, standartların ötesinde bir deneyime hazır olun.
       </p>
       
-      <h3 style="color: #fff; font-size: 22px; margin-top: 30px; margin-bottom: 15px;">Gizlilik ve Güvenlik Odaklı Deneyim Protokolü</h3>
+      <h3 style="color: #fff; font-size: 22px; margin-top: 30px; margin-bottom: 15px;">Gizlilik ve Güvenlik Odaklı Deneyim Standartları</h3>
       <p style="color: #a1a1aa; font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
-        <b>${loc}</b> otele ve eve gelen özel refakat hizmetlerimizde, <strong>Kaporasız İşlem</strong> prensibimizle %100 güvenli bir altyapı sunmaktayız. Gerçek görseller, teyitli profiller ve üst düzey gizlilik protokollerimizle, vaktinizi riske atmadan doğrudan kaliteye ulaşırsınız. Sektördeki en yaygın sorun olan ön ödeme taleplerini tamamen ortadan kaldırıyor, güvene dayalı elit bir ağ oluşturuyoruz.
+        <b>${loc}</b> otele ve eve gelen özel refakat hizmetlerimizde, <strong>Kaporasız İşlem</strong> prensibimizle %100 güvenli bir altyapı sunmaktayız. Gerçek görseller, teyitli profiller ve üst düzey gizlilik standartlarımizle, vaktinizi riske atmadan doğrudan kaliteye ulaşırsınız. Sektördeki en yaygın sorun olan ön ödeme taleplerini tamamen ortadan kaldırıyor, güvene dayalı elit bir ağ oluşturuyoruz.
       </p>
 
       <h3 style="color: #fff; font-size: 22px; margin-top: 30px; margin-bottom: 15px;">Neden ${upperLoc} Bölgesinde Bizi Seçmelisiniz?</h3>
@@ -40,7 +40,7 @@ export function generateAggressiveEscortArticle(city: string, district: string) 
       </p>
       
       <p style="color: #ff8600; font-weight: bold; font-style: italic; margin-top: 30px; font-size: 18px; text-align: center; border: 1px solid #ff8600; padding: 15px; border-radius: 10px;">
-        Zamanınızın değerini biliyoruz. En iyisini hak ediyorsunuz. ${loc} VIP Escort Protokolü ile tanışmak için hemen bizimle iletişime geçin.
+        Zamanınızın değerini biliyoruz. En iyisini hak ediyorsunuz. ${loc} VIP Escort Standartları ile tanışmak için hemen bizimle iletişime geçin.
       </p>
     </div>
   `;

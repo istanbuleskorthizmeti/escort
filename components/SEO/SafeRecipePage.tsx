@@ -37,12 +37,12 @@ export default function SafeRecipePage({ city }: { city: string }) {
           <p>
             {city} bölgesinde aradığınız tüm <strong>VIP partner</strong> ve <strong>escort</strong> hizmetleri hakkında 
             güncel bilgilere bu rehber üzerinden ulaşabilirsiniz. Şehrin en elit <strong>{city} escort</strong> 
-            profilleri, bağımsız <strong>bayan</strong> ilanları ve partner seçenekleri yerel rehberimizde 
+            profilleri, bağımsız <strong>bayan</strong> ilanları ve escort partner seçenekleri yerel rehberimizde 
             sizleri bekliyor.
           </p>
           <p>
             2026 standartlarında hazırlanan <strong>{city} escort</strong> dizini, 81 ilde olduğu gibi 
-            burada da en güvenilir ve doğrulanmış partner seçeneklerini sunmaktadır.
+            burada da en güvenilir ve doğrulanmış escort partner seçeneklerini sunmaktadır.
           </p>
         </div>
       </section>

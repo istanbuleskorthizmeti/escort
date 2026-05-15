@@ -68,7 +68,7 @@ export default async function SubdomainPage({ params }: any) {
     
     clearTimeout(timeoutId);
   } catch (error) {
-    // 🔥 HIGH-QUALITY GOD MODE FALLBACK
+    // 🔥 HIGH-QUALITY VIP Elite FALLBACK
     aiContent = {
       wordpress: {
         title: `🔥 İSTANBUL VİP ESCORT - DRKCNAY ELITE 2026 | ${location} VIP REHBERİ`,

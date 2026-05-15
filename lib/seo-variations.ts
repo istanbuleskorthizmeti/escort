@@ -30,7 +30,7 @@ export const syntaxPool = {
     'sizi hem fiziksel hem entelektüel olarak doyuracak', 'iletişim gücü yüksek', 'prezentabl ve son derece şık'
   ],
   subjects: [
-    'deneyim', 'hizmet', 'ayrıcalık', 'atmosfer', 'ortam', 'protokol', 'anlar', 'concierge desteği',
+    'deneyim', 'hizmet', 'ayrıcalık', 'atmosfer', 'ortam', 'standart', 'anlar', 'concierge desteği',
     'yaşam stili', 'buluşma dinamiği', 'haz döngüsü', 'gizlilik kalkanı', 'elit vizyon', 'küresel standart',
     'estetik zemin', 'nörolojik uyarıcı', 'duyusal şölen', 'fiziksel şifreleme'
   ],
@@ -76,14 +76,14 @@ export function generateUniqueSentence(locName: string, citySlug: string, step: 
   const vibe = getCityVibe(citySlug);
 
   const structures = [
-    `${locName} lokasyonunda ${q} escortlar ile ${a1} bir ${s} (${step}. Aşama): ${c} lüks ortamında ${a2} protokoller ${t} ${v}. ${conn} bu süreç ${r}.`,
+    `${locName} lokasyonunda ${q} escortlar ile ${a1} bir ${s} (${step}. Aşama): ${c} lüks ortamında ${a2} standartler ${t} ${v}. ${conn} bu süreç ${r}.`,
     `${step}. Kısım : ${locName} Merkezli Elite Yaklaşım - ${t} kurguladığımız bu ekosistemde, ${l} civarının en ${q} profilleri yer alıyor. ${c} vizyoner atmosferde ${a1} ${s} ${v}.`,
-    `${locName} ve Çevresi İçin ${a1} Protokol: ${c} alanda ${a2} bir ${s} ${conn} ${r}. Özellikle ${l} yakınlarında ${t} işlem yapılması ve hanımefendilerin ${q} olması, bölgenin ${vibe} dokusuna tam uyum sağlıyor.`,
+    `${locName} ve Çevresi İçin ${a1} Standart: ${c} alanda ${a2} bir ${s} ${conn} ${r}. Özellikle ${l} yakınlarında ${t} işlem yapılması ve hanımefendilerin ${q} olması, bölgenin ${vibe} dokusuna tam uyum sağlıyor.`,
     `Sarsılmaz Güven ve Lüksün Noktası ${locName}: Bizde her şey ${t} ilerler. ${q} yapıdaki eşlikçilerle ${v} bu dünya, ${c} ihtişamı ${a2} bir disiplinle harmanlıyor. ${conn} ${l} çevresindeki bu durum ${r}.`,
     `${locName} VİP Kaporasız Standartlar: Bölge içindeki bu ${a1} lokasyon, misafirlerine ${t} ve ${a2} bir ${s} sunmak için özellikle ${v}. ${c} vizyonla tasarlanan bu deneyim ${r}.`,
     `${l} bölgesinin ${vibe} atmosferinde, ${locName} için özel ${v} bu ${s}, ${t} ve ${q} partnerlerle ${a1} bir seviyeye ulaşıyor.`,
     `Geleceğin Elite Rehberliği ${locName} Sınırlarında: ${c} süreç, ${l} gibi prestijli noktalarda ${t} ${v} ve sonrasında ${conn} ${r}.`,
-    `${locName} sakinleri ve ziyaretçileri için ${a2} bir ${s} vaat eden bu ${a1} protokol, ${q} eşlikçilerin ${t} katılımıyla ${v}.`
+    `${locName} sakinleri ve ziyaretçileri için ${a2} bir ${s} vaat eden bu ${a1} standart, ${q} eşlikçilerin ${t} katılımıyla ${v}.`
   ];
 
   return getRandom(structures, seedFunc);

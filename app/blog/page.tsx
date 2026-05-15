@@ -6,7 +6,7 @@ import { PanicButton } from "@/components/UI/ConciergeSuite";
 
 export const metadata: Metadata = {
   title: "🛡️ Elit K�lliyat | EscortVip Bilgi ve Otorite Ar�ivi",
-  description: "L�ks e�lik d�nyas�n�n sars�lmaz etik kurallar�, biyo-hacking protokolleri ve psikoseks�el derinli�e dair profesyonel makaleler ar�ivi.",
+  description: "L�ks e�lik d�nyas�n�n sars�lmaz etik kurallar�, biyo-hacking standartları ve psikoseks�el derinli�e dair profesyonel makaleler ar�ivi.",
 };
 
 export default function BlogHubPage() {

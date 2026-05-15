@@ -72,8 +72,8 @@ export class ThemeEngine {
         
         const slogans = [
             "İstanbul'un En Hiddetli ve Gizli Escort Rehberi", "Seçkin Beyefendilere Özel Kaporasız Escort Deneyimi",
-            "Gerçek Görselli ve %100 Doğrulanmış VIP İlanlar", "Sadece Elit ve Profesyonel Escort Bayanlar",
-            "7/24 Kesintisiz VIP Escort ve Gizlilik Protokolü", "İstanbul'un En Prestijli ve Güvenilir Vitrini",
+            "Gerçek Görselli ve %100 Doğrulanmış VIP Escort İlanları", "Sadece Elit ve Profesyonel Escort Bayanlar",
+            "7/24 Kesintisiz VIP Escort ve Gizlilik Standartları", "İstanbul'un En Prestijli ve Güvenilir Vitrini",
             "Otorite Puanı En Yüksek Elit Escort Platformu", "Kaporasız, Gizli ve Sınırsız VIP Deneyim"
         ];
 

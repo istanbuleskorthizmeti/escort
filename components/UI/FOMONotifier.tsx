@@ -61,7 +61,7 @@ const ACTION_TEMPLATES: TemplateDefinition[] = [
     glow: "shadow-[0_0_30px_-5px_rgba(248,113,113,0.15)]",
   },
   {
-    text: "Elit ağında güvenlik protokolü güncellendi.",
+    text: "Elit ağında güvenlik standartları güncellendi.",
     icon: <ShieldCheck className="w-5 h-5 text-blue-400" />,
     badge: "SİSTEM GÜVENLİ",
     glow: "shadow-[0_0_30px_-5px_rgba(96,165,250,0.15)]",

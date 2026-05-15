@@ -146,7 +146,7 @@ export default function CommandHQ() {
                   <Link href="/sovereign-hq/vitrin-manager" className="w-full bg-black border border-purple-900/50 hover:border-purple-500 hover:bg-purple-900/10 text-zinc-100 hover:text-purple-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(168,85,247,0.1)]">
                     <span className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-purple-500 rounded-full animate-pulse"></span>
-                      VİTRİN MANAGER (God Mode)
+                      VİTRİN MANAGER (VIP Elite)
                     </span>
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </Link>
@@ -162,7 +162,7 @@ export default function CommandHQ() {
                   {/* SIEGE C2 CONTROLS */}
                   <div className="mt-6 pt-6 border-t border-red-900/30">
                     <h4 className="text-[10px] text-red-500 uppercase tracking-widest mb-3 font-black flex items-center justify-between">
-                      <span>God Mode: Edge Siege</span>
+                      <span>VIP Elite: Edge Siege</span>
                       {queueStatus?.isOnline ? (
                         <span className="text-green-500 animate-pulse">● C2 ACTIVE</span>
                       ) : (

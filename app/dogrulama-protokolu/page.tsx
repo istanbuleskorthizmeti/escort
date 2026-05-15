@@ -4,8 +4,8 @@ import { PanicButton, VerificationBadge } from "@/components/UI/ConciergeSuite";
 import { Camera, ShieldCheck, UserCheck, Search, Image as ImageIcon, Video } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Doğrulama Protokolü | EscortVIP %100 Gerçek Profil Garantisi",
-  description: "EscortVIP ağındaki profillerin nasıl doğrulandığına dair askeri düzeyde şeffaflık ve güvenlik protokollerimiz.",
+  title: "Doğrulama Standartları | EscortVIP %100 Gerçek Profil Garantisi",
+  description: "EscortVIP ağındaki profillerin nasıl doğrulandığına dair askeri düzeyde şeffaflık ve güvenlik standartlarımiz.",
 };
 
 export default function VerificationProtocolPage() {

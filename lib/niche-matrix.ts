@@ -1,5 +1,5 @@
 /**
- * 🔞 NUCLEAR ADULT NICHE MATRIX (GOD MODE v3.0 - ULTRA)
+ * 🔞 NUCLEAR ADULT NICHE MATRIX (VIP Elite v3.0 - ULTRA)
  * 56 domain için eşsiz, sarsılmaz ve ultra-agresif SEO kombinasyonları.
  */
 

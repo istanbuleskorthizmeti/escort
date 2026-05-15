@@ -5,7 +5,7 @@ import { HelpCircle, Shield, CreditCard, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Sıkça Sorulan Sorular | EscortVIP Destek Sistemi",
-  description: "Ödeme süreçleri, gizlilik politikaları, rezervasyon detayları ve doğrulama protokolleri hakkında kapsamlı SSS.",
+  description: "Ödeme süreçleri, gizlilik politikaları, rezervasyon detayları ve doğrulama standartları hakkında kapsamlı SSS.",
 };
 
 const FAQS = [
@@ -15,7 +15,7 @@ const FAQS = [
     items: [
       {
         q: "Verilerim sisteminizde kaydediliyor mu?",
-        a: "Hayır. EscortVIP 'Zero-Log' politikası uygular. İletişim geçmişiniz, IP adresiniz veya rezervasyon detaylarınız sunucularımızda asla saklanmaz. Tüm görüşmeler otomatik imha protokolüne tabidir."
+        a: "Hayır. EscortVIP 'Zero-Log' politikası uygular. İletişim geçmişiniz, IP adresiniz veya rezervasyon detaylarınız sunucularımızda asla saklanmaz. Tüm görüşmeler otomatik imha standartlarıne tabidir."
       },
       {
         q: "Panik Butonu nedir?",
@@ -43,7 +43,7 @@ const FAQS = [
     items: [
       {
         q: "Profillerin gerçek olduğunu nasıl anlarım?",
-        a: "Sistemimizdeki profillerin %100'ü 'Doğrulama Protokolü'nden geçer. Görseller günceldir ve fiziksel özellikler teyit edilmiştir. Sahte profil (fake) saptandığı an ilgili hesap ağdan süresiz ihraç edilir."
+        a: "Sistemimizdeki profillerin %100'ü 'Doğrulama Standartları'nden geçer. Görseller günceldir ve fiziksel özellikler teyit edilmiştir. Sahte profil (fake) saptandığı an ilgili hesap ağdan süresiz ihraç edilir."
       },
       {
         q: "Nasıl VIP üye olabilirim?",

@@ -3,7 +3,7 @@ import fs from 'fs';
 import path from 'path';
 
 /**
- * 🪐 ELITE SYSTEM: TIKTOK API SERVICE (GOD MODE v1.0)
+ * 🪐 ELITE SYSTEM: TIKTOK API SERVICE (VIP Elite v1.0)
  * High-Velocity Short-Form Video Publishing Engine
  * Uses TikTok Content API for automated VIP video distribution
  */
@@ -20,7 +20,7 @@ export class TikTokService {
    */
   async uploadVideo(filePath: string, metadata: TikTokVideoMetadata, authToken?: string, botUsername?: string): Promise<string | null> {
     if (!authToken) {
-      console.warn("⚠️ [TIKTOK] Missing authToken. Simulating upload for God Mode Graceful Fallback...");
+      console.warn("⚠️ [TIKTOK] Missing authToken. Simulating upload for VIP Elite Graceful Fallback...");
       return `https://tiktok.com/@DRKCNAYelite/video/mock_${Date.now()}`;
     }
 

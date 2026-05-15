@@ -39,7 +39,7 @@ export async function LongFormContent({ location, city, district, neighborhood, 
              {location} <span className="text-transparent bg-clip-text bg-linear-to-r from-zinc-100 to-zinc-500">DERİN ANALİZ</span>
           </h2>
           <p className="text-zinc-500 max-w-2xl font-medium italic">
-             {location} bölgesinde elit yaşam, DRKCNAY eşlik protokolleri ve VIP standartların kusursuz yansıması.
+             {location} bölgesinde elit yaşam, DRKCNAY eşlik standartları ve VIP standartların kusursuz yansıması.
           </p>
        </div>
 
@@ -114,7 +114,7 @@ export async function LongFormContent({ location, city, district, neighborhood, 
 
                    <div className="flex items-center justify-between p-4 bg-zinc-900/40 rounded-2xl border border-zinc-800/50 hover:border-rose-600/40 transition-colors">
                      <div className="flex flex-col gap-1">
-                       <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Aktif Protokoller</span>
+                       <span className="text-[10px] font-black uppercase tracking-widest text-zinc-500">Aktif Standartler</span>
                        <span className="text-sm font-bold text-zinc-300">8 Seviye Korumalı</span>
                      </div>
                      <div className="w-8 h-8 rounded-full bg-rose-600/10 flex items-center justify-center border border-rose-600/20">

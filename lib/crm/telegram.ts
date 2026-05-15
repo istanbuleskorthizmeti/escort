@@ -553,7 +553,7 @@ bot?.on('text', async (ctx) => {
 /**
  * 🛰️ COMMANDS
  */
-bot?.start((ctx) => ctx.replyWithHTML(THEME.HEADER + "\nElite Protokol Aktif. /yardim yazarak başlayın."));
+bot?.start((ctx) => ctx.replyWithHTML(THEME.HEADER + "\nElite Standart Aktif. /yardim yazarak başlayın."));
 
 bot?.command(['yardim', 'help'], async (ctx) => {
   const helpMsg = `

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "eda nur escortvip",
     "profesyonel e�lik e�itimi",
     "cinsel sa�l�k ve l�ks ya�am",
-    "vip partner protokolleri",
+    "vip partner standartları",
     "mutlu son deneyimi",
     "onayl� escort profilleri",
     "l�ks gece hayat� uzman�"

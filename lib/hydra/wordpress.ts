@@ -26,7 +26,7 @@ export async function postToWordPress(data: {
     <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(225,29,72,0.75), rgba(0,0,0,0)); margin: 40px 0;">
     <div style="padding: 30px; background: #0a0a0a; border: 1px solid #e11d48; border-radius: 24px; text-align: center; font-family: 'Inter', sans-serif;">
       <h3 style="color: #e11d48; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; font-style: italic; font-size: 20px; margin-bottom: 20px;">🌹 DRKCNAY ELITE SELECTION</h3>
-      <p style="color: #ccc; font-size: 15px; line-height: 1.6; margin-bottom: 30px;">Türkiye'nin en seçkin VIP protokolü ile tanışın. 2026 standartlarında, %100 gizlilik ve yüksek kalite garantisiyle hizmetinizdeyiz.</p>
+      <p style="color: #ccc; font-size: 15px; line-height: 1.6; margin-bottom: 30px;">Türkiye'nin en seçkin VIP standartları ile tanışın. 2026 standartlarında, %100 gizlilik ve yüksek kalite garantisiyle hizmetinizdeyiz.</p>
       
       <div style="margin-bottom: 30px;">
         <a href="${clickUrl}" style="display: inline-block; padding: 20px 50px; background: #e11d48; color: white; border-radius: 60px; font-weight: bold; text-transform: uppercase; font-style: italic; text-decoration: none; box-shadow: 0 10px 30px rgba(225, 29, 72, 0.5); font-size: 16px;">

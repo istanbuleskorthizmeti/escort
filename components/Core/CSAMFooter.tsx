@@ -28,8 +28,8 @@ export default function CSAMFooter() {
           <Link href="/about" className="hover:text-rose-600 transition-colors">Hakkımızda & Manifesto</Link>
           <Link href="/faq" className="hover:text-rose-600 transition-colors">Sıkça Sorulan Sorular</Link>
           <Link href="/contact" className="hover:text-rose-600 transition-colors">Güvenli İletişim</Link>
-          <Link href="/dogrulama-protokolu" className="hover:text-rose-600 transition-colors">Doğrulama Protokolü</Link>
-          <Link href="/katilim-protokolu" className="hover:text-rose-600 transition-colors">Ağa Katılın</Link>
+          <Link href="/dogrulama-standartu" className="hover:text-rose-600 transition-colors">Doğrulama Standartları</Link>
+          <Link href="/katilim-standartu" className="hover:text-rose-600 transition-colors">Ağa Katılın</Link>
           <Link href="/terms" className="hover:text-rose-600 transition-colors">Şartlar ve Koşullar</Link>
           <Link href="/privacy" className="hover:text-rose-600 transition-colors">Gizlilik Politikası</Link>
           <Link href="/18-usc-2257" className="hover:text-rose-600 transition-colors">18 U.S.C. § 2257 Uyum Beyanı</Link>

@@ -3,7 +3,7 @@ export const siteConfig = {
   domain: "dorukcanay.digital",
   apiUrl: "https://dorukcanay.digital",
   satelliteDomain: "https://vipescorthizmeti.com",
-  cdnUrl: "https://dorukcanay.digital", // 🚀 CENTRAL CDN HUB
+  cdnUrl: "", // 🚀 Load from current domain to bypass Cloudflare WhatsApp redirects
   description: "Türkiye'nin en kapsamlı DRKCNAY ELITE VIP escort ajansı rehberi. En iyi escort bayan profilleri.",
 
   // Merkezi İletişim Bilgileri

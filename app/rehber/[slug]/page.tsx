@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `${title} | İstanbul VIP Profesyonel Şehir Rehberi`,
-    description: `${title} üzerine İstanbul'un en seçkin ve teknik detaylarını kapsayan profesyonel yaşam rehberi. Premium erişim protokolleri vipescorthizmeti.com'te.`,
+    description: `${title} üzerine İstanbul'un en seçkin ve teknik detaylarını kapsayan profesyonel yaşam rehberi. Premium erişim standartları vipescorthizmeti.com'te.`,
     alternates: { canonical: `https://${siteConfig.domain}/rehber/${slug}` }
   };
 }
@@ -39,7 +39,7 @@ export default async function GuidePage({
       title: "BOĞAZ HATTI PROTOKOLLERİ: YALILAR VE İSKELELER",
       category: "LUXURY LIVING",
       content: [
-        "İstanbul Boğazı'nın karakteristik dokusunda, ana arterlerden izole edilmiş özel yalı ve iskele bağlantıları, elit yaşamın en temel unsurlarından biridir. Yeniköy, Bebek ve Kandilli hattında konumlanan özel mülkler, kara trafiğinden bağımsız, deniz yoluyla erişilebilir profesyonel protokoller sunmaktadır.",
+        "İstanbul Boğazı'nın karakteristik dokusunda, ana arterlerden izole edilmiş özel yalı ve iskele bağlantıları, elit yaşamın en temel unsurlarından biridir. Yeniköy, Bebek ve Kandilli hattında konumlanan özel mülkler, kara trafiğinden bağımsız, deniz yoluyla erişilebilir profesyonel standartler sunmaktadır.",
         "Çırağan Sarayı ve Four Seasons Bosphorus gibi ikonik lokasyonların sunduğu VIP iskele hizmetleri, gizlilik esaslı transferler için optimize edilmiştir. Bu noktalarda sağlanan erişim, en yüksek güvenlik standartları çerçevesinde koordine edilmektedir.",
         "İstanbul genelinde 7/24 aktif olan deniz transfer ağımız, konakladığınız veya bulunduğunuz noktadan sizi alarak, hedef lokasyona en diskret (gizli) şekilde ulaştırmayı hedefler. Profesyonel rehberlik hizmetlerimiz bu akışın tam merkezinde yer alır."
       ]
@@ -49,7 +49,7 @@ export default async function GuidePage({
       category: "ELITE SOCIAL",
       content: [
         "İstanbul gece hayatının standart akışından farklı olarak, sadece referans sistemiyle çalışan ve haritalarda yer almayan özel sosyal alanlar, elite segmentin buluşma noktalarıdır. Bu mekanlar, yüksek gizlilik ve nitelikli hizmet anlayışıyla yönetilmektedir.",
-        "Kuruçeşme ve Nişantaşı lokasyonlarında bulunan özel üyelikli sistemler, misafirlerine izole bir eğlence ve ağ kurma (networking) imkanı tanır. Giriş süreçleri, profesyonel saha ekiplerimiz tarafından koordine edilen protokoller dahilinde gerçekleştirilir.",
+        "Kuruçeşme ve Nişantaşı lokasyonlarında bulunan özel üyelikli sistemler, misafirlerine izole bir eğlence ve ağ kurma (networking) imkanı tanır. Giriş süreçleri, profesyonel saha ekiplerimiz tarafından koordine edilen standartler dahilinde gerçekleştirilir.",
         "Günün her saatinde aktif olan VIP saha koordinasyonumuz, talepleriniz doğrultusunda en uygun sosyal alanları ve rezervasyon seçeneklerini belirleyerek, kusursuz bir deneyim yaşamanızı sağlar."
       ]
     },
@@ -58,7 +58,7 @@ export default async function GuidePage({
       category: "MODERN ARCHITECTURE",
       content: [
         "İstanbul'un dikey mimari merkezleri olan Levent ve Maslak hatları, Sapphire ve SkyLand gibi yapılarla modern lüksün zirvesini temsil etmektedir. Bu yapılar, sundukları tam izole süitler ve yüksek güvenlikli giriş çıkışlarıyla profesyonel rehberlik hizmetleri için ideal alanlardır.",
-        "Şehir manzarasının ve modern teknolojinin birleştiği 50. kat ve üzeri yaşam alanlarında, dış dünyadan tamamen kopuk, sadece konfor odaklı bir atmosfer hakimdir. Bu ekosistemler, her türlü VIP ihtiyacın tek çatı altında karşılandığı protokol alanlarıdır.",
+        "Şehir manzarasının ve modern teknolojinin birleştiği 50. kat ve üzeri yaşam alanlarında, dış dünyadan tamamen kopuk, sadece konfor odaklı bir atmosfer hakimdir. Bu ekosistemler, her türlü VIP ihtiyacın tek çatı altında karşılandığı standart alanlarıdır.",
         "Rezidans yaşamının sunduğu concierge ve güvenlik avantajları, hizmet ağımızın operasyonel gücüyle birleşerek, misafirlerimize en konforlu deneyimi sunmayı garanti eder."
       ]
     },
@@ -68,7 +68,7 @@ export default async function GuidePage({
       content: [
         "Gastronomi dünyasında sadece belirli bir çevrenin erişebildiği kapalı devre restoranlar, İstanbul'un en özel deneyim alanlarını oluşturur. Bu mekanlar, yüksek mutfak standartları ve kişiye özel servis anlayışıyla öne çıkmaktadır.",
         "Gurme lezzetlerin yanı sıra, mekanların sunduğu izolasyon ve gizlilik imkanları, elite misafirlerimizin en çok önem verdiği kriterler arasındadır. Profesyonel rezervasyon ağımız, bu seçkin duraklarda her zaman öncelikli yer vadedir.",
-        "Karaköy ve Nişantaşı'nın saklı teraslarından Boğaz hattındaki özel yalılara kadar geniş bir yelpazede sunulan bu gastronomi protokolleri, rehberlik hizmetimizin doğal bir tamamlayıcısıdır."
+        "Karaköy ve Nişantaşı'nın saklı teraslarından Boğaz hattındaki özel yalılara kadar geniş bir yelpazede sunulan bu gastronomi standartları, rehberlik hizmetimizin doğal bir tamamlayıcısıdır."
       ]
     },
     "private-transfer-protocols": {
@@ -77,7 +77,7 @@ export default async function GuidePage({
       content: [
         "Şehir içi mobilitede konfor ve hız, lüks yaşamın vazgeçilmezidir. Karartılmış camlı, tam donanımlı VIP transfer araçlarımız, misafirlerimizin lokasyonlar arası geçişlerini tamamen izole ve güvenli bir şekilde gerçekleştirmesini sağlar.",
         "Deniz ulaşımında ise özel yat koordinasyonumuz, trafiğin etkisinden uzak, Boğaz'ın keyfini çıkarırken aynı zamanda hedefe en hızlı şekilde varmayı mümkün kılar. Kaptanlarımız ve saha personelimiz en yüksek nezaket standartlarına göre eğitilmiştir.",
-        "Havaalanı protokollerinden özel davet planlamalarına kadar her an aktif olan transfer ağımız, profesyonel lojistik desteğin İstanbul'daki en güçlü temsilcisidir."
+        "Havaalanı standartlarınden özel davet planlamalarına kadar her an aktif olan transfer ağımız, profesyonel lojistik desteğin İstanbul'daki en güçlü temsilcisidir."
       ]
     }
   };
@@ -144,7 +144,7 @@ export default async function GuidePage({
                © 2026 vipescorthizmeti.com - PROTCOL ALPHA SYSTEM ACTIVE
             </div>
             <p className="text-zinc-700 text-[9px] font-black tracking-[0.2em] uppercase italic max-w-xl mx-auto leading-loose">
-               Tüm rehber içerikleri ve protokoller, İstanbul elite yaşam standartları gözetilerek profesyonel ekiplerimizce hazırlanmıştır.
+               Tüm rehber içerikleri ve standartler, İstanbul elite yaşam standartları gözetilerek profesyonel ekiplerimizce hazırlanmıştır.
             </p>
         </div>
       </footer>

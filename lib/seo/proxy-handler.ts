@@ -2,7 +2,7 @@ import axios from 'axios';
 import { proxyCheapService } from './proxy-cheap-api';
 
 /**
- * 🐉 DRKCNAY ELITE: PROXY HANDLER (GOD MODE v2.1)
+ * 🐉 DRKCNAY ELITE: PROXY HANDLER (VIP Elite v2.1)
  * Provides centralized rotating residential proxy logic with strict OPSEC.
  */
 let lastRotationTime = 0;

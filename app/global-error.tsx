@@ -19,7 +19,7 @@ export default function GlobalError({
             </h1>
             
             <p className="text-zinc-400 text-2xl font-bold mb-12 max-w-2xl tracking-[0.05em] leading-normal italic uppercase">
-               Çekirdek protokollerde bir aksama tespit edildi. Tüm veriler güvenli bir şekilde dondurulmuştur. Sistemin kendisini onarması için aşağıdaki butona basın.
+               Çekirdek standartlerde bir aksama tespit edildi. Tüm veriler güvenli bir şekilde dondurulmuştur. Sistemin kendisini onarması için aşağıdaki butona basın.
             </p>
 
             <button

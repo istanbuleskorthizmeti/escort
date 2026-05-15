@@ -2,7 +2,7 @@ import { prisma } from "./prisma";
 
 /**
  * DRKCNAY ELITE CONTACT ENGINE v1.0
- * Centralized WhatsApp Management for God Mode Dominance.
+ * Centralized WhatsApp Management for VIP Elite Dominance.
  */
 
 const CONTACT_SETTING_KEY = "global_whatsapp";
@@ -19,7 +19,7 @@ export interface ContactInfo {
 
 /**
  * Fetches the global contact details. 
- * GOD MODE FAIL-SAFE: If DB is down, uses ENV fallbacks.
+ * VIP Elite FAIL-SAFE: If DB is down, uses ENV fallbacks.
  */
 export async function getGlobalContact(): Promise<ContactInfo> {
   try {

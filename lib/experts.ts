@@ -24,7 +24,7 @@ export const experts: Expert[] = [
     schemaType: "Physician",
     image: "/images/experts/drkcnay.webp",
     slug: "dr-drkcnay",
-    bio: "Dr. DRKCNAY, modern üroloji ile biyo-hacking prensiplerini harmanlayarak erkek cinsel sağlığında yeni bir çağ açan 'DRKCNAY Elite Protocol'ün kurucu hekimidir. Kariyerini, hormonal denge ve hücresel enerji optimizasyonu üzerine yoğunlaştırmış; özellikle lüks segmentteki bireylerin yüksek performans ihtiyaçlarını karşılamak üzere kişiselleştirilmiş protokoller geliştirmiştir. EscortVIP ağının tıbbi danışmanlığını yürütmekte ve 'Sıfır-İz' (Tam Gizlilik) sağlık lojistiğini yönetmektedir.",
+    bio: "Dr. DRKCNAY, modern üroloji ile biyo-hacking prensiplerini harmanlayarak erkek cinsel sağlığında yeni bir çağ açan 'DRKCNAY Elite Protocol'ün kurucu hekimidir. Kariyerini, hormonal denge ve hücresel enerji optimizasyonu üzerine yoğunlaştırmış; özellikle lüks segmentteki bireylerin yüksek performans ihtiyaçlarını karşılamak üzere kişiselleştirilmiş standartler geliştirmiştir. EscortVIP ağının tıbbi danışmanlığını yürütmekte ve 'Sıfır-İz' (Tam Gizlilik) sağlık lojistiğini yönetmektedir.",
     modules: [
       {
         slug: "god-like-condition",
@@ -36,7 +36,7 @@ export const experts: Expert[] = [
           Erkek doğasının zirve noktası, sadece fiziksel güçten ibaret değildir; bu, hormonal bir senfoni ve hücresel bir patlamadır. Bu modülde, bir erkeğin cinsel ve hayati enerjisini nasıl "Tanrısal" seviyelere çıkarabileceğini, modern tıbbın ve biyo-hacking'in en karanlık/en parlak odalarından gelen bilgilerle işleyeceğiz.
 
           ## 1. Hormonal Egemenlik: Testosteronun Mutlak Gücü
-          Testosteron sadece bir hormon değil, bir erkeğin dünyayı algılama biçimidir. %800'e varan doğal artış protokolleri, çinko-magnezyum-borat dengesi ve uyku evrelerinde (Deep Sleep) büyüme hormonuyla olan dansı...
+          Testosteron sadece bir hormon değil, bir erkeğin dünyayı algılama biçimidir. %800'e varan doğal artış standartları, çinko-magnezyum-borat dengesi ve uyku evrelerinde (Deep Sleep) büyüme hormonuyla olan dansı...
 
           ## 2. Mitokondriyal Ateşleme (Cellular Energy)
           Hücrelerinizin enerji santralleri olan mitokondrileri nasıl 'overclock' edebilirsiniz? L-Carnitine, CoQ10 ve aralıklı oruç (Intermittent Fasting) ile cinsel dayanıklılık (Stamina) arasındaki doğrudan korelasyon.
@@ -44,18 +44,18 @@ export const experts: Expert[] = [
           ## 3. Vazo-Dila: Kan Akışının Kanunu
           L-Arginine ve Nitrik Oksit (NO) seviyelerinin doğal yollarla maksimize edilmesi. Bir akşam yemeğinden 2 saat önce alınan spesifik amino asit kombinasyonlarının vasküler genişleme üzerindeki etkileri.
 
-          ## 4. DRKCNAY'ın "Elit" Protokolü
+          ## 4. DRKCNAY'ın "Elit" Standartları
           İş çıkışı yorgunluğunu 15 dakikada silecek 'Power-Nap' ve besin takviyesi rutinleri.
         `
       },
       {
         slug: "security-health",
         title: "Güvenlik ve Sağlık: Sıfır-İz Lojistiği ve Elit Korunma",
-        description: "Gizli buluşmaların tıbbi ve lojistik güvenlik protokolleri.",
+        description: "Gizli buluşmaların tıbbi ve lojistik güvenlik standartları.",
         content: `
           # Güvenlik ve Sağlık: Sıfır-İz Lojistiği ve Elit Korunma
 
-          Lüks dünyasında güvenlik bir seçenek değil, bir varoluş sebebidir. Dr. DRKCNAY tarafından tasarlanan bu protokol, her buluşmanın tıbbi ve lojistik açıdan 'Sıfır-İz' bırakmasını garanti eder.
+          Lüks dünyasında güvenlik bir seçenek değil, bir varoluş sebebidir. Dr. DRKCNAY tarafından tasarlanan bu standart, her buluşmanın tıbbi ve lojistik açıdan 'Sıfır-İz' bırakmasını garanti eder.
 
           ## 1. Tam Gizlilik Sağlık Diplomasisi
           Hizmet sağlayıcıların düzenli sağlık kontrolleri ve bu kontrollerin dijital şifrelenmiş (Offshore) sunucularda saklanması. Veri gizliliğinin tıbbi boyutu.

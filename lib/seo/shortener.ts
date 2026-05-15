@@ -1,5 +1,5 @@
 /**
- * ⚡ DRKCNAY ELITE: CUSTOM SHORTLINK ENGINE (GOD MODE v3.0)
+ * ⚡ DRKCNAY ELITE: CUSTOM SHORTLINK ENGINE (VIP Elite v3.0)
  * Replaces Bitly with a self-hosted, DB-driven redirector.
  * Protects main domains from 3rd party PBN spam flags.
  */

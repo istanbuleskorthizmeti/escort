@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma';
 import { sendTelegramReport } from '@/lib/telegram';
 
 /**
- * 📲 WHATSAPP REDIRECT HUB (GOD MODE v4.0)
+ * 📲 WHATSAPP REDIRECT HUB (VIP Elite v4.0)
  * Logs every lead attempt and sends instant Telegram notifications.
  */
 export const dynamic = 'force-dynamic';

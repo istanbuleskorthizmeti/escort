@@ -85,7 +85,7 @@ export function generateLocationMetadata({
     `💎 ${fullLoc} escort arayışınızda lüks ve güvenilirlik. Yüksek gizlilik, %100 gerçek fotoğraflı ve kaporasız ${fullLoc} elit escort deneyimi için hemen kataloğu incele ve 7/24 hiddetli modellerimizi ara.`,
     `🛡️ %100 Doğrulanmış ${fullLoc} escort profilleri. DRKCNAY güvencesiyle kaporasız, fotoğrafları onaylı ve yüksek gizlilik standartlı otele gelen escort hizmetleriyle ${currentYear} yılının en iyisi.`,
     `🔞 ${fullLoc} bölgesinde VIP concierge ve elit escort bayanlar. Rus, Ukraynalı ve yerli üniversiteli çıtırlarla prestijli buluşma. ${currentMonth} ayı özel kaporasız escort kataloğu şimdi yayında.`,
-    `🔥 ${fullLoc} escort protokolü: Sadece elit beyefendilere özel kaporasız ve gizli eşlik hizmeti. ${fullLoc} bölgesinin en vizyoner, lüks ve hiddetli escort rehberiyle hemen tanışın.`,
+    `🔥 ${fullLoc} escort standartları: Sadece elit beyefendilere özel kaporasız ve gizli eşlik hizmeti. ${fullLoc} bölgesinin en vizyoner, lüks ve hiddetli escort rehberiyle hemen tanışın.`,
     `👑 En iyi ${fullLoc} VIP escort deneyimi ve gece hayatı rehberliği. %100 teyitli profiller, gerçek görseller ve kaporasız elit hizmet anlayışıyla DRKCNAY ağında yerinizi alın.`
   ];
 
@@ -200,7 +200,7 @@ export function generateStructuredData(params: MetaParams) {
           "name": `${locName} escort fiyatları ne kadar?`,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": `${locName} bölgesinde VIP escort hizmetleri modelin tecrübesine ve seçilen protokole göre değişiklik göstermektedir. Detaylı bilgi için 7/24 arayabilirsiniz.`
+            "text": `${locName} bölgesinde VIP escort hizmetleri modelin tecrübesine ve seçilen standarte göre değişiklik göstermektedir. Detaylı bilgi için 7/24 arayabilirsiniz.`
           }
         },
         {

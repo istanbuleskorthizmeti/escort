@@ -53,7 +53,7 @@ export function IstanbulConquestMatrix() {
           <div className="mt-12 p-10 bg-black/60 border border-zinc-800 rounded-[3rem] backdrop-blur-3xl text-center">
             <p className="text-zinc-500 text-[11px] font-black uppercase tracking-[0.3em] leading-relaxed">
               Tüm bölgelerdeki ilanlarımız %100 doğrulanmış olup, kesinlikle kaporasız ve doğrudan görüşme esnasında ödeme esasına dayanmaktadır. 
-              (Güvence: VIP Escort İstanbul Müşteri Protokolü 2026).
+              (Güvence: VIP Escort İstanbul Müşteri Standartları 2026).
             </p>
           </div>
 

@@ -24,7 +24,7 @@ const terms: EncyclopediaTerm[] = [
     definition: "Müşterinin sadece talep eden değil, tamamen egemen (Elit) ve her detayın onun etrafında şekillendiği kontrol modunda olduğu bir hizmet skalası.",
   },
   {
-    term: "Kaporasız Protokol",
+    term: "Kaporasız Standart",
     definition: "Escortvip'nin temel güven ilkesi. Hiçbir ajans, üye veya escort, görüşme yüz yüze başlamadan banka havalesi veya kapora talep edemez.",
   },
   {
@@ -45,7 +45,7 @@ const terms: EncyclopediaTerm[] = [
     deepLink: "/ansiklopedi/iliski-simyasi"
   },
   {
-    term: "CIM / COB (Tabu Protokolleri)",
+    term: "CIM / COB (Tabu standartları)",
     definition: "Yetişkin sektöründeki ileri seviye yakınlık jargonları. Escortvip'nin 'Limitsiz Fantezi' ve anal kraliçeleri kategorilerinde sıkça rastlanan, yüksek kimya gerektiren eylemler.",
   },
   {
@@ -87,7 +87,7 @@ const terms: EncyclopediaTerm[] = [
   },
   {
     term: "BBBJ / PSE (Elite Nuances)",
-    definition: "Yüksek seviye yakınlaşma ve sınırsız haz protokollerinde (Bareback Behind / Personal Sexual Experience) güvenin ve tutkunun en doğal hali. Yalnızca seçkin partnerler tarafından sunulan özel bir hizmet derinliğidir.",
+    definition: "Yüksek seviye yakınlaşma ve sınırsız haz standartlarınde (Bareback Behind / Personal Sexual Experience) güvenin ve tutkunun en doğal hali. Yalnızca seçkin partnerler tarafından sunulan özel bir hizmet derinliğidir.",
   },
   {
     term: "Duo / Threesome Protocol",
@@ -182,7 +182,7 @@ export default function EncyclopediaPage() {
                     href={t.deepLink}
                     className="mt-8 inline-block text-[10px] font-black uppercase tracking-widest text-white border-b-2 border-rose-600 pb-1 hover:text-rose-600 transition-colors"
                   >
-                    Detaylı İncelemeyi Oku (God Mode) →
+                    Detaylı İncelemeyi Oku (VIP Elite) →
                   </Link>
                 )}
               </div>
@@ -192,7 +192,7 @@ export default function EncyclopediaPage() {
 
         <div className="mt-40 text-center space-y-12">
           <div className="h-px bg-linear-to-r from-transparent via-zinc-900 to-transparent"></div>
-          <Link href="/protokol" className="group text-zinc-500 hover:text-rose-500 font-black tracking-[0.4em] uppercase italic text-sm transition-all duration-500">
+          <Link href="/standart" className="group text-zinc-500 hover:text-rose-500 font-black tracking-[0.4em] uppercase italic text-sm transition-all duration-500">
             TAM KATILIM <span className="text-white group-hover:text-rose-600">PROTOKOLÜNÜ</span> OKU →
           </Link>
         </div>

@@ -14,7 +14,7 @@ interface GodModeParams {
 }
 
 /**
- * 🧠 GOD MODE CONTENT GENERATOR v16.0 (GEMINI 3.1 PRO UPGRADE)
+ * 🧠 VIP Elite CONTENT GENERATOR v16.0 (GEMINI 3.1 PRO UPGRADE)
  * Generates unique, high-authority long-form content for any location or category.
  * Now utilizes the "Undetectable AI" engine to prevent Google algorithm flags.
  */
@@ -62,7 +62,7 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
     const isBuilding = process.env.NEXT_PHASE === 'phase-production-build' || process.env.IS_BUILDING === 'true';
     if (isBuilding) throw new Error("BUILD_SKIP_AI");
 
-    console.log(`🧠 [GOD MODE] Generating FULL content for ${locationSlug}...`);
+    console.log(`🧠 [VIP Elite] Generating FULL content for ${locationSlug}...`);
     const aiContent = await generateGodModeOmniContent({ city, district, neighborhood, category, host });
     
     if (!aiContent || !aiContent.wordpress || !aiContent.wordpress.content) {

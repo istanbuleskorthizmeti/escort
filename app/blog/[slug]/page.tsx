@@ -62,7 +62,7 @@ export default async function BlogPostPage({
 
   if (!post) notFound();
 
-  const waMessage = encodeURIComponent(`Merhaba, "${post.title}" yazınızı okudum ve rezervasyon protokolü hakkında bilgi almak istiyorum.`);
+  const waMessage = encodeURIComponent(`Merhaba, "${post.title}" yazınızı okudum ve rezervasyon standartları hakkında bilgi almak istiyorum.`);
   const waLink = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${waMessage}`;
 
   return (
@@ -122,7 +122,7 @@ export default async function BlogPostPage({
         {/* Call To Action - Booking */}
         <section className="bg-zinc-950 border border-rose-900/30 rounded-3xl p-10 text-center relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-1 bg-linear-to-r from-transparent via-rose-600 to-transparent"></div>
-          <h2 className="text-2xl font-black italic uppercase mb-4 text-white">Bu Protokolü Gerçekliğe Taşıyın</h2>
+          <h2 className="text-2xl font-black italic uppercase mb-4 text-white">Bu Standartları Gerçekliğe Taşıyın</h2>
           <p className="text-zinc-400 mb-8 max-w-xl mx-auto">Okuduğunuz VIP hizmetlerin tamamı sistemimizde canlı ve Onaylı profillerle sunulmaktadır. %100 Sıfır İz (Tam Gizlilik) garantisiyle rezervasyonunuzu başlatın.</p>
           <a href={waLink} target="_blank" rel="noopener noreferrer" className="inline-block bg-white text-black px-10 py-5 rounded-full font-black uppercase tracking-widest hover:bg-zinc-200 transition-colors">
             {defaultAdmin.name} ile İletişime Geç

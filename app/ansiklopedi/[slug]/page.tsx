@@ -18,7 +18,7 @@ const encyclopediaData: Record<string, { title: string, expertId: string, descri
   "biyo-performans": {
     title: "Biyo-Performans: Tanrısal Kondisyon",
     expertId: "dorukcan-ay",
-    description: "Hormonal egemenlik, testosteron optimizasyonu ve hücresel enerji bio-hacking protokolleri."
+    description: "Hormonal egemenlik, testosteron optimizasyonu ve hücresel enerji bio-hacking standartları."
   },
   "iliski-simyasi": {
     title: "İlişki Simyası: Yakınlık ve Bağ",
@@ -33,12 +33,12 @@ const encyclopediaData: Record<string, { title: string, expertId: string, descri
   "cinsel-saglik-ve-guvenlik": {
     title: "Cinsel Sağlık ve Güvenlik: Sıfır-İz",
     expertId: "dorukcan-ay",
-    description: "Elit-Grade güvenlik protokolleri ve elit korunma kültürü."
+    description: "Elit-Grade güvenlik standartları ve elit korunma kültürü."
   },
   "gizlilik-matrisi": {
     title: "Gizlilik Matrisi: VIP Anonimlik Stratejileri",
     expertId: "dorukcan-ay",
-    description: "Kriptografik iletişimden fiziksel sıfır-iz protokollerine kadar elitlerin gizlilik anayasası."
+    description: "Kriptografik iletişimden fiziksel sıfır-iz standartlarıne kadar elitlerin gizlilik anayasası."
   },
   "erotik-linguistik": {
     title: "Erotik Dilbilim: Kelimelerin Gücü",
@@ -58,7 +58,7 @@ const encyclopediaData: Record<string, { title: string, expertId: string, descri
   "biyo-hacking": {
     title: "Biyo-Hacking: VIP Performans Zirvesi",
     expertId: "dorukcan-ay",
-    description: "Mitokondriyal enerji yönetimi ve stres kontrolü ile kesintisiz güç protokolleri."
+    description: "Mitokondriyal enerji yönetimi ve stres kontrolü ile kesintisiz güç standartları."
   }
 };
 

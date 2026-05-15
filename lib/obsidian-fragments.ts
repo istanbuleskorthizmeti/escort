@@ -57,7 +57,7 @@ export const carEnthusiastSpintax = [
 
 export const affairSpintax = [
   "{Evli yaşamın|Rutinleşmiş ilişkilerin} {yarattığı stresten|psikolojik baskıdan} {bir gecelik de olsa|kısa bir süre için} {hiçbir iz bırakmadan|güvenle} {kurtulmak|arınmak} isteyen {beyefendiler|aile babaları} için {Tam Gizlilik kalkanı|özel güvencemiz} {devreye girer|aktifleşir}.",
-  "{Eve döndüğünde hiçbir soru işareti|Hiçbir mesaj veya arama kaydı} {bırakmamak|arkada kalmamalıdır kuralı}, {gizli servisimizin|kaçamak protokolümüzün} {en önemli standartıdır|temel prensibidir}. {Aile huzurunuzu korurken|Rahatça} {arzularınızı|tutkunuzu} {en derinlerde yaşayın|güvenle tatmin edin}."
+  "{Eve döndüğünde hiçbir soru işareti|Hiçbir mesaj veya arama kaydı} {bırakmamak|arkada kalmamalıdır kuralı}, {gizli servisimizin|kaçamak standartlarımüzün} {en önemli standartıdır|temel prensibidir}. {Aile huzurunuzu korurken|Rahatça} {arzularınızı|tutkunuzu} {en derinlerde yaşayın|güvenle tatmin edin}."
 ];
 
 export const jewelerSpintax = [

@@ -26,7 +26,7 @@ export const LocalDiscovery = () => {
       { url: '/izmir/alsancak', label: 'Alsancak VIP Partner' },
       { url: '/antalya/muratpasa', label: 'Muratpaşa Rehberi' },
       { url: '/bursa/nilufer', label: 'Nilüfer Elit Seçenekler' },
-      { url: '/istanbul/kadikoy', label: 'Kadıköy VIP Protokol' },
+      { url: '/istanbul/kadikoy', label: 'Kadıköy VIP Standart' },
       { url: '/istanbul/atasehir', label: 'Ataşehir Elite' },
       { url: '/mugla/bodrum', label: 'Bodrum Premium Esc' }
     ];

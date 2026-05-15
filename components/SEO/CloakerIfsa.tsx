@@ -350,7 +350,7 @@ export function CloakerIfsa({ host, mode = 'TRAP' }: { host: string, mode?: 'TRA
          <p className="text-zinc-800 text-[10px] mt-2">DMC / ABUSE COMPLIANCE: 18 U.S.C. § 2257 Record-Keeping Requirements Compliance Statement</p>
       </footer>
 
-      {/* Extreme God Mode SEO Schemas */}
+      {/* Extreme VIP Elite SEO Schemas */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify([

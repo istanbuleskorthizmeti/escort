@@ -29,7 +29,7 @@ export function GodModeCopyright() {
               <h3 className="font-bold text-lg tracking-widest uppercase">Ultra Güvenlik</h3>
             </div>
             <p className="text-zinc-400 text-sm leading-relaxed">
-              Bu platform <span className="text-red-400 font-bold">DRKCNAY Elite Network</span> tarafından %100 gizlilik protokolleri ile korunmaktadır. Tüm işlemler 256-bit şifreleme ve zero-log mimarisi ile güvence altındadır.
+              Bu platform <span className="text-red-400 font-bold">DRKCNAY Elite Network</span> tarafından %100 gizlilik standartları ile korunmaktadır. Tüm işlemler 256-bit şifreleme ve zero-log mimarisi ile güvence altındadır.
             </p>
           </div>
 
@@ -52,7 +52,7 @@ export function GodModeCopyright() {
             </div>
             <div className="bg-zinc-900/50 p-4 rounded-lg border border-zinc-800 font-mono text-xs text-green-400">
               <div className="flex justify-between border-b border-zinc-800 pb-2 mb-2">
-                <span>Protokol:</span>
+                <span>Standart:</span>
                 <span>TLS 1.3 / E2EE</span>
               </div>
               <div className="flex justify-between border-b border-zinc-800 pb-2 mb-2">

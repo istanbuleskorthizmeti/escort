@@ -1,5 +1,5 @@
 /**
- * ⚡ DRKCNAY TWITTER (X) ENGINE - GOD MODE
+ * ⚡ DRKCNAY TWITTER (X) ENGINE - VIP Elite
  * Handles autonomous engagement and profile manipulation for PBN accounts.
  */
 

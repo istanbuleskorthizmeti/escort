@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
   
   return {
     title: `Havalimanı VIP Transfer ve Özel Şoförlü Karşılama | ${theme.brandName}`,
-    description: `İstanbul Sabiha Gökçen ve Yeni Havalimanı özel şoförlü VIP transfer hizmetleri. Zırhlı araçlarla otele intikal ve lüks partner eşliği (Meet & Greet) protokolü.`,
+    description: `İstanbul Sabiha Gökçen ve Yeni Havalimanı özel şoförlü VIP transfer hizmetleri. Zırhlı araçlarla otele intikal ve lüks partner eşliği (Meet & Greet) standartları.`,
     keywords: "havalimanı vip transfer, sabiha gökçen lüks karşılama, özel şoförlü vip escort, gizli otel intikali, marina yat transferi, premium eşlik",
     alternates: {
       canonical: `https://${host}/transfer`,
@@ -73,7 +73,7 @@ export default async function TransferPage() {
               </div>
               <h3 className="text-xl font-black uppercase tracking-tighter mb-3">Tarmac Meet & Greet</h3>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Özel jetiniz piste teker koyduğu anda başlayan operasyon. Sivil havacılık protokolleriyle uçak altı karşılama ve VIP lounge intikali. İsteğe bağlı olarak <strong className="text-zinc-200">iki dil bilen hostes partnerlerimiz</strong> tüm check-in süreçlerinizi yönetir.
+                Özel jetiniz piste teker koyduğu anda başlayan operasyon. Sivil havacılık standartlarıyle uçak altı karşılama ve VIP lounge intikali. İsteğe bağlı olarak <strong className="text-zinc-200">iki dil bilen hostes partnerlerimiz</strong> tüm check-in süreçlerinizi yönetir.
               </p>
             </div>
 
@@ -93,7 +93,7 @@ export default async function TransferPage() {
               </div>
               <h3 className="text-xl font-black uppercase tracking-tighter mb-3">Marina & Yat Organizasyonu</h3>
               <p className="text-zinc-400 text-sm leading-relaxed">
-                Kalamış Marina, Galataport ve Ataköy lokasyonlarından özel yata geçiş asistanlığı. Boğaz turlarında size ve misafirlerinize prestij katacak <strong className="text-zinc-200">lüks escort transfer</strong> ve gece boyu premium eşlik protokolü.
+                Kalamış Marina, Galataport ve Ataköy lokasyonlarından özel yata geçiş asistanlığı. Boğaz turlarında size ve misafirlerinize prestij katacak <strong className="text-zinc-200">lüks escort transfer</strong> ve gece boyu premium eşlik standartları.
               </p>
             </div>
 

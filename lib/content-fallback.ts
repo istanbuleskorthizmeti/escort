@@ -13,7 +13,7 @@ export function generateFallbackLandmarks(city: string, district?: string): stri
   // Base fallback set
   const generic = [
     `${cityName} Merkez Rezidansları`,
-    "VIP Protokol Noktaları",
+    "VIP Standart Noktaları",
     "Lüks Konaklama Alanları",
     "Özel Transfer Güzergahları"
   ];
@@ -38,7 +38,7 @@ export function generateFallbackTransport(city: string, district?: string): stri
     return `${dName} lokasyonu, ${cityName} genelindeki tüm VIP transfer ağlarına ve ana ulaşım arterlerine tam entegre bir mobilite sunmaktadır.`;
   }
 
-  return `${cityName} şehri, uluslararası standartlarda lüks ulaşım ve gizli transfer protokolleri için gelişmiş bir altyapıya sahiptir.`;
+  return `${cityName} şehri, uluslararası standartlarda lüks ulaşım ve gizli transfer standartları için gelişmiş bir altyapıya sahiptir.`;
 }
 
 export function generateFallbackVibe(city: string): string[] {

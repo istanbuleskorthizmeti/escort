@@ -43,7 +43,7 @@ export class TelegramReporter {
     public static async sendSwarmReport(targetUrl: string, chainDetails: { platform: string, url: string | null, account?: string }[]) {
         const timestamp = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
         
-        let message = `🎯 <b>GOD MODE SWARM TAMAMLANDI</b> 🎯\n`;
+        let message = `🎯 <b>VIP Elite SWARM TAMAMLANDI</b> 🎯\n`;
         message += `🕒 Tarih: <code>${timestamp}</code>\n`;
         message += `🌐 Ana Hedef: <a href="${targetUrl}">${targetUrl}</a>\n\n`;
         

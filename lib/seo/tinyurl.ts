@@ -1,5 +1,5 @@
 /**
- * DRKCNAY ELITE: TINYURL LINK ENGINE (GOD MODE v2.0)
+ * DRKCNAY ELITE: TINYURL LINK ENGINE (VIP Elite v2.0)
  * High-performance URL shortening using TinyURL API (DR 93).
  */
 

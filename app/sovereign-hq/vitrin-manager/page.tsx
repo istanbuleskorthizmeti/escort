@@ -94,7 +94,7 @@ export default function VitrinManager() {
               VİTRİN <span className="text-purple-500">MANAGER</span>
             </h1>
             <div className="text-[10px] text-purple-500 uppercase tracking-[0.3em] font-mono mt-1">
-              God Mode Profile Synchronization
+              VIP Elite Profile Synchronization
             </div>
           </div>
         </header>

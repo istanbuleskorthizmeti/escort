@@ -31,7 +31,7 @@ export function ExperienceDesigner({ neighborhood, district }: { neighborhood: s
       <div className="flex justify-between items-center mb-16">
         <h3 className="text-3xl font-black italic uppercase text-white tracking-widest flex items-center gap-4">
           <Sparkles className="w-6 h-6 text-rose-600" />
-          Protokol <span className="text-rose-600">Tasarlayıcı</span>
+          Standart <span className="text-rose-600">Tasarlayıcı</span>
         </h3>
         <div className="flex gap-2">
           {[1, 2, 3].map(s => (

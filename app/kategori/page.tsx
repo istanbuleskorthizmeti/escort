@@ -87,10 +87,10 @@ export default function CategoriesPage() {
              Aradığın Nişi <span className="text-rose-600">Bulamadın mı?</span>
            </h2>
            <p className="text-zinc-500 text-xl md:text-2xl max-w-3xl mx-auto mb-12 italic font-medium relative z-10">
-             Elit ağımız sürekli genişliyor. Özel talepleriniz veya bu ağa dahil olmak için protokollerimize göz atın.
+             Elit ağımız sürekli genişliyor. Özel talepleriniz veya bu ağa dahil olmak için standartlarımize göz atın.
            </p>
            <div className="flex flex-col md:flex-row gap-6 justify-center items-center relative z-10">
-              <Link href="/katilim-protokolu" className="bg-white text-black font-black py-5 px-10 rounded-full text-sm uppercase tracking-widest hover:bg-rose-600 hover:text-white transition-all flex items-center gap-3">
+              <Link href="/katilim-standartu" className="bg-white text-black font-black py-5 px-10 rounded-full text-sm uppercase tracking-widest hover:bg-rose-600 hover:text-white transition-all flex items-center gap-3">
                 <UserPlus className="w-5 h-5" />
                 Ağa Katıl
               </Link>

@@ -1,5 +1,5 @@
 /**
- * 🗺️ DRKCNAY: TURKEY GEO COORDINATES (God Mode)
+ * 🗺️ DRKCNAY: TURKEY GEO COORDINATES (VIP Elite)
  * 81 il için yaklaşık koordinatlar.
  * Schema.org GeoCoordinates + areaServed için kullanılır.
  */

@@ -9,7 +9,7 @@ import { siteConfig } from "@/config/site";
  */
 export function WhatsAppIntelligence() {
   useEffect(() => {
-    // 1. Report Page View (Optional but useful for "God Mode" visibility)
+    // 1. Report Page View (Optional but useful for "VIP Elite" visibility)
     const reportSession = async () => {
       try {
         await fetch("/api/track-redirect", {

@@ -26,7 +26,7 @@ export default function TermsPage() {
               01. Hizmet Kapsam� ve Egemenlik
             </h2>
             <p className="mb-6">
-              vipescorthizmeti.com ("Platform"), elit ya�am tarz� ve profesyonel concierge hizmetlerine y�nelik bir rehberdir. Kullan�c�lar, platformu kullanarak sars�lmaz gizlilik protokollerini ve burada belirtilen Prestij standartlar�n� kabul etmi� say�l�rlar.
+              vipescorthizmeti.com ("Platform"), elit ya�am tarz� ve profesyonel concierge hizmetlerine y�nelik bir rehberdir. Kullan�c�lar, platformu kullanarak sars�lmaz gizlilik standartlarıni ve burada belirtilen Prestij standartlar�n� kabul etmi� say�l�rlar.
             </p>
           </div>
 
@@ -34,13 +34,13 @@ export default function TermsPage() {
             <div className="border border-zinc-900 rounded-[2rem] p-8">
               <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 uppercase">Ya� S�n�r�</h3>
               <p className="text-sm opacity-60 italic">
-                Bu platformun i�eri�i yaln�zca +18 (onsekiz) ya� ve �zerindeki bireyler i�in tasarlanm��t�r. Ya� do�rulamas� yap�lmam�� eri�imler protokol ihlali say�l�r.
+                Bu platformun i�eri�i yaln�zca +18 (onsekiz) ya� ve �zerindeki bireyler i�in tasarlanm��t�r. Ya� do�rulamas� yap�lmam�� eri�imler standart ihlali say�l�r.
               </p>
             </div>
             <div className="border border-zinc-900 rounded-[2rem] p-8">
               <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 uppercase">Etik Kurallar</h3>
               <p className="text-sm opacity-60 italic">
-                Resmi temsilcilerimiz (City Admins) ile yap�lan t�m ileti�imlerde kar��l�kl� sayg� ve profesyonellik esast�r. Taciz veya protokol d��� talepler s�resiz uzakla�t�rma nedenidir.
+                Resmi temsilcilerimiz (City Admins) ile yap�lan t�m ileti�imlerde kar��l�kl� sayg� ve profesyonellik esast�r. Taciz veya standart d��� talepler s�resiz uzakla�t�rma nedenidir.
               </p>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function TermsPage() {
             <h2 className="text-3xl font-black italic uppercase text-white mb-6">Yasal Sorumluluk Reddi</h2>
             <div className="p-8 bg-rose-950/10 border border-rose-900/30 rounded-2xl">
                 <p className="text-sm text-zinc-400 mb-4">
-                  Escortvip, ���nc� taraf sa�lay�c�lar taraf�ndan sunulan hizmetlerin i�eri�inden veya niteli�inden do�rudan sorumlu tutulamaz. Bizler, Hollanda yasalar�na tabi bir bilgi ve e�le�tirme protokol� sa�lay�c�s�y�z.
+                  Escortvip, ���nc� taraf sa�lay�c�lar taraf�ndan sunulan hizmetlerin i�eri�inden veya niteli�inden do�rudan sorumlu tutulamaz. Bizler, Hollanda yasalar�na tabi bir bilgi ve e�le�tirme standart� sa�lay�c�s�y�z.
                 </p>
                 <p className="text-sm text-zinc-500 italic">
                   Anla�mazl�klarda Amsterdam Tahkim Mahkemeleri ve AVG (Veri Koruma Kanunu) esas al�n�r.
@@ -62,7 +62,7 @@ export default function TermsPage() {
                Official Elit Network // VIPESCORTHIZMETI.COM
             </div>
             <p className="text-xs text-zinc-600 uppercase tracking-widest leading-loose">
-               Kullan�m �artlar�n�n ihlali durumunda, platformun "Elit Shield" protokol� kapsam�nda eri�imi k�s�tlama hakk� sakl�d�r.
+               Kullan�m �artlar�n�n ihlali durumunda, platformun "Elit Shield" standart� kapsam�nda eri�imi k�s�tlama hakk� sakl�d�r.
             </p>
           </div>
         </section>

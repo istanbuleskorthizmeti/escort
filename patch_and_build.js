@@ -18,7 +18,9 @@ async function run() {
     'app/page.tsx',
     'app/[...slug]/page.tsx',
     'app/subdomain/[slug]/page.tsx',
-    'app/profile/[slug]/page.tsx'
+    'app/profile/[slug]/page.tsx',
+    'components/UI/Navbar.tsx',
+    'config/site.ts'
   ];
 
   for (const f of filesToSync) {

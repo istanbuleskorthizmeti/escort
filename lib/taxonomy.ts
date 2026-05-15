@@ -15,8 +15,8 @@ export const taxonomyCategories: Record<string, TaxonomyCategory> = {
     seoDescription: "DRKCNAY ELITE Vahşi GFE elit sevgili deneyimi ile tanışın. Yalnızca bedensel değil, ruhsal ve romantik bir eşlik arayan beylere özel kusursuz profiller [2026].",
     tier: "Premium",
     seoContentSpintax: [
-      "{ {Sıcacık bir şevkat|Derin bir romantizm|Agresif bir sevgili deneyimi} aradığınızda, {sadece fiziksel bir buluşma değil|basit bir randevudan fazlası} olan bu protokol; {zihninizi büyüleyecek|ruhsal bir bağ kuracak|gerçek bir tutku} {vaat ediyor|fısıldıyor}.|Aslına bakarsanız, [LOC] bölgesinde gerçek bir {yakınlık simyası|duygusal derinlik} bulmak, {nadir bir mücevher keşfestmek gibidir|ayrıcalıklı bir seçimdir}.} {Bu özel deneyim, {şehrin gürültüsünden uzak|kağıt gibi ince bir gizlilikle} [LOC] sınırlarında hayat buluyor.}",
-      "{ [LOC] {şehrinin|lokasyonunun} {en çok arzulanan|en seçkin} {kategorilerinden|protokollerinden} biri olan Agresif GFE, {kaliteyi yaşam felsefesi yapmış beylere|rafine zevkleri olan misafirlere} {eksiksiz bir şefkat|romantik bir sığınak} {sağlıyor|sunuyor}.|Sözü fazla uzatmadan söylemek gerekirse; [LOC] genelindeki [LANDMARK] gibi noktalarda yaşayacağınız bu {seçkin eşleşme|özel anlar}, {size unuttuğunuz o heyecanı|tattığınız en saf huzuru} yeniden hatırlatacak.}"
+      "{ {Sıcacık bir şevkat|Derin bir romantizm|Agresif bir sevgili deneyimi} aradığınızda, {sadece fiziksel bir buluşma değil|basit bir randevudan fazlası} olan bu standart; {zihninizi büyüleyecek|ruhsal bir bağ kuracak|gerçek bir tutku} {vaat ediyor|fısıldıyor}.|Aslına bakarsanız, [LOC] bölgesinde gerçek bir {yakınlık simyası|duygusal derinlik} bulmak, {nadir bir mücevher keşfestmek gibidir|ayrıcalıklı bir seçimdir}.} {Bu özel deneyim, {şehrin gürültüsünden uzak|kağıt gibi ince bir gizlilikle} [LOC] sınırlarında hayat buluyor.}",
+      "{ [LOC] {şehrinin|lokasyonunun} {en çok arzulanan|en seçkin} {kategorilerinden|standartlarınden} biri olan Agresif GFE, {kaliteyi yaşam felsefesi yapmış beylere|rafine zevkleri olan misafirlere} {eksiksiz bir şefkat|romantik bir sığınak} {sağlıyor|sunuyor}.|Sözü fazla uzatmadan söylemek gerekirse; [LOC] genelindeki [LANDMARK] gibi noktalarda yaşayacağınız bu {seçkin eşleşme|özel anlar}, {size unuttuğunuz o heyecanı|tattığınız en saf huzuru} yeniden hatırlatacak.}"
     ]
   },
   "vip-rus-ve-slav": {
@@ -37,7 +37,7 @@ export const taxonomyCategories: Record<string, TaxonomyCategory> = {
     seoDescription: "DRKCNAY ELITE Vahşi BDSM ve Dominatrix elit rehberi. Gizemli oyunlar, deri ve kırbaç fantezileri ile itaat ve tabuları yıkarak sınırları zorlayın [2026].",
     tier: "Prestij",
     seoContentSpintax: [
-      "{ {Agresif fantezinin karanlık dünyası|Dominasyonun o sarsılmaz otoritesi} [LOC] sınırlarında {vücut buluyor|manifeste ediliyor}. {Mutlak teslimiyetten|Kontrolü tamamen devretmekten} {gelen o benzersiz haz|haz aldığınız o saniyeler}, [LANDMARK] yakınlarındaki {gizli stüdyo ve rezidanslarımızda|korunaklı odalarda} sizi bekliyor.} {Bölgenin [VIBE] ruhu, bu {sessiz ve karanlık arzularla|BDSM protokolüyle} {harmanlanıyor|mühürleniyor}.}",
+      "{ {Agresif fantezinin karanlık dünyası|Dominasyonun o sarsılmaz otoritesi} [LOC] sınırlarında {vücut buluyor|manifeste ediliyor}. {Mutlak teslimiyetten|Kontrolü tamamen devretmekten} {gelen o benzersiz haz|haz aldığınız o saniyeler}, [LANDMARK] yakınlarındaki {gizli stüdyo ve rezidanslarımızda|korunaklı odalarda} sizi bekliyor.} {Bölgenin [VIBE] ruhu, bu {sessiz ve karanlık arzularla|BDSM standartlarıyle} {harmanlanıyor|mühürleniyor}.}",
       "{ {Kırbaç seslerinin|Deri dokusunun|Agresif itaat kurallarının} {başrolde olduğu|merkezde durduğu} bu serüven, [LOC] genelinde {gerçek dominatrix ruhunu|en cesur fantezileri} {hayata geçiriyor|vadediyor}.}"
     ]
   },
@@ -59,7 +59,7 @@ export const taxonomyCategories: Record<string, TaxonomyCategory> = {
     seoDescription: "DRKCNAY ELITE Hiddetli Prestij Sınıfı: Asalet ve zarafeti bir araya getiren kusursuz vip escort rehberi. Göz alıcı ve büyüleyici escortları anında inceleyin [2026].",
     tier: "Elit",
     seoContentSpintax: [
-      "{ {Agresif prestij sınıfı, zerafetin ve asaletin|Üst düzey partnerliğin|C-Level eşlik protokolünün} [LOC] bölgesindeki {tek temsilcisidir|en güçlü kalesidir}. {Sadece fiziksel bir güzellik değil|Manken estetiğinin ötesinde}, {zekası ve kültürüyle de|vizyoner duruşuyla da} {sizi büyüleyecek|hayran bırakacak} partnerler [LANDMARK] çevresinde {yerini almıştır|beklemededir}.}"
+      "{ {Agresif prestij sınıfı, zerafetin ve asaletin|Üst düzey partnerliğin|C-Level eşlik standartlarınün} [LOC] bölgesindeki {tek temsilcisidir|en güçlü kalesidir}. {Sadece fiziksel bir güzellik değil|Manken estetiğinin ötesinde}, {zekası ve kültürüyle de|vizyoner duruşuyla da} {sizi büyüleyecek|hayran bırakacak} partnerler [LANDMARK] çevresinde {yerini almıştır|beklemededir}.}"
     ]
   },
   "sarisin-tanricalar": {
@@ -82,7 +82,7 @@ export const taxonomyCategories: Record<string, TaxonomyCategory> = {
       "{Saatlerin durduğu o anlar|Zaman kavramının tamamen yitirildiği geceler|Sabaha kadar aralıksız süren} {overnight deneyimi|sınırsız macera}, {kışkırtıcı bir tutkuyu|delicesine bir hazzı} {birleştirir|size sunar}.",
       "{Sabaha uyanmak|Gecenin kollarında hazza doymak|Sabaha kadar nefes nefese kalmak}, {Overnight profil seçeneklerimizle|sınırsız gece vizyonumuzla} {artık erişilebilir bir lüks|tutkulu bir gerçekliktir}.",
       "{LOKAL_ODAK} yakınlarında {gerçekleşecek bu sabahsız gecede|yaşanacak bu kesintisiz serüvende}, {şefkatin ve tutkunun|hazzın ve dostluğun} {en derin halini|en sıcak dokusunu} {duyumsayacaksınız|biriktireceksiniz}.",
-      "{Yorgunluğunuzun silindiği|Şafağın o serin sularında hazza uyandığınız} {overnight protokolü|tam boy gecelik eşlik}, {yüksek gizlilik standartlarımızla|korunaklı yapımızla} {sizi bekliyor|emrinizdedir}."
+      "{Yorgunluğunuzun silindiği|Şafağın o serin sularında hazza uyandığınız} {overnight standartları|tam boy gecelik eşlik}, {yüksek gizlilik standartlarımızla|korunaklı yapımızla} {sizi bekliyor|emrinizdedir}."
     ]
   },
   "esmer-tutku": {
@@ -131,7 +131,7 @@ export const taxonomyCategories: Record<string, TaxonomyCategory> = {
     seoDescription: "Duo ve Threesome sınır tanımayan elit deneyimler DRKCNAY ELITE'te. İki ateşli partnerin uyumu ile odadaki fantezi sıcaklığını ikiye katlayın.",
     tier: "Elit",
     seoContentSpintax: [
-      "{İki muazzam afetin arasında kalmak|Hazzın aynı anda iki katına çıkması|Otel odasında eşsiz bir fantezi sinerjisi}, {VIP olanaklarımızla|Elit protokollerimizle} {hayallerden çıkıp gerçeğe dönüşüyor|sizi terletmeye hazırlanıyor}.",
+      "{İki muazzam afetin arasında kalmak|Hazzın aynı anda iki katına çıkması|Otel odasında eşsiz bir fantezi sinerjisi}, {VIP olanaklarımızla|Elit standartlarımizle} {hayallerden çıkıp gerçeğe dönüşüyor|sizi terletmeye hazırlanıyor}.",
       "{İki partnerin birden ilgisiyle|Duo escort sınır tanımayan seçenekleriyle}, {fantezilerinizin|arzularınızın} {zirvesine ulaşmak|sınırlarını parçalamak} için {benzesiz tecrübeler|kışkırtıcı oyunlar} {sunulur|başlıyor}.",
       "{LOKAL_ODAK} yakınlarında {gerçekleşecek bu senkronize şölende|ikiye katlanan bu tutku fırtınasında}, {hazzın matematiksel sınırlarını|arzularınızın kapasitesini} {yeniden keşfetmeye|zorlamaya} {hazır olun|davetlisiniz}.",
       "{Dört elin vücudunuzda|İki nefesin boynunuzda|Sınırsız bir Duo performansının} {yaratacağı o baş döndürücü etkiyi|eşsiz heyecanı} {yaşamak için en doğru andasınız|vakit kaybetmeyin}."
@@ -147,7 +147,7 @@ export const taxonomyCategories: Record<string, TaxonomyCategory> = {
       "{Bedenin ustalıkla okşandığı anlar|Sıcak ellerle fiziksel rahatlama|Nefes kesen masaj dokunuşları}, {Elit bir ortamda|VIP kalitesiyle} {bedeninize yayılıyor|sizi rahatlatıyor}.",
       "{Usta parmaklara sahip fantezi terapistleri|Elite masaj escortları}, {stresinizi|tüm gerginliğinizi} {tatlı bir hazza dönüştürmek|unutturmak} için {kışkırtıcı teknikler|çok sıcak bir atmosfer} {hazırladı|sunuyor}.",
       "{LOKAL_ODAK} civarındaki {özel masaj odalarımızda|rahatlatıcı atmosferimizde}, {yağların teninizle dansını|yumuşacık avuçların sihrini} {hissetmek için|deneyimlemek üzere} {hemen randevu alın|şimdi yerinizi ayırtın}.",
-      "{Günün tüm yükünü|Kaslarınızdaki her gerginliği} {hazzın o sıcak akışına|tatlı bir uykudan önceki son heyecana} {bırakacak olan VIP masaj protokolü|özel terapi}, {sizi yenilenmiş hissettirecek|başka dünyalara taşıyacak}."
+      "{Günün tüm yükünü|Kaslarınızdaki her gerginliği} {hazzın o sıcak akışına|tatlı bir uykudan önceki son heyecana} {bırakacak olan VIP masaj standartları|özel terapi}, {sizi yenilenmiş hissettirecek|başka dünyalara taşıyacak}."
     ]
   },
   "private-club-members": {
@@ -157,7 +157,7 @@ export const taxonomyCategories: Record<string, TaxonomyCategory> = {
     seoDescription: "DRKCNAY ELITE Gizli (Private) Club profilleri. Yalnızca kilitli kapılar ardında fantezi yaşamak isteyen şeffaf anonim beyefendilere özel elitler.",
     tier: "Premium",
     seoContentSpintax: [
-      "{Odada sadece iki kişinin bildiği o sır|Dış dünyaya kapalı o mahrem nefesler|Referanslı seçkin ağımız}, {Elit Private protokol sayesinde|gizemli Club sistemimizde} {hayat buluyor|sizlere sunuluyor}.",
+      "{Odada sadece iki kişinin bildiği o sır|Dış dünyaya kapalı o mahrem nefesler|Referanslı seçkin ağımız}, {Elit Private standart sayesinde|gizemli Club sistemimizde} {hayat buluyor|sizlere sunuluyor}.",
       "{Gözlerden tamamen uzakta yaşanan haz|Kimsenin bilemeyeceği o saatler}, {özel üyelerimiz için|gizliliği seven beyefendiler için} {sarsılmaz bir anonimlikle|maksimum güvenlikte} {yaşanır|garanti altındadır}.",
       "{LOKAL_ODAK} yakınlarındaki {gizli ve isimsiz adreslerimizde|yüksek güvenlikli rezidanslarda}, {dünya yansa bile|hiçbir şeyin fark edilmeyeceği} {bir huzur ve haz limanına|ayrıcalıklı bir dünyaya} {sığının|dahil olun}.",
       "{İsimlerin önemsiz olduğu|Sadece anın ve tenin konuştuğu} {Private Secret buluşmalarla|gizli kulüp üyelerimizle}, {özgürlüğün tadına|en saf gizliliğe} {doyun|ulaşın}."
@@ -222,7 +222,7 @@ export const taxonomyCategories: Record<string, TaxonomyCategory> = {
     seoDescription: "DRKCNAY ELITE Latin escort modelleri. Brezilya, Kolombiya ve Güney Amerika'nın o ateşli ve kıvrımlı partnerleri ile limitsiz bir geceye hazır olun.",
     tier: "Elit",
     seoContentSpintax: [
-      "{Brezilya'nın o meşhur kıvrımları|Kolombiya'nın ateşli bakışları|Latin ateşinin o yüksek ritmi}, {Elit protokolümüzle|VIP vitrinimizde} {sizin için yanıyor|şimşek gibi çakıyor}.",
+      "{Brezilya'nın o meşhur kıvrımları|Kolombiya'nın ateşli bakışları|Latin ateşinin o yüksek ritmi}, {Elit standartlarımüzle|VIP vitrinimizde} {sizin için yanıyor|şimşek gibi çakıyor}.",
       "{Bronz tenli latin kraliçeler|Ateşli ve enerjik latin modeller}, {hiç bitmeyecek bir dans|kesintisiz bir şölen} {vaat ediyor|sizleri bekliyor}.",
       "{LOKAL_ODAK} civarındaki {sıcak buluşma noktalarında|luks rezidanslarda} {bir latin tanrıça ile|ateşli bir partnerle} {vakit geçirmek|geceyi paylaşmak} {size unuttuğunuz o adrenalini|tattığınız en sıcak heyecanı} {sunacak|hatırlatacak}.",
       "{Kışkırtıcı danslar|Durdurulamaz bir libido|Limitsiz bir enerji} ile {donatılmış latinlerle|gecenizi aydınlatacak partnerlerle}, {hayatınızın en ateşli|en unutulmaz} {tecrübesine adım atın|yelken açın}."

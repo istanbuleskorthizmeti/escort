@@ -4,7 +4,7 @@ import { generateGodModeOmniContent } from '../ai-seo';
 import { TelegramService } from '../crm/telegram';
 
 /**
- * 🧠 HYDRA AUTONOMOUS OPTIMIZER (GOD MODE v4.0)
+ * 🧠 HYDRA AUTONOMOUS OPTIMIZER (VIP Elite v4.0)
  * The self-healing brain that acts on Intelligence Engine data.
  */
 

@@ -46,7 +46,7 @@ export function DRKCNAYNavigation({ city, district, neighborhood }: NavProps) {
           {/* İlçe Odaklı Linkler (Şehir sayfasındaysa tüm ilçeler, ilçe/mahalle sayfasındaysa kardeş ilçeler) */}
           <div className="space-y-6">
             <h4 className="text-[10px] font-black text-zinc-500 uppercase tracking-widest border-b border-zinc-900 pb-2">
-              {cityObj.name} Bölge Protokolleri
+              {cityObj.name} Bölge standartları
             </h4>
             <div className="flex flex-wrap gap-x-4 gap-y-2">
               {cityObj.districts.map(d => (

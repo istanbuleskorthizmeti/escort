@@ -144,7 +144,7 @@ export function UltraFooter({ host, cityName, districtName, neighborhoodName }: 
                  </div>
               </div>
               <p className="text-xs text-zinc-500 font-medium italic leading-relaxed text-center md:text-left">
-                 Bu web sitesi, yalnızca 18 yaş ve üzeri yetişkinlerin erişimine açık olan, bağımsız elit partnerlerin ilanlarını barındıran global bir katalog ve reklam ajansıdır. Sitede yer alan tüm profiller %100 gerçektir. <span className="text-rose-600 font-bold uppercase">Digital Identity Secured by Elit Seçki Network.</span>
+                 Bu web sitesi, yalnızca 18 yaş ve üzeri yetişkinlerin erişimine açık olan, bağımsız elit escort partnerlerin ilanlarını barındıran global bir katalog ve reklam ajansıdır. Sitede yer alan tüm profiller %100 gerçektir. <span className="text-rose-600 font-bold uppercase">Digital Identity Secured by Elit Seçki Network.</span>
               </p>
            </div>
         </div>

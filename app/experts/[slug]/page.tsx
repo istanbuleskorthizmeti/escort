@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   }
 
   return {
-    title: `🛡️ ${expert.name} | ${expert.title} | Elit Otorite Protokolü`,
+    title: `🛡️ ${expert.name} | ${expert.title} | Elit Otorite Standartları`,
     description: `${expert.name} liderliğindeki ${expert.specialty} uzmanlığıyla; elite yaşam, biyo-hacking ve psikoseksüel derinlik üzerine %100 doğrulanmış bilimsel rehberlik.`,
     keywords: [
       `${expert.name}`,
@@ -122,7 +122,7 @@ export default async function ExpertDetailPage({ params }: { params: Promise<{ s
                    />
 
                    <div className="pt-12 border-t border-zinc-900 flex justify-between items-center text-[10px] font-black tracking-widest text-zinc-700 uppercase italic">
-                      <span>Protokol v1.0.26</span>
+                      <span>Standart v1.0.26</span>
                       <span>{expert.name} Onaylı</span>
                    </div>
                 </div>

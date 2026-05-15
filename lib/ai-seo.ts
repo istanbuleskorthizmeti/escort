@@ -76,7 +76,7 @@ export async function generateEliteOmniContent({
   const semanticEntities = getSemanticEntities(city, district).join(', ');
 
   const systemPrompt = `
-    [DEEPSEEK COST-OPTIMIZED GOD MODE]
+    [DEEPSEEK COST-OPTIMIZED VIP Elite]
     Görevin: SEO uyumlu, yüksek dönüşümlü içerik üretmek. 
     Kural 1: ASLA laf kalabalığı (fluff) yapma. Token tasarrufu kritik derecede önemlidir. Doğrudan hedefe yönelik, kısa ama etkili yaz.
     Kural 2: \${locationName} bölgesi için "Escort Hizmetleri", "VIP Escort", "Kaporasız Escort" vb. niş kelimeleri metne yedir.

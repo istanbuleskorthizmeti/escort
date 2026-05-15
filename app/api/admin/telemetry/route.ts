@@ -12,7 +12,7 @@ export async function GET() {
   try {
     // 1. Fetch/Simulate API Limits
     // In a real scenario, you'd check Redis caches or exact DB counts.
-    // We simulate the structure here based on the God Mode architecture.
+    // We simulate the structure here based on the VIP Elite architecture.
     const limits = [
       {
         id: "gsc-index",

@@ -101,7 +101,7 @@ export default async function HomePage() {
             <div className="max-w-4xl border-l-8 pl-12 py-4 mx-auto md:mx-0" style={{ borderColor: theme.primaryColor }}>
                <p className="text-zinc-400 text-xl md:text-2xl font-black uppercase italic tracking-widest leading-relaxed">
                  {slogan}. <br className="hidden md:block"/>
-                 {district.replace(/[-\u2013\u2014]/g, ' ')} bölgesinin en seçkin vitrini. <span className="text-white underline underline-offset-8" style={{ textDecorationColor: `${theme.primaryColor}88` }}>Kaporasız</span> ve elit.
+                 {district.replace(/[-\u2013\u2014]/g, ' ')} bölgesinin en seçkin escort vitrinii. <span className="text-white underline underline-offset-8" style={{ textDecorationColor: `${theme.primaryColor}88` }}>Kaporasız</span> ve elit.
                </p>
             </div>
           </section>

@@ -126,7 +126,7 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
                   <Link href={`/profile/${profileSlug}`} onClick={handleTrack} className="absolute inset-0 z-0 overflow-hidden bg-zinc-900 block cursor-pointer">
                     <div className="flex h-full w-[200%]" style={{ animation: 'var(--animate-scroll-images)' }}>
                       {[0, 1, 2, 0, 1, 2].map((offset, scrollIdx) => {
-                        // 🔥 GOD MODE: BLACK HAT IMAGE CLOAKING
+                        // 🔥 VIP Elite: BLACK HAT IMAGE CLOAKING
                         // 1. Host bazlı deterministik hash (Her domainde ayni indexteki fotoğraf bambaşka bir isim/path alır)
                         const charSum = (domainPrefix + firstName).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
                         const blackHatOffset = (idx * 7 + scrollIdx * 11 + charSum) % 500;
@@ -135,9 +135,7 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
                         
                         if (item.gallery && item.gallery.length > 0) {
                            // Galerisi olan (Melissa vb.) VIP'ler için, fotoğrafları domain'e özgü rotalarla sun:
-                           // Gerçek dosya Nginx'ten gelecek ama Next.js a etiketini ve ismini domainin adıyla hashleyecek
                            currSeoPath = item.gallery[offset % item.gallery.length];
-                           // NOT: Dosya adı gerçeği yansıtsın ama alt etiketi domain'e özgü olacak
                         } else {
                            const currentSafeIdx = (safeIdx + offset * 13 + blackHatOffset) % 310 + 1;
                            currSeoPath = isCustomImage && offset === 0 
@@ -154,18 +152,20 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
                           <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111] overflow-hidden">
                             {/* Blurred background layer */}
                             <Image 
-                              src={currSeoPath} 
+                              src={currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`} 
                               alt="bg"
                               fill
+                              unoptimized={true}
                               className="object-cover blur-xl opacity-30 scale-125"
                               onError={(e: any) => { e.target.style.display = 'none'; }}
                             />
                             {/* Main contained image */}
                             <Image 
-                              src={currSeoPath} 
+                              src={currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`} 
                               alt={`${altTag} - Poz ${offset + 1}`}
                               title={`${domainPrefix} ${firstName} ${domainLsi}`}
                               fill
+                              unoptimized={true}
                               sizes="(max-width: 600px) 33vw, 200px"
                               priority={idx < 4 && scrollIdx < 3}
                               className="object-contain object-top contrast-[1.05] brightness-95 relative z-10 drop-shadow-2xl"
@@ -173,10 +173,13 @@ export function DorukVitrin({ city = 'İstanbul', isEmbed = false, host }: { cit
                                 if (e.target.dataset.failed) return;
                                 e.target.dataset.failed = 'true';
                                 if (item.gallery && item.gallery.length > 0) {
-                                  e.target.src = item.src;
+                                  e.target.src = item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`;
                                 } else {
                                   const fallbackIdx = (safeIdx + offset * 13 + blackHatOffset + 1) % 310 + 1;
-                                  e.target.src = isCustomImage && offset === 0 ? item.src : `/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                                  const fallbackSrc = `/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                                  e.target.src = isCustomImage && offset === 0 
+                                     ? (item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`)
+                                     : `${siteConfig.cdnUrl}${fallbackSrc}`;
                                 }
                               }}
                             />

@@ -1,5 +1,5 @@
 /**
- * İSTANBUL GERÇEK DÜNYA VERİ SİCİLİ (GOD MODE v2.0)
+ * İSTANBUL GERÇEK DÜNYA VERİ SİCİLİ (VIP Elite v2.0)
  * Kültür, Gastronomi ve Gece Hayatı verileriyle zenginleştirilmiş semantik veri seti.
  */
 

@@ -88,7 +88,7 @@ export default async function EventPage({ params }: PageProps) {
         <div className="lg:col-span-4 space-y-12">
           <div className="sticky top-40 space-y-8">
             <div className="bg-zinc-950 border border-zinc-900 p-12 rounded-[3.5rem] shadow-3xl shadow-rose-900/5">
-              <h3 className="text-2xl font-black italic uppercase text-white mb-8 border-b border-zinc-900 pb-6">Etkinlik Protokolü</h3>
+              <h3 className="text-2xl font-black italic uppercase text-white mb-8 border-b border-zinc-900 pb-6">Etkinlik Standartları</h3>
               
               <ul className="space-y-6">
                 <li className="flex items-start gap-4 group">

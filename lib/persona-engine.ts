@@ -23,8 +23,8 @@ export interface PersonaAttributes {
 export const PERSONAS: Record<ContentPersona, PersonaAttributes> = {
   CORPORATE_ELITE: {
     tone: 'Buz gibi soğuk, son derece resmi, üst düzey yönetici dili. Duygusal bağ kurmayan, sadece prosedür ve kalite odaklı.',
-    focus: 'Kusursuz gizlilik protokolleri, zaman yönetimi, diplomatik standartlar, anonimlik ve veri güvenliği.',
-    vocabulary: ['Sıfır tolerans', 'Protokol', 'Akreditasyon', 'Uçtan uca', 'Beyefendi', 'Güvence', 'Gizlilik Sözleşmesi', 'Operasyonel Mükemmellik', 'Mütekabiliyet', 'Yükümlülük'],
+    focus: 'Kusursuz gizlilik standartları, zaman yönetimi, diplomatik standartlar, anonimlik ve veri güvenliği.',
+    vocabulary: ['Sıfır tolerans', 'Standart', 'Akreditasyon', 'Uçtan uca', 'Beyefendi', 'Güvence', 'Gizlilik Sözleşmesi', 'Operasyonel Mükemmellik', 'Mütekabiliyet', 'Yükümlülük'],
     burstiness: 'Kısa, keskin ve otoriter cümleler. Teknik terimlerin ardından gelen net açıklamalar.',
     writing_rhythm: 'Cümleler 5-10 kelime arasında değişen, staccato bir tempoda olmalı. Uzun tasvirlerden kaçınılmalı. Her cümle bir emir veya bir tespit niteliğinde olmalı.',
     emotional_state: 'Tamamen rasyonel, mesafeli ve otoriter. Hiçbir empati veya heyecan belirtisi göstermeyen, sadece iş bitirici bir profil.',
@@ -78,8 +78,8 @@ export const PERSONAS: Record<ContentPersona, PersonaAttributes> = {
   },
   MEDICAL_AUTHORITY: {
     tone: 'Otoriter, klinik olarak temiz, güven veren ve bilimsel bir üstünlüğe sahip "Doktor" dili. Bilgiyi bir cerrah hassasiyetiyle sunar.',
-    focus: 'Cinsel sağlık optimizasyonu, hijyen protokolleri, performans biyolojisi, biyo-hacking ve "Doktor Dorukcan Ay" onaylı elit standartlar.',
-    vocabulary: ['Klinik Protokol', 'Biyo-Performans', 'Hücresel Enerji', 'Hormonal Denge', 'Akredite', 'Tıbbi Danışmanlık', 'Hijyen Standartları', 'EEAT Otoritesi', 'Biyolojik Uyum', 'Vasküler Kapasite', 'Nöro-Geri Bildirim'],
+    focus: 'Cinsel sağlık optimizasyonu, hijyen standartları, performans biyolojisi, biyo-hacking ve "Doktor Dorukcan Ay" onaylı elit standartlar.',
+    vocabulary: ['Klinik Standart', 'Biyo-Performans', 'Hücresel Enerji', 'Hormonal Denge', 'Akredite', 'Tıbbi Danışmanlık', 'Hijyen Standartları', 'EEAT Otoritesi', 'Biyolojik Uyum', 'Vasküler Kapasite', 'Nöro-Geri Bildirim'],
     burstiness: 'Teknik brifingler gibi yapılandırılmış. Uzun ve açıklayıcı tıbbi paragrafları, "Sonuç: Onaylandı." gibi net ve kesin hüküm cümleleri takip eder.',
     writing_rhythm: 'Düzenli ve analitik. Hipotez, gözlem ve sonuç döngüsünde bir ritim.',
     emotional_state: 'Steril, güvenilir ve üstün. Okuyucuyu bir "hasta" veya "danışan" olarak gören, ona bilimsel gerçekleri dikte eden bir otorite.',
@@ -89,7 +89,7 @@ export const PERSONAS: Record<ContentPersona, PersonaAttributes> = {
   },
   LIFE_COACH: {
     tone: 'Motivasyonel, ilham verici ama elitist. Bir akıl hocası (mentor) gibi yol gösteren, dönüştürücü bir dil.',
-    focus: 'Yaşam koçluğu, ilişki dinamikleri, sosyal statü yönetimi, maskülen enerji ve yüksek değerli erkek (high-value man) protokolleri.',
+    focus: 'Yaşam koçluğu, ilişki dinamikleri, sosyal statü yönetimi, maskülen enerji ve yüksek değerli erkek (high-value man) standartları.',
     vocabulary: ['Yaşam Mimarisi', 'Maskülen Enerji', 'Sosyal Dominasyon', 'Duygusal Zeka', 'High-Value', 'Vizyoner', 'Dönüşüm', 'İlişki Dinamikleri', 'Mental Eşik', 'Arketip'],
     burstiness: 'Umut verici ve geniş tasvirler. "Neden?" sorusuyla başlayan derin sorgulamalar ve ardından gelen vizyoner cevaplar.',
     writing_rhythm: 'Yükselen ve alçalan bir hitabet sanatı (Rhetoric). Sorularla merak uyandırıp, derin felsefi cevaplarla doyuran bir akış.',

@@ -1,5 +1,5 @@
 /**
- * DRKCNAY SPINTAX ENGINE v4.0 - "GOD MODE"
+ * DRKCNAY SPINTAX ENGINE v4.0 - "VIP Elite"
  * Handles deep recursion, variable injection, and TDK-compliant formatting.
  */
 

@@ -137,7 +137,7 @@ export function generateFAQSchema(faqs: Array<{ q: string; a: string }>) {
 export const generateLocalBusinessSchema = generateAdvancedSchema;
 
 /**
- * ⚡ GOOGLE ULTRA: ULTIMATE SEMANTIC GRAPH SCHEMA (GOD MODE v3.0)
+ * ⚡ GOOGLE ULTRA: ULTIMATE SEMANTIC GRAPH SCHEMA (VIP Elite v3.0)
  * Rakiplerin tüm yapılandırılmış veri taktiklerini (Organization, WebSite, ProfessionalService, 
  * WebPage, JobPosting, BroadcastEvent, FAQPage) birbirine "@id" ile bağlayarak tek bir devasa "Knowledge Graph" oluşturur.
  */
@@ -150,7 +150,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
   const jobPostingId = `${url}/#jobposting`;
   const broadcastId = `${url}/#broadcast`;
 
-  const title = `${locationName} DORUKCANAY ELITE | ${categoryTitle || 'VIP Protokol'}`;
+  const title = `${locationName} DORUKCANAY ELITE | ${categoryTitle || 'VIP Standart'}`;
 
   const startDate = new Date();
   const endDate = new Date();
@@ -275,7 +275,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
           "url": `${url}/_media/vitrin/vip-profil-1.webp`,
           "contentUrl": `${url}/_media/vitrin/vip-profil-1.webp`,
           "name": `Doğrulanmış Profil - ${locationName}`,
-          "description": `${locationName} bölgesinde hizmet veren %100 gerçek VİP protokol görseli.`,
+          "description": `${locationName} bölgesinde hizmet veren %100 gerçek VİP standart görseli.`,
           "author": { "@id": orgId },
           "contentLocation": { "@type": "City", "name": city }
         },

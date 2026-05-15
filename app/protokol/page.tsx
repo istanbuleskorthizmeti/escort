@@ -5,10 +5,10 @@ import { VerificationBadge } from "@/components/UI/ConciergeSuite";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
-  title: "🛡️ Elit Elite Hub | VIP Protokol ve Topluluk Merkezi",
-  description: "EscortVip Elit ağının resmi iletişim ve protokol hubı. Elite topluluk güncellemeleri, sarsılmaz gizlilik kodları ve VIP erişim hatları.",
+  title: "🛡️ Elit Elite Hub | VIP Standart ve Topluluk Merkezi",
+  description: "EscortVip Elit ağının resmi iletişim ve standart hubı. Elite topluluk güncellemeleri, sarsılmaz gizlilik kodları ve VIP erişim hatları.",
   alternates: {
-    canonical: `https://${siteConfig.domain}/protokol`,
+    canonical: `https://${siteConfig.domain}/standart`,
   },
 };
 
@@ -34,7 +34,7 @@ export default function VIPProtocolHub() {
             </span>
           </h1>
           <p className="text-zinc-500 text-xl md:text-3xl font-black italic tracking-tight lowercase first-letter:uppercase max-w-3xl mx-auto leading-tight mt-12 mb-20 opacity-80">
-            vipescorthizmeti.com DRKCNAY Protocol ağının kalbi burasıdır. İletişimde kesintisiz erişim, anlık katalog güncellemeleri ve üst düzey gizlilik protokolleri için merkezi bağlantı noktanız.
+            vipescorthizmeti.com DRKCNAY Protocol ağının kalbi burasıdır. İletişimde kesintisiz erişim, anlık katalog güncellemeleri ve üst düzey gizlilik standartları için merkezi bağlantı noktanız.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
@@ -138,7 +138,7 @@ export default function VIPProtocolHub() {
            <div className="flex flex-col items-center text-center mb-24">
               <span className="text-rose-600 font-black tracking-[0.6em] uppercase text-[10px] mb-4">Mastery Layers</span>
               <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-6">MUTLAK <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">KOD</span> MODÜLLERİ</h2>
-              <p className="text-zinc-500 max-w-2xl font-medium italic">Elit ağındaki her etkileşim, bu 5 temel disiplin üzerine inşa edilmiştir. Bu modüller, sıradan bir randevuyu elite bir protokole dönüştürür.</p>
+              <p className="text-zinc-500 max-w-2xl font-medium italic">Elit ağındaki her etkileşim, bu 5 temel disiplin üzerine inşa edilmiştir. Bu modüller, sıradan bir randevuyu elite bir standarte dönüştürür.</p>
            </div>
 
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -155,7 +155,7 @@ export default function VIPProtocolHub() {
                  <div className="text-rose-600 text-5xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity mb-8">02</div>
                  <h3 className="text-2xl font-black italic uppercase mb-4">Bio-Performance</h3>
                  <div className="text-[8px] font-black text-rose-600 mb-4 tracking-widest uppercase">DR. DORUKCAN AY ONAYLI</div>
-                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Biyolojik verimlilik ve cinsel enerji optimizasyonu. Hormonal denge ve uzun süreli performans için biyo-hacking protokolleri.</p>
+                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Biyolojik verimlilik ve cinsel enerji optimizasyonu. Hormonal denge ve uzun süreli performans için biyo-hacking standartları.</p>
                  <div className="h-1 w-12 bg-zinc-800 group-hover:w-full transition-all duration-700"></div>
               </div>
 
@@ -180,7 +180,7 @@ export default function VIPProtocolHub() {
               <div className="bg-zinc-950 border border-zinc-900 p-10 rounded-[2.5rem] hover:border-rose-600 transition-all duration-700 group md:col-span-2 lg:col-span-2">
                  <div className="text-rose-600 text-5xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity mb-8">05</div>
                  <h3 className="text-2xl font-black italic uppercase mb-4">Elit Safety Protocols</h3>
-                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Sarsılmaz gizlilik ve güvenlik mimarisi. Hem beyefendilerin hem de profillerimizin anonimitesini sağlayan çelik kasa protokolleri.</p>
+                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Sarsılmaz gizlilik ve güvenlik mimarisi. Hem beyefendilerin hem de profillerimizin anonimitesini sağlayan çelik kasa standartları.</p>
                  <div className="h-1 w-12 bg-zinc-800 group-hover:w-full transition-all duration-700"></div>
               </div>
            </div>

@@ -224,7 +224,7 @@ export default function GuidePage() {
             ISTANBUL ELITE ESCORT NETWORK
           </h2>
           <p className="text-zinc-600 text-md leading-loose lowercase first-letter:uppercase font-medium max-w-4xl mx-auto italic">
-            vipescorthizmeti.com, İstanbul&apos;un tüm seçkin lokasyonlarında profesyonel escort rehberliği ve VIP eskort protokollerinin tek adresidir.
+            vipescorthizmeti.com, İstanbul&apos;un tüm seçkin lokasyonlarında profesyonel escort rehberliği ve VIP eskort standartlarınin tek adresidir.
           </p>
           <div className="text-[9px] font-black tracking-[1em] text-zinc-800 uppercase italic opacity-20">
             ESCORT PROTOCOLS // ESTABLISHED 2026

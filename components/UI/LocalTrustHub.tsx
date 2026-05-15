@@ -68,7 +68,7 @@ export const LocalTrustHub: React.FC<LocalTrustHubProps> = ({ city, district, ne
           <div className="w-full md:w-[400px] space-y-6">
              <div className="flex items-center gap-3 mb-4">
                 <p className="text-zinc-500 text-sm leading-relaxed mb-8">
-              {city} genelinde kaporasız ve görsel garantili hizmet sunan tek resmi platformdur. Tüm partnerler DORUKCANAY ELITE protokolü ile denetlenmektedir.
+              {city} genelinde kaporasız ve görsel garantili hizmet sunan tek resmi platformdur. Tüm partnerler DORUKCANAY ELITE standartları ile denetlenmektedir.
             </p>
 
             </div>

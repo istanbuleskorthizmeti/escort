@@ -4,7 +4,7 @@ import { ProxyHandler } from './proxy-handler';
 /**
  * ELITE SYSTEM: GOOGLE INDEXING API (v2.0)
  * High-Speed URL Discovery & Authority Building
- * God Mode: Centralized Auth Integration
+ * VIP Elite: Centralized Auth Integration
  */
 
 class GoogleIndexingService {

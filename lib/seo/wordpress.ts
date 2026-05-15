@@ -1,7 +1,7 @@
 import { prisma } from '../prisma';
 
 /**
- * 🪐 DRKCNAY ELITE: WORDPRESS CONNECTOR (GOD MODE v3.9)
+ * 🪐 DRKCNAY ELITE: WORDPRESS CONNECTOR (VIP Elite v3.9)
  * Authority distribution engine for WordPress.com REST API.
  */
 

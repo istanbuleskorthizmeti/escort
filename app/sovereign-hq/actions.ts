@@ -94,7 +94,7 @@ export async function fetchSEOStats() {
 }
 
 // ==========================================
-// 🛡️ GOD MODE: SIEGE QUEUE C2 CONTROLS
+// 🛡️ VIP Elite: SIEGE QUEUE C2 CONTROLS
 // ==========================================
 
 export async function fetchQueueStatus() {

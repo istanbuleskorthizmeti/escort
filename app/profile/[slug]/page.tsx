@@ -17,10 +17,12 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
   const params = use(paramsPromise);
   const host = typeof window !== 'undefined' ? window.location.host : siteConfig.domain;
   const { slug } = params;
+  const name = slug.charAt(0).toUpperCase() + slug.slice(1);
+  const city = "İstanbul";
   const charSum = (slug + host).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   const domainPrefix = host ? host.split('.')[0] : 'doruk';
 
-  // 🧠 GOD MODE: Domain ve Slug tabanlı Cloaked Resim Üretimi
+  // 🧠 VIP Elite: Domain ve Slug tabanlı Cloaked Resim Üretimi
   // Kullanıcının Melissa vb. profilleri de varsa onlara ait galeri gösterilmeli
   // Yoksa domain hash'ine göre sabit resimler çekilmeli.
   const profileData = vitrinImages.find(v => v.title && v.title.toLowerCase().includes(slug.toLowerCase()));
@@ -45,7 +47,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
     }
   }
 
-  // 🧠 GOD MODE UNIQUE CONTENT ENGINE (Domain & Slug Deterministic)
+  // 🧠 VIP Elite UNIQUE CONTENT ENGINE (Domain & Slug Deterministic)
   const phrases1 = [
     `${name}, ${city} bölgesindeki en gözde escort bayanlardan biridir.`,
     `Eşsiz bir deneyim arayanlar için ${name}, ${city} vip escort seçenekleri arasında öne çıkıyor.`,
@@ -116,6 +118,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                   alt={`${domainPrefix.toUpperCase()} ${name} ${city} Escort - %100 Gerçek ve Onaylı Profil`}
                   title={`${domainPrefix.toUpperCase()} ${name} ${city} VIP`}
                   fill
+                  unoptimized={true}
                   className="object-cover group-hover:scale-110 transition-transform duration-[2000ms]"
                   priority
                 />
@@ -173,6 +176,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                                alt={`${domainPrefix} ${name} ${city} Escort Galeri Görseli ${idx + 1} - ${domainLsi}`}
                                title={`${domainPrefix} ${name} ${domainLsi}`}
                                fill
+                               unoptimized={true}
                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                              />
                            </motion.div>

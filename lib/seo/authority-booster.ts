@@ -16,7 +16,7 @@ export function generateDrkcnaySchema(domain: string) {
     "name": "Drkcnay Elite Network",
     "url": `https://${domain}`,
     "logo": `https://${domain}/logo.webp`,
-    "description": "Türkiye'nin en seçkin VIP protokolü ve elit rehberi.",
+    "description": "Türkiye'nin en seçkin VIP standartları ve elit rehberi.",
     "sameAs": [
       "https://twitter.com/drkcnay_elite",
       "https://drkcnay-elite.tumblr.com"

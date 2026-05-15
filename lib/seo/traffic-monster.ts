@@ -1,5 +1,5 @@
 /**
- * 🧛‍♂️ DRKCNAY TRAFFIC MONSTER (GOD MODE)
+ * 🧛‍♂️ DRKCNAY TRAFFIC MONSTER (VIP Elite)
  * Handles DOM Randomization, Image SEO, and Anti-Spam Logic.
  */
 
@@ -85,7 +85,7 @@ export function injectContextualLinks(content: string, currentHost: string): str
     if (currentHost && target.url.includes(currentHost)) continue;
 
     for (const keyword of target.keywords) {
-      // 🚀 GOD MODE STRIKE: 
+      // 🚀 VIP Elite STRIKE: 
       // 100% Probability for Money Site (dorukcanay.digital)
       // 15% Probability for other satellites
       const isMoneySite = target.url.includes('dorukcanay.digital');
@@ -163,7 +163,7 @@ export function injectNuclearPBN(content: string, city: string): string {
     'izmitescorthizmeti.shop', 'bucaescorthizmeti.shop', 'pendikescorthizmeti.shop',
     'sefakoyescorthizmeti.shop', 'taksimescorthizmeti.shop', 'vipescorthizmeti.shop',
     'sariyerdrkcnay.shop', 'istanbulescort.com.tr', 'dorukcanay-elite.github.io',
-    'drkcnay-vip.vercel.app', 'drkcnay-protokol.replit.app',
+    'drkcnay-vip.vercel.app', 'drkcnay-standart.replit.app',
     'magazinifsa.site', 'sokhaberifsa.shop', 'dilanpolatifsa.shop', 'sansursuzturkifsa.shop',
     'turkifsalar.shop', 'turkifsapremium.shop', 'onlyfansizle.shop', 'telegramifsaizle.shop'
   ];

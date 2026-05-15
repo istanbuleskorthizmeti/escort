@@ -37,7 +37,7 @@ export async function POST(req: Request) {
         }
     }
 
-    // Generate God Mode Content specifically for this Edge Request
+    // Generate VIP Elite Content specifically for this Edge Request
     const omniContent = await generateUltraContextualContent({
         city: locationTarget,
         district: districtTarget,

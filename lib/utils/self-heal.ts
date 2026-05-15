@@ -7,7 +7,7 @@ const execAsync = promisify(exec);
 const CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 /**
- * GOD MODE: AUTONOMOUS SELF-HEALING PROTOCOL
+ * VIP Elite: AUTONOMOUS SELF-HEALING PROTOCOL
  * Parses incoming crash errors and executes surgical fixes in real-time.
  */
 export async function autoFix(error: any, moduleName: string): Promise<boolean> {

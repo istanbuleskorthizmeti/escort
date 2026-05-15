@@ -2,7 +2,7 @@ import * as crypto from 'crypto';
 import { ProxyHandler } from './proxy-handler';
 
 /**
- * ELITE SYSTEM: TUMBLR API SERVICE (GOD MODE v3.0)
+ * ELITE SYSTEM: TUMBLR API SERVICE (VIP Elite v3.0)
  * High-Authority Secondary Backlink Engine
  * Supports OAuth 1.0a HMAC-SHA1 Signing with SEO Rich-Formatting
  */
@@ -80,7 +80,7 @@ class TumblrService {
       <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(225,29,72,0.75), rgba(0,0,0,0)); margin: 40px 0;">
       <div style="padding: 30px; background: #0a0a0a; border: 1px solid #e11d48; border-radius: 24px; text-align: center; font-family: 'Inter', sans-serif;">
         <h3 style="color: #e11d48; text-transform: uppercase; letter-spacing: 2px; font-weight: 900; font-style: italic; font-size: 20px; margin-bottom: 20px;">🌹 DRKCNAY ELITE SELECTION</h3>
-        <p style="color: #ccc; font-size: 15px; line-height: 1.6; margin-bottom: 30px;">Türkiye'nin en seçkin VIP protokolü ile tanışın. 2026 standartlarında, %100 gizlilik ve yüksek kalite garantisiyle hizmetinizdeyiz.</p>
+        <p style="color: #ccc; font-size: 15px; line-height: 1.6; margin-bottom: 30px;">Türkiye'nin en seçkin VIP standartları ile tanışın. 2026 standartlarında, %100 gizlilik ve yüksek kalite garantisiyle hizmetinizdeyiz.</p>
         
         <div style="margin-bottom: 30px;">
           <a href="${clickUrl}" style="display: inline-block; padding: 20px 50px; background: #e11d48; color: white; border-radius: 60px; font-weight: bold; text-transform: uppercase; font-style: italic; text-decoration: none; box-shadow: 0 10px 30px rgba(225, 29, 72, 0.5); font-size: 16px;">
@@ -98,7 +98,7 @@ class TumblrService {
 
   async createPost(blogName: string, params: TumblrPostParams) {
     if (!this.consumerKey || !this.consumerSecret || !this.token || !this.tokenSecret) {
-      throw new Error("TUMBLR_CREDENTIALS_MISSING: OAuth secrets are required for God Mode distribution.");
+      throw new Error("TUMBLR_CREDENTIALS_MISSING: OAuth secrets are required for VIP Elite distribution.");
     }
 
     const blogDomain = blogName.includes('.') ? blogName : `${blogName}.tumblr.com`;
@@ -159,7 +159,7 @@ class TumblrService {
   }
   async updatePost(blogName: string, postId: string, params: Partial<TumblrPostParams>) {
     if (!this.consumerKey || !this.consumerSecret || !this.token || !this.tokenSecret) {
-      throw new Error("TUMBLR_CREDENTIALS_MISSING: OAuth secrets are required for God Mode distribution.");
+      throw new Error("TUMBLR_CREDENTIALS_MISSING: OAuth secrets are required for VIP Elite distribution.");
     }
 
     const url = `https://api.tumblr.com/v2/blog/${blogName}.tumblr.com/post/edit`;

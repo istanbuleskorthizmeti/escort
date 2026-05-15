@@ -18,7 +18,7 @@ function hashString(str: string): number {
 }
 
 export function LinkWheel({ currentHost }: LinkWheelProps) {
-  // 🕸️ TIERED PBN MESH (God Mode Asymmetric Graph)
+  // 🕸️ TIERED PBN MESH (VIP Elite Asymmetric Graph)
   const currentDomainInfo = DOMAIN_MATRIX.find(d => currentHost.includes(d.host));
   
   // TIER 1 (Money Sites) MUST NOT LEAK LINK JUICE!

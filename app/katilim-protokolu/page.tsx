@@ -5,7 +5,7 @@ import { PanicButton, VerificationBadge } from "@/components/UI/ConciergeSuite";
 import { ShieldCheck, Lock, EyeOff } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Elit Katılım Protokolü | Tam Gizlilik Partner Ağı",
+  title: "Elit Katılım Standartları | Tam Gizlilik Partner Ağı",
   description: "EscortVIP elit partner ağına katılım. Güvenli, şifreli ve sunucu loglamasız başvuru sistemi.",
 };
 
@@ -56,7 +56,7 @@ export default function RecruitmentProtocolPage() {
                  <svg xmlns="http://www.w3.org/2005/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                </div>
                <div>
-                  <h3 className="text-rose-500 font-black tracking-widest text-xs uppercase mb-2">Güvenlik Protokolü Aktif</h3>
+                  <h3 className="text-rose-500 font-black tracking-widest text-xs uppercase mb-2">Güvenlik Standartları Aktif</h3>
                   <p className="text-zinc-400 text-sm leading-relaxed">Başvurunuzu incelerken medyanızı veya bilgilerinizi asla yerel sunucularda tutmuyoruz. E-posta formları yerine, 3. parti offshore (yurtdışı) şifreli Telegram Asistanımız üzerinden iletişim kuruyoruz.</p>
                </div>
              </div>

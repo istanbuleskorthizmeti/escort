@@ -7,7 +7,7 @@ import path from 'path';
 
 /**
  * DRKCNAY ELITE BLOGGER AUTOMATION (BACKLINK ENGINE v2.0)
- * God Mode: High-Authority backlink distribution with automated SEO formatting.
+ * VIP Elite: High-Authority backlink distribution with automated SEO formatting.
  */
 
 export interface BloggerPost {

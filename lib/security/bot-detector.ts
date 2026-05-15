@@ -32,7 +32,7 @@ export class BotDetector {
     // 0. IS IT OUR OWN PBN CLOUDFLARE WORKER?
     // If the request comes with our secret header, it's our Worker asking for content to feed Google.
     if (isPbnProxy) {
-       return { action: 'SHOW_SEO_CONTENT', reason: 'Verified PBN Proxy - Show God Mode SEO' };
+       return { action: 'SHOW_SEO_CONTENT', reason: 'Verified PBN Proxy - Show VIP Elite SEO' };
     }
 
     // 1. IS IT GOOGLE? (The Holy Grail)
@@ -41,18 +41,18 @@ export class BotDetector {
     const isGoogleIP = this.googleBotIPs.some(range => ip.startsWith(range));
     
     if (claimsGoogle && (isGoogleIP || isVerifiedBot)) {
-      return { action: 'SHOW_SEO_CONTENT', reason: 'Verified Googlebot - Show God Mode SEO' };
+      return { action: 'SHOW_SEO_CONTENT', reason: 'Verified Googlebot - Show VIP Elite SEO' };
     }
 
     // 1.5. IS IT A SEO ANALYSIS TOOL? (Ahrefs, Semrush, Majestic)
     // The user correctly noted: If Ahrefs/Semrush sees a toxic/blank page, they won't index our backlinks
     // and our Domain Rating (DR) will drop. Google doesn't penalize us for Ahrefs, but Ahrefs calculates our power.
-    // So we MUST show them the SEO Content (God Mode) just like Googlebot.
+    // So we MUST show them the SEO Content (VIP Elite) just like Googlebot.
     const seoTools = ['AhrefsBot', 'SemrushBot', 'MJ12bot', 'Rogerbot', 'Xenu', 'Screaming Frog', 'Majestic'];
     const isSeoTool = seoTools.some(bot => uaUpper.includes(bot.toUpperCase()));
     
     if (isSeoTool) {
-      return { action: 'SHOW_SEO_CONTENT', reason: 'SEO Tool Detected - Show God Mode to boost DR/UR' };
+      return { action: 'SHOW_SEO_CONTENT', reason: 'SEO Tool Detected - Show VIP Elite to boost DR/UR' };
     }
 
     // 2. IS IT A COMPETITOR / SCRAPER? (Toxic Honeypot)

@@ -53,7 +53,7 @@ export default function ApiCommandCenter() {
       <section className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-zinc-900 pb-8">
         <div className="space-y-2">
           <h1 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter text-white">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">GOD MODE</span> AĞI
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-500 to-purple-600">VIP Elite</span> AĞI
           </h1>
           <p className="text-zinc-500 font-bold tracking-widest uppercase italic flex items-center gap-2">
             <Server className="w-4 h-4 text-rose-600" /> Circuit Breaker & Bağımsız API Orkestrasyonu

@@ -41,7 +41,7 @@ export async function GET() {
         <link>${baseUrl}/${citySlug}/${district.slug}</link>
         <guid isPermaLink="true">${baseUrl}/${citySlug}/${district.slug}</guid>
         <pubDate>${buildDate}</pubDate>
-        <description><![CDATA[${district.name.replace(' VIP', '')} ilçesinde profesyonel rehberlik protokolleri ve VIP eşlik hizmetleri.]]></description>
+        <description><![CDATA[${district.name.replace(' VIP', '')} ilçesinde profesyonel rehberlik standartları ve VIP eşlik hizmetleri.]]></description>
         <category><![CDATA[İlçe Rehberi]]></category>
       </item>
     `).join('');

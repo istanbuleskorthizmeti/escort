@@ -33,7 +33,7 @@ export const WhatsAppService = {
     const query = userQuery.toLowerCase();
     
     if (query.includes('güven') || query.includes('reelde')) {
-      return "DRKCNAY Elite Protokolü kapsamında tüm profiller %100 görsel teyitli ve gizlilik sözleşmelidir. Endişeleriniz bizim sorumluluğumuzdadır.";
+      return "DRKCNAY Elite Standartları kapsamında tüm profiller %100 görsel teyitli ve gizlilik sözleşmelidir. Endişeleriniz bizim sorumluluğumuzdadır.";
     }
     
     if (query.includes('fiyat') || query.includes('ücret')) {

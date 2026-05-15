@@ -1,5 +1,5 @@
 /**
- * DRKCNAY ELITE: BITLY LINK ENGINE (GOD MODE v3.0)
+ * DRKCNAY ELITE: BITLY LINK ENGINE (VIP Elite v3.0)
  * High-performance URL shortening with Token Rotation, is.gd & clck.ru fallbacks.
  * Zero-Footprint Architecture.
  */

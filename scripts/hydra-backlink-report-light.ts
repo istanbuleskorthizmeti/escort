@@ -1,0 +1,105 @@
+
+import { prisma } from "../lib/prisma";
+import { TelegramService } from "../lib/crm/telegram";
+import dotenv from "dotenv";
+
+dotenv.config();
+
+const THEME = {
+    DIVIDER: "▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬",
+    SUCCESS: "✅",
+    INT: "🛰️",
+    PULSE: "⚡",
+    BAR_FULL: "█",
+    BAR_EMPTY: "░"
+};
+
+async function runLightweightBacklinkReport() {
+    console.log("🏴‍☠️ [HYDRA-BACKLINK-LIGHT] Rapid Aggregation...");
+
+    try {
+        // Fetch stats directly from DB to be ultra-fast
+        const [
+            totalPages,
+            bloggerPosted,
+            tumblrPosted,
+            wordpressPosted,
+            telegraphPosted,
+            pinterestPosted,
+            indexedPages,
+        ] = await Promise.all([
+            prisma.pageContent.count(),
+            prisma.pageContent.count({ where: { isBloggerPosted: true } }),
+            prisma.pageContent.count({ where: { isTumblrPosted: true } }),
+            prisma.pageContent.count({ where: { isWordPressPosted: true } }),
+            prisma.pageContent.count({ where: { isTelegraphPosted: true } }),
+            prisma.pageContent.count({ where: { isPinterestPosted: true } }),
+            prisma.pageContent.count({ where: { isIndexed: true } }),
+        ]);
+
+        const latestLinks = await prisma.pageContent.findMany({
+            where: {
+                OR: [
+                    { isBloggerPosted: true },
+                    { isTelegraphPosted: true },
+                    { isTumblrPosted: true },
+                    { isWordPressPosted: true }
+                ]
+            },
+            orderBy: { updatedAt: 'desc' },
+            take: 20,
+            select: {
+                slug: true,
+                bloggerPostUrl: true,
+                telegraphPostUrl: true,
+                tumblrPostUrl: true,
+                wordPressPostUrl: true,
+                updatedAt: true
+            }
+        });
+
+        const authorityAssets = await prisma.authorityAsset.findMany({
+            orderBy: { createdAt: 'desc' },
+            take: 10
+        });
+
+        const totalBacklinks = bloggerPosted + telegraphPosted + tumblrPosted + wordpressPosted;
+        
+        let msg = `
+🏴‍☠️ <b>HYDRA BACKLINK TAARRUZ RAPORU</b>
+${THEME.DIVIDER}
+🚀 <b>Strateji:</b> Multi-Platform Parasite SEO
+📊 <b>Toplam Backlink:</b> <code>${totalBacklinks}</code>
+⚡ <b>Otorite Gücü:</b> DR 90+ Injected
+${THEME.DIVIDER}
+
+📈 <b>PLATFORM DAĞILIMI:</b>
+• Blogger: <code>${bloggerPosted}</code>
+• Telegraph: <code>${telegraphPosted}</code>
+• WordPress: <code>${wordpressPosted}</code>
+• Tumblr: <code>${tumblrPosted}</code>
+
+💎 <b>VIP OTORİTE VARLIKLARI (GOV/EDU/HIGH-DR):</b>
+${authorityAssets.length > 0 ? authorityAssets.map(a => `• <a href="${a.url}">${a.title || 'Elite Asset'}</a> [DR ${a.dr}]`).join('\n') : '<i>Gov.tr saldırısı aktif...</i>'}
+
+🔗 <b>SON YAYINLANAN CANLI LİNKLER:</b>
+${latestLinks.map(l => {
+    const liveUrl = l.telegraphPostUrl || l.bloggerPostUrl || l.tumblrPostUrl || l.wordPressPostUrl;
+    const platform = l.telegraphPostUrl ? '📪 TG' : l.bloggerPostUrl ? '🅱️ BL' : l.tumblrPostUrl ? '📓 TM' : '🌐 WP';
+    return `• ${platform} <a href="${liveUrl}">${l.slug}</a>`;
+}).join('\n')}
+
+${THEME.DIVIDER}
+🧛‍♂️ <b>DURUM:</b> <i>Backlink bombası devam ediyor. Rapor hızı artırıldı.</i>
+🚀 <i>v6.6 - Hydra Dominance Engine</i>
+`.trim();
+
+        await TelegramService.sendMessage(msg);
+        console.log("✅ [SUCCESS] Lightweight report sent to Telegram.");
+
+    } catch (err: any) {
+        console.error("❌ [REPORT-ERROR]", err.message);
+    }
+}
+
+runLightweightBacklinkReport();

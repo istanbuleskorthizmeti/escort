@@ -90,6 +90,10 @@ model PageContent {
   telegraphPostId   String?
   isPinterestPosted Boolean   @default(false)
   pinterestPostUrl  String?
+  isGitHubPosted    Boolean   @default(false)
+  githubPostUrl     String?
+  isGistPosted      Boolean   @default(false)
+  gistPostUrl       String?
   isTikTokPosted    Boolean   @default(false)
   tikTokPostUrl     String?
   isYouTubePosted   Boolean   @default(false)

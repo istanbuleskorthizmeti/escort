@@ -191,7 +191,7 @@ export function DorukVitrin({
                                 if (item.gallery && item.gallery.length > 0) {
                                   e.target.src = item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`;
                                 } else {
-                                  const fallbackIdx = (safeIdx + offset * 13 + blackHatOffset + 1) % 310 + 1;
+                                  const fallbackIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset + 1) % 310 + 1, idx + offset + 1);
                                   const fallbackSrc = `/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
                                   e.target.src = isCustomImage && offset === 0 
                                      ? (item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`)

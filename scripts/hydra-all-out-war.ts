@@ -57,17 +57,50 @@ async function executeTotalWar() {
                     <hr style="border: 0; border-top: 1px solid #eee; margin: 30px 0;">
                     
                     <div style="color: #666; font-style: italic;">
-                        ${telegraphContent.substring(0, 1000)}...
+                        ${telegraphContent.length > 1500 ? telegraphContent.substring(0, 1500) + '...' : telegraphContent}
+                    </div>
+
+                    <div style="margin-top: 20px; text-align: center;">
+                        <a href="${MONEY_SITE}" style="display: inline-block; background: #e11d48; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;">
+                            🌐 ${zone} VIP KATALOĞU GÖRÜNTÜLE
+                        </a>
+                    </div>
+
+                    <div style="margin-top: 30px; border-top: 1px dashed #ccc; padding-top: 10px; color: #999; font-size: 11px;">
+                        #${zone.toLowerCase()}escort #${zone.toLowerCase()}vip #kaporasizescort #universiteliescort #rusvip #elitrehber
                     </div>
                 </div>
             `;
             
             const bloggerUrl = await BloggerAdapter.createPost(process.env.BLOG_ID || '', blogTitle, blogContent);
 
-            // 3. PERSIST PAYLOADS
+            // 3. PERSIST PAYLOADS (Telegraph + GitHub)
             const outDir = path.join(process.cwd(), 'parasite_hub', zone);
             if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
+            
+            // Save Telegraph HTML
             fs.writeFileSync(path.join(outDir, 'telegraph_final.html'), telegraphContent);
+
+            // Generate & Save GitHub README Payload
+            const githubMD = `
+# 🛡️ ${zone} VIP PARTNERSHIP PROTOCOL (2026)
+
+Official documentation and high-authority access for elit services in the **${zone}** region.
+
+## 🔗 ACCESS PORTAL
+> [!IMPORTANT]
+> To view the verified catalog and real profiles, use the official link below:
+> ### 🌐 [${anchorText}](${MONEY_SITE})
+
+## 📍 REGIONAL COVERAGE
+- **Beşyol Üniversiteli**
+- **Rus & VIP Elite**
+- **Kaporasız Randevu Sistemi**
+
+---
+*Maintained by Hydra Network Authority.*
+            `.trim();
+            fs.writeFileSync(path.join(outDir, 'README_FINAL.md'), githubMD);
 
             if (bloggerUrl) {
                 await googleIndexing.broadcast(bloggerUrl);

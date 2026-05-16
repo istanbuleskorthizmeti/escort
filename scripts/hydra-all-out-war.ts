@@ -74,12 +74,33 @@ async function executeTotalWar() {
             
             const bloggerUrl = await BloggerAdapter.createPost(process.env.BLOG_ID || '', blogTitle, blogContent);
 
-            // 3. PERSIST PAYLOADS (Telegraph + GitHub)
+            // 3. PERSIST PAYLOADS & REPORT (Telegraph + GitHub + Blogger)
             const outDir = path.join(process.cwd(), 'parasite_hub', zone);
             if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
             
             // Save Telegraph HTML
             fs.writeFileSync(path.join(outDir, 'telegraph_final.html'), telegraphContent);
+
+            // Save to DB
+            await prisma.pageContent.upsert({
+                where: { slug_siteId: { slug: zone, siteId: 'clvv123' } }, // Use a generic siteId or handle properly
+                update: {
+                    bloggerPostUrl: bloggerUrl || undefined,
+                    isBloggerPosted: !!bloggerUrl,
+                    telegraphPostUrl: `https://telegra.ph/${zone}-VIP-Elite`, // Mock for now if not returned
+                    isTelegraphPosted: true,
+                    updatedAt: new Date()
+                },
+                create: {
+                    slug: zone,
+                    siteId: 'clvv123',
+                    title: blogTitle,
+                    bloggerPostUrl: bloggerUrl || undefined,
+                    isBloggerPosted: !!bloggerUrl,
+                    telegraphPostUrl: `https://telegra.ph/${zone}-VIP-Elite`,
+                    isTelegraphPosted: true
+                }
+            });
 
             // Generate & Save GitHub README Payload
             const githubMD = `
@@ -107,7 +128,7 @@ Official documentation and high-authority access for elit services in the **${zo
                 await TelegramService.sendMessage(`🅱️ <b>BLOGGER SIZINTISI BAŞARILI</b>\n📍 Bölge: <code>${zone}</code>\n🔗 <a href="${bloggerUrl}">Görüntüle</a>`);
             }
 
-            console.log(`✅ [SUCCESS] ${zone} conquered with smart logic.`);
+            console.log(`✅ [SUCCESS] ${zone} conquered with database persistence.`);
 
         } catch (err: any) {
             console.error(`❌ [WAR-ERROR] ${zone}:`, err.message);

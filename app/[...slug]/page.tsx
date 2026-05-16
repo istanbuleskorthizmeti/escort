@@ -1,22 +1,22 @@
-import { prisma } from "@/lib/prisma";
-import { getSiteId } from "@/lib/site-context";
-import { siteConfig } from "@/config/site";
-import { notFound, permanentRedirect } from "next/navigation";
-import { headers } from "next/headers";
-import dynamic from "next/dynamic";
-import { getDomainConfig } from "@/config/domains";
-import Navbar from "@/components/UI/Navbar";
-import { UltraFooter } from "@/components/SEO/UltraFooter";
-import { SecureHTML } from "@/components/SecureHTML";
 import { Metadata } from "next";
-import { IstanbulConquestMatrix } from "@/components/SEO/IstanbulConquestMatrix";
-import Breadcrumbs from "@/components/UI/Breadcrumbs";
-import { dedupeEscort } from "@/lib/utils";
+import { headers } from "next/headers";
+import { notFound, permanentRedirect } from "next/navigation";
+import dynamic from "next/dynamic";
 
-import { DorukVitrin } from "@/components/SEO/DorukVitrin";
-import { MathematicalSEO } from "@/components/SEO/MathematicalSEO";
-import { SEOContentEngine } from "@/components/SEO/SEOContentEngine";
-import { GlobalTagCloud } from "@/components/SEO/GlobalTagCloud";
+// Relative Imports (Linux/Production Safe)
+import { prisma } from "../../lib/prisma";
+import { getSiteId } from "../../lib/site-context";
+import { siteConfig } from "../../config/site";
+import { getDomainConfig } from "../../config/domains";
+import { dedupeEscort } from "../../lib/utils";
+
+// Component Imports
+import Navbar from "../../components/UI/Navbar";
+import { UltraFooter } from "../../components/SEO/UltraFooter";
+import { SecureHTML } from "../../components/SecureHTML";
+import { IstanbulConquestMatrix } from "../../components/SEO/IstanbulConquestMatrix";
+import Breadcrumbs from "../../components/UI/Breadcrumbs";
+import { DorukVitrin } from "../../components/SEO/DorukVitrin";
 
 export const dynamic = "force-dynamic";
 
@@ -56,12 +56,11 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
   const isCloaker = domainConfig?.role === 'CLOAKER';
 
   if (!content) {
-    // 🐺 WOLF MODE: If no content found, redirect to home to recover juice
     permanentRedirect("/");
   }
 
   return (
-    <div className="min-h-screen bg-black text-white antialiased">
+    <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
       <Navbar />
       <main className="pt-32 pb-32">
         <div className="max-w-7xl mx-auto px-6">
@@ -73,42 +72,34 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
             </h1>
             <div className="h-px w-full bg-linear-to-r from-rose-600/50 via-zinc-800 to-transparent mb-12" />
             
-            {/* 🤖 CLOAKING ENGINE: BOT VS USER VIEW */}
-            {isBot ? (
-              <article className="prose prose-invert max-w-none 
-                prose-p:text-zinc-500 prose-p:text-xl prose-p:leading-relaxed 
-                prose-strong:text-rose-600 prose-headings:text-white">
-                 <SecureHTML html={content.content || ""} />
-              </article>
-            ) : (
-              <div className="mb-24">
-                 {isCloaker ? (
-                   <div className="bg-red-950/40 border border-red-600/30 p-12 rounded-[3rem] text-center shadow-[0_0_50px_rgba(220,38,38,0.1)]">
-                      <h3 className="text-3xl font-black uppercase text-white tracking-tighter mb-4 italic">VİDEOYU SANSÜRSÜZ İZLE</h3>
-                      <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
-                         Bu içeriğe tam erişim sağlamak ve VIP onaylı ağa katılmak için yaşınızı doğrulamanız gerekmektedir.
-                      </p>
-                      <a href="https://vipescorthizmeti.com" className="inline-block bg-red-600 text-white font-black px-10 py-4 rounded-full uppercase tracking-widest hover:bg-white hover:text-red-600 transition-colors">
-                         18+ DOĞRULAMAYI GEÇ →
-                      </a>
-                   </div>
-                 ) : (
-                   <>
-                     <div className="inline-flex items-center gap-4 bg-zinc-950/40 border border-rose-600/20 px-8 py-3 rounded-full mb-12">
-                        <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
-                        <span className="text-[11px] font-black uppercase tracking-[0.4em] text-zinc-400">VİP VİTRİN</span>
-                     </div>
-                     <DorukVitrin host={host} />
-                   </>
-                 )}
-              </div>
-            )}
+            {/* 🤖 GLOBAL CONTENT ENGINE: VIDEOS & TEXT FOR ALL */}
+            <div className="grid grid-cols-1 gap-12">
+                {/* 🎥 VIDEO PLAYER SECTION (Priority for Users) */}
+                <div className="w-full">
+                    <SecureHTML html={content.content || ""} />
+                </div>
+
+                {/* 📝 SEO CONTENT (Lower priority for users, High for bots) */}
+                <article className="prose prose-invert max-w-none 
+                    prose-p:text-zinc-500 prose-p:text-xl prose-p:leading-relaxed 
+                    prose-strong:text-rose-600 prose-headings:text-white mt-12">
+                    {/* Botlar zaten yukarıdaki SecureHTML içindeki metni de görüyor */}
+                </article>
+            </div>
+
+            <div className="mt-24">
+                <div className="inline-flex items-center gap-4 bg-zinc-950/40 border border-rose-600/20 px-8 py-3 rounded-full mb-12">
+                    <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
+                    <span className="text-[11px] font-black uppercase tracking-[0.4em] text-zinc-400">VİP VİTRİN</span>
+                </div>
+                <DorukVitrin host={host} />
+            </div>
           </div>
 
           <IstanbulConquestMatrix />
         </div>
       </main>
-      <UltraFooter host={host} cityName="İstanbul" />
+      <UltraFooter host={host} cityName="İSTANBUL" />
     </div>
   );
 }

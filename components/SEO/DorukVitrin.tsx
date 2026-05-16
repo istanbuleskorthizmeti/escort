@@ -10,6 +10,7 @@ import { generateGoldenAlt } from '../../lib/seo/traffic-monster';
 import { getActiveProfiles } from '../../app/actions/vitrin';
 import { siteConfig } from '../../config/site';
 import { ThemeEngine } from '../../lib/theme-engine';
+import { getSafeVipProfileIdx } from '../../lib/vitrin-blacklist';
 
 export function DorukVitrin({ 
   city = 'İstanbul', 
@@ -156,10 +157,10 @@ export function DorukVitrin({
                            // Galerisi olan (Melissa vb.) VIP'ler için, fotoğrafları domain'e özgü rotalarla sun:
                            currSeoPath = item.gallery[offset % item.gallery.length];
                         } else {
-                           const currentSafeIdx = (safeIdx + offset * 13 + blackHatOffset) % 310 + 1;
-                           currSeoPath = isCustomImage && offset === 0 
-                              ? item.src 
-                              : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
+                            const currentSafeIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset) % 310 + 1, idx + offset);
+                            currSeoPath = isCustomImage && offset === 0 
+                               ? item.src 
+                               : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
                         }
                         
                         // 🔥 HOST'a ÖZEL BLACK HAT ALT ETİKETLERİ

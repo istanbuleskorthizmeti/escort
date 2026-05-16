@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const LIVE_PHOTOS = [
+import { isBlacklisted } from "../../lib/vitrin-blacklist";
+
+const ALL_LIVE_PHOTOS = [
   "/_media/vitrin_processed/vip-profil-101.webp",
   "/_media/vitrin_processed/vip-profil-102.webp",
   "/_media/vitrin_processed/vip-profil-103.webp",
@@ -13,6 +15,11 @@ const LIVE_PHOTOS = [
   "/_media/vitrin_processed/vip-profil-107.webp",
   "/_media/vitrin_processed/vip-profil-108.webp"
 ];
+
+const LIVE_PHOTOS = ALL_LIVE_PHOTOS.filter(path => {
+    const id = parseInt(path.split('-').pop()?.split('.')[0] || '0');
+    return !isBlacklisted(id);
+});
 
 export function LivePhotoMarquee() {
   const [mounted, setMounted] = useState(false);

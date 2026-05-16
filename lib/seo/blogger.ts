@@ -180,7 +180,7 @@ class BloggerService {
 
       console.log(`✅ [BLOGGER] Post Created: ${res.data.url}`);
       
-      await this.notifyTelegram(`🚀 <b>HYDRA BLOGGER POSTED</b>\n\n📝 Title: ${post.title}\n📍 City: ${post.city || 'Genel'}\n🌐 URL: ${res.data.url}`);
+      await this.notifyTelegram(`🚀 <b>HYDRA BLOGGER YAYINLANDI</b>\n\n📝 Başlık: ${post.title}\n📍 Şehir: ${post.city || 'Genel'}\n🌐 URL: ${res.data.url}`);
       
       return res.data;
     } catch (error: any) {

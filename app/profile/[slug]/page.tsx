@@ -1,14 +1,14 @@
 "use client";
 
 import React, { use } from 'react';
-import { siteConfig } from "@/config/site";
-import Navbar from "@/components/UI/Navbar";
-import { UltraFooter } from "@/components/SEO/UltraFooter";
+import { siteConfig } from "../../../config/site";
+import Navbar from "../../../components/UI/Navbar";
+import { UltraFooter } from "../../../components/SEO/UltraFooter";
 import { MessageCircle, Star, Image as ImageIcon, CheckCircle2, Crown } from "lucide-react";
-import { generateUltraGraphSchema } from "@/lib/seo-schema";
-import { SEOContentEngine } from "@/components/SEO/SEOContentEngine";
-import { VIPBridge } from "@/components/UI/VIPBridge";
-import { vitrinImages } from "@/lib/vitrin-images";
+import { generateUltraGraphSchema } from "../../../lib/seo-schema";
+import { SEOContentEngine } from "../../../components/SEO/SEOContentEngine";
+import { VIPBridge } from "../../../components/UI/VIPBridge";
+import { vitrinImages } from "../../../lib/vitrin-images";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -121,6 +121,12 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                   unoptimized={true}
                   className="object-cover group-hover:scale-110 transition-transform duration-2000"
                   priority
+                  onError={(e: any) => {
+                    if (e.target.dataset.failed) return;
+                    e.target.dataset.failed = 'true';
+                    const fallbackIdx = (charSum % 310) + 1;
+                    e.target.src = `${siteConfig.cdnUrl}/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                  }}
                 />
                 <div className="absolute top-8 left-8 bg-black/60 backdrop-blur-xl px-6 py-2 rounded-full border border-rose-600/30 text-rose-600 text-[10px] font-black tracking-[0.2em] flex items-center gap-3">
                    <Crown size={14} className="animate-pulse" /> VIP ELITE SELECTION
@@ -178,6 +184,12 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                                fill
                                unoptimized={true}
                                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                               onError={(e: any) => {
+                                 if (e.target.dataset.failed) return;
+                                 e.target.dataset.failed = 'true';
+                                 const fallbackIdx = ((charSum + idx) % 310) + 1;
+                                 e.target.src = `${siteConfig.cdnUrl}/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                               }}
                              />
                            </motion.div>
                          )

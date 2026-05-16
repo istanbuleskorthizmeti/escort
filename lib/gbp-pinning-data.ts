@@ -87,6 +87,15 @@ export const BRANCHES: BranchData[] = [
         description: "Beylikdüzü Skyport Plaza'da kişiye özel lüks giyim tasarımları ve özel koleksiyon sunumları.",
         category: "Lingerie Store",
         coordinates: { lat: 41.0072959, lng: 28.6639239 }
+    },
+    {
+        slug: "bagcilar-escort-elite",
+        title: "Bağcılar Escort Elite & VIP",
+        address: "Yavuz Selim, 34203 Bağcılar/İstanbul",
+        storeCode: "BAG-ESC-01",
+        description: "Bağcılar bölgesinde en seçkin profillerle profesyonel partnerlik ve rehberlik hizmetleri.",
+        category: "Lingerie Store",
+        coordinates: { lat: 41.022224, lng: 28.8245218 }
     }
 ];
 
@@ -106,7 +115,7 @@ export function generateBranchSchema(branch: BranchData) {
             "latitude": branch.coordinates.lat,
             "longitude": branch.coordinates.lng
         },
-        "url": `https://vipescorthizmeti.net/subeler/${branch.slug}`,
+        "url": `https://vipescorthizmeti.com/subeler/${branch.slug}`,
         "telephone": "+90212XXXXXXX",
         "identifier": branch.storeCode
     };

@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { getSafeVipProfileIdx } from '@/lib/vitrin-blacklist';
 
 export function CloakerIfsa({ host, mode = 'TRAP' }: { host: string, mode?: 'TRAP' | 'PORTAL' }) {
   const isOnlyFans = host.includes('onlyfans');
@@ -148,7 +149,7 @@ export function CloakerIfsa({ host, mode = 'TRAP' }: { host: string, mode?: 'TRA
               {/* Fake Player Background */}
               <div className="absolute inset-0 z-0">
                 <Image 
-                  src={`/vitrin/vip-profil-${(activeVideo.id % 58) + 1}.webp`} 
+                  src={`/vitrin/vip-profil-${getSafeVipProfileIdx((activeVideo.id % 58) + 1)}.webp`} 
                   alt="Player Background" fill className="object-cover opacity-20 blur-xl scale-110"
                 />
               </div>
@@ -270,7 +271,7 @@ export function CloakerIfsa({ host, mode = 'TRAP' }: { host: string, mode?: 'TRA
               <div className="relative aspect-video rounded-xl overflow-hidden bg-zinc-900 border border-zinc-800 group-hover:border-red-500/80 transition-all duration-300 shadow-lg group-hover:shadow-[0_0_30px_rgba(220,38,38,0.15)]">
                 {/* Image with Teaser Blur */}
                 <Image 
-                  src={`/vitrin/vip-profil-${(v.id % 58) + 1}.webp`} 
+                  src={`/vitrin/vip-profil-${getSafeVipProfileIdx((v.id % 58) + 1)}.webp`} 
                   alt={v.title}
                   fill
                   className="object-cover opacity-70 blur-xl group-hover:blur-md scale-110 group-hover:scale-100 transition-all duration-500"

@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { siteConfig } from '@/config/site';
+import { isBlacklisted } from '@/lib/vitrin-blacklist';
 
 const REDIRECT_URL = "https://dorukcanay.digital/go";
 
@@ -22,7 +23,7 @@ const DRKCNAY_MODELS = Array.from({ length: 314 }, (_, i) => {
     badge: titles[i % titles.length].split(' ')[0],
     image: `/_media/vitrin/vip-profil-${id}.webp`
   };
-}).slice(0, 60);
+}).filter(m => !isBlacklisted(m.id)).slice(0, 60);
 
 const PureAngelVitrin = () => {
   return (
@@ -80,6 +81,12 @@ const PureAngelVitrin = () => {
                   alt={model.title}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-1000 grayscale-[0.2] group-hover:grayscale-0"
+                  onError={(e: any) => {
+                    if (e.target.dataset.failed) return;
+                    e.target.dataset.failed = 'true';
+                    const fallbackIdx = (idx % 310) + 1;
+                    e.target.src = `${siteConfig.cdnUrl}/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                  }}
                   sizes="(max-width: 768px) 50vw, 20vw"
                 />
                 

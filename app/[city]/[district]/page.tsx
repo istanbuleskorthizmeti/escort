@@ -1,33 +1,32 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { Metadata } from "next";
-import { sanitizeDisplayName } from "@/lib/utils";
-import { cities, getCitiesForHost, Neighborhood } from "@/lib/locations";
-import { ThemeEngine } from "@/lib/theme-engine";
-import { siteConfig } from "@/config/site";
-import Breadcrumbs from "@/components/UI/Breadcrumbs";
-import { DorukVitrin } from "@/components/SEO/DorukVitrin";
-import { SEOContentEngine } from "@/components/SEO/SEOContentEngine";
-import { StreamingSEOContent } from "@/components/SEO/StreamingSEOContent";
-import { VIPBridge } from "@/components/UI/VIPBridge";
-import { VIPEventHub } from "@/components/SEO/VIPEventHub";
-import { UltraFooter } from "@/components/SEO/UltraFooter";
-import { IstanbulConquestMatrix } from "@/components/SEO/IstanbulConquestMatrix";
-import Navbar from "@/components/UI/Navbar";
-import { VerificationBadge } from "@/components/UI/ConciergeSuite";
-import { cityAdmins, defaultAdmin } from "@/config/admins";
-import { Landmark as LandmarkIcon, Building, TreePine, MapPin, Phone, ShieldCheck } from 'lucide-react';
-import { SecureHTML } from "@/components/SecureHTML";
-import { generateLocationMetadata } from "@/lib/seo-metadata";
 import { headers } from "next/headers";
-import { notFound, permanentRedirect } from "next/navigation";
-import { generateGodModeContent } from "@/lib/seo-content";
-import { generateUltraGraphSchema } from "@/lib/seo-schema";
-import { taxonomyCategories } from "@/lib/taxonomy";
-import EventAwareBanner from "@/components/UI/EventAwareBanner";
-import { getHybridProfiles, getVitrinProfiles, getPageContent } from "@/lib/data-cache";
-import { getSiteId } from "@/lib/site-context";
-import { LivePhotoMarquee } from "@/components/UI/LivePhotoMarquee";
+import { notFound } from "next/navigation";
+import { Landmark as LandmarkIcon, Building, TreePine, MapPin, Phone, ShieldCheck } from 'lucide-react';
+
+// Relative Imports (Linux/Production Safe - 3 Levels Deep)
+import { sanitizeDisplayName } from "../../../lib/utils";
+import { cities, getCitiesForHost } from "../../../lib/locations";
+import { ThemeEngine } from "../../../lib/theme-engine";
+import { siteConfig } from "../../../config/site";
+import { getHybridProfiles, getVitrinProfiles, getPageContent } from "../../../lib/data-cache";
+import { getSiteId } from "../../../lib/site-context";
+import { generateLocationMetadata } from "../../../lib/seo-metadata";
+import { generateUltraGraphSchema } from "../../../lib/seo-schema";
+
+// Component Imports
+import Navbar from "../../../components/UI/Navbar";
+import Breadcrumbs from "../../../components/UI/Breadcrumbs";
+import { DorukVitrin } from "../../../components/SEO/DorukVitrin";
+import { SEOContentEngine } from "../../../components/SEO/SEOContentEngine";
+import { StreamingSEOContent } from "../../../components/SEO/StreamingSEOContent";
+import { VIPBridge } from "../../../components/UI/VIPBridge";
+import { VIPEventHub } from "../../../components/SEO/VIPEventHub";
+import { UltraFooter } from "../../../components/SEO/UltraFooter";
+import { IstanbulConquestMatrix } from "../../../components/SEO/IstanbulConquestMatrix";
+import { LivePhotoMarquee } from "../../../components/UI/LivePhotoMarquee";
+import { SecureHTML } from "../../../components/SecureHTML";
 
 export const revalidate = 3600;
 export const dynamicParams = true;
@@ -46,15 +45,12 @@ export async function generateMetadata({
   let host = (await headers()).get("host") || siteConfig.domain;
   host = host.replace(/^www\./, '');
 
-  // 🔱 HYDRA MISSION CHECK
   const allowedCities = getCitiesForHost(host);
   if (!allowedCities[city.toLowerCase()]) {
     return {}; 
   }
 
   const siteId = await getSiteId(host);
-  
-  // 🔱 PARALLEL DB PROBING
   const [dbCity, dbDist] = await Promise.all([
     getPageContent(city.toLowerCase(), siteId),
     getPageContent(district.includes(city) ? district : `${city}-${district}`, siteId)
@@ -65,8 +61,8 @@ export async function generateMetadata({
     cityObj = { name: sanitizeDisplayName(dbCity.title || city), slug: city, districts: [], landmarks: [] } as any;
   }
 
-  let distObj = cityObj?.districts?.find((d: any) => d.slug === district) || (dbDist ? { name: sanitizeDisplayName(dbDist.title || district), slug: district } as any) : null;
-  let landmarkObj = cityObj?.landmarks?.find((l: any) => l.slug === district);
+  const distObj = cityObj?.districts?.find((d: any) => d.slug === district) || (dbDist ? { name: sanitizeDisplayName(dbDist.title || district), slug: district } as any : null);
+  const landmarkObj = cityObj?.landmarks?.find((l: any) => l.slug === district);
 
   if (!cityObj || (!distObj && !landmarkObj)) {
     const formattedCity = city.replace(/-/g, ' ').replace(/escort|eskort/gi, '').trim().toUpperCase();
@@ -83,15 +79,6 @@ export async function generateMetadata({
 
   const cityName = cityObj?.name || sanitizeDisplayName(city);
   const districtName = distObj?.name || landmarkObj?.name || sanitizeDisplayName(district);
-
-  if (landmarkObj) {
-    return generateLocationMetadata({
-      city,
-      cityName: cityName,
-      landmarkName: districtName,
-      domain: host
-    });
-  }
 
   return generateLocationMetadata({
     city,
@@ -110,15 +97,12 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
   let host = (await headers()).get("host") || siteConfig.domain;
   host = host.replace(/^www\./, '');
 
-  // 🔱 HYDRA MISSION CHECK
   const allowedCities = getCitiesForHost(host);
   if (!allowedCities[city]) {
     return notFound();
   }
 
   const siteId = await getSiteId(host);
-  
-  // 🔱 PARALLEL DB PROBING
   const [dbCity, dbDistRaw] = await Promise.all([
     getPageContent(city, siteId),
     getPageContent(district.includes(city) ? district : `${city}-${district}`, siteId)
@@ -147,20 +131,13 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
   const dName = String(isLandmark ? sanitizeDisplayName(landmarkObj.name) : (distObj?.name || fallbackDistName));
   const cityName = String(cityObj?.name || fallbackCityName);
   
-  // 🛡️ Error #130 Prevention: Ensure nothing is an object
   const safeCityName = typeof cityName === 'string' ? cityName : "İstanbul";
   const safeDistName = typeof dName === 'string' ? dName : "Escort";
 
-  // 🔱 GOD-MODE: PARALLEL DATA ACQUISITION
-  const [profilesResult, vitrinProfiles] = await Promise.all([
-    getHybridProfiles({ city, district, limit: 8 }).catch(() => []),
+  const [vitrinProfiles] = await Promise.all([
     getVitrinProfiles().catch(() => [])
   ]);
   
-  const profiles = profilesResult;
-  const theme = ThemeEngine.getTheme(host);
-  const currentYear = new Date().getFullYear();
-
   const ultraSchema = generateUltraGraphSchema({
     locationName: `${safeDistName}`,
     city: safeCityName,
@@ -180,27 +157,27 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
       <Navbar />
       
       <main className="pt-28">
-        {/* 🏆 DRKCNAY VIP VİTRİN: DISTRICT PRIORITY */}
         <div className="w-full relative z-0 mb-12">
             <DorukVitrin city={String(safeCityName)} host={host} serverProfiles={vitrinProfiles} />
         </div>
 
-        {/* 🔱 HERO SECTION: DISTRICT AUTHORITY v10.0 */}
+        <LivePhotoMarquee />
+
         <section className="max-w-7xl mx-auto px-6 mb-32 mt-20 relative">
           <div className="absolute -top-20 left-0 w-full h-px bg-linear-to-r from-transparent via-zinc-800 to-transparent opacity-30" />
           
           <Breadcrumbs items={[{ name: String(safeCityName), item: `/${city}` }, { name: String(safeDistName), item: `/${city}/${district}` }]} />
           
-          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-rose-600/20 px-8 py-3 rounded-full mb-16 animate-fade-in shadow-glow-rose mt-12">
+          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-rose-600/20 px-8 py-3 rounded-full mb-16 shadow-glow-rose mt-12">
             <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
             <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
                {String(safeDistName).toUpperCase()} VIP ESCORT MERKEZİ // DRKCNAY NETWORK
             </span>
           </div>
 
-          <h1 className="hero-title-dynamic text-6xl md:text-[10rem] mb-12 tracking-tighter leading-[0.85]! flex flex-col items-start">
+          <h1 className="text-6xl md:text-[10rem] mb-12 tracking-tighter leading-none flex flex-col items-start font-black italic">
             <span className="opacity-90">{String(safeCityName)}</span>
-            <span className="text-rose-600 drop-shadow-[0_0_50px_rgba(225,29,72,0.6)]">ESCORT AJANSI</span>
+            <span className="text-rose-600 drop-shadow-[0_0_50px_rgba(225,29,72,0.6)] uppercase">ESCORT AJANSI</span>
           </h1>
           
           <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-rose-600 pl-12 max-w-4xl leading-tight opacity-90">
@@ -210,22 +187,13 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
 
           <div className="mt-12 bg-rose-600/10 border border-rose-600/20 p-8 rounded-3xl max-w-2xl">
              <h4 className="text-rose-600 font-black uppercase tracking-widest text-sm mb-2">🏥 DRKCNAY PROTOKOLÜ</h4>
-             <p className="text-xs text-zinc-400 italic">Dr. Dorukcan Ay tarafından akredite edilen hijyen ve sağlık standartları {String(safeDistName)} bölgesinde aktiftir. İlişki koçluğu ve biyolojik performans optimizasyonu için en hiddetli rehber.</p>
+             <p className="text-xs text-zinc-400 italic">Dr. Dorukcan Ay tarafından akredite edilen hijyen ve sağlık standartları {String(safeDistName)} bölgesinde aktiftir.</p>
           </div>
-
         </section>
 
-
-        {/* 🏆 VIP EVENT HUB: REGIONAL HOOK */}
-        <div className="relative">
-           <div className="absolute inset-0 bg-rose-600/5 blur-[120px] rounded-full -z-10" />
-           <VIPEventHub />
-        </div>
-
-        {/* 🔱 VIP TRANSITION BRIDGE */}
+        <VIPEventHub />
         <VIPBridge />
 
-        {/* 📝 LONG FORM CONTENT: AI-DRIVEN STREAMING SEO */}
         <Suspense fallback={<div className="h-96 bg-zinc-950/20 animate-pulse rounded-[5rem] mx-6 mb-40" />}>
           <StreamingSEOContent 
             city={city} 
@@ -236,21 +204,12 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
           />
         </Suspense>
 
-        {/* 💣 ISTANBUL DOMINATION HUB (Conditional) */}
-        <Suspense fallback={null}>
-          {String(safeCityName).toLowerCase() === 'istanbul' && <IstanbulConquestMatrix />}
-        </Suspense>
-
-        {/* 🔱 AGGRESSIVE SEO ENGINE: CONTENT & TAGS */}
-        <Suspense fallback={null}>
-          <SEOContentEngine cityName={String(safeCityName)} districtName={String(safeDistName)} host={host} />
-        </Suspense>
+        {String(safeCityName).toLowerCase() === 'istanbul' && <IstanbulConquestMatrix />}
+        <SEOContentEngine cityName={String(safeCityName)} districtName={String(safeDistName)} host={host} />
 
       </main>
 
-      <Suspense fallback={<div className="h-screen bg-black" />}>
-        <UltraFooter host={host} cityName={String(safeCityName)} districtName={String(safeDistName)} />
-      </Suspense>
+      <UltraFooter host={host} cityName={String(safeCityName)} districtName={String(safeDistName)} />
     </div>
   );
 }

@@ -4,8 +4,13 @@
  * Specific images that must NEVER be shown on any domain.
  */
 export const VITRIN_BLACKLIST = [
-    236, // User requested removal
-    // Add other previously requested IDs here
+    236, // Removed per request
+    79,  // Removed per request
+    292, // Removed per request
+    84,  // Removed per request
+    139, // Removed per request
+    130, // Removed per request
+    184, // Removed per request
 ];
 
 export function isBlacklisted(id: number): boolean {

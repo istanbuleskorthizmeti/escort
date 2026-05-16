@@ -6,6 +6,8 @@ import { omniAI } from "../lib/ai-provider";
 import fs from "fs";
 import path from "path";
 import dotenv from "dotenv";
+import { telegraphService } from "../lib/seo/telegraph";
+import { GistAdapter } from "../lib/parasite/gist";
 
 dotenv.config();
 
@@ -74,35 +76,24 @@ async function executeTotalWar() {
             
             const bloggerUrl = await BloggerAdapter.createPost(process.env.BLOG_ID || '', blogTitle, blogContent);
 
-            // 3. PERSIST PAYLOADS & REPORT (Telegraph + GitHub + Blogger)
+            // 3. TELEGRAPH INFILTRATION
+            const telegraphUrl = await telegraphService.createPost({
+                title: blogTitle,
+                author_name: 'DRKCNAY ELITE',
+                content: telegraphContent
+            });
+
+            // 4. GIST INFILTRATION
+            const gistUrl = await GistAdapter.createGist(`${zone.toLowerCase()}-vip-katalog.md`, githubMD);
+
+            // 5. PERSIST PAYLOADS & REPORT (Telegraph + GitHub + Gist + Blogger)
             const outDir = path.join(process.cwd(), 'parasite_hub', zone);
             if (!fs.existsSync(outDir)) fs.mkdirSync(outDir, { recursive: true });
             
             // Save Telegraph HTML
             fs.writeFileSync(path.join(outDir, 'telegraph_final.html'), telegraphContent);
 
-            // Save to DB
-            await prisma.pageContent.upsert({
-                where: { slug_siteId: { slug: zone, siteId: 'clvv123' } }, // Use a generic siteId or handle properly
-                update: {
-                    bloggerPostUrl: bloggerUrl || undefined,
-                    isBloggerPosted: !!bloggerUrl,
-                    telegraphPostUrl: `https://telegra.ph/${zone}-VIP-Elite`, // Mock for now if not returned
-                    isTelegraphPosted: true,
-                    updatedAt: new Date()
-                },
-                create: {
-                    slug: zone,
-                    siteId: 'clvv123',
-                    title: blogTitle,
-                    bloggerPostUrl: bloggerUrl || undefined,
-                    isBloggerPosted: !!bloggerUrl,
-                    telegraphPostUrl: `https://telegra.ph/${zone}-VIP-Elite`,
-                    isTelegraphPosted: true
-                }
-            });
-
-            // Generate & Save GitHub README Payload
+            // Generate GitHub README Payload
             const githubMD = `
 # 🛡️ ${zone} VIP PARTNERSHIP PROTOCOL (2026)
 
@@ -121,6 +112,33 @@ Official documentation and high-authority access for elit services in the **${zo
 ---
 *Maintained by Hydra Network Authority.*
             `.trim();
+
+            // Save to DB
+            await prisma.pageContent.upsert({
+                where: { slug_siteId: { slug: zone, siteId: 'clvv123' } },
+                update: {
+                    bloggerPostUrl: bloggerUrl || undefined,
+                    isBloggerPosted: !!bloggerUrl,
+                    telegraphPostUrl: telegraphUrl || undefined,
+                    isTelegraphPosted: !!telegraphUrl,
+                    gistPostUrl: gistUrl || undefined,
+                    isGistPosted: !!gistUrl,
+                    updatedAt: new Date()
+                },
+                create: {
+                    slug: zone,
+                    siteId: 'clvv123',
+                    title: blogTitle,
+                    bloggerPostUrl: bloggerUrl || undefined,
+                    isBloggerPosted: !!bloggerUrl,
+                    telegraphPostUrl: telegraphUrl || undefined,
+                    isTelegraphPosted: !!telegraphUrl,
+                    gistPostUrl: gistUrl || undefined,
+                    isGistPosted: !!gistUrl
+                }
+            });
+
+            // Generate & Save GitHub README Payload
             fs.writeFileSync(path.join(outDir, 'README_FINAL.md'), githubMD);
 
             if (bloggerUrl) {
@@ -128,7 +146,15 @@ Official documentation and high-authority access for elit services in the **${zo
                 await TelegramService.sendMessage(`🅱️ <b>BLOGGER SIZINTISI BAŞARILI</b>\n📍 Bölge: <code>${zone}</code>\n🔗 <a href="${bloggerUrl}">Görüntüle</a>`);
             }
 
-            console.log(`✅ [SUCCESS] ${zone} conquered with database persistence.`);
+            if (telegraphUrl) {
+                await TelegramService.sendMessage(`📪 <b>TELEGRAPH SIZINTISI BAŞARILI</b>\n📍 Bölge: <code>${zone}</code>\n🔗 <a href="${telegraphUrl}">Görüntüle</a>`);
+            }
+
+            if (gistUrl) {
+                await TelegramService.sendMessage(`📄 <b>GIST SIZINTISI BAŞARILI</b>\n📍 Bölge: <code>${zone}</code>\n🔗 <a href="${gistUrl}">Görüntüle</a>`);
+            }
+
+            console.log(`✅ [SUCCESS] ${zone} conquered with real links.`);
 
         } catch (err: any) {
             console.error(`❌ [WAR-ERROR] ${zone}:`, err.message);

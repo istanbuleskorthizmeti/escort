@@ -29,7 +29,7 @@ async function runBacklinkReport() {
         const report = await engine.buildFullReport();
         const { dbStats } = report;
 
-        // Fetch latest live backlinks
+        // Fetch latest live backlinks - Increased to 30 for better visibility
         const latestLinks = await prisma.pageContent.findMany({
             where: {
                 OR: [
@@ -40,7 +40,7 @@ async function runBacklinkReport() {
                 ]
             },
             orderBy: { updatedAt: 'desc' },
-            take: 15,
+            take: 20,
             select: {
                 slug: true,
                 bloggerPostUrl: true,
@@ -54,7 +54,7 @@ async function runBacklinkReport() {
         // Fetch high authority assets
         const authorityAssets = await prisma.authorityAsset.findMany({
             orderBy: { createdAt: 'desc' },
-            take: 5
+            take: 10
         });
 
         const totalBacklinks = dbStats.bloggerPosted + dbStats.telegraphPosted + dbStats.tumblrPosted + dbStats.wordpressPosted;
@@ -73,20 +73,25 @@ ${THEME.DIVIDER}
 • WordPress: <code>${dbStats.wordpressPosted}</code> [${generateProgressBar((dbStats.wordpressPosted / dbStats.totalPages) * 100)}]
 • Tumblr: <code>${dbStats.tumblrPosted}</code> [${generateProgressBar((dbStats.tumblrPosted / dbStats.totalPages) * 100)}]
 
-💎 <b>VIP OTORİTE VARLIKLARI:</b>
-${authorityAssets.length > 0 ? authorityAssets.map(a => `• <a href="${a.url}">${a.title || 'Elite Asset'}</a> [DR ${a.dr}]`).join('\n') : '<i>Veri bekleniyor...</i>'}
+💎 <b>VIP OTORİTE VARLIKLARI (GOV/EDU/HIGH-DR):</b>
+${authorityAssets.length > 0 ? authorityAssets.map(a => `• <a href="${a.url}">${a.title || 'Elite Asset'}</a> [DR ${a.dr}]`).join('\n') : '<i>Veri bekleniyor... (Gov.tr saldırısı aktif)</i>'}
 
-🔗 <b>SON YAYINLANAN LİNKLER:</b>
+🔗 <b>SON YAYINLANAN CANLI LİNKLER:</b>
 ${latestLinks.map(l => {
     const liveUrl = l.telegraphPostUrl || l.bloggerPostUrl || l.tumblrPostUrl || l.wordPressPostUrl;
-    const platform = l.telegraphPostUrl ? 'TG' : l.bloggerPostUrl ? 'BL' : l.tumblrPostUrl ? 'TM' : 'WP';
-    return `• [${platform}] <a href="${liveUrl}">${l.slug}</a>`;
+    const platform = l.telegraphPostUrl ? '📪 TG' : l.bloggerPostUrl ? '🅱️ BL' : l.tumblrPostUrl ? '📓 TM' : '🌐 WP';
+    return `• ${platform} <a href="${liveUrl}">${l.slug}</a>`;
 }).join('\n')}
 
 ${THEME.DIVIDER}
-🧛‍♂️ <b>DURUM:</b> <i>Backlink bombası saniyede 1 link hızıyla devam ediyor. Tüm ağlar Bitly ile mühürlendi.</i>
-🚀 <i>v6.2 - Hydra Dominance Engine</i>
+🧛‍♂️ <b>DURUM:</b> <i>Backlink bombası saniyede 1 link hızıyla devam ediyor. Gov.tr ve Edu.tr açıkları taranıyor.</i>
+🚀 <i>v6.5 - Hydra Dominance Engine</i>
 `.trim();
+        // Safety check for Telegram's 4096 char limit
+        if (msg.length > 4000) {
+            console.log("⚠️ [REPORT] Message too long, truncating...");
+            msg = msg.substring(0, 3900) + "\n\n... (Rapor çok uzun, devamı için panele bakın)";
+        }
 
         await TelegramService.sendMessage(msg);
         console.log("✅ [SUCCESS] Backlink report sent to Telegram.");

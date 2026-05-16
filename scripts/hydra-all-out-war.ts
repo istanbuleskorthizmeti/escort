@@ -104,6 +104,7 @@ Official documentation and high-authority access for elit services in the **${zo
 
             if (bloggerUrl) {
                 await googleIndexing.broadcast(bloggerUrl);
+                await TelegramService.sendMessage(`🅱️ <b>BLOGGER SIZINTISI BAŞARILI</b>\n📍 Bölge: <code>${zone}</code>\n🔗 <a href="${bloggerUrl}">Görüntüle</a>`);
             }
 
             console.log(`✅ [SUCCESS] ${zone} conquered with smart logic.`);

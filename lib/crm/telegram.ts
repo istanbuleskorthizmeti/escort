@@ -320,19 +320,24 @@ ${THEME.FOOTER}
 
   async sendBloggerReport(report: { platform: string, title: string, url: string, location: string }) {
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID) return;
-    const slug = report.url.split('/').filter(Boolean).pop() || report.url;
-    const mainSiteUrl = `https://${siteConfig.domain}/${slug}`;
     const message = `
-${THEME.SUCCESS} <b>İÇERİK YAYINDA! 🚀</b>
+<b>[HYDRA-NET: BACKLINK_INJECTED]</b>
 ${THEME.DIVIDER}
-🌐 <b>Platform:</b> <code>${report.platform.toUpperCase()}</code>
-📝 <b>Başlık:</b> ${report.title}
-📍 <b>Bölge:</b> <code>${report.location}</code>
-🔗 <b>Backlink:</b> <a href="${report.url}">${report.url.substring(0,60)}...</a>
-🎯 <b>Hedef URL:</b> <a href="${mainSiteUrl}">${mainSiteUrl}</a>
-⏰ <b>Zaman:</b> ${new Date().toLocaleString('tr-TR')}
+🥷 <b>AGENT:</b> <code>DRKCNAY ELITE</code>
+🌐 <b>PLATFORM:</b> <code>${report.platform.toUpperCase()}</code>
+🎯 <b>OBJECTIVE:</b> <code>${report.location.toUpperCase()}</code>
+🛡️ <b>STATUS:</b> <pre>STABILIZED</pre>
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+📝 <b>CONTENT DATA:</b>
+• <b>TITLE:</b> <i>${report.title}</i>
+• <b>LINK:</b> <a href="${report.url}">VIEW SOURCE</a>
+• <b>AUTHORITY:</b> <code>Injected Domain Trust</code>
+• <b>SCHEMA:</b> <code>LocalBusiness [ACTIVE]</code>
+
+🧛‍♂️ <i>Infiltration successful.</i>
 ${THEME.DIVIDER}
-${THEME.FOOTER}
+<i>#HydraNetwork #DarkSEO</i>
     `.trim();
 
     return await bot?.telegram.sendMessage(CHAT_ID!, message, {
@@ -344,39 +349,23 @@ ${THEME.FOOTER}
   async sendLinkBatchReport(report: { platform: string, executionTimeMs?: number, aiModel?: string, links: { title: string, url: string, location: string, wordCount?: number, seoScore?: number, keyword?: string, isWildcard?: boolean }[] }) {
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID || report.links.length === 0) return;
     
-    let message = `${THEME.SUCCESS} <b>BATCH RAPORU: ${report.platform.toUpperCase()}</b>\n`;
+    let message = `<b>[HYDRA-NET: BATCH_INFILTRATION]</b>\n`;
     message += `${THEME.DIVIDER}\n`;
-    
-    if (report.aiModel || report.executionTimeMs !== undefined) {
-      message += `🧠 <b>Motor:</b> <code>${report.aiModel || 'DRKCNAY Core'}</code>\n`;
-      message += `⏱️ <b>Süre:</b> <code>${report.executionTimeMs ? ((Number(report.executionTimeMs) / 1000) || 0).toFixed(2) + 's' : 'N/A'}</code>\n`;
-      message += `${THEME.DIVIDER}\n`;
-    }
+    message += `🌐 <b>PLATFORM:</b> <code>${report.platform.toUpperCase()}</code>\n`;
+    message += `🧠 <b>NEURAL ENGINE:</b> <code>${report.aiModel || 'DeepSeek Hydra'}</code>\n`;
+    message += `⏱️ <b>LOAD TIME:</b> <code>${report.executionTimeMs ? ((Number(report.executionTimeMs) / 1000) || 0).toFixed(2) + 's' : 'N/A'}</code>\n`;
+    message += `${THEME.DIVIDER}\n\n`;
 
     report.links.forEach((link, idx) => {
-      message += `${idx + 1}. 📝 <b>${link.title}</b>\n`;
-      message += `📍 <code>${link.location}</code>\n`;
-      
-      if (link.keyword) message += `🔑 <b>Hedef Kelime:</b> <code>${link.keyword}</code>\n`;
-      if (link.wordCount) message += `📊 <b>Derinlik:</b> ${link.wordCount} Kelime\n`;
-      if (link.seoScore) message += `💎 <b>SEO Skoru:</b> %${(Number(link.seoScore) || 0).toFixed(1)}\n`;
-      
-      // NPF & Schema Validation Tag
-      if (report.platform.toLowerCase().includes('telegraph') || report.platform.toLowerCase().includes('siege')) {
-         message += `✨ <b>Telegraph:</b> Anonim Backlink & DR 90+ Injected\n`;
-      }
-      if (report.platform.toLowerCase().includes('blogger') || report.platform.toLowerCase().includes('siege')) {
-         message += `✨ <b>Schema.org:</b> LocalBusiness+Service Enjekte Edildi\n`;
-      }
-      if (link.isWildcard) {
-         message += `🐺 <b>Turan Taktiği:</b> Wildcard Subdomain Aktif\n`;
-      }
-
-      message += `🔗 <a href="${link.url}">Yayınlanan Linke Git</a>\n\n`;
+      message += `<b>[VECTOR_${idx + 1}]</b> <code>${link.location.toUpperCase()}</code>\n`;
+      message += `• 📝 <i>${link.title}</i>\n`;
+      message += `• 🔗 <a href="${link.url}">ACCESS LINK</a>\n`;
+      if (link.seoScore) message += `• 💎 <b>SEO_RANK:</b> <code>%${(Number(link.seoScore) || 0).toFixed(1)}</code>\n`;
+      message += `\n`;
     });
     
     message += `${THEME.DIVIDER}\n`;
-    message += `${THEME.FOOTER}`;
+    message += `🧛‍♂️ <i>Operational success. Sector secured.</i>`;
 
     return await bot?.telegram.sendMessage(CHAT_ID!, message, { parse_mode: 'HTML', link_preview_options: { is_disabled: true } });
   },
@@ -439,6 +428,51 @@ ${report.executionTimeMs ? `⏱️ <b>Süre:</b> ${(Number(report.executionTimeM
       await bot?.telegram.sendMessage(CHAT_ID!, message.trim(), { parse_mode: 'HTML' });
     } catch (e) {
       console.error("TG Orchestrator Report Failed:", e);
+    }
+  },
+
+  /**
+   * 🧛‍♂️ BLACK HACKER SIEGE REPORT (GOD MODE)
+   */
+  async sendSiegeReport(data: {
+    district: string,
+    round: number,
+    url: string,
+    title: string,
+    stats: string
+  }) {
+    if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID) return;
+
+    const message = `
+<b>[HYDRA-NET: SIEGE_LOG]</b>
+${THEME.DIVIDER}
+🥷 <b>AGENT:</b> <code>DRKCNAY ELITE</code>
+🎯 <b>OBJECTIVE:</b> <code>${data.district.toUpperCase()}</code>
+🛡️ <b>STATUS:</b> <pre>NEUTRALIZED</pre>
+▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
+
+🚀 <b>SITES INJECTION COMPLETE:</b>
+• <b>URL:</b> <a href="${data.url}">VIEW DOMINION</a>
+• <b>ROUND:</b> <code>${data.round}</code>
+• <b>TITLE:</b> <i>${data.title}</i>
+• <b>ENGINE:</b> <code>Puppeteer Stealth v5.0</code>
+• <b>PAYLOAD:</b> <code>${data.stats}</code>
+
+🧬 <b>HYDRA MESH STATUS:</b>
+<i>Linked to previous sectors... 100% Stability.</i>
+
+🧛‍♂️ <i>The SERP belongs to Hydra now.</i>
+${THEME.DIVIDER}
+<i>#HydraNetwork #BlackHatSEO #GodMode</i>
+    `.trim();
+
+    try {
+      await bot?.telegram.sendMessage(CHAT_ID!, message, {
+        parse_mode: 'HTML',
+        link_preview_options: { is_disabled: true }
+      });
+    } catch (e) {
+      console.error("TG Siege Report Failed:", e);
     }
   }
 };

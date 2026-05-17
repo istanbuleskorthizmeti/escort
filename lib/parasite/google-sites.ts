@@ -35,9 +35,9 @@ export class GoogleSitesAdapter {
     }
 
     const browser = await puppeteer.launch({
-        headless: "new",
-        userDataDir: process.env.PUPPETEER_USER_DATA_DIR || '/opt/hydra/user_data',
-        executablePath: '/usr/bin/google-chrome-stable',
+        headless: false,
+        userDataDir: path.join(os.homedir(), 'AppData', 'Local', 'Google', 'Chrome', 'User Data'),
+        executablePath: 'C:\\Users\\onurk\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe',
         pipe: true,
         dumpio: true,
         args: launchArgs

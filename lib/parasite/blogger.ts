@@ -49,15 +49,14 @@ export class BloggerAdapter {
       lastPostTimestamp = Date.now();
       const liveUrl = res.data.url;
       
-      await TelegramService.sendMessage(`
-📝 <b>BLOGGER: AKILLI YAYIN TAMAMLANDI</b>
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-🎯 <b>Başlık:</b> ${title}
-🔗 <b>Link:</b> ${liveUrl}
-🛡️ <b>Spam Koruması:</b> Aktif (5dk Delay)
-▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
-🧛‍♂️ <i>Blogger otoritesi Hydra ağına güvenle eklendi.</i>
-      `.trim());
+      if (liveUrl) {
+        await TelegramService.sendBloggerReport({
+          platform: 'Blogger',
+          title: title,
+          url: liveUrl,
+          location: title.split('|')[0].trim() || 'N/A'
+        });
+      }
 
       return liveUrl;
     } catch (err: any) {

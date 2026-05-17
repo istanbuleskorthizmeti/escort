@@ -1,4 +1,5 @@
 import https from 'https';
+import { SmartLinker } from './smart-linker';
 
 /**
  * 📢 DRKCNAY TELEGRAPH STRIKER (ANONYMOUS PARASITE SEO)
@@ -114,23 +115,40 @@ class TelegraphService {
 
   /**
    * Telegraph requires a specific JSON-based content structure.
-   * This helper converts simple HTML to that structure.
+   * This helper converts basic HTML tags (h2, h3, p, a, strong) to that structure.
    */
   private formatContent(html: string): any[] {
-    // Very basic converter: turns paragraphs and links into Telegraph nodes
     const nodes: any[] = [];
     
-    // Split by paragraphs
-    const paragraphs = html.split(/<\/p>|<br\/?>/i);
+    // Clean up input
+    const cleanHtml = html
+      .replace(/<br\s*\/?>/gi, '</p><p>')
+      .replace(/<div[^>]*>/gi, '<p>')
+      .replace(/<\/div>/gi, '</p>');
+
+    // Split by block elements
+    const parts = cleanHtml.split(/(<h2[^>]*>.*?<\/h2>|<h3[^>]*>.*?<\/h3>|<p[^>]*>.*?<\/p>)/gi);
     
-    for (const p of paragraphs) {
-      const text = p.replace(/<[^>]*>?/gm, '').trim();
-      if (text) {
-        nodes.push({ tag: 'p', children: [text] });
+    for (const part of parts) {
+      if (!part.trim()) continue;
+
+      if (part.toLowerCase().startsWith('<h2')) {
+        const text = part.replace(/<[^>]*>?/gm, '').trim();
+        if (text) nodes.push({ tag: 'h3', children: [text] }); // Telegraph h2 looks like h3 in API
+      } else if (part.toLowerCase().startsWith('<h3')) {
+        const text = part.replace(/<[^>]*>?/gm, '').trim();
+        if (text) nodes.push({ tag: 'h4', children: [text] }); // Telegraph h3 looks like h4 in API
+      } else {
+        // Handle paragraphs with inline tags (a, strong)
+        const text = part.replace(/<p[^>]*>|<\/p>/gi, '').trim();
+        if (text) {
+          nodes.push({ tag: 'p', children: this.parseInlineTags(text) });
+        }
       }
     }
 
-    // Add a mandatory backlink node at the end
+    // --- 🎯 SMART BACKLINK INJECTION (GOD MODE) ---
+    const smartLink = this.getSmartLink(html);
     nodes.push({
       tag: 'p',
       children: [
@@ -139,8 +157,8 @@ class TelegraphService {
           children: [
             {
               tag: 'a',
-              attrs: { href: 'https://vipescorthizmeti.com' },
-              children: ['DORUKCAN AY ELITE ESCORT']
+              attrs: { href: smartLink.url },
+              children: [smartLink.anchor]
             }
           ]
         }
@@ -149,6 +167,55 @@ class TelegraphService {
 
     return nodes;
   }
+
+  /**
+   * Generates a context-aware backlink based on content keywords.
+   */
+  private getSmartLink(html: string): { url: string; anchor: string } {
+    // Extract potential district from content or title (heuristic)
+    const districtMatch = html.match(/([A-ZÇĞİÖŞÜ][a-zçğıöşü]+)\s+Escort/i);
+    const district = districtMatch ? districtMatch[1] : "İstanbul";
+
+    return SmartLinker.getLink(district);
+  }
+
+  private parseInlineTags(text: string): any[] {
+    const children: any[] = [];
+    // Very basic regex-based inline parser for <a> and <strong>
+    const parts = text.split(/(<a\s+href="[^"]*">.*?<\/a>|<strong[^>]*>.*?<\/strong>)/gi);
+
+    for (const part of parts) {
+      if (!part) continue;
+
+      if (part.toLowerCase().startsWith('<a')) {
+        const hrefMatch = part.match(/href="([^"]*)"/i);
+        const linkText = part.replace(/<[^>]*>?/gm, '');
+        children.push({
+          tag: 'a',
+          attrs: { href: hrefMatch ? hrefMatch[1] : '#' },
+          children: [linkText]
+        });
+      } else if (part.toLowerCase().startsWith('<strong')) {
+        const boldText = part.replace(/<[^>]*>?/gm, '');
+        children.push({ tag: 'strong', children: [boldText] });
+      } else {
+        children.push(part.replace(/<[^>]*>?/gm, ''));
+      }
+    }
+
+    return children.length > 0 ? children : [text];
+  }
 }
 
 export const telegraphService = new TelegraphService();
+
+export class TelegraphAdapter {
+  static async createPost(title: string, content: string) {
+    console.log(`🚀 [TELEGRAPH] Striking: ${title}...`);
+    return await telegraphService.createPost({
+      title,
+      author_name: "DRKCNAY ELITE",
+      content
+    });
+  }
+}

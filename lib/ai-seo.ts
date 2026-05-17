@@ -76,26 +76,33 @@ export async function generateEliteOmniContent({
   const semanticEntities = getSemanticEntities(city, district).join(', ');
 
   const systemPrompt = `
-    [DEEPSEEK COST-OPTIMIZED VIP Elite]
+    [DEEPSEEK HYDRA CORE - MANDATORY LINKING]
     Görevin: SEO uyumlu, yüksek dönüşümlü içerik üretmek. 
-    Kural 1: ASLA laf kalabalığı (fluff) yapma. Token tasarrufu kritik derecede önemlidir. Doğrudan hedefe yönelik, kısa ama etkili yaz.
-    Kural 2: \${locationName} bölgesi için "Escort Hizmetleri", "VIP Escort", "Kaporasız Escort" vb. niş kelimeleri metne yedir.
-    Kural 3: Kesinlikle Türkçe karakter hatası (ğ, ş, ç) yapma.
-    Kural 4: SADECE JSON ÇIKTISI VER. Yorum, giriş veya markdown bloğu kullanma.
-    Kural 5: İçerik \${targetLength} kelime civarı, \${persona.tone} tonunda olsun.
-    Kural 6: Şirket adı: \${host}. Başka şirket adı kullanma.
+    Kural 1: ASLA laf kalabalığı (fluff) yapma. Token tasarrufu kritik derecede önemlidir.
+    Kural 2: ${locationName} bölgesi için "Escort Hizmetleri", "VIP Escort", "Kaporasız Escort" vb. niş kelimeleri metne yedir.
+    Kural 3: Kesinlikle Türkçe karakter hatası yapma.
+    Kural 4: SADECE JSON ÇIKTISI VER.
+    Kural 5: İçerik ${targetLength} kelime civarı, ${persona.tone} tonunda olsun.
+    Kural 6: Şirket adı: ${host}. 
+
+    🔴 KRİTİK KURAL (MANDATORY LINKS):
+    Metin içerisinde en az 2 adet şu linklerden birini kullan: 
+    1. <a href="https://vipescorthizmeti.com">https://vipescorthizmeti.com</a>
+    2. <a href="https://bit.ly/istanbulescort2026">https://bit.ly/istanbulescort2026</a>
+    
+    Linklerin anchor text'leri şunlardan biri olsun: "${locationName} VIP Escort", "Kaporasız Katalog", "Elite Partnerler", "${locationName} Escort Rehberi", "Resmi Web Sitesi".
 
     İSTENEN JSON FORMATI:
     {
       "wordpress": {
-        "title": "\${locationName} VIP Escort Hizmetleri | \${host}",
-        "content": "HTML İÇERİK (Sadece H2 ve H3 kullan, boş laflar yerine doğrudan SEO kelimeleri ve lokasyon bilgisi \${semanticEntities} gir.)",
-        "meta": "\${host} - \${locationName} elit ve kaporasız escort hizmetleri rehberi.",
-        "tags": ["\${locationName} escort", "kaporasız escort \${locationName}", "vip escort"],
-        "faqs": [{"q": "\${locationName} kaporasız mı?", "a": "Evet, \${host} üzerinden sadece elden ödeme alınır."}]
+        "title": "${locationName} VIP Escort Hizmetleri | ${host}",
+        "content": "HTML İÇERİK (H2, H3 ve <a href='...'> etiketlerini MUTLAKA kullan.)",
+        "meta": "${host} - ${locationName} elit ve kaporasız escort hizmetleri rehberi.",
+        "tags": ["${locationName} escort", "kaporasız escort ${locationName}", "vip escort"],
+        "faqs": [{"q": "${locationName} kaporasız mı?", "a": "Evet, ${host} üzerinden sadece elden ödeme alınır."}]
       },
       "github": { "readme": "", "gist": "" },
-      "blogger": { "title": "\${locationName} Escort Raporu", "content": "..." }
+      "blogger": { "title": "${locationName} Escort Raporu", "content": "..." }
     }
   `;
 
@@ -137,6 +144,28 @@ export async function generateEliteOmniContent({
   } catch (error) {
     throw error;
   }
+}
+
+/**
+ * 🧛‍♂️ HYDRA TEMPLATE ENGINE
+ * Generates reusable content drafts with placeholders to save tokens.
+ */
+export async function generateTemplateContent({
+  city,
+  host,
+}: { city: string, host: string }): Promise<OmniPlatformContent> {
+  const systemPrompt = `
+    [DEEPSEEK HYDRA TEMPLATE ENGINE]
+    Görevin: Herhangi bir ilçe için özelleştirilebilir bir "Master Template" üretmek.
+    Kural 1: İlçe isimleri yerine {{LOCATION}} placeholder'ını kullan. Örn: "{{LOCATION}} VIP Escort".
+    Kural 2: İçerik çok kaliteli ve genel bir ${city} escort rehberi tadında olsun.
+    Kural 3: ASLA spesifik bir ilçe adı yazma, sadece {{LOCATION}} kullan.
+    Kural 4: SADECE JSON ÇIKTISI VER.
+  `;
+
+  const userPrompt = `Şehir: ${city}. Şirket: ${host}. {{LOCATION}} içeren zengin bir içerik template'i üret.`;
+
+  return generateEliteOmniContent({ city, district: "{{LOCATION}}", host });
 }
 
 export const generateAiEliteContent = generateEliteOmniContent;

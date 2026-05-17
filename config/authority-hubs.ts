@@ -10,6 +10,16 @@ export const AUTHORITY_HUBS = [
     keywords: ['beylikdüzü escort', 'beylikdüzü vip escort', 'beylikdüzü kaporasız']
   },
   {
+    name: 'Sefaköy VIP Escort (Google Sites)',
+    url: 'https://sites.google.com/dorukcanay.digital/sefakoy-vip-escort/ana-sayfa',
+    keywords: ['sefaköy escort', 'sefaköy vip escort', 'sefaköy kaporasız']
+  },
+  {
+    name: 'Beşyol VIP Escort (Google Sites)',
+    url: 'https://sites.google.com/dorukcanay.digital/besyol-vip-escort/ana-sayfa',
+    keywords: ['beşyol escort', 'beşyol vip escort', 'beşyol kaporasız']
+  },
+  {
     name: 'DRKCNAY Elite (GitHub Pages)',
     url: 'https://dorukcanay-elite.github.io',
     keywords: ['istanbul escort', 'vip escort', 'kaporasız escort']

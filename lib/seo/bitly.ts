@@ -37,6 +37,19 @@ export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promi
     ? { longUrl: longUrlOrParams } 
     : longUrlOrParams;
 
+  // 🔍 [DB LOOKUP OPTIMIZATION] Aynı hedef URL için zaten bit.ly linki var mı kontrol et!
+  try {
+    const existing = await prisma.shortLink.findFirst({
+      where: { targetUrl: params.longUrl }
+    });
+    if (existing && existing.id.includes('bit.ly')) {
+      console.log(`🎯 [DB CACHE HIT] Mevcut bit.ly linki yeniden kullanılıyor: ${existing.id} -> ${params.longUrl}`);
+      return existing.id;
+    }
+  } catch (dbErr: any) {
+    console.warn(`⚠️ [PRISMA] Önbellek kontrolü başarısız oldu:`, dbErr.message);
+  }
+
   // 🎯 DYNAMIC SEO SLUG GENERATOR (Black Hat Semantic Anchor)
   let seoSlug = "";
   if (params.keyword) {

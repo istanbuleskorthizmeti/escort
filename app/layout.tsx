@@ -227,7 +227,10 @@ export default async function RootLayout({
             gtag('js', new Date());
             gtag('config', 'G-5N1LVB5EWE', {
               'allow_google_signals': true,
-              'anonymize_ip': false
+              'anonymize_ip': false,
+              'linker': {
+                'domains': ['vipescorthizmeti.com', 'bit.ly', 'escrehberi.click']
+              }
             });
           `}
         </Script>

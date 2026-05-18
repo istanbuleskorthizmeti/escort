@@ -68,7 +68,7 @@ export class RankingTracker {
           });
 
           // Notify Telegram
-          await this.notifyDelta(current.keyword, lastRecord.position, currentPos, delta);
+          await this.notifyDelta(current.keyword, lastRecord.position, currentPos, delta, current.clicks || 0);
         }
       }
     } catch (err: any) {
@@ -76,7 +76,7 @@ export class RankingTracker {
     }
   }
 
-  private async notifyDelta(keyword: string, oldPos: number, newPos: number, delta: number) {
+  private async notifyDelta(keyword: string, oldPos: number, newPos: number, delta: number, clicks: number) {
     const icon = delta > 0 ? "🚀 UP" : "📉 DOWN";
     const statusIcon = delta > 0 ? "✅" : "⚠️";
     
@@ -85,7 +85,7 @@ ${statusIcon} <b>SIRALAMA GÜNCELLENDİ! [${icon}]</b>
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 🎯 <b>Keyword:</b> <code>${keyword}</code>
 ⭐ <b>Yeni Pozisyon:</b> <code>${(Number(newPos) || 0).toFixed(1)}</code>
-🖱️ <b>Toplam Tıklama:</b> <code>${current.clicks || 0}</code>
+🖱️ <b>Toplam Tıklama:</b> <code>${clicks}</code>
 🔄 <b>Değişim:</b> <code>${delta > 0 ? '+' : ''}${(Number(delta) || 0).toFixed(1)}</code> basamak
 📉 <b>Eski Pozisyon:</b> ${(Number(oldPos) || 0).toFixed(1)}
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬

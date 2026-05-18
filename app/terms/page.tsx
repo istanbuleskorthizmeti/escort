@@ -23,24 +23,24 @@ export default function TermsPage() {
         <section className="space-y-16 leading-relaxed">
           <div className="bg-zinc-950/50 backdrop-blur-3xl border border-zinc-900 rounded-[3rem] p-12 hover:border-rose-600/30 transition-all">
             <h2 className="text-2xl font-black italic uppercase text-white mb-6 border-l-8 border-rose-600 pl-6">
-              01. Hizmet Kapsam� ve Egemenlik
+              01. Hizmet Kapsamı ve Egemenlik
             </h2>
             <p className="mb-6">
-              vipescorthizmeti.com ("Platform"), elit ya�am tarz� ve profesyonel concierge hizmetlerine y�nelik bir rehberdir. Kullan�c�lar, platformu kullanarak sars�lmaz gizlilik standartlarıni ve burada belirtilen Prestij standartlar�n� kabul etmi� say�l�rlar.
+              vipescorthizmeti.com ("Platform"), elit yaşam tarzı ve profesyonel concierge hizmetlerine yönelik bir rehberdir. Kullanıcılar, platformu kullanarak sarsılmaz gizlilik standartlarını ve burada belirtilen Prestij standartlarını kabul etmiş sayılırlar.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="border border-zinc-900 rounded-[2rem] p-8">
-              <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 uppercase">Ya� S�n�r�</h3>
+              <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 uppercase">Yaş Sınırı</h3>
               <p className="text-sm opacity-60 italic">
-                Bu platformun i�eri�i yaln�zca +18 (onsekiz) ya� ve �zerindeki bireyler i�in tasarlanm��t�r. Ya� do�rulamas� yap�lmam�� eri�imler standart ihlali say�l�r.
+                Bu platformun içeriği yalnızca +18 (onsekiz) yaş ve üzerindeki bireyler için tasarlanmıştır. Yaş doğrulaması yapılmamış erişimler standart ihlali sayılır.
               </p>
             </div>
             <div className="border border-zinc-900 rounded-[2rem] p-8">
               <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 uppercase">Etik Kurallar</h3>
               <p className="text-sm opacity-60 italic">
-                Resmi temsilcilerimiz (City Admins) ile yap�lan t�m ileti�imlerde kar��l�kl� sayg� ve profesyonellik esast�r. Taciz veya standart d��� talepler s�resiz uzakla�t�rma nedenidir.
+                Resmi temsilcilerimiz (City Admins) ile yapılan tüm iletişimlerde karşılıklı saygı ve profesyonellik esastır. Taciz veya standart dışı talepler süresiz uzaklaştırma nedenidir.
               </p>
             </div>
           </div>
@@ -49,10 +49,10 @@ export default function TermsPage() {
             <h2 className="text-3xl font-black italic uppercase text-white mb-6">Yasal Sorumluluk Reddi</h2>
             <div className="p-8 bg-rose-950/10 border border-rose-900/30 rounded-2xl">
                 <p className="text-sm text-zinc-400 mb-4">
-                  Escortvip, ���nc� taraf sa�lay�c�lar taraf�ndan sunulan hizmetlerin i�eri�inden veya niteli�inden do�rudan sorumlu tutulamaz. Bizler, Hollanda yasalar�na tabi bir bilgi ve e�le�tirme standart� sa�lay�c�s�y�z.
+                  Escortvip, üçüncü taraf sağlayıcılar tarafından sunulan hizmetlerin içeriğinden veya niteliğinden doğrudan sorumlu tutulamaz. Bizler, Hollanda yasalarına tabi bir bilgi ve eşleştirme standardı sağlayıcısıyız.
                 </p>
                 <p className="text-sm text-zinc-500 italic">
-                  Anla�mazl�klarda Amsterdam Tahkim Mahkemeleri ve AVG (Veri Koruma Kanunu) esas al�n�r.
+                  Anlaşmazlıklarda Amsterdam Tahkim Mahkemeleri and AVG (Veri Koruma Kanunu) esas alınır.
                 </p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function TermsPage() {
                Official Elit Network // VIPESCORTHIZMETI.COM
             </div>
             <p className="text-xs text-zinc-600 uppercase tracking-widest leading-loose">
-               Kullan�m �artlar�n�n ihlali durumunda, platformun "Elit Shield" standart� kapsam�nda eri�imi k�s�tlama hakk� sakl�d�r.
+               Kullanım şartlarının ihlali durumunda, platformun "Elit Shield" standardı kapsamında erişimi kısıtlama hakkı saklıdır.
             </p>
           </div>
         </section>

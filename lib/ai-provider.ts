@@ -55,7 +55,10 @@ class GeminiUltraProvider {
     if (!apiKey) return this.getFallbackContent();
 
     try {
-      const model = options.model || process.env.LLM_MODEL || 'gemini-2.0-flash';
+      let model = options.model || process.env.LLM_MODEL || 'gemini-2.0-flash';
+      if (model.includes('deepseek') || model.includes('gpt') || model.includes('llama') || model.includes('mistral') || model.includes('claude')) {
+        model = process.env.LLM_MODEL || 'gemini-2.0-flash';
+      }
       const url = `${this.getBaseUrl()}/models/${model}:generateContent?key=${apiKey}`;
       
       console.log(`📡 [GEMINI] Calling API: ${model}`);
@@ -116,9 +119,13 @@ class OpenAIProvider {
     if (!key) return geminiAI.generate(prompt, options);
 
     try {
-      console.log(`📡 [OPENAI] Calling API: ${options.model || 'gpt-4o-mini'}`);
+      let model = options.model || 'gpt-4o-mini';
+      if (model.includes('deepseek') || model.includes('gemini') || model.includes('llama') || model.includes('mistral') || model.includes('claude')) {
+        model = 'gpt-4o-mini';
+      }
+      console.log(`📡 [OPENAI] Calling API: ${model}`);
       const response = await axios.post('https://api.openai.com/v1/chat/completions', {
-        model: options.model || 'gpt-4o-mini',
+        model: model,
         messages: [
           { role: 'system', content: options.systemPrompt || 'Sen bir Black Hat SEO dehasısın.' },
           { role: 'user', content: prompt }

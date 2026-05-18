@@ -12,8 +12,8 @@ export default function PrivacyPage() {
           <VerificationBadge />
           <h1 className="text-6xl md:text-8xl font-black tracking-tighter italic uppercase mb-8">
             <span className="text-zinc-600 block text-2xl tracking-[0.5em] mb-4">Nederlands Recht</span>
-            G�ZL�L�K <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">PROTOKOL�</span>
+            GİZLİLİK <br />
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">PROTOKOLÜ</span>
           </h1>
           <p className="text-rose-600/60 text-xs font-black tracking-[0.2em] uppercase italic">
             AVG (Dutch GDPR) // Elit Privacy Standard v3.1
@@ -23,38 +23,38 @@ export default function PrivacyPage() {
         <section className="space-y-16 leading-relaxed">
           <div className="bg-zinc-950/50 backdrop-blur-3xl border border-zinc-900 rounded-[3rem] p-12 hover:border-rose-600/30 transition-all">
             <h2 className="text-3xl font-black italic uppercase text-white mb-6 border-l-8 border-rose-600 pl-6">
-              01. Hollanda Yarg� Yetkisi ve AVG
+              01. Hollanda Yargı Yetkisi ve AVG
             </h2>
             <p className="mb-6">
-              vipescorthizmeti.com, Hollanda merkezli bir platform olup, t�m veri i�leme faaliyetlerinde <b>Algemene Verordening Gegevensbescherming (AVG)</b> standartlar�n� sars�lmaz bir �ekilde uygular. Gizlili�iniz, Amsterdam mahkemelerinin yetki alan� ve Hollanda siber g�venlik kanunlar� ile korunmaktad�r.
+              vipescorthizmeti.com, Hollanda merkezli bir platform olup, tüm veri işleme faaliyetlerinde <b>Algemene Verordening Gegevensbescherming (AVG)</b> standartlarını sarsılmaz bir şekilde uygular. Gizliliğiniz, Amsterdam mahkemelerinin yetki alanı ve Hollanda siber güvenlik kanunları ile korunmaktadır.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="border border-zinc-900 rounded-[2rem] p-8 hover:bg-zinc-950 transition-colors">
-              <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 tracking-tighter">S�f�r Veri Tutma</h3>
+              <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 tracking-tighter">Sıfır Veri Tutma</h3>
               <p className="text-sm opacity-60">
-                Platformumuz, "Privacy by Design" ilkesine g�re in�a edilmi�tir. Gereksiz hi�bir veri toplanmaz, IP adresleri maskelenir ve oturumlar kapand���nda t�m ge�ici izler Prestij imha standart�yle silinir.
+                Platformumuz, "Privacy by Design" ilkesine göre inşa edilmiştir. Gereksiz hiçbir veri toplanmaz, IP adresleri maskelenir ve oturumlar kapandığında tüm geçici izler Prestij imha standardıyla silinir.
               </p>
             </div>
             <div className="border border-zinc-900 rounded-[2rem] p-8 hover:bg-zinc-950 transition-colors">
-              <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 tracking-tighter">U�tan Uca Şifreleme</h3>
+              <h3 className="text-xl font-black italic uppercase text-rose-600 mb-4 tracking-tighter">Uçtan Uca Şifreleme</h3>
               <p className="text-sm opacity-60">
-                Sa�lay�c� ve kullan�c� aras�ndaki t�m dijital etkile�imler, Hollanda sunucular�m�z �zerinde askeri d�zeyde �ifreleme ile izole edilir. ��eriklerin ���nc� �ah�slara s�zmas� teknik olarak engellenmi�tir.
+                Sağlayıcı ve kullanıcı arasındaki tüm dijital etkileşimler, Hollanda sunucularımız üzerinde askeri düzeyde şifreleme ile izole edilir. İçeriklerin üçüncü şahıslara sızması teknik olarak engellenmiştir.
               </p>
             </div>
           </div>
 
           <div className="space-y-8">
-            <h2 className="text-3xl font-black italic uppercase text-white mb-6">Adult Sekt�r� G�venceleri</h2>
+            <h2 className="text-3xl font-black italic uppercase text-white mb-6">Adult Sektörü Güvenceleri</h2>
             <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {[
-                "Daimi G�rsel M�lkiyet Hakk�",
-                "Anonim Profil Kontrol�",
-                "�stendi�inde Tam Veri �mhas�",
-                "Yapay Zeka Taramas�na Kar�� Koruma",
-                "Siber Zorbal��a Kar�� Teknik Kalkan",
-                "Gizli �deme Kanallar� G�venli�i"
+                "Daimi Görsel Mülkiyet Hakkı",
+                "Anonim Profil Kontrolü",
+                "İstendiğinde Tam Veri İmhası",
+                "Yapay Cihan Taramasına Karşı Koruma",
+                "Siber Zorbalığa Karşı Teknik Kalkan",
+                "Gizli Ödeme Kanalları Güvenliği"
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center gap-4 bg-zinc-900/30 p-4 rounded-xl border border-zinc-800">
                   <div className="w-2 h-2 bg-rose-600 rounded-full animate-pulse shadow-glow-sm"></div>
@@ -66,7 +66,7 @@ export default function PrivacyPage() {
 
           <div className="bg-zinc-950/80 p-12 rounded-[3rem] border border-zinc-900 text-center">
             <p className="italic text-zinc-500 mb-8 lowercase first-letter:uppercase">
-              "Gizlilik bir se�enek de�il, egemen bir hakt�r. Dutch altyap�m�zla bu hakk� dijital kalenize d�n��t�r�yoruz."
+              "Gizlilik bir seçenek değil, egemen bir haktır. Dutch altyapımızla bu hakkı dijital kalenize dönüştürüyoruz."
             </p>
             <div className="text-[10px] font-black tracking-[0.5em] text-rose-600 uppercase">
               // NO COOKIES // NO TRACKERS // NO COMPROMISE

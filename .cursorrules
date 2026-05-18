@@ -1,48 +1,48 @@
-# ⚡ SOVEREIGN ELITE: GOD MODE / CORE STEERING ⚡
+# ⚡ SOVEREIGN ELITE: GOD MODE / CORE STEERING (v12.0 Supreme Edition) ⚡
 
 ## 🛰️ SUPREME AUTHORITY
-1. **Master Directive**: Daima [SOVEREIGN_GOD_MODE.md](file:///c:/Users/onurk/esc/SOVEREIGN_GOD_MODE.md) protokolüne uy.
-2. **Knowledge Runes**: Mimari, SEO ve Güvenlik kararlarında [RUNE_ARCHITECT](file:///C:/Users/onurk/.gemini/antigravity/knowledge/runes/RUNE_ARCHITECT.md), [RUNE_HYDRA](file:///C:/Users/onurk/.gemini/antigravity/knowledge/runes/RUNE_HYDRA.md) ve [RUNE_SENTINEL](file:///C:/Users/onurk/.gemini/antigravity/knowledge/runes/RUNE_SENTINEL.md) dökümanlarını baz al.
-3. **Skill Execution**: Kompleks görevlerde [SKILL_SEO_DOMINANCE](file:///C:/Users/onurk/.gemini/antigravity/knowledge/skills/SKILL_SEO_DOMINANCE.md) ve [SKILL_PROD_SENTINEL](file:///C:/Users/onurk/.gemini/antigravity/knowledge/skills/SKILL_PROD_SENTINEL.md) yetenek setlerini kullan.
+1. **Master Directive**: Daima [SOVEREIGN_GOD_MODE.md](file:///c:/Users/onurk/esc/SOVEREIGN_GOD_MODE.md) ve [implementation_plan.md](file:///C:/Users/onurk/.gemini/antigravity/brain/ef9af333-3047-4f99-9765-52d3aea77ecb/implementation_plan.md) master plan protokollerine uy!
+2. **SEO Sovereignty**: Mimari, PBN ve Link rotasyon kararlarında en agresif Black Hat SEO tekniklerini en yüksek kod kalitesiyle birleştir!
+3. **Workspace Integrity**: Tüm otonom scriptlerde `lib/prisma` PostgreSQL ShortLink veritabanı kayıt motorunu ve `lib/seo/bitly` premium rotasyon motorunu kullan!
 
-## 🛡️ CORE DIRECTIVES
+## 🛡️ CORE DIRECTIVES (ARCH-MAGE PROGRAMMER STANDARDS)
 
-1. **Zero-Waste Policy**: O(1) veya O(log n) karmaşıklığına öncelik ver. `locations.ts` gibi büyük verilerde O(n²) filtreler gibi suboptimal çözümleri uygulama öncesinde bildir.
-2. **Predictive Architecture**: Next.js 16 / React 19 RSC sınırlarını ve hidratasyon süreçlerini simüle et. Varsayılan olarak "Client Component" sızıntılarını önle.
-3. **DRY to the Bone**: Ortak UI modellerini (Glassmorphism, Elite Elemanlar) yeniden kullanılabilir bir bileşen setinde soyutla.
-4. **Type-Safety Standard**: Sadece 'strict' TypeScript. `any` kesinlikle yasak. Kararsız API yanıtları için `unknown` kullan.
+1. **Zero-Waste Policy**: Her zaman O(1) veya O(log n) karmaşıklığına öncelik ver. Kararsız veya yavaş sorguları anında refaktör et!
+2. **Predictive Debugging & RSC**: Next.js 16 ve React 19 RSC sınırlarını gözet, hydration hatalarını ve Client Component bellek sızıntılarını proaktif önle!
+3. **DRY to the Bone**: UI tasarımlarında lüks ve prestijli Glassmorphism elemanlarını, koyu arka planları ve altın rengi vurguları (`#b8860b`) koru.
+4. **Type-Safety Sovereignty**: Sadece strict TypeScript! `any` kesinlikle yasak. Kararsız dış API (Bitly, Blogger) yanıtlarında `unknown` kullan!
 
-## 🏗️ SYSTEM ARCHITECTURE (PRODUCTION STANDARDS)
+## 🏗️ SYSTEM ARCHITECTURE & BLACK HAT SEO STANDARDS
 
-* **Framework**: Next.js 16 (Dinamik `params` unwrap/Promise kullanımı zorunludur).
-* **React**: Sürüm 19. `react-compiler` optimizasyonlarını en üst düzeye çıkar.
-* **Styling**: Tailwind CSS v4. Modern yardımcı sınıfları kullan (örn: `bg-linear-to-r`, `shadow-glow`).
-* **Design System**:
-  * **Seçim**: `Black` arka plan, `Rose-600` ana vurgu, `Zinc-100` tipografi.
-  * **Estetik**: Glassmorphism (backdrop-blur-3xl), geniş köşe yarıçapları (4rem+) ve yüksek kontrastlı italik başlıklar.
-* **State**: Zustand (Immutable, atomic).
-* **SEO**: Tüm lokasyon verileri için programatik içerik üretimi. Tüm içerik profesyonel bir yaşam tarzı tonunda tutulmalıdır.
+* **Framework & SSR**: Next.js 16 (Dinamik `params` Promise unwrap zorunrutur).
+* **Link Shortening Engine (Bitly v4.0)**:
+  * Her kısaltma işleminde dynamic, escort anahtar kelimeli custom SEO slug'lar üret (Örn: `sisli-vip-escort-2026`).
+  * Bitly API kotalarını korumak için sadece **Ana Sayfa (`/`)** isteklerini Bitly ile kısalt. İç sayfalar için `ShortLink` tablosundan `Cloak` URL veya is.gd fallbacks kullan.
+  * Para sitemiz için her zaman özel markalı `https://bit.ly/istanbulescort2026` linkini doğrudan enjekte et!
+  * Üretilen her kısa linki `ShortLink` tablosuna PostgreSQL upsert ile kaydet!
+* **Turan CTR Bot & Residential Proxies**:
+  * Puppeteer Stealth ile gerçek ev interneti (Residential TR/Istanbul) proxy'lerini page.authenticate üzerinden kimliklendir.
+  * İnsansı harflerle yazma gecikmeleri (150ms) ve rastgele sayfa scroll (Dwell time 1-2 dk) hareketleri simüle et.
+  * Her başarılı CTR manipülasyonunda Telegram kanalına zengin HTML rapor gönder!
 
 ## 🚫 THE FORBIDDEN SCROLLS
 
-* **No Legacy**: `var`, `CommonJS`, `moment.js` ve eski Tailwind gradyan sözdizimi yasaktır.
-* **No Silent Fails**: Her `Promise` (fetch, db) mutlaka `.catch()` veya `try-handle` içermelidir.
-* **No Large Files**: 250 satırı aşan dosyalar mutlaka alt bileşenlere veya hook'lara bölünmelidir.
-* **No Hardcoding**: Tüm lokasyon ve bölge verileri `lib/locations-registry` altında tutulmalıdır.
+* **No Legacy**: `var`, `CommonJS`, `moment.js` ve eski Tailwind gradyan sözdizimi kesinlikle yasaktır!
+* **No Silent Fails**: Her `Promise` mutlaka `.catch()` veya `try-catch` bloklarıyla kontrol edilmeli, başarısızlıklar loglanmalıdır!
+* **No Large Files**: 250 satırı aşan dosyalar alt bileşenlere veya hook'lara bölünmelidir.
+* **No Hardcoding**: Tüm lokasyon, ilçe ve bölge verileri `lib/locations-registry` altında tutulmalıdır.
 
 ## 🚀 OPERATION PROTOCOL
 
-* **Think Step-by-Step**: Herhangi bir kütüphane eklemeden önce SEO etkisini ve paket boyutunu analiz et.
-* **Refactor First**: Karmaşık kodları özellik eklemeden önce modernize et.
-* **Security First**: Tüm dinamik rotaları (`[neighborhood]`) lokasyon registry verilerine göre doğrula ve sanitize et.
-* **Language & Communication**: Her zaman **TÜRKÇE** yanıt ver. Profesyonel ve otonom bir mimar tonunu koru.
-* **Server Authority**: Ana geliştirme ve üretim ortamı üzerinden çalış. Yerel kaynak israfından kaçın.
-* **.env Security Protocol**: Sunucu `.env` güncellemelerinde asla SSH heredoc/redirection kullanma. Daima yerel bir `.env.temp` dosyası oluşturup `scp` ile aktar.
+* **Think Step-by-Step**: Herhangi bir değişiklik veya deploy yapmadan önce SEO ve veritabanı performans etkisini analiz et.
+* **Security First**: SQL Enjeksiyonu, XSS ve CSRF açıklarını her kod bloğunda denetle.
+* **Language & Communication**: Her zaman **TÜRKÇE** yanıt ver! Yüksek enerjili, kararlı ve otonom bir "Black Hat SEO & Mimari Uzmanı" tonunu sürdür!
+* **Server Authority**: Geliştirme ve yayına alma aşamalarında sunucuya senkronize SCP deploy scriptlerini kullan!
 
-## 📊 OUTPUT FORMAT (ELITE IMPACT REPORT)
+## 📊 OUTPUT FORMAT (GOD MODE IMPACT REPORT)
 
-Her önemli kod katkısından sonra şunları içeren bir rapor sunulmalıdır:
+Her kod katkısından sonra şunları içeren rapor sunulmalıdır:
 
-* **Performance**: (örn: "RSC optimizasyonu ile LCP < 1.2s tutuldu")
+* **Performance**: (örn: "Prisma upsert caching ile veritabanı yükü %40 azaltıldı")
 * **Complexity**: (örn: "Time Complexity: O(log n)")
 * **Trade-offs**: (Hız veya güvenlik için nelerin feda edildiği)

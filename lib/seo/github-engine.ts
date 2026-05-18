@@ -1,5 +1,8 @@
 import { Octokit } from "@octokit/rest";
 import { generateGodModeOmniContent } from '@/lib/ai-seo';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 /**
  * 💀 GITHUB STRIKER: PARASITE SEO ENGINE (BLACK HAT v4.0)
@@ -8,19 +11,27 @@ import { generateGodModeOmniContent } from '@/lib/ai-seo';
  */
 
 class GitHubStriker {
-  private octokit: Octokit;
+  private _octokit: Octokit | null = null;
 
-  constructor() {
-    this.octokit = new Octokit({
-      auth: process.env.GITHUB_PAT
-    });
+  private get octokit(): Octokit {
+    if (!this._octokit) {
+      this._octokit = new Octokit({
+        auth: process.env.GITHUB_PAT
+      });
+    }
+    return this._octokit;
   }
+
 
   /**
    * Creates or updates an SEO-optimized repository and its README.
    */
   async strike(params: { city: string, district: string, niche: string, targetUrl: string }) {
-    const repoName = `${params.city.toLowerCase()}-${params.district.toLowerCase()}-${params.niche.toLowerCase()}-escort`.replace(/ /g, '-');
+    const rawName = `${params.city}-${params.district}-${params.niche}-escort`.toLowerCase();
+    const repoName = rawName
+      .replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i')
+      .replace(/ö/g, 'o').replace(/ç/g, 'c').replace(/i̇/g, 'i')
+      .replace(/ /g, '-').replace(/[^a-z0-9-]/g, '');
     const description = `💎 ${params.city} ${params.district} ${params.niche} Escort Bayanlar | %100 Gerçek Görsel ve Kaporasız Hizmet 2026.`;
     
     console.log(`🚀 [GITHUB-STRIKER] Initiating strike on: ${repoName}`);

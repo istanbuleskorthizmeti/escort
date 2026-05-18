@@ -1,0 +1,27 @@
+import { NodeSSH } from 'node-ssh';
+
+const ssh = new NodeSSH();
+
+const config = {
+  host: '187.77.111.203',
+  username: 'root',
+  password: 'Z4-nN8JfiUIh5,;g'
+};
+
+async function run() {
+  try {
+    await ssh.connect(config);
+    console.log('✅ Connected to secondary attack server.');
+    
+    console.log('📡 Running ps and pm2 status filters on the secondary attack server...');
+    const result = await ssh.execCommand('pm2 list | grep -E "online|status" || pm2 list');
+    console.log(result.stdout || result.stderr || 'No response');
+
+    ssh.dispose();
+  } catch (err) {
+    console.error('Error connecting to secondary server:', err);
+    ssh.dispose();
+  }
+}
+
+run();

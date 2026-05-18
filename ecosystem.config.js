@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 module.exports = {
   apps: [
     {
@@ -20,9 +22,9 @@ module.exports = {
     },
     {
       name: "hydra-telegram-bot",
-      script: "npx",
-      args: "tsx scripts/master/telegram-master.ts",
-      interpreter: "none",
+      script: "node",
+      args: "-r dotenv/config dist_scripts/scripts/master/telegram-master.js",
+      cwd: "/root/esc",
       autorestart: true,
       env: {
         NODE_ENV: "production"
@@ -30,9 +32,9 @@ module.exports = {
     },
     {
       name: "hydra-auto-index",
-      script: "npx",
-      args: "tsx scripts/master/indexing-sniper.ts",
-      interpreter: "none",
+      script: "node",
+      args: "-r dotenv/config dist_scripts/scripts/master/indexing-sniper.js",
+      cwd: "/root/esc",
       autorestart: false,
       cron_restart: "0 4 * * *", // 🕒 RUN EVERY DAY AT 4 AM
       env: {
@@ -41,9 +43,9 @@ module.exports = {
     },
     {
       name: "hydra-audit-watchdog",
-      script: "npx",
-      args: "tsx scripts/master/audit-engine.ts",
-      interpreter: "none",
+      script: "node",
+      args: "-r dotenv/config dist_scripts/scripts/master/audit-engine.js",
+      cwd: "/root/esc",
       autorestart: true
     }
   ]

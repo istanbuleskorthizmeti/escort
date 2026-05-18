@@ -10,7 +10,7 @@ export async function getActiveProfiles() {
     });
     
     // Convert to simple objects that can be serialized
-    return profiles.map(p => ({
+    return profiles.map((p: { name: string; image?: string | null; phone?: string | null; tier?: string | null }) => ({
       title: p.name,
       src: p.image || "",
       phone: p.phone,

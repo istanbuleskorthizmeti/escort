@@ -5,11 +5,21 @@ import { getSiteId } from "../lib/site-context";
 import { prisma } from "../lib/prisma";
 import { Metadata } from "next";
 import Navbar from "../components/UI/Navbar";
-import { UltraFooter } from "../components/SEO/UltraFooter";
-import { IstanbulConquestMatrix } from "../components/SEO/IstanbulConquestMatrix";
-import { MathematicalSEO } from "../components/SEO/MathematicalSEO";
-import { SEOContentEngine } from "../components/SEO/SEOContentEngine";
 import { DorukVitrin } from "../components/SEO/DorukVitrin";
+import dynamic from "next/dynamic";
+
+const UltraFooter = dynamic(() => import("../components/SEO/UltraFooter").then(mod => mod.UltraFooter), {
+  ssr: true
+});
+const IstanbulConquestMatrix = dynamic(() => import("../components/SEO/IstanbulConquestMatrix").then(mod => mod.IstanbulConquestMatrix), {
+  ssr: true
+});
+const MathematicalSEO = dynamic(() => import("../components/SEO/MathematicalSEO").then(mod => mod.MathematicalSEO), {
+  ssr: true
+});
+const SEOContentEngine = dynamic(() => import("../components/SEO/SEOContentEngine").then(mod => mod.SEOContentEngine), {
+  ssr: true
+});
 import { IstanbulAggressiveSEO } from "../components/SEO/IstanbulAggressiveSEO";
 import { IstanbulDynamicSEO } from "../components/SEO/IstanbulDynamicSEO";
 import { LinkWheel } from "../components/SEO/LinkWheel";

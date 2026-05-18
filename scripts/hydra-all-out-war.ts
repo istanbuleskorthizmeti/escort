@@ -64,12 +64,30 @@ async function executeTotalWar() {
 
             console.log(`🔗 [LINK-WAR] Target URL: ${targetUrl} (${targetName})`);
 
-            // 🎯 BITLY & CLOAKING: Protect the target
-            const cloakUrl = await getOrGenerateShortLink(`${zone}_cloak`, targetUrl);
-            const bitlyUrl = await shortenUrl({ longUrl: targetUrl, title: `${zone} VIP Infiltration`, tags: ['hydra', zone] });
+            // 🎯 BITLY & CLOAKING: Protect the target (Only shorten HOME pages or use Premium Bit.ly)
+            let finalLink = targetUrl;
             
-            // Pick a "Safe" link to use in the content
-            const finalLink = Math.random() > 0.5 ? cloakUrl : bitlyUrl;
+            if (targetUrl === MONEY_SITE) {
+                // Ana sitemiz için kullanıcımızın en premium markalı linkini doğrudan kullanıyoruz!
+                finalLink = "https://bit.ly/istanbulescort2026";
+                console.log(`💎 [PREMIUM BITLY] Linked target dynamically to: ${finalLink}`);
+            } else {
+                // Uydular veya diğer siteler
+                try {
+                    const urlObj = new URL(targetUrl);
+                    const isHomePage = urlObj.pathname === '/' || urlObj.pathname === '';
+                    
+                    if (isHomePage) {
+                        console.log(`🔗 [BITLY] Shortening satellite HOME domain via Premium Tokens...`);
+                        finalLink = await shortenUrl({ longUrl: targetUrl, title: `${zone} Infiltration`, tags: ['hydra', zone] });
+                    } else {
+                        console.log(`🛡️ [CLOAK] Inner path detected. Using Cloak URL...`);
+                        finalLink = await getOrGenerateShortLink(`${zone}_cloak`, targetUrl);
+                    }
+                } catch (err) {
+                    finalLink = await getOrGenerateShortLink(`${zone}_cloak`, targetUrl);
+                }
+            }
             console.log(`🛡️ [CLOAK] Masked Link: ${finalLink}`);
 
             // 2. BLOGGER (SMART POSTING)
@@ -130,24 +148,38 @@ async function executeTotalWar() {
                 content: telegraphContent
             });
 
-            // Generate GitHub README Payload
             const githubMD = `
-# 🛡️ ${zone} VIP PARTNERSHIP PROTOCOL (2026)
+# 🔞 ${zone} Escort | ${zone} VIP Partner & Escort Kataloğu (2026)
 
-Official documentation and high-authority access for elit services in the **${zone}** region.
+${zone} bölgesinde güvenilir, gizlilik odaklı ve profesyonel **escort** partner arayışındaysanız doğru yerdesiniz. Hydra Elite Network, ${zone} escort nişlerinde en iyi, kaporasız ve gerçek profilleri bir araya getiren prestijli bir protokoldür.
 
-## 🔗 ACCESS PORTAL
+## 🔗 RESMİ REZERVASYON VE ACCESS PORTAL
 > [!IMPORTANT]
-> To view the verified catalog and real profiles, use the official link below:
-> ### 🌐 [${anchorText}](${finalLink})
+> Gerçek fotoğraflı, doğrulanmış VIP escort kataloğunu ve özel partner listesini görüntülemek için lütfen resmi web sitemizi ziyaret edin:
+> ### 🌐 👉 [${anchorText}](${finalLink}) 👈
 
-## 📍 REGIONAL COVERAGE
-- **Beşyol Üniversiteli**
-- **Rus & VIP Elite**
-- **Kaporasız Randevu Sistemi**
+## 📍 HİZMET NİŞLERİ VE SOSYAL SEÇENEKLER
+- **🔞 ${zone} Rus Escort:** Kültürel zarafet ve yüksek enerjili partner deneyimi.
+- **🎓 ${zone} Üniversiteli Escort:** Genç, dinamik ve samimi arkadaşlık arkadaşları.
+- **👑 VIP Partner & Escort Hizmeti:** Tamamen gizli, lüks akşam yemekleri ve sosyal etkinlik refakatçisi.
+- **💖 Olgun & Sarışın / Esmer Partnerler:** Fantezi ve sohbet odaklı deneyimli escort profilleri.
 
 ---
-*Maintained by Hydra Network Authority.*
+
+### 🛡️ Neden ${zone} Escort?
+- **Kaporasız Hizmet:** Kapıda ödeme güvencesiyle sahte profillere karşı %100 koruma.
+- **Gerçek ve Canlı Görseller:** Tamamı ajansımız tarafından onaylanmış aktif escort kadrosu.
+- **Özel Gizlilik:** İkinci şahıslarla asla paylaşılmayan kişisel veriler ve gizli randevu sistemi.
+
+---
+
+#### 🏷️ SOSYAL ETİKETLER & FOOTER SEO CLOUD (AGRESİF)
+\`\`\`text
+${zone.toLowerCase()}-escort, ${zone.toLowerCase()}-vip-escort, ${zone.toLowerCase()}-rus-escort, ${zone.toLowerCase()}-universiteli-escort, ${zone.toLowerCase()}-bayan-escort, ${zone.toLowerCase()}-kaporasiz-escort, istanbul-escort, vip-escort, rus-escort, elit-partner, kaporasiz-escort, escort-bayan, model-escort, escort-rehberi, ${zone.toLowerCase()}-escort-bayan, ${zone.toLowerCase()}-vip-katalog
+\`\`\`
+
+---
+*Maintained by Hydra Network Authority & DRKCNAY Elite. All Rights Reserved.*
             `.trim();
 
             // 4. GIST INFILTRATION

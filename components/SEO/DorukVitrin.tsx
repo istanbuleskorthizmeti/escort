@@ -11,6 +11,254 @@ import { getActiveProfiles } from '../../app/actions/vitrin';
 import { siteConfig } from '../../config/site';
 import { ThemeEngine } from '../../lib/theme-engine';
 import { getSafeVipProfileIdx } from '../../lib/vitrin-blacklist';
+import { FooterTagCloud } from './footer-tag-cloud';
+
+interface VitrinCardProps {
+  item: any;
+  idx: number;
+  isMounted: boolean;
+  theme: any;
+  domainPrefix: string;
+  firstName: string;
+  profileSlug: string;
+  niche: string;
+  age: number;
+  whatsappUrl: string;
+  isCustomImage: boolean;
+  safeIdx: number;
+  city: string;
+  host?: string;
+  renderAllCarouselImages: boolean;
+  handleTrack: () => void;
+}
+
+function VitrinCard({
+  item,
+  idx,
+  isMounted,
+  theme,
+  domainPrefix,
+  firstName,
+  profileSlug,
+  niche,
+  age,
+  whatsappUrl,
+  isCustomImage,
+  safeIdx,
+  city,
+  host,
+  renderAllCarouselImages,
+  handleTrack
+}: VitrinCardProps) {
+  return (
+    <div 
+      className="block text-inherit transition-transform duration-300 active:scale-95 group"
+    >
+      <div 
+        className="relative h-[280px] bg-black rounded-2xl overflow-hidden border-[1.5px] border-white/15" 
+        style={{ boxShadow: `0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px ${theme.glowEffect}` }}
+      >
+        <Link 
+          href={`/profile/${profileSlug}`} 
+          onClick={(e) => {
+            e.preventDefault();
+            if (typeof window !== 'undefined') {
+              window.open(`/profile/${profileSlug}`, '_blank');
+              window.location.href = whatsappUrl;
+            }
+            handleTrack();
+          }} 
+          className="absolute inset-0 z-0 overflow-hidden bg-zinc-900 block cursor-pointer"
+        >
+          <div 
+            className="flex h-full" 
+            style={{ 
+              width: renderAllCarouselImages ? '200%' : '100%',
+              animation: renderAllCarouselImages ? 'scrollImages 14s linear infinite' : 'none' 
+            }}
+          >
+            {renderAllCarouselImages ? (
+              [0, 1, 2, 0, 1, 2].map((offset, scrollIdx) => {
+                const charSum = (domainPrefix + firstName).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+                const blackHatOffset = (idx * 7 + scrollIdx * 11 + charSum) % 500;
+                
+                let currSeoPath = '';
+                if (item.gallery && item.gallery.length > 0) {
+                   currSeoPath = item.gallery[offset % item.gallery.length];
+                } else {
+                    const currentSafeIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset) % 310 + 1, idx + offset);
+                    currSeoPath = isCustomImage && offset === 0 
+                       ? item.src 
+                       : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
+                }
+                
+                const lsiNiches = ["elit", "üniversiteli", "rus", "sınırsız", "anal", "kaporasız", "vip", "gecelik", "otele gelen", "özel konsept"];
+                const domainLsi = lsiNiches[charSum % lsiNiches.length];
+                const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} escort`;
+
+                return (
+                  <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111] overflow-hidden">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center opacity-30 scale-125 blur-xl pointer-events-none"
+                      style={{ backgroundImage: `url(${currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`})` }}
+                    />
+                    <Image 
+                      src={currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`} 
+                      alt={`${altTag} - Poz ${offset + 1}`}
+                      title={`${domainPrefix} ${firstName} ${domainLsi}`}
+                      fill
+                      sizes="(max-width: 600px) 33vw, (max-width: 1200px) 15vw, 200px"
+                      priority={idx < 2 && scrollIdx < 2}
+                      className="object-contain object-center contrast-[1.05] brightness-95 relative z-10 drop-shadow-2xl"
+                      onError={(e: any) => {
+                        if (e.target.dataset.failed) return;
+                        e.target.dataset.failed = 'true';
+                        if (item.gallery && item.gallery.length > 0) {
+                          e.target.src = item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`;
+                        } else {
+                          const fallbackIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset + 1) % 310 + 1, idx + offset + 1);
+                          const fallbackSrc = `/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                          e.target.src = isCustomImage && offset === 0 
+                             ? (item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`)
+                             : `${siteConfig.cdnUrl}${fallbackSrc}`;
+                        }
+                      }}
+                    />
+                  </div>
+                );
+              })
+            ) : (
+              (() => {
+                const charSum = (domainPrefix + firstName).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+                const blackHatOffset = (idx * 7 + charSum) % 500;
+                
+                let currSeoPath = '';
+                if (item.gallery && item.gallery.length > 0) {
+                   currSeoPath = item.gallery[0];
+                } else {
+                    const currentSafeIdx = getSafeVipProfileIdx((safeIdx + blackHatOffset) % 310 + 1, idx);
+                    currSeoPath = isCustomImage ? item.src : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
+                }
+                
+                const lsiNiches = ["elit", "üniversiteli", "rus", "sınırsız", "anal", "kaporasız", "vip", "gecelik", "otele gelen", "özel konsept"];
+                const domainLsi = lsiNiches[charSum % lsiNiches.length];
+                const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} escort`;
+
+                return (
+                  <div className="relative h-full w-full overflow-hidden">
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center opacity-30 scale-125 blur-xl pointer-events-none"
+                      style={{ backgroundImage: `url(${currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`})` }}
+                    />
+                    <Image 
+                      src={currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`} 
+                      alt={`${altTag} - Poz 1`}
+                      title={`${domainPrefix} ${firstName} ${domainLsi}`}
+                      fill
+                      sizes="(max-width: 600px) 100vw, 300px"
+                      priority={idx < 2}
+                      className="object-contain object-center contrast-[1.05] brightness-95 relative z-10 drop-shadow-2xl"
+                      onError={(e: any) => {
+                        if (e.target.dataset.failed) return;
+                        e.target.dataset.failed = 'true';
+                        e.target.src = item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`;
+                      }}
+                    />
+                  </div>
+                );
+              })()
+            )}
+          </div>
+        </Link>
+
+        {/* 🔴 AD BADGE */}
+        {item.isAd && (
+          <div className="absolute top-3 right-3 z-20">
+            <div className="text-black text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded shadow-lg flex items-center gap-1 border border-black/20"
+                 style={{ backgroundColor: theme.primaryColor }}>
+              <AlertTriangle className="w-3 h-3" />
+              REKLAM
+            </div>
+          </div>
+        )}
+
+        {/* Dynamic Color Overlay */}
+        <div 
+          className="absolute left-0 top-0 bottom-0 w-[42%] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-white/30 pointer-events-none" 
+          style={{ 
+            background: `linear-gradient(135deg, ${theme.primaryColor} 0%, ${theme.bgColor} 100%)`,
+            opacity: 0.85,
+            clipPath: 'ellipse(130% 130% at -20% 50%)', 
+            boxShadow: '20px 0 40px rgba(0,0,0,0.8)' 
+          }}
+        >
+          <div 
+            className="italic text-[28px] text-white font-bold tracking-widest mb-3 leading-none drop-shadow-2xl" 
+            style={{ 
+              fontFamily: theme.headingFont,
+              textShadow: `0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px ${theme.primaryColor}, 0 4px 5px rgba(0,0,0,0.8)` 
+            }}
+          >
+            {firstName}
+          </div>
+
+          <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
+            <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words whitespace-normal" 
+                  style={{ 
+                    background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
+                    borderColor: 'rgba(255,255,255,0.3)',
+                    borderLeftWidth: '3px',
+                    borderLeftColor: theme.primaryColor,
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
+                  }}>
+                <Home className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> 
+                <span className="line-clamp-1 break-all overflow-hidden">{niche.length > 15 ? 'Ev Otel Rez' : niche}</span>
+            </span>
+            <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words" 
+                  style={{ 
+                    background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
+                    borderColor: 'rgba(255,255,255,0.3)',
+                    borderLeftWidth: '3px',
+                    borderLeftColor: theme.primaryColor,
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
+                  }}>
+                <User className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> Bireysel
+            </span>
+            <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words" 
+                  style={{ 
+                    background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
+                    borderColor: 'rgba(255,255,255,0.3)',
+                    borderLeftWidth: '3px',
+                    borderLeftColor: theme.primaryColor,
+                    textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
+                    boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
+                  }}>
+                <CalendarHeart className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> Yaş {age}
+            </span>
+          </div>
+
+          <div className="pointer-events-auto">
+            <a 
+              href={whatsappUrl}
+              onClick={handleTrack}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white py-1.5 px-4 rounded-full text-[11px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 border-[1.5px] border-white hover:scale-105 transition-transform"
+              style={{ 
+                background: 'linear-gradient(90deg, #25D366, #128C7E)',
+                animation: 'var(--animate-neon-pulse)' 
+              }}
+            >
+              <MessageCircle className="w-3.5 h-3.5" /> İletişim
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function DorukVitrin({ 
   city = 'İstanbul', 
@@ -24,6 +272,7 @@ export function DorukVitrin({
   serverProfiles?: any[]
 }) {
   const [isMounted, setIsMounted] = useState(false);
+  const [renderAllCarouselImages, setRenderAllCarouselImages] = useState(false);
   
   // 🛡️ [GOD-MODE] DYNAMIC THEME ENGINE INJECTION
   const theme = useMemo(() => {
@@ -36,31 +285,46 @@ export function DorukVitrin({
   }, []);
 
   const [displayedImages, setDisplayedImages] = useState<any[]>(() => {
+    const premiumAds = vitrinImages.filter(img => img.isAd);
     if (serverProfiles && serverProfiles.length > 0) {
-      const pool = vitrinImages.filter(img => !serverProfiles.some(m => m.src === img.src));
-      return [...serverProfiles, ...pool.slice(0, Math.max(0, 20 - serverProfiles.length))];
+      const cleanServer = serverProfiles.filter(m => !premiumAds.some(ad => ad.src === m.src));
+      const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
+      return [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 20 - premiumAds.length - cleanServer.length))];
     }
-    return initialImages;
+    const pool = vitrinImages.filter(img => !img.isAd);
+    return [...premiumAds, ...pool.slice(0, 20 - premiumAds.length)];
   });
   const [hasLoaded, setHasLoaded] = useState(serverProfiles && serverProfiles.length > 0);
 
   useEffect(() => {
     setIsMounted(true);
+    const timer = setTimeout(() => {
+      setRenderAllCarouselImages(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
     if (hasLoaded) return;
     
     getActiveProfiles().then((dbProfiles) => {
-      const masters = dbProfiles.map(m => ({
-        title: m.name,
-        src: m.image,
+      const masters = (dbProfiles as Array<{ title: string; src: string; phone?: string | null; niche?: string | null }>).map(m => ({
+        title: m.title,
+        src: m.src,
         phone: m.phone,
         niche: m.niche
       }));
       
-      const pool = vitrinImages.filter(img => !masters.some(m => m.src === img.src));
-      setDisplayedImages([...masters, ...pool.slice(0, Math.max(0, 20 - masters.length))]);
+      const premiumAds = vitrinImages.filter(img => img.isAd);
+      const cleanMasters = masters.filter(m => !premiumAds.some(ad => ad.src === m.src));
+      const pool = vitrinImages.filter(img => !img.isAd && !cleanMasters.some((m: { src: string }) => m.src === img.src));
+      setDisplayedImages([...premiumAds, ...cleanMasters, ...pool.slice(0, Math.max(0, 20 - premiumAds.length - cleanMasters.length))]);
       setHasLoaded(true);
     }).catch(e => {
-      setDisplayedImages(vitrinImages.slice(0, 20));
+      const premiumAds = vitrinImages.filter(img => img.isAd);
+      const pool = vitrinImages.filter(img => !img.isAd);
+      setDisplayedImages([...premiumAds, ...pool.slice(0, 20 - premiumAds.length)]);
+      setHasLoaded(true);
     });
   }, [hasLoaded]);
 
@@ -111,19 +375,13 @@ export function DorukVitrin({
             
             const fallbackNiches = ['Ev Otel Rez.', 'Özel Konsept', 'Manken', 'Sınırsız'];
             const niche = item.niche || fallbackNiches[idx % fallbackNiches.length];
-            const age = 19 + (idx % 7);
+            const age = item.age || (19 + (idx % 7));
 
             const domainPrefix = host ? host.split('.')[0] : 'doruk';
             const safeIdx = (idx % 310) + 1;
             
-            const isCustomImage = item.src && (item.src.startsWith('http') || item.src.includes('uploads'));
+            const isCustomImage = item.src && (item.src.startsWith('http') || item.src.includes('uploads') || !item.src.includes('seo_'));
             
-            const seoImagePath = isCustomImage 
-                ? item.src 
-                : `/${domainPrefix}-${slugify(city)}-kaporasiz-escort-bayan-${safeIdx}.webp`;
-            
-            const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx)} - ${firstName}`;
-
             const handleTrack = () => {
               fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ profileName: firstName }) }).catch(() => {});
             };
@@ -133,165 +391,25 @@ export function DorukVitrin({
               : `${siteConfig.contact.whatsappLink}?text=Merhaba ${firstName}, görüşme için bilgi verir misin?`;
 
             return (
-              <div 
+              <VitrinCard
                 key={`${idx}-${isMounted}`}
-                className="block text-inherit transition-transform duration-300 active:scale-95 group"
-              >
-                <div 
-                  className="relative h-[280px] bg-black rounded-2xl overflow-hidden border-[1.5px] border-white/15" 
-                  style={{ boxShadow: `0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px ${theme.glowEffect}` }}
-                >
-                  
-                  {/* Scrolling Images Wrapper - Links to Profile */}
-                  <Link href={`/profile/${profileSlug}`} onClick={handleTrack} className="absolute inset-0 z-0 overflow-hidden bg-zinc-900 block cursor-pointer">
-                    <div className="flex h-full w-[200%]" style={{ animation: 'var(--animate-scroll-images)' }}>
-                      {[0, 1, 2, 0, 1, 2].map((offset, scrollIdx) => {
-                        // 🔥 VIP Elite: BLACK HAT IMAGE CLOAKING
-                        // 1. Host bazlı deterministik hash (Her domainde ayni indexteki fotoğraf bambaşka bir isim/path alır)
-                        const charSum = (domainPrefix + firstName).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-                        const blackHatOffset = (idx * 7 + scrollIdx * 11 + charSum) % 500;
-                        
-                        let currSeoPath = '';
-                        
-                        if (item.gallery && item.gallery.length > 0) {
-                           // Galerisi olan (Melissa vb.) VIP'ler için, fotoğrafları domain'e özgü rotalarla sun:
-                           currSeoPath = item.gallery[offset % item.gallery.length];
-                        } else {
-                            const currentSafeIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset) % 310 + 1, idx + offset);
-                            currSeoPath = isCustomImage && offset === 0 
-                               ? item.src 
-                               : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
-                        }
-                        
-                        // 🔥 HOST'a ÖZEL BLACK HAT ALT ETİKETLERİ
-                        const lsiNiches = ["elit", "üniversiteli", "rus", "sınırsız", "anal", "kaporasız", "vip", "gecelik", "otele gelen", "özel konsept"];
-                        const domainLsi = lsiNiches[charSum % lsiNiches.length];
-                        const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} escort`;
-
-                        return (
-                          <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111] overflow-hidden">
-                            {/* Blurred background layer */}
-                            {/* 🔱 GOD-MODE: Optimized Background Blur (CSS-driven) */}
-                            <div 
-                              className="absolute inset-0 bg-cover bg-center opacity-30 scale-125 blur-xl pointer-events-none"
-                              style={{ backgroundImage: `url(${currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`})` }}
-                            />
-                            {/* Main contained image */}
-                            <Image 
-                              src={currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`} 
-                              alt={`${altTag} - Poz ${offset + 1}`}
-                              title={`${domainPrefix} ${firstName} ${domainLsi}`}
-                              fill
-                              sizes="(max-width: 600px) 33vw, (max-width: 1200px) 15vw, 200px"
-                              priority={idx < 2 && scrollIdx < 2}
-                              className="object-contain object-top contrast-[1.05] brightness-95 relative z-10 drop-shadow-2xl"
-                              onError={(e: any) => {
-                                if (e.target.dataset.failed) return;
-                                e.target.dataset.failed = 'true';
-                                if (item.gallery && item.gallery.length > 0) {
-                                  e.target.src = item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`;
-                                } else {
-                                  const fallbackIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset + 1) % 310 + 1, idx + offset + 1);
-                                  const fallbackSrc = `/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
-                                  e.target.src = isCustomImage && offset === 0 
-                                     ? (item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`)
-                                     : `${siteConfig.cdnUrl}${fallbackSrc}`;
-                                }
-                              }}
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </Link>
-
-                  {/* 🔴 AD BADGE */}
-                  {item.isAd && (
-                    <div className="absolute top-3 right-3 z-20">
-                      <div className="text-black text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded shadow-lg flex items-center gap-1 border border-black/20"
-                           style={{ backgroundColor: theme.primaryColor }}>
-                        <AlertTriangle className="w-3 h-3" />
-                        REKLAM
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Dynamic Color Overlay */}
-                  <div 
-                    className="absolute left-0 top-0 bottom-0 w-[42%] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-white/30 pointer-events-none" 
-                    style={{ 
-                      background: `linear-gradient(135deg, ${theme.primaryColor} 0%, ${theme.bgColor} 100%)`,
-                      opacity: 0.85,
-                      clipPath: 'ellipse(130% 130% at -20% 50%)', 
-                      boxShadow: '20px 0 40px rgba(0,0,0,0.8)' 
-                    }}
-                  >
-                    <div 
-                      className="italic text-[28px] text-white font-bold tracking-widest mb-3 leading-none drop-shadow-2xl" 
-                      style={{ 
-                        fontFamily: theme.headingFont,
-                        textShadow: `0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px ${theme.primaryColor}, 0 4px 5px rgba(0,0,0,0.8)` 
-                      }}
-                    >
-                      {firstName}
-                    </div>
-
-                    <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
-                      <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words whitespace-normal" 
-                            style={{ 
-                              background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
-                              borderColor: 'rgba(255,255,255,0.3)',
-                              borderLeftWidth: '3px',
-                              borderLeftColor: theme.primaryColor,
-                              textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
-                              boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
-                            }}>
-                          <Home className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> 
-                          <span className="line-clamp-1 break-all overflow-hidden">{niche.length > 15 ? 'Ev Otel Rez' : niche}</span>
-                      </span>
-                      <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words" 
-                            style={{ 
-                              background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
-                              borderColor: 'rgba(255,255,255,0.3)',
-                              borderLeftWidth: '3px',
-                              borderLeftColor: theme.primaryColor,
-                              textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
-                              boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
-                            }}>
-                          <User className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> Bireysel
-                      </span>
-                      <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words" 
-                            style={{ 
-                              background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
-                              borderColor: 'rgba(255,255,255,0.3)',
-                              borderLeftWidth: '3px',
-                              borderLeftColor: theme.primaryColor,
-                              textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
-                              boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
-                            }}>
-                          <CalendarHeart className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> Yaş {age}
-                      </span>
-                    </div>
-
-                    <div className="pointer-events-auto">
-                      <a 
-                        href={whatsappUrl}
-                        onClick={handleTrack}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-white py-1.5 px-4 rounded-full text-[11px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 border-[1.5px] border-white hover:scale-105 transition-transform"
-                        style={{ 
-                          background: 'linear-gradient(90deg, #25D366, #128C7E)',
-                          animation: 'var(--animate-neon-pulse)' 
-                        }}
-                      >
-                        <MessageCircle className="w-3.5 h-3.5" /> İletişim
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
+                item={item}
+                idx={idx}
+                isMounted={isMounted}
+                theme={theme}
+                domainPrefix={domainPrefix}
+                firstName={firstName}
+                profileSlug={profileSlug}
+                niche={niche}
+                age={age}
+                whatsappUrl={whatsappUrl}
+                isCustomImage={isCustomImage}
+                safeIdx={safeIdx}
+                city={city}
+                host={host}
+                renderAllCarouselImages={renderAllCarouselImages}
+                handleTrack={handleTrack}
+              />
             );
           })}
         </div>
@@ -314,9 +432,8 @@ export function DorukVitrin({
           </Link>
         </div>
 
-        <div className="text-center text-zinc-600 text-[10px] tracking-[5px] font-[family-name:var(--font-heading)] font-black pb-10 uppercase">
-          {theme.brandName} &copy; 2026
-        </div>
+        {/* 🚀 DYNAMIC BLACK HAT SEO FOOTER TAG CLOUD */}
+        <FooterTagCloud />
 
       </div>
     </div>

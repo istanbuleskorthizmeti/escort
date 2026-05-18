@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
 import { headers } from "next/headers";
 import { siteConfig } from "@/config/site";
+import Script from "next/script";
 import { getSiteId } from "@/lib/site-context";
 import { ThemeEngine } from "@/lib/theme-engine";
 import { BrowserIntelligence } from "@/components/SEO/BrowserIntelligence";
@@ -17,6 +18,8 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
 };
+
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   let host = siteConfig.domain;
@@ -147,26 +150,57 @@ export default async function RootLayout({
                     "addressLocality": "Istanbul",
                     "addressCountry": "TR"
                   }
-                },
-                {
-                  "@type": "FAQPage",
-                  "mainEntity": [
-                    {
-                      "@type": "Question",
-                      "name": `${brandTitle} hizmetleri kaporasız mı?`,
-                      "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": `Evet, ${brandTitle} ağındaki tüm escort randevuları %100 kaporasızdır.`
-                      }
-                    }
-                  ]
                 }
               ]
             })
           }}
         />
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
+            var reload = function() {
+              var now = Date.now();
+              var lastReload = sessionStorage.getItem('chunk_fail_reload');
+              if (!lastReload || (now - parseInt(lastReload, 10) > 10000)) {
+                sessionStorage.setItem('chunk_fail_reload', now.toString());
+                window.location.reload();
+              }
+            };
+            window.addEventListener('error', function(e) {
+              var t = e.target;
+              if (t && (t.tagName === 'SCRIPT' || t.tagName === 'LINK')) {
+                var src = t.src || t.href;
+                if (src && (src.indexOf('chunks') !== -1 || src.indexOf('_next') !== -1)) {
+                  reload();
+                }
+              }
+              var msg = e.message || (e.error && e.error.message);
+              if (msg && (msg.indexOf('chunk') !== -1 || msg.indexOf('Loading') !== -1 || msg.indexOf('CSS') !== -1)) {
+                reload();
+              }
+            }, true);
+            window.addEventListener('unhandledrejection', function(e) {
+              var msg = e.reason && (e.reason.message || e.reason.toString());
+              if (msg && (msg.indexOf('chunk') !== -1 || msg.indexOf('Loading') !== -1 || msg.indexOf('CSS') !== -1)) {
+                reload();
+              }
+            });
+          })();
+        `}} />
       </head>
       <body className={`font-sans min-h-full flex flex-col text-white antialiased`} style={{ backgroundColor: theme.bgColor }}>
+        {/* Google Analytics (gtag.js) - Non-blocking Strategy for Elite PageSpeed */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-5N1LVB5EWE"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-5N1LVB5EWE');
+          `}
+        </Script>
         <BrowserIntelligence />
         <div className="flex-1 flex flex-col">
           {children}

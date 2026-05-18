@@ -28,6 +28,8 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
+    workerThreads: false,
+    cpus: 1,
     optimizePackageImports: [
       'lucide-react',
       '@/components/UI',
@@ -41,7 +43,43 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
+        // 🔱 GOD-MODE: Allow external iframe embeds only for vitrin showcase endpoints
+        source: '/embed/vitrin',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'ALLOWALL'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors *; object-src 'none';"
+          },
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
+          }
+        ]
+      },
+      {
+        source: '/widget/vitrin',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'ALLOWALL'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors *; object-src 'none';"
+          },
+          {
+            key: 'Cache-Control',
+            value: 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
+          }
+        ]
+      },
+      {
+        // Tight security headers for all other main portal pages
+        source: '/((?!embed/vitrin|widget/vitrin).*)',
         headers: [
           {
             key: 'X-DNS-Prefetch-Control',
@@ -113,16 +151,6 @@ const nextConfig: NextConfig = {
         has: [{ type: 'host', value: '(?<host>.*patron.*|.*xsportv.*|.*taraftar.*|.*futbol.*|.*canlimaclinki.*|.*kesintisizizle.*)' }],
         destination: '/api/sport-cloaker',
       },
-      {
-        source: '/robots.txt',
-        has: [{ type: 'host', value: '(?<host>.*)' }],
-        destination: '/api/seo?host=:host&file=robots.txt',
-      },
-      {
-        source: '/sitemap.xml',
-        has: [{ type: 'host', value: '(?<host>.*)' }],
-        destination: '/api/seo?host=:host&file=sitemap.xml',
-      },
       // 🐺 WOLF MODE: GÖRSEL SEO ZEHİRLEMESİ (IMAGE REWRITE)
       // /vip-profil-1.webp isteğini /_media/vitrin/vip-profil-1.webp dosyasına bağlar ama URL aramalarda kaporasiz-escort-bayan olarak görünür.
       {
@@ -143,11 +171,6 @@ const nextConfig: NextConfig = {
       {
         source: '/ilan/:city-vip-escort',
         destination: '/:city',
-      },
-      {
-        source: '/sitemap-:id.xml',
-        has: [{ type: 'host', value: '(?<host>.*)' }],
-        destination: '/api/seo?host=:host&file=sitemap-:id.xml',
       }
     ];
   },

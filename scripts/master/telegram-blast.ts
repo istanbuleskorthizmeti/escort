@@ -50,13 +50,29 @@ ${hashtags}
     `.trim();
 
     try {
-      // Görsel URL'sini CDN üzerinden çek
-      const photoUrl = `http://213.232.235.181/_media/vitrin/${imageName}`;
-      await bot.telegram.sendPhoto(chatID, photoUrl, {
-        caption,
-        parse_mode: 'HTML'
-      });
-      console.log(`✅ [BLAST] Posted: ${firstName}`);
+      if (!bot) {
+        console.error('❌ Bot instance is not initialized!');
+        return;
+      }
+      const fs = require('fs');
+      const path = require('path');
+      const localPath = path.join(process.cwd(), 'public', 'vitrin', imageName);
+      
+      if (fs.existsSync(localPath)) {
+        await bot.telegram.sendPhoto(chatID, { source: fs.createReadStream(localPath) }, {
+          caption,
+          parse_mode: 'HTML'
+        });
+        console.log(`✅ [BLAST] Posted via stream: ${firstName}`);
+      } else {
+        // Fallback to URL if file is not locally stored
+        const photoUrl = `http://213.232.235.181/_media/vitrin/${imageName}`;
+        await bot.telegram.sendPhoto(chatID, photoUrl, {
+          caption,
+          parse_mode: 'HTML'
+        });
+        console.log(`✅ [BLAST] Posted via URL fallback: ${firstName}`);
+      }
       // Botun banlanmaması için bekleme
       await new Promise(r => setTimeout(r, 3000));
     } catch (e: any) {

@@ -143,6 +143,52 @@ export class CloudflareManager {
       console.error("❌ [CLOUDFLARE] Mass Sync failed:", error.message);
     }
   }
+
+  /**
+   * 🆕 DYNAMIC SUBDOMAIN INJECTION
+   * Automatically creates a proxied A record for district/location targeting.
+   */
+  async createSubdomain(zoneId: string, zoneName: string, subdomain: string, ip: string) {
+    try {
+      const fullName = `${subdomain}.${zoneName}`;
+      console.log(`🆕 [CLOUDFLARE] Injecting dynamic subdomain record: ${fullName} -> ${ip}`);
+      await axios.post(`${CF_API_URL}/zones/${zoneId}/dns_records`, {
+        type: 'A',
+        name: fullName,
+        content: ip,
+        ttl: 1,
+        proxied: true
+      }, { headers: this.headers });
+      console.log(`🔥 [SEO SUCCESS] Dynamic Edge Subdomain Registered: ${fullName}`);
+      return true;
+    } catch (error: any) {
+      const errMsg = error.response?.data?.errors?.[0]?.message || error.message;
+      if (errMsg && errMsg.includes('already exists')) {
+        console.log(`ℹ️ [CLOUDFLARE] Subdomain ${subdomain}.${zoneName} already exists. Skipping.`);
+        return true;
+      }
+      console.error(`❌ [CLOUDFLARE] Failed to create subdomain:`, errMsg);
+      return false;
+    }
+  }
+
+  /**
+   * 🧹 EDGE CACHE PURGING
+   * Forces Cloudflare CDN to clear cache for immediate page refresh.
+   */
+  async purgeCache(zoneId: string) {
+    try {
+      console.log(`🧹 [CLOUDFLARE] Purging edge CDN cache for Zone: ${zoneId}...`);
+      await axios.post(`${CF_API_URL}/zones/${zoneId}/purge_cache`, {
+        purge_everything: true
+      }, { headers: this.headers });
+      console.log(`✅ [CLOUDFLARE] CDN Cache purged successfully!`);
+      return true;
+    } catch (error: any) {
+      console.error(`❌ [CLOUDFLARE] Purge cache failed:`, error.response?.data || error.message);
+      return false;
+    }
+  }
 }
 
 export const cloudflareManager = new CloudflareManager();

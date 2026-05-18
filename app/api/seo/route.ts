@@ -12,12 +12,30 @@ const PARASITE_HUBS = [
  * Segmented sitemaps for the entire network with SiteId isolation.
  */
 export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
+  const { searchParams } = request.nextUrl;
   const host = searchParams.get('host') || request.headers.get('host') || '';
-  const file = searchParams.get('file') || 'robots.txt';
+  
+  // 🔱 God Mode: Extract file with multi-layered routing fallbacks
+  const invokePath = (request.headers.get('x-invoke-path') || '').toLowerCase();
+  let file = searchParams.get('file') || '';
+  
+  if (!file) {
+    const urlString = request.url.toLowerCase();
+    
+    if (urlString.includes('sitemap') || invokePath.includes('sitemap')) {
+      const match = request.url.match(/sitemap[a-zA-Z0-9-]*\.xml/i);
+      file = match ? match[0].toLowerCase() : 'sitemap.xml';
+    } else if (urlString.includes('robots.txt') || invokePath.includes('robots.txt')) {
+      file = 'robots.txt';
+    } else {
+      file = 'robots.txt'; // Ultimate fallback
+    }
+  }
+
   const siteId = await getSiteId(host);
 
-  console.log(`[SEO-ENGINE] Serving ${file} for ${host} (SiteId: ${siteId})`);
+  console.log(`[SEO-ENGINE] Serving ${file} for ${host} (SiteId: ${siteId}, InvokePath: ${invokePath})`);
+
 
   // 1. DYNAMIC ROBOTS.TXT GENERATION
   if (file === 'robots.txt') {

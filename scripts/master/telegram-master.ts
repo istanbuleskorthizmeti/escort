@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { Telegraf } from 'telegraf';
 import { execSync } from 'child_process';
 import os from 'os';
@@ -88,6 +89,12 @@ export const notifyAdmin = (message: string) => {
 
 console.log('🛰️ Telegram Master Bot logic initialized.');
 if (require.main === module) {
-    bot.launch();
-    console.log('🚀 Telegram Master Bot is live.');
+    try {
+        bot.launch().catch(err => {
+            console.error('🔥 [TELEGRAM MASTER ERROR] Failed launching bot:', err.message);
+        });
+        console.log('🚀 Telegram Master Bot is live.');
+    } catch (e: any) {
+        console.error('🔥 [TELEGRAM LAUNCH ERROR]:', e.message);
+    }
 }

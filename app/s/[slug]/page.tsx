@@ -9,7 +9,7 @@ interface Props {
 }
 
 const WHATSAPP_CONFIG = {
-  number: "905356223402",
+  number: "905520949245",
   defaultMessage: "Merhaba, dorukcanay.digital üzerinden ulaşıyorum."
 };
 

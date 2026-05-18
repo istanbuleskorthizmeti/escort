@@ -8,15 +8,25 @@ export async function POST(req: NextRequest) {
   try {
     const { urls } = await req.json();
     
-    // Safety check: only allow authorized admins to trigger this (handled by middleware)
+    // 🛡️ SECURITY GOD MODE: Strict regex sanitization to block shell command injections (RCE)
+    const safeUrls: string[] = [];
+    if (urls && Array.isArray(urls)) {
+      for (const u of urls) {
+        if (typeof u === 'string') {
+          // Allow only valid HTTP/HTTPS URLs with standard characters, reject any shell operators like ;, &, |, $, `, etc.
+          if (!/^https?:\/\/[a-zA-Z0-9.-]+(?:\/[a-zA-Z0-9_.-]*)*\/?$/.test(u)) {
+            return NextResponse.json({ error: "Suspicious characters or invalid format detected in URL parameter. Attack blocked." }, { status: 400 });
+          }
+          safeUrls.push(u);
+        }
+      }
+    }
     
-    console.log("🚀 [HARD PING API] Triggering indexing script...");
+    console.log("🚀 [HARD PING API] Triggering indexing script with sanitized URLs:", safeUrls);
 
-    // Execute the hard-ping script in the background
-    // We pass a few URLs for now or let the script use its defaults
-    const command = `node --import tsx scripts/hard-ping.ts ${urls ? urls.join(' ') : ''}`;
+    // Execute the hard-ping script safely
+    const command = `node --import tsx scripts/hard-ping.ts ${safeUrls.join(' ')}`;
     
-    // We run it asynchronously and don't wait for the full finish to return a response
     exec(command, (err, stdout, stderr) => {
         if (err) {
             console.error(`[HARD PING ERROR]: ${err.message}`);

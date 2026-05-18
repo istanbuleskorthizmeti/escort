@@ -1,10 +1,11 @@
 /**
- * DRKCNAY ELITE: BITLY LINK ENGINE (VIP Elite v3.0)
- * High-performance URL shortening with Token Rotation, is.gd & clck.ru fallbacks.
- * Zero-Footprint Architecture.
+ * DRKCNAY ELITE: BITLY LINK ENGINE (VIP Elite v4.0 - Black Hat SEO Edition)
+ * High-performance URL shortening with Token Rotation, Custom SEO-Optimized Slugs,
+ * PostgreSQL Database persistence, is.gd & clck.ru fallbacks.
  */
 
 import { ProxyHandler } from "./proxy-handler";
+import { prisma } from "../prisma";
 
 const BITLY_BITLINKS_URL = "https://api-ssl.bitly.com/v4/bitlinks";
 
@@ -20,6 +21,7 @@ interface ShortenParams {
   longUrl: string;
   title?: string;
   tags?: string[];
+  keyword?: string; // Optional custom SEO slug
 }
 
 // Global state for token rotation
@@ -27,18 +29,35 @@ let activeTokenIndex = 0;
 let exhaustedTokens = new Set<string>();
 
 /**
- * Creates a stealth redirect link.
- * Tiers: Bitly (Token Rotation) -> is.gd -> clck.ru -> Raw URL.
+ * Creates an ultra SEO-optimized stealth redirect link.
+ * Automatically injects "escort" and location niches in slugs for maximum SERP dominance.
  */
 export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promise<string> {
   const params: ShortenParams = typeof longUrlOrParams === 'string' 
     ? { longUrl: longUrlOrParams } 
     : longUrlOrParams;
 
+  // 🎯 DYNAMIC SEO SLUG GENERATOR (Black Hat Semantic Anchor)
+  let seoSlug = "";
+  if (params.keyword) {
+    seoSlug = params.keyword.toLowerCase().replace(/[^a-z0-9-]/g, '-');
+  } else if (params.title && (params.title.includes('Infiltration') || params.title.includes('VIP'))) {
+    // E.g. "Şişli VIP Infiltration" -> "sisli-vip-escort-2026"
+    const zone = params.title.split(' ')[0].toLowerCase()
+      .replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ğ/g, 'g')
+      .replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ç/g, 'c');
+    seoSlug = `${zone}-vip-escort-2026`;
+  } else {
+    // General high-intent escort keyword fallbacks
+    const niches = ["vip-escort", "rus-escort", "kaporasiz-escort", "universiteli-escort"];
+    const randomNiche = niches[Math.floor(Math.random() * niches.length)];
+    seoSlug = `istanbul-${randomNiche}-${Math.floor(Math.random() * 1000 + 100)}`;
+  }
+
   const rawTokens = process.env.BITLY_ACCESS_TOKEN || "";
   const tokens = rawTokens.split(',').map(t => t.trim()).filter(t => t.length > 0);
 
-  // 1. Bitly (Tier 1) - Token Rotation
+  // 1. Bitly (Tier 1) - Token Rotation with Custom SEO Back-Half
   if (tokens.length > 0) {
     let currentToken = tokens[activeTokenIndex % tokens.length];
     
@@ -52,6 +71,7 @@ export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promi
 
     if (!exhaustedTokens.has(currentToken)) {
       try {
+        console.log(`🔗 [BITLY] Creating base short URL for: ${params.longUrl.substring(0, 30)}...`);
         const response = await ProxyHandler.proxyFetch(BITLY_BITLINKS_URL, {
           method: "POST",
           headers: {
@@ -60,7 +80,7 @@ export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promi
           },
           body: JSON.stringify({
             long_url: params.longUrl,
-            title: params.title || "DRKCNAY Elite Redirect",
+            title: params.title || "Vip Escort Hizmeti SEO Link",
             domain: "bit.ly",
           }),
         });
@@ -68,6 +88,7 @@ export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promi
         if (response.ok) {
           const data = await response.json() as BitlyLinkResponse;
           
+          // Apply tags if specified
           if (params.tags && params.tags.length > 0) {
             await ProxyHandler.proxyFetch(`${BITLY_BITLINKS_URL}/${data.id}`, {
               method: "PATCH",
@@ -79,7 +100,54 @@ export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promi
             }).catch(() => {});
           }
 
-          console.log(`✅ [BITLY] Premium Link Created: ${data.link}`);
+          // 💎 Apply Branded SEO Custom Back-Half Slug (Premium Endpoint)
+          console.log(`🏴‍☠️ [BLACK-HAT-SEO] Registering custom SEO slug: bit.ly/${seoSlug}`);
+          const customRes = await ProxyHandler.proxyFetch("https://api-ssl.bitly.com/v4/custom_bitlinks", {
+            method: "POST",
+            headers: {
+              "Authorization": `Bearer ${currentToken}`,
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              bitlink: data.id,
+              custom_link: `bit.ly/${seoSlug}`
+            })
+          });
+
+          if (customRes.ok) {
+            console.log(`🔥 [SEO SUCCESS] Dynamic SEO Branded Bitlink Registered: https://bit.ly/${seoSlug}`);
+            data.link = `https://bit.ly/${seoSlug}`;
+          } else {
+            // If custom slug is already taken, try adding a random suffix to make it unique while keeping the escort niche!
+            const retrySlug = `${seoSlug}-${Math.floor(Math.random() * 90 + 10)}`;
+            console.log(`⚠️ [SLUG TAKEN] Retrying with unique niche: bit.ly/${retrySlug}`);
+            const retryRes = await ProxyHandler.proxyFetch("https://api-ssl.bitly.com/v4/custom_bitlinks", {
+              method: "POST",
+              headers: {
+                "Authorization": `Bearer ${currentToken}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                bitlink: data.id,
+                custom_link: `bit.ly/${retrySlug}`
+              })
+            });
+
+            if (retryRes.ok) {
+              console.log(`🔥 [SEO SUCCESS] Unique SEO Branded Bitlink Registered: https://bit.ly/${retrySlug}`);
+              data.link = `https://bit.ly/${retrySlug}`;
+            } else {
+              console.log(`ℹ️ [SLUG FALLBACK] Reverting to generic high-trust Bitlink: ${data.link}`);
+            }
+          }
+
+          // 💾 Save to Postgres Database
+          await prisma.shortLink.upsert({
+            where: { id: data.link },
+            update: { targetUrl: params.longUrl },
+            create: { id: data.link, targetUrl: params.longUrl }
+          }).catch((e: any) => console.warn(`⚠️ [PRISMA] ShortLink Bitly save failed:`, e.message));
+
           return data.link;
         } else {
           let errorData;
@@ -99,15 +167,22 @@ export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promi
     }
   }
 
-  // 2. Fallback: IS.GD (Tier 2) - No Auth, Generous Limits
-  console.log(`🛡️ [CLOAK] Falling back to is.gd for: ${params.longUrl.substring(0, 30)}...`);
+  // 2. Fallback: IS.GD (Tier 2) - No Auth, Generous Limits with Dynamic Custom SEO Slug
+  console.log(`🛡️ [CLOAK] Falling back to is.gd with custom SEO keyword: ${seoSlug}`);
   try {
-    const isgdUrl = `https://is.gd/create.php?format=json&url=${encodeURIComponent(params.longUrl)}`;
+    const isgdUrl = `https://is.gd/create.php?format=json&url=${encodeURIComponent(params.longUrl)}&shorturl=${encodeURIComponent(seoSlug)}`;
     const response = await ProxyHandler.proxyFetch(isgdUrl);
     if (response.ok) {
       const data = await response.json();
       if (data && data.shorturl) {
-        console.log(`✅ [IS.GD] Link Created: ${data.shorturl}`);
+        console.log(`✅ [IS.GD] Branded Link Created: ${data.shorturl}`);
+        
+        await prisma.shortLink.upsert({
+          where: { id: data.shorturl },
+          update: { targetUrl: params.longUrl },
+          create: { id: data.shorturl, targetUrl: params.longUrl }
+        }).catch((e: any) => console.warn(`⚠️ [PRISMA] ShortLink is.gd save failed:`, e.message));
+
         return data.shorturl;
       }
     }
@@ -124,6 +199,13 @@ export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promi
       const text = await response.text();
       if (text && text.includes('clck.ru')) {
          console.log(`✅ [CLCK.RU] Link Created: ${text}`);
+         
+         await prisma.shortLink.upsert({
+           where: { id: text },
+           update: { targetUrl: params.longUrl },
+           create: { id: text, targetUrl: params.longUrl }
+         }).catch((e: any) => console.warn(`⚠️ [PRISMA] ShortLink clck.ru save failed:`, e.message));
+
          return text;
       }
     }

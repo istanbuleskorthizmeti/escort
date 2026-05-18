@@ -5,6 +5,7 @@ export const vitrinImages = [
     "phone": "905330892496",
     "niche": "Elite VIP Partner",
     "isAd": true,
+    "age": 27,
     "gallery": [
       "/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
       "/_media/vitrin/istanbul-kaporasiz-escort-melissa-2.webp",
@@ -13,12 +14,46 @@ export const vitrinImages = [
     ]
   },
   {
-    "title": "ÜNİVERSİTELİ SEÇKİ 2",
-    "src": "/_media/vitrin/seo_100_photo_17_2026-05-04_17-54-52.jpg"
+    "title": "Aynur",
+    "src": "/_media/vitrin/istanbul-kaporasiz-escort-aynur-1.webp",
+    "phone": "905016355053",
+    "niche": "VIP Sarışın Model",
+    "isAd": true,
+    "age": 26,
+    "gallery": [
+      "/_media/vitrin/istanbul-kaporasiz-escort-aynur-1.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-aynur-2.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-aynur-3.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-aynur-4.webp"
+    ]
   },
   {
-    "title": "ESMER GÜZELİ 5",
-    "src": "/_media/vitrin/seo_103_photo_18_2026-05-04_17-54-52.jpg"
+    "title": "Svetlana",
+    "src": "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-1.webp",
+    "phone": "447426976466",
+    "niche": "Elit Rus Model",
+    "isAd": true,
+    "age": 29,
+    "gallery": [
+      "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-1.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-2.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-3.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-4.webp"
+    ]
+  },
+  {
+    "title": "Ceren",
+    "src": "/_media/vitrin/istanbul-kaporasiz-escort-ceren-1.webp",
+    "phone": "905368396114",
+    "niche": "VIP Elit Model",
+    "isAd": true,
+    "age": 28,
+    "gallery": [
+      "/_media/vitrin/istanbul-kaporasiz-escort-ceren-1.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-ceren-2.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-ceren-3.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-ceren-4.webp"
+    ]
   },
   {
     "title": "ANAL UZMANI 8",

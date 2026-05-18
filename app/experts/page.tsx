@@ -6,18 +6,18 @@ import { PanicButton } from "@/components/UI/ConciergeSuite";
 
 export const metadata: Metadata = {
   title: "🛡️ VIP Uzman Kadromuz | EscortVip Elit Partner & Mutlu Son Rehberi",
-  description: "Eda Nur ve profesyonel ekibimizle; biyo-hacking, psikoseks�el derinlik ve elite escort rehberli�i �zerine sars�lmaz bir otorite. Ger�ek profiller, ger�ek deneyimler.",
+  description: "Eda Nur ve profesyonel ekibimizle; biyo-hacking, psikoseksüel derinlik ve elite escort rehberliği üzerine sarsılmaz bir otorite. Gerçek profiller, gerçek deneyimler.",
   keywords: [
     "vip escort rehberi",
-    "mutlu son uzman�",
-    "elit partner rehberli�i",
+    "mutlu son uzmanı",
+    "elit partner rehberliği",
     "eda nur escortvip",
-    "profesyonel e�lik e�itimi",
-    "cinsel sa�l�k ve l�ks ya�am",
+    "profesyonel eşlik eğitimi",
+    "cinsel sağlık ve lüks yaşam",
     "vip partner standartları",
     "mutlu son deneyimi",
-    "onayl� escort profilleri",
-    "l�ks gece hayat� uzman�"
+    "onaylı escort profilleri",
+    "lüks gece hayatı uzmanı"
   ],
 };
 
@@ -26,7 +26,7 @@ export default function ExpertsPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "name": "Otorite Konseyi | EscortVip Elit Uzman Kadromuz",
-    "description": "Dr. DRKCNAY ve Eda Nur liderli�indeki uzman kadromuzla; biyo-hacking, psikoseks�el derinlik ve elite ya�am rehberli�i �zerine bilimsel temelli sars�lmaz bir otorite.",
+    "description": "Dr. DRKCNAY ve Eda Nur liderliğindeki uzman kadromuzla; biyo-hacking, psikoseksüel derinlik ve elite yaşam rehberliği üzerine bilimsel temelli sarsılmaz bir otorite.",
     "url": "https://vipescorthizmeti.com/experts",
     "hasPart": experts.map(expert => ({
       "@type": expert.schemaType,
@@ -50,7 +50,7 @@ export default function ExpertsPage() {
         <header className="mb-24 relative">
           <div className="absolute -top-40 -left-20 w-[500px] h-[500px] bg-gold/5 blur-[200px] rounded-full -z-10"></div>
           <div className="inline-block bg-zinc-950 border border-zinc-900 text-gold text-[10px] font-black uppercase tracking-[0.3em] px-6 py-2 rounded-full mb-8">
-            Elit COUNCIL // UZMAN OTOR�TE
+            Elit COUNCIL // UZMAN OTORİTE
           </div>
           <h1 className="text-6xl md:text-9xl font-black mb-8 tracking-tighter leading-[0.8] italic uppercase font-serif">
             Prestij <br />
@@ -59,7 +59,7 @@ export default function ExpertsPage() {
             </span>
           </h1>
           <p className="text-zinc-400 text-xl md:text-3xl font-medium max-w-4xl border-l-4 border-gold pl-8 py-2">
-            Cinselli�in biyolojik kodlar�ndan ruhun derin arzular�na kadar her �eyi bilimsel ve felsefi bir disiplinle ele alan elit kadromuzla tan���n.
+            Cinselliğin biyolojik kodlarından ruhun derin arzularına kadar her şeyi bilimsel ve felsefi bir disiplinle ele alan elit kadromuzla tanışın.
           </p>
         </header>
 
@@ -73,7 +73,6 @@ export default function ExpertsPage() {
               <div className="absolute inset-0 bg-linear-to-t from-black via-transparent to-transparent z-10"></div>
               
               <div className="relative h-[500px] w-full bg-zinc-900 overflow-hidden">
-                {/* Image Placeholder - User will provide expert images later, but path is set */}
                 <div className="absolute inset-0 bg-zinc-800 transition-transform duration-1000 group-hover:scale-110">
                    <div className="w-full h-full flex items-center justify-center text-zinc-700 text-9xl font-serif italic">
                       {expert.name[0]}
@@ -92,7 +91,7 @@ export default function ExpertsPage() {
                   {expert.specialty}
                 </p>
                 <div className="flex items-center gap-4 text-xs font-black tracking-widest uppercase">
-                  <span>PROKOTOL� �NCELE</span>
+                  <span>PROTOKOLÜ İNCELE</span>
                   <div className="h-[2px] w-12 bg-gold group-hover:w-24 transition-all duration-700"></div>
                   <span className="text-gold">→</span>
                 </div>
@@ -103,10 +102,10 @@ export default function ExpertsPage() {
 
         <section className="bg-zinc-950 border border-zinc-900 rounded-[4rem] p-12 md:p-24 text-center">
           <h2 className="text-2xl md:text-4xl font-black italic uppercase tracking-widest mb-8 font-serif">
-            Bilimsel Temelli <span className="text-gold">Elit</span> Yakla��m�
+            Bilimsel Temelli <span className="text-gold">Elit</span> Yaklaşımı
           </h2>
           <p className="text-zinc-500 text-lg md:text-xl max-w-4xl mx-auto leading-relaxed">
-            EscortVIP kadrosu, sadece bir rehber de�il, ayn� zamanda ya�am standartlar�n�z� ve cinsel sa�l���n�z� optimize eden bir bilgi merkezidir. Her i�erik, Dr. DRKCNAY ve Eda Nur&apos;un onay�ndan ge�erek en saf haliyle size sunulur.
+            EscortVIP kadrosu, sadece bir rehber değil, aynı zamanda yaşam standartlarınızı ve cinsel sağlığınızı optimize eden bir bilgi merkezidir. Her içerik, Dr. DRKCNAY ve Eda Nur&apos;un onayından geçerek en saf haliyle size sunulur.
           </p>
         </section>
       </main>

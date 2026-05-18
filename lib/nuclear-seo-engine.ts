@@ -52,7 +52,7 @@ export function generateAllDistrictsSchema() {
                 "addressCountry": "TR"
             },
             "url": `https://dorukcanay.digital/s/${district.toLowerCase()}`,
-            "telephone": "+905356223402",
+            "telephone": "+905520949245",
             "email": "info@dorukcanay.digital",
             "priceRange": "$$$",
             "openingHours": "Mo-Su 00:00-24:00"

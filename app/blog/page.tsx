@@ -5,14 +5,14 @@ import Navbar from "@/components/UI/Navbar";
 import { PanicButton } from "@/components/UI/ConciergeSuite";
 
 export const metadata: Metadata = {
-  title: "🛡️ Elit K�lliyat | EscortVip Bilgi ve Otorite Ar�ivi",
-  description: "L�ks e�lik d�nyas�n�n sars�lmaz etik kurallar�, biyo-hacking standartları ve psikoseks�el derinli�e dair profesyonel makaleler ar�ivi.",
+  title: "🛡️ Elit Külliyat | EscortVip Bilgi ve Otorite Arşivi",
+  description: "Lüks eşlik dünyasının sarsılmaz etik kuralları, biyo-hacking standartları ve psikoseksüel derinliğine dair profesyonel makaleler arşivi.",
 };
 
 export default function BlogHubPage() {
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-rose-600 selection:text-white antialiased">
-      {/* G�r�nmez CollectionPage Şemas� */}
+      {/* Görünmez CollectionPage Şeması */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -20,7 +20,7 @@ export default function BlogHubPage() {
             "@context": "https://schema.org",
             "@type": "CollectionPage",
             name: "EscortVIP Elit Makaleleri",
-            description: "G�venlik, gizlilik ve VIP rezervasyon detaylar� �zerine makaleler ar�ivi.",
+            description: "Güvenlik, gizlilik ve VIP rezervasyon detayları üzerine makaleler arşivi.",
             url: "https://vipescorthizmeti.com/blog"
           })
         }}
@@ -32,16 +32,16 @@ export default function BlogHubPage() {
         <section className="relative mb-24">
           <div className="absolute -top-40 -left-20 w-[500px] h-[500px] bg-rose-600/10 blur-[200px] rounded-full -z-10"></div>
           <div className="inline-block bg-zinc-900 border border-zinc-800 text-rose-500 text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1 rounded-full mb-6">
-            K�LL�YAT // Elit ARCHIVE
+            KÜLLİYAT // Elit ARCHIVE
           </div>
           <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] italic uppercase">
             EscortVIP <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 via-rose-500 to-rose-300">
-              OKUMA PROTOKOL�
+              OKUMA PROTOKOLÜ
             </span>
           </h1>
           <p className="text-zinc-400 text-lg md:text-2xl font-medium max-w-3xl border-l-4 border-rose-600 pl-6">
-            L�ks e�lik, s�n�r tan�mayan fanteziler ve S�f�r-�z (Tam Gizlilik) rezervasyon rehberi hakk�nda sekt�rel analizler.
+            Lüks eşlik, sınır tanımayan fanteziler ve Sıfır-İz (Tam Gizlilik) rezervasyon rehberi hakkında sektörel analizler.
           </p>
         </section>
 
@@ -77,7 +77,7 @@ export default function BlogHubPage() {
                 <div className="pt-6 border-t border-zinc-900 flex justify-between items-center mt-auto">
                    <div className="text-xs font-bold text-zinc-600 uppercase tracking-widest">{post.author}</div>
                    <div className="w-8 h-8 rounded-full border border-zinc-800 flex items-center justify-center text-rose-600 group-hover:bg-rose-600 group-hover:text-white transition-all">
-                     �
+                     →
                    </div>
                 </div>
               </div>

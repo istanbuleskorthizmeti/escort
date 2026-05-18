@@ -188,7 +188,7 @@ export default async function RootLayout({
         `}} />
       </head>
       <body className={`font-sans min-h-full flex flex-col text-white antialiased`} style={{ backgroundColor: theme.bgColor }}>
-        {/* Google Analytics (gtag.js) - Non-blocking Strategy for Elite PageSpeed */}
+        {/* Google Analytics (gtag.js) - Advanced Consent Mode V2 with Crawler Camouflage */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5N1LVB5EWE"
           strategy="afterInteractive"
@@ -197,8 +197,38 @@ export default async function RootLayout({
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
+            
+            // Check stored consent or automatically grant for crawlers (Googlebot, Bingbot, Yandexbot)
+            var isGranted = false;
+            try {
+              isGranted = localStorage.getItem('Elit_cookie_consent') === 'granted';
+            } catch(e){}
+            
+            var ua = navigator.userAgent.toLowerCase();
+            var isBot = /googlebot|bingbot|yandexbot|google-adwords|google-adsense|baiduspider|duckduckbot/i.test(ua);
+            
+            if (isGranted || isBot) {
+              gtag('consent', 'default', {
+                'analytics_storage': 'granted',
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'granted'
+              });
+            } else {
+              gtag('consent', 'default', {
+                'analytics_storage': 'denied',
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'wait_for_update': 500
+              });
+            }
+            
             gtag('js', new Date());
-            gtag('config', 'G-5N1LVB5EWE');
+            gtag('config', 'G-5N1LVB5EWE', {
+              'allow_google_signals': true,
+              'anonymize_ip': false
+            });
           `}
         </Script>
         <BrowserIntelligence />

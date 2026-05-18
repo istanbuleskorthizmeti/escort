@@ -21,6 +21,14 @@ export async function GET(
     return NextResponse.redirect(new URL('/', request.url));
   }
 
+  // 🎓 High-EEAT Expert Profile Direct Redirect Interceptor
+  if (id === 'linkedin-dorukcan') {
+    return NextResponse.redirect('https://www.linkedin.com/in/dorukcan-ay-seo-expert-9b5961a8', { status: 302 });
+  }
+  if (id === 'linkedin-edanur') {
+    return NextResponse.redirect('https://www.linkedin.com/in/eda-nur-life-sociology-9b8812b9', { status: 302 });
+  }
+
   try {
     const shortLink = await prisma.shortLink.findUnique({
       where: { id }

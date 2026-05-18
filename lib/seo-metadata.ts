@@ -152,7 +152,31 @@ export function generateStructuredData(params: MetaParams) {
   const baseUrl = targetDomain.startsWith('http') ? targetDomain : `https://${targetDomain}`;
   const url = `${baseUrl}/${params.city}${params.district ? `/${params.district}` : ""}`;
   
-  // 🖼️ [HYDRA-VISUAL] Image Gallery Schema for Aggressive Image SEO
+  // 📚 Dynamic High-EEAT Expert Authors (Black Hat/Gray Hat EEAT Spoofing)
+  const authors = [
+    {
+      name: "Dr. Dorukcan Ay",
+      jobTitle: "Kıdemli Dijital İletişim ve Gece Hayatı Kültürü Uzmanı",
+      alumni: "Stanford University",
+      linkedin: `${baseUrl}/go/linkedin-dorukcan`
+    },
+    {
+      name: "Prof. Dr. Eda Nur",
+      jobTitle: "Kentsel Sosyoloji ve Yaşam Analisti",
+      alumni: "Harvard Medical School",
+      linkedin: `${baseUrl}/go/linkedin-edanur`
+    }
+  ];
+  
+  const hashStr = locName + targetDomain;
+  let h = 2166136261 >>> 0;
+  for (let i = 0; i < hashStr.length; i++) {
+    h = Math.imul(h ^ hashStr.charCodeAt(i), 16777619);
+  }
+  const authorIdx = (h >>> 0) % authors.length;
+  const selectedAuthor = authors[authorIdx];
+
+  // 🖼️ [HYDRA-VISUAL] Image Gallery Schema (1200px compliant for Discover)
   const imageGallerySchema = {
     "@context": "https://schema.org",
     "@type": "ImageGallery",
@@ -163,19 +187,54 @@ export function generateStructuredData(params: MetaParams) {
       {
         "@type": "ImageObject",
         "url": `${baseUrl}/api/og?loc=${encodeURIComponent(locName)}`,
+        "width": "1200",
+        "height": "630",
         "caption": `${locName} VIP Escort Tanıtım Görseli`
       },
       {
         "@type": "ImageObject",
-        "url": `${baseUrl}/_media/vitrin/seo_1_vip-1.jpg`,
+        "url": `${baseUrl}/_media/vitrin/vip-profil-12.webp`,
+        "width": "1200",
+        "height": "1800",
         "caption": `${locName} Elit Model - DRKCNAY`
       },
       {
         "@type": "ImageObject",
-        "url": `${baseUrl}/_media/vitrin/seo_2_vip-16.jpg`,
+        "url": `${baseUrl}/_media/vitrin/vip-profil-24.webp`,
+        "width": "1200",
+        "height": "1800",
         "caption": `${locName} Rus Escort Görseli`
       }
     ]
+  };
+
+  // 📰 SGE & EEAT Article Schema
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url
+    },
+    "headline": `${locName} VIP Escort Hizmetleri | Kaporasız & %100 Gerçek`,
+    "description": `${locName} lokasyonunda lüks ve kaporasız rus ve üniversiteli escort refakatçilik hizmetine dair bağımsız uzman analizi.`,
+    "image": `${baseUrl}/api/og?loc=${encodeURIComponent(locName)}`,
+    "datePublished": "2026-01-15T08:00:00+03:00",
+    "dateModified": new Date().toISOString(),
+    "author": {
+      "@type": "Person",
+      "name": selectedAuthor.name,
+      "jobTitle": selectedAuthor.jobTitle,
+      "url": selectedAuthor.linkedin
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "DRKCNAY ELITE",
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${baseUrl}/icon.png`
+      }
+    }
   };
 
   return [
@@ -191,6 +250,7 @@ export function generateStructuredData(params: MetaParams) {
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": Math.floor(Math.random() * 50) + 120 }
     },
     imageGallerySchema,
+    articleSchema,
     {
       "@context": "https://schema.org",
       "@type": "FAQPage",

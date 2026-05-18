@@ -3,6 +3,55 @@ import Link from 'next/link';
 import { slugify } from '@/lib/utils';
 import { getDomainConfig } from '@/config/domains';
 
+// 🗺️ DRKCNAY ELITE GEOGRAPHIC LSI MATRIX 2026
+const LOCAL_GEO_MATRIX: Record<string, { neighborhoods: string[], twinDistrict: string, transitSpots: string[] }> = {
+  gungoren: {
+    neighborhoods: ["Merter", "Güngören Merkez", "Haznedar", "Sanayi", "Tozkoparan", "Güneştepe"],
+    twinDistrict: "Esenler",
+    transitSpots: ["Dörtyol", "Davutpaşa", "Merter Metro", "Kale Center"]
+  },
+  esenyurt: {
+    neighborhoods: ["Mehterçeşme", "Yeşilkent", "Cumhuriyet", "Piri Reis", "Bağlarçeşme", "Güzelyurt"],
+    twinDistrict: "Beylikdüzü",
+    transitSpots: ["Tüyap", "Beylikdüzü Meydan", "Esenyurt Meydan", "Akbatı AVM"]
+  },
+  beylikduzu: {
+    neighborhoods: ["Adnan Kahveci", "Barış", "Beylikdüzü OSB", "Gürpınar", "Kavaklı", "Yakuplu"],
+    twinDistrict: "Esenyurt",
+    transitSpots: ["Perlavista", "Tüyap Kongre", "E-5 Güzelyurt"]
+  },
+  besiktas: {
+    neighborhoods: ["Bebek", "Etiler", "Ortaköy", "Levent", "Arnavutköy", "Ulus", "Gayrettepe", "Abbasağa"],
+    twinDistrict: "Şişli",
+    transitSpots: ["Zorlu Center", "Akmerkez", "Beşiktaş İskele", "Çırağan Caddesi"]
+  },
+  sisli: {
+    neighborhoods: ["Nişantaşı", "Mecidiyeköy", "Teşvikiye", "Fulya", "Esentepe", "Kurtuluş", "Feriköy"],
+    twinDistrict: "Beşiktaş",
+    transitSpots: ["Cevahir AVM", "Trump Towers", "Mecidiyeköy Meydan"]
+  },
+  kadikoy: {
+    neighborhoods: ["Moda", "Caddebostan", "Suadiye", "Bostancı", "Fenerbahçe", "Göztepe", "Acıbadem"],
+    twinDistrict: "Üsküdar",
+    transitSpots: ["Bağdat Caddesi", "Kadıköy Rıhtım", "Boğa Heykeli", "Akasya AVM"]
+  },
+  bakirkoy: {
+    neighborhoods: ["Yeşilköy", "Ataköy", "Florya", "Zeytinlik", "Kartaltepe", "Şenlikköy"],
+    twinDistrict: "Bahçelievler",
+    transitSpots: ["Capacity AVM", "Galleria", "Bakırköy Meydan", "Atatürk Havalimanı"]
+  },
+  bagcilar: {
+    neighborhoods: ["Güneşli", "Mahmutbey", "Kirazlı", "Hürriyet", "Göztepe", "Demirkapı"],
+    twinDistrict: "Güngören",
+    transitSpots: ["Bağcılar Meydan", "212 Outlet", "İSTOÇ"]
+  },
+  pendik: {
+    neighborhoods: ["Kurtköy", "Yenişehir", "Güzelyalı", "Kaynarca", "Bahçelievler", "Çamlık"],
+    twinDistrict: "Kartal",
+    transitSpots: ["Viaport AVM", "Sabiha Gökçen", "Pendik Marina"]
+  }
+};
+
 interface SEOContentEngineProps {
   cityName: string;
   districtName?: string;
@@ -14,7 +63,18 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
   const currentLoc = neighborhoodName || districtName || cityName;
   const config = getDomainConfig(host);
   const isCloaker = config.role === 'CLOAKER';
+
+  // Slugify current location to match dynamic dictionary keys
+  const geoKey = (districtName || '').toLowerCase()
+    .replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ç/g, 'c');
   
+  const geoData = LOCAL_GEO_MATRIX[geoKey] || {
+    neighborhoods: [`${currentLoc} Merkez`, `${currentLoc} Caddesi`, "Hürriyet", "Cumhuriyet", "Atatürk"],
+    twinDistrict: "Çevre Bölgeler",
+    transitSpots: ["Merkez AVM", "Metro İstasyonu", "E-5 Çıkışı"]
+  };
+
   const lsiKeywords = isCloaker 
     ? ["Sansürsüz Video", "Gizli Çekim", "VIP İfşa", "Skandal Görüntüler", "Yasak Aşk", "Telegram Kanalı", "Magazin", "Sızdırılan Kaset"]
     : ["Vip Deneyim", "Sınırsız Hizmet", "Gizli Buluşma", "Elite Escort", "Gerçek Görseller", "Kaporasız İlanlar", "Otele Servis", "Eve Gelen Escort"];
@@ -78,39 +138,32 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
               <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-rose-600/10 hover:border-rose-600/30'} transition-all duration-500 group`}>
                 <h4 className={`${isCloaker ? 'text-red-600' : 'text-rose-600'} font-black uppercase tracking-widest mb-4 flex items-center gap-3`}>
                    <span className={`w-2 h-2 ${isCloaker ? 'bg-red-600' : 'bg-rose-600'} rounded-full animate-pulse`} />
-                   {cityName.toUpperCase()} {isCloaker ? 'GİZLİ ÇEKİM İFŞALARI' : 'ESCORT HİZMET STANDARTLARI'}
+                   {currentLoc.toUpperCase()} & {geoData.twinDistrict.toUpperCase()} {isCloaker ? 'İFŞA BÜLTENİ' : 'VIP LOKAL DETAYLARI'}
                 </h4>
                 <p className="text-zinc-500 text-sm leading-relaxed">
                    {isCloaker ? (
                      <>
-                       {currentLoc} bölgesindeki magazin gündemini sarsan sızıntılar, 
-                       <strong> {currentLoc} telegram ifşa</strong> ve <strong>{currentLoc} kaset skandalı</strong> 
-                       arayanlar için tamamen sansürsüz olarak sunulmaktadır.
+                       {currentLoc} ve {geoData.twinDistrict} genelindeki en hareketli <strong>{currentLoc} ifşa</strong>, <strong>{currentLoc} kaset sızıntısı</strong> ve sansürsüz telegram VIP arşivleri burada listelenmiştir. 18+ gizli çekimler her gün güncellenmektedir.
                      </>
                    ) : (
                      <>
-                       {currentLoc} bölgesindeki aramalarınızda en üst sırada yer alan ajansımız, 
-                       <strong> {currentLoc} rus escort</strong> ve <strong>{currentLoc} üniversiteli escort</strong> 
-                       seçenekleriyle GEO-bazlı otorite sağlamaktadır. Tüm ilanlarımız teyitli ve günceldir.
+                       {currentLoc} ve komşu {geoData.twinDistrict} bölgesinde en çok tercih edilen <strong>{currentLoc} rus escort</strong>, <strong>{currentLoc} üniversiteli eskort</strong> ve Türk modellerimizle hizmetinizdeyiz. <strong>{geoData.neighborhoods.slice(0, 3).join(', ')}</strong> mahalleleri ve <strong>{geoData.transitSpots.slice(0, 2).join(', ')}</strong> çevresinde otele gelen ve eve gelen seçeneklerle kaporasız buluşmalar sağlanır.
                      </>
                    )}
                 </p>
               </div>
               <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-rose-600/10 hover:border-rose-600/30'} transition-all duration-500`}>
                 <h4 className="text-white font-black uppercase tracking-widest mb-4">
-                  {isCloaker ? 'DİKKAT: 18+ İÇERİK UYARISI' : 'GİZLİLİK PROTOKOLÜ'}
+                  {isCloaker ? 'DİKKAT: SANAL SIZINTI UYARISI' : 'FANTEZİ VE ÖZEL PROGRAMLAR'}
                 </h4>
                 <p className="text-zinc-500 text-sm leading-relaxed">
                    {isCloaker ? (
                      <>
-                       Bu platformda yer alan {currentLoc} vip sızıntıları ve özel görüntüler yetişkinler içindir. 
-                       Gerçek bir lüks deneyim ve VIP eşlik arıyorsanız, resmi VIP Lojistik ve Escort ağımızı ziyaret edin.
+                       Bu alanda paylaşılan {currentLoc} ifşaları tamamen sansürsüzdür. Reklam veya spam amacı gütmez. VIP itibar yönetimi kapsamında yayından kaldırma taleplerinizi iletebilirsiniz.
                      </>
                    ) : (
                      <>
-                       Veri güvenliği ve müşteri mahremiyeti bizim için kutsaldır. 
-                       {currentLoc} genelinde otele servis ve eve gelen escort hizmetlerimizde 
-                       hiçbir kişisel veri kaydı tutulmaz. Profesyonel escort deneyimini güvenle yaşayın.
+                       Buluşmalarımızda <strong>sınırsız anal, oral (derin boğaz, French), full sex, grup seansları, GFE (sevgili deneyimi) ve sert PSE fantezileri</strong> en lüks standartlarda sunulmaktadır. Hijyen ve %100 gerçek görsellik garantilidir.
                      </>
                    )}
                 </p>

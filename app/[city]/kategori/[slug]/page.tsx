@@ -16,7 +16,8 @@ import { LongFormContent } from '@/components/UI/LongFormContent';
 import { GrowthWidgets } from '@/components/UI/GrowthWidgets';
 import { UltraFooter } from '@/components/SEO/UltraFooter';
 import { sanitizeDisplayName } from '@/lib/utils';
-import { cities } from '@/lib/locations';
+import { cities, getCitiesForHost } from '@/lib/locations';
+import { notFound } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
@@ -30,10 +31,19 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const { city: rawCity, slug } = await params;
   const city = decodeURIComponent(rawCity);
   const host = (await headers()).get('host') || siteConfig.domain;
+
+  const allowedCities = getCitiesForHost(host);
+  if (!allowedCities[city.toLowerCase()]) {
+    return {
+      title: "Sayfa Bulunamadı",
+      robots: { index: false, follow: false, noarchive: true }
+    };
+  }
+
   const siteId = await getSiteId(host);
-  
   const category = taxonomyCategories[slug as keyof typeof taxonomyCategories];
-  const cityName = cities[city]?.name || sanitizeDisplayName(city);
+  const cityObj = allowedCities[city.toLowerCase()];
+  const cityName = cityObj?.name || sanitizeDisplayName(city);
 
   const dbContent = await prisma.pageContent.findFirst({ where: { slug: `${city}-kategori-${slug}`, siteId } });
 
@@ -50,11 +60,18 @@ export default async function CityCategoryPage({ params }: { params: Promise<Par
   const { city: rawCity, slug } = await params;
   const city = decodeURIComponent(rawCity);
   const host = (await headers()).get('host') || siteConfig.domain;
+
+  const allowedCities = getCitiesForHost(host);
+  if (!allowedCities[city.toLowerCase()]) {
+    return notFound();
+  }
+
   const siteId = await getSiteId(host);
   const theme = ThemeEngine.getTheme(host);
 
   const category = taxonomyCategories[slug as keyof typeof taxonomyCategories];
-  const cityName = cities[city]?.name || sanitizeDisplayName(city);
+  const cityObj = allowedCities[city.toLowerCase()];
+  const cityName = cityObj?.name || sanitizeDisplayName(city);
 
   let dbContent = await prisma.pageContent.upsert({
     where: { 

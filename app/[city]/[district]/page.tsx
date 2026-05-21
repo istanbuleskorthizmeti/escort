@@ -47,7 +47,10 @@ export async function generateMetadata({
 
   const allowedCities = getCitiesForHost(host);
   if (!allowedCities[city.toLowerCase()]) {
-    return {}; 
+    return {
+      title: "Sayfa Bulunamadı",
+      robots: { index: false, follow: false, noarchive: true }
+    }; 
   }
 
   const siteId = await getSiteId(host);
@@ -65,16 +68,10 @@ export async function generateMetadata({
   const landmarkObj = cityObj?.landmarks?.find((l: any) => l.slug === district);
 
   if (!cityObj || (!distObj && !landmarkObj)) {
-    const formattedCity = city.replace(/-/g, ' ').replace(/escort|eskort/gi, '').trim().toUpperCase();
-    const formattedDist = district.replace(/-/g, ' ').replace(/escort|eskort/gi, '').trim().toUpperCase();
-    return generateLocationMetadata({
-      city,
-      cityName: formattedCity,
-      district,
-      districtName: formattedDist,
-      domain: host,
-      customTitle: `🔞 ${formattedDist} ESCORT BAYAN | %100 GERÇEK İLANLAR [2026]`
-    });
+    return {
+      title: "Sayfa Bulunamadı",
+      robots: { index: false, follow: false, noarchive: true }
+    };
   }
 
   const cityName = cityObj?.name || sanitizeDisplayName(city);
@@ -122,9 +119,10 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
   const landmarkObj = cityObj?.landmarks?.find((l: any) => l.slug === district);
 
   if (!distObj && !landmarkObj) {
-     distObj = dbDistRaw 
-       ? { name: sanitizeDisplayName(dbDistRaw.title || fallbackDistName), slug: district, neighborhoods: [] } as any
-       : { name: fallbackDistName, slug: district, neighborhoods: [] } as any;
+     if (!dbDistRaw) {
+       return notFound();
+     }
+     distObj = { name: sanitizeDisplayName(dbDistRaw.title || fallbackDistName), slug: district, neighborhoods: [] } as any;
   }
 
   const isLandmark = !!landmarkObj;

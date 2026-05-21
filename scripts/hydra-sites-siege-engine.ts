@@ -269,6 +269,18 @@ async function executeSiegeStep(page: any, districtSlug: string, round: number) 
     await new Promise(r => setTimeout(r, 15000));
     
     const liveUrl = `https://sites.google.com/view/${publishSlug}`;
+    
+    // Save live URL for Tier 2 Bombardment
+    const G_SITES_FILE = path.join(process.cwd(), 'data', 'live_google_sites.json');
+    let liveSites: string[] = [];
+    if (fs.existsSync(G_SITES_FILE)) {
+        try { liveSites = JSON.parse(fs.readFileSync(G_SITES_FILE, 'utf8')); } catch (e) {}
+    }
+    if (!liveSites.includes(liveUrl)) {
+        liveSites.push(liveUrl);
+        fs.writeFileSync(G_SITES_FILE, JSON.stringify(liveSites, null, 2));
+    }
+
     await TelegramService.sendMessage(`✅ <b>HYDRA SIEGE: GOD MODE</b>\n🎯 ${districtName}\n🔄 Round: ${round}\n🔗 ${liveUrl}\n🔥 Status: LIVE`);
 }
 

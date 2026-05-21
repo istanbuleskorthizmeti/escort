@@ -39,7 +39,10 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   // 🔱 HYDRA MISSION CHECK
   const allowedCities = getCitiesForHost(host);
   if (!allowedCities[city]) {
-    return {}; 
+    return {
+      title: "Sayfa Bulunamadı",
+      robots: { index: false, follow: false, noarchive: true }
+    }; 
   }
 
   const siteId = await getSiteId(host);
@@ -67,19 +70,10 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   }
 
   if (!cityObj || !distObj || !neighObj) {
-    const formattedCity = city.replace(/-/g, ' ').toUpperCase();
-    const formattedDist = district.replace(/-/g, ' ').toUpperCase();
-    const formattedNeigh = neighborhood.replace(/-/g, ' ').toUpperCase();
-    return generateLocationMetadata({
-      city,
-      cityName: formattedCity,
-      district,
-      districtName: formattedDist,
-      neighborhood,
-      neighborhoodName: formattedNeigh,
-      domain: host,
-      customTitle: `🔥 ${formattedNeigh} ESCORT | %100 GERÇEK | ${formattedDist} VIP ESCORT REHBERİ`
-    });
+    return {
+      title: "Sayfa Bulunamadı",
+      robots: { index: false, follow: false, noarchive: true }
+    };
   }
 
   const cityName = cityObj?.name || sanitizeDisplayName(city);

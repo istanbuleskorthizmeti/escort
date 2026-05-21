@@ -17,7 +17,7 @@
     "hydra:dominion": "tsx scripts/master-dominion.ts",
     "hydra:deploy": "tsx scripts/deploy-dominion.ts",
     "hydra:phase4": "tsx scripts/phase4-commander.ts",
-    "siege": "tsx scripts/hydra-sites-siege-engine.ts"
+    "siege": "tsx scripts/hydra-sites-playwright.ts"
   },
 
   "dependencies": {

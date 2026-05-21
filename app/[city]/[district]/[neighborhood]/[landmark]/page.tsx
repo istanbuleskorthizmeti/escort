@@ -44,22 +44,10 @@ export async function generateMetadata({
   const neighObj = distObj?.neighborhoods.find((n) => n.slug === neighborhood);
 
   if (!cityObj || !distObj || !neighObj) {
-    const formattedCity = city.replace(/-/g, ' ').toUpperCase();
-    const formattedDist = district.replace(/-/g, ' ').toUpperCase();
-    const formattedNeigh = neighborhood.replace(/-/g, ' ').toUpperCase();
-    const formattedLandmark = landmark.replace(/-/g, ' ').toUpperCase();
-    
-    return generateLocationMetadata({
-      city,
-      cityName: formattedCity,
-      district,
-      districtName: formattedDist,
-      neighborhood,
-      neighborhoodName: formattedNeigh,
-      landmarkName: formattedLandmark,
-      domain: (await headers()).get("host") || siteConfig.domain,
-      customTitle: `🔥 ${formattedLandmark} VIP ESCORT | %100 GERÇEK İLANLAR | ${formattedDist} SEÇKİSİ`
-    });
+    return {
+      title: "Sayfa Bulunamadı",
+      robots: { index: false, follow: false, noarchive: true }
+    };
   }
 
   const rawLandmarks = districtLandmarks[district] || [];

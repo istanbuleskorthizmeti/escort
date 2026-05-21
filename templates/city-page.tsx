@@ -22,7 +22,10 @@ export async function generateMetadata({
   const { city } = await params;
   const cityObj = cities[city];
 
-  if (!cityObj) return { title: "Şehir Bulunamadı" };
+  if (!cityObj) return { 
+    title: "Şehir Bulunamadı",
+    robots: { index: false, follow: false, noarchive: true }
+  };
 
   return generateLocationMetadata({
     city,

@@ -41,7 +41,10 @@ export async function generateMetadata({
   const distObj = cityObj?.districts.find((d) => d.slug === district);
   const neighObj = distObj?.neighborhoods.find((n) => n.slug === neighborhood);
 
-  if (!cityObj || !distObj || !neighObj) return { title: "Sayfa Bulunamadı" };
+  if (!cityObj || !distObj || !neighObj) return { 
+    title: "Sayfa Bulunamadı",
+    robots: { index: false, follow: false, noarchive: true }
+  };
 
   return generateLocationMetadata({
     city,

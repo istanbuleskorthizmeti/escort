@@ -16,7 +16,8 @@ import { LongFormContent } from '@/components/UI/LongFormContent';
 import { GrowthWidgets } from '@/components/UI/GrowthWidgets';
 import { UltraFooter } from '@/components/SEO/UltraFooter';
 import { sanitizeDisplayName } from '@/lib/utils';
-import { cities } from '@/lib/locations';
+import { cities, getCitiesForHost } from '@/lib/locations';
+import { notFound } from 'next/navigation';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 3600;
@@ -32,11 +33,22 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const city = decodeURIComponent(rawCity);
   const district = decodeURIComponent(rawDistrict);
   const host = (await headers()).get('host') || siteConfig.domain;
+
+  const allowedCities = getCitiesForHost(host);
+  const cityObj = allowedCities[city.toLowerCase()];
+  const distObj = cityObj?.districts.find((d: any) => d.slug === district);
+
+  if (!cityObj || !distObj) {
+    return {
+      title: "Sayfa Bulunamadı",
+      robots: { index: false, follow: false, noarchive: true }
+    };
+  }
+
   const siteId = await getSiteId(host);
-  
   const category = taxonomyCategories[slug as keyof typeof taxonomyCategories];
-  const cityName = cities[city]?.name || sanitizeDisplayName(city);
-  const districtName = cities[city]?.districts.find(d => d.slug === district)?.name || sanitizeDisplayName(district);
+  const cityName = cityObj.name;
+  const districtName = distObj.name;
 
   const dbContent = await prisma.pageContent.findFirst({ where: { slug: `${city}-${district}-kategori-${slug}`, siteId } });
 
@@ -56,12 +68,21 @@ export default async function DistrictCategoryPage({ params }: { params: Promise
   const city = decodeURIComponent(rawCity);
   const district = decodeURIComponent(rawDistrict);
   const host = (await headers()).get('host') || siteConfig.domain;
+
+  const allowedCities = getCitiesForHost(host);
+  const cityObj = allowedCities[city.toLowerCase()];
+  const distObj = cityObj?.districts.find((d: any) => d.slug === district);
+
+  if (!cityObj || !distObj) {
+    return notFound();
+  }
+
   const siteId = await getSiteId(host);
   const theme = ThemeEngine.getTheme(host);
 
   const category = taxonomyCategories[slug as keyof typeof taxonomyCategories];
-  const cityName = cities[city]?.name || sanitizeDisplayName(city);
-  const districtName = cities[city]?.districts.find(d => d.slug === district)?.name || sanitizeDisplayName(district);
+  const cityName = cityObj.name;
+  const districtName = distObj.name;
 
   // 🏰 HYDRA CONTEXT: Isolated district-category content
   let dbContent = await prisma.pageContent.upsert({

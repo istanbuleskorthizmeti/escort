@@ -29,7 +29,10 @@ export async function generateMetadata({
   const cityObj = cities[city];
   const distObj = cityObj?.districts.find((d) => d.slug === district);
   
-  if (!cityObj || !distObj) return { title: "Bölge Bulunamadı" };
+  if (!cityObj || !distObj) return { 
+    title: "Bölge Bulunamadı",
+    robots: { index: false, follow: false, noarchive: true }
+  };
 
   return generateLocationMetadata({
     city,

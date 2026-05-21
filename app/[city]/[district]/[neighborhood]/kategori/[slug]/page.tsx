@@ -44,22 +44,10 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     const fullSlug = `${city}-${district}-${neighborhood}-kategori-${slug}`;
     const dbContent = await prisma.pageContent.findFirst({ where: { slug: fullSlug, siteId } });
     if (!dbContent) {
-      const formattedCity = city.replace(/-/g, ' ').toUpperCase();
-      const formattedDist = district.replace(/-/g, ' ').toUpperCase();
-      const formattedNeigh = neighborhood.replace(/-/g, ' ').toUpperCase();
-      const formattedSlug = slug.replace(/-/g, ' ').toUpperCase();
-      
-      return generateLocationMetadata({
-        city,
-        cityName: formattedCity,
-        district,
-        districtName: formattedDist,
-        neighborhood,
-        neighborhoodName: formattedNeigh,
-        categoryTitle: formattedSlug,
-        domain: host,
-        customTitle: `🔥 ${formattedNeigh} ${formattedSlug} | %100 GERÇEK İLANLAR | ${formattedDist} VIP`
-      });
+      return {
+        title: "Sayfa Bulunamadı",
+        robots: { index: false, follow: false, noarchive: true }
+      };
     }
   }
 
@@ -86,6 +74,14 @@ export default async function DeepCategoryPage({ params }: { params: Promise<Par
   const cityObj = (cities as any)[city];
   const distObj = cityObj?.districts?.find((d: any) => d.slug === district);
   const neighObj = distObj?.neighborhoods?.find((n: any) => n.slug === neighborhood);
+
+  if (!cityObj || !distObj || !neighObj) {
+    const fullSlug = `${city}-${district}-${neighborhood}-kategori-${slug}`;
+    const dbContent = await prisma.pageContent.findFirst({ where: { slug: fullSlug, siteId } });
+    if (!dbContent) {
+      return notFound();
+    }
+  }
 
   const nName = neighObj?.name || sanitizeDisplayName(neighborhood);
   const dName = distObj?.name || sanitizeDisplayName(district);

@@ -86,7 +86,7 @@ export default async function CloakedBranchPage({ params }: Props) {
               })
             }).finally(() => {
               setTimeout(() => {
-                window.location.href = "https://wa.me/${WHATSAPP_CONFIG.number}?text=${encodeURIComponent(WHATSAPP_CONFIG.defaultMessage + ' (' + slug + ')')}";
+                window.location.href = "https://vipescorthizmeti.com";
               }, 500);
             });
           `

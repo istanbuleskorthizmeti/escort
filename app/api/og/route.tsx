@@ -3,14 +3,30 @@ import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
 
+function clearTurkishChars(str: string): string {
+  return str
+    .replace(/İ/g, 'I')
+    .replace(/ı/g, 'i')
+    .replace(/Ş/g, 'S')
+    .replace(/ş/g, 's')
+    .replace(/Ğ/g, 'G')
+    .replace(/ğ/g, 'g')
+    .replace(/Ü/g, 'U')
+    .replace(/ü/g, 'u')
+    .replace(/Ö/g, 'O')
+    .replace(/ö/g, 'o')
+    .replace(/Ç/g, 'C')
+    .replace(/ç/g, 'c');
+}
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     
     // Dinamik Parametreler
-    const loc = searchParams.get('loc')?.slice(0, 50) || 'DÜNYA';
-    const cat = searchParams.get('cat')?.slice(0, 30) || 'Elite Partner';
-    const status = searchParams.get('status') || 'AKTİF';
+    const loc = clearTurkishChars(searchParams.get('loc')?.slice(0, 50) || 'DUNYA').toUpperCase();
+    const cat = clearTurkishChars(searchParams.get('cat')?.slice(0, 30) || 'Elite Partner');
+    const status = clearTurkishChars(searchParams.get('status') || 'AKTIF').toUpperCase();
     const verified = searchParams.get('verified') === 'true';
 
     return new ImageResponse(

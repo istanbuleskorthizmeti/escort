@@ -50,13 +50,54 @@ function VitrinCard({
   renderAllCarouselImages,
   handleTrack
 }: VitrinCardProps) {
+  const borderColors = [
+    'rgba(244, 63, 94, 0.45)',  // Rose
+    'rgba(234, 179, 8, 0.45)',  // Gold
+    'rgba(59, 130, 246, 0.45)', // Blue
+    'rgba(16, 185, 129, 0.45)', // Emerald
+    'rgba(168, 85, 247, 0.45)', // Purple
+    'rgba(249, 115, 22, 0.45)', // Orange
+    'rgba(6, 182, 212, 0.45)',  // Cyan
+    'rgba(236, 72, 153, 0.45)', // Pink
+  ];
+  
+  const glowColors = [
+    'rgba(244, 63, 94, 0.3)',
+    'rgba(234, 179, 8, 0.3)',
+    'rgba(59, 130, 246, 0.3)',
+    'rgba(16, 185, 129, 0.3)',
+    'rgba(168, 85, 247, 0.3)',
+    'rgba(249, 115, 22, 0.3)',
+    'rgba(6, 182, 212, 0.3)',
+    'rgba(236, 72, 153, 0.3)',
+  ];
+
+  const neonPrimaryColors = [
+    '#f43f5e', // Rose
+    '#eab308', // Gold
+    '#3b82f6', // Blue
+    '#10b981', // Emerald
+    '#a855f7', // Purple
+    '#f97316', // Orange
+    '#06b6d4', // Cyan
+    '#ec4899', // Pink
+  ];
+
+  const isOrganic = !item.isAd;
+  const currentPrimaryColor = isOrganic ? neonPrimaryColors[idx % neonPrimaryColors.length] : theme.primaryColor;
+  const currentGlowColor = isOrganic ? glowColors[idx % glowColors.length] : theme.glowEffect;
+  
+  const borderStyle = isOrganic ? { borderColor: borderColors[idx % borderColors.length] } : {};
+  const shadowStyle = { boxShadow: `0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px ${currentGlowColor}` };
+  const cardBorderClass = isOrganic ? '' : 'border-white/15';
+
   return (
     <div 
       className="block text-inherit transition-transform duration-300 active:scale-95 group"
     >
       <div 
-        className="relative h-[280px] bg-black rounded-2xl overflow-hidden border-[1.5px] border-white/15" 
-        style={{ boxShadow: `0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px ${theme.glowEffect}` }}
+        className={`relative h-[280px] bg-black rounded-2xl overflow-hidden border-[1.5px] ${cardBorderClass}`}
+        style={{ ...borderStyle, ...shadowStyle }}
       >
         <Link 
           href={`/profile/${profileSlug}`} 
@@ -186,7 +227,7 @@ function VitrinCard({
         <div 
           className="absolute left-0 top-0 bottom-0 w-[42%] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-white/30 pointer-events-none" 
           style={{ 
-            background: `linear-gradient(135deg, ${theme.primaryColor} 0%, ${theme.bgColor} 100%)`,
+            background: `linear-gradient(135deg, ${currentPrimaryColor} 0%, ${theme.bgColor} 100%)`,
             opacity: 0.85,
             clipPath: 'ellipse(130% 130% at -20% 50%)', 
             boxShadow: '20px 0 40px rgba(0,0,0,0.8)' 
@@ -196,7 +237,7 @@ function VitrinCard({
             className="italic text-[28px] text-white font-bold tracking-widest mb-3 leading-none drop-shadow-2xl" 
             style={{ 
               fontFamily: theme.headingFont,
-              textShadow: `0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px ${theme.primaryColor}, 0 4px 5px rgba(0,0,0,0.8)` 
+              textShadow: `0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px ${currentPrimaryColor}, 0 4px 5px rgba(0,0,0,0.8)` 
             }}
           >
             {firstName}
@@ -208,34 +249,34 @@ function VitrinCard({
                     background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
                     borderColor: 'rgba(255,255,255,0.3)',
                     borderLeftWidth: '3px',
-                    borderLeftColor: theme.primaryColor,
+                    borderLeftColor: currentPrimaryColor,
                     textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
                     boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
                   }}>
-                <Home className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> 
-                <span className="line-clamp-1 break-all overflow-hidden">{niche.length > 15 ? 'Ev Otel Rez' : niche}</span>
+                <Home className="w-[11px] h-[11px] shrink-0" style={{ color: currentPrimaryColor, filter: `drop-shadow(0 0 2px ${currentPrimaryColor})` }} /> 
+                <span className="line-clamp-1 break-all overflow-hidden">{niche}</span>
             </span>
             <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words" 
                   style={{ 
                     background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
                     borderColor: 'rgba(255,255,255,0.3)',
                     borderLeftWidth: '3px',
-                    borderLeftColor: theme.primaryColor,
+                    borderLeftColor: currentPrimaryColor,
                     textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
                     boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
                   }}>
-                <User className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> Bireysel
+                <User className="w-[11px] h-[11px] shrink-0" style={{ color: currentPrimaryColor, filter: `drop-shadow(0 0 2px ${currentPrimaryColor})` }} /> Bireysel
             </span>
             <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words" 
                   style={{ 
                     background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
                     borderColor: 'rgba(255,255,255,0.3)',
                     borderLeftWidth: '3px',
-                    borderLeftColor: theme.primaryColor,
+                    borderLeftColor: currentPrimaryColor,
                     textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
                     boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
                   }}>
-                <CalendarHeart className="w-[11px] h-[11px] shrink-0" style={{ color: theme.primaryColor, filter: `drop-shadow(0 0 2px ${theme.primaryColor})` }} /> Yaş {age}
+                <CalendarHeart className="w-[11px] h-[11px] shrink-0" style={{ color: currentPrimaryColor, filter: `drop-shadow(0 0 2px ${currentPrimaryColor})` }} /> Yaş {age}
             </span>
           </div>
 
@@ -370,10 +411,28 @@ export function DorukVitrin({
         <div className="flex flex-col gap-8 w-full px-4">
           {imagesToRender.map((item, idx) => {
             if (!item || !item.src) return null;
-            const firstName = (item.title || 'VIP').split(' ')[0];
+            
+            const isOrganic = !item.isAd;
+            const realisticNames = [
+              "Buse", "Gizem", "Ayla", "Derin", "Selin", "Simge", "Melisa", "Tuğçe", 
+              "Ebru", "Aleyna", "Burcu", "Cansel", "Sude", "Dilan", "Ece", "Berna", 
+              "Didem", "Pelin", "Merve", "Aslı", "İrem", "Bengü", 
+              "Damla", "Hazal", "Öykü", "Gamze", "Ceren", "Derya", "Seda", "Meltem"
+            ];
+            
+            const firstName = isOrganic 
+              ? realisticNames[idx % realisticNames.length]
+              : (item.title || 'VIP').split(' ')[0];
+
             const profileSlug = slugify(firstName);
             
-            const fallbackNiches = ['Ev Otel Rez.', 'Özel Konsept', 'Manken', 'Sınırsız'];
+            const fallbackNiches = [
+              'Özel Konsept', 'Manken Partner', 'Sınırsız Hizmet', 'Gecelik Partner',
+              'Otel & Ev Rez.', 'VIP Deneyim', 'Kaporasız Hizmet', 'Elit Partner',
+              'Premium Refakat', 'Türbanlı Seçkin', 'Üniversiteli', 'Sarışın Bomba',
+              'Esmer Lady', 'Kızıl Cazibe', 'Hafta Sonu VIP', 'Fantezi Uzmanı'
+            ];
+            
             const niche = item.niche || fallbackNiches[idx % fallbackNiches.length];
             const age = item.age || (19 + (idx % 7));
 

@@ -24,11 +24,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.rewrite(new URL(`/api/seo?host=${host}&file=robots.txt`, request.url));
   }
 
-  // 2. Handle dynamic sitemaps (/sitemap.xml, /sitemap-index.xml, /sitemap-districts.xml, etc.)
-  if (pathname.startsWith('/sitemap') && pathname.endsWith('.xml')) {
+  // 2. Handle dynamic sitemaps (Only /sitemap.xml for performance)
+  if (pathname === '/sitemap.xml') {
     const host = request.headers.get('host') || 'vipescorthizmeti.com';
-    const file = pathname.substring(1); // e.g. "sitemap-index.xml"
-    return NextResponse.rewrite(new URL(`/api/seo?host=${host}&file=${file}`, request.url));
+    return NextResponse.rewrite(new URL(`/api/seo?host=${host}&file=sitemap.xml`, request.url));
   }
 
   // 3. Handle legacy /ilan/istanbul-escort/[district] pattern
@@ -50,10 +49,6 @@ export const config = {
   matcher: [
     '/robots.txt',
     '/sitemap.xml',
-    '/sitemap-index.xml',
-    '/sitemap-districts.xml',
-    '/sitemap-categories.xml',
-    '/sitemap-vip.xml',
     '/ilan/:path*',
     '/besiktas', '/sisli', '/beylikduzu', '/sefakoy', '/bakirkoy', 
     '/kadikoy', '/atasehir', '/esenyurt', '/fatih', '/bagcilar', '/bahcelievler'

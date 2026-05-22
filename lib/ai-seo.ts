@@ -87,8 +87,8 @@ export async function generateEliteOmniContent({
 
     🔴 KRİTİK KURAL (MANDATORY LINKS):
     Metin içerisinde en az 2 adet şu linklerden birini kullan: 
-    1. <a href="https://vipescorthizmeti.com">https://vipescorthizmeti.com</a>
-    2. <a href="https://bit.ly/istanbulescort2026">https://bit.ly/istanbulescort2026</a>
+    1. <a href="https://istanbulescdrkcn.com">https://vipescorthizmeti.com</a>
+    2. <a href="https://bit.ly/dorukcanmanay">https://bit.ly/dorukcanmanay</a>
     
     Linklerin anchor text'leri şunlardan biri olsun: "${locationName} VIP Escort", "Kaporasız Katalog", "Elite Partnerler", "${locationName} Escort Rehberi", "Resmi Web Sitesi".
 

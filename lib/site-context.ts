@@ -16,8 +16,9 @@ export async function getSiteId(host: string): Promise<string> {
     domain = domain.substring(4);
   }
   
-  // 🛡️ SECURITY: Prevent localhost or server IPs from leaking into the database
-  if (domain === 'localhost' || domain === '127.0.0.1' || domain === '213.232.235.181' || domain === '187.77.111.203' || domain === '45.93.137.164') {
+  // 🛡️ SECURITY & MIGRATION: Prevent localhost leaks and map the new domain to the old domain's database ID
+  // This ensures istanbulescdrkcn.com inherits the 5000+ generated SEO pages from the database!
+  if (domain === 'istanbulescdrkcn.com' || domain === 'localhost' || domain === '127.0.0.1' || domain === '213.232.235.181' || domain === '187.77.111.203' || domain === '45.93.137.164') {
     domain = 'vipescorthizmeti.com';
   }
 

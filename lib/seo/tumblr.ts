@@ -73,7 +73,7 @@ class TumblrService {
    * Generates a high-authority SEO footer with semantic backlinks.
    */
   private generateSeoFooter(canonicalUrl?: string, shortLink?: string): string {
-    const rootUrl = canonicalUrl || 'https://vipescorthizmeti.com';
+    const rootUrl = canonicalUrl || 'https://istanbulescdrkcn.com';
     const clickUrl = shortLink || rootUrl;
 
     return `
@@ -105,7 +105,7 @@ class TumblrService {
     const url = `https://api.tumblr.com/v2/blog/${blogDomain}/post`;
     
     // Enrich body with SEO Header & Footer
-    const header = this.generateSeoHeader(params.canonicalUrl || 'https://vipescorthizmeti.com');
+    const header = this.generateSeoHeader(params.canonicalUrl || 'https://istanbulescdrkcn.com');
     const footer = this.generateSeoFooter(params.canonicalUrl, params.shortLink);
     const richBody = `${header}${params.body}${footer}`;
     

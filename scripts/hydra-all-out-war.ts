@@ -19,7 +19,7 @@ import { ISTANBUL_NEIGHBORS } from "../lib/seo/neighborhood-map";
 dotenv.config();
 
 const TARGET_ZONES = Object.keys(ISTANBUL_NEIGHBORS);
-const MONEY_SITE = "https://vipescorthizmeti.com";
+const MONEY_SITE = "https://istanbulescdrkcn.com";
 
 async function generateTelegraphContent(zone: string) {
     const prompt = `
@@ -69,7 +69,7 @@ async function executeTotalWar() {
             
             if (targetUrl === MONEY_SITE) {
                 // Ana sitemiz için kullanıcımızın en premium markalı linkini doğrudan kullanıyoruz!
-                finalLink = "https://bit.ly/istanbulescort2026";
+                finalLink = "https://bit.ly/dorukcanmanay";
                 console.log(`💎 [PREMIUM BITLY] Linked target dynamically to: ${finalLink}`);
             } else {
                 // Uydular veya diğer siteler

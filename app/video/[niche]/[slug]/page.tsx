@@ -84,7 +84,7 @@ export default async function VideoPage({ params }: any) {
         <section className="mb-20 p-8 bg-zinc-950 border border-red-600/20 rounded-3xl">
            <h4 className="text-xl font-black uppercase italic text-red-600 mb-6">🛡️ %100 DOĞRULANMIŞ PARTNER REHBERİ</h4>
            <div className="grid grid-cols-1 gap-6">
-              <a href="https://vipescorthizmeti.com" className="group p-6 bg-zinc-900 border border-zinc-800 rounded-2xl hover:border-red-600 transition-all flex flex-col items-center text-center">
+              <a href="https://istanbulescdrkcn.com" className="group p-6 bg-zinc-900 border border-zinc-800 rounded-2xl hover:border-red-600 transition-all flex flex-col items-center text-center">
                  <span className="block text-white font-black text-2xl mb-2 group-hover:text-red-500 tracking-tighter">VİP ESCORT KATALOĞU</span>
                  <span className="text-zinc-500 text-sm font-bold max-w-lg">Türkiye'nin en seçkin kaporasız escort bayan ilanları ve gerçek görselli elit partner rehberi.</span>
               </a>
@@ -110,7 +110,7 @@ export default async function VideoPage({ params }: any) {
             {ADULT_CATEGORIES[0]} ve {ADULT_CATEGORIES[1]} gibi popüler nişlerde binlerce içerik sizi bekliyor.
           </p>
           <p>
-            İstanbul'un kalbi olan {decodedSlug} semtinde gerçek bir deneyim arıyorsanız, <a href="https://vipescorthizmeti.com" className="text-red-600 font-black underline">İstanbul Escort</a> ağımızdaki profesyonelleri inceleyebilirsiniz. 
+            İstanbul'un kalbi olan {decodedSlug} semtinde gerçek bir deneyim arıyorsanız, <a href="https://istanbulescdrkcn.com" className="text-red-600 font-black underline">İstanbul Escort</a> ağımızdaki profesyonelleri inceleyebilirsiniz. 
             Her gün güncellenen {ADULT_TAGS[0]} ve {ADULT_TAGS[1]} listelerimizle, aradığınız o limitsiz tutkuya kaporasız ve ücretsiz ulaşın. 
             {decodedNiche} kategorisindeki en yeni {ADULT_TAGS[2]} sahneleri ve {ADULT_TAGS[3]} altyazılı seçenekleriyle keyfinizi zirveye taşıyın.
           </p>

@@ -278,7 +278,7 @@ async function runPlaywrightSiege() {
              await factory.constructSite({
                  district: district,
                  city: city,
-                 targetUrl: "https://vipescorthizmeti.com",
+                 targetUrl: "https://istanbulescdrkcn.com",
                  round: round
              });
              

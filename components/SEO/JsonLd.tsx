@@ -25,7 +25,7 @@ export const OrganizationSchema = () => (
     type="Organization"
     data={{
       name: 'VIPESCORTHIZMETI.COM Elit Network',
-      url: 'https://vipescorthizmeti.com',
+      url: 'https://istanbulescdrkcn.com',
       logo: 'https://vipescorthizmeti.com/og-premium.png',
       sameAs: [
         'https://twitter.com/vipescorthizmeti.com',

@@ -9,7 +9,7 @@ import path from "path";
  * Vercel ve Netlify için profesyonel Parasite SEO projeleri üretir.
  */
 
-const BITLY_BRIDGE = "https://bit.ly/istanbulescort2026";
+const BITLY_BRIDGE = "https://bit.ly/dorukcanmanay";
 
 async function generateStaticProject(platform: 'vercel' | 'netlify', zone: string) {
   console.log(`🧠 [${platform.toUpperCase()}] Generating project for: ${zone}...`);

@@ -80,7 +80,7 @@ export function GodModeCopyright() {
             <span>&copy; {currentYear} DRKCNAY Elite Alt Alan Adı Matrisi. Tüm hakları saklıdır.</span>
           </div>
           <div className="flex gap-4 font-mono uppercase tracking-widest">
-            <a href="https://vipescorthizmeti.com" className="hover:text-red-500 cursor-crosshair transition-colors text-zinc-300">DRKCNAY ELITE HQ</a>
+            <a href="https://istanbulescdrkcn.com" className="hover:text-red-500 cursor-crosshair transition-colors text-zinc-300">DRKCNAY ELITE HQ</a>
             <span className="hover:text-zinc-100 cursor-crosshair transition-colors">GİZLİLİK</span>
           </div>
         </motion.div>

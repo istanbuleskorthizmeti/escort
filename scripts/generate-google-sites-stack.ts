@@ -8,7 +8,7 @@ import fs from "fs";
  * DA 100 platformlar için otorite enjeksiyonu yapar.
  */
 
-const BITLY_BRIDGE = "https://bit.ly/istanbulescort2026";
+const BITLY_BRIDGE = "https://bit.ly/dorukcanmanay";
 
 async function generateGoogleSitesPayload(zone: string) {
   console.log(`🧠 [SITES] Generating DA 100 content for: ${zone}...`);

@@ -81,7 +81,7 @@ export const FooterTagCloud: React.FC = () => {
           </span>
           <div className="flex gap-4">
             <a 
-              href="https://bit.ly/istanbulescort2026"
+              href="https://bit.ly/dorukcanmanay"
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-500 hover:text-[#b8860b] text-[11px] font-medium transition-colors"

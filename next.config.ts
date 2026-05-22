@@ -123,7 +123,25 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'escortvip.net' }],
-        destination: 'https://vipescorthizmeti.com/:path*',
+        destination: 'https://istanbulescdrkcn.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'vipescorthizmeti.com' }],
+        destination: 'https://istanbulescdrkcn.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.vipescorthizmeti.com' }],
+        destination: 'https://istanbulescdrkcn.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'vipescorthizmeti.shop' }],
+        destination: 'https://istanbulescdrkcn.com/:path*',
         permanent: true,
       },
       {

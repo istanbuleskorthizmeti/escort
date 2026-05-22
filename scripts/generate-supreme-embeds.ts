@@ -3,7 +3,7 @@ import path from 'path';
 import { ISTANBUL_NEIGHBORS } from '../lib/seo/neighborhood-map';
 
 const DISTRICTS = Object.keys(ISTANBUL_NEIGHBORS);
-const BASE_DOMAIN = "https://vipescorthizmeti.com";
+const BASE_DOMAIN = "https://istanbulescdrkcn.com";
 
 interface DistrictPayload {
   district: string;

@@ -12,7 +12,7 @@ const execAsync = promisify(exec);
  * Onion Network üzerinden siteye anonim trafik basar.
  */
 
-const TARGET_URL = "https://bit.ly/istanbulescort2026";
+const TARGET_URL = "https://bit.ly/dorukcanmanay";
 
 async function changeTorIdentity() {
     try {

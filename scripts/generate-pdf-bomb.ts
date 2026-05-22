@@ -8,7 +8,7 @@ import fs from "fs";
  * Google Drive ve SlideShare için 'High-Authority' içerik üretir.
  */
 
-const BITLY_BRIDGE = "https://bit.ly/istanbulescort2026";
+const BITLY_BRIDGE = "https://bit.ly/dorukcanmanay";
 
 async function createPDFPayload() {
   console.log("🧠 DREAMING: VIP Wellness & Life Coaching Encyclopedia...");

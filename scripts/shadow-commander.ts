@@ -9,7 +9,7 @@ import { siteConfig } from "../config/site";
  * Bu script Saldırı Sunucusu (187.77.111.203) üzerinden çalışacak.
  */
 
-const BITLY_BRIDGE = "https://bit.ly/istanbulescort2026";
+const BITLY_BRIDGE = "https://bit.ly/dorukcanmanay";
 
 async function postToTelegraph(title: string, content: string) {
   try {

@@ -59,10 +59,7 @@ User-agent: anthropic-ai
 Allow: /
 
 # 💣 SITEMAP SEGMENTS
-Sitemap: https://${host}/sitemap-index.xml
-Sitemap: https://${host}/sitemap-districts.xml
-Sitemap: https://${host}/sitemap-categories.xml
-Sitemap: https://${host}/sitemap-vip.xml
+Sitemap: https://${host}/sitemap.xml
 Sitemap: https://${host}/feed.xml
     `.trim();
 
@@ -72,7 +69,7 @@ Sitemap: https://${host}/feed.xml
   }
 
   // 2. DYNAMIC SITEMAP GENERATION (Per Domain)
-  if (file === 'sitemap.xml' || file.startsWith('sitemap-')) {
+  if (file === 'sitemap.xml') {
     try {
       // 🛡️ Fetch pages specifically for this SiteId
       const pages = await prisma.pageContent.findMany({
@@ -121,7 +118,10 @@ Sitemap: https://${host}/feed.xml
 </urlset>`.trim();
 
       return new NextResponse(sitemap, {
-        headers: { 'Content-Type': 'application/xml; charset=utf-8' }
+        headers: { 
+          'Content-Type': 'application/xml; charset=utf-8',
+          'Cache-Control': 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=600'
+        }
       });
     } catch (error) {
       console.error('[SEO-ENGINE] Sitemap Error:', error);

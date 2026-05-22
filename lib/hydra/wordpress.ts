@@ -19,7 +19,7 @@ export async function postToWordPress(data: {
   console.log(`[HYDRA] Publishing to WordPress: ${data.endpoint} via REST API`);
 
   // SEO Footer Injection
-  const rootUrl = data.canonicalUrl || 'https://vipescorthizmeti.com';
+  const rootUrl = data.canonicalUrl || 'https://istanbulescdrkcn.com';
   const clickUrl = data.shortLink || rootUrl;
   
   const seoFooter = `
@@ -108,7 +108,7 @@ export async function updateWordPressPost(data: {
 }) {
   console.log(`[HYDRA] Updating WordPress Post ID: ${data.postId} on ${data.endpoint} via REST API`);
 
-  const clickUrl = data.shortLink || 'https://vipescorthizmeti.com';
+  const clickUrl = data.shortLink || 'https://istanbulescdrkcn.com';
   
   const seoFooter = `
     <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(225,29,72,0.75), rgba(0,0,0,0)); margin: 40px 0;">

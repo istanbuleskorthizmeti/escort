@@ -14,7 +14,7 @@ async function generateParasitePayloads(locationName: string) {
   console.log(`🚀 [GOD MODE] Generating Parasite Payloads for: ${locationName}...`);
 
   const moneySite = siteConfig.satelliteDomain; // vipescorthizmeti.com
-  const bitlyBridge = "https://bit.ly/istanbulescort2026";
+  const bitlyBridge = "https://bit.ly/dorukcanmanay";
   const targetUrl = `${moneySite}/${locationName.toLowerCase().replace(/\s/g, '-')}`;
 
   // 1. GITHUB MARKDOWN (Technical/Documentation Style)

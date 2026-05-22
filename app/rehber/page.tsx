@@ -60,7 +60,7 @@ export default function GuidePage() {
             publisher: {
               "@type": "Organization",
               name: "VIPESCORTHIZMETI.COM",
-              url: "https://vipescorthizmeti.com"
+              url: "https://istanbulescdrkcn.com"
             }
           }),
         }}

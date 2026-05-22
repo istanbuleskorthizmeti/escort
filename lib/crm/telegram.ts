@@ -846,7 +846,7 @@ Sınırlı kontenjan, anında onay ve %100 gizlilik.
 Hemen iletişime geçin ve randevunuzu oluşturun:
 🔗 <a href="https://wa.me/905300000000?text=Merhaba,%20VIP%20ilanınız%20için%20yazıyorum.">WhatsApp Üzerinden İletişime Geç (Hızlı Onay)</a>
 
-🌐 Daha fazlası için: <a href="https://vipescorthizmeti.com">DRKCNAY Elite</a>
+🌐 Daha fazlası için: <a href="https://istanbulescdrkcn.com">DRKCNAY Elite</a>
     `.trim();
 
     if (photoPath) {

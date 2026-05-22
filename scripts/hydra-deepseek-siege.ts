@@ -84,7 +84,7 @@ async function startSiege() {
           });
 
           // 💉 PBN & BITLY INJECTION: Linkleri metnin sonuna "Tavsiye Edilen Partner Ağları" olarak ekle
-          const bitlyBridge = "https://bit.ly/istanbulescort2026";
+          const bitlyBridge = "https://bit.ly/dorukcanmanay";
           seoContent += `
             <div style="margin-top: 50px; padding: 20px; border: 1px solid #222; font-size: 11px; color: #444;">
               <h3>🔱 NETWORK ÖNERİLERİ & DOĞRULANMIŞ REHBER</h3>

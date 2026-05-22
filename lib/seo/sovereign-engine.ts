@@ -158,7 +158,7 @@ class DRKCNAYSEOEngine {
         // 🔔 Anında ping: Tumblr post URL'i + hedef sayfası
         const tumblrPostUrl = `https://${tumblrBlog}.tumblr.com/post/${tumblrId}`;
         try {
-          pingPlatformPost(tumblrPostUrl, [destinationUrl, 'https://vipescorthizmeti.com' + new URL(destinationUrl).pathname]);
+          pingPlatformPost(tumblrPostUrl, [destinationUrl, 'https://istanbulescdrkcn.com' + new URL(destinationUrl).pathname]);
         } catch (err) {
           console.warn(`⚠️ [ENGINE] Failed to ping Tumblr post:`, err);
         }
@@ -171,7 +171,7 @@ class DRKCNAYSEOEngine {
         const bloggerPostUrl = bloggerRes.value.url || '';
         result.details.blogger = { id: bloggerRes.value.id, status: 'synced' };
         try {
-          pingPlatformPost(bloggerPostUrl, [destinationUrl, 'https://vipescorthizmeti.com' + new URL(destinationUrl).pathname]);
+          pingPlatformPost(bloggerPostUrl, [destinationUrl, 'https://istanbulescdrkcn.com' + new URL(destinationUrl).pathname]);
         } catch (err) {
           console.warn(`⚠️ [ENGINE] Failed to ping Blogger post:`, err);
         }
@@ -184,7 +184,7 @@ class DRKCNAYSEOEngine {
         const wpPostUrl = wpRes.value.url || '';
         result.details.wordpress = { id: wpRes.value.id, status: 'synced' };
         try {
-          pingPlatformPost(wpPostUrl, [destinationUrl, 'https://vipescorthizmeti.com' + new URL(destinationUrl).pathname]);
+          pingPlatformPost(wpPostUrl, [destinationUrl, 'https://istanbulescdrkcn.com' + new URL(destinationUrl).pathname]);
         } catch (err) {
           console.warn(`⚠️ [ENGINE] Failed to ping WordPress post:`, err);
         }

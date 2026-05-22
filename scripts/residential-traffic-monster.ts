@@ -10,7 +10,7 @@ puppeteer.use(StealthPlugin());
  * Premium Proxy-Cheap altyapısı ile güvenli ve organik trafik simülasyonu.
  */
 
-const TARGET_URL = "https://bit.ly/istanbulescort2026";
+const TARGET_URL = "https://bit.ly/dorukcanmanay";
 
 async function sendSafeVisit() {
     // 🛡️ Proxy URL'ini al (Rotasyon aktif)

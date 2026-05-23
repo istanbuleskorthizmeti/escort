@@ -145,6 +145,18 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'dorukcanay.digital' }],
+        destination: 'https://istanbulescdrkcn.com/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.dorukcanay.digital' }],
+        destination: 'https://istanbulescdrkcn.com/:path*',
+        permanent: true,
+      },
+      {
         source: '/join',
         destination: 'http://dorukcanay.digital/go',
         permanent: true,

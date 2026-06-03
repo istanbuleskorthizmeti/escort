@@ -1,6 +1,6 @@
 import { NodeSSH } from 'node-ssh';
 
-const server = { host: '213.232.235.181', username: 'root', password: '4TVuj7qiHMfh7CxH6K!' };
+const server = { host: '213.232.235.181', username: 'root', password: '5TVuj6qiHMfh8CxH9O!' };
 
 const envContent = `TELEGRAM_BOT_TOKEN="8656705130:AAFJr9QsnYASOQgIoAEEw_V8EzobjXH7nBc"
 TELEGRAM_CHAT_ID="-1003961137983"
@@ -49,7 +49,7 @@ CF_EMAIL="onur@vipescorthizmeti.com"
 PROXY_CHEAP_API_KEY="019da7f8-34f1-71db-9d47-fc1fe8eb4f87"
 PROXY_CHEAP_API_SECRET="019da7f8-34f1-71db-9d47-fc1fe908055a"
 PROXY_CHEAP_ID="1963310"
-GITHUB_PAT="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"
+GITHUB_PAT="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"
 DATABASE_URL="postgresql://vuc2026_user:DorukElite2026Secure@localhost:5432/vuc2026?sslmode=disable"
 `;
 

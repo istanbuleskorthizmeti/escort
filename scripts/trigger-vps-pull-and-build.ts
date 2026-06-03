@@ -5,7 +5,7 @@ const ssh = new NodeSSH();
 const config = {
   host: '213.232.235.181',
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: '5TVuj6qiHMfh8CxH9O!'
 };
 
 async function deploy() {
@@ -15,7 +15,7 @@ async function deploy() {
     console.log('✅ Connected.');
 
     console.log('📡 [REMOTE] Correcting Git remote origin URL to escc.git...');
-    const remoteUrl = 'https://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@github.com/guondyshop-del/escc.git';
+    const remoteUrl = 'https://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@github.com/guondyshop-del/escc.git';
     await ssh.execCommand(`git remote set-url origin ${remoteUrl}`, { cwd: '/root/esc' });
 
     console.log('📡 [GIT] Discarding local changes and resetting to origin/main...');

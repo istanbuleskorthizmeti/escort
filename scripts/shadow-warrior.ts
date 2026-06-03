@@ -59,16 +59,62 @@ async function runGodModeSession(keyword: string) {
       await page.goto(`https://${TARGET_DOMAINS[0]}`, { waitUntil: 'networkidle2' });
     }
 
-    // Scroll simulation
-    await page.evaluate(() => window.scrollBy(0, 500));
-    await new Promise(r => setTimeout(r, 5000));
+    // --- Natural Browsing Simulation ---
+    let pagesVisited = 1;
+    
+    // Scroll simulation on landing page
+    await page.evaluate(() => {
+      window.scrollBy({ top: Math.floor(Math.random() * 600) + 300, behavior: 'smooth' });
+    });
+    await new Promise(r => setTimeout(r, Math.floor(Math.random() * 4000) + 3000)); // wait 3-7s
 
-    // WhatsApp Signal
-    const waButton = await page.$('a[href*="wa.me"], a[href*="/wa"]');
+    // Extract and navigate to a random internal link for browsing
+    try {
+      const currentOrigin = new URL(page.url()).origin;
+      const internalLinks = await page.evaluate((origin) => {
+        return Array.from(document.querySelectorAll('a'))
+          .map(a => a.href)
+          .filter(href => {
+            if (!href) return false;
+            // Only internal links, ignore hashes, static resources, and external platforms
+            const isInternal = href.startsWith(origin) || href.startsWith('/');
+            const isNotSpecial = !href.includes('wa.me') && !href.includes('whatsapp') && !href.includes('tel:') && !href.includes('#') && !href.includes('.png') && !href.includes('.jpg');
+            return isInternal && isNotSpecial;
+          });
+      }, currentOrigin);
+
+      if (internalLinks.length > 0) {
+        // Choose a random internal link
+        const randomLink = internalLinks[Math.floor(Math.random() * internalLinks.length)];
+        console.log(`🔗 [SHADOW] Browsing subpage: ${randomLink}`);
+        
+        // Emulate clicking/navigating to it
+        await page.goto(randomLink, { waitUntil: 'networkidle2', timeout: 30000 });
+        pagesVisited++;
+        
+        // Scroll simulation on the subpage
+        await page.evaluate(() => {
+          window.scrollBy({ top: Math.floor(Math.random() * 500) + 200, behavior: 'smooth' });
+        });
+        await new Promise(r => setTimeout(r, Math.floor(Math.random() * 5000) + 4000)); // wait 4-9s
+      }
+    } catch (browseErr: any) {
+      console.warn(`⚠️ [SHADOW] Browsing simulation failed:`, browseErr.message);
+    }
+
+    // WhatsApp Signal Trigger on the final browsed page
+    const waButton = await page.$('a[href*="wa.me"], a[href*="/wa"], a[href*="whatsapp"]');
     let conversion = "NO";
     if (waButton) {
+      console.log(`🔥 [SHADOW] WhatsApp Button Found! Triggering Conversion...`);
+      // Scroll to view it if needed
+      await page.evaluate((el) => {
+        if (el) (el as HTMLElement).scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, waButton);
+      await new Promise(r => setTimeout(r, 1500));
+      
       await waButton.click();
-      conversion = "YES (WhatsApp Triggered)";
+      conversion = `YES (WhatsApp Triggered after visiting ${pagesVisited} pages)`;
     }
 
     // 🛰️ SEND REPORT

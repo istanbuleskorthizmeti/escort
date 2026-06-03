@@ -5,7 +5,7 @@ const ssh = new NodeSSH();
 const config = {
   host: '213.232.235.181',
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!',
+  password: '5TVuj6qiHMfh8CxH9O!',
   readyTimeout: 20000
 };
 
@@ -17,7 +17,7 @@ async function executeDeployment() {
 
     const commands = [
       'rm -rf /root/esc',
-      'git clone https://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@github.com/guondyshop-del/hydra-god-mode.git /root/esc',
+      'git clone https://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@github.com/guondyshop-del/hydra-god-mode.git /root/esc',
       'cd /root/esc && npm install',
       'cd /root/esc && npx prisma generate',
       'cd /root/esc && npx next build',

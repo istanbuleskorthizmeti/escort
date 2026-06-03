@@ -7,7 +7,7 @@ const ssh = new NodeSSH();
 
 const config = {
   host: '213.232.235.181',
-  port: 2222,
+  port: 22,
   username: 'root',
   password: '5TVuj6qiHMfh8CxH9O!'
 };

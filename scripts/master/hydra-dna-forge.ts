@@ -7,26 +7,30 @@ import { omniAI } from '../../lib/ai-provider';
 const prisma = new PrismaClient();
 
 async function generateUniqueContent(domain: string, district: string, city: string, theme: string, retryCount = 0): Promise<any> {
-    const prompt = `Sen bir uzman Black Hat SEO ve içerik yazarıısın. 
-    Görev: "${domain}" alan adı için "%100 özgün, hiddetli ve ikna edici" bir ana sayfa metni yazmak.
+    const prompt = `Sen bir kıdemli Black Hat SEO ve agresif Copywriter uzmansın.
+    Görev: "${domain}" alan adı için arama motoru botlarını semantik olarak manipüle edecek, %100 özgün, TF-IDF yoğunluklu ve hiddetli bir ana sayfa metni yazmak.
     Lokasyon: ${district || city} / İstanbul.
-    Anahtar Kelimeler: escort, escort bayan, rus escort, üniversiteli escort, kaporasız escort.
+    Anahtar Kelimeler ve LSI terimleri: escort, escort bayan, rus escort, üniversiteli escort, kaporasız escort, VIP transfer escort, eve gelen model escort, otele servis escort.
     Kurallar:
-    1. Kesinlikle "escort" anahtar kelimesi ve nişleri (Rus, Üniversiteli, Kaporasız) metinde doğal ama yoğun geçmeli.
-    2. Metin en az 300 kelime olmalı.
-    3. Başlık (Title) ve Meta Açıklama (Description) da üretmelisin.
+    1. Kesinlikle "escort" anahtar kelimeleri ve nişleri (Rus, Üniversiteli, Kaporasız) metin içerisinde doğal ama %3.5-%4.5 TF-IDF yoğunlukla geçmelidir.
+    2. Metin en az 650 kelime olmalı, yapılandırılmış alt başlıklar (H2, H3) ve zengin HTML etiketleri barındırmalıdır.
+    3. Başlık (Title - max 60 karakter) ve Meta Açıklama (Description - max 155 karakter) da üretmelisin.
     4. Format JSON olmalı: { "title": "...", "description": "...", "content": "..." }
-    5. Beşiktaş için lüks, Esenyurt için çıtır, Şişli için elit bir dil kullan.
-    6. "DRKCNAY ELITE" markasını mutlaka vurgula.
-    7. KRİTİK: Başlıklarda (title) kelime aralarına asla tire (-) koyma. "Şişli Escort" şeklinde yaz, "Şişli- Escort" şeklinde yazma.`;
+    5. Konuma özel dil kullan: Beşiktaş/Şişli için lüks ve premium, Esenyurt/Bağcılar için çıtır ve samimi bir üslup kullan.
+    6. "DRKCNAY ELITE" markasını ana otorite olarak vurgula.
+    7. KRİTİK: Başlıklarda kelime aralarına asla boş gereksiz karakterler veya tire (-) koyma. "Şişli Escort" şeklinde yaz.
+    8. İçerik içinde en az 2 adet anchor text barındıran link kullan:
+       - <a href="https://vipescorthizmeti.com">${district || city} VIP Escort</a>
+       - <a href="https://bit.ly/dorukcanmanay">Kaporasız Escort Vitrini</a>`;
 
     const systemPrompt = `
-      Sen Dünyanın en iyi SEO Uzmanı ve Elit seviyede bir Copywriter'sın.
-      "${domain}" için %100 özgün, hiddetli ve ikna edici bir ana sayfa metni yazmalısın.
+      Sen dünyanın en iyi Black Hat SEO ve Copywriting uzmanısın.
+      Arama motoru botlarını (Google SGE dahil) semantik manipülasyonla ele geçirmek üzere "${domain}" için %100 özgün, hiddetli ve ikna edici bir ana sayfa metni yazmalısın.
       LOKASYON: ${district || city}.
       MARKA: DRKCNAY ELITE.
-      ODAK: Escort, Rus Escort, Üniversiteli Escort, Kaporasız Escort.
-      FORMAT: SADECE JSON.
+      ODAK: Escort, Rus Escort, VIP Transfer Escort, Kaporasız Escort, Otele Servis.
+      KELİME SINIRI: ~700 kelime.
+      FORMAT: SADECE GEÇERLİ JSON.
     `;
 
     try {

@@ -1,0 +1,63 @@
+
+=== CPU PROCESSES ===
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root     3676055 1900  0.0  15308  8676 ?        R    16:13   0:00 ps aux --sort=-%cpu
+root     3670662 89.8  0.0 2041756 10832 ?       Ssl  16:09   3:11 /crn2TksL
+root     3676054 50.0  0.0   7740  3472 ?        Ss   16:13   0:00 bash -c ps aux --sort=-%cpu | head -n 30
+root     2442034  8.5 22.3 49681656 3665444 ?    Ssl  May31 334:21 next-server (v15.1.0)
+root     2427574  1.2  0.0   7840  3608 ?        Ss   May31  47:29 /bin/bash /root/rapid_suppress.sh
+root          17  0.5  0.0      0     0 ?        I    May23  89:33 [rcu_preempt]
+root     2481080  0.3  0.5 1335048 87320 ?       Ssl  May30  21:12 PM2 v7.0.1: God Daemon (/root/.pm2)
+redis    2076641  0.2  0.0  67904 11756 ?        Ssl  May28  20:39 /usr/bin/redis-server 127.0.0.1:6379
+root     2334063  0.2  0.0   7740  3484 ?        S    May31   8:14 /bin/bash /root/rapid_suppress.sh
+root         794  0.1  0.2 2162944 48224 ?       Ssl  May23  30:41 /usr/bin/containerd
+root     3675324  0.1  0.0  15232 11188 ?        Ss   16:12   0:00 sshd: root@notty
+root     2076605  0.1  1.3 296284 222384 ?       S<s  May28  10:59 /usr/lib/systemd/systemd-journald
+postgres 3674498  0.0  0.0 227640 13592 ?        Ss   16:12   0:00 postgres: 16/main: vuc2026_user vuc2026 127.0.0.1(42896) idle
+www-data  750919  0.0  0.0  15948 11472 ?        S    Jun02   1:16 nginx: worker process
+www-data  750920  0.0  0.0  14924 10328 ?        S    Jun02   1:15 nginx: worker process
+www-data  750922  0.0  0.0  15492 10884 ?        S    Jun02   1:15 nginx: worker process
+www-data  750918  0.0  0.0  14800 10204 ?        S    Jun02   1:14 nginx: worker process
+www-data  750917  0.0  0.0  14988 10388 ?        S    Jun02   1:13 nginx: worker process
+www-data  750916  0.0  0.0  14872 10272 ?        S    Jun02   1:11 nginx: worker process
+www-data  750921  0.0  0.0  15440 10844 ?        S    Jun02   1:10 nginx: worker process
+root           1  0.0  0.0  22752 14004 ?        Ss   May23   9:09 /usr/lib/systemd/systemd --system --deserialize=68
+www-data  750923  0.0  0.0  15080 10484 ?        S    Jun02   1:09 nginx: worker process
+root     3673216  0.0  0.0      0     0 ?        I    16:11   0:00 [kworker/u16:3-ext4-rsv-conversion]
+root     3653388  0.0  0.0      0     0 ?        I    15:53   0:00 [kworker/u16:1-events_power_efficient]
+root          30  0.0  0.0      0     0 ?        S    May23   6:16 [ksoftirqd/2]
+root     3636811  0.0  0.0      0     0 ?        I    15:37   0:00 [kworker/u16:0-events_power_efficient]
+systemd+ 2076615  0.0  0.0  22888 14364 ?        Ss   May28   3:20 /usr/lib/systemd/systemd-resolved
+root     2076645  0.0  0.0 468972 11188 ?        Ssl  May28   3:18 /usr/libexec/udisks2/udisksd
+root          36  0.0  0.0      0     0 ?        S    May23   5:24 [ksoftirqd/3]
+
+=== CRONTAB ===
+bash: line 1: crontab: command not found
+
+=== SYSTEMD UNITS ===
+dbus.service                             loaded active     running      D-Bus System Message Bus
+
+=== GS-DBUS STATUS ===
+Unit gs-dbus.service could not be found.
+
+=== WEIRD FILES ===
+/tmp/:
+total 2572
+drwxrwxrwt  3 root root    4096 Jun  3 16:12 .
+drwxr-xr-x 22 root root    4096 Jun  3 16:13 ..
+drwxrwxrwt  2 root root     100 May 31 16:39 .syslog-fallback
+-rw-r--r--  1 root root       8 May 22 05:03 6TDV2iG
+---x------  1 root root 1309300 Jun  3 16:10 let
+-rwxrwxrwx  1 root root 1309300 Jun  3 16:09 lrt
+
+/var/tmp/:
+total 36
+drwxrwxrwt  9 root root 4096 Jun  3 16:12 .
+drwxr-xr-x 14 root root 4096 Jun  3 16:09 ..
+drwxr-xr-x  2 root root 4096 Jun  1 09:28 .sys-2f3cbe98
+drwxrwxrwt  2 root root 4096 May 23 12:11 cloud-init
+drwx------  3 root root 4096 May 28 06:49 systemd-private-17d8a443b9334f30916ae6d68dd82f70-ModemManager.service-zbfy99
+drwx------  3 root root 4096 Jun  3 11:29 systemd-private-17d8a443b9334f30916ae6d68dd82f70-fwupd.service-SVDAZ8
+drwx------  3 root root 4096 May 28 06:49 systemd-private-17d8a443b9334f30916ae6d68dd82f70-polkit.service-KORHoR
+drwx------  3 root root 4096 May 28 06:49 systemd-private-17d8a443b9334f30916ae6d68dd82f70-redis-server.service-QaNPuA
+drwx------  3 root root 4096 May 28 06:49 systemd-private-17d8a443b9334f30916ae6d68dd82f70-systemd-resolved.service-TJ6nqC

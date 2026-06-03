@@ -1,0 +1,280 @@
+import { NextResponse } from 'next/server';
+import { vitrinImages } from '@/lib/vitrin-images';
+import { siteConfig } from '@/config/site';
+import { ThemeEngine } from '@/lib/theme-engine';
+import { getDomainConfig } from '@/config/domains';
+import { generateUltraGraphSchema } from '@/lib/seo-schema';
+
+export const dynamic = 'force-dynamic';
+
+export async function GET(request: Request) {
+  const url = new URL(request.url);
+  const host = request.headers.get("host") || siteConfig.domain;
+  const locParam = url.searchParams.get("loc");
+  
+  const domainConfig = getDomainConfig(host);
+  const defaultDistrict = domainConfig?.targetDistrict || "İstanbul";
+  
+  // Resolve location context
+  const rawLoc = locParam || defaultDistrict;
+  const locationName = rawLoc.charAt(0).toUpperCase() + rawLoc.slice(1).toLowerCase();
+  
+  const theme = ThemeEngine.getTheme(host);
+  const brandName = theme.brandName || "DRKCNAY ELITE";
+  const slogan = theme.slogan || "Lüks ve Seçkin VIP Eşlik Hizmeti";
+  const primaryColor = theme.primaryColor || "#e11d48";
+  
+  // Set canonical URL pointing to the standard HTML version
+  const canonicalUrl = locParam 
+    ? `https://${host}/${locParam.toLowerCase()}` 
+    : `https://${host}`;
+
+  // Generate dynamic schema
+  const schema = generateUltraGraphSchema({
+    locationName: locationName,
+    city: "İstanbul",
+    description: `${locationName} bölgesinin en elit VIP escort ajansı rehberi. %100 gerçek escort bayan profilleri ve kaporasız randevu sistemi.`,
+    url: canonicalUrl,
+    categoryTitle: "İSTANBUL ESCORT AJANSI v24.0"
+  });
+
+  // Select first 12 profiles from vitrinImages to display on AMP
+  const ampProfiles = vitrinImages.slice(0, 12);
+
+  const html = `<!doctype html>
+<html ⚡ lang="tr">
+<head>
+  <meta charset="utf-8">
+  <title>🔞 ${locationName} ESCORT | ${brandName} VIP Eşlik</title>
+  <link rel="canonical" href="${canonicalUrl}">
+  <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
+  
+  <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
+  <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+  
+  <script async src="https://cdn.ampproject.org/v0.js"></script>
+  
+  <script type="application/ld+json">
+    ${JSON.stringify(schema)}
+  </script>
+
+  <style amp-custom>
+    :root {
+      --primary: ${primaryColor};
+      --bg: #030303;
+      --card-bg: #09090b;
+      --card-border: #18181b;
+      --text: #ffffff;
+      --text-muted: #a1a1aa;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+    header {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+    .brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 900;
+      font-style: italic;
+      letter-spacing: -1px;
+      margin: 0;
+      color: var(--text);
+    }
+    .brand span {
+      color: var(--primary);
+      text-shadow: 0 0 20px rgba(225, 29, 72, 0.4);
+    }
+    .hero {
+      padding: 50px 20px;
+      text-align: center;
+      background: radial-gradient(circle at center, rgba(225, 29, 72, 0.1) 0%, transparent 70%);
+      border-bottom: 1px solid var(--card-border);
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(225, 29, 72, 0.1);
+      border: 1px solid rgba(225, 29, 72, 0.2);
+      color: var(--primary);
+      font-size: 10px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 15px;
+    }
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 900;
+      margin: 0 0 15px 0;
+      letter-spacing: -1px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+    .hero p {
+      color: var(--text-muted);
+      font-size: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (min-width: 768px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    @media (min-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .card-img-wrap {
+      position: relative;
+      background-color: #121214;
+    }
+    .card-info {
+      padding: 15px;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+    }
+    .card-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .card-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      font-size: 9px;
+      font-weight: 900;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .btn {
+      display: block;
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 8px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .footer-section {
+      background: #050507;
+      border-top: 1px solid var(--card-border);
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 12px;
+    }
+    .footer-section a {
+      color: var(--text);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">${brandName.toUpperCase()} <span>ELITE</span></div>
+  </header>
+  
+  <div class="hero">
+    <span class="badge">%100 Gerçek Vitrin</span>
+    <h1>${locationName.toUpperCase()} VIP ESCORT</h1>
+    <p>${slogan}. ${locationName} bölgesindeki en seçkin ve kaporasız VIP escort modelleriyle tanışın.</p>
+  </div>
+  
+  <div class="container">
+    <div class="grid">
+      ${ampProfiles.map(p => {
+        const imageSrc = p.src.startsWith('http') ? p.src : `https://${host}${p.src.startsWith('/') ? p.src : '/' + p.src}`;
+        const title = p.title || "Elite Model";
+        const age = p.age ? `${p.age} Yaş` : "24 Yaş";
+        const niche = p.niche || "Elite Model";
+        return `
+        <div class="card">
+          <div class="card-img-wrap">
+            <amp-img 
+              src="${imageSrc}" 
+              width="300" 
+              height="400" 
+              layout="responsive" 
+              alt="${title} - ${locationName} VIP Escort">
+            </amp-img>
+          </div>
+          <div class="card-info">
+            <div class="card-badge">${niche}</div>
+            <div class="card-title">${title}</div>
+            <div class="card-meta">${age} • ${locationName}</div>
+            <a href="https://wa.me/${siteConfig.contact.whatsappNumber}" class="btn" target="_blank" rel="noopener noreferrer">Randevu Al</a>
+          </div>
+        </div>
+        `;
+      }).join('\n')}
+    </div>
+  </div>
+  
+  <div class="footer-section">
+    <p>© ${new Date().getFullYear()} ${brandName} ELITE NETWORK. TÜM HAKLARI SAKLIDIR.</p>
+    <p>
+      <a href="${canonicalUrl}">Masaüstü Sürüm</a> | 
+      <a href="https://wa.me/${siteConfig.contact.whatsappNumber}">WhatsApp İletişim</a>
+    </p>
+  </div>
+</body>
+</html>
+`;
+
+  return new NextResponse(html, {
+    headers: {
+      'Content-Type': 'text/html; charset=utf-8',
+      'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+    },
+  });
+}

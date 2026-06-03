@@ -30,7 +30,12 @@ export class GA4Service {
       let totalUsers = 0;
       let cityBreakdown = "";
 
-      response.rows?.forEach(row => {
+      interface GA4Row {
+        metricValues?: Array<{ value?: string | null }> | null;
+        dimensionValues?: Array<{ value?: string | null }> | null;
+      }
+
+      response.rows?.forEach((row: GA4Row) => {
         const users = parseInt(row.metricValues?.[0]?.value || '0');
         const city = row.dimensionValues?.[0]?.value || 'Bilinmiyor';
         totalUsers += users;

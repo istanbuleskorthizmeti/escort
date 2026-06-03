@@ -7,6 +7,7 @@ export interface AiOptions {
   max_tokens?: number;
   systemPrompt?: string;
   provider?: string;
+  isJson?: boolean;
 }
 
 /**

@@ -5,6 +5,8 @@ import { PanicButton } from "@/components/UI/ConciergeSuite";
 import { Metadata } from "next";
 import { SecureHTML } from "@/components/SecureHTML";
 
+export const dynamic = "force-dynamic";
+
 export async function generateStaticParams() {
   return experts.map((e) => ({ slug: e.slug }));
 }

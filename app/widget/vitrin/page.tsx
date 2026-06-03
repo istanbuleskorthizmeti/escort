@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { prisma } from '@/lib/prisma'; // This is a client-side component, so we need an API fetch instead
 import { Zap, ShieldCheck } from 'lucide-react';
 
 // 🏴‍☠️ PROJEX: DRKCNAY VITRIN WIDGET

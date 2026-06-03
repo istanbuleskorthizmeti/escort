@@ -19,11 +19,11 @@
     "hydra:phase4": "tsx scripts/phase4-commander.ts",
     "siege": "tsx scripts/hydra-sites-playwright.ts"
   },
-
   "dependencies": {
     "@aws-sdk/client-s3": "^3.1039.0",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@google-analytics/admin": "^9.0.1",
+    "@google-analytics/data": "^4.12.1",
     "@octokit/rest": "^22.0.1",
     "@prisma/client": "5.22.0",
     "@supabase/supabase-js": "^2.101.1",
@@ -54,6 +54,7 @@
     "qrcode": "^1.5.4",
     "react": "19.0.0",
     "react-dom": "19.0.0",
+    "ssh2": "^1.17.0",
     "tailwind-merge": "^2.5.2",
     "telegraf": "^4.16.3",
     "tsx": "^4.21.0",

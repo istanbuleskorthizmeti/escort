@@ -6,6 +6,8 @@ import { ProfileEngine } from "@/lib/seo/profile-engine";
 import { ThemeEngine } from "@/lib/theme-engine";
 import Navbar from "@/components/UI/Navbar";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }

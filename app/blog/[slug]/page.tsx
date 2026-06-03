@@ -8,7 +8,7 @@ import { defaultAdmin } from "@/config/admins";
 import Navbar from "@/components/UI/Navbar";
 import { PanicButton } from "@/components/UI/ConciergeSuite";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
 export async function generateStaticParams() {
   return blogPosts.map((post) => ({

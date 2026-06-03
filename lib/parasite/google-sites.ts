@@ -1,8 +1,9 @@
-
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { TelegramService } from '../crm/telegram';
 import { ProxyHandler } from '../seo/proxy-handler';
+import path from 'path';
+import os from 'os';
 
 puppeteer.use(StealthPlugin());
 
@@ -82,7 +83,7 @@ export class GoogleSitesAdapter {
         const embedCode = `<iframe src="https://vipescorthizmeti.com/" width="100%" height="2000px" frameborder="0"></iframe>`;
         await page.type('textarea', embedCode);
         await page.click('button:contains("Next")');
-        await page.waitForTimeout(2000);
+        await new Promise(r => setTimeout(r, 2000));
         await page.click('button:contains("Insert")');
 
         // 4. Manually Expand (Drag handle simulation)

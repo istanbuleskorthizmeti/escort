@@ -6,8 +6,10 @@ import { PanicButton } from "@/components/UI/ConciergeSuite";
 import { experts } from "@/lib/experts";
 import { getStitchedContent } from "@/lib/obsidian-fragments";
 import { SmartImage } from "@/components/UI/SmartImage";
-import { BreadcrumbSchema } from "@/components/SEO/JsonLd";
 import { siteConfig } from "@/config/site";
+import { BreadcrumbSchema } from "@/components/SEO/JsonLd";
+
+export const dynamic = "force-dynamic";
 
 const encyclopediaData: Record<string, { title: string, expertId: string, description: string }> = {
   "fantezi-arkeolojisi": {

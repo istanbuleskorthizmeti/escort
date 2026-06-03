@@ -1,19 +1,12 @@
-import Link from "next/link";
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
-import { Suspense } from "react";
-import { 
-  Landmark, MapPin, Building, Waves, TreePine, ShieldCheck,
-  MessageCircle, Star, Image as ImageIcon, CheckCircle2, Crown 
-} from 'lucide-react';
 
 // Relative Imports (Linux/Production Safe)
-import { cities, getCitiesForHost } from "../../lib/locations";
+import { getCitiesForHost, City } from "../../lib/locations";
 import { siteConfig } from "../../config/site";
-import { ThemeEngine } from "../../lib/theme-engine";
 import { getSiteId } from "../../lib/site-context";
-import { getHybridProfiles, getVitrinProfiles, getPageContent } from "../../lib/data-cache";
+import { getVitrinProfiles, getPageContent } from "../../lib/data-cache";
 import { generateLocationMetadata } from "../../lib/seo-metadata";
 import { generateUltraGraphSchema } from "../../lib/seo-schema";
 import { sanitizeDisplayName } from "../../lib/utils";
@@ -30,7 +23,7 @@ import { IstanbulConquestMatrix } from "../../components/SEO/IstanbulConquestMat
 import { LivePhotoMarquee } from "../../components/UI/LivePhotoMarquee";
 import { SEOContentEngine } from "../../components/SEO/SEOContentEngine";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 export const dynamicParams = true;
 
 export async function generateMetadata({
@@ -52,13 +45,14 @@ export async function generateMetadata({
 
   const siteId = await getSiteId(host);
   const dbContent = await getPageContent(city, siteId);
-  let cityObj = allowedCities[city.toLowerCase()];
+  let cityObj: City | undefined = allowedCities[city.toLowerCase()];
 
   if (!cityObj && dbContent) {
       cityObj = {
         name: sanitizeDisplayName(dbContent.title || city),
         slug: city,
-      } as any;
+        districts: [],
+      };
   }
 
   if (!cityObj) {
@@ -95,25 +89,23 @@ export default async function CityHubPage({
   const siteId = await getSiteId(host);
   const baseUrl = `https://${host}`;
 
-  const [dbContent, profiles, vitrinProfiles] = await Promise.all([
+  const [dbContent, vitrinProfiles] = await Promise.all([
     getPageContent(city, siteId),
-    getHybridProfiles({ city, limit: 12 }),
     getVitrinProfiles().catch(() => [])
   ]);
 
-  let cityObj = allowedCities[city.toLowerCase()];
+  let cityObj: City | undefined = allowedCities[city.toLowerCase()];
   if (!cityObj && dbContent) {
     cityObj = {
       name: dbContent.title || (city.charAt(0).toUpperCase() + city.slice(1)),
       slug: city,
       districts: []
-    } as any;
+    };
   } else if (!cityObj) {
-    cityObj = { name: sanitizeDisplayName(city), slug: city, districts: [] } as any;
+    cityObj = { name: sanitizeDisplayName(city), slug: city, districts: [] };
   }
   
   const cityName = (cityObj?.name || sanitizeDisplayName(city)).replace(/escort|eskort/gi, '').trim();
-  const theme = ThemeEngine.getTheme(host);
 
   const ultraSchema = generateUltraGraphSchema({
     locationName: `${cityName}`,
@@ -127,6 +119,7 @@ export default async function CityHubPage({
 
   return (
     <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30 selection:text-white">
+      <link rel="amphtml" href={`https://${host}/amp?loc=${city}`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ultraSchema) }} />
       <Navbar />
       
@@ -145,7 +138,7 @@ export default async function CityHubPage({
           <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-rose-600/20 px-8 py-3 rounded-full mb-16 shadow-glow-rose mt-12">
             <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
             <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
-               {cityName.toUpperCase()} VIP ESCORT AJANSI // DRKCNAY NETWORK
+               {cityName.toUpperCase()} VIP ESCORT AJANSI {/* DRKCNAY NETWORK */}
             </span>
           </div>
           

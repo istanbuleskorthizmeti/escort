@@ -4,6 +4,8 @@ import { ADULT_RACES, ADULT_CATEGORIES, ADULT_QUALITIES, ADULT_TAGS, generateAgg
 import { generateIstanbulAggressiveMetadata, ISTANBUL_DISTRICTS } from '@/lib/istanbul-aggressive-seo';
 import { siteConfig } from '@/config/site';
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({ params }: any): Promise<Metadata> {
   const { niche, slug } = await params;
   const decodedNiche = decodeURIComponent(niche).toUpperCase();

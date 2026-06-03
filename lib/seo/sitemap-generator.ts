@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '../prisma';
 import { getSiteId } from '../site-context';
+import { getDomainConfig } from '@/config/domains';
 
 export async function generateSitemapResponse(host: string, file: string): Promise<NextResponse> {
   const siteId = await getSiteId(host);
@@ -14,7 +15,36 @@ export async function generateSitemapResponse(host: string, file: string): Promi
       select: { slug: true, updatedAt: true }
     });
 
-    const urlEntries = pages.map((p: any) => {
+    const config = getDomainConfig(host);
+    let filteredPages = pages;
+
+    if (config && config.role === 'SATELLITE') {
+      const targetCity = config.targetCity?.toLowerCase();
+      const targetDistrict = config.targetDistrict?.toLowerCase();
+
+      filteredPages = pages.filter((p: any) => {
+        const slug = p.slug.toLowerCase();
+
+        // Always include target city slug
+        if (targetCity && slug === targetCity) {
+          return true;
+        }
+
+        // If target district is configured, only include matching slugs
+        if (targetDistrict) {
+          return slug.includes(targetDistrict);
+        }
+
+        // If it is a city-wide satellite (no target district), only include slugs of this city
+        if (targetCity) {
+          return slug.startsWith(targetCity) || slug.includes(targetCity);
+        }
+
+        return false;
+      });
+    }
+
+    const urlEntries = filteredPages.map((p: any) => {
       let finalSlug = p.slug;
       
       // 🔱 HYDRA SMART MAPPING: Convert 'city-district' slugs back to '/city/district' paths
@@ -64,3 +94,4 @@ export async function generateSitemapResponse(host: string, file: string): Promi
     return new NextResponse('Error generating sitemap', { status: 500 });
   }
 }
+

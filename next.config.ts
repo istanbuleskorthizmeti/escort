@@ -28,7 +28,7 @@ const nextConfig: NextConfig = {
     ],
   },
   experimental: {
-    workerThreads: false,
+    workerThreads: true,
     cpus: 1,
     optimizePackageImports: [
       'lucide-react',

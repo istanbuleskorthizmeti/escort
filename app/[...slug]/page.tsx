@@ -1,7 +1,6 @@
 import { Metadata } from "next";
 import { headers } from "next/headers";
-import { notFound, permanentRedirect } from "next/navigation";
-import dynamic from "next/dynamic";
+import { permanentRedirect } from "next/navigation";
 
 // Relative Imports (Linux/Production Safe)
 import { prisma } from "../../lib/prisma";

@@ -117,7 +117,7 @@ export default async function TransferPage() {
       </section>
       
       <GlobalTagCloud currentHost={host} />
-      <UltraFooter host={host} />
+      <UltraFooter host={host} cityName="İstanbul" />
     </main>
   );
 }

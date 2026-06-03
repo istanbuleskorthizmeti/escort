@@ -1,12 +1,12 @@
 import { NodeSSH } from 'node-ssh';
-import path from 'path';
 
 const ssh = new NodeSSH();
 
 const config = {
   host: '213.232.235.181',
+  port: 2222,
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: '5TVuj6qiHMfh8CxH9O!'
 };
 
 async function remediateAndBoost() {
@@ -36,8 +36,8 @@ async function remediateAndBoost() {
     console.log('Report Output:', reportRes.stdout || reportRes.stderr);
 
     ssh.dispose();
-  } catch (err: any) {
-    console.error('💥 Error in remediation run:', err.message);
+  } catch (err: unknown) {
+    console.error('💥 Error in remediation run:', err instanceof Error ? err.message : err);
     ssh.dispose();
   }
 }

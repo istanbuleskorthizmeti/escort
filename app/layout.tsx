@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Playfair_Display, Outfit } from "next/font/google";
 import "./globals.css";
 import { headers } from "next/headers";
 import { siteConfig } from "@/config/site";
@@ -8,10 +7,6 @@ import { getSiteId } from "@/lib/site-context";
 import { ThemeEngine } from "@/lib/theme-engine";
 import { BrowserIntelligence } from "@/components/SEO/BrowserIntelligence";
 import { LocalAuthority } from "@/components/SEO/LocalAuthority";
-
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: 'swap' });
-const playfair = Playfair_Display({ variable: "--font-playfair", subsets: ["latin"], display: 'swap' });
-const outfit = Outfit({ variable: "--font-outfit", subsets: ["latin"], display: 'swap' });
 
 export const viewport: Viewport = {
   themeColor: "#000000",
@@ -87,11 +82,17 @@ export default async function RootLayout({
   const brandTitle = theme.brandName;
 
   return (
-    <html lang="tr" className={`${playfair.variable} ${inter.variable} ${outfit.variable} h-full antialiased`}>
+    <html lang="tr" className="h-full antialiased">
       <head>
         <meta charSet="utf-8" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
+            --font-inter: 'Inter', sans-serif;
+            --font-playfair: 'Playfair Display', serif;
+            --font-outfit: 'Outfit', sans-serif;
             --primary-color: ${theme.primaryColor};
             --secondary-color: ${theme.secondaryColor};
             --bg-color: ${theme.bgColor};

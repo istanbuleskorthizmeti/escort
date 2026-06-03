@@ -4,6 +4,8 @@ import { BRANCHES, generateBranchSchema } from '../../../lib/gbp-pinning-data';
 import { generateNuclearMetadata, generateAllDistrictsSchema, generateAggressiveSemanticCloud } from '../../../lib/nuclear-seo-engine';
 import { notFound } from 'next/navigation';
 
+export const dynamic = "force-dynamic";
+
 interface Props {
   params: Promise<{ slug: string }>;
 }

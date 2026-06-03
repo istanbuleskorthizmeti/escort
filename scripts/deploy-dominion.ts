@@ -7,8 +7,9 @@ const ssh = new NodeSSH();
 
 const config = {
   host: '213.232.235.181',
+  port: 2222,
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: '5TVuj6qiHMfh8CxH9O!'
 };
 
 async function deployDominion() {

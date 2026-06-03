@@ -1,6 +1,7 @@
 import { Metadata } from "next";
 import { siteConfig } from "@/config/site";
 import { dedupeEscort } from "./utils";
+import { DOMAIN_MATRIX, getDomainConfig } from "@/config/domains";
 
 interface MetaParams {
   city: string;
@@ -40,6 +41,43 @@ export function generateLocationMetadata({
   const currentYear = new Date().getFullYear();
   const currentMonth = new Intl.DateTimeFormat('tr-TR', { month: 'long' }).format(new Date());
   const baseUrl = domain.startsWith('http') ? domain : `https://${domain}`;
+  
+  // 🔱 SILO CANONICAL ISOLATION PROTOCOL
+  const currentHost = domain.replace(/^www\./, '').toLowerCase();
+  const currentDomainConfig = getDomainConfig(currentHost);
+  
+  let targetBaseUrl = baseUrl;
+  let shouldIndex = true;
+
+  if (currentDomainConfig && currentDomainConfig.role === 'SATELLITE') {
+    const targetDistrict = currentDomainConfig.targetDistrict?.toLowerCase();
+    const currentDistrict = district?.toLowerCase();
+    
+    if (currentDistrict) {
+      if (targetDistrict && currentDistrict !== targetDistrict) {
+        shouldIndex = false;
+        
+        // Find dedicated domain for current district
+        const dedicatedDomain = DOMAIN_MATRIX.find(d => 
+          d.role === 'SATELLITE' && 
+          d.targetDistrict?.toLowerCase() === currentDistrict
+        );
+        
+        if (dedicatedDomain) {
+          targetBaseUrl = `https://${dedicatedDomain.host}`;
+        } else {
+          targetBaseUrl = 'https://vipescorthizmeti.com';
+        }
+      }
+    } else {
+      // If city page (e.g. /istanbul) is visited on a district-specific satellite, canonicalize to money site to avoid duplicate content
+      if (targetDistrict) {
+        shouldIndex = false;
+        targetBaseUrl = 'https://vipescorthizmeti.com';
+      }
+    }
+  }
+
   const locName = (landmarkName || neighborhoodName || districtName || cityName).replace(/escort|eskort/gi, '').replace(/[-\u2013\u2014]/g, ' ').replace(/\s+/g, ' ').trim();
   const exactMatchLoc = (neighborhoodName || districtName || cityName).replace(/escort|eskort/gi, '').replace(/[-\u2013\u2014]/g, ' ').replace(/\s+/g, ' ').trim();
   const fullLoc = neighborhoodName ? `${cityName} ${districtName} ${neighborhoodName}`.replace(/[-\u2013\u2014]/g, ' ') : (districtName ? `${cityName} ${districtName}`.replace(/[-\u2013\u2014]/g, ' ') : cityName.replace(/[-\u2013\u2014]/g, ' '));
@@ -58,7 +96,9 @@ export function generateLocationMetadata({
     `👑 ${exactMatchLoc} ${categoryTitle} | VIP Rus & Üniversiteli Escort | DRKCNAY`,
     `🛡️ ${exactMatchLoc} ${categoryTitle} | %100 Doğrulanmış & Gerçek | ${currentYear} Elit`,
     `🔞 ${exactMatchLoc} En İyi ${categoryTitle} | Kaporasız & Güvenilir | DRKCNAY`,
-    `✨ ${exactMatchLoc} VIP ${categoryTitle} | Lüks Otele Servis Escortlar | ${currentYear}`
+    `✨ ${exactMatchLoc} VIP ${categoryTitle} | Lüks Otele Servis Escortlar | ${currentYear}`,
+    `👑 VIP ${exactMatchLoc} Escort | Outcall Companion & Models (${currentYear})`,
+    `🔥 Best ${exactMatchLoc} Escort Agency | 100% Real Girls & No Deposit`
   ] : [
     `🔞 ${exactMatchLoc.toUpperCase()} ESCORT BAYAN | %100 GERÇEK ESCORTLAR ${currentYear}`,
     `💎 ${exactMatchLoc.toUpperCase()} KAPORASIZ ESCORT | RUS & ÜNİVERSİTELİ | ${currentMonth}`,
@@ -75,7 +115,9 @@ export function generateLocationMetadata({
     `👑 ${exactMatchLoc.toUpperCase()} GENÇ ESCORT | ÜNİVERSİTELİ & ÇITIR | DRKCNAY`,
     `🔥 ${exactMatchLoc.toUpperCase()} VIP ESCORT | ÖZEL ESCORT REHBERİ | ${currentYear}`,
     `💎 ${exactMatchLoc.toUpperCase()} RUS ESCORT | %100 GERÇEK GÖRSEL | ${currentYear}`,
-    `👑 ${exactMatchLoc.toUpperCase()} ÜNİVERSİTELİ ESCORT | ÇITIR & GENÇ | DRKCNAY`
+    `👑 ${exactMatchLoc.toUpperCase()} ÜNİVERSİTELİ ESCORT | ÇITIR & GENÇ | DRKCNAY`,
+    `👑 VIP ${exactMatchLoc.toUpperCase()} ESCORT | OUTCALL COMPANION & MODELS ${currentYear}`,
+    `🔥 BEST ${exactMatchLoc.toUpperCase()} ESCORTS | 100% REAL & NO DEPOSIT | ${currentMonth}`
   ]);
 
   const descriptions = [
@@ -85,8 +127,8 @@ export function generateLocationMetadata({
     `💎 ${fullLoc} escort arayışınızda lüks ve güvenilirlik. Yüksek gizlilik, %100 gerçek fotoğraflı ve kaporasız ${fullLoc} elit escort deneyimi için hemen kataloğu incele ve 7/24 hiddetli modellerimizi ara.`,
     `🛡️ %100 Doğrulanmış ${fullLoc} escort profilleri. DRKCNAY güvencesiyle kaporasız, fotoğrafları onaylı ve yüksek gizlilik standartlı otele gelen escort hizmetleriyle ${currentYear} yılının en iyisi.`,
     `🔞 ${fullLoc} bölgesinde VIP concierge ve elit escort bayanlar. Rus, Ukraynalı ve yerli üniversiteli çıtırlarla prestijli buluşma. ${currentMonth} ayı özel kaporasız escort kataloğu şimdi yayında.`,
-    `🔥 ${fullLoc} escort standartları: Sadece elit beyefendilere özel kaporasız ve gizli eşlik hizmeti. ${fullLoc} bölgesinin en vizyoner, lüks ve hiddetli escort rehberiyle hemen tanışın.`,
-    `👑 En iyi ${fullLoc} VIP escort deneyimi ve gece hayatı rehberliği. %100 teyitli profiller, gerçek görseller ve kaporasız elit hizmet anlayışıyla DRKCNAY ağında yerinizi alın.`
+    `Looking for the best VIP escort in ${fullLoc}? Discover 100% verified independent outcall models, luxury Russian companions, and call girls with zero deposit. 24/7 service.`,
+    `💎 VIP Companion & Escort Services in ${fullLoc}: Exclusive elite models, outcall call girls, and premium hotel companion service.`
   ];
 
   const titleIdx = (rand(titles.length) + (neighborhood ? 1 : 0)) % titles.length;
@@ -99,10 +141,15 @@ export function generateLocationMetadata({
     `${exactMatchLoc} çıtır escort`, `${exactMatchLoc} kaporasız escort`, `${exactMatchLoc} elit escort`,
     `${exactMatchLoc} otele gelen escort`, `${exactMatchLoc} eve gelen escort`, `${exactMatchLoc} gerçek escort`,
     `${exactMatchLoc} lüks escort`, `${exactMatchLoc} seksi escort`, `${exactMatchLoc} vahşi escort`,
+    `${exactMatchLoc} kamerasız ifşa`, `${exactMatchLoc} gizli çekim`,
+    `${exactMatchLoc} escort agency`, `vip escort ${exactMatchLoc}`, `outcall escort ${exactMatchLoc}`,
+    `no deposit escort ${exactMatchLoc}`, `call girls in ${exactMatchLoc}`, `independent escort ${exactMatchLoc}`,
+    `best escort ${exactMatchLoc}`, `hotel escort ${exactMatchLoc}`, `companion service ${exactMatchLoc}`,
+    `elite models ${exactMatchLoc}`, `escort service ${exactMatchLoc}`, `vip companion ${exactMatchLoc}`,
     `${exactMatchLoc} kamerasız ifşa`, `${exactMatchLoc} gizli çekim`
   ];
 
-  const url = `${baseUrl}/${city}${district ? `/${district}` : ""}${neighborhood ? `/${neighborhood}` : ""}`;
+  const url = `${targetBaseUrl}/${city}${district ? `/${district}` : ""}${neighborhood ? `/${neighborhood}` : ""}`;
 
   return {
     title: dedupeEscort(titles[titleIdx]),
@@ -139,9 +186,9 @@ export function generateLocationMetadata({
       images: [`${baseUrl}/api/og?loc=${encodeURIComponent(locName)}`],
     },
     robots: {
-      index: true,
+      index: shouldIndex,
       follow: true,
-      googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 }
+      googleBot: { index: shouldIndex, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 }
     }
   };
 }

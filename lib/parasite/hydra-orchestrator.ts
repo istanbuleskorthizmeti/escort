@@ -53,7 +53,7 @@ export class HydraOrchestrator {
         content.blogger.title,
         content.blogger.content
       );
-      results.push({ platform: 'Blogger', url: bloggerUrl });
+      results.push({ platform: 'Blogger', url: bloggerUrl || null });
     }
 
     // Google Sites is heavy (Puppeteer), usually run separately or with caution

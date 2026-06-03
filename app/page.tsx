@@ -1,31 +1,25 @@
 import Link from "next/link";
 import { headers } from "next/headers";
 import { siteConfig } from "../config/site";
-import { getSiteId } from "../lib/site-context";
-import { prisma } from "../lib/prisma";
 import { Metadata } from "next";
 import Navbar from "../components/UI/Navbar";
 import { DorukVitrin } from "../components/SEO/DorukVitrin";
-import dynamic from "next/dynamic";
+import nextDynamic from "next/dynamic";
 
-const UltraFooter = dynamic(() => import("../components/SEO/UltraFooter").then(mod => mod.UltraFooter), {
+const UltraFooter = nextDynamic(() => import("../components/SEO/UltraFooter").then(mod => mod.UltraFooter), {
   ssr: true
 });
-const IstanbulConquestMatrix = dynamic(() => import("../components/SEO/IstanbulConquestMatrix").then(mod => mod.IstanbulConquestMatrix), {
+const IstanbulConquestMatrix = nextDynamic(() => import("../components/SEO/IstanbulConquestMatrix").then(mod => mod.IstanbulConquestMatrix), {
   ssr: true
 });
-const MathematicalSEO = dynamic(() => import("../components/SEO/MathematicalSEO").then(mod => mod.MathematicalSEO), {
+const MathematicalSEO = nextDynamic(() => import("../components/SEO/MathematicalSEO").then(mod => mod.MathematicalSEO), {
   ssr: true
 });
-const SEOContentEngine = dynamic(() => import("../components/SEO/SEOContentEngine").then(mod => mod.SEOContentEngine), {
+const SEOContentEngine = nextDynamic(() => import("../components/SEO/SEOContentEngine").then(mod => mod.SEOContentEngine), {
   ssr: true
 });
-import { IstanbulAggressiveSEO } from "../components/SEO/IstanbulAggressiveSEO";
-import { IstanbulDynamicSEO } from "../components/SEO/IstanbulDynamicSEO";
 import { LinkWheel } from "../components/SEO/LinkWheel";
 import { GlobalTagCloud } from "../components/SEO/GlobalTagCloud";
-import { IstanbulDistrictSilo } from "../components/SEO/IstanbulDistrictSilo";
-import { IstanbulAuthorityHub } from "../components/SEO/IstanbulAuthorityHub";
 import { VitrinWall } from "../components/SEO/VitrinWall";
 import { LivePhotoMarquee } from "../components/UI/LivePhotoMarquee";
 import { getVitrinProfiles } from "../lib/data-cache";
@@ -37,7 +31,7 @@ import { getDomainConfig } from "../config/domains";
 import { generateLocationMetadata } from "../lib/seo-metadata";
 import { CloakerFrontend } from "../components/UI/CloakerFrontend";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const host = (await headers()).get("host") || siteConfig.domain;
@@ -64,7 +58,6 @@ export default async function HomePage() {
     ? (domainConfig.targetDistrict.charAt(0).toUpperCase() + domainConfig.targetDistrict.slice(1)) 
     : "İSTANBUL";
   
-  const siteId = await getSiteId(host);
   const vitrinProfiles = await getVitrinProfiles().catch(() => []);
 
   const schema = generateUltraGraphSchema({
@@ -82,10 +75,9 @@ export default async function HomePage() {
   
   const isCloaker = domainConfig?.role === 'CLOAKER';
 
-  const cityName = "İstanbul"; // Global context
-
   return (
     <main className="min-h-screen bg-black text-white antialiased selection:bg-primary/30 selection:text-white" style={{ backgroundColor: theme.bgColor }}>
+      <link rel="amphtml" href={`https://${host}/amp`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
       
@@ -104,7 +96,7 @@ export default async function HomePage() {
             <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-white/10 px-8 py-3 rounded-full mb-12 animate-fade-in shadow-2xl" style={{ borderColor: `${theme.primaryColor}33` }}>
               <span className="w-2.5 h-2.5 rounded-full animate-glow-pulse" style={{ backgroundColor: theme.primaryColor, boxShadow: `0 0 15px ${theme.primaryColor}` }} />
               <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
-                 {district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()} // GERÇEK VİTRİN
+                 {district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()} {/* GERÇEK VİTRİN */}
               </span>
             </div>
 

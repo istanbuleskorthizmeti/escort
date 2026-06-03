@@ -1,16 +1,13 @@
-import Link from "next/link";
 import { Suspense } from "react";
 import { Metadata } from "next";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
-import { Landmark as LandmarkIcon, Building, TreePine, MapPin, Phone, ShieldCheck } from 'lucide-react';
 
 // Relative Imports (Linux/Production Safe - 3 Levels Deep)
 import { sanitizeDisplayName } from "../../../lib/utils";
-import { cities, getCitiesForHost } from "../../../lib/locations";
-import { ThemeEngine } from "../../../lib/theme-engine";
+import { getCitiesForHost, City, District, Landmark } from "../../../lib/locations";
 import { siteConfig } from "../../../config/site";
-import { getHybridProfiles, getVitrinProfiles, getPageContent } from "../../../lib/data-cache";
+import { getVitrinProfiles, getPageContent } from "../../../lib/data-cache";
 import { getSiteId } from "../../../lib/site-context";
 import { generateLocationMetadata } from "../../../lib/seo-metadata";
 import { generateUltraGraphSchema } from "../../../lib/seo-schema";
@@ -26,9 +23,8 @@ import { VIPEventHub } from "../../../components/SEO/VIPEventHub";
 import { UltraFooter } from "../../../components/SEO/UltraFooter";
 import { IstanbulConquestMatrix } from "../../../components/SEO/IstanbulConquestMatrix";
 import { LivePhotoMarquee } from "../../../components/UI/LivePhotoMarquee";
-import { SecureHTML } from "../../../components/SecureHTML";
 
-export const revalidate = 3600;
+export const dynamic = "force-dynamic";
 export const dynamicParams = true;
 
 interface Params {
@@ -59,13 +55,13 @@ export async function generateMetadata({
     getPageContent(district.includes(city) ? district : `${city}-${district}`, siteId)
   ]);
 
-  let cityObj = (allowedCities as any)[city.toLowerCase()];
+  let cityObj: City | undefined = (allowedCities as Record<string, City>)[city.toLowerCase()];
   if (!cityObj && dbCity) {
-    cityObj = { name: sanitizeDisplayName(dbCity.title || city), slug: city, districts: [], landmarks: [] } as any;
+    cityObj = { name: sanitizeDisplayName(dbCity.title || city), slug: city, districts: [], landmarks: [] };
   }
 
-  const distObj = cityObj?.districts?.find((d: any) => d.slug === district) || (dbDist ? { name: sanitizeDisplayName(dbDist.title || district), slug: district } as any : null);
-  const landmarkObj = cityObj?.landmarks?.find((l: any) => l.slug === district);
+  const distObj: District | null = cityObj?.districts?.find((d) => d.slug === district) || (dbDist ? { name: sanitizeDisplayName(dbDist.title || district), slug: district, neighborhoods: [] } : null);
+  const landmarkObj: Landmark | undefined = cityObj?.landmarks?.find((l) => l.slug === district);
 
   if (!cityObj || (!distObj && !landmarkObj)) {
     return {
@@ -108,21 +104,21 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
   const fallbackCityName = sanitizeDisplayName(city);
   const fallbackDistName = sanitizeDisplayName(district);
 
-  let cityObj = (allowedCities as any)[city];
+  let cityObj: City | undefined = (allowedCities as Record<string, City>)[city];
   if (!cityObj && dbCity) {
-    cityObj = { name: dbCity.title || fallbackCityName, slug: city, districts: [], landmarks: [] } as any;
+    cityObj = { name: dbCity.title || fallbackCityName, slug: city, districts: [], landmarks: [] };
   } else if (!cityObj) {
-    cityObj = { name: fallbackCityName, slug: city, districts: [], landmarks: [] } as any;
+    cityObj = { name: fallbackCityName, slug: city, districts: [], landmarks: [] };
   }
 
-  let distObj = cityObj?.districts?.find((d: any) => d.slug === district);
-  const landmarkObj = cityObj?.landmarks?.find((l: any) => l.slug === district);
+  let distObj: District | undefined = cityObj?.districts?.find((d) => d.slug === district);
+  const landmarkObj: Landmark | undefined = cityObj?.landmarks?.find((l) => l.slug === district);
 
   if (!distObj && !landmarkObj) {
      if (!dbDistRaw) {
        return notFound();
      }
-     distObj = { name: sanitizeDisplayName(dbDistRaw.title || fallbackDistName), slug: district, neighborhoods: [] } as any;
+     distObj = { name: sanitizeDisplayName(dbDistRaw.title || fallbackDistName), slug: district, neighborhoods: [] };
   }
 
   const isLandmark = !!landmarkObj;
@@ -151,6 +147,7 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
 
   return (
     <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30 selection:text-white">
+      <link rel="amphtml" href={`https://${host}/amp?loc=${district}`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ultraSchema) }} />
       <Navbar />
       

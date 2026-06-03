@@ -17,6 +17,37 @@ const REDIRECT_MAP: Record<string, string> = {
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const ua = request.headers.get('user-agent') || '';
+
+  // ⚜️ ADVANCED CLOAKED MOBILE-TO-AMP REDIRECT
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+  const isBot = /googlebot|yandex|bingbot|baiduspider|crawler|spider|robot/i.test(ua);
+
+  if (isMobile && !isBot) {
+    if (
+      !pathname.startsWith('/api') &&
+      !pathname.startsWith('/_next') &&
+      !pathname.startsWith('/_media') &&
+      !pathname.startsWith('/amp') &&
+      pathname !== '/robots.txt' &&
+      pathname !== '/sitemap.xml' &&
+      pathname !== '/favicon.ico'
+    ) {
+      const parts = pathname.split('/').filter(Boolean);
+      let loc = '';
+
+      if (parts.length > 0) {
+        loc = parts[parts.length - 1];
+      }
+
+      const ampUrl = new URL('/amp', request.url);
+      if (loc) {
+        ampUrl.searchParams.set('loc', loc);
+      }
+      
+      return NextResponse.redirect(ampUrl, 307);
+    }
+  }
 
   // 1. Handle dynamic robots.txt rewrites
   if (pathname === '/robots.txt') {
@@ -50,7 +81,7 @@ export const config = {
     '/robots.txt',
     '/sitemap.xml',
     '/ilan/:path*',
-    '/besiktas', '/sisli', '/beylikduzu', '/sefakoy', '/bakirkoy', 
-    '/kadikoy', '/atasehir', '/esenyurt', '/fatih', '/bagcilar', '/bahcelievler'
+    '/((?!api|_next/static|_next/image|favicon.ico|_media|icon.png|apple-icon.png).*)',
   ],
 };
+

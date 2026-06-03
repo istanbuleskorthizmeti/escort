@@ -587,9 +587,13 @@ bot?.on('text', async (ctx) => {
 /**
  * 🛰️ COMMANDS
  */
-bot?.start((ctx) => ctx.replyWithHTML(THEME.HEADER + "\nElite Standart Aktif. /yardim yazarak başlayın."));
+bot?.start((ctx) => {
+  if (!checkAuth(ctx)) return;
+  ctx.replyWithHTML(THEME.HEADER + "\nElite Standart Aktif. /yardim yazarak başlayın.");
+});
 
 bot?.command(['yardim', 'help'], async (ctx) => {
+  if (!checkAuth(ctx)) return;
   const helpMsg = `
 🛡️ <b>DRKCNAY KOMUTA MERKEZİ</b>
 ${THEME.DIVIDER}
@@ -611,6 +615,7 @@ ${THEME.FOOTER}
 });
 
 bot?.command(['durum', 'status'], async (ctx) => {
+  if (!checkAuth(ctx)) return;
   try {
     const leadCount = await prisma.lead.count();
     await ctx.replyWithHTML(`📊 <b>SİSTEM STATS</b>\n${THEME.DIVIDER}\nTalepler: ${leadCount}\nProxy: Aktif`);
@@ -618,6 +623,7 @@ bot?.command(['durum', 'status'], async (ctx) => {
 });
 
 bot?.command(['liste', 'leads'], async (ctx) => {
+  if (!checkAuth(ctx)) return;
   const leads = await prisma.lead.findMany({ where: { status: 'PENDING' }, take: 5 });
   if (leads.length === 0) return ctx.reply("Sıfır talep.");
   let msg = `📂 <b>BEKLEYENLER</b>\n`;
@@ -626,11 +632,17 @@ bot?.command(['liste', 'leads'], async (ctx) => {
 });
 
 bot?.command('seo', async (ctx) => {
+  if (!checkAuth(ctx)) return;
+  
   const args = ctx.message.text.split(' ').slice(1);
-  const keyword = args.join(' ');
+  const keyword = args.join(' ').trim();
 
   if (keyword) {
     // 🚀 DRKCNAY BLITZKRIEG ATTACK MODE
+    if (!/^[a-zA-Z0-9ğüşıöçĞÜŞİÖÇ\s-]+$/.test(keyword)) {
+      return ctx.reply("❌ Geçersiz karakterler tespit edildi. Sadece harf, rakam, boşluk ve tire kullanabilirsiniz.");
+    }
+
     await ctx.replyWithHTML(`⚡ <b>DRKCNAY BLITZKRIEG: TAARRUZ BAŞLATILDI!</b>\n${THEME.DIVIDER}\n🎯 Hedef: <code>${keyword}</code>\n📡 Durum: Hydra ordusu harekete geçiyor...`);
     
     try {
@@ -640,86 +652,62 @@ bot?.command('seo', async (ctx) => {
     } catch (err: any) {
       await ctx.replyWithHTML(`${THEME.ERROR} Taarruz başarısız: <code>${err.message}</code>`);
     }
-    return;
-  }
-});
+  } else {
+    // 📊 STANDARD REPORT MODE
+    await ctx.replyWithHTML(`⏳ <b>DRKCNAY SEO RAPORU</b> oluşturuluyor...`);
+    try {
+      const { PerformanceReportEngine } = await import("../seo/performance-report");
+      const engine = PerformanceReportEngine.getInstance();
+      const report = await engine.buildFullReport();
 
-bot?.command('shadow', async (ctx) => {
-  await ctx.replyWithHTML(`🧛‍♂️ <b>SHADOW WARRIOR İSTİHBARAT</b>\n${THEME.DIVIDER}\n📡 Durum: Aktif ve Ava Çıkıldı\n🎯 Hedef: SERP Dominasyonu\n📊 <b>Son 24 Saat:</b>\n• Toplam Tıklama: <code>128</code>\n• WhatsApp Sinyali: <code>42</code>\n• Google Radarı: %0 Tespit`);
-});
+      const { dbStats, gscStats, latestDeltas } = report;
 
-bot?.command('parasite', async (ctx) => {
-  await ctx.replyWithHTML(`🏴‍☠️ <b>PARASITE HUB RAPORU</b>\n${THEME.DIVIDER}\n🔗 <b>GitHub:</b> <code>12</code> Repo\n📝 <b>Telegraph:</b> <code>45</code> Makale\n💎 <b>Backlink Gücü:</b> DR 92+\n🚀 <i>Tüm linkler Bitly ile mühürlendi.</i>`);
-});
+      // Progress bar helper
+      const bar = (v: number, t: number, len = 10) => {
+        const pct = t > 0 ? Math.min(100, (v / t) * 100) : 0;
+        const filled = Math.round((len * pct) / 100);
+        return THEME.BAR_FULL.repeat(filled) + THEME.BAR_EMPTY.repeat(len - filled) + ` %${(Number(pct) || 0).toFixed(0)}`;
+      };
 
-bot?.command('attack', async (ctx) => {
-  const args = ctx.message.text.split(' ').slice(1);
-  const kw = args.join(' ') || 'istanbul escort';
-  await ctx.replyWithHTML(`⚔️ <b>ANINDA TAARRUZ!</b>\n${THEME.DIVIDER}\n🎯 Hedef: <code>${kw}</code>\n🚀 Shadow Warrior ordusu bu kelimeye odaklanıyor...`);
-  // Burada saldırı sunucusuna sinyal gönderen bir logic tetiklenebilir
-});
+      let gscBlock = '';
+      if (gscStats.isAvailable && gscStats.domains.length > 0) {
+          gscBlock += `\n🔍 <b>GSC TOPLAM (Son 7 Gün):</b>\n• Tıklama: <code>${gscStats.aggregateClicks.toLocaleString('tr-TR')}</code>\n• Gösterim: <code>${gscStats.aggregateImpressions.toLocaleString('tr-TR')}</code>\n\n`;
 
-bot?.command('seo', async (ctx) => {
-  // 📊 STANDARD REPORT MODE
-  await ctx.replyWithHTML(`⏳ <b>DRKCNAY SEO RAPORU</b> oluşturuluyor...`);
-  try {
-    const { PerformanceReportEngine } = await import("../seo/performance-report");
-    const engine = PerformanceReportEngine.getInstance();
-    const report = await engine.buildFullReport();
+          gscStats.domains.forEach(domain => {
+              const domainName = domain.siteUrl.replace('https://', '').replace('/', '').replace('sc-domain:', '');
+              gscBlock += `🌐 <b>${domainName}</b>\n• Tık: ${domain.totalClicks} | Gör: ${domain.totalImpressions} | Ort: ${domain.avgPosition}\n${domain.topKeywords.map((k, i) => `${i + 1}. <code>${k.keyword}</code> -> #${k.position} (${k.clicks} tık)`).join('\n')}\n\n`;
+          });
+      } else {
+          gscBlock = `\n⚠️ <i>GSC verisi şu an erişilemiyor.</i>`;
+      }
 
-    const { dbStats, gscStats, latestDeltas } = report;
+      const deltaBlock = latestDeltas.length > 0
+        ? `\n📉 <b>Son Sıralama Hareketleri:</b>\n` +
+          latestDeltas.map((d: any) => {
+            const icon = (d.change ?? 0) > 0 ? '🚀' : (d.change ?? 0) < 0 ? '📉' : '➡️';
+            return `${icon} <code>${d.keyword}</code>: #${(Number(d.position) || 0).toFixed(1)} (${(d.change ?? 0) > 0 ? '+' : ''}${(Number(d.change) || 0).toFixed(1)})`;
+          }).join('\n')
+        : '';
 
-    // Progress bar helper
-    const bar = (v: number, t: number, len = 10) => {
-      const pct = t > 0 ? Math.min(100, (v / t) * 100) : 0;
-      const filled = Math.round((len * pct) / 100);
-      return THEME.BAR_FULL.repeat(filled) + THEME.BAR_EMPTY.repeat(len - filled) + ` %${(Number(pct) || 0).toFixed(0)}`;
-    };
+      const latestPages = await prisma.pageContent.findMany({
+        take: 5,
+        orderBy: { updatedAt: 'desc' },
+        select: { slug: true, title: true }
+      });
 
-    let gscBlock = '';
-    if (gscStats.isAvailable && gscStats.domains.length > 0) {
-        gscBlock += `\n🔍 <b>GSC TOPLAM (Son 7 Gün):</b>
-• Tıklama: <code>${gscStats.aggregateClicks.toLocaleString('tr-TR')}</code>
-• Gösterim: <code>${gscStats.aggregateImpressions.toLocaleString('tr-TR')}</code>\n\n`;
+      let recentPagesBlock = '\n🌐 <b>Son Oluşturulan Uydu Sayfalar (Subdomain/Hedefler):</b>\n';
+      if (latestPages.length > 0) {
+          latestPages.forEach((p: any) => {
+              recentPagesBlock += `• <code>${p.slug}</code> - ${p.title}\n`;
+          });
+      } else {
+          recentPagesBlock += `<i>Henüz sayfa oluşturulmadı.</i>\n`;
+      }
 
-        gscStats.domains.forEach(domain => {
-            const domainName = domain.siteUrl.replace('https://', '').replace('/', '').replace('sc-domain:', '');
-            gscBlock += `🌐 <b>${domainName}</b>
-• Tık: ${domain.totalClicks} | Gör: ${domain.totalImpressions} | Ort: ${domain.avgPosition}
-${domain.topKeywords.map((k, i) => `${i + 1}. <code>${k.keyword}</code> -> #${k.position} (${k.clicks} tık)`).join('\n')}
-\n`;
-        });
-    } else {
-        gscBlock = `\n⚠️ <i>GSC verisi şu an erişilemiyor.</i>`;
-    }
-
-    const deltaBlock = latestDeltas.length > 0
-      ? `\n📉 <b>Son Sıralama Hareketleri:</b>\n` +
-        latestDeltas.map((d: any) => {
-          const icon = (d.change ?? 0) > 0 ? '🚀' : (d.change ?? 0) < 0 ? '📉' : '➡️';
-          return `${icon} <code>${d.keyword}</code>: #${(Number(d.position) || 0).toFixed(1)} (${(d.change ?? 0) > 0 ? '+' : ''}${(Number(d.change) || 0).toFixed(1)})`;
-        }).join('\n')
-      : '';
-
-    const latestPages = await prisma.pageContent.findMany({
-      take: 5,
-      orderBy: { updatedAt: 'desc' },
-      select: { slug: true, title: true }
-    });
-
-    let recentPagesBlock = '\n🌐 <b>Son Oluşturulan Uydu Sayfalar (Subdomain/Hedefler):</b>\n';
-    if (latestPages.length > 0) {
-        latestPages.forEach((p: any) => {
-            recentPagesBlock += `• <code>${p.slug}</code> - ${p.title}\n`;
-        });
-    } else {
-        recentPagesBlock += `<i>Henüz sayfa oluşturulmadı.</i>\n`;
-    }
-
-    const totalTwitterBots = await prisma.botAccount.count();
-    const activeTwitterBots = await prisma.botAccount.count({ where: { status: 'ALIVE' } });
-    const suspendedTwitterBots = await prisma.botAccount.count({ where: { status: 'SUSPENDED' } });
-    const msg = `
+      const totalTwitterBots = await prisma.botAccount.count();
+      const activeTwitterBots = await prisma.botAccount.count({ where: { status: 'ALIVE' } });
+      const suspendedTwitterBots = await prisma.botAccount.count({ where: { status: 'SUSPENDED' } });
+      const msg = `
 📊 <b>DRKCNAY SEO RAPORU</b>
 ${THEME.DIVIDER}
 ⏰ <b>Zaman:</b> ${report.generatedAt.toLocaleString('tr-TR')}
@@ -737,35 +725,60 @@ ${THEME.DIVIDER}
 ${gscBlock}${deltaBlock}${recentPagesBlock}
 ${THEME.DIVIDER}
 ${THEME.FOOTER}
-    `.trim();
+      `.trim();
 
-    await ctx.replyWithHTML(msg);
+      await ctx.replyWithHTML(msg);
 
-    const { RankingTracker } = await import("../seo/ranking-tracker");
-    RankingTracker.getInstance().trackDeltas().catch(console.error);
-  } catch (err: any) {
-    await ctx.replyWithHTML(`${THEME.ERROR} SEO raporu alınamadı: <code>${err.message}</code>`);
+      const { RankingTracker } = await import("../seo/ranking-tracker");
+      RankingTracker.getInstance().trackDeltas().catch(console.error);
+    } catch (err: any) {
+      await ctx.replyWithHTML(`${THEME.ERROR} SEO raporu alınamadı: <code>${err.message}</code>`);
+    }
   }
 });
 
+bot?.command('shadow', async (ctx) => {
+  if (!checkAuth(ctx)) return;
+  await ctx.replyWithHTML(`🧛‍♂️ <b>SHADOW WARRIOR İSTİHBARAT</b>\n${THEME.DIVIDER}\n📡 Durum: Aktif ve Ava Çıkıldı\n🎯 Hedef: SERP Dominasyonu\n📊 <b>Son 24 Saat:</b>\n• Toplam Tıklama: <code>128</code>\n• WhatsApp Sinyali: <code>42</code>\n• Google Radarı: %0 Tespit`);
+});
+
+bot?.command('parasite', async (ctx) => {
+  if (!checkAuth(ctx)) return;
+  await ctx.replyWithHTML(`🏴‍☠️ <b>PARASITE HUB RAPORU</b>\n${THEME.DIVIDER}\n🔗 <b>GitHub:</b> <code>12</code> Repo\n📝 <b>Telegraph:</b> <code>45</code> Makale\n💎 <b>Backlink Gücü:</b> DR 92+\n🚀 <i>Tüm linkler Bitly ile mühürlendi.</i>`);
+});
+
+bot?.command('attack', async (ctx) => {
+  if (!checkAuth(ctx)) return;
+  const args = ctx.message.text.split(' ').slice(1);
+  const kw = args.join(' ') || 'istanbul escort';
+  
+  if (!/^[a-zA-Z0-9ğüşıöçĞÜŞİÖÇ\s-]+$/.test(kw)) {
+    return ctx.reply("❌ Geçersiz karakterler tespit edildi. Sadece harf, rakam, boşluk ve tire kullanabilirsiniz.");
+  }
+  
+  await ctx.replyWithHTML(`⚔️ <b>ANINDA TAARRUZ!</b>\n${THEME.DIVIDER}\n🎯 Hedef: <code>${kw}</code>\n🚀 Shadow Warrior ordusu bu kelimeye odaklanıyor...`);
+});
+
 bot?.command('health', async (ctx) => {
+  if (!checkAuth(ctx)) return;
   await TelegramService.sendSystemHealthReport();
 });
 
-// ==========================================
-// 🚀 GERİLLA SEO KOMUTLARI (TELEFONDAN KONTROL)
-// ==========================================
-
 bot?.command('pbn_saldir', async (ctx) => {
+  if (!checkAuth(ctx)) return;
   const args = ctx.message.text.split(' ').slice(1);
   const district = args.join(' ') || 'Şişli';
   const city = 'İstanbul';
+
+  if (!/^[a-zA-Z0-9ğüşıöçĞÜŞİÖÇ\s-]+$/.test(district)) {
+    return ctx.reply("❌ Geçersiz karakterler tespit edildi. Sadece harf, rakam, boşluk ve tire kullanabilirsiniz.");
+  }
 
   await ctx.replyWithHTML(`🚀 <b>PBN (WordPress) TAARRUZU BAŞLATILIYOR!</b>\n${THEME.DIVIDER}\n🎯 Hedef: <code>${city} ${district}</code>\n📡 Durum: XML-RPC üzerinden sızma deneniyor... (Arka planda çalışacak)`);
   
   try {
     const { exec } = require('child_process');
-    // Run the mass poster script in the background
+    // Run the mass poster script in the background with strict input validation
     exec(`npx tsx scripts/wordpress-mass-poster.ts "${city}" "${district}"`, (error: any, stdout: string, stderr: string) => {
       if (error) {
          ctx.replyWithHTML(`${THEME.ERROR} <b>PBN Hatası:</b> <code>${error.message}</code>`);
@@ -778,27 +791,8 @@ bot?.command('pbn_saldir', async (ctx) => {
   }
 });
 
-/*
-bot?.command('pinterest_pin', async (ctx) => {
-  const args = ctx.message.text.split(' ').slice(1);
-  const district = args.join(' ') || 'Şişli';
-  const city = 'İstanbul';
-
-  await ctx.replyWithHTML(`📌 <b>PINTEREST GÖRSEL SEO BAŞLATILIYOR!</b>\n${THEME.DIVIDER}\n🎯 Hedef: <code>${city} ${district}</code>\n📡 Durum: Görsel çekilip mühürleniyor...`);
-  
-  try {
-    const { pinterestAutopilot } = await import("../../scripts/pinterest-autopilot");
-    // Run dryRun=false for live pinning
-    pinterestAutopilot.runBatch(city, district, false)
-      .then(() => ctx.replyWithHTML(`${THEME.SUCCESS} <b>Pinterest Pin Gönderildi!</b>`))
-      .catch((e: any) => ctx.replyWithHTML(`${THEME.ERROR} Hata: <code>${e.message}</code>`));
-  } catch (err: any) {
-    await ctx.replyWithHTML(`${THEME.ERROR} Komut tetiklenemedi: <code>${err.message}</code>`);
-  }
-});
-*/
-
 bot?.command('reddit_saldir', async (ctx) => {
+  if (!checkAuth(ctx)) return;
   await ctx.replyWithHTML(`🛸 <b>REDDIT ENGAGEMENT POD AKTİFLEŞTİRİLİYOR!</b>\n${THEME.DIVIDER}\n📡 Durum: Subredditler taranıyor...`);
   
   try {
@@ -812,11 +806,8 @@ bot?.command('reddit_saldir', async (ctx) => {
   }
 });
 
-// ==========================================
-// 👑 MEGA-SIEGE COMMAND CENTER
-// ==========================================
-
 bot?.command('profil_yayinla', async (ctx) => {
+  if (!checkAuth(ctx)) return;
   await ctx.replyWithHTML(`📸 <b>VIP PROFİL YAYINLANIYOR!</b>\n${THEME.DIVIDER}\n📡 Durum: Profil seçiliyor ve ağlara dağıtılıyor...`);
   
   try {
@@ -862,10 +853,15 @@ Hemen iletişime geçin ve randevunuzu oluşturun:
 });
 
 bot?.command('hedef', async (ctx) => {
+  if (!checkAuth(ctx)) return;
   const keyword = ctx.message.text.replace('/hedef', '').trim();
   
   if (!keyword) {
     return ctx.replyWithHTML(`${THEME.WARNING} Lütfen bir kelime girin. Örnek: <code>/hedef istanbul escort</code>`);
+  }
+
+  if (!/^[a-zA-Z0-9ğüşıöçĞÜŞİÖÇ\s-]+$/.test(keyword)) {
+    return ctx.reply("❌ Geçersiz karakterler tespit edildi. Sadece harf, rakam, boşluk ve tire kullanabilirsiniz.");
   }
 
   await ctx.replyWithHTML(`🚀 <b>MEGA-SIEGE PROTOKOLÜ BAŞLATILDI!</b>\n${THEME.DIVIDER}\n🎯 <b>Hedef Kelime:</b> <code>${keyword}</code>\n📡 Durum: Tüm Worker'lara (Server 1 & 2) saldırı emri gönderiliyor...`);
@@ -885,8 +881,8 @@ bot?.command('hedef', async (ctx) => {
   }
 });
 
-// ==========================================
 bot?.command('gsc_bas', async (ctx) => {
+  if (!checkAuth(ctx)) return;
   await ctx.replyWithHTML(`🚀 <b>GSC & SITEMAP DOMİNASYONU BAŞLATILIYOR!</b>\n${THEME.DIVIDER}\n📡 Durum: Tüm matrix alan adları Google Search Console'a ekleniyor ve sitemap'ler gönderiliyor...`);
   
   try {
@@ -906,6 +902,7 @@ bot?.command('gsc_bas', async (ctx) => {
 });
 
 bot?.command('backlog', async (ctx) => {
+  if (!checkAuth(ctx)) return;
   const pendingBlogger = await prisma.pageContent.count({ where: { isBloggerPosted: false } });
   const pendingTumblr = await prisma.pageContent.count({ where: { isTumblrPosted: false } });
   const pendingWP = await prisma.pageContent.count({ where: { isWordPressPosted: false } });
@@ -927,6 +924,7 @@ ${THEME.DIVIDER}
 });
 
 bot?.command('audit', async (ctx) => {
+  if (!checkAuth(ctx)) return;
   try {
     const deltas = await prisma.rankingDelta.findMany({
       orderBy: { timestamp: 'desc' },

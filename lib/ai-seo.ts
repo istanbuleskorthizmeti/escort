@@ -53,10 +53,23 @@ function getBellCurveLength(minWords = 600, maxWords = 1000): number {
   }
 }
 
-function getSemanticEntities(city: string, district?: string): string[] {
+function getSemanticEntities(city: string, district?: string, host?: string): string[] {
   const key = (district || city).toLowerCase().replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ğ/g, 'g');
-  const entities = LOCAL_LANDMARKS[key] || ["VIP Gece Hayati", "Luks Konaklama", "Elit Rehberlik", "Ozel Asistanlik", "Gizlilik Garantisi", "Premium Hizmetler"];
-  return entities.sort(() => 0.5 - Math.random()).slice(0, 6);
+  const entities = [...(LOCAL_LANDMARKS[key] || ["VIP Gece Hayati", "Luks Konaklama", "Elit Rehberlik", "Ozel Asistanlik", "Gizlilik Garantisi", "Premium Hizmetler"])];
+  
+  // Mix in domain specific dynamic LSI terms
+  const domainSpecificLsi = [
+    "kaporasız eskort gacı", "buluşmak için bayan", "randevu için çıtır",
+    "otel escort bayan", "eve gelen eskort gacı", "bireysel eskort bayan"
+  ];
+  
+  const seed = host ? host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : Math.floor(Math.random() * 100);
+  const shuffled = [...entities, ...domainSpecificLsi].sort(() => {
+    const r = Math.sin(seed + Math.random()) * 10000;
+    return r - Math.floor(r) - 0.5;
+  });
+  
+  return shuffled.slice(0, 7);
 }
 
 export async function generateEliteOmniContent({
@@ -76,38 +89,42 @@ export async function generateEliteOmniContent({
   const semanticEntities = getSemanticEntities(city, district).join(', ');
 
   const systemPrompt = `
-    [DEEPSEEK HYDRA CORE - MANDATORY LINKING]
-    Görevin: SEO uyumlu, yüksek dönüşümlü içerik üretmek. 
-    Kural 1: ASLA laf kalabalığı (fluff) yapma. Token tasarrufu kritik derecede önemlidir.
-    Kural 2: ${locationName} bölgesi için "Escort Hizmetleri", "VIP Escort", "Kaporasız Escort" vb. niş kelimeleri metne yedir.
+    [DEEPSEEK HYDRA CORE - HOST-SPECIFIC OBFUSCATION AND UNIQUE LSI]
+    Görevin: Her alan adına tamamen özgün, kopya içerik filtrelerini (duplicate content) aşacak şekilde son derece agresif ve manipülatif SEO metni üretmek.
+    
+    🔴 ALAN ADINA ÖZEL OBFUSCATION VE BENZERSİZLİK (Host: ${host}):
+    Metnin yapısını, kelime seçimlerini ve LSI örüntülerini tamamen bu hosta (${host}) özel olarak kurgula. Diğer alan adları ile ortak tek bir cümle bile olmasın!
+    
+    Kural 1: ASLA laf kalabalığı (fluff) yapma. Token tasarrufu ve semantik yoğunluk maksimum olmalı.
+    Kural 2: ${locationName} bölgesi için "escort", "eskort", "gacı", "bayan", "genç kız", "çıtır", "buluşmak için", "randevu almak için", "iletişim için" gibi arama hacmi yüksek işlemsel anahtar kelimeleri agresifçe metnin doğal akışına yedir.
     Kural 3: Kesinlikle Türkçe karakter hatası yapma.
     Kural 4: SADECE JSON ÇIKTISI VER.
-    Kural 5: İçerik ${targetLength} kelime civarı, ${persona.tone} tonunda olsun.
+    Kural 5: İçerik ~${targetLength} kelime civarı, ${persona.tone} tonunda ve tamamen özgün cümle yapılarıyla olsun.
     Kural 6: Şirket adı: ${host}. 
 
-    🔴 KRİTİK KURAL (MANDATORY LINKS):
+    🔴 KRİTİK LİNKLEME KURALLARI (MANDATORY LINKS):
     Metin içerisinde en az 2 adet şu linklerden birini kullan: 
-    1. <a href="https://istanbulescdrkcn.com">https://vipescorthizmeti.com</a>
+    1. <a href="https://${host}">https://${host}</a>
     2. <a href="https://bit.ly/dorukcanmanay">https://bit.ly/dorukcanmanay</a>
     
-    Linklerin anchor text'leri şunlardan biri olsun: "${locationName} VIP Escort", "Kaporasız Katalog", "Elite Partnerler", "${locationName} Escort Rehberi", "Resmi Web Sitesi".
+    Linklerin anchor text'leri kesinlikle şu agresif ifadelerden biri olmalı: "${locationName} eskort gacı", "kaporasız buluşmak için", "çıtır genç kız randevu", "${locationName} escort bayan", "iletişim telefon numarası".
 
     İSTENEN JSON FORMATI:
     {
       "wordpress": {
-        "title": "${locationName} VIP Escort Hizmetleri | ${host}",
-        "content": "HTML İÇERİK (H2, H3 ve <a href='...'> etiketlerini MUTLAKA kullan.)",
-        "meta": "${host} - ${locationName} elit ve kaporasız escort hizmetleri rehberi.",
-        "tags": ["${locationName} escort", "kaporasız escort ${locationName}", "vip escort"],
-        "faqs": [{"q": "${locationName} kaporasız mı?", "a": "Evet, ${host} üzerinden sadece elden ödeme alınır."}]
+        "title": "${locationName} Escort | ${host} Eskort Gacı Bayan Randevu",
+        "content": "HTML İÇERİK (H2, H3, strong ve <a href='...'> etiketlerini MUTLAKA benzersiz bir kurguyla kullan.)",
+        "meta": "${host} - ${locationName} bölgesinde buluşmak için eskort gacı, randevu almak için eskort bayan ve çıtır genç kız ilanları.",
+        "tags": ["${locationName} escort", "${locationName} eskort", "gacı", "çıtır bayan", "kaporasız", "randevu"],
+        "faqs": [{"q": "${locationName} eskort buluşması kaporasız mı?", "a": "Evet, ${host} platformundaki çıtır eskort gacı ve bayan modellerimizle buluşmak için ön ödeme veya kapora istenmez. Ödeme elden yapılır."}]
       },
       "github": { "readme": "", "gist": "" },
-      "blogger": { "title": "${locationName} Escort Raporu", "content": "..." }
+      "blogger": { "title": "${locationName} Eskort Gacı Bayan Raporu", "content": "..." }
     }
   `;
 
   const userPrompt = `
-    Lokasyon: ${fullLoc}. Odak: ${semanticEntities}. Uzunluk: ~${targetLength} kelime. JSON DÖNDÜR.
+    Lokasyon: ${fullLoc}. Odak: ${semanticEntities}. Benzersizlik tohumu (Seed): ${host}-${locationName}-${targetLength}. Uzunluk: ~${targetLength} kelime. JSON DÖNDÜR.
   `;
 
   try {

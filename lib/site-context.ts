@@ -8,17 +8,22 @@ import prisma from './prisma';
 
 const siteCache = new Map<string, string>();
 
-export async function getSiteId(host: string): Promise<string> {
-  // Normalize host (remove port and www. if present)
+export function getCanonicalHost(host: string): string {
   let domain = host.split(':')[0].toLowerCase();
   if (domain.startsWith('www.')) {
     domain = domain.substring(4);
   }
+  // Remove trailing dots that could be injected
+  domain = domain.replace(/\.+$/, '');
   
-  // 🛡️ SECURITY & MIGRATION: Prevent localhost leaks and map the server IP/local addresses to the main site domain.
   if (domain === 'localhost' || domain === '127.0.0.1' || domain === '213.232.235.181' || domain === '187.77.111.203' || domain === '45.93.137.164') {
-    domain = 'vipescorthizmeti.com';
+    return 'istanbulescort.blog';
   }
+  return domain;
+}
+
+export async function getSiteId(host: string): Promise<string> {
+  const domain = getCanonicalHost(host);
 
   if (siteCache.has(domain)) {
     return siteCache.get(domain)!;

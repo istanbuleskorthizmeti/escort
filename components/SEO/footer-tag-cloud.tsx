@@ -36,21 +36,23 @@ export const FooterTagCloud: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-[#b8860b] text-sm font-black uppercase tracking-[0.25em] mb-2">
-            İSTANBUL VIP ESCORT REHBERİ & BÖLGELER
+            İSTANBUL ESCORT ESKORT GACI BAYAN REHBERİ & BÖLGELER
           </h2>
           <p className="text-zinc-500 text-xs max-w-2xl mx-auto leading-relaxed">
-            İstanbul genelinde en yüksek memnuniyet ve gizlilik prensipleri ile hizmet veren profesyonel partnerlerimizin 
-            bölgesel kataloglarına ve detaylı rehberlerine aşağıdaki özel bağlantılardan ulaşabilirsiniz.
+            İstanbul genelinde buluşmak için eskort gacı, randevu için genç kız ve iletişim için escort bayan arayanlara özel 
+            bölgesel kataloglarımıza ve detaylı rehberlerimize aşağıdaki bağlantılardan ulaşabilirsiniz.
           </p>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
           {DISTRICTS.map((district) => {
             const niches = [
-              'Vip Escort',
-              'Elit Partner',
-              'Rus Escort',
-              'Kaporasız Hizmet'
+              'Escort Bayan',
+              'Çıtır Eskort',
+              'Genç Kız Gacı',
+              'Görüşmek İçin Bayan',
+              'Buluşmak İçin Kadın',
+              'Randevu İçin Escort'
             ];
             // Deterministic selection based on length to maintain hydration stability
             const niche = niches[district.name.length % niches.length];
@@ -77,7 +79,7 @@ export const FooterTagCloud: React.FC = () => {
 
         <div className="mt-8 pt-8 border-t border-zinc-900/60 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-zinc-600 text-[11px]">
-            © 2026 Vip Escort Hizmeti. Tüm Hakları Saklıdır.
+            © 2026 Escort Eskort Gacı Bayan Hizmeti. Tüm Hakları Saklıdır.
           </span>
           <div className="flex gap-4">
             <a 
@@ -86,14 +88,14 @@ export const FooterTagCloud: React.FC = () => {
               rel="noopener noreferrer"
               className="text-zinc-500 hover:text-[#b8860b] text-[11px] font-medium transition-colors"
             >
-              Ana Sayfa VIP Rehberi
+              Buluşmak ve Randevu İçin Ana Sayfa
             </a>
             <a 
               href="/ULTIMATE_VIP_GUIDE_2026.pdf" 
               target="_blank"
               className="text-zinc-500 hover:text-[#b8860b] text-[11px] font-medium transition-colors"
             >
-              Vektör PDF İndir
+              Detaylı Rehber PDF İndir
             </a>
           </div>
         </div>

@@ -87,7 +87,8 @@ class GoogleAuthService {
             'https://www.googleapis.com/auth/webmasters',
             'https://www.googleapis.com/auth/indexing',
             'https://www.googleapis.com/auth/business.manage',
-            'https://www.googleapis.com/auth/analytics'
+            'https://www.googleapis.com/auth/analytics',
+            'https://www.googleapis.com/auth/spreadsheets'
           ],
           subject
         );
@@ -209,7 +210,8 @@ class GoogleAuthService {
           'https://www.googleapis.com/auth/webmasters',
           'https://www.googleapis.com/auth/indexing',
           'https://www.googleapis.com/auth/business.manage',
-          'https://www.googleapis.com/auth/analytics'
+          'https://www.googleapis.com/auth/analytics',
+          'https://www.googleapis.com/auth/spreadsheets'
         ]
       });
       const client = await auth.getClient();

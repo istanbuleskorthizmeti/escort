@@ -36,7 +36,7 @@ async function deployAndRunPdf() {
     console.log(verifyRes.stdout || '⚠️ File not found in public/ directory!');
 
     ssh.dispose();
-    console.log('🏁 [MISSION ACCOMPLISHED] PDF SEO Siege Payload is live at https://vipescorthizmeti.com/ULTIMATE_VIP_GUIDE_2026.pdf!');
+    console.log('🏁 [MISSION ACCOMPLISHED] PDF SEO Siege Payload is live at https://istanbulescdrkcn.com/ULTIMATE_VIP_GUIDE_2026.pdf!');
   } catch (err: any) {
     console.error('💥 Error during deploy and run:', err.message);
     ssh.dispose();

@@ -210,7 +210,7 @@ async function executeSiegeStep(page: any, districtSlug: string, round: number) 
     const tagPool = generateTagPool(districtName, neighbors);
     const embedCode = `
         <div style="width:100%; height:2000px; overflow:hidden;">
-            <iframe src="https://vipescorthizmeti.com/" width="100%" height="2000px" frameborder="0"></iframe>
+            <iframe src="https://istanbulescdrkcn.com/" width="100%" height="2000px" frameborder="0"></iframe>
         </div>
         <div style="margin-top:20px; font-size:12px; color:#666; font-family: sans-serif;">
             <h3>${districtName} Escort Rehberi Anahtar Kelimeler</h3>

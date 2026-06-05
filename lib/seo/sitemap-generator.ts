@@ -1,22 +1,39 @@
 import { NextResponse } from 'next/server';
 import { prisma } from '../prisma';
-import { getSiteId } from '../site-context';
+import { getSiteId, getCanonicalHost } from '../site-context';
 import { getDomainConfig } from '@/config/domains';
 
 export async function generateSitemapResponse(host: string, file: string): Promise<NextResponse> {
-  const siteId = await getSiteId(host);
-  console.log(`[SITEMAP-GENERATOR] Generating ${file} for ${host} (SiteId: ${siteId})`);
+  const canonicalHost = getCanonicalHost(host);
+  const siteId = await getSiteId(canonicalHost);
+  console.log(`[SITEMAP-GENERATOR] Generating ${file} for ${canonicalHost} (SiteId: ${siteId})`);
 
   try {
     // 🛡️ Fetch pages specifically for this SiteId
-    const pages = await prisma.pageContent.findMany({
+    let pages = await prisma.pageContent.findMany({
       where: { siteId, content: { not: null } },
       take: 5000, // Increased limit for massive Hydra indexing
       select: { slug: true, updatedAt: true }
     });
 
-    const config = getDomainConfig(host);
-    let filteredPages = pages;
+    const config = getDomainConfig(canonicalHost);
+
+    // Dynamic Fallback: If no database pages exist yet for this domain/siteId, dynamically generate default local indexing path stubs
+    if (!siteId || pages.length === 0) {
+      const targetCity = config?.targetCity?.toLowerCase() || 'istanbul';
+      const targetDistrict = config?.targetDistrict?.toLowerCase();
+      
+      const defaultDistricts = targetDistrict 
+        ? [targetDistrict] 
+        : ['besiktas', 'sisli', 'beylikduzu', 'kadikoy', 'bakirkoy', 'atasehir', 'esenyurt', 'fatih', 'bagcilar', 'bahcelievler'];
+      
+      pages = defaultDistricts.map(dist => ({
+        slug: `${targetCity}-${dist}`,
+        updatedAt: new Date()
+      }));
+    }
+
+    let filteredPages = pages.filter((p: any) => p.slug !== 'home' && p.slug !== 'index');
 
     if (config && config.role === 'SATELLITE') {
       const targetCity = config.targetCity?.toLowerCase();
@@ -62,17 +79,22 @@ export async function generateSitemapResponse(host: string, file: string): Promi
       const slugPrefix = finalSlug.startsWith('/') ? '' : '/';
       return `
   <url>
-    <loc>https://${host}${slugPrefix}${finalSlug}</loc>
+    <loc>https://${canonicalHost}${slugPrefix}${finalSlug}</loc>
     <lastmod>${p.updatedAt.toISOString()}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>`;
     }).join('');
 
-    // Add Core Routes
-    const coreUrls = ['', '/rehber', '/faq'].map(route => `
+    // Add Core Routes & dynamic SEO-boosted tags
+    const isCloaker = config?.role === 'CLOAKER';
+    const dynamicRoutes = isCloaker
+      ? ['', '/terms', '/privacy', '/contact']
+      : ['', '/rehber', '/faq', '/terms', '/privacy', '/contact'];
+
+    const coreUrls = dynamicRoutes.map(route => `
   <url>
-    <loc>https://${host}${route}</loc>
+    <loc>https://${canonicalHost}${route}</loc>
     <changefreq>always</changefreq>
     <priority>1.0</priority>
   </url>`).join('');

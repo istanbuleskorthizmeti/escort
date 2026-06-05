@@ -10,7 +10,7 @@ async function launchOffensive() {
     const args = process.argv.slice(2);
     const targetCity = args[0] || 'istanbul';
     const targetDistrictSlug = args[1] || 'sisli';
-    const host = args[2] || 'vipescorthizmeti.com';
+    const host = args[2] || 'istanbulescdrkcn.com';
     const blogId = args[3] || '6433291244460505199'; // Fallback to a known blog ID
 
     console.log(`🚀 [HYDRA-OFFENSIVE] Starting massive campaign...`);

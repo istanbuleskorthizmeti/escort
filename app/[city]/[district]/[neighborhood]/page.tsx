@@ -18,7 +18,7 @@ import { getHybridProfiles } from "@/lib/ad-service";
 import { HybridProfileGrid } from "@/components/UI/HybridProfileGrid";
 import { prisma } from "@/lib/prisma";
 import { GrowthWidgets } from "@/components/UI/GrowthWidgets";
-import { getSiteId } from "@/lib/site-context";
+import { getSiteId, getCanonicalHost } from "@/lib/site-context";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
@@ -34,7 +34,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const city = decodeURIComponent(rawCity).toLowerCase();
   const district = decodeURIComponent(rawDistrict);
   const neighborhood = decodeURIComponent(rawNeighborhood);
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
 
   // 🔱 HYDRA MISSION CHECK
   const allowedCities = getCitiesForHost(host);
@@ -105,7 +106,8 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
   const city = decodeURIComponent(rawCity).toLowerCase();
   const district = decodeURIComponent(rawDistrict);
   const neighborhood = decodeURIComponent(rawNeighborhood);
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
 
   // 🔱 HYDRA MISSION CHECK
   const allowedCities = getCitiesForHost(host);

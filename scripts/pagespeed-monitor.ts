@@ -9,7 +9,7 @@ import fs from 'fs';
 
 const API_KEY = process.env.PAGESPEED_API_KEY || '';
 const DOMAINS = [
-  'vipescorthizmeti.com',
+  'istanbulescdrkcn.com',
   'dorukcanay.digital',
   // ... Add other hydra nodes here
 ];

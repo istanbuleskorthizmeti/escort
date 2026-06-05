@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '@/lib/prisma';
-import { getSiteId } from '@/lib/site-context';
+import { getSiteId, getCanonicalHost } from '@/lib/site-context';
 import { generateSitemapResponse } from '@/lib/seo/sitemap-generator';
 
 /* 🏴‍☠️ HYDRA PARASITE HUBS (High-Authority Satellites) */
@@ -14,7 +14,8 @@ const PARASITE_HUBS = [
  */
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
-  const host = searchParams.get('host') || request.headers.get('host') || '';
+  const rawHost = searchParams.get('host') || request.headers.get('host') || 'istanbulescdrkcn.com';
+  const host = getCanonicalHost(rawHost);
   
   // 🔱 God Mode: Extract file with multi-layered routing fallbacks
   const invokePath = (request.headers.get('x-invoke-path') || '').toLowerCase();

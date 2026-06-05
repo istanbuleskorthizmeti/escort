@@ -30,11 +30,13 @@ import { VIPBridge } from "../components/UI/VIPBridge";
 import { getDomainConfig } from "../config/domains";
 import { generateLocationMetadata } from "../lib/seo-metadata";
 import { CloakerFrontend } from "../components/UI/CloakerFrontend";
+import { getCanonicalHost } from "../lib/site-context";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
   const domainConfig = getDomainConfig(host);
   
   const district = domainConfig?.targetDistrict;
@@ -51,7 +53,8 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function HomePage() {
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
   const domainConfig = getDomainConfig(host);
   
   const district = domainConfig?.targetDistrict 
@@ -85,6 +88,9 @@ export default async function HomePage() {
         <CloakerFrontend districtName={district} />
       ) : (
         <>
+          <div className="w-full relative z-0">
+             <LivePhotoMarquee />
+          </div>
           <div className="w-full relative z-0 mb-20">
              <DorukVitrin city={district} host={host} serverProfiles={vitrinProfiles} />
           </div>

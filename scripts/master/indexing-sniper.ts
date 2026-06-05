@@ -32,7 +32,7 @@ async function startSniper() {
     
     // Fetch all active domains from database or config
     // For now, using the main hub as a template
-    const domains = ['vipescorthizmeti.com', 'exxvideos.shop']; 
+    const domains = ['istanbulescdrkcn.com', 'exxvideos.shop']; 
     
     for (const domain of domains) {
         const sitemapUrl = `https://${domain}/sitemap.xml`;

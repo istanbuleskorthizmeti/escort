@@ -1,8 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getCanonicalHost } from '@/lib/site-context';
 
 export async function GET(request: NextRequest) {
   console.log("🤖 [ROBOTS ROUTE TRIGGERED] URL:", request.url, "Headers:", JSON.stringify(Object.fromEntries(request.headers.entries())));
-  const host = request.headers.get('host') || 'vipescorthizmeti.com';
+  const rawHost = request.headers.get('host') || 'istanbulescdrkcn.com';
+  const host = getCanonicalHost(rawHost);
   
   const robots = `
 User-agent: *

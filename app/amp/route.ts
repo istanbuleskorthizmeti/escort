@@ -4,12 +4,14 @@ import { siteConfig } from '@/config/site';
 import { ThemeEngine } from '@/lib/theme-engine';
 import { getDomainConfig } from '@/config/domains';
 import { generateUltraGraphSchema } from '@/lib/seo-schema';
+import { getCanonicalHost } from '@/lib/site-context';
 
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: Request) {
   const url = new URL(request.url);
-  const host = request.headers.get("host") || siteConfig.domain;
+  const rawHost = request.headers.get("host") || siteConfig.domain;
+  const host = getCanonicalHost(rawHost);
   const locParam = url.searchParams.get("loc");
   
   const domainConfig = getDomainConfig(host);
@@ -45,7 +47,7 @@ export async function GET(request: Request) {
 <html ⚡ lang="tr">
 <head>
   <meta charset="utf-8">
-  <title>🔞 ${locationName} ESCORT | ${brandName} VIP Eşlik</title>
+  <title>🔞 ${locationName} ESCORT ESKORT | Buluşmak İçin Çıtır Gacı Bayan Randevu</title>
   <link rel="canonical" href="${canonicalUrl}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -221,13 +223,13 @@ export async function GET(request: Request) {
 </head>
 <body>
   <header>
-    <div class="brand">${brandName.toUpperCase()} <span>ELITE</span></div>
+    <div class="brand">${brandName.toUpperCase()} <span>GACI</span></div>
   </header>
   
   <div class="hero">
-    <span class="badge">%100 Gerçek Vitrin</span>
-    <h1>${locationName.toUpperCase()} VIP ESCORT</h1>
-    <p>${slogan}. ${locationName} bölgesindeki en seçkin ve kaporasız VIP escort modelleriyle tanışın.</p>
+    <span class="badge">Buluşmak ve Randevu Almak İçin</span>
+    <h1>${locationName.toUpperCase()} ESCORT ESKORT GACI</h1>
+    <p>İletişim ve randevu için en seçkin ${locationName} escort, eskort, gacı, çıtır genç kız ve bayan modellerimizle hemen buluşun. Tüm görüşmeler yüz yüze kaporasızdır.</p>
   </div>
   
   <div class="container">
@@ -245,14 +247,14 @@ export async function GET(request: Request) {
               width="300" 
               height="400" 
               layout="responsive" 
-              alt="${title} - ${locationName} VIP Escort">
+              alt="${title} - ${locationName} buluşmak için eskort gacı bayan">
             </amp-img>
           </div>
           <div class="card-info">
             <div class="card-badge">${niche}</div>
             <div class="card-title">${title}</div>
             <div class="card-meta">${age} • ${locationName}</div>
-            <a href="https://wa.me/${siteConfig.contact.whatsappNumber}" class="btn" target="_blank" rel="noopener noreferrer">Randevu Al</a>
+            <a href="https://wa.me/${siteConfig.contact.whatsappNumber}" class="btn" target="_blank" rel="noopener noreferrer">Buluşmak İçin Randevu Al</a>
           </div>
         </div>
         `;
@@ -260,8 +262,19 @@ export async function GET(request: Request) {
     </div>
   </div>
   
+  <div class="container" style="margin-top: 40px; padding: 20px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px;">
+    <h2 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 15px; font-weight: 900; text-transform: uppercase; font-style: italic;">
+      ${locationName} Escort, Eskort, Gacı Buluşma ve İletişim Rehberi
+    </h2>
+    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+      ${locationName} genelinde çıtır eskort bayan arayanlar için en hiddetli gacı ve genç kız modelleri burada listelenmektedir. 
+      Randevu almak için, buluşmak için ve iletişim kurmak için telefon numaralarımız üzerinden 7/24 bizlere ulaşabilirsiniz. 
+      Tamamen kaporasız ve yüz yüze güvenilir görüşmeler ile partnerinizle hemen buluşun.
+    </p>
+  </div>
+
   <div class="footer-section">
-    <p>© ${new Date().getFullYear()} ${brandName} ELITE NETWORK. TÜM HAKLARI SAKLIDIR.</p>
+    <p>© ${new Date().getFullYear()} ${brandName} ESCORT ESKORT GACI NETWORK. TÜM HAKLARI SAKLIDIR.</p>
     <p>
       <a href="${canonicalUrl}">Masaüstü Sürüm</a> | 
       <a href="https://wa.me/${siteConfig.contact.whatsappNumber}">WhatsApp İletişim</a>

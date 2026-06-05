@@ -247,6 +247,19 @@ model BloggerSetting {
   site      Site     @relation(fields: [siteId], references: [id])
 }
 
+model GooglebotLog {
+  id        String   @id @default(cuid())
+  ip        String
+  userAgent String
+  pathname  String
+  method    String   @default("GET")
+  status    Int
+  timestamp DateTime @default(now())
+
+  @@index([pathname, timestamp])
+  @@index([timestamp])
+}
+
 enum LeadStatus {
   PENDING
   CLAIMED
@@ -257,3 +270,4 @@ enum LeadStatus {
   CANCELLED
   EXTERNAL_HUB
 }
+

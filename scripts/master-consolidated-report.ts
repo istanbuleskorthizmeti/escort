@@ -32,14 +32,14 @@ function generateProgressBar(percent: number, length: number = 10): string {
 // 📍 TARGET KEYWORDS & DOMAINS
 const TARGET_KEYWORDS = [
   "istanbul escort",
+  "kaporasız escort",
+  "rus escort",
   "bağcılar escort",
-  "şişli escort",
-  "beşiktaş escort",
-  "beylikdüzü escort"
+  "şişli escort"
 ];
 
 const TARGET_DOMAINS = DOMAIN_MATRIX
-  .filter(d => d.role === 'MONEY_SITE' || d.host.includes('bagcilar') || d.host.includes('vipescort'))
+  .filter(d => d.role === 'MONEY_SITE' || d.host.includes('istanbulescdrkcn.com'))
   .map(d => d.host);
 
 // 🔍 Real-time SERP Check

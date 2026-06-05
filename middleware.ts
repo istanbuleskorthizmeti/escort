@@ -18,10 +18,35 @@ const REDIRECT_MAP: Record<string, string> = {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const ua = request.headers.get('user-agent') || '';
+  const host = request.headers.get('host') || '';
+
+  // 🛡️ HYDRA EDGE SECURITY: Block Scanners & Exploits
+  const maliciousUAs = /sqlmap|nikto|nmap|netsparker|dirbuster|gobuster|w3af|openvas|nessus|censys|zgrab|acunetix/i;
+  if (maliciousUAs.test(ua)) {
+    return new NextResponse('Security Alert: Access Denied', { status: 403 });
+  }
+
+  const queryStr = request.nextUrl.search || '';
+  if (
+    queryStr.includes('union select') ||
+    queryStr.includes('group_concat') ||
+    queryStr.includes('<script>') ||
+    queryStr.includes('javascript:') ||
+    queryStr.includes('../') ||
+    queryStr.includes('etc/passwd')
+  ) {
+    return new NextResponse('Security Alert: Malicious Request Blocked', { status: 403 });
+  }
+
+  // 301 Permanent Redirect from legacy domain and other domains to the new target blog
+  if (host.includes('vipescorthizmeti.com') || host.includes('istanbulescdrkcn.com') || host.includes('escortvip.net')) {
+    const targetUrl = new URL(pathname + request.nextUrl.search, 'https://istanbulescort.blog');
+    return NextResponse.redirect(targetUrl, 301);
+  }
 
   // ⚜️ ADVANCED CLOAKED MOBILE-TO-AMP REDIRECT
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-  const isBot = /googlebot|yandex|bingbot|baiduspider|crawler|spider|robot/i.test(ua);
+  const isBot = /googlebot|yandex|bingbot|baiduspider|crawler|spider|robot|lighthouse/i.test(ua);
 
   if (isMobile && !isBot) {
     if (
@@ -31,12 +56,14 @@ export function middleware(request: NextRequest) {
       !pathname.startsWith('/amp') &&
       pathname !== '/robots.txt' &&
       pathname !== '/sitemap.xml' &&
-      pathname !== '/favicon.ico'
+      pathname !== '/favicon.ico' &&
+      pathname !== '/icon.png'
     ) {
       const parts = pathname.split('/').filter(Boolean);
       let loc = '';
 
       if (parts.length > 0) {
+        // Get the last slug part (e.g. 'besiktas-escort' or 'sisli')
         loc = parts[parts.length - 1];
       }
 
@@ -45,21 +72,12 @@ export function middleware(request: NextRequest) {
         ampUrl.searchParams.set('loc', loc);
       }
       
+      // Use 302/307 Temporary Redirect to prevent search engines from permanently caching mobile routes
       return NextResponse.redirect(ampUrl, 307);
     }
   }
 
-  // 1. Handle dynamic robots.txt rewrites
-  if (pathname === '/robots.txt') {
-    const host = request.headers.get('host') || 'vipescorthizmeti.com';
-    return NextResponse.rewrite(new URL(`/api/seo?host=${host}&file=robots.txt`, request.url));
-  }
 
-  // 2. Handle dynamic sitemaps (Only /sitemap.xml for performance)
-  if (pathname === '/sitemap.xml') {
-    const host = request.headers.get('host') || 'vipescorthizmeti.com';
-    return NextResponse.rewrite(new URL(`/api/seo?host=${host}&file=sitemap.xml`, request.url));
-  }
 
   // 3. Handle legacy /ilan/istanbul-escort/[district] pattern
   if (pathname.startsWith('/ilan/istanbul-escort/')) {

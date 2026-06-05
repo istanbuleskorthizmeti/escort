@@ -13,6 +13,7 @@ import { siteConfig } from "@/config/site";
 import { generateLocationMetadata } from "@/lib/seo-metadata";
 import { headers } from "next/headers";
 import { ThemeEngine } from "@/lib/theme-engine";
+import { getCanonicalHost } from "@/lib/site-context";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
@@ -24,7 +25,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const category = taxonomyCategories[slug as keyof typeof taxonomyCategories];
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
 
   if (!category) {
     const formattedSlug = slug.replace(/-/g, ' ').toUpperCase();
@@ -52,7 +54,8 @@ export default async function CategoryPage({
 }) {
   const { slug } = await params;
   const category = taxonomyCategories[slug as keyof typeof taxonomyCategories];
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
   const theme = ThemeEngine.getTheme(host);
 
   if (!category) notFound();

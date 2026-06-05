@@ -27,7 +27,7 @@ export function generateAdvancedSchema({ locationName, city, description, url, t
         "description": description.substring(0, 160),
         "url": url,
         "telephone": telephone || "+905320000000",
-        "image": `https://vipescorthizmeti.com/api/og?loc=${encodeURIComponent(locationName)}`,
+        "image": `${url}/api/og?loc=${encodeURIComponent(locationName)}`,
         "address": {
           "@type": "PostalAddress",
           "addressLocality": city,

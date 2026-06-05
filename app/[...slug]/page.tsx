@@ -4,7 +4,7 @@ import { permanentRedirect } from "next/navigation";
 
 // Relative Imports (Linux/Production Safe)
 import { prisma } from "../../lib/prisma";
-import { getSiteId } from "../../lib/site-context";
+import { getSiteId, getCanonicalHost } from "../../lib/site-context";
 import { siteConfig } from "../../config/site";
 import { getDomainConfig } from "../../config/domains";
 import { dedupeEscort } from "../../lib/utils";
@@ -22,7 +22,8 @@ export const dynamic = "force-dynamic";
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const { slug: slugArr } = await params;
   const slug = slugArr.join('/');
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
   const siteId = await getSiteId(host);
 
   const content = await prisma.pageContent.findFirst({
@@ -41,7 +42,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function CatchAllPage({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug: slugArr } = await params;
   const slug = slugArr.join('/');
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
   const userAgent = (await headers()).get("user-agent") || "";
   const isBot = /googlebot|bingbot|yandexbot|ahrefsbot|msnbot|linkedinbot|exabot|compspybot|yesupbot|paperlibot|tweetmemebot|excelbot|w3c_validator|netcraftsurveyagent|seomoz|alexa|twitterbot/i.test(userAgent);
   const siteId = await getSiteId(host);

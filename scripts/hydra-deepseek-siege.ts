@@ -39,7 +39,7 @@ async function startSiege() {
           // Eğer içerik zaten varsa ve 4000+ kelime ise atla (zaman kaybı olmasın)
           if (existing && existing.content && existing.content.length > 15000) continue;
 
-          const isMoneySite = site.domain.includes('vipescorthizmeti.com');
+          const isMoneySite = site.domain.includes('istanbulescdrkcn.com');
           
           // 🧛‍♂️ PBN LINKING LOGIC: Rastgele 3 kardeş domain seç
           const siblingSites = activeSites

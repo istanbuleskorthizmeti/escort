@@ -1,7 +1,7 @@
 # ⚡ SOVEREIGN ELITE: GOD MODE / CORE STEERING (v12.0 Supreme Edition) ⚡
 
 ## 🛰️ SUPREME AUTHORITY
-1. **Master Directive**: Daima [SOVEREIGN_GOD_MODE.md](file:///c:/Users/onurk/esc/SOVEREIGN_GOD_MODE.md) ve [implementation_plan.md](file:///C:/Users/onurk/.gemini/antigravity/brain/ef9af333-3047-4f99-9765-52d3aea77ecb/implementation_plan.md) master plan protokollerine uy!
+1. **Master Directive**: Daima [SOVEREIGN_GOD_MODE.md](file:///c:/Users/onurk/esc/SOVEREIGN_GOD_MODE.md) ve [implementation_plan.md](file:///C:/Users/onurk/.gemini/antigravity/brain/9b04a2b3-b9dc-4a31-93dd-1e8b795d4eb2/implementation_plan.md) master plan protokollerine uy!
 2. **SEO Sovereignty**: Mimari, PBN ve Link rotasyon kararlarında en agresif Black Hat SEO tekniklerini en yüksek kod kalitesiyle birleştir!
 3. **Workspace Integrity**: Tüm otonom scriptlerde `lib/prisma` PostgreSQL ShortLink veritabanı kayıt motorunu ve `lib/seo/bitly` premium rotasyon motorunu kullan!
 
@@ -14,7 +14,7 @@
 
 ## 🏗️ SYSTEM ARCHITECTURE & BLACK HAT SEO STANDARDS
 
-* **Framework & SSR**: Next.js 16 (Dinamik `params` Promise unwrap zorunrutur).
+* **Framework & SSR**: Next.js 16 (Dinamik `params` Promise unwrap zorunludur).
 * **Link Shortening Engine (Bitly v4.0)**:
   * Her kısaltma işleminde dynamic, escort anahtar kelimeli custom SEO slug'lar üret (Örn: `sisli-vip-escort-2026`).
   * Bitly API kotalarını korumak için sadece **Ana Sayfa (`/`)** isteklerini Bitly ile kısalt. İç sayfalar için `ShortLink` tablosundan `Cloak` URL veya is.gd fallbacks kullan.
@@ -24,6 +24,11 @@
   * Puppeteer Stealth ile gerçek ev interneti (Residential TR/Istanbul) proxy'lerini page.authenticate üzerinden kimliklendir.
   * İnsansı harflerle yazma gecikmeleri (150ms) ve rastgele sayfa scroll (Dwell time 1-2 dk) hareketleri simüle et.
   * Her başarılı CTR manipülasyonunda Telegram kanalına zengin HTML rapor gönder!
+
+## 🖼️ IMAGE & MEDIA SOVEREIGNTY (SENSITIVE ASSETS)
+
+* **Vitrine Isolation Rule**: Vitrindeki reklam profillerinde kullanılan görseller (`lib/vitrin-images.ts` ve `public/_media/vitrin/*`) **ASLA değiştirilmeyecek veya üzerine yazılmayacaktır.**
+* **General Media Replacements**: Vitrin reklam görselleri dışındaki tüm genel medya ögeleri (arka planlar, logolar, afişler, makale görselleri) performansı artırmak ve özgünlük sağlamak amacıyla sıkıştırılmış WebP formatında değiştirilecektir.
 
 ## 🚫 THE FORBIDDEN SCROLLS
 

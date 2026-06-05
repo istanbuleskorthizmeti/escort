@@ -20,7 +20,7 @@ async function generateUniqueContent(domain: string, district: string, city: str
     6. "DRKCNAY ELITE" markasını ana otorite olarak vurgula.
     7. KRİTİK: Başlıklarda kelime aralarına asla boş gereksiz karakterler veya tire (-) koyma. "Şişli Escort" şeklinde yaz.
     8. İçerik içinde en az 2 adet anchor text barındıran link kullan:
-       - <a href="https://vipescorthizmeti.com">${district || city} VIP Escort</a>
+       - <a href="https://istanbulescdrkcn.com">${district || city} VIP Escort</a>
        - <a href="https://bit.ly/dorukcanmanay">Kaporasız Escort Vitrini</a>`;
 
     const systemPrompt = `

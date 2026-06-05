@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 // Relative Imports (Linux/Production Safe)
 import { getCitiesForHost, City } from "../../lib/locations";
 import { siteConfig } from "../../config/site";
-import { getSiteId } from "../../lib/site-context";
+import { getSiteId, getCanonicalHost } from "../../lib/site-context";
 import { getVitrinProfiles, getPageContent } from "../../lib/data-cache";
 import { generateLocationMetadata } from "../../lib/seo-metadata";
 import { generateUltraGraphSchema } from "../../lib/seo-schema";
@@ -32,8 +32,8 @@ export async function generateMetadata({
   params: Promise<{ city: string }>;
 }): Promise<Metadata> {
   const { city } = await params;
-  let host = (await headers()).get("host") || siteConfig.domain;
-  host = host.replace(/^www\./, '');
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
 
   const allowedCities = getCitiesForHost(host);
   if (!allowedCities[city.toLowerCase()]) {
@@ -78,8 +78,8 @@ export default async function CityHubPage({
   params: Promise<{ city: string }>;
 }) {
   const { city } = await params;
-  let host = (await headers()).get("host") || siteConfig.domain;
-  host = host.replace(/^www\./, '');
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
 
   const allowedCities = getCitiesForHost(host);
   if (!allowedCities[city.toLowerCase()]) {

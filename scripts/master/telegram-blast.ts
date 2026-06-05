@@ -66,7 +66,7 @@ ${hashtags}
         console.log(`✅ [BLAST] Posted via stream: ${firstName}`);
       } else {
         // Fallback to URL if file is not locally stored
-        const photoUrl = `http://213.232.235.181/_media/vitrin/${imageName}`;
+        const photoUrl = `https://istanbulescort.blog/_media/vitrin/${imageName}`;
         await bot.telegram.sendPhoto(chatID, photoUrl, {
           caption,
           parse_mode: 'HTML'

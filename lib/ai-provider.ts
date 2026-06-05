@@ -197,18 +197,66 @@ class DeepSeekProvider {
 }
 
 /**
- * 🔱 DRKCNAY HYDRA: OMNIAI ORCHESTRATOR (v2.0)
- * Intelligent multi-provider routing with self-correction and contextual logic.
+ * ⚡ GROQ PROVIDER (ULTRA-FAST INFERENCE)
  */
+class GroqProvider {
+  private apiKey: string = '';
 
+  private getApiKey(): string {
+    if (!this.apiKey) {
+      this.apiKey = process.env.GROQ_API_KEY || '';
+      if (this.apiKey) console.log('📡 [GROQ] Lazy-loaded API key.');
+    }
+    return this.apiKey;
+  }
+
+  async generate(prompt: string, options: AiOptions = {}): Promise<string> {
+    const key = this.getApiKey();
+    if (!key) return geminiAI.generate(prompt, options);
+
+    try {
+      const model = options.model || process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+      console.log(`📡 [GROQ] Calling API: ${model}`);
+
+      const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
+        model: model,
+        messages: [
+          { role: 'system', content: options.systemPrompt || 'Sen bir SEO dehasısın.' },
+          { role: 'user', content: prompt }
+        ],
+        temperature: options.temperature || 0.7,
+        max_tokens: options.max_tokens || 4000
+      }, {
+        headers: { 'Authorization': `Bearer ${key}` },
+        timeout: 60000
+      });
+
+      return response.data.choices?.[0]?.message?.content || geminiAI.generate(prompt, options);
+    } catch (error: any) {
+      console.error('❌ [GROQ] Error:', error.message);
+      return geminiAI.generate(prompt, options);
+    }
+  }
+}
+
+/**
+ * 🔱 DRKCNAY HYDRA: OMNIAI ORCHESTRATOR (v3.0)
+ * Intelligent multi-provider routing with Groq/DeepSeek balancing, self-correction, and fallback safety.
+ */
 class OmniAIOrchestrator {
-  private providers: { gemini: GeminiUltraProvider; openai: OpenAIProvider; deepseek: DeepSeekProvider };
+  private providers: {
+    gemini: GeminiUltraProvider;
+    openai: OpenAIProvider;
+    deepseek: DeepSeekProvider;
+    groq: GroqProvider;
+  };
 
   constructor() {
     this.providers = {
       gemini: new GeminiUltraProvider(),
       openai: new OpenAIProvider(),
-      deepseek: new DeepSeekProvider()
+      deepseek: new DeepSeekProvider(),
+      groq: new GroqProvider()
     };
   }
 
@@ -217,42 +265,49 @@ class OmniAIOrchestrator {
                        (prompt.substring(0, 500).toLowerCase().includes('json'));
     const isLongForm = options.max_tokens && options.max_tokens > 4000;
 
-    let primaryProvider = options.provider === 'gemini' ? this.providers.gemini : 
-                         (options.provider === 'openai' ? this.providers.openai : 
-                         (options.provider === 'deepseek' ? this.providers.deepseek : null));
+    let primaryProvider: any = options.provider === 'gemini' ? this.providers.gemini : 
+                               (options.provider === 'openai' ? this.providers.openai : 
+                               (options.provider === 'deepseek' ? this.providers.deepseek : 
+                               (options.provider === 'groq' ? this.providers.groq : null)));
 
     if (!primaryProvider) {
-      // 🔱 DEEPSEEK DOMINANCE: Default to DeepSeek for everything unless it's ultra-long form
-      primaryProvider = this.providers.deepseek as any;
-      
+      // 🔱 ORCHESTRATION MATRIX:
+      // 1. Long Form content (> 4k tokens) -> Gemini
+      // 2. Structural/JSON tasks -> Groq (Ultra-fast parser & schema enforcement)
+      // 3. Complex reasoning/copywriting -> DeepSeek
       if (isLongForm) {
-          primaryProvider = this.providers.gemini as any;
+        primaryProvider = this.providers.gemini;
+      } else if (isJsonTask) {
+        primaryProvider = this.providers.groq;
+      } else {
+        primaryProvider = this.providers.deepseek;
       }
     }
 
-    console.log(`📡 [OMNIAI] Routing request: isJson=${isJsonTask}, isLong=${isLongForm}, provider=${options.provider || (isLongForm ? 'gemini' : 'deepseek')}`);
+    const providerName = options.provider || (isLongForm ? 'gemini' : isJsonTask ? 'groq' : 'deepseek');
+    console.log(`📡 [OMNIAI] Routing request: isJson=${isJsonTask}, isLong=${isLongForm}, provider=${providerName}`);
 
     try {
-      let result = await (primaryProvider as any).generate(prompt, options);
+      let result = await primaryProvider.generate(prompt, options);
 
-      // 🛠️ SELF-CORRECTION: Validate JSON if required (DeepSeek First)
+      // 🛠️ SELF-CORRECTION: Validate JSON if required (Groq/DeepSeek Balance)
       if (isJsonTask && !this.isValidJson(result)) {
-        console.warn('⚠️ [OMNIAI] Invalid JSON detected. Forcing DeepSeek to self-correct...');
+        console.warn('⚠️ [OMNIAI] Invalid JSON detected. Forcing Groq to self-correct...');
         try {
-            result = await this.providers.deepseek.generate(`HATA: Geçersiz JSON ürettin. Lütfen şu içeriği düzelt ve SADECE geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON REPAIR MODE: SADECE JSON DÖNDÜR.' });
+          result = await this.providers.groq.generate(`HATA: Geçersiz JSON ürettin. Lütfen şu içeriği düzelt ve SADECE geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON REPAIR MODE: SADECE JSON DÖNDÜR.' });
         } catch (e) {
-            console.warn('⚠️ [OMNIAI] DeepSeek self-correction failed. Using OpenAI/Gemini as last resort...');
-            try {
-                result = await this.providers.openai.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
-            } catch (e2) {
-                result = await this.providers.gemini.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
-            }
+          console.warn('⚠️ [OMNIAI] Groq self-correction failed. Trying DeepSeek...');
+          try {
+            result = await this.providers.deepseek.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
+          } catch (e2) {
+            result = await this.providers.gemini.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
+          }
         }
       }
 
       return result;
-    } catch (e) {
-      console.error('❌ [OMNIAI] Primary provider failed. Falling back to Gemini...');
+    } catch (e: any) {
+      console.error('❌ [OMNIAI] Primary provider failed. Falling back to Gemini...', e.message);
       return this.providers.gemini.generate(prompt, options);
     }
   }

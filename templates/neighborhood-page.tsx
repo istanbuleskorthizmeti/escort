@@ -112,20 +112,19 @@ export default async function NeighborhoodPage({
 
   // Dynamic Content with City context
   const intros = [
-    `${nName} bölgesinin karakteristik dokusu ile tanıştığınızda, ${cityName}'nın sofistike yüzünü deneyimlemeye hazır olun. ${dName} bünyesinde yer alan bu özel lokasyon, ${landmarks.slice(0, 3).join(", ")} gibi prestij odaklı noktaların çevrelediği, yüksek standartlarda bir yaşamın merkezidir.`,
-    `${dName} ilçesinin en asil mahallelerinden biri olan ${nName} hattında, kentsel zarafet ile profesyonel rehberlik disiplinini birleştiriyoruz. Bölge, ${landmarks[0]} ve çevresindeki lüks dinamiği ile elite bir yaşam vaat etmektedir.`,
-    `${cityName} genelindeki en seçkin duraklardan biri olan ${nName}, ${dName} protokollerimizin sarsılmaz gizlilik kalkanı altındadır. ${landmarks[1]} yakınlarındaki bu elite lokasyon, vizyoner beyefendiler için kurgulanmış özel bir evren sunar.`,
-    `Asalet ve şeffaflığın ${nName} semalarındaki buluşmasına hoş geldiniz. ${dName} bölgesinin bu stratejik noktasında, ödemelerin yüz yüze yapıldığı, her detayın obsesif bir titizlikle planlandığı bir concierge deneyimi sizi bekliyor.`,
-    `${nName} lokasyonu, ${cityName} şehrinin modern ve sürrealist yaşam tarzını temsil eden bir node noktasıdır. ${landmarks[2]} gibi simge alanların gölgesinde, Dr. Dorukcan Ay ve Eda Nur imzasını taşıyan elite standartlar ${nName} hattında hayata geçirilmektedir.`
+    `Buluşmak için ${nName} escort gacı buluşma rehberi! ${cityName} ${dName} ilçesinde randevu almak ve iletişim kurmak için en güzel çıtır eskort bayan ve çıtır genç kız profilleri burada.`,
+    `${nName} eskort gacı bayan seçenekleriyle heyecan dolu anlar yaşayın. İletişim kurmak için telefon numaraları, buluşmak için otele eve servis genç kız ve randevu için seksi bayan eskortlar.`,
+    `Görüşmek ve randevu almak için en seçkin ${nName} eskort gacı modelleri! ${cityName} genelinde çıtır genç kız escort bayan ve daha fazlası için 7/24 randevu oluşturabilirsiniz.`,
+    `İletişim için en popüler ${nName} escort bayan profilleri. Buluşmak için eskort, randevu için çıtır gacı, kadını ve genç kız seçenekleriyle güncel kataloğu hemen inceleyin.`
   ];
 
   const intro = getRand(intros);
 
   const breadcrumbs = [
-    { name: "Ana Sayfa", item: "https://vipescorthizmeti.com" },
-    { name: cityName, item: `https://vipescorthizmeti.com/${city}` },
-    { name: dName, item: `https://vipescorthizmeti.com/${city}/${district}` },
-    { name: nName, item: `https://vipescorthizmeti.com/${city}/${district}/${neighborhood}` },
+    { name: "Ana Sayfa", item: "/" },
+    { name: cityName, item: `/${city}` },
+    { name: dName, item: `/${city}/${district}` },
+    { name: nName, item: `/${city}/${district}/${neighborhood}` },
   ];
 
   const hasImage = ["besiktas", "sisli", "atasehir", "kadikoy"].includes(district);
@@ -137,7 +136,7 @@ export default async function NeighborhoodPage({
         name={`${nName} Elit Hub`}
         city={cityName}
         district={dName}
-        description={`${nName} bölgesinde profesyonel rehberlik hizmetleri ve Prestij standartlarında elit yaşam protokolleri.`}
+        description={`${nName} bölgesinde buluşmak için eskort gacı, randevu için genç kız ve iletişim için eskort bayan rehberlik hizmetleri.`}
         ratingValue={4.9}
         reviewCount={Math.floor(2800 + rand() * 4000)}
       />
@@ -153,10 +152,10 @@ export default async function NeighborhoodPage({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": `${nName} bölgesinde vip eşlik protokolü nasıl işler?`,
+                  "name": `${nName} bölgesinde eskort randevusu ve buluşma süreci nasıl işler?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `${nName} bölgesinde tüm süreçler uçtan uca şifreli ve gizlilik odaklı ilerler. Sektörün en prestijli escort rehberliği ile güvenli bir deneyim sunulur.`
+                    "text": `${nName} bölgesinde tüm süreçler gizlilik odaklı ilerler. Sektörün en güvenilir eskort gacı bayan rehberliği ile buluşmak için randevu alabilirsiniz.`
                   }
                 },
                 {
@@ -221,7 +220,7 @@ export default async function NeighborhoodPage({
             <h1 className="text-7xl md:text-[11rem] font-black mb-12 tracking-tighter leading-[0.8] italic uppercase text-shadow-heavy">
               {dName} <br />
               <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 via-rose-500 to-rose-300">
-                MUTLU SON: {nName}
+                ESCORT ESKORT BAYAN: {nName}
               </span>
             </h1>
 
@@ -262,10 +261,10 @@ export default async function NeighborhoodPage({
 
           <section className="space-y-16">
             <h2 className="text-4xl font-black text-rose-600 italic uppercase tracking-tighter drop-shadow-glow">
-              02. Hizmet Kalitesi ve Profesyonel Standartlar
+              02. İletişim ve Buluşmak İçin Escort Bayan Standartları
             </h2>
             <div className="prose prose-invert max-w-none text-zinc-400 text-lg md:text-2xl leading-relaxed lowercase first-letter:uppercase italic font-medium bg-zinc-950/40 p-12 md:p-24 border-l-8 border-rose-600 rounded-r-3xl">
-              <p>Profesyonellik, tesadüf değil bir mecburiyettir. {nName} hattındaki her etkileşim, bu kalite anlayışıyla mühürlenir. Bölgenin karakteristik atmosferi, transport protokollerimizdeki {transport.toLowerCase()} detaylarıyla birleşerek kusursuz bir mobilite ve elit bir deneyim sunar.</p>
+              <p>İletişim kurmak ve buluşmak için eskort gacı bayan kadromuz {nName} bölgesinde 7/24 hizmet vermektedir. Buluşmak için escort, randevu almak için eskort ve seksi genç kız bayan alternatiflerimiz sunulmaktadır.</p>
             </div>
           </section>
         </article>
@@ -280,10 +279,10 @@ export default async function NeighborhoodPage({
               <span className="text-rose-600 font-black text-xs tracking-[0.8em] uppercase italic">Elit NETWORK</span>
               <h2 className="text-4xl md:text-7xl font-black italic uppercase tracking-tighter leading-none">
                 {cityName} <br />
-                <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">ELITE TOPLULUĞA KATILIN</span>
+                <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">BULUŞMAK İÇİN WHATSAPP RANDEVU ALIN</span>
               </h2>
               <div className="inline-block bg-rose-600 text-white font-black py-6 px-16 rounded-full uppercase tracking-widest italic group-hover:bg-white group-hover:text-black transition-colors shadow-glow">
-                ERİŞİM PROTOKOLÜNÜ BAŞLAT →
+                WHATSAPP RANDEVU AL VE BULUŞ →
               </div>
             </div>
           </Link>
@@ -307,10 +306,10 @@ export default async function NeighborhoodPage({
       <footer className="py-40 border-t border-zinc-900 mt-20 bg-zinc-950/80 text-center px-10 backdrop-blur-3xl">
         <div className="max-w-7xl mx-auto space-y-20">
           <h2 className="text-3xl md:text-5xl font-black italic text-white tracking-[0.3em] uppercase">
-            {cityName.toUpperCase()} ELITE CONCIERGE NETWORK
+            {cityName.toUpperCase()} ESCORT BAYAN GACI NETWORK
           </h2>
           <div className="text-[9px] font-black tracking-[1em] text-zinc-800 uppercase italic opacity-20">
-            PREMIUM SERVICE PROTOCOLS // ESTABLISHED 2026
+            ESCORT ESKORT GACI BAYAN // 2026
           </div>
         </div>
       </footer>

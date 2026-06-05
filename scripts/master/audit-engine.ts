@@ -7,7 +7,7 @@ import { notifyAdmin } from './telegram-master';
  * Continuous monitoring for the 111-domain satellite network.
  */
 
-const DOMAINS = ['vipescorthizmeti.com', 'exxvideos.shop']; // Template, will expand to 111
+const DOMAINS = ['istanbulescdrkcn.com', 'exxvideos.shop']; // Template, will expand to 111
 
 async function checkDomain(domain: string) {
     try {

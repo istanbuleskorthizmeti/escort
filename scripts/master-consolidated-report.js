@@ -27,10 +27,10 @@ function generateProgressBar(percent, length = 10) {
 // 📍 TARGET KEYWORDS & DOMAINS
 const TARGET_KEYWORDS = [
   "istanbul escort",
+  "kaporasız escort",
+  "rus escort",
   "bağcılar escort",
-  "şişli escort",
-  "beşiktaş escort",
-  "beylikdüzü escort"
+  "şişli escort"
 ];
 
 // Helper to query Google Search via standard HTTPS
@@ -40,7 +40,7 @@ function checkSerpRankings() {
     let completed = 0;
 
     const userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
-    const targetDomains = ['vipescorthizmeti.com', 'bagcilar', 'vipescort'];
+    const targetDomains = ['istanbulescort.blog', 'dorukcanay.digital'];
 
     if (TARGET_KEYWORDS.length === 0) {
       return resolve(block + "⚪ <i>Hedef kelime yok.</i>\n");

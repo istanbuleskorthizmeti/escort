@@ -70,10 +70,10 @@ export default async function DistrictHubPage({
   };
 
   const intros = [
-    `${cityName} lokasyonunda en yüksek segment hizmet standartları. ${dName} atmosferine uygun, %100 doğrulanmış profiller ve sarsılmaz gizlilik garantili elite eşlik deneyimi. **Tüm ödemeler görüşme anında, yüz yüze yapılır.**`,
-    `${dName} bölgesinin sofistike dokusu, Dr. Dorukcan Ay tarafından geliştirilen Elit Protocol ile birleşerek benzersiz bir lüks deneyimi vaat ediyor. Burada gizlilik bir seçenek değil, Eda Nur direktifleriyle mühürlenmiş bir zorunluluktur.`,
-    `Elite yaşamın ${dName} hattındaki yansıması olan bu rehber, ${cityName} şehrinin en seçkin partnerlerini titizlikle listeler. Akademik otorite ve profesyonel rehberlik disiplininin kesişim noktasında, ödemelerin güvenle yüz yüze yapıldığı bir ekosistem sizi bekliyor.`,
-    `Asalet, gizlilik ve şeffaflık... ${dName} lokasyonu için kurguladığımız bu özel protokol, ${cityName} genelindeki en yüksek memnuniyet oranına sahip bölgelerden biridir. Her bir detay, sarsılmaz bir güven politikası ile yapılandırılmıştır.`
+    `Buluşmak için ${dName} escort arayanlara özel çıtır gacı eskort rehberi! ${cityName} genelinde randevu almak ve iletişim kurmak için en güzel seksi bayan ve çıtır genç kız profillerini listeliyoruz. **Ödemeler yüz yüze görüşme anında yapılır.**`,
+    `${dName} bölgesinde çıtır eskort gacı buluşma noktası. Görüşmek için ve randevu almak için 7/24 hizmet veren en hiddetli ve seksi bayan escort alternatifleriyle tanışın.`,
+    `${cityName} ${dName} eskort bayan kataloğu. İletişim için telefon numarası, buluşmak için otele eve gelen çıtır genç kız eskortlar ve randevu için olgun gacı seçenekleri.`,
+    `Buluşmak ve görüşmek için en güvenilir ${dName} eskort gacı bayan seçenekleri. Randevu almak için, iletişim ve daha fazlası için listemizde yer alan doğrulanmış modellerimizi hemen inceleyin.`
   ];
 
   const intro = intros[Math.floor(rand() * intros.length)];
@@ -85,9 +85,9 @@ export default async function DistrictHubPage({
   const waLink = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=${waMessage}`;
 
   const breadcrumbs = [
-    { name: "Ana Sayfa", item: "https://vipescorthizmeti.com" },
-    { name: cityName, item: `https://vipescorthizmeti.com/${city}` },
-    { name: dName, item: `https://vipescorthizmeti.com/${city}/${district}` },
+    { name: "Ana Sayfa", item: "/" },
+    { name: cityName, item: `/${city}` },
+    { name: dName, item: `/${city}/${district}` },
   ];
 
   return (
@@ -100,10 +100,10 @@ export default async function DistrictHubPage({
             {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": `${dName} VIP Concierge & Elite Hub`,
-              "image": "https://vipescorthizmeti.com/og-premium.png",
+              "name": `${dName} Escort Eskort Gacı Bayan Hub`,
+              "image": "https://istanbulescdrkcn.com/og-premium.png",
               "telephone": siteConfig.contact.whatsappNumber,
-              "url": `https://vipescorthizmeti.com/${city}/${district}`,
+              "url": `https://istanbulescdrkcn.com/${city}/${district}`,
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": dName,
@@ -132,10 +132,10 @@ export default async function DistrictHubPage({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": `${dName} bölgesinde VIP rezervasyon süreci nasıl ilerler?`,
+                  "name": `${dName} bölgesinde buluşmak için escort randevu süreci nasıl ilerler?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `EscortVIP platformu üzerinden ${dName} lokasyonundaki temsilcimiz ${adminProfile.name} ile iletişime geçerek tamamen gizli ve uçtan uca şifreli bir süreç başlatabilirsiniz.`
+                    "text": `EscortVIP platformu üzerinden ${dName} lokasyonundaki eskort gacı temsilcimiz ${adminProfile.name} ile iletişime geçerek buluşmak için güvenli bir süreç başlatabilirsiniz.`
                   }
                 }
               ]
@@ -165,7 +165,7 @@ export default async function DistrictHubPage({
           <h1 className="text-5xl md:text-8xl font-black mb-8 tracking-tighter leading-[0.9] italic uppercase">
             {dName} <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 via-rose-500 to-rose-300">
-              MUTLU SON PROTOKOLÜ
+              ESCORT ESKORT BAYAN PROTOKOLÜ
             </span>
           </h1>
 
@@ -186,8 +186,8 @@ export default async function DistrictHubPage({
         {siteConfig.features.enableProfileShowcase ? (
           <section className="mb-40">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl font-black tracking-tighter uppercase italic text-zinc-200">Onaylı VIP Seçkisi</h2>
-              <div className="text-sm font-bold text-rose-600 animate-pulse hidden md:block">â— CANLI KONTENJAN</div>
+              <h2 className="text-3xl font-black tracking-tighter uppercase italic text-zinc-200">Randevu İçin Escort Gacılar</h2>
+              <div className="text-sm font-bold text-rose-600 animate-pulse hidden md:block">● AKTİF BULUŞMA RANDEVUSU</div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
@@ -225,7 +225,7 @@ export default async function DistrictHubPage({
                     </div>
 
                     <a href={waLink} target="_blank" rel="noopener noreferrer" className="block w-full py-4 text-center bg-rose-600 hover:bg-rose-500 text-white font-black italic tracking-widest uppercase rounded-xl transition-colors shadow-[0_0_30px_rgba(225,29,72,0.3)]">
-                      {adminProfile.name} İle Rezerve Et
+                      Buluşmak İçin {adminProfile.name} İle Randevu Al
                     </a>
                   </div>
                 </div>
@@ -265,9 +265,9 @@ export default async function DistrictHubPage({
         <section className="mb-40 relative bg-zinc-950 border border-zinc-900 rounded-[3rem] p-12 overflow-hidden flex flex-col md:flex-row items-center justify-between">
            <div className="absolute top-0 right-0 w-full h-full bg-linear-to-r from-transparent to-rose-900/10 pointer-events-none"></div>
            <div className="max-w-2xl z-10">
-              <p className="text-zinc-400 mb-6">EscortVIP Elit ağına dahil olmak isteyen hanımefendiler için sıfır-iz (Tam Gizlilik) prensibiyle çalışan başvuru protokolü. Başvurular sunucularımızda KESİNLİKLE loglanmaz. IP adresiniz şifrelenir ve tüm dosyalar offshore ağlara aktarılır.</p>
+              <p className="text-zinc-400 mb-6">Escort, eskort, gacı veya bayan olarak kadromuza dahil olmak isteyen hanımefendiler için sıfır-iz (Tam Gizlilik) prensibiyle çalışan başvuru protokolü. Başvurular sunucularımızda KESİNLİKLE loglanmaz. IP adresiniz şifrelenir ve tüm dosyalar offshore ağlara aktarılır.</p>
               <Link href="/katilim-protokolu" className="inline-block bg-white text-black px-8 py-4 rounded-full font-black uppercase tracking-widest hover:bg-zinc-200 transition-colors">
-                 Güvenli Başvuru Başlat
+                 İletişim ve Başvuru Başlat
               </Link>
            </div>
         </section>
@@ -279,20 +279,20 @@ export default async function DistrictHubPage({
            <div className="space-y-4">
              <details className="group bg-zinc-950 border border-zinc-900 rounded-2xl [&_summary::-webkit-details-marker]:hidden">
                <summary className="cursor-pointer p-6 font-bold text-lg hover:text-rose-600 transition-colors outline-hidden">
-                 {dName} bölgesinde rezervasyon ve planlama süreci nasıl işler?
+                 {dName} bölgesinde buluşmak için escort randevusu nasıl planlanır?
                </summary>
                <div className="p-6 pt-0 text-zinc-400 leading-relaxed">
-                 EscortVIP ağı üzerinden yaptığınız tüm işlemler {adminProfile.name} yönetimi altında uçtan uca şifrelenir. {cityName} şehrinin dinamiklerine tam hakimiyetimiz sayesinde, {dName} içindeki en lüks otel, residence veya gizli mekan yönlendirmeleri tarafımızca sağlanır. Bize sadece zamanı iletin, geri kalan her bir lüks detayı ajansımız yapılandırsın.
+                 EscortVIP ağı üzerinden yaptığınız tüm işlemler {adminProfile.name} yönetimi altında tamamen gizlidir. {cityName} şehrinin dinamiklerine tam hakimiyetimiz sayesinde, {dName} içindeki en lüks otel, residence veya eve gelen çıtır eskort yönlendirmeleri tarafımızca sağlanır. İletişim kurup randevu almak için bize yazmanız yeterlidir.
                </div>
              </details>
 
              <details className="group bg-zinc-950 border border-zinc-900 rounded-2xl [&_summary::-webkit-details-marker]:hidden">
-               <summary className="cursor-pointer p-6 font-bold text-lg hover:text-rose-600 transition-colors outline-hidden">
-                 Görüşmelerde güvenlik ve gizlilik protokolleri vipescorthizmeti.com güvencesinde mi?
-               </summary>
-               <div className="p-6 pt-0 text-zinc-400 leading-relaxed">
-                 Kesinlikle. Elit Executive kod adıyla yürüttüğümüz bu sistemde; telefon numaralarınız maskelenir, veriler 24 saat içinde sistemimizden tamamen silinir. Hem profil onayları hem de beyefendilerin güvenliği açısından Türkiye&apos;nin tartışmasız en sıkı protokolünü uyguluyoruz. İş çıkışı veya özel kaçamaklarınız escortvip markasının çelik kasasındadır.
-               </div>
+                <summary className="cursor-pointer p-6 font-bold text-lg hover:text-rose-600 transition-colors outline-hidden">
+                  Görüşmelerde güvenlik ve gizlilik protokolleri eskort gacı bayan kadromuzda nasıl işler?
+                </summary>
+                <div className="p-6 pt-0 text-zinc-400 leading-relaxed">
+                  Kesinlikle. Elit eskort bayan kod adıyla yürüttüğümüz bu sistemde; telefon numaralarınız maskelenir, veriler 24 saat içinde sistemimizden tamamen silinir. Hem profil onayları hem de beyefendilerin güvenliği açısından Türkiye&apos;nin tartışmasız en sıkı escort randevu protokolünü uyguluyoruz. Buluşmak için escort gacı aramalarınız tamamen güvenlidir.
+                </div>
              </details>
            </div>
          </section>
@@ -304,9 +304,9 @@ export default async function DistrictHubPage({
       <PanicButton />
       <footer className="py-20 border-t border-zinc-900 bg-zinc-950/80 text-center px-10">
           <div className="text-[10px] font-black tracking-[1em] text-zinc-700 uppercase italic">
-            VIP PARTNER ARCHITECTURE // ESCORTVIP.NET
+            ESCORT ESKORT GACI BAYAN // ESCORTVIP.NET
           </div>
-         <p className="mt-4 text-xs text-zinc-800 uppercase tracking-widest">Arama ve eşleştirme süreciniz vipescorthizmeti.com&apos;in tamamen şifreli özel protokolü altındadır.</p>
+         <p className="mt-4 text-xs text-zinc-800 uppercase tracking-widest">Buluşmak ve randevu almak için aramalarınız tamamen şifreli özel protokolü altındadır.</p>
       </footer>
     </div>
   );

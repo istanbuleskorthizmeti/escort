@@ -8,7 +8,7 @@ import { sanitizeDisplayName } from "../../../lib/utils";
 import { getCitiesForHost, City, District, Landmark } from "../../../lib/locations";
 import { siteConfig } from "../../../config/site";
 import { getVitrinProfiles, getPageContent } from "../../../lib/data-cache";
-import { getSiteId } from "../../../lib/site-context";
+import { getSiteId, getCanonicalHost } from "../../../lib/site-context";
 import { generateLocationMetadata } from "../../../lib/seo-metadata";
 import { generateUltraGraphSchema } from "../../../lib/seo-schema";
 
@@ -38,8 +38,8 @@ export async function generateMetadata({
   params: Promise<Params>;
 }): Promise<Metadata> {
   const { city, district } = await params;
-  let host = (await headers()).get("host") || siteConfig.domain;
-  host = host.replace(/^www\./, '');
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
 
   const allowedCities = getCitiesForHost(host);
   if (!allowedCities[city.toLowerCase()]) {
@@ -87,8 +87,8 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
   const { city: rawCity, district: rawDistrict } = await params;
   const city = decodeURIComponent(rawCity).toLowerCase();
   const district = decodeURIComponent(rawDistrict);
-  let host = (await headers()).get("host") || siteConfig.domain;
-  host = host.replace(/^www\./, '');
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
 
   const allowedCities = getCitiesForHost(host);
   if (!allowedCities[city]) {

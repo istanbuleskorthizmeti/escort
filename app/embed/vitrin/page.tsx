@@ -14,12 +14,15 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+import { getCanonicalHost } from "@/lib/site-context";
+
 export default async function EmbedVitrinPage({
   searchParams,
 }: {
   searchParams: Promise<{ city?: string; limit?: string }>;
 }) {
-  const host = (await headers()).get("host") || siteConfig.domain;
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
   const domainConfig = getDomainConfig(host);
   const resolvedParams = await searchParams;
   

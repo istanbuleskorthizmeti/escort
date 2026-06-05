@@ -3,8 +3,8 @@ export const siteConfig = {
   version: "10.0-GOD-MODE",
   domain: "dorukcanay.digital",
   apiUrl: "https://dorukcanay.digital",
-  satelliteDomain: "https://istanbulescdrkcn.com",
-  cdnUrl: "https://istanbulescdrkcn.com", 
+  satelliteDomain: "https://istanbulescort.blog",
+  cdnUrl: "https://istanbulescort.blog", 
   description: "Türkiye'nin en kapsamlı DRKCNAY ELITE VIP escort ajansı rehberi. En iyi escort bayan profilleri.",
 
   // 🧛‍♂️ GOD MODE SETTINGS

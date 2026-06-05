@@ -1,7 +1,7 @@
 "use server";
 
 import { prisma } from "@/lib/prisma";
-import { getSiteId } from "@/lib/site-context";
+import { getSiteId, getCanonicalHost } from "@/lib/site-context";
 import { headers } from "next/headers";
 
 /**
@@ -9,7 +9,8 @@ import { headers } from "next/headers";
  */
 export async function queueTumblrPost(slug: string, title: string, content: string) {
   try {
-    const host = (await headers()).get("host") || "vipescorthizmeti.com";
+    const hostHeader = (await headers()).get("host") || "istanbulescdrkcn.com";
+    const host = getCanonicalHost(hostHeader);
     const siteId = await getSiteId(host);
 
     await prisma.pageContent.upsert({
@@ -53,7 +54,8 @@ export async function triggerSeoSync(params?: {
   tumblrBlog?: string;
 }) {
   try {
-    const host = (await headers()).get("host") || "vipescorthizmeti.com";
+    const hostHeader = (await headers()).get("host") || "istanbulescdrkcn.com";
+    const host = getCanonicalHost(hostHeader);
     console.log(`💣 [SEO-SYNC] Triggering sync for ${host}...`, params);
     return { 
       success: true, 

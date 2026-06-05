@@ -25,11 +25,11 @@ export function MathematicalSEO({ district = "İstanbul", role = "MONEY_SITE" }:
       </div>
       <div>
         {/* Hidden Keyword Bridge: AI Search Engine Optimization (GEO) */}
-        {[...Array(10)].map((_, i) => (
+        {[...Array(450)].map((_, i) => (
            <span key={i}>
              {isCloaker 
                ? `${district} ifşa video ${i}, sansürsüz skandal arşivi ${district}, ${district} telegram sızıntısı, gerçek ifşa ${district}, gizli ${district} kasetleri.`
-               : `${district} escort bayan ${i}, vip escort ajansı ${district}, ${district} escort ilanları, gerçek escort ${district}, elit ${district} escortlar.`
+               : `${district} escort bayan ${i}, vip escort ajansı ${district}, ${district} escort ilanları, gerçek escort ${district}, elit ${district} escortlar, ${district} eskort gacı buluşma ${i}, kaporasız ${district} eskort ${i}, eve gelen çıtır bayan ${i}, otele gelen genç kız ${i}, ${district} eskort bayan telefon numarası.`
              }
            </span>
         ))}

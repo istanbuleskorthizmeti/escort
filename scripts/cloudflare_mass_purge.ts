@@ -27,7 +27,7 @@ function loadEnv() {
 }
 
 const env = loadEnv();
-const CF_TOKEN = env['CF_API_TOKEN'] || 'cfat_JwtaN2nqkC7QxGItIaAbu2nA6TyojAqHS7DWfvpse525d170';
+const CF_TOKEN = env['CF_API_TOKEN'] || 'cfat_XZOqfgE0ToGskESZ6SMEgboAVeGeZz1rcXBdIIona3784f9f';
 const TG_TOKEN = env['TELEGRAM_BOT_TOKEN'] || '8656705130:AAFJr9QsnYASOQgIoAEEw_V8EzobjXH7nBc';
 const TG_CHAT_ID = env['TELEGRAM_CHAT_ID'] || '-1003961137983';
 

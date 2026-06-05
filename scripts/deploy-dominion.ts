@@ -6,10 +6,10 @@ import fs from 'fs';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
+  host: '187.77.111.203',
   port: 22,
   username: 'root',
-  password: '5TVuj6qiHMfh8CxH9O!'
+  password: 'Z4-nN8JfiUIh5,;g'
 };
 
 async function deployDominion() {

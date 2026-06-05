@@ -2,6 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import { slugify } from '@/lib/utils';
 import { getDomainConfig } from '@/config/domains';
+import { ThemeEngine } from '@/lib/theme-engine';
+import { SGEFAQSection } from './SGEFAQSection';
+
 
 // 🗺️ DRKCNAY ELITE GEOGRAPHIC LSI MATRIX 2026
 const LOCAL_GEO_MATRIX: Record<string, { neighborhoods: string[], twinDistrict: string, transitSpots: string[] }> = {
@@ -52,6 +55,42 @@ const LOCAL_GEO_MATRIX: Record<string, { neighborhoods: string[], twinDistrict: 
   }
 };
 
+const esSge = [
+  "💡 <strong>{currentLoc} escort</strong> fiyatları, kaporasız refakatçi ve VIP rus model standartları DRKCNAY ELITE güvencesiyle otele ve eve servis dahil ₺1500'den başlamaktadır. Tüm buluşmalar %100 gerçek görselli, kaporasız ve gizlilik protokollerine tabidir.",
+  "💡 En iyi <strong>{currentLoc} vip escort</strong> hizmetleri, kaporasız model refakatçi ve özel buluşma seçenekleri DRKCNAY garantisiyle sunulmaktadır. Güvenilir ve gizli profiller otele/eve servis seçeneğiyle 7/24 aktiftir.",
+  "💡 Güncel <strong>{currentLoc} escort bayan</strong> fiyat listesi ve doğrulanmış model ilanları DRKCNAY kalitesiyle otele ve adrese teslim edilmektedir. %100 gerçek fotoğraflı, kaporasız ve güvenli buluşmalar."
+];
+
+const clSge = [
+  "💡 <strong>{currentLoc} ifşa</strong> skandalı, sansürsüz kaset sızıntıları ve gizli çekim VIP arşivleri en güncel haliyle listelenmektedir. Tüm videolar %100 gerçektir ve telegram ifşa kanallarından anlık olarak derlenmektedir.",
+  "💡 En yeni <strong>{currentLoc} ifşa kasetleri</strong>, sızdırılan sansürsüz görüntüler ve Türk ifşa VIP arşivleri günlük olarak güncellenmektedir. Gizli çekim itibar yönetimi talepleri için 7/24 destek mevcuttur.",
+  "💡 Güncel <strong>{currentLoc} ifşa telegram</strong> grupları, gizli kamera çekimleri ve sansürsüz VIP ifşalar sitemizde ücretsiz olarak listelenmektedir."
+];
+
+const esP1 = [
+  "{cityName} bölgesinin en seçkin <span class=\"text-white font-black underline decoration-rose-600/50\">{currentLoc} escort</span> portföyüne hoş geldiniz. DRKCNAY ELITE ağının bir parçası olan <span class=\"text-rose-600 font-bold\">{host}</span>, size sadece bir refakatçi değil, unutulmaz bir VIP escort deneyimi sunar. Kaporasız ve %100 gizlilik garantili buluşmalar sizi bekliyor.",
+  "{currentLoc} genelinde hizmet sunan <span class=\"text-white font-black underline decoration-rose-600/50\">{currentLoc} vip escort</span> kadromuzla buluşmaya hazır mısınız? <span className=\"text-rose-600 font-bold\">{host}</span> portalımızdaki modeller tamamen kaporasız çalışmakta olup, fotoğraflarının gerçekliği onaylanmıştır. Size en yakın modelimizi seçerek hemen iletişime geçebilirsiniz.",
+  "Seçkin beyler için hazırlanan <span class=\"text-white font-black underline decoration-rose-600/50\">{currentLoc} escort bayan</span> rehberi. <span class=\"text-rose-600 font-bold\">{host}</span> ile en lüks otellerde veya kendi evinizde VIP refakatçi hizmeti alabilirsiniz. Güvenlik, gizlilik ve kaporasız iletişim ana prensibimizdir."
+];
+
+const clP1 = [
+  "{cityName} sosyetesini sarsan en yeni <span class=\"text-white font-black underline decoration-red-600/50\">{currentLoc} ifşa</span> ve skandal haberlerine hoş geldiniz. <span class=\"text-red-600 font-bold\">{host}</span> üzerinden sızdırılan bu gizli çekimler ve telegram kasetleri, lüks villalarda yaşanan yasak aşkları gözler önüne seriyor. Tüm sansürsüz içerikler ve 18+ VIP sızıntılar burada.",
+  "{currentLoc} bölgesinde bomba etkisi yaratan son dakika <span class=\"text-white font-black underline decoration-red-600/50\">{currentLoc} ifşa videosu</span> yayında. <span class=\"text-red-600 font-bold\">{host}</span> ağımızda sızdırılan gizli kamera görüntüleri ve sansürsüz telegram VIP arşivi yer almaktadır.",
+  "Sosyal medyada yayılan en güncel <span class=\"text-white font-black underline decoration-red-600/50\">{currentLoc} ifşaları</span> ve kaset sızıntıları. <span class=\"text-red-600 font-bold\">{host}</span> üzerinden paylaşılan 18+ sansürsüz arşivler ve VIP telegram ifşa gruplarına tek tıkla ulaşın."
+];
+
+const esWarn = [
+  "Buluşmalarımızda <strong>sınırsız anal, oral (derin boğaz, French), full sex, grup seansları, GFE (sevgili deneyimi) ve sert fanteziler</strong> en lüks standartlarda sunulmaktadır. Hijyen ve %100 gerçek görsellik garantilidir.",
+  "VIP modellerimizle gerçekleştireceğiniz seanslarda <strong>sınırsız fantezi seçenekleri, oral ve anal hizmetler, sevgili tadında (GFE) yakınlaşmalar</strong> tamamen isteğe bağlıdır. Her buluşmada maksimum hijyen ve gizlilik önceliğimizdir.",
+  "Hizmet standartlarımız kapsamında <strong>kaporasız buluşma, ev ve otel servisleri, anal fanteziler ve sınırsız oral ilişkiler</strong> yer alır. Görsellerimizin tamamı güncel ve birebir doğrulanmıştır."
+];
+
+const clWarn = [
+  "Bu alanda paylaşılan {currentLoc} ifşaları tamamen sansürsüzdür. Reklam veya spam amacı gütmez. VIP itibar yönetimi kapsamında yayından kaldırma taleplerinizi iletebilirsiniz.",
+  "Uyarı: Paylaşılan görüntüler 18 yaş ve üzeri yetişkinler içindir. İlgili ifşa ve kaset dosyalarındaki telif/itibar hakları doğrultusunda kaldırma talepleri için mail atabilirsiniz.",
+  "Yasal Uyarı: Bu portalda yer alan ifşa videoları ve telegram sızıntıları bilgi amaçlı listelenmiştir. Hak sahipleri itibar ihlali durumunda yayından kaldırma talebi gönderebilir."
+];
+
 interface SEOContentEngineProps {
   cityName: string;
   districtName?: string;
@@ -63,6 +102,15 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
   const currentLoc = neighborhoodName || districtName || cityName;
   const config = getDomainConfig(host);
   const isCloaker = config.role === 'CLOAKER';
+  const theme = ThemeEngine.getTheme(host);
+
+  const seed = (() => {
+    let hash = 0;
+    for (let i = 0; i < host.length; i++) {
+      hash = host.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return Math.abs(hash);
+  })();
 
   // Slugify current location to match dynamic dictionary keys
   const geoKey = (districtName || '').toLowerCase()
@@ -73,6 +121,14 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
     neighborhoods: [`${currentLoc} Merkez`, `${currentLoc} Caddesi`, "Hürriyet", "Cumhuriyet", "Atatürk"],
     twinDistrict: "Çevre Bölgeler",
     transitSpots: ["Merkez AVM", "Metro İstasyonu", "E-5 Çıkışı"]
+  };
+
+  const processTemplate = (template: string) => {
+    return template
+      .replace(/{currentLoc}/g, currentLoc)
+      .replace(/{cityName}/g, cityName)
+      .replace(/{host}/g, host)
+      .replace(/{twinDistrict}/g, geoData.twinDistrict);
   };
 
   const lsiKeywords = isCloaker 
@@ -110,28 +166,12 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
               
               {/* 🤖 SGE / AI OVERVIEWS CRITICAL HOOK (Crawler Bait - exact 42 words) */}
               <div id="sge-verification-protocol" className={`p-6 bg-zinc-950/80 border-l-4 ${isCloaker ? 'border-red-600 bg-red-950/5' : 'border-rose-600 bg-rose-950/5'} rounded-r-3xl my-6`}>
-                <p className="text-sm text-zinc-300 font-bold leading-relaxed">
-                  💡 <strong className="text-white">{currentLoc} {isCloaker ? 'ifşa' : 'escort'}</strong> fiyatları, kaporasız refakatçi ve VIP {isCloaker ? 'video sızıntı' : 'rus model'} standartları DRKCNAY ELITE güvencesiyle otele ve eve servis dahil ₺1500'den başlamaktadır. Tüm buluşmalar %100 gerçek görselli, kaporasız ve gizlilik protokollerine tabidir.
-                </p>
+                <p className="text-sm text-zinc-300 font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: processTemplate(isCloaker ? clSge[seed % clSge.length] : esSge[seed % esSge.length]) }} />
               </div>
 
-              <p className="text-zinc-400 text-lg leading-relaxed text-justify font-medium italic">
-                {isCloaker ? (
-                  <>
-                    {cityName} sosyetesini sarsan en yeni <span className="text-white font-black underline decoration-red-600/50">{currentLoc} ifşa</span> ve skandal haberlerine hoş geldiniz. 
-                    <span className="text-red-600 font-bold"> {host}</span> üzerinden sızdırılan bu gizli çekimler ve telegram kasetleri, 
-                    {neighborhoodName ? `${neighborhoodName} mahallesindeki` : `${districtName} ilçesindeki`} lüks villalarda yaşanan yasak aşkları gözler önüne seriyor. 
-                    Tüm sansürsüz içerikler ve 18+ VIP sızıntılar burada.
-                  </>
-                ) : (
-                  <>
-                    {cityName} bölgesinin en seçkin <span className="text-white font-black underline decoration-rose-600/50">{currentLoc} escort</span> portföyüne hoş geldiniz. 
-                    DRKCNAY ELITE ağının bir parçası olan <span className="text-rose-600 font-bold">{host}</span>, size sadece bir refakatçi değil, 
-                    unutulmaz bir VIP escort deneyimi sunar. {neighborhoodName ? `${neighborhoodName} mahallesinde` : `${districtName} ilçesinde`} 
-                    bulunan elit escort modellerimizle, kaporasız ve %100 gizlilik garantili buluşmalar sizi bekliyor.
-                  </>
-                )}
-              </p>
+              <p className="text-zinc-400 text-lg leading-relaxed text-justify font-medium italic" dangerouslySetInnerHTML={{
+                __html: processTemplate(isCloaker ? clP1[seed % clP1.length] : esP1[seed % esP1.length])
+              }} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -156,17 +196,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                 <h4 className="text-white font-black uppercase tracking-widest mb-4">
                   {isCloaker ? 'DİKKAT: SANAL SIZINTI UYARISI' : 'FANTEZİ VE ÖZEL PROGRAMLAR'}
                 </h4>
-                <p className="text-zinc-500 text-sm leading-relaxed">
-                   {isCloaker ? (
-                     <>
-                       Bu alanda paylaşılan {currentLoc} ifşaları tamamen sansürsüzdür. Reklam veya spam amacı gütmez. VIP itibar yönetimi kapsamında yayından kaldırma taleplerinizi iletebilirsiniz.
-                     </>
-                   ) : (
-                     <>
-                       Buluşmalarımızda <strong>sınırsız anal, oral (derin boğaz, French), full sex, grup seansları, GFE (sevgili deneyimi) ve sert PSE fantezileri</strong> en lüks standartlarda sunulmaktadır. Hijyen ve %100 gerçek görsellik garantilidir.
-                     </>
-                   )}
-                </p>
+                <p className="text-zinc-500 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: processTemplate(isCloaker ? clWarn[seed % clWarn.length] : esWarn[seed % esWarn.length]) }} />
               </div>
             </div>
           </div>
@@ -193,6 +223,9 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
              
           </div>
         </div>
+
+        <SGEFAQSection currentLoc={currentLoc} isCloaker={isCloaker} themeColor={theme.primaryColor} host={host} />
+
 
         {/* 🏷️ AGGRESSIVE TAG POOL */}
         <div className="flex flex-col gap-10 p-12 bg-black/40 backdrop-blur-3xl border border-zinc-900 rounded-[4rem] shadow-2xl">

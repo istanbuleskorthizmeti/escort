@@ -87,16 +87,22 @@ function VitrinCard({
   const currentPrimaryColor = isOrganic ? neonPrimaryColors[idx % neonPrimaryColors.length] : theme.primaryColor;
   const currentGlowColor = isOrganic ? glowColors[idx % glowColors.length] : theme.glowEffect;
   
-  const borderStyle = isOrganic ? { borderColor: borderColors[idx % borderColors.length] } : {};
-  const shadowStyle = { boxShadow: `0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px ${currentGlowColor}` };
-  const cardBorderClass = isOrganic ? '' : 'border-white/15';
+  const borderStyle = isOrganic 
+    ? { borderColor: borderColors[idx % borderColors.length] } 
+    : { borderColor: theme.primaryColor, borderWidth: '2.5px', borderStyle: 'solid' };
+    
+  const shadowStyle = item.isAd 
+    ? { boxShadow: `0 0 35px ${theme.glowEffect}, inset 0 0 20px rgba(0,0,0,0.6)` }
+    : { boxShadow: `0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px ${currentGlowColor}` };
+
+  const cardBorderClass = '';
 
   return (
     <div 
-      className="block text-inherit transition-transform duration-300 active:scale-95 group"
+      className="block text-inherit transition-transform duration-300 active:scale-95 group animate-fade-in"
     >
       <div 
-        className={`relative h-[280px] bg-black rounded-2xl overflow-hidden border-[1.5px] ${cardBorderClass}`}
+        className={`relative h-[280px] bg-black rounded-2xl overflow-hidden`}
         style={{ ...borderStyle, ...shadowStyle }}
       >
         <Link 
@@ -133,9 +139,9 @@ function VitrinCard({
                        : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
                 }
                 
-                const lsiNiches = ["elit", "üniversiteli", "rus", "sınırsız", "anal", "kaporasız", "vip", "gecelik", "otele gelen", "özel konsept"];
+                const lsiNiches = ["eskort", "üniversiteli eskort", "rus gacı", "sınırsız randevu", "anal buluşma", "kaporasız", "bayan escort", "gecelik bayan", "otele gelen çıtır", "genç kız"];
                 const domainLsi = lsiNiches[charSum % lsiNiches.length];
-                const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} escort`;
+                const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} buluşmak için`;
 
                 return (
                   <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111] overflow-hidden">
@@ -181,9 +187,9 @@ function VitrinCard({
                     currSeoPath = isCustomImage ? item.src : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
                 }
                 
-                const lsiNiches = ["elit", "üniversiteli", "rus", "sınırsız", "anal", "kaporasız", "vip", "gecelik", "otele gelen", "özel konsept"];
+                const lsiNiches = ["eskort", "üniversiteli eskort", "rus gacı", "sınırsız randevu", "anal buluşma", "kaporasız", "bayan escort", "gecelik bayan", "otele gelen çıtır", "genç kız"];
                 const domainLsi = lsiNiches[charSum % lsiNiches.length];
-                const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} escort`;
+                const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} buluşmak için`;
 
                 return (
                   <div className="relative h-full w-full overflow-hidden">
@@ -234,16 +240,30 @@ function VitrinCard({
           }}
         >
           <div 
-            className="italic text-[28px] text-white font-bold tracking-widest mb-3 leading-none drop-shadow-2xl" 
+            className="italic text-[28px] text-white font-bold tracking-widest mb-3 leading-none drop-shadow-2xl flex items-center gap-1.5" 
             style={{ 
               fontFamily: theme.headingFont,
               textShadow: `0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px ${currentPrimaryColor}, 0 4px 5px rgba(0,0,0,0.8)` 
             }}
           >
             {firstName}
+            {item.isAd && (
+              <ShieldCheck className="w-[18px] h-[18px] text-green-400 shrink-0 drop-shadow-[0_0_8px_rgba(74,222,128,0.7)] animate-pulse" />
+            )}
           </div>
 
           <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
+            {item.isAd && (
+              <span className="text-[9px] text-amber-400 font-extrabold tracking-widest border py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0" 
+                    style={{ 
+                      background: 'linear-gradient(90deg, rgba(251,191,36,0.25), rgba(0,0,0,0.5))',
+                      borderColor: 'rgba(251,191,36,0.5)',
+                      textShadow: '1px 1px 2px rgba(0,0,0,0.9)', 
+                      boxShadow: '0 4px 10px rgba(0,0,0,0.3)' 
+                    }}>
+                  ⭐ 5.0 (120+ Verified)
+              </span>
+            )}
             <span className="text-[10px] text-white font-bold tracking-wide border py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 break-words whitespace-normal" 
                   style={{ 
                     background: 'linear-gradient(90deg, rgba(255,255,255,0.2), rgba(255,255,255,0.05))',
@@ -427,11 +447,11 @@ export function DorukVitrin({
             const profileSlug = slugify(firstName);
             
             const fallbackNiches = [
-              'Özel Konsept', 'Manken Partner', 'Sınırsız Hizmet', 'Gecelik Partner',
-              'Otel & Ev Rez.', 'VIP Deneyim', 'Kaporasız Hizmet', 'Elit Partner',
-              'Premium Refakat', 'Türbanlı Seçkin', 'Üniversiteli', 'Sarışın Bomba',
-              'Esmer Lady', 'Kızıl Cazibe', 'Hafta Sonu VIP', 'Fantezi Uzmanı'
-            ];
+               'buluşmak için gacı', 'randevu için eskort', 'iletişim için bayan', 'gecelik eskort gacı',
+               'otele gelen çıtır', 'genç kız eskort', 'kaporasız eskort gacı', 'çıtır gacı bayan',
+               'rus eskort bayan', 'türbanlı çıtır eskort', 'üniversiteli gacı', 'sarışın eskort gacı',
+               'esmer bayan eskort', 'kızıl gacı eskort', 'hafta sonu eskort', 'randevu için çıtır gacı'
+             ];
             
             const niche = item.niche || fallbackNiches[idx % fallbackNiches.length];
             const age = item.age || (19 + (idx % 7));
@@ -485,7 +505,7 @@ export function DorukVitrin({
             }}
           >
              <span className="relative z-10 flex items-center justify-center gap-3">
-                TÜM KATALOĞU GÖR <span className="opacity-50 tracking-tighter">{'>>>'}</span>
+                İLETİŞİM VE BULUŞMAK İÇİN KATALOĞU GÖR <span className="opacity-50 tracking-tighter">{'>>>'}</span>
              </span>
              <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity" />
           </Link>

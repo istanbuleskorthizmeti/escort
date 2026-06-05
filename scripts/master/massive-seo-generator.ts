@@ -67,7 +67,7 @@ ON CONFLICT ("slug", "siteId") DO UPDATE SET "title" = EXCLUDED."title", "conten
     }
 
     // 2. Main Site Matrix (39 Districts x 3 Niches)
-    if (host.includes('vipescorthizmeti.com')) {
+    if (host.includes('istanbulescdrkcn.com')) {
        const istanbulDistricts = cities['istanbul']?.districts || [];
        const niches = ["", "vip-escort", "escort-ajansi"]; // Prioritized niches
 

@@ -4,7 +4,7 @@ export const siteConfig = {
   domain: "dorukcanay.digital",
   apiUrl: "https://dorukcanay.digital",
   satelliteDomain: "https://istanbulescort.blog",
-  cdnUrl: "https://istanbulescort.blog", 
+  cdnUrl: "", 
   description: "Türkiye'nin en kapsamlı DRKCNAY ELITE VIP escort ajansı rehberi. En iyi escort bayan profilleri.",
 
   // 🧛‍♂️ GOD MODE SETTINGS

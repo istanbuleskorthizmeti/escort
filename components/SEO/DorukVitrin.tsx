@@ -50,6 +50,19 @@ function VitrinCard({
   renderAllCarouselImages,
   handleTrack
 }: VitrinCardProps) {
+  const getSeoImageUrl = (srcPath: string) => {
+    if (!srcPath) return "";
+    if (srcPath.startsWith('http')) return srcPath;
+    const filename = srcPath.split('/').pop() || '';
+    if (filename.startsWith('vip-profil-')) {
+      const match = filename.match(/vip-profil-(\d+)\.webp/);
+      if (match) {
+        return `/${slugify(city)}-vip-escort-ilan-${match[1]}.webp`;
+      }
+    }
+    return srcPath;
+  };
+
   const borderColors = [
     'rgba(244, 63, 94, 0.45)',  // Rose
     'rgba(234, 179, 8, 0.45)',  // Gold
@@ -133,10 +146,10 @@ function VitrinCard({
                 if (item.gallery && item.gallery.length > 0) {
                    currSeoPath = item.gallery[offset % item.gallery.length];
                 } else {
-                    const currentSafeIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset) % 310 + 1, idx + offset);
-                    currSeoPath = isCustomImage && offset === 0 
-                       ? item.src 
-                       : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
+                     const currentSafeIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset) % 310 + 1, idx + offset);
+                     currSeoPath = isCustomImage && offset === 0 
+                        ? item.src 
+                        : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
                 }
                 
                 const lsiNiches = ["eskort", "üniversiteli eskort", "rus gacı", "sınırsız randevu", "anal buluşma", "kaporasız", "bayan escort", "gecelik bayan", "otele gelen çıtır", "genç kız"];
@@ -147,10 +160,10 @@ function VitrinCard({
                   <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111] overflow-hidden">
                     <div 
                       className="absolute inset-0 bg-cover bg-center opacity-30 scale-125 blur-xl pointer-events-none"
-                      style={{ backgroundImage: `url(${currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`})` }}
+                      style={{ backgroundImage: `url(${getSeoImageUrl(currSeoPath)})` }}
                     />
                     <Image 
-                      src={currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`} 
+                      src={getSeoImageUrl(currSeoPath)} 
                       alt={`${altTag} - Poz ${offset + 1}`}
                       title={`${domainPrefix} ${firstName} ${domainLsi}`}
                       fill
@@ -161,13 +174,13 @@ function VitrinCard({
                         if (e.target.dataset.failed) return;
                         e.target.dataset.failed = 'true';
                         if (item.gallery && item.gallery.length > 0) {
-                          e.target.src = item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`;
+                          e.target.src = getSeoImageUrl(item.src);
                         } else {
                           const fallbackIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset + 1) % 310 + 1, idx + offset + 1);
                           const fallbackSrc = `/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
                           e.target.src = isCustomImage && offset === 0 
-                             ? (item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`)
-                             : `${siteConfig.cdnUrl}${fallbackSrc}`;
+                             ? getSeoImageUrl(item.src)
+                             : getSeoImageUrl(fallbackSrc);
                         }
                       }}
                     />
@@ -183,8 +196,8 @@ function VitrinCard({
                 if (item.gallery && item.gallery.length > 0) {
                    currSeoPath = item.gallery[0];
                 } else {
-                    const currentSafeIdx = getSafeVipProfileIdx((safeIdx + blackHatOffset) % 310 + 1, idx);
-                    currSeoPath = isCustomImage ? item.src : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
+                     const currentSafeIdx = getSafeVipProfileIdx((safeIdx + blackHatOffset) % 310 + 1, idx);
+                     currSeoPath = isCustomImage ? item.src : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
                 }
                 
                 const lsiNiches = ["eskort", "üniversiteli eskort", "rus gacı", "sınırsız randevu", "anal buluşma", "kaporasız", "bayan escort", "gecelik bayan", "otele gelen çıtır", "genç kız"];
@@ -195,10 +208,10 @@ function VitrinCard({
                   <div className="relative h-full w-full overflow-hidden">
                     <div 
                       className="absolute inset-0 bg-cover bg-center opacity-30 scale-125 blur-xl pointer-events-none"
-                      style={{ backgroundImage: `url(${currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`})` }}
+                      style={{ backgroundImage: `url(${getSeoImageUrl(currSeoPath)})` }}
                     />
                     <Image 
-                      src={currSeoPath.startsWith('http') ? currSeoPath : `${siteConfig.cdnUrl}${currSeoPath}`} 
+                      src={getSeoImageUrl(currSeoPath)} 
                       alt={`${altTag} - Poz 1`}
                       title={`${domainPrefix} ${firstName} ${domainLsi}`}
                       fill
@@ -208,7 +221,7 @@ function VitrinCard({
                       onError={(e: any) => {
                         if (e.target.dataset.failed) return;
                         e.target.dataset.failed = 'true';
-                        e.target.src = item.src.startsWith('http') ? item.src : `${siteConfig.cdnUrl}${item.src}`;
+                        e.target.src = getSeoImageUrl(item.src);
                       }}
                     />
                   </div>

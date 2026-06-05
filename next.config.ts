@@ -231,6 +231,10 @@ const nextConfig: NextConfig = {
         source: '/:city-rus-eskort-ilanlari-:id.webp',
         destination: '/_media/vitrin/vip-profil-:id.webp',
       },
+      {
+        source: '/:city-vip-escort-ilan-:id.webp',
+        destination: '/_media/vitrin/vip-profil-:id.webp',
+      },
 
       // 🐺 WOLF MODE: URL ZEHİRLEMESİ (SLUG INJECTION)
       // Müşteri /ilan/istanbul-escort/sisli adresine girdiğinde arka planda /istanbul/sisli çalışır. URL backlink gücü kazanır.

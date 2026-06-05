@@ -88,7 +88,7 @@ export default async function HomePage() {
         <CloakerFrontend districtName={district} />
       ) : (
         <>
-          <div className="w-full relative z-0">
+          <div className="w-full relative z-0 pt-32 md:pt-40">
              <LivePhotoMarquee />
           </div>
           <div className="w-full relative z-0 mb-20">

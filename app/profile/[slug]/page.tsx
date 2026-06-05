@@ -12,6 +12,7 @@ import { vitrinImages } from "../../../lib/vitrin-images";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { slugify } from "../../../lib/utils";
 
 export default function ProfilePage({ params: paramsPromise }: { params: Promise<{ slug: string }> }) {
   const params = use(paramsPromise);
@@ -21,6 +22,19 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
   const city = "İstanbul";
   const charSum = (slug + host).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
   const domainPrefix = host ? host.split('.')[0] : 'doruk';
+
+  const getSeoImageUrl = (srcPath: string) => {
+    if (!srcPath) return "";
+    if (srcPath.startsWith('http')) return srcPath;
+    const filename = srcPath.split('/').pop() || '';
+    if (filename.startsWith('vip-profil-')) {
+      const match = filename.match(/vip-profil-(\d+)\.webp/);
+      if (match) {
+        return `/${slugify(city)}-vip-escort-ilan-${match[1]}.webp`;
+      }
+    }
+    return srcPath;
+  };
 
   // 🧠 VIP Elite: Domain ve Slug tabanlı Cloaked Resim Üretimi
   // Kullanıcının Melissa vb. profilleri de varsa onlara ait galeri gösterilmeli
@@ -114,7 +128,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                className="relative rounded-[3rem] overflow-hidden border border-zinc-900 shadow-glow-rose aspect-3/4.5 group"
              >
                 <Image 
-                  src={mainImageSrc.startsWith('http') ? mainImageSrc : `${siteConfig.cdnUrl}${mainImageSrc}`} 
+                  src={getSeoImageUrl(mainImageSrc)} 
                   alt={`${domainPrefix.toUpperCase()} ${name} ${city} Escort - %100 Gerçek ve Onaylı Profil`}
                   title={`${domainPrefix.toUpperCase()} ${name} ${city} VIP`}
                   fill
@@ -125,7 +139,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                     if (e.target.dataset.failed) return;
                     e.target.dataset.failed = 'true';
                     const fallbackIdx = (charSum % 310) + 1;
-                    e.target.src = `${siteConfig.cdnUrl}/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                    e.target.src = getSeoImageUrl(`/_media/vitrin/vip-profil-${fallbackIdx}.webp`);
                   }}
                 />
                 <div className="absolute top-8 left-8 bg-black/60 backdrop-blur-xl px-6 py-2 rounded-full border border-rose-600/30 text-rose-600 text-[10px] font-black tracking-[0.2em] flex items-center gap-3">
@@ -178,7 +192,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                              className="relative aspect-square rounded-3xl overflow-hidden border border-zinc-900 group cursor-zoom-in"
                            >
                              <Image 
-                               src={src.startsWith('http') ? src : `${siteConfig.cdnUrl}${src}`} 
+                               src={getSeoImageUrl(src)} 
                                alt={`${domainPrefix} ${name} ${city} Escort Galeri Görseli ${idx + 1} - ${domainLsi}`}
                                title={`${domainPrefix} ${name} ${domainLsi}`}
                                fill
@@ -188,7 +202,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
                                  if (e.target.dataset.failed) return;
                                  e.target.dataset.failed = 'true';
                                  const fallbackIdx = ((charSum + idx) % 310) + 1;
-                                 e.target.src = `${siteConfig.cdnUrl}/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                                 e.target.src = getSeoImageUrl(`/_media/vitrin/vip-profil-${fallbackIdx}.webp`);
                                }}
                              />
                            </motion.div>

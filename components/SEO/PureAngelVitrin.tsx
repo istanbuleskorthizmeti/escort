@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 import { siteConfig } from '@/config/site';
 import { isBlacklisted } from '@/lib/vitrin-blacklist';
+import { slugify } from '@/lib/utils';
 
 const REDIRECT_URL = "https://dorukcanay.digital/go";
 
@@ -21,7 +22,7 @@ const DRKCNAY_MODELS = Array.from({ length: 314 }, (_, i) => {
     id,
     title: `${titles[i % titles.length]} - ${locations[i % locations.length]} Partner`,
     badge: titles[i % titles.length].split(' ')[0],
-    image: `/_media/vitrin/vip-profil-${id}.webp`
+    image: `/${slugify("istanbul")}-vip-escort-ilan-${id}.webp`
   };
 }).filter(m => !isBlacklisted(m.id)).slice(0, 60);
 
@@ -85,7 +86,7 @@ const PureAngelVitrin = () => {
                     if (e.target.dataset.failed) return;
                     e.target.dataset.failed = 'true';
                     const fallbackIdx = (idx % 310) + 1;
-                    e.target.src = `${siteConfig.cdnUrl}/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
+                    e.target.src = `/${slugify("istanbul")}-vip-escort-ilan-${fallbackIdx}.webp`;
                   }}
                   sizes="(max-width: 768px) 50vw, 20vw"
                 />

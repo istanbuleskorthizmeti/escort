@@ -113,7 +113,15 @@ export function VitrinWall({ city = 'İstanbul', layoutType = 'grid' }: { city?:
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
                   priority={index < 8}
                   onError={(e: any) => {
-                    e.target.src = item.src; // Fallback
+                    const filename = item.src.split('/').pop() || '';
+                    if (filename.startsWith('vip-profil-')) {
+                      const match = filename.match(/vip-profil-(\d+)\.webp/);
+                      if (match) {
+                        e.target.src = `/${slugify(city)}-vip-escort-ilan-${match[1]}.webp`;
+                        return;
+                      }
+                    }
+                    e.target.src = item.src;
                   }}
                 />
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent opacity-90"></div>

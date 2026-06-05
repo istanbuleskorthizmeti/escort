@@ -1,5 +1,5 @@
 upstream drkcnay_nextjs {
-    server 127.0.0.1:3001 max_fails=3 fail_timeout=10s;
+    server 127.0.0.1:3000 max_fails=3 fail_timeout=10s;
     keepalive 64;
 }
 
@@ -26,14 +26,10 @@ server {
         add_header X-Served-By "Hydra-CDN-Master";
     }
 
-    # 🕸️ HYDRA SEO IMAGE DOMINATION (URL MASKING)
-    # Serves symlinked SEO images directly from the CDN
-    location ~* /(?:istanbul-vip-escort-bayan|kaporasiz-escort-resimleri|en-iyi-escort-profilleri|vip-escort-ilan)-[0-9]+\.webp$ {
-        root /var/www/cdn/vitrin;
-        try_files $uri =404;
-        expires 30d;
-        add_header Cache-Control "public, no-transform";
-        add_header X-Served-By "Hydra-SEO-Proxy";
+    # 🕸️ HYDRA SEO IMAGE DOMINATION (URL MASKING & REWRITE)
+    # Serves symlinked SEO images directly from the CDN by rewriting clean URLs to raw file names
+    location ~* ^/([a-zA-Z0-9-]+)-(kaporasiz-escort-bayan|rus-eskort-ilanlari|vip-escort-ilan)-([0-9]+)\.webp$ {
+        rewrite ^/([a-zA-Z0-9-]+)-(kaporasiz-escort-bayan|rus-eskort-ilanlari|vip-escort-ilan)-([0-9]+)\.webp$ /_media/vitrin/vip-profil-$3.webp last;
     }
 
     location ^~ /assets/img/ {
@@ -44,9 +40,23 @@ server {
 
     # 🌊 NEXT.JS STATIC FILES
     location /_next/static/ {
-        alias /root/esc/.next/static/;
+        alias /var/www/escortvip/.next/static/;
         expires 30d;
         access_log off;
+    }
+
+    # 🔁 NEXT.JS CHUNK SELF-HEALING SHIELD (GOD MODE)
+    location ~ ^/_next/static/chunks/(.*)\.js$ {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_intercept_errors on;
+        error_page 404 =200 @recovery;
+    }
+
+    location @recovery {
+        root /var/www/cdn/vitrin;
+        rewrite ^ /recovery.js break;
+        add_header Content-Type "application/javascript" always;
+        add_header X-DRKCNAY-Shield "Self-Healing-Active" always;
     }
 
     location /_next/ {

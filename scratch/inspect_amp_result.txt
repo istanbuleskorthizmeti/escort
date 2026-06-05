@@ -1,0 +1,10 @@
+link rel="canonical" occurrences: 1
+meta charset occurrences: 1
+meta name="viewport" occurrences: 1
+style amp-boilerplate occurrences: 2
+script tags count: 2
+amp-img count: 12
+amp-custom style tags count: 1
+Line 4: <meta charset="utf-8">
+Line 6: <link rel="canonical" href="https://istanbulescort.blog">
+Line 7: <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">

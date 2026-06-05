@@ -5,6 +5,7 @@ import { ThemeEngine } from '@/lib/theme-engine';
 import { getDomainConfig } from '@/config/domains';
 import { generateUltraGraphSchema } from '@/lib/seo-schema';
 import { getCanonicalHost } from '@/lib/site-context';
+import { slugify } from '@/lib/utils';
 
 export const dynamic = 'force-dynamic';
 
@@ -51,7 +52,7 @@ export async function GET(request: Request) {
   <link rel="canonical" href="${canonicalUrl}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
   
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
@@ -234,8 +235,11 @@ export async function GET(request: Request) {
   
   <div class="container">
     <div class="grid">
-      ${ampProfiles.map(p => {
-        const imageSrc = p.src.startsWith('http') ? p.src : `https://${host}${p.src.startsWith('/') ? p.src : '/' + p.src}`;
+      ${ampProfiles.map((p, index) => {
+        const imageName = p.src.split('/').pop() || '';
+        const imageId = imageName.replace(/[^0-9]/g, '').slice(0, 5) || index;
+        const seoImagePath = `/${slugify(locationName)}-vip-escort-ilan-${imageId}.webp`;
+        const imageSrc = `https://${host}${seoImagePath}`;
         const title = p.title || "Elite Model";
         const age = p.age ? `${p.age} Yaş` : "24 Yaş";
         const niche = p.niche || "Elite Model";

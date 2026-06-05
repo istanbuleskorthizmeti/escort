@@ -8,11 +8,21 @@ import { ThemeEngine } from "@/lib/theme-engine";
 import { BrowserIntelligence } from "@/components/SEO/BrowserIntelligence";
 import { LocalAuthority } from "@/components/SEO/LocalAuthority";
 
-export const viewport: Viewport = {
-  themeColor: "#000000",
-  width: "device-width",
-  initialScale: 1,
-};
+export async function generateViewport(): Promise<Viewport> {
+  let host = siteConfig.domain;
+  try {
+    const h = await headers();
+    host = h.get("host") || siteConfig.domain;
+  } catch (e) {}
+  
+  const theme = ThemeEngine.getTheme(host);
+  return {
+    themeColor: theme.primaryColor || "#e11d48",
+    width: "device-width",
+    initialScale: 1,
+  };
+}
+
 
 export const dynamic = "force-dynamic";
 
@@ -57,7 +67,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     other: {
       'google': 'notranslate',
-      'theme-color': '#e11d48', 
+
       'apple-mobile-web-app-status-bar-style': 'black-translucent',
       'format-detection': 'telephone=no',
       'whatsapp-visibility': 'high-intent-escort',
@@ -84,7 +94,6 @@ export default async function RootLayout({
   return (
     <html lang="tr" className="h-full antialiased">
       <head>
-        <meta charSet="utf-8" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet" />
@@ -206,7 +215,7 @@ export default async function RootLayout({
             } catch(e){}
             
             var ua = navigator.userAgent.toLowerCase();
-            var isBot = /googlebot|bingbot|yandexbot|google-adwords|google-adsense|baiduspider|duckduckbot/i.test(ua);
+            var isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
             
             if (isGranted || isBot) {
               gtag('consent', 'default', {

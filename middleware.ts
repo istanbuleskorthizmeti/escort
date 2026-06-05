@@ -46,7 +46,7 @@ export function middleware(request: NextRequest) {
 
   // ⚜️ ADVANCED CLOAKED MOBILE-TO-AMP REDIRECT
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
-  const isBot = /googlebot|yandex|bingbot|baiduspider|crawler|spider|robot|lighthouse/i.test(ua);
+  const isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
 
   if (isMobile && !isBot) {
     if (

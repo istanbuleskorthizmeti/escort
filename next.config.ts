@@ -113,7 +113,7 @@ const nextConfig: NextConfig = {
       },
       {
         // Tight security headers for all other main portal pages (Deny framing)
-        source: '/((?!embed/vitrin|widget/vitrin).*)',
+        source: '/((?!embed/vitrin|widget/vitrin|amp).*)',
         headers: [
           {
             key: 'X-DNS-Prefetch-Control',
@@ -148,6 +148,36 @@ const nextConfig: NextConfig = {
             value: '1; mode=block'
           }
         ],
+      },
+      {
+        // Relaxed CSP and no X-Frame-Options for AMP page to allow Google search cache iframe embedding
+        source: '/amp',
+        headers: [
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.ampproject.org https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; frame-ancestors 'self' https://google.com https://*.google.com https://*.ampproject.org; object-src 'none';"
+          },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=63072000; includeSubDomains; preload'
+          },
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
+          }
+        ]
       },
     ];
   },

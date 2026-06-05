@@ -41,6 +41,40 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
+    // 🛡️ Safe frame-ancestors matrix to prevent Clickjacking while allowing Google Sites
+    const trustedFrameAncestors = [
+      "'self'",
+      "https://sites.google.com",
+      "https://*.google.com",
+      "https://istanbulescort.blog",
+      "https://istanbulescdrkcn.com",
+      "https://escortvip.net",
+      "https://vipescorthizmeti.shop",
+      "https://bagcilarescort.shop",
+      "https://esenyurtescort.blog",
+      "https://esenyurtescorthizmeti.shop",
+      "https://beylikduzuescortlistesi.shop",
+      "https://besiktasescorthizmeti.shop",
+      "https://besiktasescort.fun",
+      "https://besiktasescort.blog",
+      "https://taksimescorthizmeti.shop",
+      "https://sefakoyescorthizmeti.shop",
+      "https://kucukcekmecescort.shop",
+      "https://sisliescort.shop",
+      "https://avrupayakasiescort.shop",
+      "https://istanbulescorthizmeti.shop",
+      "https://kadikoyescort.shop",
+      "https://pendikescorthizmeti.shop",
+      "https://bucaescorthizmeti.shop",
+      "https://izmitescorthizmeti.shop",
+      "https://sariyerdrkcnay.shop",
+      "https://leventdrkcnay.shop",
+      "https://istanbuldrkcnay.shop",
+      "https://istanbulescortkaporasiz.shop",
+      "https://shopistanbulescortkaporasiz.site",
+      "https://dorukcanay.digital"
+    ].join(" ");
+
     return [
       {
         // 🔱 GOD-MODE: Allow external iframe embeds only for vitrin showcase endpoints
@@ -52,7 +86,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors *; object-src 'none';"
+            value: `default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors ${trustedFrameAncestors}; object-src 'none';`
           },
           {
             key: 'Cache-Control',
@@ -69,7 +103,7 @@ const nextConfig: NextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors *; object-src 'none';"
+            value: `default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors ${trustedFrameAncestors}; object-src 'none';`
           },
           {
             key: 'Cache-Control',
@@ -78,7 +112,7 @@ const nextConfig: NextConfig = {
         ]
       },
       {
-        // Tight security headers for all other main portal pages
+        // Tight security headers for all other main portal pages (Deny framing)
         source: '/((?!embed/vitrin|widget/vitrin).*)',
         headers: [
           {
@@ -123,37 +157,43 @@ const nextConfig: NextConfig = {
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'escortvip.net' }],
-        destination: 'https://istanbulescdrkcn.com/:path*',
+        destination: 'https://istanbulescort.blog/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'vipescorthizmeti.com' }],
-        destination: 'https://istanbulescdrkcn.com/:path*',
+        destination: 'https://istanbulescort.blog/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.vipescorthizmeti.com' }],
-        destination: 'https://istanbulescdrkcn.com/:path*',
+        destination: 'https://istanbulescort.blog/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'vipescorthizmeti.shop' }],
-        destination: 'https://istanbulescdrkcn.com/:path*',
+        destination: 'https://istanbulescort.blog/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'dorukcanay.digital' }],
-        destination: 'https://istanbulescdrkcn.com/:path*',
+        destination: 'https://istanbulescort.blog/:path*',
         permanent: true,
       },
       {
         source: '/:path*',
         has: [{ type: 'host', value: 'www.dorukcanay.digital' }],
-        destination: 'https://istanbulescdrkcn.com/:path*',
+        destination: 'https://istanbulescort.blog/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'istanbulescdrkcn.com' }],
+        destination: 'https://istanbulescort.blog/:path*',
         permanent: true,
       },
       {

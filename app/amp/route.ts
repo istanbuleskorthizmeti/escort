@@ -6,6 +6,7 @@ import { getDomainConfig } from '@/config/domains';
 import { generateUltraGraphSchema } from '@/lib/seo-schema';
 import { getCanonicalHost } from '@/lib/site-context';
 import { slugify } from '@/lib/utils';
+import { getSafeVipProfileIdx } from '@/lib/vitrin-blacklist';
 
 export const dynamic = 'force-dynamic';
 
@@ -236,10 +237,16 @@ export async function GET(request: Request) {
   <div class="container">
     <div class="grid">
       ${ampProfiles.map((p, index) => {
-        const imageName = p.src.split('/').pop() || '';
-        const imageId = imageName.replace(/[^0-9]/g, '').slice(0, 5) || index;
-        const seoImagePath = `/${slugify(locationName)}-vip-escort-ilan-${imageId}.webp`;
-        const imageSrc = `https://${host}${seoImagePath}`;
+        const isCustomImage = p.src && (p.src.startsWith('http') || p.src.includes('uploads') || !p.src.includes('seo_'));
+        
+        let imageSrc = '';
+        if (isCustomImage) {
+          imageSrc = p.src.startsWith('http') ? p.src : `https://${host}${p.src}`;
+        } else {
+          const safeIdx = (index % 310) + 1;
+          const currentSafeIdx = getSafeVipProfileIdx(safeIdx, index + 1);
+          imageSrc = `https://${host}/${slugify(locationName)}-vip-escort-ilan-${currentSafeIdx}.webp`;
+        }
         const title = p.title || "Elite Model";
         const age = p.age ? `${p.age} Yaş` : "24 Yaş";
         const niche = p.niche || "Elite Model";

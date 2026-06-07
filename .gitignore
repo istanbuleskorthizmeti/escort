@@ -15,6 +15,7 @@ next-env.d.ts
 google-key.json
 google-key*.json
 *service-account*.json
+hydra-gcp-key.json
 /lib/generated/prisma
 
 # Build Artifacts & Backups
@@ -50,5 +51,7 @@ eslint-results.json
 lint_results.txt
 tmp_audit.html
 /scripts/indexed-urls.json
-*.mp4  
- 
+*.mp4
+
+# Image Cache
+/public/_media/vitrin_cache

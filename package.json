@@ -24,6 +24,7 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@google-analytics/admin": "^9.0.1",
     "@google-analytics/data": "^4.12.1",
+    "@google-cloud/storage": "^7.19.0",
     "@octokit/rest": "^22.0.1",
     "@prisma/client": "5.22.0",
     "@supabase/supabase-js": "^2.101.1",

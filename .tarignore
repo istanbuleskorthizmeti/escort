@@ -1,0 +1,8 @@
+node_modules
+.next
+.git
+.vscode
+*.tar.gz
+*.zip
+*.part
+scratch

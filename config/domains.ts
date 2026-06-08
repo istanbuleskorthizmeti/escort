@@ -38,7 +38,6 @@ export const DOMAIN_MATRIX: DomainConfig[] = [
   { host: 'sisliescort.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'sisli', 'luxury'], targetCity: 'istanbul', targetDistrict: 'sisli', theme: 'luxury', serverGroup: 'MAIN_SERVER' },
   { host: 'avrupayakasiescort.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'avrupa-yakasi', 'general'], targetCity: 'istanbul', theme: 'rose', serverGroup: 'MAIN_SERVER' },
   { host: 'istanbulescorthizmeti.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'istanbul', 'general'], targetCity: 'istanbul', theme: 'gold', serverGroup: 'MAIN_SERVER' },
-  { host: 'istanbulescort.blog', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'istanbul', 'blog'], targetCity: 'istanbul', theme: 'dark', serverGroup: 'MAIN_SERVER' },
   { host: 'kadikoyescort.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'kadikoy', 'anadolu-yakasi'], targetCity: 'istanbul', targetDistrict: 'kadikoy', theme: 'emerald', serverGroup: 'MAIN_SERVER' },
   { host: 'pendikescorthizmeti.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'pendik', 'anadolu-yakasi'], targetCity: 'istanbul', targetDistrict: 'pendik', theme: 'luxury', serverGroup: 'MAIN_SERVER' },
   { host: 'bucaescorthizmeti.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'buca', 'izmir'], targetCity: 'izmir', targetDistrict: 'buca', theme: 'gold', serverGroup: 'MAIN_SERVER' },

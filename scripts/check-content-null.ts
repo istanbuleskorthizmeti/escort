@@ -23,9 +23,21 @@ async function run() {
           return;
         }
         const total = await prisma.pageContent.count({ where: { siteId: site.id } });
-        const withContent = await prisma.pageContent.count({ where: { siteId: site.id, content: { not: null } } });
+        const shortContent = await prisma.pageContent.count({ 
+          where: { siteId: site.id, OR: [{ content: { equals: '' } }, { content: null }] } 
+        });
+        const fallbackContent = await prisma.pageContent.count({
+          where: { siteId: site.id, content: { contains: 'seo-fallback' } }
+        });
+        const sampleShort = await prisma.pageContent.findMany({
+          where: { siteId: site.id, content: { contains: 'seo-fallback' } },
+          select: { slug: true, title: true },
+          take: 5
+        });
         console.log('Total pages in DB for site:', total);
-        console.log('Pages with content NOT NULL:', withContent);
+        console.log('Pages with empty or null content:', shortContent);
+        console.log('Pages containing duplicate seo-fallback content:', fallbackContent);
+        console.log('Sample fallback pages:', JSON.stringify(sampleShort, null, 2));
       }
       main().catch(console.error);
     `;

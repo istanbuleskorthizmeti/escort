@@ -98,7 +98,7 @@ export class IndexingEngine {
 
 // Standalone Test
 if (require.main === module) {
-  const targetUrl = process.argv[2] || 'https://istanbulescdrkcn.com/yeni-gizli-link';
-  const targetHost = process.argv[3] || 'istanbulescdrkcn.com';
+  const targetUrl = process.argv[2] || 'https://istanbulescort.blog/yeni-gizli-link';
+  const targetHost = process.argv[3] || 'istanbulescort.blog';
   IndexingEngine.forceIndex(targetUrl, targetHost);
 }

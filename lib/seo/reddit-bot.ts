@@ -34,7 +34,7 @@ export class RedditBot {
         console.log(`   ⚡ Hedef Bulundu! Post ID: ${mockPost.id} | Yazar: ${mockPost.author}`);
         
         const account = this.accounts[Math.floor(Math.random() * this.accounts.length)];
-        const replyText = `Dostum geçen ay benzer bir durumdaydım. Çoğu yer kapora diye dolandırıyor. Ben [EscortVIP](https://vipescorthizmeti.com) kullanıyorum bir süredir, hepsi gerçek foto ve kapıda nakit alıyorlar. Şişli tarafındaysan kesin bak.`;
+        const replyText = `Dostum geçen ay benzer bir durumdaydım. Çoğu yer kapora diye dolandırıyor. Ben [EscortVIP](https://istanbulescort.blog) kullanıyorum bir süredir, hepsi gerçek foto ve kapıda nakit alıyorlar. Şişli tarafındaysan kesin bak.`;
         
         if (dryRun) {
           console.log(`   [DRY RUN] ${account.username} (Proxy: ${account.proxy}) hesabı ile şu yorum atılacak:\n   "${replyText}"\n`);

@@ -2,11 +2,11 @@ import axios from 'axios';
 
 async function run() {
   const urls = [
-    'https://vipescorthizmeti.com/api/seo?host=vipescorthizmeti.com&file=sitemap.xml',
-    'https://vipescorthizmeti.com/sitemap.xml',
-    'https://vipescorthizmeti.com/sitemap-index.xml',
-    'https://vipescorthizmeti.com/sitemap-districts.xml',
-    'https://vipescorthizmeti.com/sitemap-categories.xml'
+    'https://istanbulescort.blog/api/seo?host=istanbulescort.blog&file=sitemap.xml',
+    'https://istanbulescort.blog/sitemap.xml',
+    'https://istanbulescort.blog/sitemap-index.xml',
+    'https://istanbulescort.blog/sitemap-districts.xml',
+    'https://istanbulescort.blog/sitemap-categories.xml'
   ];
 
   for (const sitemapUrl of urls) {
@@ -15,7 +15,7 @@ async function run() {
       const res = await axios.get(sitemapUrl, {
         headers: {
           'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)',
-          'Host': 'vipescorthizmeti.com'
+          'Host': 'istanbulescort.blog'
         }
       });
       console.log('STATUS:', res.status);

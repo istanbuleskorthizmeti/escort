@@ -11,23 +11,23 @@ const axios = require('axios');
 
 const prisma = new PrismaClient();
 
-// Kısa yönlendirme linklerimizi (vipescorthizmeti.com/go/...) doğrudan 
+// Kısa yönlendirme linklerimizi (istanbulescort.blog/go/...) doğrudan 
 // kendi sitemizdeki asıl ilçe sayfalarına yönlendiriyoruz! Döngü tamamen kırıldı.
 const redirects = [
-  { slug: "sefakoy-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/sefakoy-escort" },
-  { slug: "bakirkoy-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/bakirkoy-escort" },
-  { slug: "catalca-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/catalca-escort" },
-  { slug: "beylikduzu-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/beylikduzu-escort" },
-  { slug: "besyol-universiteli-escort-2026", target: "https://vipescorthizmeti.com/istanbul/besyol-escort" },
-  { slug: "besyol-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/besyol-escort" },
-  { slug: "istanbul-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/istanbul-escort" },
-  { slug: "sancaktepe-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/sancaktepe-escort" },
-  { slug: "kartal-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/kartal-escort" },
-  { slug: "cekmekoy-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/cekmekoy-escort" },
-  { slug: "arnavutkoy-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/arnavutkoy-escort" },
-  { slug: "basaksehir-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/basaksehir-escort" },
-  { slug: "esenler-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/esenler-escort" },
-  { slug: "adalar-vip-escort-2026", target: "https://vipescorthizmeti.com/istanbul/adalar-escort" }
+  { slug: "sefakoy-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/sefakoy-escort" },
+  { slug: "bakirkoy-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/bakirkoy-escort" },
+  { slug: "catalca-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/catalca-escort" },
+  { slug: "beylikduzu-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/beylikduzu-escort" },
+  { slug: "besyol-universiteli-escort-2026", target: "https://istanbulescort.blog/istanbul/besyol-escort" },
+  { slug: "besyol-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/besyol-escort" },
+  { slug: "istanbul-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/istanbul-escort" },
+  { slug: "sancaktepe-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/sancaktepe-escort" },
+  { slug: "kartal-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/kartal-escort" },
+  { slug: "cekmekoy-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/cekmekoy-escort" },
+  { slug: "arnavutkoy-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/arnavutkoy-escort" },
+  { slug: "basaksehir-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/basaksehir-escort" },
+  { slug: "esenler-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/esenler-escort" },
+  { slug: "adalar-vip-escort-2026", target: "https://istanbulescort.blog/istanbul/adalar-escort" }
 ];
 
 async function run() {
@@ -36,7 +36,7 @@ async function run() {
   
   let reportMessage = `🔥 <b>🏆 DRKCNAY CLOAK DÜZELTİLMİŞ TRAFİK RAPORU (v12.5) 🏆</b> 🔥\n`;
   reportMessage += `🕒 <b>Güncelleme Tarihi:</b> <code>${timestamp}</code>\n`;
-  reportMessage += `💎 <b>Domain Yetkisi:</b> <code>vipescorthizmeti.com</code>\n\n`;
+  reportMessage += `💎 <b>Domain Yetkisi:</b> <code>istanbulescort.blog</code>\n\n`;
   reportMessage += `🚀 <i>Tüm özel linklerimizin hedefleri döngüyü kırmak için doğrudan ana sitemizdeki ILÇE sayfalarına yönlendirildi! İşte güncel yönlendirmeler:</i>\n\n`;
 
   const results = [];
@@ -55,7 +55,7 @@ async function run() {
         create: { id: item.slug, targetUrl: item.target }
       });
       
-      const cloakUrl = `https://vipescorthizmeti.com/go/${item.slug}`;
+      const cloakUrl = `https://istanbulescort.blog/go/${item.slug}`;
       console.log(`✅ [VERİTABANI GÜNCELLENDİ] Yönlendirme Aktif: ${cloakUrl} -> ${item.target}`);
       
       const districtName = item.slug.split('-')[0].toUpperCase();

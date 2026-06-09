@@ -46,7 +46,7 @@ export function ExpertInsightBlock({ location, district, city }: ExpertInsightBl
     "name": expert.name,
     "jobTitle": expert.title,
     "description": expert.bio,
-    "image": `https://vipescorthizmeti.com${expert.image}`,
+    "image": `https://istanbulescort.blog${expert.image}`,
     "medicalSpecialty": expert.specialty,
     "knowsAbout": ["Sexual Health", "Bio-hacking", "Performance Optimization"]
   } : {
@@ -55,7 +55,7 @@ export function ExpertInsightBlock({ location, district, city }: ExpertInsightBl
     "name": expert.name,
     "jobTitle": expert.title,
     "description": expert.bio,
-    "image": `https://vipescorthizmeti.com${expert.image}`,
+    "image": `https://istanbulescort.blog${expert.image}`,
     "knowsAbout": ["Psychosexology", "Relationship Dynamics", "Intimacy Alchemy"]
   };
 

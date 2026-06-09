@@ -20,9 +20,10 @@ export interface DomainConfig {
 export const DOMAIN_MATRIX: DomainConfig[] = [
   // --- MONEY SITES ---
   { host: 'istanbulescort.blog', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'premium', 'luxury', 'main'], theme: 'luxury', serverGroup: 'MAIN_SERVER' },
-  { host: 'istanbulescdrkcn.com', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'premium', 'luxury', 'main'], theme: 'luxury', serverGroup: 'MAIN_SERVER' },
+  { host: 'istanbulescort.blog', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'premium', 'luxury', 'main'], theme: 'luxury', serverGroup: 'MAIN_SERVER' },
   { host: 'escortvip.net', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'directory', 'main'], theme: 'dark', serverGroup: 'MAIN_SERVER' },
   { host: 'vipescorthizmeti.shop', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'luxury', 'shop'], theme: 'gold', serverGroup: 'MAIN_SERVER' },
+  { host: 'istanbulescort.blog', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'luxury', 'main'], theme: 'gold', serverGroup: 'MAIN_SERVER' },
 
   // --- SATELLITE LOCAL DOMAINS (ISTANBUL & OTHERS) ---
   { host: 'bagcilarescort.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'bagcilar', 'young'], targetCity: 'istanbul', targetDistrict: 'bagcilar', theme: 'dark', serverGroup: 'MAIN_SERVER' },
@@ -33,7 +34,7 @@ export const DOMAIN_MATRIX: DomainConfig[] = [
   { host: 'besiktasescort.fun', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'besiktas', 'fun'], targetCity: 'istanbul', targetDistrict: 'besiktas', theme: 'gold', serverGroup: 'MAIN_SERVER' },
   { host: 'besiktasescort.blog', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'besiktas', 'blog'], targetCity: 'istanbul', targetDistrict: 'besiktas', theme: 'rose', serverGroup: 'MAIN_SERVER' },
   { host: 'taksimescorthizmeti.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'taksim', 'beyoglu'], targetCity: 'istanbul', targetDistrict: 'beyoglu', theme: 'dark', serverGroup: 'MAIN_SERVER' },
-  { host: 'sefakoyescorthizmeti.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'sefakoy', 'kucukcekmece'], targetCity: 'istanbul', targetDistrict: 'kucukcekmece', theme: 'emerald', serverGroup: 'MAIN_SERVER' },
+  { host: 'sefakoyescorthizmeti.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'sefakoy', 'kucukcekmece'], targetCity: 'istanbul', targetDistrict: 'sefakoy', theme: 'emerald', serverGroup: 'MAIN_SERVER' },
   { host: 'kucukcekmecescort.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'kucukcekmece', 'shop'], targetCity: 'istanbul', targetDistrict: 'kucukcekmece', theme: 'gold', serverGroup: 'MAIN_SERVER' },
   { host: 'sisliescort.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'sisli', 'luxury'], targetCity: 'istanbul', targetDistrict: 'sisli', theme: 'luxury', serverGroup: 'MAIN_SERVER' },
   { host: 'avrupayakasiescort.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'avrupa-yakasi', 'general'], targetCity: 'istanbul', theme: 'rose', serverGroup: 'MAIN_SERVER' },
@@ -49,13 +50,13 @@ export const DOMAIN_MATRIX: DomainConfig[] = [
   { host: 'istanbuldrkcnay.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'istanbul', 'drkcnay'], targetCity: 'istanbul', theme: 'rose', serverGroup: 'MAIN_SERVER' },
   { host: 'istanbulescortkaporasiz.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'istanbul', 'kaporasiz'], targetCity: 'istanbul', theme: 'emerald', serverGroup: 'MAIN_SERVER' },
   { host: 'shopistanbulescortkaporasiz.site', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'istanbul', 'kaporasiz', 'shop'], targetCity: 'istanbul', theme: 'dark', serverGroup: 'MAIN_SERVER' },
-  { host: 'dorukcanay.digital', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'istanbul', 'agency'], targetCity: 'istanbul', theme: 'luxury', serverGroup: 'MAIN_SERVER' },
+  { host: 'dorukcanay.digital', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'premium', 'luxury', 'main', 'flagship'], theme: 'luxury', serverGroup: 'MAIN_SERVER' },
   { host: 'escortcoin.space', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['crypto', 'escort', 'token'], theme: 'gold', serverGroup: 'MAIN_SERVER' },
 
   // --- CLOAKER (E-COMMERCE / PHARMACY / TRAP) SUBDOMAINS ---
-  { host: 'eczane.istanbulescdrkcn.com', role: 'CLOAKER', category: 'CLOAKER_EC', tags: ['pharmacy', 'performans', 'ereksiyon'], theme: 'dark', serverGroup: 'MAIN_SERVER' },
-  { host: 'shop.istanbulescdrkcn.com', role: 'CLOAKER', category: 'CLOAKER_EC', tags: ['e-commerce', 'performans', 'shop'], theme: 'dark', serverGroup: 'MAIN_SERVER' },
-  { host: 'performans.istanbulescdrkcn.com', role: 'CLOAKER', category: 'CLOAKER_EC', tags: ['performans', 'geciktirici', 'eczane'], theme: 'dark', serverGroup: 'MAIN_SERVER' },
+  { host: 'eczane.istanbulescort.blog', role: 'CLOAKER', category: 'CLOAKER_EC', tags: ['pharmacy', 'performans', 'ereksiyon'], theme: 'dark', serverGroup: 'MAIN_SERVER' },
+  { host: 'shop.istanbulescort.blog', role: 'CLOAKER', category: 'CLOAKER_EC', tags: ['e-commerce', 'performans', 'shop'], theme: 'dark', serverGroup: 'MAIN_SERVER' },
+  { host: 'performans.istanbulescort.blog', role: 'CLOAKER', category: 'CLOAKER_EC', tags: ['performans', 'geciktirici', 'eczane'], theme: 'dark', serverGroup: 'MAIN_SERVER' },
 
   // --- CLOAKER (TUBE / İFŞA / HONEY-POT) DOMAINS ---
   { host: 'magazinifsa.site', role: 'CLOAKER', category: 'CLOAKER_IFSA', tags: ['ifsa', 'magazin', 'video'], theme: 'dark', serverGroup: 'MAIN_SERVER' },

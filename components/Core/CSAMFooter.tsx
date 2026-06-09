@@ -17,7 +17,7 @@ export default function CSAMFooter() {
             </h3>
           </div>
           <p className="text-xs text-zinc-500 font-sans leading-relaxed mb-4">
-            VIPESCORTHIZMETI.COM has a strict, uncompromising zero-tolerance policy against Child Sexual Abuse Material (CSAM) and any form of human trafficking. We strictly comply with 18 U.S.C. § 2257, FOSTA-SESTA regulations, and international law. Any users, advertisers, or affiliates attempting to post, share, or request illegal content involving minors will be immediately reported to the National Center for Missing and Exploited Children (NCMEC) and relevant global law enforcement agencies (Interpol/Europol).
+            istanbulescort.blog has a strict, uncompromising zero-tolerance policy against Child Sexual Abuse Material (CSAM) and any form of human trafficking. We strictly comply with 18 U.S.C. § 2257, FOSTA-SESTA regulations, and international law. Any users, advertisers, or affiliates attempting to post, share, or request illegal content involving minors will be immediately reported to the National Center for Missing and Exploited Children (NCMEC) and relevant global law enforcement agencies (Interpol/Europol).
           </p>
           <p className="text-xs text-zinc-600 font-sans leading-relaxed">
             Sıfır Tolerans Politikamız: Platformumuzda çocuk istismarı materyallerine (CSAM) veya insan kaçakçılığına yönelik hiçbir faaliyete müsamaha gösterilmez. Bu tür içerikleri barındırma veya talep etme girişimleri anında küresel kolluk kuvvetlerine bildirilir.
@@ -71,7 +71,7 @@ export default function CSAMFooter() {
       </div>
       
       <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-zinc-900/50 text-center text-[10px] text-zinc-700 font-bold tracking-[0.2em] uppercase">
-        © {new Date().getFullYear()} VIPESCORTHIZMETI.COM LUXURY CONCIERGE. ALL RIGHTS RESERVED.
+        © {new Date().getFullYear()} istanbulescort.blog LUXURY CONCIERGE. ALL RIGHTS RESERVED.
       </div>
     </footer>
   );

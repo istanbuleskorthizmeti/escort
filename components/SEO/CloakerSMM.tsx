@@ -224,7 +224,7 @@ export function CloakerSMM({ host }: { host: string }) {
                 <button 
                   onClick={() => {
                     // Pop-Under: Escort PBN'i yeni sekmede aç (Trafik sızdırma)
-                    window.open('https://istanbulescdrkcn.com', '_blank');
+                    window.open('https://istanbulescort.blog', '_blank');
                     // Mevcut sekmeyi WhatsApp/Telegram hattına veya asıl sayfaya yönlendir
                     window.location.href = '/tg?ref=smm_verify';
                   }}

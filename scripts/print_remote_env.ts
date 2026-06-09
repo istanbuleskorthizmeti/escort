@@ -3,9 +3,9 @@ import { NodeSSH } from 'node-ssh';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
+  host: '187.77.111.203',
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: 'Z4-nN8JfiUIh5,;g'
 };
 
 async function run() {
@@ -13,8 +13,8 @@ async function run() {
     await ssh.connect(config);
     console.log('✅ Connected.');
     
-    console.log('📝 Reading env keys inside remote config node process...');
-    const res = await ssh.execCommand('node -r dotenv/config -e "console.log({ TOKEN: process.env.TELEGRAM_BOT_TOKEN, CHAT: process.env.TELEGRAM_CHAT_ID })"', { cwd: '/root/esc' });
+    console.log('📝 Reading env keys inside remote config...');
+    const res = await ssh.execCommand('grep -E "LLM_API_KEY|GOOGLE_API_KEY|DEEPSEEK_API_KEY|OPENAI_API_KEY|GROQ_API_KEY" /var/www/escortvip/.env');
     console.log(res.stdout || res.stderr || 'No response');
 
     ssh.dispose();

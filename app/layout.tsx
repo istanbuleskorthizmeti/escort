@@ -1,12 +1,25 @@
 import type { Metadata, Viewport } from "next";
+import { Inter, Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { headers } from "next/headers";
 import { siteConfig } from "@/config/site";
 import Script from "next/script";
 import { getSiteId } from "@/lib/site-context";
 import { ThemeEngine } from "@/lib/theme-engine";
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
+const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', display: 'swap' });
+const playfair = Playfair_Display({ 
+  subsets: ['latin'], 
+  variable: '--font-playfair', 
+  display: 'swap',
+  weight: ['700', '900'],
+  style: ['normal', 'italic']
+});
 import { BrowserIntelligence } from "@/components/SEO/BrowserIntelligence";
 import { LocalAuthority } from "@/components/SEO/LocalAuthority";
+import { toTitleCaseTR } from "@/lib/utils";
+import { MobileAppBanner } from "@/components/UI/MobileAppBanner";
 
 export async function generateViewport(): Promise<Viewport> {
   let host = siteConfig.domain;
@@ -34,13 +47,20 @@ export async function generateMetadata(): Promise<Metadata> {
   } catch (e) {}
   
   const theme = ThemeEngine.getTheme(host);
-  const brandTitle = theme.brandName;
-  const title = `🔞 ${brandTitle} | %100 GERÇEK VE VAHŞİ ESCORT İLANLAR`;
-  const description = `${brandTitle}: İstanbul'un en hiddetli escort rehberi. ${theme.slogan}. Kaporasız, gerçek ve sınırsız escort bayanlar ile VIP deneyim.`;
+  const brandTitle = toTitleCaseTR(theme.brandName);
+  const isFlagship = host.includes('dorukcanay.digital');
+  const title = isFlagship 
+    ? `💎 ${brandTitle} | Elite & Luxury VIP Companion Rehberi`
+    : `🔞 ${brandTitle} | %100 Gerçek ve Vahşi Escort İlanları`;
+    
+  const description = isFlagship
+    ? `${brandTitle}: İstanbul'un en seçkin ve lüks partner rehberi. ${theme.slogan}. Kaporasız, stüdyo onaylı modeller ile VIP escort deneyimi.`
+    : `${brandTitle}: İstanbul'un en hiddetli escort rehberi. ${theme.slogan}. Kaporasız, gerçek ve sınırsız escort bayanlar ile VIP deneyim.`;
 
   return {
     title,
     description,
+    manifest: "/manifest.json",
     metadataBase: new URL(`https://${host}`),
     alternates: { canonical: "/", languages: { 'tr-TR': '/' } },
     openGraph: {
@@ -67,7 +87,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     other: {
       'google': 'notranslate',
-
+      'apple-itunes-app': 'app-id=1642893041, app-argument=https://istanbulescort.blog',
       'apple-mobile-web-app-status-bar-style': 'black-translucent',
       'format-detection': 'telephone=no',
       'whatsapp-visibility': 'high-intent-escort',
@@ -89,19 +109,16 @@ export default async function RootLayout({
   } catch (e) {}
   
   const theme = ThemeEngine.getTheme(host);
-  const brandTitle = theme.brandName;
+  const brandTitle = toTitleCaseTR(theme.brandName);
 
   return (
-    <html lang="tr" className="h-full antialiased">
+    <html lang="tr" className={`h-full antialiased ${inter.variable} ${outfit.variable} ${playfair.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Outfit:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet" />
         <style dangerouslySetInnerHTML={{ __html: `
           :root {
-            --font-inter: 'Inter', sans-serif;
-            --font-playfair: 'Playfair Display', serif;
-            --font-outfit: 'Outfit', sans-serif;
+            --font-inter: var(--font-inter), sans-serif;
+            --font-playfair: var(--font-playfair), serif;
+            --font-outfit: var(--font-outfit), sans-serif;
             --primary-color: ${theme.primaryColor};
             --secondary-color: ${theme.secondaryColor};
             --bg-color: ${theme.bgColor};
@@ -160,6 +177,19 @@ export default async function RootLayout({
                     "addressLocality": "Istanbul",
                     "addressCountry": "TR"
                   }
+                },
+                {
+                  "@type": "SoftwareApplication",
+                  "@id": `https://${host}/#app`,
+                  "name": `${brandTitle} VIP Companion App`,
+                  "operatingSystem": "iOS, Android",
+                  "applicationCategory": "LifestyleApplication",
+                  "downloadUrl": `https://${host}/download-app`,
+                  "offers": {
+                    "@type": "Offer",
+                    "price": "0",
+                    "priceCurrency": "TRY"
+                  }
                 }
               ]
             })
@@ -197,7 +227,7 @@ export default async function RootLayout({
           })();
         `}} />
       </head>
-      <body className={`font-sans min-h-full flex flex-col text-white antialiased`} style={{ backgroundColor: theme.bgColor }}>
+      <body className="font-sans min-h-full flex flex-col text-white antialiased bg-[var(--bg-color)]">
         {/* Google Analytics (gtag.js) - Advanced Consent Mode V2 with Crawler Camouflage */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5N1LVB5EWE"
@@ -239,12 +269,13 @@ export default async function RootLayout({
               'allow_google_signals': true,
               'anonymize_ip': false,
               'linker': {
-                'domains': ['vipescorthizmeti.com', 'bit.ly', 'escrehberi.click']
+                'domains': ['istanbulescort.blog', 'bit.ly', 'escrehberi.click']
               }
             });
           `}
         </Script>
         <BrowserIntelligence />
+        <MobileAppBanner />
         <div className="flex-1 flex flex-col">
           {children}
         </div>

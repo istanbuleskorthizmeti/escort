@@ -10,7 +10,7 @@ export interface SmartLink {
 
 export class SmartLinker {
   private static LINKS = [
-    'https://istanbulescdrkcn.com',
+    'https://istanbulescort.blog',
     'https://bit.ly/dorukcanmanay'
   ];
 

@@ -26,7 +26,7 @@ export default function TermsPage() {
               01. Hizmet Kapsamı ve Egemenlik
             </h2>
             <p className="mb-6">
-              vipescorthizmeti.com ("Platform"), elit yaşam tarzı ve profesyonel concierge hizmetlerine yönelik bir rehberdir. Kullanıcılar, platformu kullanarak sarsılmaz gizlilik standartlarını ve burada belirtilen Prestij standartlarını kabul etmiş sayılırlar.
+              istanbulescort.blog ("Platform"), elit yaşam tarzı ve profesyonel concierge hizmetlerine yönelik bir rehberdir. Kullanıcılar, platformu kullanarak sarsılmaz gizlilik standartlarını ve burada belirtilen Prestij standartlarını kabul etmiş sayılırlar.
             </p>
           </div>
 
@@ -59,7 +59,7 @@ export default function TermsPage() {
 
           <div className="bg-zinc-950/80 p-12 rounded-[3rem] border border-zinc-900 text-center">
             <div className="text-[10px] font-black tracking-[0.5em] text-zinc-700 uppercase mb-4">
-               Official Elit Network // VIPESCORTHIZMETI.COM
+               Official Elit Network // istanbulescort.blog
             </div>
             <p className="text-xs text-zinc-600 uppercase tracking-widest leading-loose">
                Kullanım şartlarının ihlali durumunda, platformun "Elit Shield" standardı kapsamında erişimi kısıtlama hakkı saklıdır.

@@ -14,7 +14,7 @@ async function run() {
     console.log('✅ Connected.');
     
     console.log('📡 Requesting /sitemap.xml on port 3001...');
-    const reqResult = await ssh.execCommand('curl -i -H "Host: vipescorthizmeti.com" http://127.0.0.1:3001/sitemap.xml');
+    const reqResult = await ssh.execCommand('curl -i -H "Host: istanbulescort.blog" http://127.0.0.1:3001/sitemap.xml');
     console.log('RESPONSE STATUS/HEADERS:\n', reqResult.stdout.slice(0, 1000));
     
     console.log('📡 Reading latest PM2 cluster logs...');

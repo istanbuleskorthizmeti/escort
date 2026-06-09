@@ -9,7 +9,7 @@ import { headers } from "next/headers";
  */
 export async function queueTumblrPost(slug: string, title: string, content: string) {
   try {
-    const hostHeader = (await headers()).get("host") || "istanbulescdrkcn.com";
+    const hostHeader = (await headers()).get("host") || "istanbulescort.blog";
     const host = getCanonicalHost(hostHeader);
     const siteId = await getSiteId(host);
 
@@ -54,7 +54,7 @@ export async function triggerSeoSync(params?: {
   tumblrBlog?: string;
 }) {
   try {
-    const hostHeader = (await headers()).get("host") || "istanbulescdrkcn.com";
+    const hostHeader = (await headers()).get("host") || "istanbulescort.blog";
     const host = getCanonicalHost(hostHeader);
     console.log(`💣 [SEO-SYNC] Triggering sync for ${host}...`, params);
     return { 

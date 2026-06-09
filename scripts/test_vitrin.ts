@@ -17,7 +17,7 @@ const options = {
   path: '/',
   method: 'GET',
   headers: {
-    'Host': 'vipescorthizmeti.com',
+    'Host': 'istanbulescort.blog',
     'User-Agent': 'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)'
   }
 };

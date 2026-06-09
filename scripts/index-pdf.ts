@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 async function runIndex() {
-  const url = "https://istanbulescdrkcn.com/ULTIMATE_VIP_GUIDE_2026.pdf";
+  const url = "https://istanbulescort.blog/ULTIMATE_VIP_GUIDE_2026.pdf";
   console.log(`📡 [INDEX INITIATION] Requesting indexation for: ${url}`);
   
   try {

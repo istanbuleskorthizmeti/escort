@@ -185,48 +185,6 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'escortvip.net' }],
-        destination: 'https://istanbulescort.blog/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'vipescorthizmeti.com' }],
-        destination: 'https://istanbulescort.blog/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.vipescorthizmeti.com' }],
-        destination: 'https://istanbulescort.blog/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'vipescorthizmeti.shop' }],
-        destination: 'https://istanbulescort.blog/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'dorukcanay.digital' }],
-        destination: 'https://istanbulescort.blog/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.dorukcanay.digital' }],
-        destination: 'https://istanbulescort.blog/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'istanbulescdrkcn.com' }],
-        destination: 'https://istanbulescort.blog/:path*',
-        permanent: true,
-      },
-      {
         source: '/join',
         destination: 'http://dorukcanay.digital/go',
         permanent: true,

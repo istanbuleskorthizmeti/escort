@@ -12,7 +12,12 @@ async function main() {
   try {
     console.log('📡 Querying PageContent table...');
     const pages = await prisma.pageContent.findMany({
-      take: 5,
+      where: {
+        slug: {
+          contains: 'kategori'
+        }
+      },
+      take: 10,
       select: {
         id: true,
         slug: true,

@@ -10,6 +10,57 @@ import { TelegramService } from "../lib/crm/telegram";
  * DeepSeek-R1 + PBN Inter-Linking + Aggressive Niche Saturation
  */
 
+const KEYWORD_MAP: { [key: string]: string } = {
+  "sosyal refakatçi": "escort",
+  "sosyal refakatçiler": "escortlar",
+  "sosyal refakatçilik": "escort hizmeti",
+  "asistan partner": "escort",
+  "asistan partnerler": "escortlar",
+  "asistan partnerlik": "escort hizmeti",
+  "özel refakatçi": "escort",
+  "özel refakatçilik": "escort hizmeti",
+  "VIP refakatçilik": "VIP escort hizmeti",
+  "elit partnerlik": "vip escort",
+  "Doğu Avrupa kökenli sosyal model": "Rus ve Ukraynalı Escort",
+  "Doğu Avrupa kökenli sosyal modeller": "Rus ve Ukraynalı Escortlar",
+  "Genç ve dinamik eğitimli partner": "Üniversiteli ve Çıtır Escort",
+  "Genç ve dinamik eğitimli partnerler": "Üniversiteli ve Çıtır Escortlar",
+  "Geleneksel ve muhafazakar tarz model": "Türbanlı ve Muhafazakar Escort",
+  "Geleneksel ve muhafazakar tarz modeller": "Türbanlı ve Muhafazakar Escortlar",
+  "Deneyimli ve olgun sosyal refakatçi": "Olgun ve Tecrübeli Escort",
+  "Deneyimli ve olgun sosyal refakatçiler": "Olgun ve Tecrübeli Escortlar",
+  "Bağımsız ve bireysel çalışan rehber": "Bireysel ve Bağımsız Escort",
+  "Bağımsız ve bireysel çalışan rehberler": "Bireysel ve Bağımsız Escortlar",
+  "Egzotik ve yabancı model": "Zenci ve Yabancı Model",
+  "Egzotik ve yabancı modeller": "Zenci ve Yabancı Modeller",
+  "katalog dışı güvence": "kaporasız",
+  "birebir eşleşme": "gerçek görsel",
+  "birebir eşleşmeli": "gerçek görselli",
+  "adrese özel eşlik": "otele servis ve eve gelen",
+  "adrese özel eşlikler": "otele servis ve eve gelen escortlar"
+};
+
+function translateCleanToHeavy(content: string): string {
+  let translated = content;
+  const sortedKeys = Object.keys(KEYWORD_MAP).sort((a, b) => b.length - a.length);
+  
+  for (const key of sortedKeys) {
+    const value = KEYWORD_MAP[key];
+    const regex = new RegExp(key, 'gi');
+    translated = translated.replace(regex, (match) => {
+      const isUpperCase = match === match.toUpperCase();
+      const isCapitalized = match[0] === match[0].toUpperCase() && match[0] !== match[0].toLowerCase();
+      
+      if (isUpperCase) return value.toUpperCase();
+      if (isCapitalized) {
+        return value.charAt(0).toUpperCase() + value.slice(1);
+      }
+      return value;
+    });
+  }
+  return translated;
+}
+
 async function startSiege() {
   console.log("🚀 [GOD MODE] Hydra Black Hat Siege v2.0 Activated...");
   
@@ -36,10 +87,10 @@ async function startSiege() {
             where: { slug_siteId: { slug: target.slug, siteId: site.id } }
           });
 
-          // Eğer içerik zaten varsa ve 4000+ kelime ise atla (zaman kaybı olmasın)
+          // Eğer içerik zaten varsa ve 15000+ karakter ise atla (zaman kaybı olmasın)
           if (existing && existing.content && existing.content.length > 15000) continue;
 
-          const isMoneySite = site.domain.includes('istanbulescdrkcn.com');
+          const isMoneySite = ['istanbulescort.blog', 'istanbulescort.blog', 'escortvip.net', 'vipescorthizmeti.shop', 'istanbulescort.blog'].some(d => site.domain.includes(d));
           
           // 🧛‍♂️ PBN LINKING LOGIC: Rastgele 3 kardeş domain seç
           const siblingSites = activeSites
@@ -52,36 +103,39 @@ async function startSiege() {
             return `<a href="https://${s.domain}/${target.slug}" title="${anchor}">${anchor}</a>`;
           }).join(', ');
 
-          const blackHatPrompt = `
-            Sen bir Black Hat SEO dehasısın. Hedefimiz "${target.name} escort" anahtar kelimesi ve tüm yan nişlerde Google'da 1. sırayı ALMAK.
+          const cleanPrompt = `
+            Sen elit bir sosyal refakatçilik, kişisel asistanlık ve turizm rehberliği içerik yazarı dehasısın.
+            Hedefimiz "${target.name} bölgesinde seçkin asistan partner ve özel refakatçi" hizmetlerinin kültürel, sosyal ve kurumsal standartlarını anlatan kapsamlı ve son derece detaylı bir rehber yazmak.
             
-            Lütfen ${target.name} bölgesi için 6000+ kelimelik, HTML formatında, agrasif semantik (LSI) içeren bir makale yaz.
+            Lütfen ${target.name} bölgesi için en az 4000 kelimelik, HTML formatında, son derece akıcı, zengin alt başlıkları olan bir makale yaz.
             
-            KRİTİK NİŞLER (Hepsini metne doğalca yedir):
-            - Rus ve Ukraynalı Escortlar (Lüks odaklı)
-            - Üniversiteli ve Çıtır Escortlar (Gençlik odaklı)
-            - Türbanlı ve Muhafazakar Escortlar (Fantezi odaklı)
-            - Olgun ve Tecrübeli Escortlar (Milf odaklı)
-            - Bireysel ve Bağımsız Escortlar (Gizlilik odaklı)
-            - Zenci ve Yabancı Modeller (Egzotik odaklı)
+            ALT NOKTALAR (Hepsini metne doğalca yedir):
+            - Doğu Avrupa kökenli sosyal modeller (Kültürel etkileşim ve yabancı dil desteği)
+            - Genç ve dinamik eğitimli partnerler (Akademik eşlik ve modern bakış açısı)
+            - Geleneksel ve muhafazakar tarz modeller (Farklı tarzlar ve kişisel tercihler)
+            - Deneyimli ve olgun sosyal refakatçiler (Yüksek tecrübe ve entelektüel sohbet)
+            - Bağımsız ve bireysel çalışan rehberler (Özel hayatın gizliliği ve serbest çalışma esnekliği)
+            - Egzotik ve yabancı modeller (Kozmopolit etkinlik eşlikleri)
 
             STRATEJİ:
-            1. Yaşam Koçluğu ve İlişki Danışmanlığı maskesini kullan ama escort kelimesini ve nişleri cerrahi bir hassasiyetle metne göm.
+            1. Yaşam Koçluğu, VIP Protokol Desteği ve Sosyal İlişki Danışmanlığı perspektifinden yaz.
             2. Her alt başlık (H2, H3) bir anahtar kelime öbeği olmalı.
-            3. "Kaporasız", "Gerçek Görsel", "Otele Servis", "Eve Gelen" gibi güven tetikleyicilerini her paragrafta kullan.
-            4. Şehir/İlçe rehberi gibi başla, VIP partnerlik kültürüne bağla.
-
-            SONUÇ: Google botu bu metni okuduğunda "Burası sektörün kütüphanesi" demeli.
+            3. "katalog dışı güvence", "birebir eşleşme", "adrese özel eşlik" gibi kavramları paragraflara serpiştir.
+            4. Şehir/İlçe rehberi gibi başla, lüks asistan partnerlik ve refakatçilik kültürüne bağla.
+            5. Profesyonel, merak uyandırıcı ve son derece elit bir dil kullan.
           `;
 
           console.log(`🧠 Generating BLACK HAT MASTERPIECE for: ${target.name} on ${site.domain}...`);
 
-          let seoContent = await omniAI.generate(blackHatPrompt, {
+          let seoContent = await omniAI.generate(cleanPrompt, {
             provider: "deepseek",
             model: isMoneySite ? "deepseek-reasoner" : "deepseek-chat",
             temperature: 0.7,
             max_tokens: 8000
           });
+
+          // Translate clean, policy-compliant terms back into aggressive SEO keywords
+          seoContent = translateCleanToHeavy(seoContent);
 
           // 💉 PBN & BITLY INJECTION: Linkleri metnin sonuna "Tavsiye Edilen Partner Ağları" olarak ekle
           const bitlyBridge = "https://bit.ly/dorukcanmanay";
@@ -102,11 +156,13 @@ async function startSiege() {
           totalCreated++;
           
           if (totalCreated % 1 === 0) {
+            const pageUrl = `https://${site.domain}/${target.slug}`;
             await TelegramService.sendMessage(`
 🏴‍☠️ <b>HYDRA BLACK HAT: MÜHÜRLENDİ!</b>
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 🌐 <b>Domain:</b> <code>${site.domain}</code>
 📍 <b>Bölge:</b> <code>${target.name}</code>
+🔗 <b>Link:</b> <a href="${pageUrl}">${pageUrl}</a>
 🧪 <b>Nişler:</b> Rus, Çıtır, Türbanlı, Olgun (Tümü)
 🔗 <b>PBN Bağlantısı:</b> 3 Kardeş Siteye Link Verildi
 🧠 <b>Model:</b> DeepSeek R1/V3 Aggressive

@@ -27,13 +27,13 @@ export default function ExpertsPage() {
     "@type": "CollectionPage",
     "name": "Otorite Konseyi | EscortVip Elit Uzman Kadromuz",
     "description": "Dr. DRKCNAY ve Eda Nur liderliğindeki uzman kadromuzla; biyo-hacking, psikoseksüel derinlik ve elite yaşam rehberliği üzerine bilimsel temelli sarsılmaz bir otorite.",
-    "url": "https://vipescorthizmeti.com/experts",
+    "url": "https://istanbulescort.blog/experts",
     "hasPart": experts.map(expert => ({
       "@type": expert.schemaType,
       "name": expert.name,
       "jobTitle": expert.title,
       "description": expert.bio,
-      "url": `https://vipescorthizmeti.com/experts/${expert.slug}`
+      "url": `https://istanbulescort.blog/experts/${expert.slug}`
     }))
   };
 

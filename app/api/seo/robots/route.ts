@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function GET(request: NextRequest) {
-  const host = request.nextUrl.searchParams.get('host') || request.headers.get('host') || 'vipescorthizmeti.com';
+  const host = request.nextUrl.searchParams.get('host') || request.headers.get('host') || 'istanbulescort.blog';
   
   const robots = `
 User-agent: *

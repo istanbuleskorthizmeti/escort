@@ -54,9 +54,9 @@ export const HONEYPOT_FLEET: HoneyPotConfig[] = [
     { domain: 'dorukcanay.digital', fleet: 'SATELLITE', niche: 'brand' },
 
     // 🏥 5. FİLO: "THE HEALTHS" (E-Ticaret, Eczane, Performans) -> SMM & Cross-Sell
-    { domain: 'eczane.vipescorthizmeti.com', fleet: 'GHOST', niche: 'health' },
-    { domain: 'shop.vipescorthizmeti.com', fleet: 'GHOST', niche: 'health' },
-    { domain: 'performans.vipescorthizmeti.com', fleet: 'GHOST', niche: 'health' },
+    { domain: 'eczane.istanbulescort.blog', fleet: 'GHOST', niche: 'health' },
+    { domain: 'shop.istanbulescort.blog', fleet: 'GHOST', niche: 'health' },
+    { domain: 'performans.istanbulescort.blog', fleet: 'GHOST', niche: 'health' },
 ];
 
 export function getFleetConfig(host: string): HoneyPotConfig | undefined {

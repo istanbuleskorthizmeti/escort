@@ -13,7 +13,7 @@ import path from "path";
 async function generateParasitePayloads(locationName: string) {
   console.log(`🚀 [GOD MODE] Generating Parasite Payloads for: ${locationName}...`);
 
-  const moneySite = siteConfig.satelliteDomain; // vipescorthizmeti.com
+  const moneySite = siteConfig.satelliteDomain; // istanbulescort.blog
   const bitlyBridge = "https://bit.ly/dorukcanmanay";
   const targetUrl = `${moneySite}/${locationName.toLowerCase().replace(/\s/g, '-')}`;
 

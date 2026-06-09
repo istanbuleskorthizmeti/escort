@@ -14,7 +14,7 @@ const PARASITE_HUBS = [
  */
 export async function GET(request: NextRequest) {
   const { searchParams } = request.nextUrl;
-  const rawHost = searchParams.get('host') || request.headers.get('host') || 'istanbulescdrkcn.com';
+  const rawHost = searchParams.get('host') || request.headers.get('host') || 'istanbulescort.blog';
   const host = getCanonicalHost(rawHost);
   
   // 🔱 God Mode: Extract file with multi-layered routing fallbacks

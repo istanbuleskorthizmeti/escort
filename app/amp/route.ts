@@ -21,7 +21,31 @@ export async function GET(request: Request) {
   
   // Resolve location context
   const rawLoc = locParam || defaultDistrict;
-  const locationName = rawLoc.charAt(0).toUpperCase() + rawLoc.slice(1).toLowerCase();
+  const locationName = rawLoc
+    .split('-')
+    .map(word => {
+      // Custom mapping for popular districts to have correct Turkish characters on AMP titles
+      const trMap: { [key: string]: string } = {
+        istanbul: 'İstanbul', kadikoy: 'Kadıköy', besiktas: 'Beşiktaş',
+        sisli: 'Şişli', beylikduzu: 'Beylikdüzü', bakirkoy: 'Bakırköy',
+        atasehir: 'Ataşehir', esenyurt: 'Esenyurt', fatih: 'Fatih',
+        bagcilar: 'Bağcılar', bahcelievler: 'Bahçelievler', umraniye: 'Ümraniye',
+        pendik: 'Pendik', maltepe: 'Maltepe', kartal: 'Kartal',
+        sariyer: 'Sarıyer', uskudar: 'Üsküdar', avcilar: 'Avcılar',
+        kagitthane: 'Kağıthane', sancaktepe: 'Sancaktepe', basaksehir: 'Başakşehir',
+        esenler: 'Esenler', eyupsultan: 'Eyüpsultan', beykoz: 'Beykoz',
+        beyoglu: 'Beyoğlu', cekmekoy: 'Çekmeköy', tuzla: 'Tuzla',
+        arnavutkoy: 'Arnavutköy', gaziosmanpasa: 'Gaziosmanpaşa', sultanbeyli: 'Sultanbeyli',
+        gungoren: 'Güngören', zeytinburnu: 'Zeytinburnu', sile: 'Şile',
+        catalca: 'Çatalca', silivri: 'Silivri', buyukcekmece: 'Büyükçekmece',
+        kucukcekmece: 'Küçükçekmece', adalar: 'Adalar', bayrampasa: 'Bayrampaşa',
+        sultangazi: 'Sultangazi'
+      };
+      const lower = word.toLowerCase();
+      if (trMap[lower]) return trMap[lower];
+      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+    })
+    .join(' ');
   
   const theme = ThemeEngine.getTheme(host);
   const brandName = theme.brandName || "DRKCNAY ELITE";

@@ -37,6 +37,22 @@ export class ThemeEngine {
      * Resolves a unique but consistent theme for a given domain
      */
     static getTheme(host: string): ThemeConfig {
+        if (host.includes('dorukcanay.digital')) {
+            return {
+                primaryColor: '#d4af37', // Pure Flagship Gold
+                secondaryColor: 'rgba(212,175,55,0.08)',
+                bgColor: '#020202', // Pitch black
+                textColor: '#f3f4f6',
+                glowEffect: 'rgba(212,175,55,0.35)',
+                headingFont: 'var(--font-playfair)',
+                bodyFont: 'var(--font-inter)',
+                layoutType: 'grid',
+                borderStyle: 'rounded-[3rem]',
+                brandName: 'DORUKCANAY DIGITAL',
+                slogan: 'İstanbul VIP Escort & Lüks Eşlik Hizmetleri Amiral Gemisi'
+            };
+        }
+
         const hash = this.hashDomain(host);
 
         // 🎨 [HYDRA-PALETTE] Nuclear HEX Palettes for direct injection (12+ Options for 56 Domains)

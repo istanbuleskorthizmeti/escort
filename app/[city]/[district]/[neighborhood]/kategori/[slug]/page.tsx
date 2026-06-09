@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { sanitizeDisplayName } from "@/lib/utils";
+import { sanitizeDisplayName, toTitleCaseTR } from "@/lib/utils";
 import { cities } from "@/lib/locations";
 import { ThemeEngine } from "@/lib/theme-engine";
 import { siteConfig } from "@/config/site";
@@ -11,12 +11,16 @@ import { generateLocationMetadata } from "@/lib/seo-metadata";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { generateGodModeContent } from "@/lib/seo-content";
-import { generateUltraGraphSchema } from "@/lib/seo-schema";
+import { generateUltraGraphSchema, getDeterministicRating } from "@/lib/seo-schema";
 import { getHybridProfiles } from "@/lib/ad-service";
+import { taxonomyCategories } from "@/lib/taxonomy";
 import { HybridProfileGrid } from "@/components/UI/HybridProfileGrid";
 import { prisma } from "@/lib/prisma";
+import { getPageContent } from "@/lib/data-cache";
 import { GrowthWidgets } from "@/components/UI/GrowthWidgets";
 import { getSiteId, getCanonicalHost } from "@/lib/site-context";
+import { UserReviews } from "@/components/SEO/UserReviews";
+import { UltraFooter } from "@/components/SEO/UltraFooter";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
@@ -43,7 +47,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
   if (!cityObj || !distObj || !neighObj) {
     const fullSlug = `${city}-${district}-${neighborhood}-kategori-${slug}`;
-    const dbContent = await prisma.pageContent.findFirst({ where: { slug: fullSlug, siteId } });
+    const dbContent = await getPageContent(fullSlug, siteId);
     if (!dbContent) {
       return {
         title: "Sayfa Bulunamadı",
@@ -52,6 +56,8 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     }
   }
 
+  const category = taxonomyCategories[slug as keyof typeof taxonomyCategories];
+
   return generateLocationMetadata({
     city,
     cityName: cityObj?.name || city,
@@ -59,7 +65,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
     districtName: distObj?.name || district,
     neighborhood,
     neighborhoodName: neighObj?.name || neighborhood,
-    customTitle: `${neighborhood.toUpperCase()} ${slug.toUpperCase()} VIP`,
+    categoryTitle: category?.title || toTitleCaseTR(slug),
     domain: host
   });
 }
@@ -79,7 +85,7 @@ export default async function DeepCategoryPage({ params }: { params: Promise<Par
 
   if (!cityObj || !distObj || !neighObj) {
     const fullSlug = `${city}-${district}-${neighborhood}-kategori-${slug}`;
-    const dbContent = await prisma.pageContent.findFirst({ where: { slug: fullSlug, siteId } });
+    const dbContent = await getPageContent(fullSlug, siteId);
     if (!dbContent) {
       return notFound();
     }
@@ -88,17 +94,19 @@ export default async function DeepCategoryPage({ params }: { params: Promise<Par
   const nName = neighObj?.name || sanitizeDisplayName(neighborhood);
   const dName = distObj?.name || sanitizeDisplayName(district);
   const cityName = cityObj?.name || sanitizeDisplayName(city);
-  const catName = slug.replace(/-/g, ' ').toUpperCase();
+  const catName = toTitleCaseTR(slug.replace(/-/g, ' '));
 
   const profiles = await getHybridProfiles({ city, district, neighborhood, category: slug, limit: 12 });
   const theme = ThemeEngine.getTheme(host);
   const aiContent = await generateGodModeContent({ city, district, neighborhood: nName, category: slug, host });
+  const url = `https://${host}/${city}/${district}/${neighborhood}/kategori/${slug}`;
+  const { ratingValue, reviewCount } = getDeterministicRating(url);
 
   const ultraSchema = generateUltraGraphSchema({
     locationName: `${nName} ${catName}`,
     city: cityName,
     description: `${cityName} ${dName} ${nName} bölgesinde en iyi ${catName} partner rehberi.`,
-    url: `https://${host}/${city}/${district}/${neighborhood}/kategori/${slug}`,
+    url: url,
     categoryTitle: `${catName} VIP Escort`,
     faqs: aiContent.faqs,
     telephone: siteConfig.contact.whatsappNumber
@@ -106,6 +114,7 @@ export default async function DeepCategoryPage({ params }: { params: Promise<Par
 
   return (
     <div className={`min-h-screen ${theme.bgColor} ${theme.textColor} antialiased`}>
+      <link rel="amphtml" href={`https://${host}/amp?loc=${neighborhood}-${slug}`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ultraSchema) }} />
       <Navbar />
       <main className="max-w-7xl mx-auto py-12 md:py-24 px-6 md:px-12">
@@ -125,6 +134,8 @@ export default async function DeepCategoryPage({ params }: { params: Promise<Par
         <LongFormContent location={nName} type="category" city={city} district={district} initialHtml={aiContent.html} />
         <GrowthWidgets />
       </main>
+      <UserReviews locationName={`${nName} ${catName}`} ratingValue={ratingValue} reviewCount={reviewCount} />
+      <UltraFooter host={host} cityName={cityName} districtName={dName} />
     </div>
   );
 }

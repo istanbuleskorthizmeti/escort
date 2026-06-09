@@ -9,8 +9,8 @@ const CF_API_TOKEN = process.env.CF_API_TOKEN;
 const CF_EMAIL = process.env.CF_EMAIL;
 
 const REDIRECTS = [
-  { old: 'vipescorthizmeti.com', new: 'istanbulescort.blog' },
-  { old: 'istanbulescdrkcn.com', new: 'istanbulescort.blog' },
+  { old: 'istanbulescort.blog', new: 'istanbulescort.blog' },
+  { old: 'istanbulescort.blog', new: 'istanbulescort.blog' },
   { old: 'escortvip.net', new: 'istanbulescort.blog' }
 ];
 

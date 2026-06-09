@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { prisma } from '../prisma';
 import { getSiteId, getCanonicalHost } from '../site-context';
 import { getDomainConfig } from '@/config/domains';
+import { cities } from '../locations';
 
 /**
  * 🗺️ DRKCNAY ELITE HYDRA SITEMAP GENERATOR (v4.0 - Consolidated Default)
@@ -45,16 +46,16 @@ export async function generateSitemapResponse(host: string, file: string): Promi
     }
 
     // 2. Fetch pages from the DB for this site context
-    let pages = await prisma.pageContent.findMany({
+    const dbPages = await prisma.pageContent.findMany({
       where: { siteId, content: { not: null } },
-      take: 5000,
+      take: 50000,
       select: { slug: true, updatedAt: true }
     });
 
     const targetCity = config?.targetCity?.toLowerCase() || 'istanbul';
     const targetDistrict = config?.targetDistrict?.toLowerCase();
     
-    // Dynamic Fallback: generate default target districts if DB is empty or lacks pages
+    // Dynamic Fallback: generate default target districts
     const istanbulDistricts = [
       'besiktas', 'sisli', 'beylikduzu', 'kadikoy', 'bakirkoy', 
       'atasehir', 'esenyurt', 'fatih', 'bagcilar', 'bahcelievler',
@@ -63,47 +64,82 @@ export async function generateSitemapResponse(host: string, file: string): Promi
       'esenler', 'eyupsultan', 'beykoz', 'beyoglu', 'cekmekoy', 
       'tuzla', 'arnavutkoy', 'gaziosmanpasa', 'sultanbeyli', 'güngören',
       'zeytinburnu', 'sile', 'catalca', 'silivri', 'buyukcekmece',
-      'kucukcekmece', 'adalar', 'bakirkoy', 'bayrampasa', 'sultangazi'
+      'kucukcekmece', 'adalar', 'bayrampasa', 'sultangazi'
     ];
 
     const defaultDistricts = targetDistrict 
       ? [targetDistrict] 
       : istanbulDistricts;
 
-    if (!siteId || pages.length === 0) {
-      pages = defaultDistricts.map(dist => ({
-        slug: `${targetCity}-${dist}`,
-        updatedAt: new Date()
-      }));
-    }
+    const pageMap = new Map<string, { slug: string; updatedAt: Date }>();
+
+    // Seed with default districts to ensure baseline coverage
+    defaultDistricts.forEach(dist => {
+      const slug = `${targetCity}-${dist}`;
+      pageMap.set(slug, { slug, updatedAt: new Date() });
+    });
+
+    // Merge in database pages (including custom categories or neighborhoods)
+    dbPages.forEach((p: { slug: string; updatedAt: Date }) => {
+      pageMap.set(p.slug.toLowerCase(), p);
+    });
+
+    const pages = Array.from(pageMap.values());
 
     // Filter pages for satellite rules
-    let filteredPages = pages.filter((p: any) => p.slug !== 'home' && p.slug !== 'index');
+    let filteredPages = pages.filter((p: { slug: string; updatedAt: Date }) => p.slug !== 'home' && p.slug !== 'index');
 
     if (config && config.role === 'SATELLITE') {
       const targetCityName = config.targetCity?.toLowerCase();
       const targetDistrictName = config.targetDistrict?.toLowerCase();
 
-      filteredPages = pages.filter((p: any) => {
-        const slug = p.slug.toLowerCase();
+      filteredPages = pages.filter((p: { slug: string; updatedAt: Date }) => {
+        const slug = p.slug.toLowerCase()
+          .replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ı/g, 'i').replace(/İ/g, 'i')
+          .replace(/ğ/g, 'g').replace(/ö/g, 'o').replace(/ü/g, 'u');
+        const targetDistNormalized = targetDistrictName
+          ?.replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ı/g, 'i').replace(/İ/g, 'i')
+          .replace(/ğ/g, 'g').replace(/ö/g, 'o').replace(/ü/g, 'u');
+
         if (targetCityName && slug === targetCityName) return true;
-        if (targetDistrictName) return slug.includes(targetDistrictName);
+        if (targetDistNormalized && slug.includes(targetDistNormalized)) return true;
         if (targetCityName) return slug.startsWith(targetCityName) || slug.includes(targetCityName);
         return false;
       });
     }
 
+
     // Normalizing and formatting function to clean combined dot characters and trailing dashes
     const formatUrlNode = (slug: string, updatedAt: Date, priority = 0.8) => {
-      let finalSlug = slug;
-      if (finalSlug.includes('-')) {
+      let finalSlug = slug.toLowerCase().trim();
+      
+      if (!finalSlug.includes('/') && finalSlug.includes('-')) {
         const parts = finalSlug.split('-');
-        const potentialCity = parts[0].toLowerCase();
-        const knownCities = ['istanbul', 'ankara', 'izmir', 'antalya', 'bursa', 'adana', 'eskisehir', 'kocaeli', 'mugla'];
-        if (knownCities.includes(potentialCity)) {
-          finalSlug = `${potentialCity}/${parts.slice(1).join('-')}`;
+        const firstPart = parts[0];
+        
+        if (cities[firstPart]) {
+          const cityObj = cities[firstPart];
+          if (parts.length > 1) {
+            const districtCandidate = parts[1];
+            const matchingDistrict = cityObj.districts.find(d => d.slug === districtCandidate);
+            
+            if (matchingDistrict) {
+              if (parts.length > 2) {
+                // E.g., 'istanbul-esenyurt-cumhuriyet' -> 'istanbul/esenyurt/cumhuriyet'
+                const neighborhoodCandidate = parts.slice(2).join('-');
+                finalSlug = `${firstPart}/${districtCandidate}/${neighborhoodCandidate}`;
+              } else {
+                // E.g., 'istanbul-esenyurt' -> 'istanbul/esenyurt'
+                finalSlug = `${firstPart}/${districtCandidate}`;
+              }
+            } else {
+              // E.g., 'istanbul-merkez' -> 'istanbul/merkez'
+              finalSlug = `${firstPart}/${parts.slice(1).join('/')}`;
+            }
+          }
         }
       }
+
       const slugPrefix = finalSlug.startsWith('/') ? '' : '/';
       
       // Unicode Normalization to resolve i%CC%87 issues in canonical URL representation
@@ -160,7 +196,7 @@ export async function generateSitemapResponse(host: string, file: string): Promi
         select: { name: true, updatedAt: true }
       });
       
-      const profileSlugNodes = activeProfiles.map(p => {
+      const profileSlugNodes = activeProfiles.map((p: { name: string; updatedAt: Date }) => {
         const slugifiedName = p.name.toLowerCase().trim()
           .replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ı/g, 'i').replace(/İ/g, 'i')
           .replace(/ğ/g, 'g').replace(/ö/g, 'o').replace(/ü/g, 'u')
@@ -240,7 +276,7 @@ export async function generateSitemapResponse(host: string, file: string): Promi
         where: { isActive: true },
         select: { name: true, updatedAt: true }
       });
-      const profileSlugNodes = activeProfiles.map(p => {
+      const profileSlugNodes = activeProfiles.map((p: { name: string; updatedAt: Date }) => {
         const slugifiedName = p.name.toLowerCase().trim()
           .replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ı/g, 'i').replace(/İ/g, 'i')
           .replace(/ğ/g, 'g').replace(/ö/g, 'o').replace(/ü/g, 'u')

@@ -38,7 +38,7 @@ async function testAPIs() {
     console.log('\n🚀 [INDEXING] Testing Indexing API (Get Status for homepage)...');
     const indexing = google.indexing({ version: 'v3', auth });
     try {
-      const url = 'https://vipescorthizmeti.com/';
+      const url = 'https://istanbulescort.blog/';
       const status = await indexing.urlNotifications.getMetadata({ url });
       console.log(`✅ [INDEXING] Status for ${url}:`, status.data.latestUpdate?.type);
     } catch (err) {

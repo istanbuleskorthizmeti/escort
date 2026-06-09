@@ -1,0 +1,191 @@
+[
+  {
+    "url": "https://escortvip.net/",
+    "siteUrl": "sc-domain:escortvip.net",
+    "verdict": "NEUTRAL",
+    "coverageState": "Doğru standart etikete sahip alternatif sayfa",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-06-09T01:06:20Z",
+    "userCanonical": "https://escortvip.net/istanbul",
+    "googleCanonical": "https://istanbulescort.blog/",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://escortvip.net/",
+    "siteUrl": "sc-domain:escortvip.net",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  },
+  {
+    "url": "https://escortvip.net/istanbul",
+    "siteUrl": "sc-domain:escortvip.net",
+    "verdict": "NEUTRAL",
+    "coverageState": "Yönlendirmeli sayfa",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-05-24T14:46:37Z",
+    "userCanonical": "https://istanbulescdrkcn.com/istanbul",
+    "googleCanonical": "https://istanbulescort.blog/",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://escortvip.net/istanbul",
+    "siteUrl": "sc-domain:escortvip.net",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  },
+  {
+    "url": "https://escortvip.net/istanbul/kadikoy",
+    "siteUrl": "sc-domain:escortvip.net",
+    "verdict": "NEUTRAL",
+    "coverageState": "Doğru standart etikete sahip alternatif sayfa",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-04-24T06:22:57Z",
+    "userCanonical": "https://escortvip.net/",
+    "googleCanonical": "https://iqostobacco.online/",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://escortvip.net/istanbul/kadikoy",
+    "siteUrl": "sc-domain:escortvip.net",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  },
+  {
+    "url": "https://escortvip.net/istanbul/kategori/rus",
+    "siteUrl": "sc-domain:escortvip.net",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL Google tarafından bilinmiyor",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+  },
+  {
+    "url": "https://escortvip.net/istanbul/kategori/rus",
+    "siteUrl": "sc-domain:escortvip.net",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  },
+  {
+    "url": "https://vipescorthizmeti.com/",
+    "siteUrl": "sc-domain:vipescorthizmeti.com",
+    "verdict": "NEUTRAL",
+    "coverageState": "Yönlendirmeli sayfa",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-06-09T03:48:48Z",
+    "userCanonical": "https://istanbulescort.blog/istanbul",
+    "googleCanonical": "https://istanbulescort.blog/",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://vipescorthizmeti.com/",
+    "siteUrl": "sc-domain:vipescorthizmeti.com",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  },
+  {
+    "url": "https://vipescorthizmeti.com/istanbul",
+    "siteUrl": "sc-domain:vipescorthizmeti.com",
+    "verdict": "NEUTRAL",
+    "coverageState": "Kopya, Google kullanıcıdan farklı bir standart sayfa seçti",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-06-03T14:48:42Z",
+    "userCanonical": "https://vipescorthizmeti.com/istanbul",
+    "googleCanonical": "https://istanbulescort.blog/",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://vipescorthizmeti.com/istanbul",
+    "siteUrl": "sc-domain:vipescorthizmeti.com",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  },
+  {
+    "url": "https://vipescorthizmeti.com/istanbul/kadikoy",
+    "siteUrl": "sc-domain:vipescorthizmeti.com",
+    "verdict": "NEUTRAL",
+    "coverageState": "Yönlendirmeli sayfa",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-06-07T04:12:18Z",
+    "userCanonical": "https://istanbulescort.blog/istanbul/kadikoy",
+    "googleCanonical": "https://kadikoyescort.shop/istanbul/kadikoy",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://vipescorthizmeti.com/istanbul/kadikoy",
+    "siteUrl": "sc-domain:vipescorthizmeti.com",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  },
+  {
+    "url": "https://vipescorthizmeti.com/istanbul/kategori/rus",
+    "siteUrl": "sc-domain:vipescorthizmeti.com",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL Google tarafından bilinmiyor",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+  },
+  {
+    "url": "https://vipescorthizmeti.com/istanbul/kategori/rus",
+    "siteUrl": "sc-domain:vipescorthizmeti.com",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  },
+  {
+    "url": "https://istanbulescort.blog/",
+    "siteUrl": "sc-domain:istanbulescort.blog",
+    "verdict": "PASS",
+    "coverageState": "Gönderildi ve dizine eklendi",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-06-09T03:48:48Z",
+    "userCanonical": "https://istanbulescort.blog/istanbul",
+    "googleCanonical": "https://istanbulescort.blog/",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://istanbulescort.blog/istanbul",
+    "siteUrl": "sc-domain:istanbulescort.blog",
+    "verdict": "PASS",
+    "coverageState": "Gönderildi ve dizine eklendi",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-06-08T20:18:48Z",
+    "userCanonical": "https://istanbulescort.blog/istanbul",
+    "googleCanonical": "https://istanbulescort.blog/istanbul",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://istanbulescort.blog/istanbul/kadikoy",
+    "siteUrl": "sc-domain:istanbulescort.blog",
+    "verdict": "PASS",
+    "coverageState": "Gönderildi ve dizine eklendi",
+    "robotsTxtState": "ALLOWED",
+    "indexingState": "INDEXING_ALLOWED",
+    "pageFetchState": "SUCCESSFUL",
+    "lastCrawlTime": "2026-06-07T04:12:18Z",
+    "userCanonical": "https://istanbulescort.blog/istanbul/kadikoy",
+    "googleCanonical": "https://istanbulescort.blog/istanbul/kadikoy",
+    "crawledAs": "MOBILE"
+  },
+  {
+    "url": "https://istanbulescort.blog/istanbul/kategori/rus",
+    "siteUrl": "sc-domain:istanbulescort.blog",
+    "verdict": "NEUTRAL",
+    "coverageState": "URL Google tarafından bilinmiyor",
+    "robotsTxtState": "ROBOTS_TXT_STATE_UNSPECIFIED",
+    "indexingState": "INDEXING_STATE_UNSPECIFIED",
+    "pageFetchState": "PAGE_FETCH_STATE_UNSPECIFIED"
+  },
+  {
+    "url": "https://istanbulescort.blog/istanbul/kategori/rus",
+    "siteUrl": "sc-domain:istanbulescort.blog",
+    "error": "Quota exceeded for quota metric 'Publish requests' and limit 'Publish requests per day' of service 'indexing.googleapis.com' for consumer 'project_number:279960646827'."
+  }
+]

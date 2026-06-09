@@ -2,7 +2,7 @@ const axios = require('axios');
 
 const SITES = [
   'istanbulescort.blog',
-  'istanbulescdrkcn.com',
+  'istanbulescort.blog',
   'escortvip.net',
   'vipescorthizmeti.shop',
   'bagcilarescort.shop',

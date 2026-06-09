@@ -23,6 +23,8 @@ import { VIPEventHub } from "../../../components/SEO/VIPEventHub";
 import { UltraFooter } from "../../../components/SEO/UltraFooter";
 import { IstanbulConquestMatrix } from "../../../components/SEO/IstanbulConquestMatrix";
 import { LivePhotoMarquee } from "../../../components/UI/LivePhotoMarquee";
+import { UserReviews } from "../../../components/SEO/UserReviews";
+import { getDeterministicRating } from "../../../lib/seo-schema";
 
 export const dynamic = "force-dynamic";
 export const dynamicParams = true;
@@ -79,7 +81,6 @@ export async function generateMetadata({
     district,
     districtName: districtName,
     domain: host,
-    customTitle: `🔞 ${districtName.toUpperCase()} ESCORT | VIP ESCORT BAYANLAR`
   });
 }
 
@@ -131,29 +132,31 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
   const [vitrinProfiles] = await Promise.all([
     getVitrinProfiles().catch(() => [])
   ]);
+  const url = `https://${host}/${city}/${district}`;
+  const { ratingValue, reviewCount } = getDeterministicRating(url);
   
   const ultraSchema = generateUltraGraphSchema({
     locationName: `${safeDistName}`,
     city: safeCityName,
     description: `${safeDistName} bölgesinde VIP escort ajansı rehberi. En hiddetli escort bayan profilleri ve kaporasız randevu.`,
-    url: `https://${host}/${city}/${district}`,
+    url: url,
     categoryTitle: "VIP ESCORT AJANSI v16.0",
     faqs: [
       { q: `${safeDistName} escort hizmetleri kaporasız mı?`, a: "Evet, tüm buluşmalarımız %100 kaporasız ve güvenlidir." },
       { q: `${safeDistName} bölgesinde eve servis var mı?`, a: "Evet, seçkin modellerimiz hem eve hem de otellere servis sağlamaktadır." }
     ],
-    telephone: "+905520949245"
+    telephone: siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+905520949245"
   });
 
   return (
-    <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30 selection:text-white">
+    <div className="min-h-screen bg-black text-white antialiased selection:bg-[var(--primary-color)]/30 selection:text-white">
       <link rel="amphtml" href={`https://${host}/amp?loc=${district}`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ultraSchema) }} />
       <Navbar />
       
       <main className="pt-28">
         <div className="w-full relative z-0 mb-12">
-            <DorukVitrin city={String(safeCityName)} host={host} serverProfiles={vitrinProfiles} />
+             <DorukVitrin city={String(safeCityName)} host={host} serverProfiles={vitrinProfiles} />
         </div>
 
         <LivePhotoMarquee />
@@ -163,26 +166,43 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
           
           <Breadcrumbs items={[{ name: String(safeCityName), item: `/${city}` }, { name: String(safeDistName), item: `/${city}/${district}` }]} />
           
-          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-rose-600/20 px-8 py-3 rounded-full mb-16 shadow-glow-rose mt-12">
-            <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
+          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-[var(--primary-color)]/20 px-8 py-3 rounded-full mb-16 shadow-glow-[var(--primary-color)] mt-12">
+            <span className="w-2.5 h-2.5 bg-[var(--primary-color)] rounded-full animate-glow-pulse" />
             <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
-               {String(safeDistName).toUpperCase()} VIP ESCORT MERKEZİ // DRKCNAY NETWORK
+               {String(safeDistName).toUpperCase()} {host.includes('dorukcanay.digital') ? 'VIP COMPANION PORTALI' : 'VIP ESCORT MERKEZİ'} // DRKCNAY NETWORK
             </span>
           </div>
-
+          
           <h1 className="text-6xl md:text-[10rem] mb-12 tracking-tighter leading-none flex flex-col items-start font-black italic">
-            <span className="opacity-90">{String(safeCityName)}</span>
-            <span className="text-rose-600 drop-shadow-[0_0_50px_rgba(225,29,72,0.6)] uppercase">ESCORT AJANSI</span>
+            <span className="opacity-90">{String(safeDistName)}</span>
+            <span className="text-[var(--primary-color)] drop-shadow-[0_0_50px_var(--primary-color)] uppercase">
+              {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'ESCORT AJANSI'}
+            </span>
           </h1>
           
-          <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-rose-600 pl-12 max-w-4xl leading-tight opacity-90">
-            {String(safeCityName)} bölgesindeki en yüksek hizmet standartları ve <br className="hidden md:block"/>
-            <span className="text-white border-b-2 border-rose-600/30 pb-1">doğrulanmış gerçek</span> escort bayanlar.
+          <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-[var(--primary-color)] pl-12 max-w-4xl leading-tight opacity-90">
+            {host.includes('dorukcanay.digital') ? (
+              <>
+                {String(safeDistName)} genelinde lüks yaşam stiline özel <br className="hidden md:block"/>
+                <span className="text-white border-b-2 border-[var(--primary-color)]/30 pb-1">kaporasız elit model</span> refakatçi profilleri.
+              </>
+            ) : (
+              <>
+                {String(safeDistName)} bölgesindeki en yüksek hizmet standartları ve <br className="hidden md:block"/>
+                <span className="text-white border-b-2 border-[var(--primary-color)]/30 pb-1">doğrulanmış gerçek</span> escort bayanlar.
+              </>
+            )}
           </p>
 
-          <div className="mt-12 bg-rose-600/10 border border-rose-600/20 p-8 rounded-3xl max-w-2xl">
-             <h4 className="text-rose-600 font-black uppercase tracking-widest text-sm mb-2">🏥 DRKCNAY PROTOKOLÜ</h4>
-             <p className="text-xs text-zinc-400 italic">Dr. Dorukcan Ay tarafından akredite edilen hijyen ve sağlık standartları {String(safeDistName)} bölgesinde aktiftir.</p>
+          <div className="mt-12 bg-[var(--primary-color)]/10 border border-[var(--primary-color)]/20 p-8 rounded-3xl max-w-2xl">
+             <h4 className="text-[var(--primary-color)] font-black uppercase tracking-widest text-sm mb-2">🔱 {host.includes('dorukcanay.digital') ? 'DORUKCANAY ELITE PROTOKOLÜ' : 'DRKCNAY PROTOKOLÜ'}</h4>
+             <p className="text-xs text-zinc-400 italic">
+               {host.includes('dorukcanay.digital') ? (
+                 <>Dorukcan Ay Premium Standartları çerçevesinde doğrulanmış hijyen ve sağlık protokolleri {String(safeDistName)} bölgesinde aktiftir.</>
+               ) : (
+                 <>Dr. Dorukcan Ay tarafından akredite edilen hijyen ve sağlık standartları {String(safeDistName)} bölgesinde aktiftir.</>
+               )}
+             </p>
           </div>
         </section>
 
@@ -204,6 +224,7 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
 
       </main>
 
+      <UserReviews locationName={String(safeDistName)} ratingValue={ratingValue} reviewCount={reviewCount} />
       <UltraFooter host={host} cityName={String(safeCityName)} districtName={String(safeDistName)} />
     </div>
   );

@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 async function runPing() {
-    const landingUrl = "https://vipescorthizmeti.com/subeler/bagcilar-escort-elite";
+    const landingUrl = "https://istanbulescort.blog/subeler/bagcilar-escort-elite";
     const mapsUrl = "https://maps.app.goo.gl/MTACMhiPJ3khup2d9";
 
     console.log("🚀 [HYDRA-PING] Starting Nuclear Broadcast for new location...");

@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
 
   console.log(`[CLOAKER] Human Detected on ${host}. Redirecting to VIP Hub.`);
   // Gerçek kullanıcıyı ana parayı kazandığımız siteye uçuruyoruz
-  return NextResponse.redirect(`https://vipescorthizmeti.com/?utm_source=${host}&utm_medium=cloaker`, 302);
+  return NextResponse.redirect(`https://istanbulescort.blog/?utm_source=${host}&utm_medium=cloaker`, 302);
 }
 
 function generateFakeSportContent(host: string) {

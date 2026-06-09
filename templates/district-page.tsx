@@ -101,9 +101,9 @@ export default async function DistrictHubPage({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
               "name": `${dName} Escort Eskort Gacı Bayan Hub`,
-              "image": "https://istanbulescdrkcn.com/og-premium.png",
+              "image": "https://istanbulescort.blog/og-premium.png",
               "telephone": siteConfig.contact.whatsappNumber,
-              "url": `https://istanbulescdrkcn.com/${city}/${district}`,
+              "url": `https://istanbulescort.blog/${city}/${district}`,
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": dName,

@@ -50,7 +50,7 @@ export async function getHybridProfiles({
         included: ["Lüks Eşlik", "VIP Hizmet", "Gizli Randevu"],
         excluded: ["Korunmasız İlişki"]
       },
-      image: ad.image || "https://vipescorthizmeti.com/images/profiles/vip-1.webp",
+      image: ad.image || "https://istanbulescort.blog/images/profiles/vip-1.webp",
       phone: ad.phone,
       isAd: true
     }));

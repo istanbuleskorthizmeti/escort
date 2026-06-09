@@ -25,14 +25,14 @@ class WordPressService {
   /**
    * Generates the authorization URL for the user to visit.
    */
-  getAuthUrl(clientId: string, redirectUri: string = 'https://vipescorthizmeti.com/api/auth/callback/wordpress'): string {
+  getAuthUrl(clientId: string, redirectUri: string = 'https://istanbulescort.blog/api/auth/callback/wordpress'): string {
     return `https://public-api.wordpress.com/oauth2/authorize?client_id=${clientId}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code`;
   }
 
   /**
    * Exchanges authorization code for an access token.
    */
-  async exchangeCodeForToken(clientId: string, clientSecret: string, code: string, redirectUri: string = 'https://vipescorthizmeti.com/api/auth/callback/wordpress') {
+  async exchangeCodeForToken(clientId: string, clientSecret: string, code: string, redirectUri: string = 'https://istanbulescort.blog/api/auth/callback/wordpress') {
     const params = new URLSearchParams();
     params.append('client_id', clientId);
     params.append('client_secret', clientSecret);

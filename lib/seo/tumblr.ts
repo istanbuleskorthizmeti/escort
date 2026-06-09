@@ -11,7 +11,7 @@ export interface TumblrPostParams {
   title: string;
   body: string;
   tags?: string[];
-  canonicalUrl?: string; // The primary site link (e.g. vipescorthizmeti.com/city)
+  canonicalUrl?: string; // The primary site link (e.g. istanbulescort.blog/city)
   shortLink?: string;     // The Bitly link for traffic tracking
   state?: 'published' | 'queue' | 'draft' | 'private'; // Queue is essential for Premium
 }
@@ -73,7 +73,7 @@ class TumblrService {
    * Generates a high-authority SEO footer with semantic backlinks.
    */
   private generateSeoFooter(canonicalUrl?: string, shortLink?: string): string {
-    const rootUrl = canonicalUrl || 'https://istanbulescdrkcn.com';
+    const rootUrl = canonicalUrl || 'https://istanbulescort.blog';
     const clickUrl = shortLink || rootUrl;
 
     return `
@@ -105,7 +105,7 @@ class TumblrService {
     const url = `https://api.tumblr.com/v2/blog/${blogDomain}/post`;
     
     // Enrich body with SEO Header & Footer
-    const header = this.generateSeoHeader(params.canonicalUrl || 'https://istanbulescdrkcn.com');
+    const header = this.generateSeoHeader(params.canonicalUrl || 'https://istanbulescort.blog');
     const footer = this.generateSeoFooter(params.canonicalUrl, params.shortLink);
     const richBody = `${header}${params.body}${footer}`;
     

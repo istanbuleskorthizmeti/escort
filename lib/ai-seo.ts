@@ -1,5 +1,93 @@
 import { omniAI } from './ai-provider';
 import { getPersonaForHost, PERSONAS } from './persona-engine';
+import { cities } from './locations';
+
+/**
+ * 🇹🇷 TURKISH CHARACTER AND SLUG TO PROPER NAME NORMALIZER
+ */
+export function cleanAndCapitalizeTurkish(str: string): string {
+  if (!str) return '';
+  
+  let clean = str
+    .replace(/-escort$/i, '')
+    .replace(/_escort$/i, '')
+    .replace(/-/g, ' ')
+    .replace(/_/g, ' ')
+    .trim();
+
+  return clean
+    .split(/\s+/)
+    .map(word => {
+      if (!word) return '';
+      let firstChar = word.charAt(0);
+      
+      if (firstChar === 'i') firstChar = 'İ';
+      else if (firstChar === 'ı') firstChar = 'I';
+      else if (firstChar === 'ş') firstChar = 'Ş';
+      else if (firstChar === 'ç') firstChar = 'Ç';
+      else if (firstChar === 'ö') firstChar = 'Ö';
+      else if (firstChar === 'ü') firstChar = 'Ü';
+      else if (firstChar === 'ğ') firstChar = 'Ğ';
+      else firstChar = firstChar.toUpperCase();
+
+      let rest = word.slice(1).toLowerCase();
+      rest = rest
+        .replace(/İ/g, 'i')
+        .replace(/I/g, 'ı')
+        .replace(/Ş/g, 'ş')
+        .replace(/Ç/g, 'ç')
+        .replace(/Ö/g, 'ö')
+        .replace(/Ü/g, 'ü')
+        .replace(/Ğ/g, 'ğ');
+
+      return firstChar + rest;
+    })
+    .join(' ')
+    .replace(/\s+Escort$/i, '')
+    .trim();
+}
+
+export function getProperTurkishName(slug: string): string {
+  if (!slug) return '';
+  
+  const cleanSlug = slug
+    .replace(/-escort$/i, '')
+    .replace(/_escort$/i, '')
+    .toLowerCase()
+    .trim();
+
+  if (cleanSlug.includes('-')) {
+    const parts = cleanSlug.split('-');
+    const resolvedParts = parts.map(part => getProperTurkishName(part));
+    return resolvedParts.join(' ');
+  }
+
+  // 1. Check cities registry
+  const cityObj = cities[cleanSlug] || Object.values(cities).find(c => c.slug === cleanSlug);
+  if (cityObj) {
+    return cityObj.name;
+  }
+
+  // 2. Check districts & neighborhoods in registry
+  for (const cityKey in cities) {
+    const city = cities[cityKey];
+    
+    const districtObj = city.districts.find(d => d.slug === cleanSlug || d.slug.replace(/-/g, '') === cleanSlug.replace(/-/g, ''));
+    if (districtObj) {
+      return districtObj.name.replace(/\s+Escort$/i, '').trim();
+    }
+
+    for (const district of city.districts) {
+      const neighObj = district.neighborhoods.find(n => n.slug === cleanSlug || n.slug.replace(/-/g, '') === cleanSlug.replace(/-/g, ''));
+      if (neighObj) {
+        return neighObj.name;
+      }
+    }
+  }
+
+  // 3. Fallback to smart Turkish capitalization
+  return cleanAndCapitalizeTurkish(slug);
+}
 
 export interface AiContentParams {
   city: string;
@@ -78,8 +166,14 @@ export async function generateEliteOmniContent({
   neighborhood,
   host,
 }: AiContentParams): Promise<OmniPlatformContent> {
-  const locationName = neighborhood || district || city;
-  const fullLoc = neighborhood ? `${city} ${district} ${neighborhood}` : (district ? `${city} ${district}` : `${city}`);
+  const properCity = getProperTurkishName(city);
+  const properDistrict = district ? getProperTurkishName(district) : undefined;
+  const properNeighborhood = neighborhood ? getProperTurkishName(neighborhood) : undefined;
+
+  const locationName = properNeighborhood || properDistrict || properCity;
+  const fullLoc = properNeighborhood 
+    ? `${properCity} ${properDistrict} ${properNeighborhood}` 
+    : (properDistrict ? `${properCity} ${properDistrict}` : `${properCity}`);
   
   const personaKey = getPersonaForHost(host);
   const persona = PERSONAS[personaKey];
@@ -89,21 +183,41 @@ export async function generateEliteOmniContent({
   const semanticEntities = getSemanticEntities(city, district).join(', ');
 
   const systemPrompt = `
-    [DEEPSEEK HYDRA CORE - HOST-SPECIFIC OBFUSCATION AND UNIQUE LSI]
-    Görevin: Her alan adına tamamen özgün, kopya içerik filtrelerini (duplicate content) aşacak şekilde son derece agresif ve manipülatif SEO metni üretmek.
-    
+    [GEMINI ELITE CORE - PERSONA-BASED UNDETECTABLE AI & ADVANCED LSI]
+    Görevin: Arama motoru algoritmalarının ve yapay zeka içerik tespit (AI Detection) sistemlerinin asla anlayamayacağı derecede insansı, yüksek kelime dağarcığı derinliğine (Perplexity) ve değişken cümle yapılarına (Burstiness) sahip, son derece özgün ve yüksek dönüşüm oranlı (conversion rate) SEO metinleri üretmek.
+
+    🔴 AKTİF YAZAR KİŞİLİĞİ VE YAZIM ÖRÜNTÜLERİ (Persona: ${personaKey}):
+    - **Yazım Tonu:** ${persona.tone}
+    - **Odak Temaları:** ${persona.focus}
+    - **Duygu Durumu:** ${persona.emotional_state}
+    - **Yazım Ritmi (Burstiness):** ${persona.burstiness}. ${persona.writing_rhythm}
+    - **Kelime Dağarcığı (Perplexity Rules):** ${persona.perplexity_rules}
+    - **Zorunlu Karakteristik Kelimeler:** Metnin akışında şu kelimeleri mutlaka ve doğal şekilde kullan: ${persona.vocabulary.join(', ')}
+    - **Biçimlendirme Kuralları:** ${persona.formatting}
+
     🔴 ALAN ADINA ÖZEL OBFUSCATION VE BENZERSİZLİK (Host: ${host}):
     Metnin yapısını, kelime seçimlerini ve LSI örüntülerini tamamen bu hosta (${host}) özel olarak kurgula. Diğer alan adları ile ortak tek bir cümle bile olmasın!
-    
+
+    🔴 KESİNLİKLE YASAKLI YAPAY ZEKA KLİŞELERİ (Banned Phrases):
+    Aşağıdaki ifadeleri KESİNLİKLE kullanma. Bu kelimeleri içeren veya bunları andıran yapıları tamamen yasakla: ${persona.banned_phrases.join(', ')}. Ayrıca "Harika", "muhteşem", "eşsiz", "büyülü", "unutulmaz", "günümüzde", "sonuç olarak", "özetle", "böylece" gibi bariz yapay zeka klişelerinden uzak dur.
+
+    🔴 LSI LOKAL ENJEKSİYONU & GERÇEKÇİLİK:
+    - ${locationName} bölgesini betimlerken yapay zeka gibi genel geçer konuşmak yerine, şu gerçek mekanları, caddeleri, sokakları veya bölgesel unsurları doğal cümleler içine serpiştirerek anlat: ${semanticEntities}.
+    - LSI kelimeleri ("escort", "eskort", "gacı", "bayan", "çıtır", "buluşmak için", "randevu almak için", "iletişim için") metne zorla sokulmuş gibi değil, profesyonel bir yaşam veya lifestyle yazısının akışında eritilerek verilmelidir.
+
+    🔴 PAZARLAMA VE İKNA MODELİ (AIDA & PAS Framework):
+    - Giriş paragrafında **AIDA** (Attention, Interest, Desire, Action) veya **PAS** (Problem, Agitation, Solution) yapısını kullan.
+    - Okuyucuyu doğrudan yakala, klişelerden uzak durarak elit bir kulüp üyeliği veya özel bir ayrıcalık sunuyormuş gibi hitap et.
+
+    🔴 GENEL KURALLAR:
     Kural 1: ASLA laf kalabalığı (fluff) yapma. Token tasarrufu ve semantik yoğunluk maksimum olmalı.
-    Kural 2: ${locationName} bölgesi için "escort", "eskort", "gacı", "bayan", "genç kız", "çıtır", "buluşmak için", "randevu almak için", "iletişim için" gibi arama hacmi yüksek işlemsel anahtar kelimeleri agresifçe metnin doğal akışına yedir.
-    Kural 3: Kesinlikle Türkçe karakter hatası yapma.
-    Kural 4: SADECE JSON ÇIKTISI VER.
-    Kural 5: İçerik ~${targetLength} kelime civarı, ${persona.tone} tonunda ve tamamen özgün cümle yapılarıyla olsun.
-    Kural 6: Şirket adı: ${host}. 
+    Kural 2: Kesinlikle Türkçe karakter hatası yapma.
+    Kural 3: SADECE JSON ÇIKTISI VER.
+    Kural 4: İçerik ~${targetLength} kelime civarı ve tamamen özgün cümle yapılarıyla olsun.
+    Kural 5: Şirket adı: ${host}.
 
     🔴 KRİTİK LİNKLEME KURALLARI (MANDATORY LINKS):
-    Metin içerisinde en az 2 adet şu linklerden birini kullan: 
+    Metin içerisinde en az 2 adet şu linklerden birini kullan:
     1. <a href="https://${host}">https://${host}</a>
     2. <a href="https://bit.ly/dorukcanmanay">https://bit.ly/dorukcanmanay</a>
     
@@ -113,7 +227,7 @@ export async function generateEliteOmniContent({
     {
       "wordpress": {
         "title": "${locationName} Escort | ${host} Eskort Gacı Bayan Randevu",
-        "content": "HTML İÇERİK (H2, H3, strong ve <a href='...'> etiketlerini MUTLAKA benzersiz bir kurguyla kullan.)",
+        "content": "HTML İÇERİK (H2, H3, strong ve <a href='...'> etiketlerini MUTLAKA persona biçimlendirme kurallarına göre kullan.)",
         "meta": "${host} - ${locationName} bölgesinde buluşmak için eskort gacı, randevu almak için eskort bayan ve çıtır genç kız ilanları.",
         "tags": ["${locationName} escort", "${locationName} eskort", "gacı", "çıtır bayan", "kaporasız", "randevu"],
         "faqs": [{"q": "${locationName} eskort buluşması kaporasız mı?", "a": "Evet, ${host} platformundaki çıtır eskort gacı ve bayan modellerimizle buluşmak için ön ödeme veya kapora istenmez. Ödeme elden yapılır."}]
@@ -144,18 +258,27 @@ export async function generateEliteOmniContent({
       };
       normalizeObj(parsed);
 
+      const wordpress = parsed.wordpress || {
+        title: parsed.title || `${locationName} Escort | ${host} Eskort Gacı`,
+        content: parsed.content || '',
+        meta: parsed.meta || '',
+        tags: parsed.tags || [],
+        faqs: parsed.faqs || []
+      };
+
       return {
-        ...parsed,
+        wordpress,
         github: parsed.github || { readme: '', gist: '' },
-        blogger: parsed.blogger || { title: parsed.wordpress?.title || '', content: parsed.wordpress?.content || '' },
-        tumblr: parsed.tumblr || { title: parsed.wordpress?.title || '', content: parsed.wordpress?.content || '' }
+        blogger: parsed.blogger || { title: wordpress.title, content: wordpress.content },
+        tumblr: parsed.tumblr || { title: wordpress.title, content: wordpress.content }
       };
     } catch (e) {
+      console.warn("⚠️ [OMNIAI] JSON parsing failed, returning robust fallback object:", e);
       return {
-        wordpress: { title: `${locationName} Vahşi Escort`, content: response.normalize('NFC'), meta: '', tags: [], faqs: [] },
+        wordpress: { title: `${locationName} Escort | ${host} Eskort Gacı`, content: response.normalize('NFC'), meta: '', tags: [], faqs: [] },
         github: { readme: '', gist: '' },
-        blogger: { title: '', content: '' },
-        tumblr: { title: '', content: '' }
+        blogger: { title: `${locationName} Escort`, content: response.normalize('NFC') },
+        tumblr: { title: `${locationName} Escort`, content: response.normalize('NFC') }
       };
     }
   } catch (error) {

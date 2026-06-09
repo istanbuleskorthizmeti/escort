@@ -26,7 +26,7 @@ export default function PrivacyPage() {
               01. Hollanda Yargı Yetkisi ve AVG
             </h2>
             <p className="mb-6">
-              vipescorthizmeti.com, Hollanda merkezli bir platform olup, tüm veri işleme faaliyetlerinde <b>Algemene Verordening Gegevensbescherming (AVG)</b> standartlarını sarsılmaz bir şekilde uygular. Gizliliğiniz, Amsterdam mahkemelerinin yetki alanı ve Hollanda siber güvenlik kanunları ile korunmaktadır.
+              istanbulescort.blog, Hollanda merkezli bir platform olup, tüm veri işleme faaliyetlerinde <b>Algemene Verordening Gegevensbescherming (AVG)</b> standartlarını sarsılmaz bir şekilde uygular. Gizliliğiniz, Amsterdam mahkemelerinin yetki alanı ve Hollanda siber güvenlik kanunları ile korunmaktadır.
             </p>
           </div>
 

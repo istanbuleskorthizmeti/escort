@@ -34,8 +34,7 @@ export async function generateMetadata({
       city: "istanbul",
       cityName: "İSTANBUL",
       categoryTitle: formattedSlug,
-      domain: host,
-      customTitle: `🔥 ${formattedSlug} | %100 GERÇEK İLANLAR | DRKCNAY VIP`
+      domain: host
     });
   }
 

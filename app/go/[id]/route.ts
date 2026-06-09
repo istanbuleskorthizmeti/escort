@@ -1,24 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma } from '../../../lib/prisma';
 import { sendTelegramReport } from '../../../lib/telegram';
+import { vitrinImages } from '../../../lib/vitrin-images';
 
 export const dynamic = 'force-dynamic';
+
+function cleanId(str: string): string {
+  return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+}
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
-  const url = new URL(request.url);
-  const host = request.headers.get('host') || 'unknown';
+  const host = request.headers.get('host') || 'istanbulescort.blog';
+  const protocol = request.headers.get('x-forwarded-proto') || 'https';
   const referer = request.headers.get('referer') || 'Direct';
   const ua = request.headers.get('user-agent') || 'unknown';
   const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';
   const city = request.headers.get('x-vercel-ip-city') || 'Bilinmiyor';
   const country = request.headers.get('x-vercel-ip-country') || 'TR';
 
+  // Safe base URL calculation to prevent localhost redirect
+  const isLocalHost = host.includes('localhost') || host.includes('127.0.0.1');
+  const safeBase = isLocalHost ? 'https://istanbulescort.blog' : `${protocol}://${host}`;
+
   if (!id) {
-    return NextResponse.redirect(new URL('/', request.url));
+    return NextResponse.redirect(new URL('/', safeBase));
   }
 
   // 🎓 High-EEAT Expert Profile Direct Redirect Interceptor
@@ -29,13 +38,34 @@ export async function GET(
     return NextResponse.redirect('https://www.linkedin.com/in/eda-nur-life-sociology-9b8812b9', { status: 302 });
   }
 
+  // 🕵️ Dynamically resolve model profiles to their WhatsApp numbers if missing from database
+  const targetModel = vitrinImages.find(img => cleanId(img.title) === cleanId(id));
+  if (targetModel && targetModel.phone) {
+    const whatsappUrl = `https://wa.me/${targetModel.phone}?text=Merhaba ${targetModel.title}, görüşme için bilgi verir misin?`;
+    
+    const report = `
+🔥 *DİNAMİK WHATSAPP TIKLAMASI (VİTRİN)*
+━━━━━━━━━━━━━━━━━━━━
+📍 *Kaynak:* \`${host}\`
+🎯 *Model:* \`${targetModel.title}\` (\`${targetModel.phone}\`)
+🏙️ *Konum:* ${city}, ${country}
+🔍 *Referer:* \`${referer}\`
+📱 *Cihaz:* \`${ua}\`
+🌐 *IP:* \`${ip}\`
+━━━━━━━━━━━━━━━━━━━━
+    `;
+    sendTelegramReport(report).catch(console.error);
+    
+    return NextResponse.redirect(whatsappUrl, { status: 302 });
+  }
+
   try {
     const shortLink = await prisma.shortLink.findUnique({
       where: { id }
     });
 
     if (!shortLink) {
-      return NextResponse.redirect(new URL('/', request.url));
+      return NextResponse.redirect(new URL('/', safeBase));
     }
 
     // 🕵️ GHOST INTEL: Telegram Raporlama
@@ -64,6 +94,7 @@ export async function GET(
 
   } catch (error) {
     console.error('[SHORTLINK] Route Error:', error);
-    return NextResponse.redirect(new URL('/', request.url));
+    return NextResponse.redirect(new URL('/', safeBase));
   }
 }
+

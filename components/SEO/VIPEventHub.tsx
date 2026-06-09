@@ -1,5 +1,5 @@
 import React from 'react';
-import { Trophy, Calendar, MapPin, Ticket, Star, ChevronRight, ShieldCheck, Users, Zap } from 'lucide-react';
+import { Music, Calendar, MapPin, Star, ChevronRight, ShieldCheck, Users, Zap } from 'lucide-react';
 
 export function VIPEventHub() {
   return (
@@ -24,11 +24,11 @@ export function VIPEventHub() {
                 
                 <div className="space-y-4">
                   <h2 className="text-7xl md:text-9xl font-black italic tracking-tighter text-white uppercase leading-[0.8] drop-shadow-2xl">
-                    UEFA AVRUPA LİGİ <br/>
-                    <span className="text-rose-600 drop-shadow-[0_0_30px_rgba(225,29,72,0.5)]">FİNALİ 2026</span>
+                    SCORPIONS GLOBAL <br/>
+                    <span className="text-rose-600 drop-shadow-[0_0_30px_rgba(225,29,72,0.5)]">TOUR İSTANBUL</span>
                   </h2>
                   <p className="text-zinc-500 text-lg font-bold italic tracking-wide max-w-lg mt-8 uppercase opacity-80">
-                    İstanbul'un en seçkin gecesinde, Tüpraş Stadyumu'nda tarihin en prestijli VIP deneyimine hazır olun.
+                    İstanbul'un en seçkin gecesinde, Tüpraş Stadyumu'nda Scorpions 40. Yıl Turnesi ile tarihin en prestijli VIP deneyimine hazır olun.
                   </p>
                 </div>
               </div>
@@ -39,7 +39,7 @@ export function VIPEventHub() {
                     <Calendar className="w-12 h-12 text-rose-600" />
                   </div>
                   <div className="flex flex-col gap-2">
-                    <span className="text-white text-4xl font-black italic tracking-tighter uppercase leading-none">20 MAYIS</span>
+                    <span className="text-white text-4xl font-black italic tracking-tighter uppercase leading-none">24 HAZİRAN</span>
                     <span className="text-[11px] text-zinc-600 font-black uppercase tracking-[0.6em]">ETKİNLİK TARİHİ</span>
                   </div>
                 </div>
@@ -83,11 +83,11 @@ export function VIPEventHub() {
               <div className="aspect-[5/6] bg-zinc-950 rounded-[5rem] overflow-hidden border border-zinc-900/50 relative shadow-3xl group-hover:border-rose-600/20 transition-all duration-1000">
                 <div className="absolute inset-0 bg-linear-to-t from-black via-black/20 to-transparent z-10" />
                 
-                {/* 🛡️ UEFA TROPHY AMBIANCE */}
+                {/* 🛡️ SCORPIONS MUSIC AMBIANCE */}
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                    <div className="relative scale-125">
                       <div className="absolute inset-0 bg-rose-600/10 blur-[150px] rounded-full animate-pulse" />
-                      <Trophy className="w-80 h-80 text-rose-600/10 relative z-10 opacity-30 group-hover:opacity-60 group-hover:scale-110 transition-all duration-1000" />
+                      <Music className="w-80 h-80 text-rose-600/10 relative z-10 opacity-30 group-hover:opacity-60 group-hover:scale-110 transition-all duration-1000" />
                    </div>
                 </div>
 
@@ -119,7 +119,7 @@ export function VIPEventHub() {
               {/* 🔱 FLOATING BADGE */}
               <div className="absolute -top-16 -right-16 w-64 h-64 glass-card border-rose-600/20 rounded-full flex flex-col items-center justify-center shadow-glow-rose rotate-12 group-hover:rotate-0 transition-transform duration-1000 z-30 pointer-events-none">
                 <span className="text-rose-600 text-7xl font-black italic leading-none drop-shadow-glow">2026</span>
-                <span className="text-white text-[12px] font-black uppercase tracking-[0.4em] mt-3">ISTANBUL FINAL</span>
+                <span className="text-white text-[12px] font-black uppercase tracking-[0.4em] mt-3">SCORPIONS TOUR</span>
               </div>
             </div>
 

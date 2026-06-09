@@ -31,7 +31,7 @@ const RecipeData = {
 
 export default async function RecipePage() {
   const headersList = await headers();
-  const host = headersList.get("host") || "vipescorthizmeti.com";
+  const host = headersList.get("host") || "istanbulescort.blog";
 
   return (
     <div className="max-w-3xl mx-auto px-4 py-10 bg-stone-50 text-stone-900 font-sans">
@@ -44,7 +44,7 @@ export default async function RecipePage() {
             "@type": "Recipe",
             "name": RecipeData.name,
             "description": RecipeData.description,
-            "image": "https://vipescorthizmeti.com/recipes/hunkar-begendi.jpg",
+            "image": "https://istanbulescort.blog/recipes/hunkar-begendi.jpg",
             "author": { "@type": "Person", "name": "Gourmet DRKCNAY" },
             "prepTime": "PT30M",
             "cookTime": "PT1H",
@@ -67,7 +67,7 @@ export default async function RecipePage() {
               "name": `Adım ${idx + 1}`,
               "text": i,
               "url": `https://${host}/white-page#step${idx + 1}`,
-              "image": "https://vipescorthizmeti.com/recipes/step-placeholder.jpg"
+              "image": "https://istanbulescort.blog/recipes/step-placeholder.jpg"
             }))
           })
         }}

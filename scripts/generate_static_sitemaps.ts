@@ -18,7 +18,7 @@ async function generateAllSitemaps() {
     console.warn('⚠️ [SITEMAP] DB Fetch failed, using fallback domain list.');
     // Fallback to active domains if DB is unreachable
     sites = [
-      { domain: 'istanbulescdrkcn.com' },
+      { domain: 'istanbulescort.blog' },
       { domain: 'sisliescort.shop' },
       { domain: 'sefakoyescorthizmeti.shop' },
       { domain: 'beylikduzuescort.shop' },

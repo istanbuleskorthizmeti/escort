@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "digital.dorukcanay.companion",
+      "sha256_cert_fingerprints": [
+        "14:6D:E9:83:C5:E1:92:02:95:5D:8D:16:A4:4E:91:02:81:49:5A:2D:E4:F6:A8:B0:D2:E4:F6:A8:B0:D2:E4:F6"
+      ]
+    }
+  }
+]

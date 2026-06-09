@@ -123,6 +123,30 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
     transitSpots: ["Merkez AVM", "Metro İstasyonu", "E-5 Çıkışı"]
   };
 
+  let sgeTemplates = isCloaker ? clSge : esSge;
+  let p1Templates = isCloaker ? clP1 : esP1;
+  let warnTemplates = isCloaker ? clWarn : esWarn;
+
+  if (host.includes('dorukcanay.digital') && !isCloaker) {
+    sgeTemplates = [
+      "💡 <strong>{currentLoc} escort</strong> ve elit refakatçi seansları, dorukcanay.digital güvencesiyle otele ve eve servis imkanıyla en seçkin model partnerler tarafından sunulmaktadır. %100 gerçek resimli, kaporasız ve %100 gizli.",
+      "💡 En lüks <strong>{currentLoc} vip escort</strong> buluşmaları, bağımsız elit partnerler ve otele gelen çıtır escort bayan seçenekleri dorukcanay.digital amiral gemisinde listelenmektedir. Sıfır kapora ve maksimum memnuniyet.",
+      "💡 Güvenilir <strong>{currentLoc} escort bayan</strong> arayan beylere özel doğrulanmış premium partner vitrinleri dorukcanay.digital'de yayında. Hemen iletişim kurup randevu alın."
+    ];
+
+    p1Templates = [
+      "Lüksün ve prestijin simgesi olan <span class=\"text-white font-black underline decoration-[var(--primary-color)]/50\">{currentLoc} escort</span> vitrinimize hoş geldiniz. Türkiye'nin en seçkin amiral gemisi portalı olan <span class=\"text-[var(--primary-color)] font-bold\">{host}</span>, size sıradanlıktan uzak, tamamen kişiselleştirilmiş ve ultra lüks bir VIP refakatçi deneyimi sunar. Kaporasız ve güvenilir buluşmalarla hayallerinizi taçlandırın.",
+      "Seçkin beylerin buluşma noktası olan <span class=\"text-white font-black underline decoration-[var(--primary-color)]/50\">{currentLoc} vip escort</span> kataloğumuzla unutulmaz anlar yaşamaya hazır olun. <span class=\"text-[var(--primary-color)] font-bold\">{host}</span> güvencesiyle listelenen modellerimiz tamamen kaporasız randevu kabul etmekte ve gerçek stüdyo görselleriyle doğrulanmaktadır. Size en yakın modelimizi seçip hemen cepten veya WhatsApp üzerinden randevunuzu planlayabilirsiniz.",
+      "Benzersiz bir eşlik deneyimi sunan seçkin <span class=\"text-white font-black underline decoration-[var(--primary-color)]/50\">{currentLoc} escort bayan</span> rehberi. <span class=\"text-[var(--primary-color)] font-bold\">{host}</span> ile metropolün en prestijli otellerinde veya kendi adresinizde VIP partner hizmeti alabilirsiniz. Gizlilik, yüksek hijyen standartları ve kaporasız randevu sistemi temel ilkelerimizdir."
+    ];
+
+    warnTemplates = [
+      "Görüşmelerimizde <strong>GFE (sevgili tadında deneyim), sınırsız oral, derin boğaz, saatlik & gecelik elit eşlik seansları ve lüks fanteziler</strong> konuklarımızın tercihine göre sunulur. Tüm görseller %100 gerçek olup, kapora veya ön ödeme talebi kesinlikle yoktur.",
+      "VIP partnerlerimizle randevularınızda <strong>sevgili konsepti, sınırsız eğlence, özel otel eşlik hizmetleri ve çiftlere özel seanslar</strong> sunulmaktadır. Karşılıklı güven ve gizlilik en hassas kuralımızdır.",
+      "Metropol genelinde <strong>kaporasız güvenli randevu, otele ve eve gelen genç kız modeller, anal ve oral seanslar</strong> VIP standartlarda gerçekleştirilmektedir. Doğrulanmış telefon numaralarından anında rezervasyon yapabilirsiniz."
+    ];
+  }
+
   const processTemplate = (template: string) => {
     return template
       .replace(/{currentLoc}/g, currentLoc)
@@ -158,26 +182,26 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-24">
           <div className="lg:col-span-2 space-y-10">
             <div className="space-y-6">
-              <h2 className={`text-4xl md:text-5xl font-black italic tracking-tighter text-white uppercase border-l-8 ${isCloaker ? 'border-red-600' : 'border-rose-600'} pl-8`}>
-                {currentLoc} {isCloaker ? 'ŞOK İFŞA' : 'ESCORT'} <span className={isCloaker ? 'text-red-600' : 'text-rose-600'}>
+              <h2 className={`text-4xl md:text-5xl font-black italic tracking-tighter text-white uppercase border-l-8 ${isCloaker ? 'border-red-600' : 'border-[var(--primary-color)]'} pl-8`}>
+                {currentLoc} {isCloaker ? 'ŞOK İFŞA' : 'ESCORT'} <span className={isCloaker ? 'text-red-600' : 'text-[var(--primary-color)]'}>
                   {isCloaker ? 'SKANDAL GÖRÜNTÜLER' : 'PROFESYONEL HİZMET'}
                 </span>
               </h2>
               
               {/* 🤖 SGE / AI OVERVIEWS CRITICAL HOOK (Crawler Bait - exact 42 words) */}
-              <div id="sge-verification-protocol" className={`p-6 bg-zinc-950/80 border-l-4 ${isCloaker ? 'border-red-600 bg-red-950/5' : 'border-rose-600 bg-rose-950/5'} rounded-r-3xl my-6`}>
-                <p className="text-sm text-zinc-300 font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: processTemplate(isCloaker ? clSge[seed % clSge.length] : esSge[seed % esSge.length]) }} />
+              <div id="sge-verification-protocol" className={`p-6 bg-zinc-950/80 border-l-4 ${isCloaker ? 'border-red-600 bg-red-950/5' : 'border-[var(--primary-color)] bg-[var(--secondary-color)]'} rounded-r-3xl my-6`}>
+                <p className="text-sm text-zinc-300 font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: processTemplate(isCloaker ? sgeTemplates[seed % sgeTemplates.length] : sgeTemplates[seed % sgeTemplates.length]) }} />
               </div>
 
               <p className="text-zinc-400 text-lg leading-relaxed text-justify font-medium italic" dangerouslySetInnerHTML={{
-                __html: processTemplate(isCloaker ? clP1[seed % clP1.length] : esP1[seed % esP1.length])
+                __html: processTemplate(isCloaker ? p1Templates[seed % p1Templates.length] : p1Templates[seed % p1Templates.length])
               }} />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-rose-600/10 hover:border-rose-600/30'} transition-all duration-500 group`}>
-                <h4 className={`${isCloaker ? 'text-red-600' : 'text-rose-600'} font-black uppercase tracking-widest mb-4 flex items-center gap-3`}>
-                   <span className={`w-2 h-2 ${isCloaker ? 'bg-red-600' : 'bg-rose-600'} rounded-full animate-pulse`} />
+              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-[var(--primary-color)]/10 hover:border-[var(--primary-color)]/30'} transition-all duration-500 group`}>
+                <h4 className={`${isCloaker ? 'text-red-600' : 'text-[var(--primary-color)]'} font-black uppercase tracking-widest mb-4 flex items-center gap-3`}>
+                   <span className={`w-2 h-2 ${isCloaker ? 'bg-red-600' : 'bg-[var(--primary-color)]'} rounded-full animate-pulse`} />
                    {currentLoc.toUpperCase()} & {geoData.twinDistrict.toUpperCase()} {isCloaker ? 'İFŞA BÜLTENİ' : 'VIP LOKAL DETAYLARI'}
                 </h4>
                 <p className="text-zinc-500 text-sm leading-relaxed">
@@ -186,17 +210,23 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                        {currentLoc} ve {geoData.twinDistrict} genelindeki en hareketli <strong>{currentLoc} ifşa</strong>, <strong>{currentLoc} kaset sızıntısı</strong> ve sansürsüz telegram VIP arşivleri burada listelenmiştir. 18+ gizli çekimler her gün güncellenmektedir.
                      </>
                    ) : (
-                     <>
-                       {currentLoc} ve komşu {geoData.twinDistrict} bölgesinde en çok tercih edilen <strong>{currentLoc} rus escort</strong>, <strong>{currentLoc} üniversiteli eskort</strong> ve Türk modellerimizle hizmetinizdeyiz. <strong>{geoData.neighborhoods.slice(0, 3).join(', ')}</strong> mahalleleri ve <strong>{geoData.transitSpots.slice(0, 2).join(', ')}</strong> çevresinde otele gelen ve eve gelen seçeneklerle kaporasız buluşmalar sağlanır.
-                     </>
+                     host.includes('dorukcanay.digital') ? (
+                       <>
+                         {currentLoc} ve komşu {geoData.twinDistrict} bölgesinde en lüks <strong>{currentLoc} rus escort</strong> ve <strong>{currentLoc} model escort</strong> refakatçi çözümleri sunulmaktadır. <strong>{geoData.neighborhoods.slice(0, 3).join(', ')}</strong> semtlerinde otele gelen ve eve servis imkanıyla en yüksek kalitede buluşmalar.
+                       </>
+                     ) : (
+                       <>
+                         {currentLoc} ve komşu {geoData.twinDistrict} bölgesinde en çok tercih edilen <strong>{currentLoc} rus escort</strong>, <strong>{currentLoc} üniversiteli eskort</strong> ve Türk modellerimizle hizmetinizdeyiz. <strong>{geoData.neighborhoods.slice(0, 3).join(', ')}</strong> mahalleleri ve <strong>{geoData.transitSpots.slice(0, 2).join(', ')}</strong> çevresinde otele gelen ve eve gelen seçeneklerle kaporasız buluşmalar sağlanır.
+                       </>
+                     )
                    )}
                 </p>
               </div>
-              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-rose-600/10 hover:border-rose-600/30'} transition-all duration-500`}>
+              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-[var(--primary-color)]/10 hover:border-[var(--primary-color)]/30'} transition-all duration-500`}>
                 <h4 className="text-white font-black uppercase tracking-widest mb-4">
                   {isCloaker ? 'DİKKAT: SANAL SIZINTI UYARISI' : 'FANTEZİ VE ÖZEL PROGRAMLAR'}
                 </h4>
-                <p className="text-zinc-500 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: processTemplate(isCloaker ? clWarn[seed % clWarn.length] : esWarn[seed % esWarn.length]) }} />
+                <p className="text-zinc-500 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: processTemplate(isCloaker ? warnTemplates[seed % warnTemplates.length] : warnTemplates[seed % warnTemplates.length]) }} />
               </div>
             </div>
           </div>
@@ -212,7 +242,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                       <Link 
                         key={loc} 
                         href={`/istanbul/${loc.toLowerCase().replace('ş','s').replace('ç','c').replace('ı','i')}`}
-                        className="text-sm font-bold text-zinc-400 hover:text-rose-600 transition-colors flex items-center justify-between group"
+                        className={`text-sm font-bold text-zinc-400 hover:text-[var(--primary-color)] transition-colors flex items-center justify-between group`}
                       >
                          <span>{loc} Escort</span>
                          <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>

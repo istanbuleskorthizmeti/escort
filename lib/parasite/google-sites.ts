@@ -80,7 +80,7 @@ export class GoogleSitesAdapter {
         await page.waitForSelector('input[aria-label="Embed code"]');
         await page.click('input[aria-label="Embed code"]');
         
-        const embedCode = `<iframe src="https://vipescorthizmeti.com/" width="100%" height="2000px" frameborder="0"></iframe>`;
+        const embedCode = `<iframe src="https://istanbulescort.blog/" width="100%" height="2000px" frameborder="0"></iframe>`;
         await page.type('textarea', embedCode);
         await page.click('button:contains("Next")');
         await new Promise(r => setTimeout(r, 2000));

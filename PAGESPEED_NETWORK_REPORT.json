@@ -1,14 +1,20 @@
 [
   {
-    "domain": "vipescorthizmeti.com",
-    "mobile": null,
-    "desktop": null,
-    "timestamp": "2026-05-17T01:47:03.871Z"
-  },
-  {
-    "domain": "dorukcanay.digital",
-    "mobile": null,
-    "desktop": null,
-    "timestamp": "2026-05-17T01:47:04.018Z"
+    "domain": "escortvip.net",
+    "mobile": {
+      "score": 71,
+      "fcp": "1.7 s",
+      "lcp": "6.1 s",
+      "tbt": "260 ms",
+      "cls": "0"
+    },
+    "desktop": {
+      "score": 72,
+      "fcp": "0.5 s",
+      "lcp": "1.0 s",
+      "tbt": "690 ms",
+      "cls": "0"
+    },
+    "timestamp": "2026-06-09T06:38:34.649Z"
   }
 ]

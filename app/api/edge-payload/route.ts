@@ -51,7 +51,7 @@ export async function POST(req: Request) {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": `${locationTarget} ${districtTarget} VIP Escort`,
-        "image": "https://vipescorthizmeti.com/images/profiles/vip-1.webp",
+        "image": "https://istanbulescort.blog/images/profiles/vip-1.webp",
         "telephone": "",
         "address": {
           "@type": "PostalAddress",

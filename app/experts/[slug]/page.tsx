@@ -50,8 +50,8 @@ export default async function ExpertDetailPage({ params }: { params: Promise<{ s
             name: expert.name,
             jobTitle: expert.title,
             description: expert.bio,
-            image: `https://vipescorthizmeti.com${expert.image}`,
-            url: `https://vipescorthizmeti.com/experts/${expert.slug}`,
+            image: `https://istanbulescort.blog${expert.image}`,
+            url: `https://istanbulescort.blog/experts/${expert.slug}`,
           }),
         }}
       />

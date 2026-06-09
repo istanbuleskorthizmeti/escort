@@ -98,7 +98,7 @@ export function ExperienceDesigner({ neighborhood, district }: { neighborhood: s
       </button>
 
       <div className="mt-8 text-center text-[9px] font-black italic text-zinc-700 tracking-widest uppercase">
-        SECURE PROTOCOL BY VIPESCORTHIZMETI.COM // EST. 2026
+        SECURE PROTOCOL BY istanbulescort.blog // EST. 2026
       </div>
     </div>
   );

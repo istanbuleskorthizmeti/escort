@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: `${title} | İstanbul VIP Profesyonel Şehir Rehberi`,
-    description: `${title} üzerine İstanbul'un en seçkin ve teknik detaylarını kapsayan profesyonel yaşam rehberi. Premium erişim standartları vipescorthizmeti.com'te.`,
+    description: `${title} üzerine İstanbul'un en seçkin ve teknik detaylarını kapsayan profesyonel yaşam rehberi. Premium erişim standartları istanbulescort.blog'te.`,
     alternates: { canonical: `https://${siteConfig.domain}/rehber/${slug}` }
   };
 }
@@ -141,7 +141,7 @@ export default async function GuidePage({
       <footer className="py-40 border-t border-zinc-900 mt-20 text-center bg-zinc-950/50 backdrop-blur-xl">
         <div className="max-w-4xl mx-auto space-y-12">
             <div className="text-[10px] font-black tracking-[0.4em] uppercase italic text-zinc-800">
-               © 2026 vipescorthizmeti.com - PROTCOL ALPHA SYSTEM ACTIVE
+               © 2026 istanbulescort.blog - PROTCOL ALPHA SYSTEM ACTIVE
             </div>
             <p className="text-zinc-700 text-[9px] font-black tracking-[0.2em] uppercase italic max-w-xl mx-auto leading-loose">
                Tüm rehber içerikleri ve standartler, İstanbul elite yaşam standartları gözetilerek profesyonel ekiplerimizce hazırlanmıştır.

@@ -20,9 +20,9 @@ interface RankResult {
 
 export default function RankTrackerPage() {
   const { rankResults: results, setRankResults: setResults, isScanning, setIsScanning, updateRankResult } = useAppStore();
-  const [targetDomain, setTargetDomain] = useState("vipescorthizmeti.com");
+  const [targetDomain, setTargetDomain] = useState("istanbulescort.blog");
   const [baseKeywords, setBaseKeywords] = useState("escort, elit partner, görüşme, iletişim");
-  const [auditUrl, setAuditUrl] = useState("https://vipescorthizmeti.com/ankara/cankaya");
+  const [auditUrl, setAuditUrl] = useState("https://istanbulescort.blog/ankara/cankaya");
   const [isAuditing, setIsAuditing] = useState(false);
   const [auditResult, setAuditResult] = useState<null | {
     success: boolean;
@@ -154,7 +154,7 @@ export default function RankTrackerPage() {
                   value={auditUrl}
                   onChange={(e) => setAuditUrl(e.target.value)}
                   className="flex-1 bg-black border border-white/10 rounded-xl px-4 py-3 text-sm outline-none focus:border-blue-500/50 transition-colors"
-                  placeholder="https://vipescorthizmeti.com/ankara/cankaya"
+                  placeholder="https://istanbulescort.blog/ankara/cankaya"
               />
               <button 
                 onClick={auditTargetUrl}

@@ -17,7 +17,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
-  const isMoneySite = currentHost === 'vipescorthizmeti.com' || currentHost === 'vipescorthizmeti.shop' || currentHost === 'escortvip.net';
+  const isMoneySite = currentHost === 'istanbulescort.blog' || currentHost === 'vipescorthizmeti.shop' || currentHost === 'escortvip.net';
   const config = getDomainConfig(currentHost);
 
   // Expanded cities and districts for hyper-local SEO
@@ -53,7 +53,7 @@ export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
     cloudItems.push({
       text: text,
       isLink: true,
-      href: `https://vipescorthizmeti.com/${loc}`
+      href: `https://istanbulescort.blog/${loc}`
     });
   }
 

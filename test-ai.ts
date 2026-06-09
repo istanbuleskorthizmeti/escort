@@ -1,8 +1,10 @@
+import 'dotenv/config';
 import { generateGodModeOmniContent } from './lib/ai-seo';
 
 async function test() {
   const content = await generateGodModeOmniContent({
-    city: 'İstanbul',
+    city: 'istanbul',
+    district: 'kadikoy-fenerbahce',
     host: 'sisliescort.shop'
   });
   console.log("TITLE:", content.wordpress.title);

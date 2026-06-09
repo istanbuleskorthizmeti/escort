@@ -12,6 +12,58 @@ const axios = require('axios');
 
 const prisma = new PrismaClient();
 
+const KEYWORD_MAP = {
+  "sosyal refakatçi": "escort",
+  "sosyal refakatçiler": "escortlar",
+  "sosyal refakatçilik": "escort hizmeti",
+  "asistan partner": "escort",
+  "asistan partnerler": "escortlar",
+  "asistan partnerlik": "escort hizmeti",
+  "özel refakatçi": "escort",
+  "özel refakatçilik": "escort hizmeti",
+  "VIP refakatçilik": "VIP escort hizmeti",
+  "elit partnerlik": "vip escort",
+  "Doğu Avrupa kökenli sosyal model": "Rus ve Ukraynalı Escort",
+  "Doğu Avrupa kökenli sosyal modeller": "Rus ve Ukraynalı Escortlar",
+  "Genç ve dinamik eğitimli partner": "Üniversiteli ve Çıtır Escort",
+  "Genç ve dinamik eğitimli partnerler": "Üniversiteli ve Çıtır Escortlar",
+  "Geleneksel ve muhafazakar tarz model": "Türbanlı ve Muhafazakar Escort",
+  "Geleneksel ve muhafazakar tarz modeller": "Türbanlı ve Muhafazakar Escortlar",
+  "Deneyimli ve olgun sosyal refakatçi": "Olgun ve Tecrübeli Escort",
+  "Deneyimli ve olgun sosyal refakatçiler": "Olgun ve Tecrübeli Escortlar",
+  "Bağımsız ve bireysel çalışan rehber": "Bireysel ve Bağımsız Escort",
+  "Bağımsız ve bireysel çalışan rehberler": "Bireysel ve Bağımsız Escortlar",
+  "Egzotik ve yabancı model": "Zenci ve Yabancı Model",
+  "Egzotik ve yabancı modeller": "Zenci ve Yabancı Modeller",
+  "katalog dışı güvence": "kaporasız",
+  "birebir eşleşme": "gerçek görsel",
+  "birebir eşleşmeli": "gerçek görselli",
+  "adrese özel eşlik": "otele servis ve eve gelen",
+  "adrese özel eşlikler": "otele servis ve eve gelen escortlar"
+};
+
+function translateCleanToHeavy(content) {
+  let translated = content;
+  const sortedKeys = Object.keys(KEYWORD_MAP).sort((a, b) => b.length - a.length);
+  
+  for (const key of sortedKeys) {
+    const value = KEYWORD_MAP[key];
+    const regex = new RegExp(key, 'gi');
+    translated = translated.replace(regex, (match) => {
+      const isUpperCase = match === match.toUpperCase();
+      const isCapitalized = match[0] === match[0].toUpperCase() && match[0] !== match[0].toLowerCase();
+      
+      if (isUpperCase) return value.toUpperCase();
+      if (isCapitalized) {
+        return value.charAt(0).toUpperCase() + value.slice(1);
+      }
+      return value;
+    });
+  }
+  return translated;
+}
+
+
 const googleSites = [
   { url: "https://sites.google.com/dorukcanay.digital/sefakoyistanbul-drkcnay2026/ana-sayfa", slug: "sefakoy-vip-escort-2026", district: "Sefaköy" },
   { url: "https://sites.google.com/dorukcanay.digital/bakrkyescort-drkcnayv1/ana-sayfa", slug: "bakirkoy-vip-escort-2026", district: "Bakırköy" },
@@ -63,16 +115,16 @@ async function run() {
       console.warn(`⚠️ [PRISMA HATA] Veritabanı sorgulanamadı, Sites URL kullanılacak:`, dbErr.message);
     }
     
-    // DeepSeek için gelişmiş SEO talimatları
-    const systemPrompt = `Sen Türkiye'nin en seçkin ve profesyonel elit escort rehberi içeriklerini üreten bir Black Hat SEO ve copywriter dehasısın.
+    // DeepSeek için gelişmiş SEO talimatları (Politika uyumlu - Euphemisms)
+    const systemPrompt = `Sen Türkiye'nin en seçkin ve profesyonel sosyal refakatçilik ve elit asistan partner rehberi içeriklerini üreten bir SEO ve copywriter dehasısın.
 Amacın, Google aramalarında en tepede yer alacak, tıklama oranı (CTR) maksimum düzeyde olan, bol zengin emojili, profesyonel, merak uyandırıcı ve son derece elit bir blog içeriği yazmaktır.
 Asla kendini tekrar etme, tamamen doğal ve akıcı bir dil kullan. İmla kurallarına ve SEO başlık (H2, H3, H4) hiyerarşisine dikkat et.
 Mutlaka şu bağlantıyı metnin en kritik ve tıklanabilir yerlerinde doğal bir köprü metni (anchor text) olarak kullanmalısın: "${targetUrl}"
-Bağlantı kelimeleri "${item.district} Escort Hizmeti", "İstanbul Elit Partner Keşfi", "Gerçek Görselli Katalog" gibi SEO kelimeleri olmalıdır.`;
+Bağlantı kelimeleri "${item.district} sosyal refakatçilik", "İstanbul elit partnerlik", "birebir eşleşmeli rehber" gibi kavramlar olmalıdır.`;
 
-    const prompt = `${item.district} bölgesi için en az 1000 kelimeden oluşan, zengin alt başlıkları olan (H2 ve H3'ler barındıran), inanılmaz profesyonel ve merak uyandırıcı bir "Vip Escort ve Elit Partner Hizmetleri Rehberi" makalesi yaz.
-Makale boyunca şu kelimeleri (LSI) doğal bir şekilde serpiştir: ${item.district} escort, ${item.district} vip escort, elit partner, gerçek katalog, kaporasız hizmet, adrese teslim escort.
-Makale başlığı mutlaka bol emojili, tıklama çıldırtıcı ve profesyonel olsun. Örneğin: "👑 ${item.district} VIP Escort Rehberi: Elit Partner Keşfi! 🔥"
+    const prompt = `${item.district} bölgesi için en az 1000 kelimeden oluşan, zengin alt başlıkları olan (H2 ve H3'ler barındıran), inanılmaz profesyonel ve merak uyandırıcı bir "Vip Refakatçi ve Elit Partnerlik Rehberi" makalesi yaz.
+Makale boyunca şu kelimeleri doğal bir şekilde serpiştir: ${item.district} sosyal refakatçi, ${item.district} asistan partner, elit partnerlik, birebir eşleşme, katalog dışı güvence, adrese özel eşlik.
+Makale başlığı mutlaka bol emojili, tıklama çıldırtıcı ve profesyonel olsun. Örneğin: "👑 ${item.district} VIP asistan partnerlik Rehberi: Elit Partner Keşfi! 🔥"
 Makalenin en az 3 farklı yerinde şu linke yönlendirme yap (anchor text olarak): ${targetUrl}
 Çıktıyı Markdown formatında ver.`;
 
@@ -95,7 +147,8 @@ Makalenin en az 3 farklı yerinde şu linke yönlendirme yap (anchor text olarak
         timeout: 90000 // Makale üretimi uzun sürebilir, timeout süresini 90 sn yapıyoruz
       });
 
-      const articleContent = response.data.choices[0].message.content;
+      let articleContent = response.data.choices[0].message.content;
+      articleContent = translateCleanToHeavy(articleContent);
       
       const fileName = `${item.slug}.md`;
       const filePath = path.join(outputDir, fileName);

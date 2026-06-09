@@ -44,11 +44,11 @@ export const TelegramBroadcaster = {
     const randomImage = images[Math.floor(Math.random() * images.length)];
     const imagePath = path.join(imageDir, randomImage);
 
-    const SITE_URL = 'https://istanbulescdrkcn.com';
+    const SITE_URL = 'https://istanbulescort.blog';
     const captions = [
       `🔥 <b>VIP Escort Hizmetleri - Sınırsız Hizmet</b>\n\nİstanbul'un en elit ve gizli hizmeti. Gerçek profiller, %100 memnuniyet garantisi.\n\n🔗 <a href="${SITE_URL}">Tüm Kızlarımızı Gör (Tıkla Sitemize Git)</a>`,
       `✨ <b>Lüks ve İhtiras Bir Arada</b>\n\nSıradanlığı unutun. En özel anlar için özenle seçilmiş elit kadromuzla tanışın.\n\n🔗 <a href="${SITE_URL}">Kataloğu İncele</a>\n📲 <b>VIP İletişim:</b> <a href="${WHATSAPP_LINK}">WhatsApp'tan Randevu Al</a>`,
-      `💎 <b>Premium Escort Deneyimi</b>\n\nGizlilik, kalite ve sınırsız eğlence. Özel görüşmeleriniz için buradayız.\n\n🔗 <b>Web Sitemiz:</b> <a href="${SITE_URL}">vipescorthizmeti.com</a>`,
+      `💎 <b>Premium Escort Deneyimi</b>\n\nGizlilik, kalite ve sınırsız eğlence. Özel görüşmeleriniz için buradayız.\n\n🔗 <b>Web Sitemiz:</b> <a href="${SITE_URL}">istanbulescort.blog</a>`,
       `🔥 <b>Yeni Vitrin Görsellerimiz Güncellendi!</b>\n\nEn iyi kalite ve sınırsız deneyim. Yeni kızlarımız vitrinde yerini aldı.\n\n🔗 <a href="${SITE_URL}">Resme Tıkla Sitemize Git!</a>\n📲 <a href="${WHATSAPP_LINK}">Hemen WhatsApp'tan Ulaşın</a>`
     ];
 
@@ -56,7 +56,7 @@ export const TelegramBroadcaster = {
 
     const keyboard = Markup.inlineKeyboard([
       [Markup.button.url('📲 WhatsApp\'tan Yaz', WHATSAPP_LINK)],
-      [Markup.button.url('🌐 Kataloğu Gör', 'https://istanbulescdrkcn.com')]
+      [Markup.button.url('🌐 Kataloğu Gör', 'https://istanbulescort.blog')]
     ]);
 
     console.log(`🚀 [TG-BROADCAST] Fırlatılıyor: ${randomImage}`);

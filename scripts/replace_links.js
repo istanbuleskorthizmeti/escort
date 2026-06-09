@@ -41,14 +41,14 @@ function processFiles() {
     }
     
     // Ana hedef site tanımlarını güncelle
-    if (content.includes('vipescorthizmeti.com')) {
+    if (content.includes('istanbulescort.blog')) {
       // Spesifik MONEY_SITE değişiklikleri
-      content = content.replace(/MONEY_SITE = "https:\/\/vipescorthizmeti\.com"/g, 'MONEY_SITE = "https://istanbulescdrkcn.com"');
-      content = content.replace(/MONEY_SITE = 'https:\/\/vipescorthizmeti\.com'/g, "MONEY_SITE = 'https://istanbulescdrkcn.com'");
+      content = content.replace(/MONEY_SITE = "https:\/\/vipescorthizmeti\.com"/g, 'MONEY_SITE = "https://istanbulescort.blog"');
+      content = content.replace(/MONEY_SITE = 'https:\/\/vipescorthizmeti\.com'/g, "MONEY_SITE = 'https://istanbulescort.blog'");
       
       // Sadece backlink botlarındaki site ismini değiştir
-      content = content.replace(/"https:\/\/vipescorthizmeti\.com"/g, '"https://istanbulescdrkcn.com"');
-      content = content.replace(/'https:\/\/vipescorthizmeti\.com'/g, "'https://istanbulescdrkcn.com'");
+      content = content.replace(/"https:\/\/vipescorthizmeti\.com"/g, '"https://istanbulescort.blog"');
+      content = content.replace(/'https:\/\/vipescorthizmeti\.com'/g, "'https://istanbulescort.blog'");
       changed = true;
     }
 

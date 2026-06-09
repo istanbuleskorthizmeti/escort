@@ -144,7 +144,7 @@ async function executeSiegeStep(page: any, districtSlug: string, round: number, 
     console.log(`\n💎 [GOD-MODE] Target: ${districtName} | Round: ${round}`);
     
     // 1. MESH NETWORK LOGIC: Grab a backlink from the pool
-    let meshLink = "https://istanbulescdrkcn.com/";
+    let meshLink = "https://istanbulescort.blog/";
     const GAS_GATEWAY_URL = "https://script.google.com/macros/s/AKfycbydyYobsAT4p-Tbi8n72TydN8YajdUEfGwB3GhwhoYodeHSthZ8jPxkvYK7GHn-q7GZ/exec";
 
     try {

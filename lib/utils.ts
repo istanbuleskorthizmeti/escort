@@ -36,6 +36,7 @@ export function sanitizeDisplayName(name: string): string {
     clean = clean.split(" | ")[0]; 
     clean = clean.split(" [2026]")[0];
     clean = clean.replace(/_/g, ' ');
+    clean = clean.replace(/-/g, ' ');
     
     // 3. Force clean Turkish character mapping for residual artifacts
     clean = clean.replace(/i̇/g, 'i').replace(/İ/g, 'İ');
@@ -73,31 +74,25 @@ export function slugify(text: string): string {
 }
 
 /**
- * 🛡️ SEO DEDUPE: Prevent "Escort Escort" keyword stuffing.
- * Removes duplicate instances of "Escort" (case-insensitive) while keeping the first one or two based on context.
+ * 🛡️ SEO DEDUPE: Prevent "Escort Escort" or "Escort Eskort" keyword stuffing.
+ * Enforces that the word "escort" or "eskort" (and their plural forms) appears at most once in any generated text/title.
  */
 export function dedupeEscort(text: string): string {
   if (!text) return "";
   
-  // Normalize "Eskort" to "Escort" for consistency during deduplication
-  let clean = text.replace(/eskort/gi, 'Escort');
-  
-  // Split into words and filter
-  const words = clean.split(' ');
+  const words = text.split(/\s+/);
   const result: string[] = [];
-  let escortCount = 0;
+  let foundEscort = false;
   
   for (const word of words) {
-    const isEscort = word.toLowerCase().includes('escort');
-    if (isEscort) {
-      escortCount++;
-      // Allow max 2 "Escort" words in a long title, but only if they aren't consecutive
-      if (escortCount <= 2) {
-        if (result.length > 0 && result[result.length - 1].toLowerCase().includes('escort')) {
-           // Skip consecutive "Escort"
-           continue;
-        }
+    // Strip punctuation to check base word (e.g. "escort'lar" -> "escortlar", "escort," -> "escort")
+    const cleanWord = word.replace(/[^a-zA-Z\u00C0-\u017F]/g, '').toLowerCase();
+    const isEscortWord = ['escort', 'escorts', 'eskort', 'eskortlar'].includes(cleanWord);
+    
+    if (isEscortWord) {
+      if (!foundEscort) {
         result.push(word);
+        foundEscort = true;
       }
     } else {
       result.push(word);
@@ -105,4 +100,59 @@ export function dedupeEscort(text: string): string {
   }
   
   return result.join(' ').replace(/\s\s+/g, ' ').trim();
+}
+
+/**
+ * Converts a string to Turkish Title Case (capitalizes first letter of each word).
+ * Correctly handles Turkish characters: ı -> I/I -> ı, i -> İ/İ -> i, etc.
+ * Keeps special acronyms like VIP, DMCA, GSC, EEAT, SGE in full uppercase.
+ */
+export function toTitleCaseTR(str: string): string {
+  if (!str) return "";
+  
+  // Clean hyphens out of URL slugs/categories to display clean spaces
+  const cleanStr = str.replace(/-/g, ' ');
+  
+  return cleanStr
+    .split(/\s+/)
+    .map(word => {
+      if (!word) return "";
+      
+      const lowerWord = word.toLowerCase();
+      if (lowerWord === 'vip' || lowerWord === 'vıp') return 'VIP';
+      if (lowerWord === 'dmca') return 'DMCA';
+      if (lowerWord === 'gsc') return 'GSC';
+      if (lowerWord === 'sge') return 'SGE';
+      if (lowerWord === 'eeat') return 'EEAT';
+      if (lowerWord === 'drkcnay') return 'DRKCNAY';
+      if (lowerWord === 'drkcny') return 'DRKCNY';
+      if (lowerWord === 'elite') return 'Elite';
+      if (lowerWord === 'luxury') return 'Luxury';
+      if (lowerWord === 'companion') return 'Companion';
+      if (lowerWord === 'companions') return 'Companions';
+      if (lowerWord === 'escort') return 'Escort';
+      if (lowerWord === 'escorts') return 'Escorts';
+      if (lowerWord === 'network') return 'Network';
+      if (lowerWord === 'cloud') return 'Cloud';
+      if (lowerWord === 've' || lowerWord === 'veya' || lowerWord === 'ile' || lowerWord === 'de' || lowerWord === 'da') return lowerWord;
+      
+      const first = word.charAt(0);
+      const rest = word.slice(1);
+      
+      let upperFirst = first;
+      if (first === 'i') upperFirst = 'İ';
+      else if (first === 'ı') upperFirst = 'I';
+      else upperFirst = first.toUpperCase();
+      
+      let lowerRest = '';
+      for (let i = 0; i < rest.length; i++) {
+        const char = rest.charAt(i);
+        if (char === 'I') lowerRest += 'ı';
+        else if (char === 'İ') lowerRest += 'i';
+        else lowerRest += char.toLowerCase();
+      }
+      
+      return upperFirst + lowerRest;
+    })
+    .join(' ');
 }

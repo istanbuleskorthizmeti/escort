@@ -23,14 +23,14 @@ export const blogPosts: BlogPost[] = [
     content: `
       Bulunduğunuz lokasyona **en yakın escort** arayışında olmak, özellikle acil ve plansız gelişen organizasyonlar için en kritik ihtiyaçtır. Ancak internet üzerindeki "konumuma yakın" aramalarının %90'ı sizi güvenilir olmayan, verilerinizi kaydeden platformlara yönlendirir.
       
-      Elit (vipescorthizmeti.com) olarak inşa ettiğimiz altyapıda, bize konumunuzu verdiğinizde sistem IP adresinizi maskeler ve çapraz bağlantıları anında siler (Tam Gizlilik Protocol).
+      Elit (istanbulescort.blog) olarak inşa ettiğimiz altyapıda, bize konumunuzu verdiğinizde sistem IP adresinizi maskeler ve çapraz bağlantıları anında siler (Tam Gizlilik Protocol).
       
       ### Konuma Göre Acil Eşleştirme (Fast-Track)
       Sistemimizde **en yakın VIP** profillere ulaşmak 3 dakikadan kısa sürer. Bizimle Telegram veya WhatsApp üzerinden temasa geçtiğinizde:
       1. Bulunduğunuz ilçe/mahalle bilgisini verirsiniz.
       2. Yapay zeka destekli altyapımız, o an bulunduğunuz konuma en fazla 15 dakika mesafede olan müsait ("Available") profilleri size şifreli bağlantı ile iletir.
       
-      Yani "en yakın escort" kelimesini ararken aslında aradığınız şey; hız, kalite ve kesin gizliliktir. Bütün bu süreci vipescorthizmeti.com güvencesi altına aldığınızda geriye kalan tek şey arkanıza yaslanıp anın tadını çıkarmaktır.
+      Yani "en yakın escort" kelimesini ararken aslında aradığınız şey; hız, kalite ve kesin gizliliktir. Bütün bu süreci istanbulescort.blog güvencesi altına aldığınızda geriye kalan tek şey arkanıza yaslanıp anın tadını çıkarmaktır.
     `
   },
   {
@@ -49,7 +49,7 @@ export const blogPosts: BlogPost[] = [
       Escortvip ajansımız, "+18 çıtır" diye tabir edilen genç portföyünü oluştururken sadece yaş ve fiziğe değil, zeka ve uyuma da bakar. Bir üniversite öğrencisi veya taze mezun ile geçireceğiniz gece sadece fiziksel bir hazdan ibaret kalmaz; şık bir akşam yemeğinde size mükemmel eşlik edecek, kültür düzeyi yüksek, kışkırtıcı bir romantizmi de garanti altına alırız.
       
       ### GFE (Sevgili) Statüsü Nedir?
-      Kısa süreli mekanik görüşmelerden sıkılan beyler için GFE (Girlfriend Experience) en prestijli hizmetimizdir. Bu hizmet dahilinde **genç escort** partneriniz, sanki yıllardır sevgilinizmiş gibi (sınırsız öpüşme, samimi şakalaşmalar, uzun sarılmalar) limitsiz bir deneyim sunar. Göz önünden uzak, lüks otel suitlerinde veya özel residanslarda bu enerjiyi hissetmek vipescorthizmeti.com şifreli ağıyla sadece size özeldir.
+      Kısa süreli mekanik görüşmelerden sıkılan beyler için GFE (Girlfriend Experience) en prestijli hizmetimizdir. Bu hizmet dahilinde **genç escort** partneriniz, sanki yıllardır sevgilinizmiş gibi (sınırsız öpüşme, samimi şakalaşmalar, uzun sarılmalar) limitsiz bir deneyim sunar. Göz önünden uzak, lüks otel suitlerinde veya özel residanslarda bu enerjiyi hissetmek istanbulescort.blog şifreli ağıyla sadece size özeldir.
     `
   },
   {

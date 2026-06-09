@@ -15,7 +15,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const headersList = await headers();
-  const host = headersList.get("host") || "vipescorthizmeti.com";
+  const host = headersList.get("host") || "istanbulescort.blog";
   
   const profile = ProfileEngine.generateProfile(`${slug}.jpg`, host);
   
@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ProfilePage({ params }: PageProps) {
   const { slug } = await params;
   const headersList = await headers();
-  const host = headersList.get("host") || "vipescorthizmeti.com";
+  const host = headersList.get("host") || "istanbulescort.blog";
   
   const theme = ThemeEngine.getTheme(host);
   const profile = ProfileEngine.generateProfile(`${slug}.jpg`, host);

@@ -8,215 +8,709 @@ export const istanbulCity: City = {
     "name": "Esenyurt Escort",
     "slug": "esenyurt",
     "neighborhoods": [
-      { "name": "Cumhuriyet", "slug": "cumhuriyet" },
-      { "name": "Hürriyet", "slug": "hurriyet" },
-      { "name": "Yeni Mahalle", "slug": "yeni-mahalle" },
-      { "name": "Fatih", "slug": "fatih" },
-      { "name": "Atatürk", "slug": "ataturk" },
-      { "name": "Bahçelievler", "slug": "bahcelievler" },
-      { "name": "İstasyon", "slug": "istasyon" },
-      { "name": "Lüks Noktalar", "slug": "luks-noktalar" }
+      {
+        "name": "Cumhuriyet",
+        "slug": "cumhuriyet"
+      },
+      {
+        "name": "Mehterçeşme",
+        "slug": "mehtercesme"
+      },
+      {
+        "name": "Piri Reis",
+        "slug": "piri-reis"
+      },
+      {
+        "name": "Yeşilkent",
+        "slug": "yesilkent"
+      },
+      {
+        "name": "Fatih",
+        "slug": "fatih"
+      },
+      {
+        "name": "Atatürk",
+        "slug": "ataturk"
+      },
+      {
+        "name": "İstiklal",
+        "slug": "istiklal"
+      },
+      {
+        "name": "Güzelyurt",
+        "slug": "guzelyurt"
+      },
+      {
+        "name": "Saadetdere",
+        "slug": "saadetdere"
+      },
+      {
+        "name": "Akçaburgaz",
+        "slug": "akcaburgaz"
+      }
     ],
     "landmarks": [
-      { "name": "Marmara Park AVM", "slug": "marmara-park-avm", "category": "Mall" },
-      { "name": "Akbatı AVYM", "slug": "akbati-avym", "category": "Mall" },
-      { "name": "Sheraton Istanbul Esenyurt", "slug": "sheraton-esenyurt", "category": "Hotel" }
+      {
+        "name": "Marmara Park AVM",
+        "slug": "marmara-park-avm",
+        "category": "Mall"
+      },
+      {
+        "name": "Akbatı AVYM",
+        "slug": "akbati-avym",
+        "category": "Mall"
+      },
+      {
+        "name": "Sheraton Istanbul Esenyurt",
+        "slug": "sheraton-esenyurt",
+        "category": "Hotel"
+      }
     ]
   },
   {
     "name": "Küçükçekmece Escort",
     "slug": "kucukcekmece",
     "neighborhoods": [
-      { "name": "Sefaköy", "slug": "sefakoy" },
-      { "name": "Cennet", "slug": "cennet" },
-      { "name": "Halkalı", "slug": "halkali" },
-      { "name": "İstasyon", "slug": "istasyon" },
-      { "name": "Atatürk", "slug": "ataturk" },
-      { "name": "Kanarya", "slug": "kanarya" },
-      { "name": "Fatih", "slug": "fatih" },
-      { "name": "Lüks Noktalar", "slug": "luks-noktalar" }
+      {
+        "name": "Sefaköy",
+        "slug": "sefakoy"
+      },
+      {
+        "name": "Cennet",
+        "slug": "cennet"
+      },
+      {
+        "name": "Halkalı",
+        "slug": "halkali"
+      },
+      {
+        "name": "İnönü",
+        "slug": "inonu"
+      },
+      {
+        "name": "Kanarya",
+        "slug": "kanarya"
+      },
+      {
+        "name": "Tevfikbey",
+        "slug": "tevfikbey"
+      },
+      {
+        "name": "Yeşilova",
+        "slug": "yesilova"
+      },
+      {
+        "name": "Sultanmurat",
+        "slug": "sultanmurat"
+      },
+      {
+        "name": "Kartaltepe",
+        "slug": "kartaltepe"
+      },
+      {
+        "name": "İstasyon",
+        "slug": "istasyon"
+      }
     ],
     "landmarks": [
-      { "name": "ArmoniPark Outlet Center", "slug": "armonipark", "category": "Mall" },
-      { "name": "Elite World Istanbul Florya", "slug": "elite-world-florya", "category": "Hotel" },
-      { "name": "Halkalı Meydan", "slug": "halkali-meydan", "category": "Business" }
+      {
+        "name": "ArmoniPark Outlet Center",
+        "slug": "armonipark",
+        "category": "Mall"
+      },
+      {
+        "name": "Elite World Istanbul Florya",
+        "slug": "elite-world-florya",
+        "category": "Hotel"
+      },
+      {
+        "name": "Halkalı Meydan",
+        "slug": "halkali-meydan",
+        "category": "Business"
+      }
     ]
   },
   {
     "name": "Bağcılar Escort",
     "slug": "bagcilar",
     "neighborhoods": [
-      { "name": "Güneşli", "slug": "gunesli" },
-      { "name": "Kirazlı", "slug": "kirazli" },
-      { "name": "Göztepe", "slug": "goztepe-bagcilar" },
-      { "name": "Bağcılar Merkez", "slug": "bagcilar-merkez" },
-      { "name": "Yıldıztepe", "slug": "yildiztepe" },
-      { "name": "15 Temmuz", "slug": "15-temmuz-bagcilar" }
+      {
+        "name": "Güneşli",
+        "slug": "gunesli"
+      },
+      {
+        "name": "Kirazlı",
+        "slug": "kirazli"
+      },
+      {
+        "name": "Göztepe",
+        "slug": "goztepe"
+      },
+      {
+        "name": "Merkez",
+        "slug": "merkez"
+      },
+      {
+        "name": "Yıldıztepe",
+        "slug": "yildiztepe"
+      },
+      {
+        "name": "15 Temmuz",
+        "slug": "15-temmuz"
+      },
+      {
+        "name": "Demirkapı",
+        "slug": "demirkapi"
+      },
+      {
+        "name": "Hürriyet",
+        "slug": "hurriyet"
+      },
+      {
+        "name": "Yavuz Selim",
+        "slug": "yavuz-selim"
+      },
+      {
+        "name": "Kemalpaşa",
+        "slug": "kemalpasa"
+      }
     ],
     "landmarks": [
-      { "name": "212 İstanbul Power Outlet", "slug": "212-outlet", "category": "Mall" },
-      { "name": "Wyndham Grand Istanbul Europe", "slug": "wyndham-grand-europe", "category": "Hotel" },
-      { "name": "İSTOÇ Ticaret Merkezi", "slug": "istoc", "category": "Business" }
+      {
+        "name": "212 İstanbul Power Outlet",
+        "slug": "212-outlet",
+        "category": "Mall"
+      },
+      {
+        "name": "Wyndham Grand Istanbul Europe",
+        "slug": "wyndham-grand-europe",
+        "category": "Hotel"
+      },
+      {
+        "name": "İSTOÇ Ticaret Merkezi",
+        "slug": "istoc",
+        "category": "Business"
+      }
     ]
   },
   {
     "name": "Şişli Escort",
     "slug": "sisli",
     "neighborhoods": [
-      { "name": "Nişantaşı", "slug": "nisantasi" },
-      { "name": "Teşvikiye", "slug": "tesvikiye" },
-      { "name": "Mecidiyeköy", "slug": "mecidiyekoy" },
-      { "name": "Fulya", "slug": "fulya" },
-      { "name": "Feriköy", "slug": "ferikoy" },
-      { "name": "Bomonti", "slug": "bomonti" },
-      { "name": "Kurtuluş", "slug": "kurtulus" },
-      { "name": "Harbiye", "slug": "harbiye" },
-      { "name": "Esentepe", "slug": "esentepe" },
-      { "name": "Kuştepe", "slug": "kustepe" },
-      { "name": "İzzetpaşa", "slug": "izzetpasa" },
-      { "name": "Meşrutiyet", "slug": "mesrutiyet" }
+      {
+        "name": "Nişantaşı",
+        "slug": "nisantasi"
+      },
+      {
+        "name": "Teşvikiye",
+        "slug": "tesvikiye"
+      },
+      {
+        "name": "Mecidiyeköy",
+        "slug": "mecidiyekoy"
+      },
+      {
+        "name": "Fulya",
+        "slug": "fulya"
+      },
+      {
+        "name": "Feriköy",
+        "slug": "ferikoy"
+      },
+      {
+        "name": "Bomonti",
+        "slug": "bomonti"
+      },
+      {
+        "name": "Kurtuluş",
+        "slug": "kurtulus"
+      },
+      {
+        "name": "Harbiye",
+        "slug": "harbiye"
+      },
+      {
+        "name": "Esentepe",
+        "slug": "esentepe"
+      },
+      {
+        "name": "Kuştepe",
+        "slug": "kustepe"
+      },
+      {
+        "name": "İzzetpaşa",
+        "slug": "izzetpasa"
+      },
+      {
+        "name": "Meşrutiyet",
+        "slug": "mesrutiyet"
+      }
     ],
     "landmarks": [
-      { "name": "Zorlu Center", "slug": "zorlu-center", "category": "Mall" },
-      { "name": "Cevahir AVM", "slug": "cevahir-avm", "category": "Mall" },
-      { "name": "Trump Towers", "slug": "trump-towers", "category": "Business" },
-      { "name": "Hilton Istanbul Bosphorus", "slug": "hilton-bosphorus", "category": "Hotel" }
+      {
+        "name": "Zorlu Center",
+        "slug": "zorlu-center",
+        "category": "Mall"
+      },
+      {
+        "name": "Cevahir AVM",
+        "slug": "cevahir-avm",
+        "category": "Mall"
+      },
+      {
+        "name": "Trump Towers",
+        "slug": "trump-towers",
+        "category": "Business"
+      },
+      {
+        "name": "Hilton Istanbul Bosphorus",
+        "slug": "hilton-bosphorus",
+        "category": "Hotel"
+      }
     ]
   },
   {
     "name": "Beşiktaş Escort",
     "slug": "besiktas",
     "neighborhoods": [
-      { "name": "Levent", "slug": "levent" },
-      { "name": "Etiler", "slug": "etiler" },
-      { "name": "Bebek", "slug": "bebek" },
-      { "name": "Arnavutköy", "slug": "arnavutkoy-besiktas" },
-      { "name": "Ortaköy", "slug": "ortakoy" },
-      { "name": "Ulus", "slug": "ulus" },
-      { "name": "Gayrettepe", "slug": "gayrettepe" },
-      { "name": "Dikilitaş", "slug": "dikilitas" },
-      { "name": "Balmumcu", "slug": "balmumcu" },
-      { "name": "Yıldız", "slug": "yildiz" },
-      { "name": "Kuruçeşme", "slug": "kurucesme" },
-      { "name": "Akatlar", "slug": "akatlar" }
+      {
+        "name": "Levent",
+        "slug": "levent"
+      },
+      {
+        "name": "Etiler",
+        "slug": "etiler"
+      },
+      {
+        "name": "Bebek",
+        "slug": "bebek"
+      },
+      {
+        "name": "Arnavutköy",
+        "slug": "arnavutkoy"
+      },
+      {
+        "name": "Ortaköy",
+        "slug": "ortakoy"
+      },
+      {
+        "name": "Ulus",
+        "slug": "ulus"
+      },
+      {
+        "name": "Gayrettepe",
+        "slug": "gayrettepe"
+      },
+      {
+        "name": "Dikilitaş",
+        "slug": "dikilitas"
+      },
+      {
+        "name": "Balmumcu",
+        "slug": "balmumcu"
+      },
+      {
+        "name": "Yıldız",
+        "slug": "yildiz"
+      },
+      {
+        "name": "Kuruçeşme",
+        "slug": "kurucesme"
+      },
+      {
+        "name": "Akatlar",
+        "slug": "akatlar"
+      }
     ],
     "landmarks": [
-      { "name": "Kanyon AVM", "slug": "kanyon-avm", "category": "Mall" },
-      { "name": "ÖzdilekPark İstanbul", "slug": "ozdilekpark", "category": "Mall" },
-      { "name": "Ciragan Palace Kempinski", "slug": "ciragan-palace", "category": "Hotel" },
-      { "name": "Four Seasons Bosphorus", "slug": "four-seasons-bosphorus", "category": "Hotel" }
+      {
+        "name": "Kanyon AVM",
+        "slug": "kanyon-avm",
+        "category": "Mall"
+      },
+      {
+        "name": "ÖzdilekPark İstanbul",
+        "slug": "ozdilekpark",
+        "category": "Mall"
+      },
+      {
+        "name": "Ciragan Palace Kempinski",
+        "slug": "ciragan-palace",
+        "category": "Hotel"
+      },
+      {
+        "name": "Four Seasons Bosphorus",
+        "slug": "four-seasons-bosphorus",
+        "category": "Hotel"
+      }
     ]
   },
   {
     "name": "Pendik Escort",
     "slug": "pendik",
     "neighborhoods": [
-      { "name": "Kurtköy", "slug": "kurtkoy" },
-      { "name": "Yenişehir", "slug": "yenisehir-pendik" },
-      { "name": "Kaynarca", "slug": "kaynarca" },
-      { "name": "Güzelyalı", "slug": "guzelyali-pendik" },
-      { "name": "Batı", "slug": "bati-pendik" },
-      { "name": "Doğu", "slug": "dogu-pendik" },
-      { "name": "Bahçelievler", "slug": "bahcelievler-pendik" },
-      { "name": "Sülüntepe", "slug": "suluntepe" }
+      {
+        "name": "Kurtköy",
+        "slug": "kurtkoy"
+      },
+      {
+        "name": "Yenişehir",
+        "slug": "yenisehir"
+      },
+      {
+        "name": "Kaynarca",
+        "slug": "kaynarca"
+      },
+      {
+        "name": "Güzelyalı",
+        "slug": "guzelyali"
+      },
+      {
+        "name": "Batı",
+        "slug": "bati"
+      },
+      {
+        "name": "Doğu",
+        "slug": "dogu"
+      },
+      {
+        "name": "Bahçelievler",
+        "slug": "bahcelievler"
+      },
+      {
+        "name": "Sülüntepe",
+        "slug": "suluntepe"
+      },
+      {
+        "name": "Yayalar",
+        "slug": "yayalar"
+      },
+      {
+        "name": "Kavakpınar",
+        "slug": "kavakpinar"
+      }
     ],
     "landmarks": [
-      { "name": "The Green Park Pendik", "slug": "green-park-pendik", "category": "Hotel" },
-      { "name": "Mövenpick Hotel Asia Airport", "slug": "movenpick-asia", "category": "Hotel" },
-      { "name": "Viaport Asia Outlet", "slug": "viaport-asia", "category": "Mall" }
+      {
+        "name": "The Green Park Pendik",
+        "slug": "green-park-pendik",
+        "category": "Hotel"
+      },
+      {
+        "name": "Mövenpick Hotel Asia Airport",
+        "slug": "movenpick-asia",
+        "category": "Hotel"
+      },
+      {
+        "name": "Viaport Asia Outlet",
+        "slug": "viaport-asia",
+        "category": "Mall"
+      }
     ]
   },
   {
     "name": "Ümraniye Escort",
     "slug": "umraniye",
     "neighborhoods": [
-      { "name": "Şerifali", "slug": "serifali" },
-      { "name": "Atakent", "slug": "atakent" },
-      { "name": "Ihlamurkuyu", "slug": "ihlamurkuyu" },
-      { "name": "Çakmak", "slug": "cakmak" },
-      { "name": "Esenevler", "slug": "esenevler" },
-      { "name": "Tatlısu", "slug": "tatlisu" },
-      { "name": "Armağanevler", "slug": "armaganevler" },
-      { "name": "Saray", "slug": "saray-umraniye" }
+      {
+        "name": "Şerifali",
+        "slug": "serifali"
+      },
+      {
+        "name": "Atakent",
+        "slug": "atakent"
+      },
+      {
+        "name": "Ihlamurkuyu",
+        "slug": "ihlamurkuyu"
+      },
+      {
+        "name": "Çakmak",
+        "slug": "cakmak"
+      },
+      {
+        "name": "Esenevler",
+        "slug": "esenevler"
+      },
+      {
+        "name": "Tatlısu",
+        "slug": "tatlisu"
+      },
+      {
+        "name": "Armağanevler",
+        "slug": "armaganevler"
+      },
+      {
+        "name": "Saray",
+        "slug": "saray"
+      },
+      {
+        "name": "Altınşehir",
+        "slug": "altinsehir"
+      },
+      {
+        "name": "İstiklal",
+        "slug": "istiklal"
+      }
     ],
     "landmarks": [
-      { "name": "Buyaka AVM", "slug": "buyaka-avm", "category": "Mall" },
-      { "name": "Meydan İstanbul", "slug": "meydan-istanbul", "category": "Mall" },
-      { "name": "DoubleTree by Hilton Ümraniye", "slug": "doubletree-umraniye", "category": "Hotel" }
+      {
+        "name": "Buyaka AVM",
+        "slug": "buyaka-avm",
+        "category": "Mall"
+      },
+      {
+        "name": "Meydan İstanbul",
+        "slug": "meydan-istanbul",
+        "category": "Mall"
+      },
+      {
+        "name": "DoubleTree by Hilton Ümraniye",
+        "slug": "doubletree-umraniye",
+        "category": "Hotel"
+      }
     ]
   },
   {
     "name": "Bahçelievler Escort",
     "slug": "bahcelievler",
     "neighborhoods": [
-      { "name": "Şirinevler", "slug": "sirinevler" },
-      { "name": "Yenibosna", "slug": "yenibosna" },
-      { "name": "Kocasinan", "slug": "kocasinan" },
-      { "name": "Siyavuşpaşa", "slug": "siyavuspasa" },
-      { "name": "Soğanlı", "slug": "soganli" },
-      { "name": "Zafer", "slug": "zafer-bahcelievler" },
-      { "name": "Cumhuriyet", "slug": "cumhuriyet-bahcelievler" },
-      { "name": "Fevzi Çakmak", "slug": "fevzi-cakmak-bahcelievler" }
+      {
+        "name": "Şirinevler",
+        "slug": "sirinevler"
+      },
+      {
+        "name": "Yenibosna",
+        "slug": "yenibosna"
+      },
+      {
+        "name": "Kocasinan",
+        "slug": "kocasinan"
+      },
+      {
+        "name": "Siyavuşpaşa",
+        "slug": "siyavuspasa"
+      },
+      {
+        "name": "Soğanlı",
+        "slug": "soganli"
+      },
+      {
+        "name": "Zafer",
+        "slug": "zafer"
+      },
+      {
+        "name": "Cumhuriyet",
+        "slug": "cumhuriyet"
+      },
+      {
+        "name": "Fevzi Çakmak",
+        "slug": "fevzi-cakmak"
+      },
+      {
+        "name": "Hürriyet",
+        "slug": "hurriyet"
+      },
+      {
+        "name": "Merkez",
+        "slug": "merkez"
+      }
     ],
     "landmarks": [
-      { "name": "MetroPort AVM", "slug": "metroport", "category": "Mall" },
-      { "name": "Kadir Has AVM", "slug": "kadir-has", "category": "Mall" },
-      { "name": "Pullman Istanbul Hotel", "slug": "pullman-istanbul", "category": "Hotel" }
+      {
+        "name": "MetroPort AVM",
+        "slug": "metroport",
+        "category": "Mall"
+      },
+      {
+        "name": "Kadir Has AVM",
+        "slug": "kadir-has",
+        "category": "Mall"
+      },
+      {
+        "name": "Pullman Istanbul Hotel",
+        "slug": "pullman-istanbul",
+        "category": "Hotel"
+      }
     ]
   },
   {
     "name": "Sultangazi Escort",
     "slug": "sultangazi",
     "neighborhoods": [
-      { "name": "Sultançiftliği", "slug": "sultanciftligi" },
-      { "name": "Gazi Mahallesi", "slug": "gazi-mahallesi" },
-      { "name": "50. Yıl", "slug": "50-yil" },
-      { "name": "75. Yıl", "slug": "75-yil" },
-      { "name": "Cebeci", "slug": "cebeci" },
-      { "name": "Uğur Mumcu", "slug": "ugur-mumcu-sultangazi" },
-      { "name": "Habibler", "slug": "habibler" },
-      { "name": "Esentepe", "slug": "esentepe-sultangazi" }
+      {
+        "name": "Sultançiftliği",
+        "slug": "sultanciftligi"
+      },
+      {
+        "name": "Gazi",
+        "slug": "gazi"
+      },
+      {
+        "name": "50. Yıl",
+        "slug": "50-yil"
+      },
+      {
+        "name": "75. Yıl",
+        "slug": "75-yil"
+      },
+      {
+        "name": "Cebeci",
+        "slug": "cebeci"
+      },
+      {
+        "name": "Uğur Mumcu",
+        "slug": "ugur-mumcu"
+      },
+      {
+        "name": "Habibler",
+        "slug": "habibler"
+      },
+      {
+        "name": "Esentepe",
+        "slug": "esentepe"
+      },
+      {
+        "name": "Yayla",
+        "slug": "yayla"
+      },
+      {
+        "name": "Zübeyde Hanım",
+        "slug": "zubeyde-hanim"
+      }
     ],
     "landmarks": [
-      { "name": "Venezia Mega Outlet", "slug": "venezia-outlet", "category": "Mall" }
+      {
+        "name": "Venezia Mega Outlet",
+        "slug": "venezia-outlet",
+        "category": "Mall"
+      }
     ]
   },
   {
     "name": "Üsküdar Escort",
     "slug": "uskudar",
     "neighborhoods": [
-      { "name": "Çengelköy", "slug": "cengelköy" },
-      { "name": "Acıbadem", "slug": "acibadem-uskudar" },
-      { "name": "Altunizade", "slug": "altunizade" },
-      { "name": "Beylerbeyi", "slug": "beylerbeyi" },
-      { "name": "Kandilli", "slug": "kandilli" },
-      { "name": "Kuzguncuk", "slug": "kuzguncuk" },
-      { "name": "Bulgurlu", "slug": "bulgurlu" },
-      { "name": "Küçüksu", "slug": "kucuksu" }
+      {
+        "name": "Çengelköy",
+        "slug": "cengelkoy"
+      },
+      {
+        "name": "Acıbadem",
+        "slug": "acibadem"
+      },
+      {
+        "name": "Altunizade",
+        "slug": "altunizade"
+      },
+      {
+        "name": "Beylerbeyi",
+        "slug": "beylerbeyi"
+      },
+      {
+        "name": "Kandilli",
+        "slug": "kandilli"
+      },
+      {
+        "name": "Kuzguncuk",
+        "slug": "kuzguncuk"
+      },
+      {
+        "name": "Bulgurlu",
+        "slug": "bulgurlu"
+      },
+      {
+        "name": "Küçüksu",
+        "slug": "kucuksu"
+      },
+      {
+        "name": "Ünalan",
+        "slug": "unalan"
+      },
+      {
+        "name": "Yavuztürk",
+        "slug": "yavuzturk"
+      }
     ],
     "landmarks": [
-      { "name": "Emaar Square Mall", "slug": "emaar-square", "category": "Mall" },
-      { "name": "Capitol AVM", "slug": "capitol-avm", "category": "Mall" },
-      { "name": "Sumahan on the Water", "slug": "sumahan-hotel", "category": "Hotel" }
+      {
+        "name": "Emaar Square Mall",
+        "slug": "emaar-square",
+        "category": "Mall"
+      },
+      {
+        "name": "Capitol AVM",
+        "slug": "capitol-avm",
+        "category": "Mall"
+      },
+      {
+        "name": "Sumahan on the Water",
+        "slug": "sumahan-hotel",
+        "category": "Hotel"
+      }
     ]
   },
   {
     "name": "Maltepe Escort",
     "slug": "maltepe",
     "neighborhoods": [
-      { "name": "Küçükyalı", "slug": "kucukyali" },
-      { "name": "İdealtepe", "slug": "idealtepe" },
-      { "name": "Altıntepe", "slug": "altintepe" },
-      { "name": "Cevizli", "slug": "cevizli-maltepe" },
-      { "name": "Dragos", "slug": "dragos" },
-      { "name": "Zümrütevler", "slug": "zumrutevler" },
-      { "name": "Fındıklı", "slug": "findikli-maltepe" },
-      { "name": "Bağlarbaşı", "slug": "baglarbasi-maltepe" }
+      {
+        "name": "Küçükyalı",
+        "slug": "kucukyali"
+      },
+      {
+        "name": "İdealtepe",
+        "slug": "idealtepe"
+      },
+      {
+        "name": "Altıntepe",
+        "slug": "altintepe"
+      },
+      {
+        "name": "Cevizli",
+        "slug": "cevizli"
+      },
+      {
+        "name": "Dragos",
+        "slug": "dragos"
+      },
+      {
+        "name": "Zümrütevler",
+        "slug": "zumrutevler"
+      },
+      {
+        "name": "Fındıklı",
+        "slug": "findikli"
+      },
+      {
+        "name": "Bağlarbaşı",
+        "slug": "baglarbasi"
+      },
+      {
+        "name": "Feyzullah",
+        "slug": "feyzullah"
+      },
+      {
+        "name": "Yalı",
+        "slug": "yali"
+      }
     ],
     "landmarks": [
-      { "name": "Hilltown AVM", "slug": "hilltown-avm", "category": "Mall" },
-      { "name": "Piazza AVM", "slug": "piazza-avm", "category": "Mall" },
-      { "name": "Elite World Asia Hotel", "slug": "elite-world-asia", "category": "Hotel" }
+      {
+        "name": "Hilltown AVM",
+        "slug": "hilltown-avm",
+        "category": "Mall"
+      },
+      {
+        "name": "Piazza AVM",
+        "slug": "piazza-avm",
+        "category": "Mall"
+      },
+      {
+        "name": "Elite World Asia Hotel",
+        "slug": "elite-world-asia",
+        "category": "Hotel"
+      }
     ]
   },
   {
@@ -224,76 +718,94 @@ export const istanbulCity: City = {
     "slug": "gaziosmanpasa",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Bağlarbaşı",
+        "slug": "baglarbasi"
+      },
+      {
+        "name": "Karadeniz",
+        "slug": "karadeniz"
+      },
+      {
+        "name": "Karlıtepe",
+        "slug": "karlitepe"
+      },
+      {
+        "name": "Merkez",
+        "slug": "merkez"
+      },
+      {
+        "name": "Sarıgöl",
+        "slug": "sarigol"
+      },
+      {
+        "name": "Yıldıztabya",
+        "slug": "yildiztabya"
+      },
+      {
+        "name": "Yenimahalle",
+        "slug": "yenimahalle"
+      },
+      {
+        "name": "Fevzi Çakmak",
+        "slug": "fevzi-cakmak"
       },
       {
         "name": "Hürriyet",
         "slug": "hurriyet"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
-      },
-      {
-        "name": "Fatih",
-        "slug": "fatih"
-      },
-      {
-        "name": "Atatürk",
-        "slug": "ataturk"
-      },
-      {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
-      },
-      {
-        "name": "İstasyon",
-        "slug": "istasyon"
-      },
-      {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Şemsipaşa",
+        "slug": "semsipasa"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Kartal Escort",
     "slug": "kartal",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Atalar",
+        "slug": "atalar"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Cevizli",
+        "slug": "cevizli"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Esentepe",
+        "slug": "esentepe"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Karlıktepe",
+        "slug": "karliktepe"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Orhantepe",
+        "slug": "orhantepe"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Soğanlık",
+        "slug": "soganlik"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Yakacık",
+        "slug": "yakacik"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Topselvi",
+        "slug": "topselvi"
+      },
+      {
+        "name": "Petrol İş",
+        "slug": "petrol-is"
+      },
+      {
+        "name": "Kordonboyu",
+        "slug": "kordonboyu"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Kadıköy Escort",
@@ -328,937 +840,1079 @@ export const istanbulCity: City = {
         "slug": "bostanci"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Göztepe",
+        "slug": "goztepe"
+      },
+      {
+        "name": "Kozyatağı",
+        "slug": "kozyatagi"
+      },
+      {
+        "name": "Acıbadem",
+        "slug": "acibadem"
+      },
+      {
+        "name": "Merdivenköy",
+        "slug": "merdivenkoy"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Esenler Escort",
     "slug": "esenler",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
-      },
-      {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
-      },
-      {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Davutpaşa",
+        "slug": "davutpasa"
       },
       {
         "name": "Fatih",
         "slug": "fatih"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Menderes",
+        "slug": "menderes"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Nine Hatun",
+        "slug": "nine-hatun"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Oruçreis",
+        "slug": "orucreis"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Turgutreis",
+        "slug": "turgutreis"
+      },
+      {
+        "name": "Kemer",
+        "slug": "kemer"
+      },
+      {
+        "name": "Birlik",
+        "slug": "birlik"
+      },
+      {
+        "name": "Havaalanı",
+        "slug": "havaalani"
+      },
+      {
+        "name": "Namık Kemal",
+        "slug": "namik-kemal"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Kağıthane Escort",
     "slug": "kagithane",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Çağlayan",
+        "slug": "caglayan"
+      },
+      {
+        "name": "Çeliktepe",
+        "slug": "celiktepe"
+      },
+      {
+        "name": "Gültepe",
+        "slug": "gultepe"
+      },
+      {
+        "name": "Gürsel",
+        "slug": "gursel"
+      },
+      {
+        "name": "Hamidiye",
+        "slug": "hamidiye"
       },
       {
         "name": "Hürriyet",
         "slug": "hurriyet"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Merkez",
+        "slug": "merkez"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Seyrantepe",
+        "slug": "seyrantepe"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Talatpaşa",
+        "slug": "talatpasa"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Yahya Kemal",
+        "slug": "yahya-kemal"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
-      },
-      {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Sanayi",
+        "slug": "sanayi"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Fatih Escort",
     "slug": "fatih",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Aksaray",
+        "slug": "aksaray"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Balat",
+        "slug": "balat"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Beyazıt",
+        "slug": "beyazit"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Cerrahpaşa",
+        "slug": "cerrahpasa"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Karagümrük",
+        "slug": "karagumruk"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Kocamustafapaşa",
+        "slug": "kocamustafapasa"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Laleli",
+        "slug": "laleli"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Sultanahmet",
+        "slug": "sultanahmet"
+      },
+      {
+        "name": "Eminönü",
+        "slug": "eminonu"
+      },
+      {
+        "name": "Haseki",
+        "slug": "haseki"
+      },
+      {
+        "name": "Zeyrek",
+        "slug": "zeyrek"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Avcılar Escort",
     "slug": "avcilar",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Ambarlı",
+        "slug": "ambarli"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Cihangir",
+        "slug": "cihangir"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Denizköşkler",
+        "slug": "denizkoskler"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Gümüşpala",
+        "slug": "gumuspala"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Merkez",
+        "slug": "merkez"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Mustafa Kemalpaşa",
+        "slug": "mustafa-kemalpasa"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Tahtakale",
+        "slug": "tahtakale"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Yeşilkent",
+        "slug": "yesilkent"
+      },
+      {
+        "name": "Firuzköy",
+        "slug": "firuzkoy"
+      },
+      {
+        "name": "Üniversite",
+        "slug": "universite"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Başakşehir Escort",
     "slug": "basaksehir",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Bahçeşehir",
+        "slug": "bahcesehir"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Kayaşehir",
+        "slug": "kayasehir"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Altınşehir",
+        "slug": "altinsehir"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Güvercintepe",
+        "slug": "guvercintepe"
+      },
+      {
+        "name": "Şahintepe",
+        "slug": "sahintepe"
+      },
+      {
+        "name": "Ziya Gökalp",
+        "slug": "ziya-gokalp"
+      },
+      {
+        "name": "Başak",
+        "slug": "basak"
+      },
+      {
+        "name": "İkitelli",
+        "slug": "ikitelli"
+      }
+    ],
+    "landmarks": []
+  },
+  {
+    "name": "Ataşehir Escort",
+    "slug": "atasehir",
+    "neighborhoods": [
+      {
+        "name": "Barbaros",
+        "slug": "barbaros"
+      },
+      {
+        "name": "Batı Ataşehir",
+        "slug": "bati-atasehir"
+      },
+      {
+        "name": "İçerenköy",
+        "slug": "icerenkoy"
+      },
+      {
+        "name": "Kayışdağı",
+        "slug": "kayisdagi"
+      },
+      {
+        "name": "Küçükbakkalköy",
+        "slug": "kucukbakkalkoy"
+      },
+      {
+        "name": "Örnek",
+        "slug": "ornek"
+      },
+      {
+        "name": "Mevlana",
+        "slug": "mevlana"
+      },
+      {
+        "name": "Ferhatpaşa",
+        "slug": "ferhatpasa"
       },
       {
         "name": "Atatürk",
         "slug": "ataturk"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
-      },
-      {
-        "name": "İstasyon",
-        "slug": "istasyon"
-      },
-      {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Yeni Sahra",
+        "slug": "yeni-sahra"
       }
-    ]
-  },
-  {
-    "name": "Ataşehir Escort",
-    "slug": "atasehir",
-    "neighborhoods": [
-      { "name": "Barbaros", "slug": "barbaros" },
-      { "name": "Batı Ataşehir", "slug": "bati-atasehir" },
-      { "name": "İçerenköy", "slug": "icerenkoy" },
-      { "name": "Kayışdağı", "slug": "kayisdagi" },
-      { "name": "Küçükbakkalköy", "slug": "kucukbakkalkoy" },
-      { "name": "Örnek", "slug": "ornek-mahallesi" },
-      { "name": "Mevlana", "slug": "mevlana-atasehir" },
-      { "name": "Lüks Rezidanslar", "slug": "atasehir-luks-rezidanslar" }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Sancaktepe Escort",
     "slug": "sancaktepe",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Abdurrahmangazi",
+        "slug": "abdurrahmangazi"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Akpınar",
+        "slug": "akpinar"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Emek",
+        "slug": "emek"
+      },
+      {
+        "name": "Eyüp Sultan",
+        "slug": "eyup-sultan"
       },
       {
         "name": "Fatih",
         "slug": "fatih"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Meclis",
+        "slug": "meclis"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Merve",
+        "slug": "merve"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Sarıgazi",
+        "slug": "sarigazi"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Yenidoğan",
+        "slug": "yenidogan"
+      },
+      {
+        "name": "Veysel Karani",
+        "slug": "veysel-karani"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Eyüpsultan Escort",
     "slug": "eyupsultan",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Alibeyköy",
+        "slug": "alibeykoy"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Göktürk",
+        "slug": "gokturk"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Kemerburgaz",
+        "slug": "kemerburgaz"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Yeşilpınar",
+        "slug": "yesilpinar"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Nişanca",
+        "slug": "nisanca"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Rami",
+        "slug": "rami"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Silahtarağa",
+        "slug": "silahtaraga"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Topçular",
+        "slug": "topcular"
+      },
+      {
+        "name": "Esentepe",
+        "slug": "esentepe"
+      },
+      {
+        "name": "Düğmeciler",
+        "slug": "dugmeciler"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Beylikdüzü Escort",
     "slug": "beylikduzu",
     "neighborhoods": [
       {
+        "name": "Adnan Kahveci",
+        "slug": "adnan-kahveci"
+      },
+      {
+        "name": "Barış",
+        "slug": "baris"
+      },
+      {
         "name": "Cumhuriyet",
         "slug": "cumhuriyet"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Gürpınar",
+        "slug": "gurpinar"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Kavaklı",
+        "slug": "kavakli"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Marmara",
+        "slug": "marmara"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Sahil",
+        "slug": "sahil"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Yakuplu",
+        "slug": "yakuplu"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
-      },
-      {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Dereağzı",
+        "slug": "dereagzi"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Sultanbeyli Escort",
     "slug": "sultanbeyli",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Abdurrahmangazi",
+        "slug": "abdurrahmangazi"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Akşemsettin",
+        "slug": "aksemsettin"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Battalgazi",
+        "slug": "battalgazi"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Hasanpaşa",
+        "slug": "hasanpasa"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Mecidiye",
+        "slug": "mecidiye"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Mehmet Akif",
+        "slug": "mehmet-akif"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Mimarsinan",
+        "slug": "mimarsinan"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Orhangazi",
+        "slug": "orhangazi"
+      },
+      {
+        "name": "Turgutreis",
+        "slug": "turgutreis"
+      },
+      {
+        "name": "Yavuz Selim",
+        "slug": "yavuz-selim"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Sarıyer Escort",
     "slug": "sariyer",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "İstinye",
+        "slug": "istinye"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Tarabya",
+        "slug": "tarabya"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Yeniköy",
+        "slug": "yenikoy"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Zekeriyaköy",
+        "slug": "zekeriyakoy"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Maslak",
+        "slug": "maslak"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Emirgan",
+        "slug": "emirgan"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Baltalimanı",
+        "slug": "baltalimani"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Rumelihisarı",
+        "slug": "rumelihisari"
+      },
+      {
+        "name": "Kireçburnu",
+        "slug": "kirecburnu"
+      },
+      {
+        "name": "Ayazağa",
+        "slug": "ayazaga"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Zeytinburnu Escort",
     "slug": "zeytinburnu",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Gökalp",
+        "slug": "gokalp"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Merkezefendi",
+        "slug": "merkezefendi"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Nuripaşa",
+        "slug": "nuripasa"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Seyitnizam",
+        "slug": "seyitnizam"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Sümer",
+        "slug": "sumer"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Telsiz",
+        "slug": "telsiz"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Veliefendi",
+        "slug": "veliefendi"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Beştelsiz",
+        "slug": "bestelsiz"
+      },
+      {
+        "name": "Yeşiltepe",
+        "slug": "yesiltepe"
+      },
+      {
+        "name": "Kazlıçeşme",
+        "slug": "kazlicesme"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Güngören Escort",
     "slug": "gungoren",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Haznedar",
+        "slug": "haznedar"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Merter",
+        "slug": "merter"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Sanayi",
+        "slug": "sanayi"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Tozkoparan",
+        "slug": "tozkoparan"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Akıncılar",
+        "slug": "akincilar"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Güven",
+        "slug": "guven"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Gençosman",
+        "slug": "gencosman"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Güneştepe",
+        "slug": "gunestepe"
+      },
+      {
+        "name": "Mareşal Çakmak",
+        "slug": "maresal-cakmak"
+      },
+      {
+        "name": "Merkez",
+        "slug": "merkez"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Arnavutköy Escort",
     "slug": "arnavutkoy",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Boğazköy",
+        "slug": "bogazkoy"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Hadımköy",
+        "slug": "hadimkoy"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Bolluca",
+        "slug": "bolluca"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Haraççı",
+        "slug": "haracci"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Taşoluk",
+        "slug": "tasoluk"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "İslambey",
+        "slug": "islambey"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Anadolu",
+        "slug": "anadolu"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Merkez",
+        "slug": "merkez"
+      },
+      {
+        "name": "Yavuz Selim",
+        "slug": "yavuz-selim"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Çekmeköy Escort",
     "slug": "cekmekoy",
     "neighborhoods": [
       {
+        "name": "Alemdağ",
+        "slug": "alemdag"
+      },
+      {
+        "name": "Aydınlar",
+        "slug": "aydinlar"
+      },
+      {
         "name": "Cumhuriyet",
         "slug": "cumhuriyet"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Ekşioğlu",
+        "slug": "eksioglu"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Hamidiye",
+        "slug": "hamidiye"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Kirazlıdere",
+        "slug": "kirazlidere"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Mehmet Akif",
+        "slug": "mehmet-akif"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Mimar Sinan",
+        "slug": "mimar-sinan"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Taşdelen",
+        "slug": "tasdelen"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Ömerli",
+        "slug": "omerli"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Tuzla Escort",
     "slug": "tuzla",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Aydınlı",
+        "slug": "aydinli"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Cami",
+        "slug": "cami"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Evliya Çelebi",
+        "slug": "evliya-celebi"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
-      },
-      {
-        "name": "Atatürk",
-        "slug": "ataturk"
-      },
-      {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "İçmeler",
+        "slug": "icmeler"
       },
       {
         "name": "İstasyon",
         "slug": "istasyon"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Mimar Sinan",
+        "slug": "mimar-sinan"
+      },
+      {
+        "name": "Postane",
+        "slug": "postane"
+      },
+      {
+        "name": "Yayla",
+        "slug": "yayla"
+      },
+      {
+        "name": "Şifa",
+        "slug": "sifa"
+      },
+      {
+        "name": "Tepeören",
+        "slug": "tepeoren"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Beykoz Escort",
     "slug": "beykoz",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Acarlar",
+        "slug": "acarlar"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Göksu",
+        "slug": "goksu"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Kavacık",
+        "slug": "kavacik"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Kanlıca",
+        "slug": "kanlica"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Anadoluhisarı",
+        "slug": "anadoluhisari"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Çubuklu",
+        "slug": "cubuklu"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Paşabahçe",
+        "slug": "pasabahce"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Rüzgarlıbahçe",
+        "slug": "ruzgarlibahce"
+      },
+      {
+        "name": "Göztepe",
+        "slug": "goztepe"
+      },
+      {
+        "name": "Yalıköy",
+        "slug": "yalikoy"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Büyükçekmece Escort",
     "slug": "buyukcekmece",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Albatros",
+        "slug": "albatros"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Batıköy",
+        "slug": "batikoy"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Mimaroba",
+        "slug": "mimaroba"
+      },
+      {
+        "name": "Sinanoba",
+        "slug": "sinanoba"
+      },
+      {
+        "name": "Kumburgaz",
+        "slug": "kumburgaz"
+      },
+      {
+        "name": "Celaliye",
+        "slug": "celaliye"
+      },
+      {
+        "name": "Kamiloba",
+        "slug": "kamiloba"
+      },
+      {
+        "name": "Tepecik",
+        "slug": "tepecik"
       },
       {
         "name": "Fatih",
         "slug": "fatih"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
-      },
-      {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
-      },
-      {
-        "name": "İstasyon",
-        "slug": "istasyon"
-      },
-      {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Hürriyet",
+        "slug": "hurriyet"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Beyoğlu Escort",
     "slug": "beyoglu",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Cihangir",
+        "slug": "cihangir"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Galata",
+        "slug": "galata"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Karaköy",
+        "slug": "karakoy"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Taksim",
+        "slug": "taksim"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Asmalımescit",
+        "slug": "asmalimescit"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Piri Paşa",
+        "slug": "piri-pasa"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Kasımpaşa",
+        "slug": "kasimpasa"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Piyalepaşa",
+        "slug": "piyalepasa"
+      },
+      {
+        "name": "Sütlüce",
+        "slug": "sutluce"
+      },
+      {
+        "name": "Halıcıoğlu",
+        "slug": "halicioglu"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Bakırköy Escort",
     "slug": "bakirkoy",
     "neighborhoods": [
-      { "name": "Ataköy", "slug": "atakoy" },
-      { "name": "Florya", "slug": "florya" },
-      { "name": "Yeşilköy", "slug": "yesilkoy" },
-      { "name": "Yeşilyurt", "slug": "yesilyurt" },
-      { "name": "İncirli", "slug": "incirli" },
-      { "name": "Basınköy", "slug": "basinkoy" },
-      { "name": "Kartaltepe", "slug": "kartaltepe" },
-      { "name": "Zeytinlik", "slug": "zeytinlik" }
-    ]
-  },
-  {
-    "name": "Beşiktaş Escort",
-    "slug": "besiktas",
-    "neighborhoods": [
       {
-        "name": "Bebek",
-        "slug": "bebek"
+        "name": "Ataköy",
+        "slug": "atakoy"
       },
       {
-        "name": "Etiler",
-        "slug": "etiler"
+        "name": "Florya",
+        "slug": "florya"
       },
       {
-        "name": "Arnavutköy",
-        "slug": "arnavutkoy"
+        "name": "Yeşilköy",
+        "slug": "yesilkoy"
       },
       {
-        "name": "Levent",
-        "slug": "levent"
+        "name": "Yeşilyurt",
+        "slug": "yesilyurt"
       },
       {
-        "name": "Ortaköy",
-        "slug": "ortakoy"
+        "name": "İncirli",
+        "slug": "incirli"
       },
       {
-        "name": "Ulus",
-        "slug": "ulus"
+        "name": "Basınköy",
+        "slug": "basinkoy"
       },
       {
-        "name": "Gayrettepe",
-        "slug": "gayrettepe"
+        "name": "Kartaltepe",
+        "slug": "kartaltepe"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Zeytinlik",
+        "slug": "zeytinlik"
+      },
+      {
+        "name": "Zuhuratbaba",
+        "slug": "zuhuratbaba"
+      },
+      {
+        "name": "Şenlikköy",
+        "slug": "senlikkoy"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Silivri Escort",
     "slug": "silivri",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Alibey",
+        "slug": "alibey"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Selimpaşa",
+        "slug": "selimpasa"
+      },
+      {
+        "name": "Gümüşyaka",
+        "slug": "gumusyaka"
+      },
+      {
+        "name": "Mimarsinan",
+        "slug": "mimarsinan"
       },
       {
         "name": "Yeni Mahalle",
         "slug": "yeni-mahalle"
       },
       {
+        "name": "Piri Mehmet Paşa",
+        "slug": "piri-mehmet-pasa"
+      },
+      {
         "name": "Fatih",
         "slug": "fatih"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
-      },
-      {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
-      },
-      {
-        "name": "İstasyon",
-        "slug": "istasyon"
-      },
-      {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Ortaköy",
+        "slug": "ortakoy"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Çatalca Escort",
     "slug": "catalca",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
-      },
-      {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
-      },
-      {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
-      },
-      {
         "name": "Fatih",
         "slug": "fatih"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Kaleiçi",
+        "slug": "kaleici"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
+        "name": "Ferhatpaşa",
+        "slug": "ferhatpasa"
       },
       {
-        "name": "İstasyon",
-        "slug": "istasyon"
+        "name": "Karacaköy",
+        "slug": "karacakoy"
       },
       {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Binkılıç",
+        "slug": "binkilic"
+      },
+      {
+        "name": "Çiftlikköy",
+        "slug": "ciftlikkoy"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Şile Escort",
     "slug": "sile",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Çavuş",
+        "slug": "cavus"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Kumbaba",
+        "slug": "kumbaba"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Balibey",
+        "slug": "balibey"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
+        "name": "Çayırbaşı",
+        "slug": "cayirbasi"
       },
       {
-        "name": "Atatürk",
-        "slug": "ataturk"
+        "name": "Ağva",
+        "slug": "agva"
       },
       {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
-      },
-      {
-        "name": "İstasyon",
-        "slug": "istasyon"
-      },
-      {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Hacıllı",
+        "slug": "hacilli"
       }
-    ]
+    ],
+    "landmarks": []
   },
   {
     "name": "Adalar Escort",
     "slug": "adalar",
     "neighborhoods": [
       {
-        "name": "Cumhuriyet",
-        "slug": "cumhuriyet"
+        "name": "Büyükada",
+        "slug": "buyukada"
       },
       {
-        "name": "Hürriyet",
-        "slug": "hurriyet"
+        "name": "Heybeliada",
+        "slug": "heybeliada"
       },
       {
-        "name": "Yeni Mahalle",
-        "slug": "yeni-mahalle"
+        "name": "Burgazada",
+        "slug": "burgazada"
       },
       {
-        "name": "Fatih",
-        "slug": "fatih"
-      },
-      {
-        "name": "Atatürk",
-        "slug": "ataturk"
-      },
-      {
-        "name": "Bahçelievler",
-        "slug": "bahcelievler"
-      },
-      {
-        "name": "İstasyon",
-        "slug": "istasyon"
-      },
-      {
-        "name": "Lüks Noktalar",
-        "slug": "luks-noktalar"
+        "name": "Kınalıada",
+        "slug": "kinaliada"
       }
-    ]
-  },
-  {
-    "name": "Silivri Escort",
-    "slug": "silivri",
-    "neighborhoods": [
-      { "name": "Alibey", "slug": "alibey" },
-      { "name": "Selimpaşa", "slug": "selimpasa" },
-      { "name": "Gümüşyaka", "slug": "gumusyaka" }
-    ]
-  },
-  {
-    "name": "Çatalca Escort",
-    "slug": "catalca",
-    "neighborhoods": [
-      { "name": "Fatih", "slug": "fatih-catalca" },
-      { "name": "Kaleiçi", "slug": "kaleici" }
-    ]
-  },
-  {
-    "name": "Şile Escort",
-    "slug": "sile",
-    "neighborhoods": [
-      { "name": "Çavuş", "slug": "cavus" },
-      { "name": "Kumbaba", "slug": "kumbaba" }
-    ]
+    ],
+    "landmarks": []
   }
 ],
   landmarks: [

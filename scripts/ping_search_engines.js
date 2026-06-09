@@ -2,15 +2,22 @@ const https = require('https');
 const http = require('http');
 
 const googleSites = [
-  "https://sites.google.com/dorukcanay.digital/besyol-universiteli-escort",
-  "https://sites.google.com/dorukcanay.digital/beylikduzu-vip-escort",
-  "https://sites.google.com/dorukcanay.digital/beyoglu-escort-drkcnay1-v",
-  "https://sites.google.com/dorukcanay.digital/catalca-escort-drkcnay1-v",
-  "https://sites.google.com/dorukcanay.digital/esenler-escort-drkcnay1-v",
-  "https://sites.google.com/dorukcanay.digital/istanbul-escort",
-  "https://sites.google.com/dorukcanay.digital/kartal-escort-drkcnay1-v",
-  "https://sites.google.com/dorukcanay.digital/sefakoyistanbul-drkcnay2026",
-  "https://sites.google.com/dorukcanay.digital/silivriescort-drkcnay2026"
+  "https://sites.google.com/dorukcanay.digital/sefakoyistanbul-drkcnay2026/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/bakrkyescort-drkcnayv1/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/catalca-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/beylikduzu-vip-escort/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/besyol-universiteli-escort/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/besyol-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/istanbul-escort/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/sancaktepe-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/kartal-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/cekmekoy-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/arnavutkoy-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/basaksehir-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/esenler-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/adalar-escort-drkcnay1-v/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/silivriescort-drkcnay2026/ana-sayfa",
+  "https://sites.google.com/dorukcanay.digital/beyoglu-escort-drkcnay1-v/ana-sayfa"
 ];
 
 // Search engines that support simple GET pings

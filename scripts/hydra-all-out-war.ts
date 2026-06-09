@@ -19,7 +19,7 @@ import { ISTANBUL_NEIGHBORS } from "../lib/seo/neighborhood-map";
 dotenv.config();
 
 const TARGET_ZONES = Object.keys(ISTANBUL_NEIGHBORS);
-const MONEY_SITE = "https://istanbulescdrkcn.com";
+const MONEY_SITE = "https://istanbulescort.blog";
 
 async function generateTelegraphContent(zone: string) {
     const prompt = `

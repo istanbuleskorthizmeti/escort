@@ -170,7 +170,7 @@ export function buildServiceAreaSchema(cityName: string, districtName?: string) 
       : [{ "@type": "City", "name": cityName, "addressCountry": "TR" }],
     "availableChannel": {
       "@type": "ServiceChannel",
-      "serviceUrl": "https://istanbulescdrkcn.com",
+      "serviceUrl": "https://istanbulescort.blog",
       "availableLanguage": "Turkish"
     }
   };

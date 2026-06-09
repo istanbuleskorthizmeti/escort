@@ -1,31 +1,34 @@
 import { NodeSSH } from 'node-ssh';
 import path from 'path';
+import fs from 'fs';
 
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
+  host: '187.77.111.203',
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: 'Z4-nN8JfiUIh5,;g'
 };
 
 async function deployGoogleKey() {
   try {
-    console.log('🚀 [DEPLOY GOOGLE KEY] Connecting to root@213.232.235.181...');
+    console.log('🚀 [DEPLOY GOOGLE KEY] Connecting to root@187.77.111.203...');
     await ssh.connect(config);
     console.log('✅ Connected.');
 
-    // 1. Upload google-key.json to /root/esc/google-key.json
-    console.log('📤 [UPLOAD] Uploading google-key.json to production VPS (both roots)...');
-    await ssh.putFile(
-      path.join(process.cwd(), 'google-key.json'),
-      '/root/esc/google-key.json'
-    );
-    await ssh.putFile(
-      path.join(process.cwd(), 'google-key.json'),
-      '/root/esc/dist/google-key.json'
-    );
-    console.log('✅ google-key.json uploaded to both root and dist roots successfully.');
+    // 1. Upload key files to /root/esc/
+    const keysToUpload = ['google-key.json', 'hydra-gcp-key.json', 'google-key-strong-return.json'];
+    console.log('📤 [UPLOAD] Uploading GSC service account keys to production VPS...');
+    for (const keyFile of keysToUpload) {
+      const localPath = path.join(process.cwd(), keyFile);
+      if (fs.existsSync(localPath)) {
+        await ssh.putFile(localPath, `/root/esc/${keyFile}`);
+        await ssh.putFile(localPath, `/root/esc/dist/${keyFile}`);
+        console.log(`✅ Uploaded ${keyFile} to both root and dist directories.`);
+      } else {
+        console.warn(`⚠️ Warning: Local key file not found: ${keyFile}`);
+      }
+    }
 
     // 2. Re-trigger indexing to execute Google Indexing API publish
     console.log('⚔️ [RE-EXECUTE] Triggering multi-platform Indexing with Google Search Console active...');

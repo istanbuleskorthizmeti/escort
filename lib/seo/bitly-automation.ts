@@ -23,7 +23,7 @@ export async function getOrGenerateShortLink(slug: string, longUrl?: string) {
     
     // Create a 6-character random hash
     const randomHash = Math.random().toString(36).substring(2, 8);
-    const shortLink = `https://vipescorthizmeti.com/go/${randomHash}`;
+    const shortLink = `https://istanbulescort.blog/go/${randomHash}`;
     
     // Store the mapping: `cloak_hash` -> longUrl
     await prisma.systemSetting.create({

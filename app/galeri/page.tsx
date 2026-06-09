@@ -8,7 +8,7 @@ import Navbar from "@/components/UI/Navbar";
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
-  const host = headersList.get("host") || "vipescorthizmeti.com";
+  const host = headersList.get("host") || "istanbulescort.blog";
   const theme = ThemeEngine.getTheme(host);
   
   return {
@@ -20,7 +20,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function GalleryPage() {
   const headersList = await headers();
-  const host = headersList.get("host") || "vipescorthizmeti.com";
+  const host = headersList.get("host") || "istanbulescort.blog";
   const theme = ThemeEngine.getTheme(host);
 
   // Generate 12 dummy profiles for the showcase (Omni-Gallery)

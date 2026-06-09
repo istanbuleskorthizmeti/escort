@@ -30,7 +30,7 @@ async function createBitlyLink(longUrl) {
 
 async function main() {
     // 🎯 Yeni ana alan adımız
-    const NEW_DOMAIN = 'istanbulescdrkcn.com';
+    const NEW_DOMAIN = 'istanbulescort.blog';
     const baseUrl = `https://${NEW_DOMAIN}`;
 
     // 🎯 Backlink (Parazit) bombası için oluşturulacak stratejik sayfalar

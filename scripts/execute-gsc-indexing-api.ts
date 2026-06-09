@@ -3,15 +3,18 @@ import { NodeSSH } from 'node-ssh';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
+  host: '187.77.111.203',
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: 'Z4-nN8JfiUIh5,;g'
 };
 
 async function run() {
   try {
     await ssh.connect(config);
     console.log('✅ Connected to VPS.');
+
+    console.log('🛡️ Terminating any existing execute-gsc-indexing-api instances on VPS...');
+    await ssh.execCommand('pkill -f execute-gsc-indexing-api.js || true');
 
     console.log('📤 Uploading temporary GSC/Indexing API Runner script...');
     const remoteRunnerPath = '/root/esc/scripts/execute-gsc-indexing-api.js';
@@ -65,7 +68,9 @@ const googleSites = [
   { url: "https://sites.google.com/dorukcanay.digital/arnavutkoy-escort-drkcnay1-v/ana-sayfa", keyword: "arnavutkoy-vip-escort-2026" },
   { url: "https://sites.google.com/dorukcanay.digital/basaksehir-escort-drkcnay1-v/ana-sayfa", keyword: "basaksehir-vip-escort-2026" },
   { url: "https://sites.google.com/dorukcanay.digital/esenler-escort-drkcnay1-v/ana-sayfa", keyword: "esenler-vip-escort-2026" },
-  { url: "https://sites.google.com/dorukcanay.digital/adalar-escort-drkcnay1-v/ana-sayfa", keyword: "adalar-vip-escort-2026" }
+  { url: "https://sites.google.com/dorukcanay.digital/adalar-escort-drkcnay1-v/ana-sayfa", keyword: "adalar-vip-escort-2026" },
+  { url: "https://sites.google.com/dorukcanay.digital/silivriescort-drkcnay2026/ana-sayfa", keyword: "silivri-vip-escort-2026" },
+  { url: "https://sites.google.com/dorukcanay.digital/beyoglu-escort-drkcnay1-v/ana-sayfa", keyword: "beyoglu-vip-escort-2026" }
 ];
 
 async function sendTelegramReport(message) {
@@ -120,39 +125,153 @@ function notifyIndexNow(url) {
   });
 }
 
+// Key Rotator Engine for GSC Indexing API
+class IndexingRotator {
+  constructor() {
+    this.clients = [];
+    this.currentIdx = 0;
+    this.initializeClients();
+  }
+
+  initializeClients() {
+    const rootDir = '/root/esc';
+    const files = fs.readdirSync(rootDir);
+    const keyFiles = files.filter(f => 
+      f.endsWith('.json') && 
+      (f.startsWith('google-key') || f.startsWith('hydra-gcp-key'))
+    );
+
+    console.log(\`🔍 Found \${keyFiles.length} key files on VPS.\`);
+
+    for (const file of keyFiles) {
+      try {
+        const keyPath = path.join(rootDir, file);
+        const keyData = JSON.parse(fs.readFileSync(keyPath, 'utf8'));
+
+        if (!keyData.private_key || !keyData.client_email) {
+          continue;
+        }
+
+        const auth = new google.auth.GoogleAuth({
+          credentials: {
+            client_email: keyData.client_email,
+            private_key: keyData.private_key.replace(/\\\\n/g, '\\n'),
+          },
+          scopes: ['https://www.googleapis.com/auth/indexing'],
+        });
+
+        const indexingClient = google.indexing({
+          version: 'v3',
+          auth,
+        });
+
+        this.clients.push({
+          fileName: file,
+          email: keyData.client_email,
+          projectId: keyData.project_id || 'unknown',
+          indexingClient,
+          isExhausted: false,
+          unauthorizedSites: new Set()
+        });
+
+        console.log(\`🔑 Initialized key: \${file} (\${keyData.client_email})\`);
+      } catch (err) {
+        console.error(\`❌ Failed to load \${file}:\`, err.message);
+      }
+    }
+  }
+
+  async publish(url) {
+    if (this.clients.length === 0) {
+      throw new Error("No service accounts loaded.");
+    }
+
+    const domain = new URL(url).hostname;
+    let attempts = 0;
+    const maxAttempts = this.clients.length;
+
+    while (attempts < maxAttempts) {
+      const activeClient = this.clients[this.currentIdx];
+
+      if (activeClient.isExhausted || activeClient.unauthorizedSites.has(domain)) {
+        this.rotate();
+        attempts++;
+        continue;
+      }
+
+      try {
+        const res = await activeClient.indexingClient.urlNotifications.publish({
+          requestBody: {
+            url,
+            type: 'URL_UPDATED',
+          },
+        });
+
+        if (res.status === 200 || res.status === 201) {
+          return {
+            success: true,
+            email: activeClient.email,
+            projectId: activeClient.projectId
+          };
+        }
+        throw new Error(\`GSC API responded with status \${res.status}\`);
+      } catch (err) {
+        const errMsg = err.message || '';
+        const errCode = err.code || 500;
+        const isQuota = errMsg.includes('Quota exceeded') || errMsg.includes('limitExceeded') || errCode === 429;
+        const isPermission = errMsg.includes('Permission denied') || errMsg.includes('not owner') || errMsg.includes('not verified');
+        const isTransient = errMsg.includes('ETIMEDOUT') || errMsg.includes('ECONNRESET') || 
+                            errMsg.includes('ECONNREFUSED') || errMsg.includes('ENOTFOUND') || 
+                            errMsg.includes('socket hang up') || errMsg.includes('fetch failed') || 
+                            errMsg.includes('timeout');
+
+        if (isQuota) {
+          console.log(\`⚠️ Quota exceeded for \${activeClient.email}. Rotating...\`);
+          activeClient.isExhausted = true;
+          this.rotate();
+        } else if (isPermission && errCode === 403) {
+          console.log(\`⚠️ Permission denied for \${activeClient.email} on \${domain}. Rotating...\`);
+          activeClient.unauthorizedSites.add(domain);
+          this.rotate();
+        } else if (!isTransient) {
+          console.log(\`❌ Key \${activeClient.email} failed with critical permanent error: \`, errMsg);
+          console.log(\`❌ Disabling client \${activeClient.email} to prevent infinite iteration loops.\`);
+          activeClient.isExhausted = true;
+          this.rotate();
+        } else {
+          console.log(\`⚠️ Transient network warning for \${activeClient.email}: \`, errMsg);
+          this.rotate();
+        }
+      }
+      attempts++;
+    }
+
+    return {
+      success: false,
+      error: 'All service account credentials in the pool have been exhausted or rejected.'
+    };
+  }
+
+  rotate() {
+    this.currentIdx = (this.currentIdx + 1) % this.clients.length;
+  }
+}
+
 async function startIndexing() {
-  console.log("🔒 [AUTH] Initializing official Google Indexing API auth...");
-  
-  // Try absolute VPS path first, then fallback to current directory
-  let keyPath = '/root/esc/google-key.json';
-  if (!fs.existsSync(keyPath)) {
-    keyPath = path.join(process.cwd(), 'google-key.json');
-  }
-  
-  if (!fs.existsSync(keyPath)) {
-    console.error("❌ google-key.json key file not found anywhere!");
-    process.exit(1);
-  }
-
-  console.log(\`🔑 Using keyfile at: \${keyPath}\`);
-
-  const auth = new google.auth.GoogleAuth({
-    keyFile: keyPath,
-    scopes: ['https://www.googleapis.com/auth/indexing'],
-  });
-
-  const authClient = await auth.getClient();
-  const indexing = google.indexing({
-    version: 'v3',
-    auth: authClient,
-  });
+  console.log("🔒 [AUTH] Initializing official Google Indexing API auth with key rotation...");
+  const rotator = new IndexingRotator();
 
   const timestamp = new Date().toLocaleString('tr-TR', { timeZone: 'Europe/Istanbul' });
-  let reportMessage = \`⚔️ <b>[HYDRA GSC & INDEXING API BLAST: ZAFER]</b> ⚔️\\n\\n\`;
-  reportMessage += \`🖥️ <b>Sunucu:</b> Frankfurt Fortress (Main)\\n\`;
+  let reportMessage = \`⚔️ <b>[HYDRA GSC INDEXING BLAST: ZAFER]</b> ⚔️\\n\\n\`;
   reportMessage += \`🕒 <b>Tarih:</b> <code>\${timestamp}</code>\\n\\n\`;
   reportMessage += \`🔥 <b>HİBRİT İNDEKSLEME VE YETKİLİ DOĞRULAMA DURUMU:</b>\\n\\n\`;
 
+  let sitesCount = 0;
+  let moneySiteCount = 0;
+  let errorCount = 0;
+
+  // 1. Prioritized Google Sites Queue
+  console.log("🚀 Starting Google Sites queue submission...");
   for (const item of googleSites) {
     console.log(\`\\n──────────────────────────────────────────\`);
     console.log(\`🎯 TARGET DISTRICT: \${item.keyword.toUpperCase()}\`);
@@ -168,43 +287,124 @@ async function startIndexing() {
       }
     } catch (e) {}
 
-    console.log(\`🔗 Bitly Link: \${bitlyUrl}\`);
-
     let googleSitesIndexingOk = false;
     let indexNowOk = false;
 
-    // 1. Trigger Official Google Indexing API on Google Site (Using Service Account Auth)
+    // Trigger Rotated Indexing API
     try {
-      console.log(\`📡 Calling Google Indexing API for G-Sites...\`);
-      const res = await indexing.urlNotifications.publish({
-        requestBody: {
-          url: item.url,
-          type: 'URL_UPDATED',
-        },
-      });
-      if (res.status === 200 || res.status === 201) {
-        console.log(\`✅ Google Indexing API Success!\`);
+      const res = await rotator.publish(item.url);
+      if (res.success) {
         googleSitesIndexingOk = true;
+        sitesCount++;
+        console.log(\`✅ Google Sites Indexing Success via: \${res.email}\`);
+      } else {
+        errorCount++;
+        console.error(\`❌ Google Sites Indexing failed: \${res.error}\`);
+        if (res.email === 'all_exhausted') {
+          console.warn('⚠️ [ROTATOR] All service accounts in the pool are exhausted. Breaking G-Sites loop.');
+          reportMessage += \`⚠️ <b>[KOTA UYARISI]</b> Tüm GSC API kotaları tükendi! İşlem yarıda kesildi.\\\\n\\\\n\`;
+          break;
+        }
       }
-    } catch (gErr) {
-      console.error(\`❌ Google Indexing API Error: \`, gErr.message);
+    } catch (err) {
+      errorCount++;
+      console.error(\`❌ Google Sites Indexing Error: \`, err.message);
     }
 
-    // 2. Trigger IndexNow Broadcast (Bing & Yandex)
-    console.log(\`📡 Calling IndexNow Broadcast for G-Sites...\`);
+    // Trigger IndexNow (Bing/Yandex)
     const sitesBingOk = await notifyIndexNow(item.url);
-    console.log(\`📡 Calling IndexNow Broadcast for Bitly...\`);
     const bitlyBingOk = await notifyIndexNow(bitlyUrl);
     indexNowOk = sitesBingOk || bitlyBingOk;
 
     reportMessage += \`⭐️ <b>[\${item.keyword.split('-')[0].toUpperCase()}]</b>\\n\`;
-    reportMessage += \`🛰️ G-Sites GSC API: [\${googleSitesIndexingOk ? '✅ ONAYLANDI (5 Dk İndex)' : '❌ YETKİ REDDEDİLDİ'}]\\n\`;
+    reportMessage += \`🛰️ G-Sites GSC API: [\${googleSitesIndexingOk ? '✅ ONAYLANDI (5 Dk İndex)' : '❌ YETKİ HATA/LİMİT'}]\\n\`;
     reportMessage += \`🔗 Bitly IndexNow: [\${indexNowOk ? '✅ PİNGLENDİ' : '❌ BAŞARISIZ'}]\\n\\n\`;
 
-    // Avoid rate limit spikes
     await new Promise(resolve => setTimeout(resolve, 1500));
   }
 
+  // 2. Money Site (istanbulescort.blog) Queue
+  console.log("\\n==========================================");
+  console.log("🚀 Starting money site (istanbulescort.blog) queue submission...");
+  
+  const moneySiteUrls = [
+    "https://istanbulescort.blog/",
+    "https://istanbulescort.blog/istanbul"
+  ];
+
+  // Dynamically load districts for comprehensive indexing coverage
+  const istanbulDistricts = [
+    'besiktas', 'sisli', 'beylikduzu', 'kadikoy', 'bakirkoy', 
+    'atasehir', 'esenyurt', 'fatih', 'bagcilar', 'bahcelievler',
+    'umraniye', 'pendik', 'maltepe', 'kartal', 'sariyer', 
+    'uskudar', 'avcilar', 'cekmekoy', 'tuzla', 'arnavutkoy', 
+    'gaziosmanpasa', 'sultanbeyli', 'güngören', 'zeytinburnu', 
+    'sile', 'catalca', 'silivri', 'buyukcekmece', 'kucukcekmece', 
+    'adalar', 'bayrampasa', 'sultangazi'
+  ];
+
+  istanbulDistricts.forEach(dist => {
+    moneySiteUrls.push(\`https://istanbulescort.blog/istanbul/\${dist}\`);
+  });
+
+  try {
+    const dbPages = await prisma.pageContent.findMany({
+      where: { site: { domain: 'istanbulescort.blog' } },
+      select: { slug: true }
+    });
+    dbPages.forEach(p => {
+      let slug = p.slug.toLowerCase().trim();
+      if (!slug.includes('/') && slug.includes('-')) {
+        const parts = slug.split('-');
+        if (parts[0] === 'istanbul' && parts.length > 1) {
+          slug = \`istanbul/\${parts.slice(1).join('/')}\`;
+        }
+      }
+      const fullUrl = \`https://istanbulescort.blog/\${slug}\`;
+      if (!moneySiteUrls.includes(fullUrl)) {
+        moneySiteUrls.push(fullUrl);
+      }
+    });
+  } catch (dbErr) {
+    console.warn("⚠️ Could not load money site pages from DB:", dbErr.message);
+  }
+
+  console.log(\`📋 Loaded \${moneySiteUrls.length} money site URLs for indexing.\`);
+
+  // Submit Money Site URLs
+  for (const url of moneySiteUrls) {
+    const domain = new URL(url).hostname;
+    const allExhaustedOrUnauthorized = rotator.clients.every(c => 
+      c.isExhausted || c.unauthorizedSites.has(domain)
+    );
+    if (allExhaustedOrUnauthorized) {
+      console.warn(\`⚠️ [ROTATOR] All service accounts in the pool are exhausted or unauthorized for \${domain}. Breaking indexing loop.\`);
+      reportMessage += \`⚠️ <b>[KOTA/YETKİ UYARISI]</b> Tüm GSC API kotaları veya yetkileri tükendi! İşlem sonlandırıldı.\\\\n\\\\n\`;
+      break;
+    }
+
+    console.log(\`📡 Calling Google Indexing API for Money Site URL: \${url}\`);
+    try {
+      const res = await rotator.publish(url);
+      if (res.success) {
+        moneySiteCount++;
+        console.log(\`✅ Indexing Success for \${url} via \${res.email}\`);
+      } else {
+        errorCount++;
+        console.error(\`❌ Indexing failed for \${url}: \${res.error}\`);
+      }
+    } catch (err) {
+      errorCount++;
+      console.error(\`❌ Error indexing money site URL: \`, err.message);
+    }
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  }
+
+  // Finalize Telegram report
+  reportMessage += \`📊 <b>ÖZET DETAYLARI:</b>\\n\`;
+  reportMessage += \`🛰️ <b>G-Sites İndexlenen:</b> <code>\${sitesCount} adet</code>\\n\`;
+  reportMessage += \`💰 <b>Money Site İndexlenen:</b> <code>\${moneySiteCount} adet</code>\\n\`;
+  reportMessage += \`❌ <b>Hata Alınanlar:</b> <code>\${errorCount} adet</code>\\n\\n\`;
   reportMessage += \`🏆 <i>Google Indexing API ve IndexNow fırtınası başarıyla tamamlandı. Dizin botları parazit ağımızı anında taramaya başladı!</i>\\n\\n<i>#HydraAPIBlast #WarriorMode #DRKCNAYElite</i>\`;
 
   console.log("📡 Sending Telegram success report...");
@@ -225,15 +425,13 @@ startIndexing().catch(err => {
     await ssh.execCommand(`mkdir -p /root/esc/scripts`);
     await ssh.execCommand(`echo "${base64Code}" | base64 -d > ${remoteRunnerPath}`);
 
-    console.log('📡 Executing GSC Official Indexing API Blast on remote VPS...');
-    const execRes = await ssh.execCommand(`node ${remoteRunnerPath}`);
+    console.log('📡 Executing GSC Official Indexing API Blast on remote VPS (background mode)...');
+    await ssh.execCommand('mkdir -p /root/esc/logs');
+    // Run in background with nohup, redirecting output to /root/esc/logs/indexing.log
+    await ssh.execCommand(`nohup node ${remoteRunnerPath} > /root/esc/logs/indexing.log 2>&1 &`);
 
-    console.log('STDOUT:', execRes.stdout);
-    console.log('STDERR:', execRes.stderr);
-
-    // Cleanup
-    await ssh.execCommand(`rm -f ${remoteRunnerPath}`);
-    console.log('🧹 Remote script cleaned up.');
+    console.log('🚀 Indexing Blast launched in background.');
+    console.log('📋 Monitor progress on VPS via: tail -f /root/esc/logs/indexing.log');
 
     ssh.dispose();
   } catch (err: any) {

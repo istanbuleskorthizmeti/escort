@@ -86,7 +86,7 @@ async function runReport() {
 ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬
 🔗 <b>YENİ LANDİNG PAGE:</b>
 📍 Bağcılar Escort Elite:
-<a href="https://vipescorthizmeti.com/subeler/bagcilar-escort-elite">Görüntüle & Kontrol Et</a>
+<a href="https://istanbulescort.blog/subeler/bagcilar-escort-elite">Görüntüle & Kontrol Et</a>
 
 🛡️ <b>BACKLINK DURUMU:</b>
 ✅ <b>Parasite Hub:</b> Aktif (GitHub/Telegraph/PDF)

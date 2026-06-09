@@ -8,8 +8,8 @@ dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 const CF_API_TOKEN = process.env.CF_API_TOKEN;
 const CF_EMAIL = process.env.CF_EMAIL;
 
-const OLD_DOMAIN = 'vipescorthizmeti.com';
-const NEW_DOMAIN = 'istanbulescdrkcn.com';
+const OLD_DOMAIN = 'istanbulescort.blog';
+const NEW_DOMAIN = 'istanbulescort.blog';
 
 async function setupCloudflareRedirect() {
   if (!CF_API_TOKEN) {

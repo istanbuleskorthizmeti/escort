@@ -18,7 +18,7 @@ export function ContextualPBN({ currentHost }: ContextualPBNProps) {
   // RULE 2: Satellites link to Money Sites + Local Sister Satellites
   if (config.role === 'SATELLITE') {
     // 1. Find Money Sites
-    const moneySites = DOMAIN_MATRIX.filter(d => d.role === 'MONEY_SITE' && d.host.includes('vipescorthizmeti.com'));
+    const moneySites = DOMAIN_MATRIX.filter(d => d.role === 'MONEY_SITE' && d.host.includes('istanbulescort.blog'));
     const targetMoneySite = moneySites[0] || DOMAIN_MATRIX.find(d => d.role === 'MONEY_SITE');
 
     // 2. Find Sister Satellites (Same City, Different Host)

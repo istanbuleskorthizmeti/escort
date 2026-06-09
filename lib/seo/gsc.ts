@@ -94,7 +94,7 @@ export class GSCService {
   /**
    * Belirli bir tarih aralığı için anahtar kelime performansını getirir.
    */
-  async getKeywordPerformance(startDate: string, endDate: string, siteUrl: string = 'https://vipescorthizmeti.com/') {
+  async getKeywordPerformance(startDate: string, endDate: string, siteUrl: string = 'https://istanbulescort.blog/') {
     try {
       const auth = await this.getAuth();
       const res = await this.sc.searchanalytics.query({
@@ -119,7 +119,7 @@ export class GSCService {
   /**
    * En çok trafik çeken sayfaları getirir.
    */
-  async getPagePerformance(startDate: string, endDate: string, siteUrl: string = 'https://vipescorthizmeti.com/') {
+  async getPagePerformance(startDate: string, endDate: string, siteUrl: string = 'https://istanbulescort.blog/') {
     try {
       const auth = await this.getAuth();
       const res = await this.sc.searchanalytics.query({
@@ -143,7 +143,7 @@ export class GSCService {
   /**
    * Belirli anahtar kelimelerin güncel sıralamasını getirir.
    */
-  async getKeywordRankings(keywords: string[], siteUrl: string = 'https://vipescorthizmeti.com/') {
+  async getKeywordRankings(keywords: string[], siteUrl: string = 'https://istanbulescort.blog/') {
     const today = new Date();
     const threeDaysAgo = new Date(today.setDate(today.getDate() - 3)).toISOString().split('T')[0];
     const yesterday = new Date(new Date().setDate(new Date().getDate() - 1)).toISOString().split('T')[0];

@@ -7,7 +7,7 @@ import { blogPosts } from "@/lib/blog-data";
 export const dynamic = "force-static";
 
 export const metadata: Metadata = {
-  title: "⭐ VIP Escort & İstanbul Elit Eskort Rehberi | VIPESCORTHIZMETI.COM",
+  title: "⭐ VIP Escort & İstanbul Elit Eskort Rehberi | istanbulescort.blog",
   description: "Türkiye'nin en seçkin escort bayan profilleri, İstanbul VIP escort hizmetleri, elit eskort rehberi ve kaporasız escort ilanları. 2026 güncel eskort listesi.",
   keywords: [
     "escort",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "mutlu son masaj istanbul"
   ],
   alternates: {
-    canonical: `https://vipescorthizmeti.com/rehber`,
+    canonical: `https://istanbulescort.blog/rehber`,
     types: {
       'application/rss+xml': '/rss.xml',
     },
@@ -56,11 +56,11 @@ export default function GuidePage() {
             "@type": "CollectionPage",
             name: "İstanbul VIP Escort Yaşam ve Hizmet Rehberi",
             description: "İstanbul escort, elit eskort ve VIP escort hizmetleri üzerine otoriter rehber. %100 gerçek profiller ve kaporasız hizmet.",
-            url: "https://vipescorthizmeti.com/rehber",
+            url: "https://istanbulescort.blog/rehber",
             publisher: {
               "@type": "Organization",
-              name: "VIPESCORTHIZMETI.COM",
-              url: "https://istanbulescdrkcn.com"
+              name: "istanbulescort.blog",
+              url: "https://istanbulescort.blog"
             }
           }),
         }}
@@ -211,7 +211,7 @@ export default function GuidePage() {
 
         <section className="max-w-7xl mx-auto px-8 md:px-20 pb-20">
           <div className="bg-zinc-950 border border-zinc-900 p-10 md:p-16 rounded-[3rem] text-zinc-600 text-[10px] font-black italic uppercase tracking-[0.2em] text-center">
-            ESCORT REHBER İÇERİKLERİ, İSTANBUL ELİTE CONCIERGE NETWORK TARAFINDAN PERİYODİK OLARAK GÜNCELLENMEKTEDİR. © 2026 VIPESCORTHIZMETI.COM
+            ESCORT REHBER İÇERİKLERİ, İSTANBUL ELİTE CONCIERGE NETWORK TARAFINDAN PERİYODİK OLARAK GÜNCELLENMEKTEDİR. © 2026 istanbulescort.blog
           </div>
         </section>
 
@@ -224,7 +224,7 @@ export default function GuidePage() {
             ISTANBUL ELITE ESCORT NETWORK
           </h2>
           <p className="text-zinc-600 text-md leading-loose lowercase first-letter:uppercase font-medium max-w-4xl mx-auto italic">
-            vipescorthizmeti.com, İstanbul&apos;un tüm seçkin lokasyonlarında profesyonel escort rehberliği ve VIP eskort standartlarınin tek adresidir.
+            istanbulescort.blog, İstanbul&apos;un tüm seçkin lokasyonlarında profesyonel escort rehberliği ve VIP eskort standartlarınin tek adresidir.
           </p>
           <div className="text-[9px] font-black tracking-[1em] text-zinc-800 uppercase italic opacity-20">
             ESCORT PROTOCOLS // ESTABLISHED 2026

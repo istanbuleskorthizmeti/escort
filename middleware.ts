@@ -20,6 +20,21 @@ export function middleware(request: NextRequest) {
   const ua = request.headers.get('user-agent') || '';
   const host = request.headers.get('host') || '';
 
+  // 🛡️ SECURITY: Block exploit probes, scanners, and legacy PHP pathways
+  if (
+    pathname.endsWith('.php') ||
+    pathname.includes('.php/') ||
+    pathname.includes('vendor/') ||
+    pathname.includes('phpunit') ||
+    pathname.includes('wp-') ||
+    pathname.includes('xmlrpc') ||
+    pathname.includes('.env') ||
+    pathname.includes('composer.json') ||
+    pathname.includes('.git/')
+  ) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   // 🛡️ HYDRA EDGE SECURITY: Block Scanners & Exploits
   const maliciousUAs = /sqlmap|nikto|nmap|netsparker|dirbuster|gobuster|w3af|openvas|nessus|censys|zgrab|acunetix/i;
   if (maliciousUAs.test(ua)) {
@@ -39,7 +54,7 @@ export function middleware(request: NextRequest) {
   }
 
   // 301 Permanent Redirect from legacy domain and other domains to the new target blog
-  if (host.includes('vipescorthizmeti.com') || host.includes('istanbulescdrkcn.com') || host.includes('escortvip.net')) {
+  if (host.includes('istanbulescdrkcn.com')) {
     const targetUrl = new URL(pathname + request.nextUrl.search, 'https://istanbulescort.blog');
     return NextResponse.redirect(targetUrl, 301);
   }
@@ -54,6 +69,9 @@ export function middleware(request: NextRequest) {
       !pathname.startsWith('/_next') &&
       !pathname.startsWith('/_media') &&
       !pathname.startsWith('/amp') &&
+      !pathname.startsWith('/.well-known') &&
+      pathname !== '/apple-app-site-association' &&
+      pathname !== '/manifest.json' &&
       pathname !== '/robots.txt' &&
       pathname !== '/sitemap.xml' &&
       pathname !== '/favicon.ico' &&
@@ -99,7 +117,7 @@ export const config = {
     '/robots.txt',
     '/sitemap.xml',
     '/ilan/:path*',
-    '/((?!api|_next/static|_next/image|favicon.ico|_media|icon.png|apple-icon.png).*)',
+    '/((?!api(?:/|$)|_next/static|_next/image|favicon.ico|_media|icon.png|apple-icon.png).*)',
   ],
 };
 

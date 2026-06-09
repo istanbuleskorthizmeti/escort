@@ -202,7 +202,7 @@ export function getCitiesForHost(host: string): Record<string, City> {
   if (!domainConfig) return { "istanbul": istanbulCity };
 
   // 🔱 MAIN DOMAINS: Access all 81 cities
-  if (domainConfig.role === 'MONEY_SITE' && (domainConfig.host.includes('vipescorthizmeti') || domainConfig.host.includes('escortvip.net'))) {
+  if (domainConfig.role === 'MONEY_SITE') {
     return cities;
   }
 

@@ -18,7 +18,7 @@ export async function executeBlitz(keyword: string) {
 
   // 2. Centralized Image HQ
   // We use Server A as the image source for social platforms
-  const blitzImageUrl = `https://vipescorthizmeti.com/assets/blitz/premium-escort.jpg`;
+  const blitzImageUrl = `https://istanbulescort.blog/assets/blitz/premium-escort.jpg`;
 
   // 3. Content Spinning (Aggressive)
   const title = `💎 ${keyword.toUpperCase()} | %100 GERÇEK & VIP HİZMET 2026`;

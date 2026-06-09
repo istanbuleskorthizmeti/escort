@@ -1,18 +1,37 @@
 import Link from "next/link";
 import { Metadata } from "next";
+import { headers } from "next/headers";
 import Navbar from "@/components/UI/Navbar";
 import { VerificationBadge } from "@/components/UI/ConciergeSuite";
 import { siteConfig } from "@/config/site";
+import { getCanonicalHost } from "@/lib/site-context";
 
-export const metadata: Metadata = {
-  title: "🛡️ Elit Elite Hub | VIP Standart ve Topluluk Merkezi",
-  description: "EscortVip Elit ağının resmi iletişim ve standart hubı. Elite topluluk güncellemeleri, sarsılmaz gizlilik kodları ve VIP erişim hatları.",
-  alternates: {
-    canonical: `https://${siteConfig.domain}/standart`,
-  },
-};
+export const dynamic = "force-dynamic";
 
-export default function VIPProtocolHub() {
+export async function generateMetadata(): Promise<Metadata> {
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
+  const isFlagship = host.includes("dorukcanay.digital");
+
+  return {
+    title: isFlagship 
+      ? "🛡️ Dorukcanay Elite Protokol | VIP Standart ve Topluluk Hub"
+      : `🛡️ Elit Elite Hub | VIP Standart ve Topluluk Merkezi - ${host.toUpperCase()}`,
+    description: isFlagship
+      ? "Dorukcanay Elite Hub, resmi iletişim ve standart portalı. Elite topluluk güncellemeleri, sarsılmaz gizlilik kodları ve VIP erişim hatları."
+      : `${host.toUpperCase()} VIP topluluk güncellemeleri, sarsılmaz gizlilik kodları ve resmi erişim hatları.`,
+    alternates: {
+      canonical: `https://${host}/protokol`,
+    },
+  };
+}
+
+export default async function VIPProtocolHub() {
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
+  const isFlagship = host.includes("dorukcanay.digital");
+  const brandName = isFlagship ? "DORUKCANAY ELITE" : host.toUpperCase();
+
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-rose-600 selection:text-white antialiased overflow-hidden">
       {/* BACKGROUND ELEMENTS */}
@@ -28,13 +47,13 @@ export default function VIPProtocolHub() {
         <section className="text-center mb-40">
           <VerificationBadge />
           <h1 className="text-7xl md:text-[10rem] font-black mb-8 tracking-tighter leading-[0.85] italic uppercase">
-            DRKCNAY <br />
+            {isFlagship ? "DRKCNY" : "ELITE"}<br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 via-rose-500 to-rose-300 drop-shadow-glow">
-              ELITE HUB
+              {isFlagship ? "ELITE PROTOKOL" : "HUB"}
             </span>
           </h1>
           <p className="text-zinc-500 text-xl md:text-3xl font-black italic tracking-tight lowercase first-letter:uppercase max-w-3xl mx-auto leading-tight mt-12 mb-20 opacity-80">
-            vipescorthizmeti.com DRKCNAY Protocol ağının kalbi burasıdır. İletişimde kesintisiz erişim, anlık katalog güncellemeleri ve üst düzey gizlilik standartları için merkezi bağlantı noktanız.
+            {host} {isFlagship ? "Dorukcanay Elite" : "DRKCNAY"} Protokol ağının kalbi burasıdır. İletişimde kesintisiz erişim, anlık katalog güncellemeleri ve üst düzey gizlilik standartları için merkezi bağlantı noktanız.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-20">
@@ -50,18 +69,18 @@ export default function VIPProtocolHub() {
                   WA
                 </div>
                 <div>
-                  <h2 className="text-4xl font-black italic uppercase tracking-tighter mb-4">WHATSAPP KANALIMIZA KATIL</h2>
+                  <h2 className="text-4xl font-black italic uppercase tracking-tighter mb-4">WHATSAPP PROTOKOLÜ</h2>
                   <p className="text-zinc-500 text-sm font-medium italic opacity-60 leading-relaxed uppercase tracking-widest">
                     Numara değişimleri, yeni kataloglar ve anlık bildirimler için ana iletişim kanalımız.
                   </p>
                 </div>
                 <div className="bg-rose-600 text-white font-black py-6 px-12 rounded-full uppercase tracking-[0.2em] italic text-xs group-hover:bg-white group-hover:text-black transition-colors">
-                  KATILIM PROTOKOLÜNÜ BAŞLAT →
+                  BAĞLANTIYI BAŞLAT →
                 </div>
               </div>
             </Link>
 
-            {/* TELEGRAM CTA (PLACEHOLDER FOR NOW AS REQUESTED) */}
+            {/* TELEGRAM CTA */}
             <div className="group relative bg-zinc-950/50 border border-zinc-900 rounded-[3rem] p-16 transition-all duration-700 hover:border-zinc-700 opacity-60 grayscale hover:grayscale-0 hover:opacity-100">
               <div className="relative z-10 flex flex-col items-center gap-10">
                 <div className="w-24 h-24 bg-zinc-900 rounded-full flex items-center justify-center text-zinc-500 text-5xl font-black border border-zinc-800">
@@ -71,7 +90,7 @@ export default function VIPProtocolHub() {
                   <h2 className="text-4xl font-black italic uppercase tracking-tighter mb-4 opacity-40">TELEGRAM VIP GRUBU</h2>
                   <p className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.4em] mb-4">SOON // YAKINDA</p>
                   <p className="text-zinc-500 text-sm font-medium italic opacity-40 leading-relaxed">
-                    Gizliliğin en üst seviyesi ve geniş topluluk erişimi için VIP Telegram altyapımız hazırlanıyor.
+                    Gizliliğin en üst seviyesi ve geniş katalog erişimi için VIP Telegram altyapımız hazırlanıyor.
                   </p>
                 </div>
               </div>
@@ -85,7 +104,7 @@ export default function VIPProtocolHub() {
              <span className="text-[150px] font-black italic">TRUST</span>
            </div>
            
-           <h3 className="text-3xl font-black italic uppercase tracking-widest text-rose-600 mb-16 border-l-8 border-rose-600 pl-8">NEDEN ELITE HUB?</h3>
+           <h3 className="text-3xl font-black italic uppercase tracking-widest text-rose-600 mb-16 border-l-8 border-rose-600 pl-8">NEDEN {isFlagship ? "DORUKCANAY" : "ELITE"} HUB?</h3>
            
            <div className="grid grid-cols-1 md:grid-cols-3 gap-16">
               <div className="space-y-6">
@@ -115,7 +134,7 @@ export default function VIPProtocolHub() {
             <div className="space-y-4">
               <h4 className="text-xl font-black italic text-rose-600 uppercase tracking-tighter">01. NUMARA DEĞİŞTİĞİNDE NASIL ERİŞİM SAĞLARIM?</h4>
               <p className="text-zinc-500 text-sm font-medium italic leading-relaxed opacity-60">
-                DRKCNAY Protocol gereği, tüm numara değişimleri bu kanaldaki &quot;Pinned Messages&quot; (Sabitlenen Mesajlar) kısmında anlık olarak güncellenir. Kanala abone olmanız, iletişimi asla kaybetmemenizi sağlar.
+                {isFlagship ? "Dorukcanay" : "DRKCNAY"} Protokolü gereği, tüm numara değişimleri bu kanaldaki sabitlenen mesajlar kısmında anlık olarak güncellenir. Kanala abone olmanız, iletişimi asla kaybetmemenizi sağlar.
               </p>
             </div>
             <div className="space-y-4">
@@ -137,23 +156,23 @@ export default function VIPProtocolHub() {
         <section className="mt-40 mb-40">
            <div className="flex flex-col items-center text-center mb-24">
               <span className="text-rose-600 font-black tracking-[0.6em] uppercase text-[10px] mb-4">Mastery Layers</span>
-              <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-6">MUTLAK <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">KOD</span> MODÜLLERİ</h2>
-              <p className="text-zinc-500 max-w-2xl font-medium italic">Elit ağındaki her etkileşim, bu 5 temel disiplin üzerine inşa edilmiştir. Bu modüller, sıradan bir randevuyu elite bir standarte dönüştürür.</p>
+              <h2 className="text-4xl md:text-6xl font-black italic uppercase tracking-tighter mb-6">MUTLAK <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">YAŞAM</span> PRENSİPLERİ</h2>
+              <p className="text-zinc-500 max-w-2xl font-medium italic">Elit ağındaki her etkileşim, bu 5 temel disiplin üzerine inşa edilmiştir. Bu modüller, sıradan bir buluşmayı elite bir standarda dönüştürür.</p>
            </div>
 
            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* 01. Fantasy Archaeology */}
               <div className="bg-zinc-950 border border-zinc-900 p-10 rounded-[2.5rem] hover:border-rose-600 transition-all duration-700 group">
                  <div className="text-rose-600 text-5xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity mb-8">01</div>
-                 <h3 className="text-2xl font-black italic uppercase mb-4">Fantasy Archaeology</h3>
-                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Bastırılmış arzuların ve arkaik fantezilerin bilimsel analizi. Bilinçaltındaki sembolleri birer deneyime dönüştürme sanatı.</p>
+                 <h3 className="text-2xl font-black italic uppercase mb-4">Fantezi Arkeolojisi</h3>
+                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Bastırılmış arzuların ve arkaik fantezilerin zihinsel analizi. Bilinçaltındaki sembolleri benzersiz birer deneyime dönüştürme sanatı.</p>
                  <div className="h-1 w-12 bg-zinc-800 group-hover:w-full transition-all duration-700"></div>
               </div>
 
               {/* 02. Bio-Performance */}
               <div className="bg-zinc-950 border border-zinc-900 p-10 rounded-[2.5rem] hover:border-rose-600 transition-all duration-700 group sm:col-span-1">
                  <div className="text-rose-600 text-5xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity mb-8">02</div>
-                 <h3 className="text-2xl font-black italic uppercase mb-4">Bio-Performance</h3>
+                 <h3 className="text-2xl font-black italic uppercase mb-4">Biyo-Performans</h3>
                  <div className="text-[8px] font-black text-rose-600 mb-4 tracking-widest uppercase">DR. DORUKCAN AY ONAYLI</div>
                  <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Biyolojik verimlilik ve cinsel enerji optimizasyonu. Hormonal denge ve uzun süreli performans için biyo-hacking standartları.</p>
                  <div className="h-1 w-12 bg-zinc-800 group-hover:w-full transition-all duration-700"></div>
@@ -162,7 +181,7 @@ export default function VIPProtocolHub() {
               {/* 03. Intimacy Alchemy */}
               <div className="bg-zinc-950 border border-zinc-900 p-10 rounded-[2.5rem] hover:border-rose-600 transition-all duration-700 group sm:col-span-1">
                  <div className="text-rose-600 text-5xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity mb-8">03</div>
-                 <h3 className="text-2xl font-black italic uppercase mb-4">Intimacy Alchemy</h3>
+                 <h3 className="text-2xl font-black italic uppercase mb-4">Yakınlık Simyası</h3>
                  <div className="text-[8px] font-black text-rose-600 mb-4 tracking-widest uppercase">EDA NUR ONAYLI</div>
                  <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Duygusal rezonans ve tensel simya. İki ruh arasındaki enerjiyi en saf ve en kışkırtıcı haliyle birleştirme disiplini.</p>
                  <div className="h-1 w-12 bg-zinc-800 group-hover:w-full transition-all duration-700"></div>
@@ -171,16 +190,16 @@ export default function VIPProtocolHub() {
               {/* 04. Sex-Tech Integration */}
               <div className="bg-zinc-950 border border-zinc-900 p-10 rounded-[2.5rem] hover:border-rose-600 transition-all duration-700 group sm:col-span-1">
                  <div className="text-rose-600 text-5xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity mb-8">04</div>
-                 <h3 className="text-2xl font-black italic uppercase mb-4">Sex-Tech Integration</h3>
-                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Geleceğin hazzını bugünden yaşayın. Sex-tech ve akıllı arayüzlerin, insani dokunuşla kusursuz entegrasyonu.</p>
+                 <h3 className="text-2xl font-black italic uppercase mb-4">Teknoloji Entegrasyonu</h3>
+                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Geleceğin hazzını bugünden yaşayın. Modern dijital arayüzlerin, insani dokunuşla kusursuz entegrasyonu.</p>
                  <div className="h-1 w-12 bg-zinc-800 group-hover:w-full transition-all duration-700"></div>
               </div>
 
               {/* 05. Elit Safety */}
               <div className="bg-zinc-950 border border-zinc-900 p-10 rounded-[2.5rem] hover:border-rose-600 transition-all duration-700 group md:col-span-2 lg:col-span-2">
                  <div className="text-rose-600 text-5xl font-black italic opacity-20 group-hover:opacity-100 transition-opacity mb-8">05</div>
-                 <h3 className="text-2xl font-black italic uppercase mb-4">Elit Safety Protocols</h3>
-                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Sarsılmaz gizlilik ve güvenlik mimarisi. Hem beyefendilerin hem de profillerimizin anonimitesini sağlayan çelik kasa standartları.</p>
+                 <h3 className="text-2xl font-black italic uppercase mb-4">Güvenlik Standartları</h3>
+                 <p className="text-zinc-500 text-sm leading-relaxed mb-8 italic">Sarsılmaz gizlilik ve güvenlik mimarisi. Hem beyefendilerin hem de partnerlerimizin anonimitesini sağlayan üst düzey güvenlik standartları.</p>
                  <div className="h-1 w-12 bg-zinc-800 group-hover:w-full transition-all duration-700"></div>
               </div>
            </div>
@@ -191,10 +210,10 @@ export default function VIPProtocolHub() {
       <footer className="py-40 border-t border-zinc-900 mt-20 bg-zinc-950/80 text-center px-10 backdrop-blur-3xl">
         <div className="max-w-7xl mx-auto space-y-10">
           <div className="text-[9px] font-black tracking-[1em] text-zinc-800 uppercase italic opacity-20 mb-10">
-            Elit NETWORK // ESTABLISHED 2026
+            {brandName} // ESTABLISHED 2026
           </div>
           <div className="flex justify-center flex-wrap gap-12 text-zinc-700 text-[10px] font-black uppercase tracking-[0.5em] italic">
-            <Link href="/istanbul" className="hover:text-rose-600 transition-colors">ISTANBUL</Link>
+            <Link href="/" className="hover:text-rose-600 transition-colors">ANASAYFA</Link>
             <Link href="/blog" className="hover:text-rose-600 transition-colors">BLOG</Link>
             <Link href="/rehber" className="hover:text-rose-600 transition-colors">REHBER</Link>
           </div>

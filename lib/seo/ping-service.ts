@@ -7,7 +7,7 @@ import https from 'https';
  */
 
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY || 'drkcnay-elite-key';
-const INDEXNOW_HOST = 'vipescorthizmeti.com'; // Ana domain (DRKCNAY Merkez)
+const INDEXNOW_HOST = 'istanbulescort.blog'; // Ana domain (DRKCNAY Merkez)
 
 // IndexNow'a tek URL gönder
 export async function pingIndexNow(url: string): Promise<void> {

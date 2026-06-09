@@ -9,6 +9,7 @@ import { headers } from "next/headers";
 import { generateLocationMetadata } from "@/lib/seo-metadata";
 import Breadcrumbs from "@/components/UI/Breadcrumbs";
 import { siteConfig } from "@/config/site";
+import { toTitleCaseTR } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 export const dynamicParams = true;
@@ -51,11 +52,11 @@ export async function generateMetadata({
   }
 
   const rawLandmarks = districtLandmarks[district] || [];
-  const realLandmarkName = rawLandmarks.find(l => slugifyTR(l) === landmark) || landmark.replace(/-/g, ' ').toUpperCase();
+  const realLandmarkName = rawLandmarks.find(l => slugifyTR(l) === landmark) || toTitleCaseTR(landmark.replace(/-/g, ' '));
 
-  const cityName = cityObj?.name || city.replace(/-/g, ' ').toUpperCase();
-  const dName = distObj?.name?.replace(" VIP", "") || district.replace(/-/g, ' ').toUpperCase();
-  const nName = neighObj?.name || neighborhood.replace(/-/g, ' ').toUpperCase();
+  const cityName = cityObj?.name || toTitleCaseTR(city.replace(/-/g, ' '));
+  const dName = distObj?.name?.replace(" VIP", "") || toTitleCaseTR(district.replace(/-/g, ' '));
+  const nName = neighObj?.name || toTitleCaseTR(neighborhood.replace(/-/g, ' '));
 
   return generateLocationMetadata({
     city,
@@ -86,7 +87,7 @@ export default async function LandmarkPage({
   const nName = neighObj.name;
 
   const rawLandmarks = districtLandmarks[district] || [];
-  const realLandmarkName = rawLandmarks.find(l => slugifyTR(l) === landmark) || landmark.replace(/-/g, ' ').toUpperCase();
+  const realLandmarkName = rawLandmarks.find(l => slugifyTR(l) === landmark) || toTitleCaseTR(landmark.replace(/-/g, ' '));
 
   const breadcrumbItems = [
     { name: cityName, item: `https://${siteConfig.domain}/${city}` },

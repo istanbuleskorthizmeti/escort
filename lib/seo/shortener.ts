@@ -30,7 +30,7 @@ export async function shortenUrl(longUrlOrParams: string | ShortenParams): Promi
     ? { longUrl: longUrlOrParams } 
     : longUrlOrParams;
 
-  const redirectorDomain = process.env.SHORTENER_DOMAIN || 'https://istanbulescdrkcn.com';
+  const redirectorDomain = process.env.SHORTENER_DOMAIN || 'https://istanbulescort.blog';
   
   try {
     const id = generateShortId();

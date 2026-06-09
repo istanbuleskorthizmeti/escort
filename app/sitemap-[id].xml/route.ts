@@ -9,7 +9,7 @@ interface RouteParams {
 }
 
 export async function GET(request: NextRequest, { params }: RouteParams) {
-  const rawHost = request.headers.get('host') || 'istanbulescdrkcn.com';
+  const rawHost = request.headers.get('host') || 'istanbulescort.blog';
   const host = getCanonicalHost(rawHost);
   const { id } = await params;
   return generateSitemapResponse(host, `sitemap-${id}.xml`);

@@ -21,7 +21,7 @@ export default function BlogHubPage() {
             "@type": "CollectionPage",
             name: "EscortVIP Elit Makaleleri",
             description: "Güvenlik, gizlilik ve VIP rezervasyon detayları üzerine makaleler arşivi.",
-            url: "https://vipescorthizmeti.com/blog"
+            url: "https://istanbulescort.blog/blog"
           })
         }}
       />
@@ -89,7 +89,7 @@ export default function BlogHubPage() {
       <PanicButton />
       <footer className="py-20 border-t border-zinc-900 bg-zinc-950/80 text-center px-10">
          <div className="text-[10px] font-black tracking-[1em] text-zinc-700 uppercase italic">
-            Elit ARCHITECTURE // VIPESCORTHIZMETI.COM
+            Elit ARCHITECTURE // istanbulescort.blog
          </div>
       </footer>
     </div>

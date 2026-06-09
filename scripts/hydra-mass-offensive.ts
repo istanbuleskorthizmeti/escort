@@ -10,7 +10,7 @@ import { generateTemplateContent } from '../lib/ai-seo';
 async function launchMassOffensive() {
     const args = process.argv.slice(2);
     const targetCity = args[0] || 'istanbul';
-    const host = args[1] || 'istanbulescdrkcn.com';
+    const host = args[1] || 'istanbulescort.blog';
     const blogId = args[2] || '6433291244460505199';
     const limit = parseInt(args[3] || '5'); // Default to 5 districts for safety
 

@@ -28,7 +28,7 @@ export async function GET(req: NextRequest) {
             wpAuth.clientId,
             wpAuth.clientSecret,
             code,
-            'https://vipescorthizmeti.com/api/auth/callback/wordpress'
+            'https://istanbulescort.blog/api/auth/callback/wordpress'
         );
 
         if (!tokenData.access_token) {

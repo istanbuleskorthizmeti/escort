@@ -115,7 +115,7 @@ export function generateBranchSchema(branch: BranchData) {
             "latitude": branch.coordinates.lat,
             "longitude": branch.coordinates.lng
         },
-        "url": `https://vipescorthizmeti.com/subeler/${branch.slug}`,
+        "url": `https://istanbulescort.blog/subeler/${branch.slug}`,
         "telephone": "+90212XXXXXXX",
         "identifier": branch.storeCode
     };

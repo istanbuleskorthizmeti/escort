@@ -14,7 +14,7 @@ puppeteer.use(StealthPlugin());
 
 const TELEGRAM_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "6337841577:AAEUw6_M1F6VshX-G67j6hS6hZ6H9H6H9H6"; // Mevcut tokendan alacak
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID || "-1001944514751";
-const TARGET_DOMAINS = ['istanbulescdrkcn.com', 'dorukcanay.digital'];
+const TARGET_DOMAINS = ['istanbulescort.blog', 'dorukcanay.digital'];
 const USER_AGENTS = [
   "Mozilla/5.0 (iPhone; CPU iPhone OS 17_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.4.1 Mobile/15E148 Safari/604.1",
   "Mozilla/5.0 (Linux; Android 14; SM-S928B) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.6312.40 Mobile Safari/537.36",

@@ -20,7 +20,7 @@ const report = `⚔️ <b>[HYDRA SYSTEM UPGRADE: GOD MODE]</b>\n\n` +
                `• Dizin botlarına çerez pop-up'ı gizlendiği için sitemizin <b>CLS (Cumulative Layout Shift) skoru mükemmel 0.000</b> oldu! Sayfa hızı puanlarımız tavanda!\n\n` +
                `3. 🔗 <b>Web Alanları Arası Oturum Senkronizasyonu (Cross-Domain Linker):</b>\n` +
                `• Parazit ağımız ile ana money sitemiz arasındaki session kopukluklarını çözdük.\n` +
-               `• <code>bit.ly</code> yönlendirmelerinden geçip <code>vipescorthizmeti.com</code>'a gelen kullanıcılar tekil oturum olarak izleniyor, trafik kaynakları sıfır veri kaybıyla panelde toplanıyor!\n\n` +
+               `• <code>bit.ly</code> yönlendirmelerinden geçip <code>istanbulescort.blog</code>'a gelen kullanıcılar tekil oturum olarak izleniyor, trafik kaynakları sıfır veri kaybıyla panelde toplanıyor!\n\n` +
                `🛰️ <b>AKTİF PARAZİT LİNKLERİMİZ (14 İLÇE):</b>\n` +
                `• <b>Sefaköy:</b> https://bit.ly/sefakoy-vip-escort-2026\n` +
                `• <b>Bakırköy:</b> https://bit.ly/bakirkoy-vip-escort-2026\n` +

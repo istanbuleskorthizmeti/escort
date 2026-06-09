@@ -14,7 +14,7 @@ async function run() {
     console.log('✅ Connected.');
     
     console.log('📡 Request 1: GET /api/seo/sitemap');
-    const res1 = await ssh.execCommand('curl -i -H "Host: vipescorthizmeti.com" http://127.0.0.1:3001/api/seo/sitemap');
+    const res1 = await ssh.execCommand('curl -i -H "Host: istanbulescort.blog" http://127.0.0.1:3001/api/seo/sitemap');
     console.log('STDOUT:', res1.stdout);
     console.log('STDERR:', res1.stderr);
 

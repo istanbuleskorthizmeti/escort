@@ -13,10 +13,24 @@ interface SchemaParams {
   storeCode?: string;
 }
 
+export function getDeterministicRating(seed: string) {
+  let hash = 0;
+  for (let i = 0; i < seed.length; i++) {
+    hash = seed.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const absHash = Math.abs(hash);
+  const ratingValue = (4.7 + (absHash % 3) / 10).toFixed(1); // 4.7, 4.8, or 4.9
+  const reviewCount = (180 + (absHash % 220)).toString(); // 180 to 399
+  return { ratingValue, reviewCount };
+}
+
 /**
  * Birleştirilmiş LocalBusiness ve Service Şeması
  */
 export function generateAdvancedSchema({ locationName, city, description, url, telephone }: SchemaParams) {
+  const { ratingValue, reviewCount } = getDeterministicRating(url);
+  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+905520949245";
+
   const baseSchema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -26,7 +40,7 @@ export function generateAdvancedSchema({ locationName, city, description, url, t
         "name": `${locationName} DORUKCANAY ELITE VIP | Lüks Eşlik & Concierge`,
         "description": description.substring(0, 160),
         "url": url,
-        "telephone": telephone || "+905320000000",
+        "telephone": telephone || defaultPhone,
         "image": `${url}/api/og?loc=${encodeURIComponent(locationName)}`,
         "address": {
           "@type": "PostalAddress",
@@ -43,8 +57,8 @@ export function generateAdvancedSchema({ locationName, city, description, url, t
         },
         "aggregateRating": {
           "@type": "AggregateRating",
-          "ratingValue": (Number(Math.random() * (5.0 - 4.7) + 4.7) || 4.8).toFixed(1),
-          "ratingCount": Math.floor(Math.random() * (1250 - 300) + 300).toString(),
+          "ratingValue": ratingValue,
+          "ratingCount": reviewCount,
           "bestRating": "5",
           "worstRating": "1"
         },
@@ -52,14 +66,14 @@ export function generateAdvancedSchema({ locationName, city, description, url, t
           {
             "@type": "Review",
             "author": { "@type": "Person", "name": "Kaan T***" },
-            "datePublished": new Date(Date.now() - 86400000 * 2).toISOString().split('T')[0],
+            "datePublished": "2026-05-18",
             "reviewBody": `${locationName} bölgesinde sundukları hizmet gerçekten kusursuzdu. Tamamen kaporasız ve görsellerle birebir aynı partner. Kesinlikle tavsiye ederim.`,
             "reviewRating": { "@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1" }
           },
           {
             "@type": "Review",
             "author": { "@type": "Person", "name": "Mert A***" },
-            "datePublished": new Date(Date.now() - 86400000 * 5).toISOString().split('T')[0],
+            "datePublished": "2026-05-12",
             "reviewBody": "Gizlilik ve güvenlik konusunda son derece profesyoneller. Gelen hanımefendi harikaydı, hiç düşünmeden arayabilirsiniz.",
             "reviewRating": { "@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1" }
           }
@@ -152,9 +166,11 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
 
   const title = `${locationName} DORUKCANAY ELITE | ${categoryTitle || 'VIP Standart'}`;
 
-  const startDate = new Date();
-  const endDate = new Date();
-  endDate.setMonth(endDate.getMonth() + 1);
+  const { ratingValue, reviewCount } = getDeterministicRating(url);
+  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+905520949245";
+
+  // Deterministic address house number
+  const houseNumber = (locationName.length % 99) + 1;
 
   const graph: any[] = [
     {
@@ -193,7 +209,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
       "description": description.substring(0, 160),
       "priceRange": "₺₺₺",
       "serviceType": "Escort and Companion Services",
-      "telephone": telephone || "+905320000000",
+      "telephone": telephone || defaultPhone,
       "image": [
         `${url}/_media/vitrin/vip-profil-1.webp`,
         `${url}/_media/vitrin/vip-profil-2.webp`
@@ -207,7 +223,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
       ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": `${locationName} Merkez Caddesi No: ${Math.floor(Math.random() * 100) + 1}`,
+        "streetAddress": `${locationName} Merkez Caddesi No: ${houseNumber}`,
         "addressLocality": locationName,
         "addressRegion": city,
         "addressCountry": "TR"
@@ -225,8 +241,8 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
       "provider": { "@id": orgId },
       "aggregateRating": aggregateRating || {
         "@type": "AggregateRating",
-        "ratingValue": (Number(Math.random() * (5.0 - 4.8) + 4.8) || 4.9).toFixed(1),
-        "reviewCount": Math.floor(Math.random() * (1250 - 300) + 300).toString(),
+        "ratingValue": ratingValue,
+        "reviewCount": reviewCount,
         "bestRating": "5",
         "worstRating": "1"
       },
@@ -244,8 +260,8 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
           "image": `${url}/_media/vitrin/vip-profil-1.webp`,
           "aggregateRating": {
              "@type": "AggregateRating",
-             "ratingValue": "5.0",
-             "reviewCount": "184"
+             "ratingValue": ratingValue,
+             "reviewCount": reviewCount
           }
         }
       }
@@ -261,7 +277,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
       "mainEntityOfPage": { "@id": businessId },
       "inLanguage": "tr-TR",
       "datePublished": "2026-04-20T10:00:00+00:00",
-      "dateModified": new Date().toISOString(),
+      "dateModified": "2026-05-20T12:00:00+00:00",
       "primaryImageOfPage": null
     },
     {
@@ -304,8 +320,8 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
       "@id": jobPostingId,
       "title": `${locationName} Bölge Müşteri İlişkileri Temsilcisi`,
       "description": `${locationName} bölgesi bazlı müşteri iletişim ve operasyon koordinasyonu pozisyonu. Esnek saatler, bireysel çalışma uygun. VIP hizmet sektörü.`,
-      "datePosted": startDate.toISOString(),
-      "validThrough": endDate.toISOString(),
+      "datePosted": "2026-05-10T08:00:00Z",
+      "validThrough": "2026-12-31T23:59:59Z",
       "employmentType": "CONTRACTOR",
       "hiringOrganization": { "@id": orgId },
       "jobLocation": {
@@ -342,7 +358,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
       "mainEntityOfPage": { "@id": businessId },
       "inLanguage": "tr-TR",
       "datePublished": "2026-04-20T10:00:00+00:00",
-      "dateModified": new Date().toISOString(),
+      "dateModified": "2026-05-20T12:00:00+00:00",
       "mentions": [
         { "@type": "Thing", "name": "Luxury Lifestyle", "sameAs": "https://en.wikipedia.org/wiki/Luxury_lifestyle" },
         { "@type": "Thing", "name": "Personal Assistant", "sameAs": "https://en.wikipedia.org/wiki/Personal_assistant" }
@@ -375,10 +391,34 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
          graph[profServiceIndex]["review"] = reviews.map(r => ({
             "@type": "Review",
             "author": { "@type": "Person", "name": r.author },
-            "datePublished": r.date || new Date().toISOString().split('T')[0],
+            "datePublished": r.date || "2026-05-18",
             "reviewBody": r.comment,
             "reviewRating": { "@type": "Rating", "bestRating": "5", "ratingValue": r.rating.toString(), "worstRating": "1" }
          }));
+     }
+  } else {
+     // Default verified reviews matching UserReviews UI component
+     const profServiceIndex = graph.findIndex(g => {
+         const type = g["@type"];
+         return Array.isArray(type) ? type.includes("ProfessionalService") : type === "ProfessionalService";
+     });
+     if(profServiceIndex !== -1) {
+         graph[profServiceIndex]["review"] = [
+           {
+             "@type": "Review",
+             "author": { "@type": "Person", "name": "Kaan T***" },
+             "datePublished": "2026-05-18",
+             "reviewBody": `${locationName} bölgesinde sundukları hizmet gerçekten kusursuzdu. Tamamen kaporasız ve görsellerle birebir aynı partner. Kesinlikle tavsiye ederim.`,
+             "reviewRating": { "@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1" }
+           },
+           {
+             "@type": "Review",
+             "author": { "@type": "Person", "name": "Mert A***" },
+             "datePublished": "2026-05-12",
+             "reviewBody": "Gizlilik ve güvenlik konusunda son derece profesyoneller. Gelen hanımefendi harikaydı, hiç düşünmeden arayabilirsiniz.",
+             "reviewRating": { "@type": "Rating", "bestRating": "5", "ratingValue": "5", "worstRating": "1" }
+           }
+         ];
      }
   }
 
@@ -393,17 +433,14 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
  * (Bölgesel iş ilanıymış gibi arama motoru botlarını manipüle etmek için kullanılır.)
  */
 export function generateBlackHatJobPostingSchema(locationName: string, url: string) {
-  const endDate = new Date();
-  endDate.setMonth(endDate.getMonth() + 1); // 1 aylık geçerlilik süresi
-
   return {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     "@id": `${url}#jobposting`,
     "title": `${locationName} Müşteri İlişkileri Operasyon Sorumlusu`,
     "description": `${locationName} bölgesi bazlı müşteri iletişim ve operasyon koordinasyonu pozisyonu. Esnek saatler, bireysel çalışma uygun. VIP hizmet sektörü.`,
-    "datePosted": new Date().toISOString(),
-    "validThrough": endDate.toISOString(),
+    "datePosted": "2026-05-10T08:00:00Z",
+    "validThrough": "2026-12-31T23:59:59Z",
     "employmentType": "CONTRACTOR",
     "hiringOrganization": {
       "@type": "Organization",
@@ -432,10 +469,6 @@ export function generateBlackHatJobPostingSchema(locationName: string, url: stri
  * (Siteyi bir canlı yayın akışıymış gibi göstererek Google SGE ve Google Discover/Events sekmesinde indekslenmek için kullanılır.)
  */
 export function generateBlackHatBroadcastSchema(locationName: string, url: string) {
-  const startDate = new Date();
-  const endDate = new Date();
-  endDate.setMonth(endDate.getMonth() + 1);
-
   return {
     "@context": "https://schema.org",
     "@type": "BroadcastEvent",
@@ -443,8 +476,8 @@ export function generateBlackHatBroadcastSchema(locationName: string, url: strin
     "name": `${locationName} VIP Escort Bayanları — Canlı Tanıtım Yayınları`,
     "description": `${locationName} bölgesel elit hizmet tanıtım ve güncel katalog yayın akışı. Özel profiller.`,
     "isLiveBroadcast": true,
-    "startDate": startDate.toISOString(),
-    "endDate": endDate.toISOString(),
+    "startDate": "2026-05-10T00:00:00Z",
+    "endDate": "2026-12-31T23:59:59Z",
     "broadcastOfEvent": {
       "@id": `${url}#localbusiness`
     }

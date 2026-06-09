@@ -97,7 +97,7 @@ export default function VerificationProtocolPage() {
       <PanicButton />
       <footer className="py-20 border-t border-zinc-900 mt-20 bg-zinc-950/80 text-center px-10">
           <div className="text-[10px] font-black tracking-[1em] text-zinc-700 uppercase italic">
-            VERIFICATION PROTOCOL // VIPESCORTHIZMETI.COM
+            VERIFICATION PROTOCOL // istanbulescort.blog
           </div>
       </footer>
     </div>

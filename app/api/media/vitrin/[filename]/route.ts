@@ -112,7 +112,7 @@ export async function GET(
         console.error(`[Morph Cache Write Error]`, writeErr);
       }
 
-      return new NextResponse(buffer, {
+      return new NextResponse(buffer as any, {
         status: 200,
         headers: {
           'Content-Type': mimeType,

@@ -13,12 +13,14 @@ import { generateLocationMetadata } from "@/lib/seo-metadata";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import { generateGodModeContent } from "@/lib/seo-content";
-import { generateUltraGraphSchema } from "@/lib/seo-schema";
+import { generateUltraGraphSchema, getDeterministicRating } from "@/lib/seo-schema";
 import { getHybridProfiles } from "@/lib/ad-service";
 import { HybridProfileGrid } from "@/components/UI/HybridProfileGrid";
 import { prisma } from "@/lib/prisma";
+import { getPageContent } from "@/lib/data-cache";
 import { GrowthWidgets } from "@/components/UI/GrowthWidgets";
 import { getSiteId, getCanonicalHost } from "@/lib/site-context";
+import { UserReviews } from "@/components/SEO/UserReviews";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 3600;
@@ -54,13 +56,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 
   if (!cityObj || !distObj || !neighObj) {
     const fullSlug = `${city}-${district}-${neighborhood}`;
-    const dbContent = await prisma.pageContent.findFirst({ 
-      where: { 
-        slug: fullSlug, 
-        OR: [{ siteId }, { siteId: null }]
-      },
-      orderBy: { siteId: 'desc' }
-    });
+    const dbContent = await getPageContent(fullSlug, siteId);
     
     if (dbContent) {
       neighObj = {
@@ -124,13 +120,7 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
   // 🏰 ZERO-404 FALLBACK
   if (!cityObj || !distObj || !neighObj) {
     const fullSlug = `${city}-${district}-${neighborhood}`;
-    let dbContent = await prisma.pageContent.findFirst({ 
-      where: { 
-        slug: fullSlug, 
-        OR: [{ siteId }, { siteId: null }]
-      },
-      orderBy: { siteId: 'desc' }
-    });
+    let dbContent = await getPageContent(fullSlug, siteId);
     if (dbContent) {
       neighObj = { name: sanitizeDisplayName(dbContent.title || neighborhood), slug: neighborhood } as any;
       cityObj = cityObj || { name: city.toUpperCase() };
@@ -144,12 +134,26 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
   const dName = sanitizeDisplayName(distObj.name);
   const cityName = sanitizeDisplayName(cityObj.name);
   
-  const profiles = await getHybridProfiles({ city, district, neighborhood, limit: 8 });
-  const theme = ThemeEngine.getTheme(host);
-  // Content moved to StreamingSEOContent to prevent 524 timeouts
+  const url = `https://${host}/${city}/${district}/${neighborhood}`;
+  const { ratingValue, reviewCount } = getDeterministicRating(url);
+
+  const ultraSchema = generateUltraGraphSchema({
+    locationName: `${nName}`,
+    city: cityName,
+    description: `${cityName} ${dName} ${nName} bölgesinde VIP escort ajansı rehberi. En elit partnerler ve kaporasız randevu.`,
+    url: url,
+    categoryTitle: "VIP ESCORT AJANSI v16.0",
+    faqs: [
+      { q: `${nName} escort hizmetleri kaporasız mı?`, a: "Evet, tüm buluşmalarımız %100 kaporasız ve güvenlidir." },
+      { q: `${nName} bölgesinde eve servis var mı?`, a: "Evet, seçkin modellerimiz hem eve hem de otellere servis sağlamaktadır." }
+    ],
+    telephone: siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+905520949245"
+  });
 
   return (
-    <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30 selection:text-white">
+    <div className="min-h-screen bg-black text-white antialiased selection:bg-[var(--primary-color)]/30 selection:text-white">
+      <link rel="amphtml" href={`https://${host}/amp?loc=${neighborhood}`} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ultraSchema) }} />
       <Navbar />
       
       <main className="pt-32">
@@ -159,21 +163,32 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
           
           <Breadcrumbs items={[{ name: cityName, item: `/${city}` }, { name: dName, item: `/${city}/${district}` }, { name: nName, item: `/${city}/${district}/${neighborhood}` }]} />
           
-          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-rose-600/20 px-8 py-3 rounded-full mb-16 animate-fade-in shadow-glow-rose mt-12">
-            <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
+          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-[var(--primary-color)]/20 px-8 py-3 rounded-full mb-16 animate-fade-in shadow-glow-[var(--primary-color)] mt-12">
+            <span className="w-2.5 h-2.5 bg-[var(--primary-color)] rounded-full animate-glow-pulse" />
             <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
-               {nName.toUpperCase()} NODE // LOCAL AUTHORITY
+               {nName.toUpperCase()} {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'LOCAL AUTHORITY'}
             </span>
           </div>
 
           <h1 className="hero-title-dynamic text-6xl md:text-[10rem] mb-12 tracking-tighter leading-[0.85]! flex flex-col items-start uppercase italic">
             <span className="opacity-90">{nName}</span>
-            <span className="text-rose-600 drop-shadow-[0_0_50px_rgba(225,29,72,0.6)]">ESCORT AJANSI</span>
+            <span className="text-[var(--primary-color)] drop-shadow-[0_0_50px_var(--primary-color)]">
+              {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'ESCORT AJANSI'}
+            </span>
           </h1>
           
-          <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-rose-600 pl-12 max-w-4xl leading-tight opacity-90">
-            {cityName} {dName} {nName} bölgesindeki en elit escort rehberi ve <br className="hidden md:block"/>
-            <span className="text-white border-b-2 border-rose-600/30 pb-1">doğrulanmış gerçek</span> escort bayanlar.
+          <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-[var(--primary-color)] pl-12 max-w-4xl leading-tight opacity-90">
+            {host.includes('dorukcanay.digital') ? (
+              <>
+                {cityName} {dName} {nName} bölgesinde lüks yaşam tarzına özel <br className="hidden md:block"/>
+                <span className="text-white border-b-2 border-[var(--primary-color)]/30 pb-1">kaporasız elit model</span> refakatçiler.
+              </>
+            ) : (
+              <>
+                {cityName} {dName} {nName} bölgesindeki en elit escort rehberi ve <br className="hidden md:block"/>
+                <span className="text-white border-b-2 border-[var(--primary-color)]/30 pb-1">doğrulanmış gerçek</span> escort bayanlar.
+              </>
+            )}
           </p>
         </section>
 
@@ -210,6 +225,7 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
 
       </main>
 
+      <UserReviews locationName={nName} ratingValue={ratingValue} reviewCount={reviewCount} />
       <UltraFooter host={host} cityName={cityName} districtName={dName} />
     </div>
   );

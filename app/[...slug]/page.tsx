@@ -17,6 +17,8 @@ import { IstanbulConquestMatrix } from "../../components/SEO/IstanbulConquestMat
 import Breadcrumbs from "../../components/UI/Breadcrumbs";
 import { DorukVitrin } from "../../components/SEO/DorukVitrin";
 
+import { getPageContent } from "../../lib/data-cache";
+
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
@@ -26,10 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const host = getCanonicalHost(hostHeader);
   const siteId = await getSiteId(host);
 
-  const content = await prisma.pageContent.findFirst({
-    where: { slug, siteId },
-    select: { title: true, content: true }
-  });
+  const content = await getPageContent(slug, siteId);
 
   if (!content) return { title: "🔞 ESCORT AJANSI | DRKCNAY ELITE" };
 
@@ -48,10 +47,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
   const isBot = /googlebot|bingbot|yandexbot|ahrefsbot|msnbot|linkedinbot|exabot|compspybot|yesupbot|paperlibot|tweetmemebot|excelbot|w3c_validator|netcraftsurveyagent|seomoz|alexa|twitterbot/i.test(userAgent);
   const siteId = await getSiteId(host);
 
-  const content = await prisma.pageContent.findFirst({
-    where: { slug, siteId },
-    select: { title: true, content: true }
-  });
+  const content = await getPageContent(slug, siteId);
 
   const domainConfig = getDomainConfig(host);
   const isCloaker = domainConfig?.role === 'CLOAKER';
@@ -62,6 +58,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
 
   return (
     <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
+      <link rel="amphtml" href={`https://${host}/amp?loc=${slug}`} />
       <Navbar />
       <main className="pt-32 pb-32">
         <div className="max-w-7xl mx-auto px-6">

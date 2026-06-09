@@ -77,7 +77,7 @@ class BloggerService {
    * Generates a high-authority SEO footer with semantic backlinks for Blogger.
    */
   private generateSeoFooter(canonicalUrl?: string, shortLink?: string, city?: string): string {
-    const rootUrl = 'https://istanbulescdrkcn.com';
+    const rootUrl = 'https://istanbulescort.blog';
     const clickUrl = 'https://bit.ly/istanbulvipescort2026'; // Merkezi Sabit Link
     const locality = city || 'İstanbul';
 

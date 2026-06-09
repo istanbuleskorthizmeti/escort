@@ -212,7 +212,7 @@ export default function TumblrSeoDashboard() {
 
         {/* Protocol Footer */}
         <footer className="pt-8 border-t border-zinc-900 flex justify-between items-center text-[10px] font-black uppercase tracking-[0.2em] text-zinc-700">
-          <div>vipescorthizmeti.com — Digital Dominance Division</div>
+          <div>istanbulescort.blog — Digital Dominance Division</div>
           <div className="flex gap-8">
             <a href="#" className="hover:text-rose-600 transition-colors">Endpoint Status</a>
             <a href="#" className="hover:text-rose-600 transition-colors">Tag Protocol</a>

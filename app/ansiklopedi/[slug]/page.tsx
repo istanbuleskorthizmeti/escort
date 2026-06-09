@@ -101,9 +101,9 @@ export default async function EncyclopediaPage({ params }: { params: Promise<{ s
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-rose-600 selection:text-white antialiased">
       <BreadcrumbSchema 
         items={[
-          { name: "Ana Sayfa", item: "https://istanbulescdrkcn.com" },
-          { name: "Ansiklopedi", item: "https://vipescorthizmeti.com/ansiklopedi" },
-          { name: entry.title.split(":")[0], item: `https://vipescorthizmeti.com/ansiklopedi/${slug}` },
+          { name: "Ana Sayfa", item: "https://istanbulescort.blog" },
+          { name: "Ansiklopedi", item: "https://istanbulescort.blog/ansiklopedi" },
+          { name: entry.title.split(":")[0], item: `https://istanbulescort.blog/ansiklopedi/${slug}` },
         ]}
       />
       <Navbar />

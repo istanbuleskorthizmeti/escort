@@ -117,7 +117,7 @@ class OpenAIProvider {
 
   async generate(prompt: string, options: AiOptions = {}): Promise<string> {
     const key = this.getApiKey();
-    if (!key) return geminiAI.generate(prompt, options);
+    if (!key) throw new Error('OpenAI API key is not configured.');
 
     try {
       let model = options.model || 'gpt-4o-mini';
@@ -140,11 +140,10 @@ class OpenAIProvider {
       if (response.data.choices?.[0]?.message?.content) {
         return response.data.choices[0].message.content;
       }
-      
-      return geminiAI.generate(prompt, options);
+      throw new Error('OpenAI returned empty response');
     } catch (error: any) {
       console.error('❌ [OPENAI] Error:', error.message);
-      return geminiAI.generate(prompt, options);
+      throw error;
     }
   }
 }
@@ -169,29 +168,37 @@ class DeepSeekProvider {
 
   async generate(prompt: string, options: AiOptions = {}): Promise<string> {
     const key = this.getApiKey();
-    if (!key) return geminiAI.generate(prompt, options);
+    if (!key) throw new Error('DeepSeek API key is not configured.');
 
     try {
       const model = options.model || process.env.DEEPSEEK_CHAT_MODEL || 'deepseek-chat';
       console.log(`📡 [DEEPSEEK] Calling API: ${model}`);
       
-      const response = await axios.post(`${this.getBaseUrl()}/chat/completions`, {
+      const postData: any = {
         model: model,
         messages: [
           { role: 'system', content: options.systemPrompt || 'Sen bir SEO dehasısın.' },
           { role: 'user', content: prompt }
         ],
-        temperature: options.temperature || 0.7
-      }, {
+        max_tokens: options.max_tokens || 4000
+      };
+
+      if (model !== 'deepseek-reasoner') {
+        postData.temperature = options.temperature || 0.7;
+      }
+
+      const response = await axios.post(`${this.getBaseUrl()}/chat/completions`, postData, {
         headers: { 'Authorization': `Bearer ${key}` },
         timeout: 120000
       });
 
-      return response.data.choices?.[0]?.message?.content || geminiAI.generate(prompt, options);
+      if (response.data.choices?.[0]?.message?.content) {
+        return response.data.choices[0].message.content;
+      }
+      throw new Error('DeepSeek returned empty response');
     } catch (error: any) {
       console.error('❌ [DEEPSEEK] Error:', error.message);
-      const openai = new OpenAIProvider();
-      return openai.generate(prompt, options);
+      throw error;
     }
   }
 }
@@ -212,7 +219,7 @@ class GroqProvider {
 
   async generate(prompt: string, options: AiOptions = {}): Promise<string> {
     const key = this.getApiKey();
-    if (!key) return geminiAI.generate(prompt, options);
+    if (!key) throw new Error('Groq API key is not configured.');
 
     try {
       const model = options.model || process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
@@ -231,10 +238,13 @@ class GroqProvider {
         timeout: 60000
       });
 
-      return response.data.choices?.[0]?.message?.content || geminiAI.generate(prompt, options);
+      if (response.data.choices?.[0]?.message?.content) {
+        return response.data.choices[0].message.content;
+      }
+      throw new Error('Groq returned empty response');
     } catch (error: any) {
       console.error('❌ [GROQ] Error:', error.message);
-      return geminiAI.generate(prompt, options);
+      throw error;
     }
   }
 }
@@ -265,51 +275,82 @@ class OmniAIOrchestrator {
                        (prompt.substring(0, 500).toLowerCase().includes('json'));
     const isLongForm = options.max_tokens && options.max_tokens > 4000;
 
-    let primaryProvider: any = options.provider === 'gemini' ? this.providers.gemini : 
-                               (options.provider === 'openai' ? this.providers.openai : 
-                               (options.provider === 'deepseek' ? this.providers.deepseek : 
-                               (options.provider === 'groq' ? this.providers.groq : null)));
-
-    if (!primaryProvider) {
-      // 🔱 ORCHESTRATION MATRIX:
-      // 1. Long Form content (> 4k tokens) -> Gemini
-      // 2. Structural/JSON tasks -> Groq (Ultra-fast parser & schema enforcement)
-      // 3. Complex reasoning/copywriting -> DeepSeek
-      if (isLongForm) {
-        primaryProvider = this.providers.gemini;
-      } else if (isJsonTask) {
-        primaryProvider = this.providers.groq;
-      } else {
-        primaryProvider = this.providers.deepseek;
-      }
+    // Define the ideal provider order based on task type:
+    let order: string[] = [];
+    if (options.provider) {
+      order = [options.provider];
+    } else if (isLongForm) {
+      order = ['gemini', 'openai', 'deepseek', 'groq'];
+    } else if (isJsonTask) {
+      order = ['groq', 'deepseek', 'openai', 'gemini'];
+    } else {
+      order = ['deepseek', 'openai', 'gemini', 'groq'];
     }
 
-    const providerName = options.provider || (isLongForm ? 'gemini' : isJsonTask ? 'groq' : 'deepseek');
-    console.log(`📡 [OMNIAI] Routing request: isJson=${isJsonTask}, isLong=${isLongForm}, provider=${providerName}`);
+    // Filter order to only providers that actually have keys configured
+    const configuredOrder = order.filter(provider => {
+      if (provider === 'gemini') {
+        const rawKeys = process.env.GOOGLE_API_KEY || process.env.LLM_API_KEY || '';
+        return !!rawKeys.split(',').map(k => k.trim()).filter(Boolean).length;
+      }
+      if (provider === 'openai') {
+        return !!process.env.OPENAI_API_KEY;
+      }
+      if (provider === 'deepseek') {
+        return !!process.env.DEEPSEEK_API_KEY;
+      }
+      if (provider === 'groq') {
+        return !!process.env.GROQ_API_KEY;
+      }
+      return false;
+    });
 
-    try {
-      let result = await primaryProvider.generate(prompt, options);
+    if (configuredOrder.length === 0) {
+      console.warn('⚠️ [OMNIAI] No configured API keys found! Falling back to Gemini.');
+      configuredOrder.push('gemini');
+    }
 
-      // 🛠️ SELF-CORRECTION: Validate JSON if required (Groq/DeepSeek Balance)
-      if (isJsonTask && !this.isValidJson(result)) {
-        console.warn('⚠️ [OMNIAI] Invalid JSON detected. Forcing Groq to self-correct...');
-        try {
-          result = await this.providers.groq.generate(`HATA: Geçersiz JSON ürettin. Lütfen şu içeriği düzelt ve SADECE geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON REPAIR MODE: SADECE JSON DÖNDÜR.' });
-        } catch (e) {
-          console.warn('⚠️ [OMNIAI] Groq self-correction failed. Trying DeepSeek...');
+    let lastError: any = null;
+    for (const providerName of configuredOrder) {
+      console.log(`📡 [OMNIAI] Attempting generation with provider: ${providerName} (isJson=${isJsonTask}, isLong=${isLongForm})`);
+      const provider = this.providers[providerName as keyof typeof this.providers];
+      
+      try {
+        let result = await provider.generate(prompt, { ...options, provider: providerName });
+
+        // If provider fell back internally to returning the generic content, treat as failure to trigger next provider
+        if (result === `İstanbul'un en seçkin escort hizmetleri ağı. Profesyonel hizmet, gerçek profiller ve %100 gizlilik garantisi.`) {
+          throw new Error('Provider returned fallback content');
+        }
+
+        // If JSON is required, validate it
+        if (isJsonTask && !this.isValidJson(result)) {
+          console.warn(`⚠️ [OMNIAI] ${providerName} returned invalid JSON. Trying self-correction...`);
           try {
-            result = await this.providers.deepseek.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
-          } catch (e2) {
-            result = await this.providers.gemini.generate(`Düzelt ve sadece geçerli JSON döndür: ${result}`, { systemPrompt: 'JSON FIXER MODE' });
+            const corrected = await provider.generate(
+              `HATA: Geçersiz JSON ürettin. Lütfen şu içeriği düzelt ve SADECE geçerli JSON döndür: ${result}`, 
+              { ...options, systemPrompt: 'JSON REPAIR MODE: SADECE JSON DÖNDÜR.', provider: providerName }
+            );
+            if (this.isValidJson(corrected)) {
+              result = corrected;
+            } else {
+              throw new Error('Self-correction failed to produce valid JSON');
+            }
+          } catch (err) {
+            console.warn(`⚠️ [OMNIAI] Self-correction on ${providerName} failed:`, (err as any).message);
+            throw err;
           }
         }
-      }
 
-      return result;
-    } catch (e: any) {
-      console.error('❌ [OMNIAI] Primary provider failed. Falling back to Gemini...', e.message);
-      return this.providers.gemini.generate(prompt, options);
+        return result;
+      } catch (err: any) {
+        console.error(`❌ [OMNIAI] Provider ${providerName} failed:`, err.message || err);
+        lastError = err;
+      }
     }
+
+    console.error('❌ [OMNIAI] All configured providers failed. Returning fallback.');
+    return `İstanbul'un en seçkin escort hizmetleri ağı. Profesyonel hizmet, gerçek profiller ve %100 gizlilik garantisi.`;
   }
 
   private isValidJson(str: string): boolean {

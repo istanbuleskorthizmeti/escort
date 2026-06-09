@@ -31,7 +31,7 @@ export const generateLocalBusinessSchema = (locationName: string, description: s
   name: `ESCORTVIP ${locationName} | Resmi VIP Rehberi`,
   description: description,
   url: url,
-  image: "https://vipescorthizmeti.com/og-premium.png",
+  image: "https://istanbulescort.blog/og-premium.png",
   address: {
     "@type": "PostalAddress",
     "addressLocality": locationName,
@@ -44,7 +44,7 @@ export const generateLocalBusinessSchema = (locationName: string, description: s
 export const generateProductSchema = (name: string, description: string, rating: number, reviewCount: number) => ({
   name: name,
   description: description,
-  image: "https://vipescorthizmeti.com/og-premium.png",
+  image: "https://istanbulescort.blog/og-premium.png",
   aggregateRating: {
     "@type": "AggregateRating",
     "ratingValue": rating,

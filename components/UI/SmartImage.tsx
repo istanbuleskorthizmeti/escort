@@ -53,7 +53,7 @@ export const SmartImage: React.FC<SmartImageProps> = ({
       setHasError(true);
     } else if (!hasError) {
       // Logic for backup server offloading if no specific fallback provided
-      const backupBase = "https://backup.vipescorthizmeti.com/images/";
+      const backupBase = "https://backup.istanbulescort.blog/images/";
       if (typeof src === 'string' && src.startsWith('/')) {
         setCurrentSrc(`${backupBase}${src.replace(/^\//, '')}`);
         setHasError(true);

@@ -56,7 +56,7 @@ export const SATELLITE_DOMAINS = [
   'tiktokhilesi.sbs',
   'turkifsalar.shop',
   'turkifsapremium.shop',
-  'vipescorthizmeti.com',
+  'istanbulescort.blog',
   'vipescorthizmeti.shop',
   'yardimbasvurusu.online',
 

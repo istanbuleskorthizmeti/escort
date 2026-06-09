@@ -24,13 +24,13 @@ export const OrganizationSchema = () => (
   <JsonLd
     type="Organization"
     data={{
-      name: 'VIPESCORTHIZMETI.COM Elit Network',
-      url: 'https://istanbulescdrkcn.com',
-      logo: 'https://vipescorthizmeti.com/og-premium.png',
+      name: 'istanbulescort.blog Elit Network',
+      url: 'https://istanbulescort.blog',
+      logo: 'https://istanbulescort.blog/og-premium.png',
       sameAs: [
-        'https://twitter.com/vipescorthizmeti.com',
-        'https://instagram.com/vipescorthizmeti.com',
-        'https://t.me/vipescorthizmeti.com',
+        'https://twitter.com/istanbulescort.blog',
+        'https://instagram.com/istanbulescort.blog',
+        'https://t.me/istanbulescort.blog',
       ],
       description: 'Türkiye\'nin en seçkin 14 şehrinde sarsılmaz gizlilik, %100 doğrulanmış profiller ve Prestij standartlarında elit yaşam concierge deneyimi.',
       contactPoint: {
@@ -93,7 +93,7 @@ export const LocalBusinessSchema = ({
     type="LocalBusiness"
     data={{
       name: `${name} | ${district ? district : city} Escort VIP`,
-      image: image || 'https://vipescorthizmeti.com/og-image.png',
+      image: image || 'https://istanbulescort.blog/og-image.png',
       description: description || `${city} bölgesinin en seçkin VIP escort ve lifestyle rehberi.`,
       address: {
         '@type': 'PostalAddress',
@@ -112,7 +112,7 @@ export const LocalBusinessSchema = ({
         aggregateRating: {
           '@type': 'AggregateRating',
           ratingValue: ratingValue,
-          reviewCount: reviewCount || Math.floor(Math.random() * 50) + 20,
+          reviewCount: reviewCount || ((name.length * 7) % 30) + 15,
         }
       })
     }}

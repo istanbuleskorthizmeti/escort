@@ -39,7 +39,7 @@ const TARGET_KEYWORDS = [
 ];
 
 const TARGET_DOMAINS = DOMAIN_MATRIX
-  .filter(d => d.role === 'MONEY_SITE' || d.host.includes('istanbulescdrkcn.com'))
+  .filter(d => d.role === 'MONEY_SITE' || d.host.includes('istanbulescort.blog'))
   .map(d => d.host);
 
 // 🔍 Real-time SERP Check

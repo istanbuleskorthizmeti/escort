@@ -9,7 +9,7 @@ import { GlobalTagCloud } from "@/components/SEO/GlobalTagCloud";
 
 export async function generateMetadata(): Promise<Metadata> {
   const headersList = await headers();
-  const host = headersList.get("host") || "vipescorthizmeti.com";
+  const host = headersList.get("host") || "istanbulescort.blog";
   const theme = ThemeEngine.getTheme(host);
   
   return {
@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function TransferPage() {
   const headersList = await headers();
-  const host = headersList.get("host") || "vipescorthizmeti.com";
+  const host = headersList.get("host") || "istanbulescort.blog";
   const theme = ThemeEngine.getTheme(host);
 
   return (

@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
             {/* Alt Bilgi ve Rozetler */}
             <div style={{ display: 'flex', marginTop: 'auto', justifyContent: 'space-between', alignItems: 'flex-end', width: '100%' }}>
               <div style={{ display: 'flex', flexDirection: 'column' }}>
-                <span style={{ color: '#52525b', fontSize: 20, fontWeight: 600, letterSpacing: '0.1em' }}>VIPESCORTHIZMETI.COM</span>
+                <span style={{ color: '#52525b', fontSize: 20, fontWeight: 600, letterSpacing: '0.1em' }}>istanbulescort.blog</span>
                 <span style={{ color: '#27272a', fontSize: 16 }}>DISCREET & VERIFIED NETWORK</span>
               </div>
               

@@ -53,6 +53,11 @@ async function run() {
       { local: 'app/go/[id]/route.ts', remote: '/var/www/escortvip/app/go/[id]/route.ts' },
       { local: 'app/api/media/vitrin/[filename]/route.ts', remote: '/var/www/escortvip/app/api/media/vitrin/[filename]/route.ts' },
       { local: 'lib/seo-metadata.ts', remote: '/var/www/escortvip/lib/seo-metadata.ts' },
+      { local: 'components/UI/MobileAppBanner.tsx', remote: '/var/www/escortvip/components/UI/MobileAppBanner.tsx' },
+      { local: 'public/.well-known/assetlinks.json', remote: '/var/www/escortvip/public/.well-known/assetlinks.json' },
+      { local: 'public/.well-known/apple-app-site-association', remote: '/var/www/escortvip/public/.well-known/apple-app-site-association' },
+      { local: 'public/apple-app-site-association', remote: '/var/www/escortvip/public/apple-app-site-association' },
+      { local: 'public/manifest.json', remote: '/var/www/escortvip/public/manifest.json' },
       { local: 'public/drkcnay-elite-key.txt', remote: '/var/www/escortvip/public/drkcnay-elite-key.txt' },
       { local: 'public/8f7c9e0a2b4d6f8a0c2e4f6a8b0d2e4f.txt', remote: '/var/www/escortvip/public/8f7c9e0a2b4d6f8a0c2e4f6a8b0d2e4f.txt' }
     ];

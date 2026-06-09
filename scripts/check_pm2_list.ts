@@ -3,10 +3,12 @@ import { NodeSSH } from 'node-ssh';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
+  host: '187.77.111.203',
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: 'Z4-nN8JfiUIh5,;g'
 };
+
+import fs from 'fs';
 
 async function run() {
   try {
@@ -15,7 +17,8 @@ async function run() {
     
     console.log('📡 Listing active PM2 daemons...');
     const result = await ssh.execCommand('pm2 list');
-    console.log(result.stdout || result.stderr || 'No response');
+    fs.writeFileSync('pm2_status.txt', result.stdout || result.stderr || 'No response');
+    console.log('Saved to pm2_status.txt');
 
     ssh.dispose();
   } catch (err) {

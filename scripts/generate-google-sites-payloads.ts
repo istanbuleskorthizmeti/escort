@@ -91,7 +91,7 @@ const V3_P2_TEMPLATES = [
 const V4_P1_TEMPLATES = [
   "Seçkin ve elit partner arayışınızı taçlandırmak için {sehir} {ilce} bölgesinin en güncel {secenek} ilanlarını tek bir çatı altında topladık. Tamamen {luks} standartlarda hizmet sunan ve yüksek memnuniyet garantisi veren İstanbul escort partnerleriyle hemen iletişime geçebilirsiniz.",
   "Aradığınız o benzersiz tutkuyu ve elit eşlikçi deneyimini {sehir} {ilce} sınırları içerisinde yaşayabilmeniz için en güncel ilan vitrinimizi yayına aldık.",
-  "{sehir} {ilce} bölgesinde adından söz ettiren lüks ve kaliteli escort partnerler ile buluşmak artık çok pratik. Kaporasız ilanlarımızla hayallerinize dokunun.",
+  "{sehir} {ilce} bölgesinde adından söz ettiren lüks ve kaliteli escort partner ile buluşmak artık çok pratik. Kaporasız ilanlarımızla hayallerinize dokunun.",
   "Her anı ayrı bir keyif, her dakikası yüksek memnuniyet içeren {sehir} {ilce} escort modelleriyle tanışarak günün stresini geride bırakın."
 ];
 
@@ -100,6 +100,37 @@ const V4_P2_TEMPLATES = [
   "Hiçbir ön koşul veya kapora ödemeden doğrudan buluşabileceğiniz, doğrulanmış VIP {sehir} {ilce} escort modelleriyle randevu oluşturmak için profil yönlendirme butonlarına basmanız yeterlidir.",
   "Güvenli refakatçi bulmanın adresi olan bu platformda, kopya içeriklerden arındırılmış özgün metinler ve gerçek fotoğraflı vitrinler ile buluşmalarınız kusursuz geçecek.",
   "Görüşmelerde gizlilik ve karşılıklı saygı ön plandadır. Siz de kapora riski olmadan lüks bir escort hizmeti almak istiyorsanız listemizdeki modellerle hemen iletişime geçin."
+];
+
+// Version 5 Content Spin Templates (500+ Words Builder)
+const V5_P1_TEMPLATES = [
+  "İstanbul'un en gözde ve hareketli bölgelerinden biri olan {sehir} {ilce} konumunda, elit refakatçi ve lüks partner arayışında olan seçkin beyler için özel bir rehber hazırladık. Güvenliğin ve gizliliğin en üst düzeyde tutulduğu bu platformda, {sehir} genelinde {hizmet} sunan bağımsız partnerlerimizin güncel ilanlarını bulabilirsiniz. Sıradan ve sahte profillerle vakit kaybetmek istemeyen beyler için doğrulanmış ve {quality} görsellerle desteklenen vitrinimiz hizmetinizdedir.",
+  "Eşsiz bir partner deneyimi yaşamak ve günün tüm stresini geride bırakmak için {sehir} {ilce} {ilan} seçeneklerimizi mutlaka incelemelisiniz. Tamamen bağımsız çalışan elit modellerimizin yer aldığı bu rehber, {ilce} bölgesindeki en popüler ve {adj} partnerleri tek bir çatı altında topluyor. Herhangi bir kapora veya ön ödeme riski olmadan, tamamen karşılıklı güven esasına dayalı bir randevu planlamak artık çok kolay."
+];
+
+const V5_P2_TEMPLATES = [
+  "Bölgedeki lüks rezidanslarda ve 5 yıldızlı otellerde sizleri ağırlamaya hazır olan partnerlerimiz, sadece güzellikleriyle değil, aynı zamanda yüksek iletişim becerileri ve zarafetleriyle de dikkat çekiyor. {sehir} {ilce} escort aramalarınızda karşınızda muhatap bulabileceğiniz, zamanında adreste olan ve gizliliğinize en az sizin kadar önem veren profesyoneller yer almaktadır. Her buluşma, konfor ve lüksün harmanlandığı özel bir ritüele dönüşmektedir.",
+  "Kendinizi ayrıcalıklı hissetmek ve sınır tanımayan bir tutku gecesi yaşamak istiyorsanız, {sehir} {ilce} eskort vitrinimizdeki elit partnerler beklentilerini fazlasıyla karşılayacaktır. Özel davetlerinizde, akşam yemeklerinizde veya baş başa geçireceğiniz özel anlarda size eşlik edecek {adj} model partnerlerimiz, {niche} konseptli görüşmelere her zaman hazırdır."
+];
+
+const V5_P3_TEMPLATES = [
+  "Sektörde en çok karşılaşılan ve kullanıcıları mağdur eden sahte ilanlar ile kapora tuzaklarına karşı platformumuz 100% korumalıdır. {sehir} {ilce} escort bayan ilanlarımızın tamamı canlı teyit sürecinden geçirilmiş ve onaylanmıştır. Buluşma anında elden ödeme güvencesi sayesinde, hiçbir maddi kayıp riski yaşamadan randevunuzu gerçekleştirebilirsiniz. Bu şeffaflık politikası, bizi diğer sıradan reklam sitelerinden ayıran en önemli özelliğimizdir.",
+  "Ön ödeme talep eden ve asılsız vaatlerde bulunan dolandırıcılardan uzak durarak, tamamen kaporasız ve elden ödemeli {sehir} {ilce} escort modellerimizle güvenli bir şekilde görüşebilirsiniz. Rezervasyon yapmak için tek yapmanız gereken profil kartlarında yer alan yönlendirme bağlantılarını takip ederek modellerimizle doğrudan iletişime geçmektir."
+];
+
+const V5_P4_TEMPLATES = [
+  "Ulaşım ve lokasyon kolaylığı bakımından {sehir} {ilce} bölgesi, hem yerli hem de yabancı misafirler için oldukça avantajlıdır. Metro, metrobüs ve ana arter yollara yakın konumdaki rezidanslarda veya bölgedeki seçkin otellerde konaklıyorsanız, partneriniz randevu saatinde tam zamanında adreste olacaktır. Gecikme yaşamadan, planladığınız zaman diliminde kusursuz bir buluşma gerçekleştirebilirsiniz.",
+  "İster saatlik ister gecelik programlar için olsun, {sehir} {ilce} bölgesinin neresinde olursanız olun model partnerlerimiz en hızlı şekilde adresinize ulaşım sağlayacaktır. Kendi özel araçlarıyla ya da VIP transfer seçenekleriyle adresinize gelen elit kızlarımız, zaman kaybını sıfıra indirerek keyifli anlarınızı uzatır."
+];
+
+const V5_P5_TEMPLATES = [
+  "Görüşmeler esnasında gizliliğiniz ve kişisel verilerinizin korunması kırmızı çizgimizdir. Hiçbir şekilde üçüncü şahıslarla bilgi paylaşımı yapılmaz ve görüşmeleriniz tamamen sır olarak kalır. Bu sayede iş ve sosyal hayatınızda herhangi bir sorun yaşamadan, sadece anın tadını çıkararak lüks partnerlik hizmetinin keyfini sürebilirsiniz. Güvenli ve elit bir eskort deneyimi için doğru adreste olduğunuzdan emin olabilirsiniz.",
+  "Karşılıklı saygı ve nezaket çerçevesinde gerçekleşen buluşmalarımızda, partnerlerimiz sadece fiziki bir refakat sunmakla kalmaz, aynı zamanda tatlı sohbetleriyle de ruhunuzu dinlendirir. İş toplantılarınızın stresini atmak veya yalnızlığınızı paylaşmak için en ideal {ilan} alternatifleri burada sizi bekliyor."
+];
+
+const V5_P6_TEMPLATES = [
+  "Sonuç olarak, {sehir} {ilce} escort ve elit partner hizmetlerimizle İstanbul'un en prestijli buluşmalarına imza atmaya devam ediyoruz. Kaliteden ödün vermeden, kaporasız ve 100% gerçek görselli profillerimizle sizleri buluşturmaktan gurur duyuyoruz. Hemen katalog bağlantılarımızı tıklayarak VIP partnerlerimizle sohbet etmeye başlayabilir ve bu geceyi unutulmaz kılacak randevunuzu saniyeler içinde oluşturabilirsiniz.",
+  "Eğer siz de sıradanlıktan sıkıldıysanız ve hayatınıza lüks, heyecan ve tutku dolu bir dokunuş eklemek istiyorsanız, {sehir} {ilce} eskort listemizdeki modellerimizle tanışmanın tam zamanı. Güvenilir, kaporasız ve VIP hizmet kalitesiyle unutulmaz anlar sadece bir telefon uzağınızda."
 ];
 
 function getRandomElement<T>(arr: T[]): T {
@@ -155,9 +186,17 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   } else if (version === 3) {
     lead = parseSpin(getRandomElement(V3_P1_TEMPLATES), sehir, ilce, context);
     body = parseSpin(getRandomElement(V3_P2_TEMPLATES), sehir, ilce, context);
-  } else {
+  } else if (version === 4) {
     lead = parseSpin(getRandomElement(V4_P1_TEMPLATES), sehir, ilce, context);
     body = parseSpin(getRandomElement(V4_P2_TEMPLATES), sehir, ilce, context);
+  } else {
+    lead = parseSpin(getRandomElement(V5_P1_TEMPLATES), sehir, ilce, context);
+    const p2 = parseSpin(getRandomElement(V5_P2_TEMPLATES), sehir, ilce, context);
+    const p3 = parseSpin(getRandomElement(V5_P3_TEMPLATES), sehir, ilce, context);
+    const p4 = parseSpin(getRandomElement(V5_P4_TEMPLATES), sehir, ilce, context);
+    const p5 = parseSpin(getRandomElement(V5_P5_TEMPLATES), sehir, ilce, context);
+    const p6 = parseSpin(getRandomElement(V5_P6_TEMPLATES), sehir, ilce, context);
+    body = `${p2} <br><br> ${p3} <br><br> ${p4} <br><br> ${p5} <br><br> ${p6}`;
   }
 
   // Generate a light-weight keyword list (~80 targeted keys) to prevent 1MB+ G-Sites paste crashes while retaining bot indexing
@@ -256,7 +295,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
               <span class="v1-tag">${profile.cat}</span>
               <span class="v1-tag">${mNiche}</span>
             </div>
-            <a href="${profileUrl}" target="_blank" class="v1-btn">Profili Gör</a>
+            <a href="${profileUrl}" target="_blank" rel="noopener" class="v1-btn">Profili Gör</a>
           </div>
         </div>
       </div>`;
@@ -304,6 +343,7 @@ ${GSC_META_TAG}
     line-height: 1.25;
     background: linear-gradient(135deg, #ffffff 30%, var(--accent) 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 15px;
   }
@@ -451,7 +491,7 @@ ${schema}
               <span class="v2-subtag">${profile.cat}</span>
               <span class="v2-subtag">${mNiche}</span>
             </div>
-            <a href="${profileUrl}" target="_blank" class="v2-cta-link">Detayları İncele</a>
+            <a href="${profileUrl}" target="_blank" rel="noopener" class="v2-cta-link">Detayları İncele</a>
           </div>
         </div>
       </div>`;
@@ -633,7 +673,7 @@ ${schema}
               <p class="v3-sub">${profile.race} Refakatçi | ${mNiche}</p>
               <p class="v3-cat">${profile.cat}</p>
             </div>
-            <a href="${profileUrl}" target="_blank" class="v3-btn-gold">İletişime Geç</a>
+            <a href="${profileUrl}" target="_blank" rel="noopener" class="v3-btn-gold">İletişime Geç</a>
           </div>
         </div>
       </div>`;
@@ -780,7 +820,7 @@ ${schema}
 </body>
 </html>`;
 
-  } else {
+  } else if (version === 4) {
     // ----------------------------------------------------
     // VERSION 4: Step-by-Step Auto-Slide with Intermittent Pauses
     // ----------------------------------------------------
@@ -802,7 +842,7 @@ ${schema}
           <div class="v4-content">
             <h4 class="v4-card-title">${profile.name}</h4>
             <div class="v4-meta">${profile.race} VIP | ${mNiche}</div>
-            <a href="${profileUrl}" target="_blank" class="v4-btn">Hemen Ulaş</a>
+            <a href="${profileUrl}" target="_blank" rel="noopener" class="v4-btn">Hemen Ulaş</a>
           </div>
         </div>
       </div>`;
@@ -956,6 +996,191 @@ ${GSC_META_TAG}
 ${schema}
 </body>
 </html>`;
+  } else {
+    // ----------------------------------------------------
+    // VERSION 5: Premium Blog/Editorial layout (500+ words)
+    // ----------------------------------------------------
+    let profilesHtml = '';
+    const editorialDesc = [
+      'Melissa, lüks yaşamı ve elit refakat hizmetlerini benimsemiş seçkin bir partnerdir. Kendisiyle geçireceğiniz her dakika unutulmaz anlara dönüşecektir.',
+      'Aynur, zarif duruşu ve yüksek iletişim becerileriyle ön plana çıkan seçkin bir modeldir. Özel davetlerinizde ve iş toplantılarınızda yanınızda olmaktan keyif alır.',
+      'Svetlana, Rusya\'nın zarafetini ve kusursuz fiziki hatlarını İstanbul\'a taşımış profesyonel bir modeldir. Sınır tanımayan fantezi dünyasıyla hayallerinizi gerçeğe dönüştürür.',
+      'Ceren, samimi tavırları ve doğal güzelliğiyle kalbinizi fethedecek bireysel bir partnerdir. Kendi evinin konforunda veya seçkin otellerde hizmet vermektedir.'
+    ];
+
+    for (let i = 0; i < 4; i++) {
+      const profile = ORIGINAL_VITRIN[i];
+      const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
+      const profileUrl = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/go/${slugify(profile.name)}`;
+      const mQual = getRandomElement(ADULT_QUALITIES);
+      const mNiche = getRandomElement(ADULT_NICHES);
+      const priorityAttr = i === 0 ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
+
+      profilesHtml += `
+      <div class="v5-profile-card">
+        <div class="v5-img-container">
+          <img src="${imageUrl}" alt="${profile.name} - ${ilce} Escort" width="260" height="338" ${priorityAttr}>
+          <span class="v5-badge">${mQual}</span>
+        </div>
+        <div class="v5-profile-info">
+          <h4 class="v5-profile-name">${profile.name} <span class="v5-online-dot"></span></h4>
+          <p class="v5-profile-cat">${profile.race} Model | ${profile.cat}</p>
+          <p class="v5-profile-desc">${editorialDesc[i]}</p>
+          <div class="v5-profile-tags">
+            <span class="v5-tag">${mNiche}</span>
+            <span class="v5-tag">Kaporasız</span>
+          </div>
+          <a href="${profileUrl}" target="_blank" rel="noopener" class="v5-profile-btn">İletişime Geç</a>
+        </div>
+      </div>`;
+    }
+
+    return `<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+${GSC_META_TAG}
+<title>${title}</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #060608;
+    --bg-box: #0f0f15;
+    --accent: #10b981;
+    --accent-hover: #059669;
+    --border-color: #1e1e2f;
+    --text-muted: #94a3b8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg-dark);
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    padding: 16px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: var(--bg-box);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px 24px;
+    box-shadow: 0 16px 50px rgba(0,0,0,0.8);
+  }
+  header { text-align: center; margin-bottom: 35px; border-bottom: 1px solid var(--border-color); padding-bottom: 30px; }
+  h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 15px; background: linear-gradient(135deg, #fff 40%, var(--accent) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .lead-p { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; max-width: 850px; margin: 0 auto; }
+  .lead-p b, .lead-p strong { color: var(--accent); }
+
+  /* V5 EDITORIAL GRID */
+  .v5-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin: 35px 0;
+  }
+  .v5-profile-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+  .v5-profile-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+  .v5-img-container { position: relative; width: 100%; aspect-ratio: 3/4; background: #000; }
+  .v5-img-container img { width: 100%; height: 100%; object-fit: cover; }
+  .v5-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--accent);
+    color: #000;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+  }
+  .v5-profile-info { padding: 20px; display: flex; flex-direction: column; flex-grow: 1; }
+  .v5-profile-name { font-size: 1.25rem; color: #fff; margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between; }
+  .v5-online-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; display: inline-block; }
+  .v5-profile-cat { font-size: 0.85rem; color: var(--accent); margin-bottom: 12px; }
+  .v5-profile-desc { font-size: 0.9rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; flex-grow: 1; }
+  .v5-profile-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .v5-tag { background: var(--bg-box); border: 1px solid var(--border-color); color: #fff; font-size: 0.72rem; padding: 2px 8px; border-radius: 6px; }
+  .v5-profile-btn {
+    display: block; width: 100%; text-align: center; background: linear-gradient(135deg, var(--accent) 0%, #34d399 100%); color: #000;
+    padding: 10px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 0.88rem; transition: opacity 0.2s;
+  }
+  .v5-profile-btn:hover { opacity: 0.9; }
+
+  .v5-editorial-content {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    margin: 35px 0;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #e2e8f0;
+  }
+  .v5-editorial-content h3 { font-size: 1.35rem; color: #fff; margin-bottom: 15px; border-left: 4px solid var(--accent); padding-left: 12px; }
+  
+  .tags-box { margin-top: 30px; border-top: 1px solid var(--border-color); padding-top: 20px; }
+  .tags-box h4 { font-size: 1rem; color: var(--accent); margin-bottom: 12px; }
+  .tags-list { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag-link { background: var(--bg-dark); border: 1px solid var(--border-color); color: var(--text-muted); padding: 4px 10px; border-radius: 20px; font-size: 0.76rem; }
+
+  .faq-wrap { margin-top: 30px; }
+  .faq-title { font-size: 1.4rem; border-bottom: 1px solid var(--border-color); padding-bottom: 8px; margin-bottom: 20px; color: #fff; }
+  .faq-item { margin-bottom: 16px; }
+  .faq-q { font-weight: 600; color: #fff; margin-bottom: 4px; }
+  .faq-a { color: var(--text-muted); }
+
+  .footer-cta-btn {
+    display: block; width: 100%; text-align: center; background: transparent; border: 1px solid var(--accent); color: var(--accent);
+    padding: 14px; border-radius: 12px; text-decoration: none; font-weight: 700; margin-top: 35px; transition: background 0.3s, color 0.3s;
+  }
+  .footer-cta-btn:hover { background: var(--accent); color: #000; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>${title}</h1>
+    <p class="lead-p">${lead}</p>
+  </header>
+
+  <div class="v5-grid">
+    ${profilesHtml}
+  </div>
+
+  <div class="v5-editorial-content">
+    <h3>🔞 VIP Refakat ve Seçkin Hizmet Detayları</h3>
+    <p>${body}</p>
+  </div>
+
+  <div class="faq-wrap">
+    <h3 class="faq-title">💬 Sıkça Sorulan Sorular</h3>
+    ${faqHtml}
+  </div>
+
+  <div class="tags-box">
+    <h4>🔞 ${ilce} Popüler Kelimeler:</h4>
+    <div class="tags-list">
+      ${keywordsHtml.replace(/class="keyword-tag"/g, 'class="tag-link"')}
+    </div>
+  </div>
+
+  ${hiddenKeywordsHtml}
+
+  <a href="${ampCacheUrl}" class="footer-cta-btn">🔞 Tüm ${ilce} Görüşmelerini Listele</a>
+</div>
+${schema}
+</body>
+</html>`;
   }
 }
 
@@ -971,11 +1196,13 @@ export async function buildGoogleSitesPayloads() {
   const v2Dir = path.join(OUTPUT_DIR, 'version-2');
   const v3Dir = path.join(OUTPUT_DIR, 'version-3');
   const v4Dir = path.join(OUTPUT_DIR, 'version-4');
+  const v5Dir = path.join(OUTPUT_DIR, 'version-5');
 
   fs.mkdirSync(v1Dir, { recursive: true });
   fs.mkdirSync(v2Dir, { recursive: true });
   fs.mkdirSync(v3Dir, { recursive: true });
   fs.mkdirSync(v4Dir, { recursive: true });
+  fs.mkdirSync(v5Dir, { recursive: true });
 
   let pathCounter = 0;
   const processedDistricts = new Set<string>();
@@ -1003,6 +1230,7 @@ export async function buildGoogleSitesPayloads() {
     fs.writeFileSync(path.join(v2Dir, districtFileName), generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 2, districtTitle));
     fs.writeFileSync(path.join(v3Dir, districtFileName), generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 3, districtTitle));
     fs.writeFileSync(path.join(v4Dir, districtFileName), generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 4, districtTitle));
+    fs.writeFileSync(path.join(v5Dir, districtFileName), generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 5, districtTitle));
 
     // Append district metadata to notepad content
     notepadContent += `------------------------------------------------------------------------\n`;
@@ -1033,6 +1261,7 @@ export async function buildGoogleSitesPayloads() {
       fs.writeFileSync(path.join(v2Dir, neighborhoodFileName), generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 2, neighborhoodTitle));
       fs.writeFileSync(path.join(v3Dir, neighborhoodFileName), generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 3, neighborhoodTitle));
       fs.writeFileSync(path.join(v4Dir, neighborhoodFileName), generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 4, neighborhoodTitle));
+      fs.writeFileSync(path.join(v5Dir, neighborhoodFileName), generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 5, neighborhoodTitle));
 
       // Append neighborhood metadata to notepad content
       notepadContent += `  📍 NEIGHBORHOOD: ${searchTarget}\n`;
@@ -1051,7 +1280,7 @@ export async function buildGoogleSitesPayloads() {
   fs.writeFileSync(notepadPath, notepadContent);
 
   console.log(`-- AMP Cache Optimized (Anti-Duplicate v15) --`);
-  console.log(`✅ Successfully generated 348 locations * 4 versions = ${pathCounter * 4} HTML pages inside version subfolders.`);
+  console.log(`✅ Successfully generated ${pathCounter} locations * 5 versions = ${pathCounter * 5} HTML pages inside version subfolders.`);
   console.log(`📝 Created comprehensive notepad directory at: ${notepadPath}`);
 }
 

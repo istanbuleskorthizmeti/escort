@@ -99,34 +99,202 @@ function VitrinCard({
   const isOrganic = !item.isAd;
   const currentPrimaryColor = isOrganic ? neonPrimaryColors[idx % neonPrimaryColors.length] : theme.primaryColor;
   const currentGlowColor = isOrganic ? glowColors[idx % glowColors.length] : theme.glowEffect;
-  
-  const dynamicCardCss = `
-    .vitrin-card-border-${idx} {
-       border: ${isOrganic ? '2px' : '2.5px'} solid ${isOrganic ? borderColors[idx % borderColors.length] : theme.primaryColor} !important;
-       box-shadow: ${item.isAd 
-         ? `0 0 35px ${theme.glowEffect}, inset 0 0 20px rgba(0,0,0,0.6)` 
-         : `0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px ${currentGlowColor}`} !important;
-    }
-    .vitrin-card-overlay-${idx} {
-       background: linear-gradient(135deg, ${currentPrimaryColor} 0%, ${theme.bgColor} 100%) !important;
-       opacity: 0.85 !important;
-       clip-path: ellipse(130% 130% at -20% 50%) !important;
-       box-shadow: 20px 0 40px rgba(0,0,0,0.8) !important;
-    }
-    .vitrin-card-name-${idx} {
-       font-family: ${theme.headingFont} !important;
-       text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px ${currentPrimaryColor}, 0 4px 5px rgba(0,0,0,0.8) !important;
-    }
-    .vitrin-card-border-left-${idx} {
-       border-left-color: ${currentPrimaryColor} !important;
-    }
-    .vitrin-card-icon-color-${idx} {
-       color: ${currentPrimaryColor} !important;
-       filter: drop-shadow(0 0 2px ${currentPrimaryColor}) !important;
-    }
-  `;
+
+  const hostHash = host ? host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : 0;
+  const layoutVariant = hostHash % 3; // 0: Neon Left, 1: Glassmorphism Bottom, 2: Gold Luxury Left
+
+  let dynamicCardCss = "";
+  if (layoutVariant === 0) {
+    dynamicCardCss = `
+      .vitrin-card-border-${idx} {
+         border: ${isOrganic ? '2px' : '2.5px'} solid ${isOrganic ? borderColors[idx % borderColors.length] : theme.primaryColor} !important;
+         box-shadow: ${item.isAd 
+           ? `0 0 35px ${theme.glowEffect}, inset 0 0 20px rgba(0,0,0,0.6)` 
+           : `0 20px 40px rgba(0, 0, 0, 0.9), 0 0 25px ${currentGlowColor}`} !important;
+      }
+      .vitrin-card-overlay-${idx} {
+         background: linear-gradient(135deg, ${currentPrimaryColor} 0%, ${theme.bgColor} 100%) !important;
+         opacity: 0.85 !important;
+         clip-path: ellipse(130% 130% at -20% 50%) !important;
+         box-shadow: 20px 0 40px rgba(0,0,0,0.8) !important;
+      }
+      .vitrin-card-name-${idx} {
+         font-family: ${theme.headingFont} !important;
+         text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px ${currentPrimaryColor}, 0 4px 5px rgba(0,0,0,0.8) !important;
+      }
+      .vitrin-card-border-left-${idx} {
+         border-left-color: ${currentPrimaryColor} !important;
+      }
+      .vitrin-card-icon-color-${idx} {
+         color: ${currentPrimaryColor} !important;
+         filter: drop-shadow(0 0 2px ${currentPrimaryColor}) !important;
+      }
+    `;
+  } else if (layoutVariant === 1) {
+    dynamicCardCss = `
+      .vitrin-card-border-${idx} {
+         border: 1.5px solid rgba(255, 255, 255, 0.15) !important;
+         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255,255,255,0.1) !important;
+         background: rgba(10, 10, 10, 0.8) !important;
+         backdrop-filter: blur(10px) !important;
+      }
+      .vitrin-card-name-${idx} {
+         text-shadow: 0 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.5) !important;
+      }
+    `;
+  } else {
+    dynamicCardCss = `
+      .vitrin-card-border-${idx} {
+         border: 2px solid rgba(212, 175, 55, 0.4) !important;
+         box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), 0 0 25px rgba(212, 175, 55, 0.15) !important;
+      }
+      .vitrin-card-name-${idx} {
+         text-shadow: 0 2px 4px rgba(0,0,0,0.9), 0 0 15px rgba(229, 193, 88, 0.6) !important;
+      }
+    `;
+  }
 
   const isFlagship = host?.includes('dorukcanay.digital');
+
+  const renderOverlay = () => {
+    if (layoutVariant === 0) {
+      return (
+        <div 
+          className={`absolute left-0 top-0 bottom-0 w-[42%] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-white/30 pointer-events-none vitrin-card-overlay-${idx}`} 
+        >
+          <div 
+            className={`italic text-[28px] text-white font-bold tracking-widest mb-3 leading-none drop-shadow-2xl flex items-center gap-1.5 vitrin-card-name-${idx}`} 
+          >
+            {firstName}
+            {item.isAd && (
+              <ShieldCheck className="w-[18px] h-[18px] text-green-400 shrink-0 drop-shadow-[0_0_8px_rgba(74,222,128,0.7)] animate-pulse" />
+            )}
+          </div>
+
+          <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
+            {item.isAd && (
+              <span className="text-[9px] text-amber-400 font-extrabold tracking-widest border border-amber-500/50 bg-gradient-to-r from-amber-500/25 to-black/50 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)]">
+                  ⭐ 5.0 (120+ Verified)
+              </span>
+            )}
+            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word whitespace-normal bg-gradient-to-r from-white/20 to-white/5 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] vitrin-card-border-left-${idx}`}>
+                <Home className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> 
+                <span className="line-clamp-1 break-all overflow-hidden">{niche}</span>
+            </span>
+            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
+                <User className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> Bireysel
+            </span>
+            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
+                <CalendarHeart className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> Yaş {age}
+            </span>
+          </div>
+
+          <div className="pointer-events-auto">
+            <a 
+              href={whatsappUrl}
+              onClick={handleTrack}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white py-1.5 px-4 rounded-full text-[11px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 border-[1.5px] border-white hover:scale-105 transition-transform bg-gradient-to-r from-[#25D366] to-[#128C7E] animate-neon-pulse"
+            >
+              <MessageCircle className="w-3.5 h-3.5" /> İletişim
+            </a>
+          </div>
+        </div>
+      );
+    } else if (layoutVariant === 1) {
+      // Frosted Glassmorphism Variant (Bottom panel overlay)
+      return (
+        <div 
+          className="absolute left-0 right-0 bottom-0 h-[48%] backdrop-blur-lg bg-black/60 z-10 p-3.5 flex flex-col justify-between border-t border-white/20 pointer-events-none"
+        >
+          <div className="flex items-center justify-between w-full">
+            <div className={`italic text-[22px] text-white font-extrabold tracking-wider flex items-center gap-1.5 drop-shadow-md vitrin-card-name-${idx}`}>
+              ✨ {firstName}
+              {item.isAd && (
+                <ShieldCheck className="w-[16px] h-[16px] text-green-400 shrink-0 drop-shadow-[0_0_8px_rgba(74,222,128,0.7)]" />
+              )}
+            </div>
+            {item.isAd && (
+              <span className="text-[8px] text-amber-400 font-extrabold tracking-widest border border-amber-500/40 bg-black/40 py-0.5 px-2 rounded-full">
+                ⭐ 5.0 VERIFIED
+              </span>
+            )}
+          </div>
+
+          <div className="flex gap-2 overflow-x-auto no-scrollbar py-0.5 w-full">
+            <span className="text-[9px] text-zinc-300 font-bold tracking-wide border border-white/10 bg-white/5 py-1 px-2.5 rounded-full shrink-0 flex items-center gap-1.5">
+              <Home className="w-[10px] h-[10px] text-rose-400" />
+              {niche}
+            </span>
+            <span className="text-[9px] text-zinc-300 font-bold tracking-wide border border-white/10 bg-white/5 py-1 px-2.5 rounded-full shrink-0 flex items-center gap-1.5">
+              <CalendarHeart className="w-[10px] h-[10px] text-rose-400" />
+              Yaş {age}
+            </span>
+          </div>
+
+          <div className="pointer-events-auto mt-0.5">
+            <a 
+              href={whatsappUrl}
+              onClick={handleTrack}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full text-white py-1.5 px-4 rounded-xl text-[10px] font-black uppercase tracking-widest inline-flex items-center justify-center gap-1.5 border border-white/10 bg-gradient-to-r from-emerald-500 to-green-600 hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
+            >
+              <MessageCircle className="w-3.5 h-3.5" /> WHATSAPP İLETİŞİM
+            </a>
+          </div>
+        </div>
+      );
+    } else {
+      // Gold/Bronze Luxury Variant (Left overlay with Gold themed accents)
+      return (
+        <div 
+          className="absolute left-0 top-0 bottom-0 w-[42%] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-amber-500/30 pointer-events-none"
+          style={{ background: 'linear-gradient(135deg, rgba(20, 16, 10, 0.9) 0%, rgba(5, 4, 3, 0.96) 100%)' }}
+        >
+          <div 
+            className={`italic text-[26px] text-[#e5c158] font-bold tracking-widest mb-3 leading-none flex items-center gap-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] vitrin-card-name-${idx}`}
+          >
+            👑 {firstName}
+            {item.isAd && (
+              <ShieldCheck className="w-[16px] h-[16px] text-amber-400 shrink-0 drop-shadow-[0_0_8px_rgba(245,158,11,0.7)] animate-pulse" />
+            )}
+          </div>
+
+          <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
+            {item.isAd && (
+              <span className="text-[9px] text-[#e5c158] font-black tracking-widest border border-amber-500/40 bg-amber-500/10 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0">
+                ⚜️ 5.0 VERIFIED
+              </span>
+            )}
+            <span className="text-[10px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
+              <Home className="w-[11px] h-[11px] text-[#d4af37] shrink-0" />
+              <span className="line-clamp-1 break-all overflow-hidden">{niche}</span>
+            </span>
+            <span className="text-[10px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
+              <User className="w-[11px] h-[11px] text-[#d4af37] shrink-0" /> Bireysel
+            </span>
+            <span className="text-[10px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
+              <CalendarHeart className="w-[11px] h-[11px] text-[#d4af37] shrink-0" /> Yaş {age}
+            </span>
+          </div>
+
+          <div className="pointer-events-auto">
+            <a 
+              href={whatsappUrl}
+              onClick={handleTrack}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-black py-1.5 px-4 rounded-full text-[10px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 bg-gradient-to-r from-[#e5c158] to-[#b8860b] hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(229,193,88,0.4)]"
+            >
+              <MessageCircle className="w-3.5 h-3.5" /> REZERVASYON
+            </a>
+          </div>
+        </div>
+      );
+    }
+  };
 
   const innerCard = (
     <div 
@@ -257,49 +425,7 @@ function VitrinCard({
         </div>
       )}
 
-      {/* Dynamic Color Overlay */}
-      <div 
-        className={`absolute left-0 top-0 bottom-0 w-[42%] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-white/30 pointer-events-none vitrin-card-overlay-${idx}`} 
-      >
-        <div 
-          className={`italic text-[28px] text-white font-bold tracking-widest mb-3 leading-none drop-shadow-2xl flex items-center gap-1.5 vitrin-card-name-${idx}`} 
-        >
-          {firstName}
-          {item.isAd && (
-            <ShieldCheck className="w-[18px] h-[18px] text-green-400 shrink-0 drop-shadow-[0_0_8px_rgba(74,222,128,0.7)] animate-pulse" />
-          )}
-        </div>
-
-        <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
-          {item.isAd && (
-            <span className="text-[9px] text-amber-400 font-extrabold tracking-widest border border-amber-500/50 bg-gradient-to-r from-amber-500/25 to-black/50 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)]">
-                ⭐ 5.0 (120+ Verified)
-            </span>
-          )}
-          <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word whitespace-normal bg-gradient-to-r from-white/20 to-white/5 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] vitrin-card-border-left-${idx}`}>
-              <Home className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> 
-              <span className="line-clamp-1 break-all overflow-hidden">{niche}</span>
-          </span>
-          <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
-              <User className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> Bireysel
-          </span>
-          <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
-              <CalendarHeart className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> Yaş {age}
-          </span>
-        </div>
-
-        <div className="pointer-events-auto">
-          <a 
-            href={whatsappUrl}
-            onClick={handleTrack}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white py-1.5 px-4 rounded-full text-[11px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 border-[1.5px] border-white hover:scale-105 transition-transform bg-gradient-to-r from-[#25D366] to-[#128C7E] animate-neon-pulse"
-          >
-            <MessageCircle className="w-3.5 h-3.5" /> İletişim
-          </a>
-        </div>
-      </div>
+      {renderOverlay()}
     </div>
   );
 

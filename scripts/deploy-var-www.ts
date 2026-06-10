@@ -29,6 +29,7 @@ async function run() {
       { local: 'lib/utils.ts', remote: '/var/www/escortvip/lib/utils.ts' },
       { local: 'lib/locations.ts', remote: '/var/www/escortvip/lib/locations.ts' },
       { local: 'lib/theme-engine.ts', remote: '/var/www/escortvip/lib/theme-engine.ts' },
+      { local: 'lib/gsc-service.ts', remote: '/var/www/escortvip/lib/gsc-service.ts' },
       { local: 'components/SEO/footer-tag-cloud.tsx', remote: '/var/www/escortvip/components/SEO/footer-tag-cloud.tsx' },
       { local: 'components/SEO/SEOContentEngine.tsx', remote: '/var/www/escortvip/components/SEO/SEOContentEngine.tsx' },
       { local: 'components/SEO/UltraFooter.tsx', remote: '/var/www/escortvip/components/SEO/UltraFooter.tsx' },
@@ -53,13 +54,21 @@ async function run() {
       { local: 'app/go/[id]/route.ts', remote: '/var/www/escortvip/app/go/[id]/route.ts' },
       { local: 'app/api/media/vitrin/[filename]/route.ts', remote: '/var/www/escortvip/app/api/media/vitrin/[filename]/route.ts' },
       { local: 'lib/seo-metadata.ts', remote: '/var/www/escortvip/lib/seo-metadata.ts' },
+      { local: 'lib/spintax-engine.ts', remote: '/var/www/escortvip/lib/spintax-engine.ts' },
       { local: 'components/UI/MobileAppBanner.tsx', remote: '/var/www/escortvip/components/UI/MobileAppBanner.tsx' },
       { local: 'public/.well-known/assetlinks.json', remote: '/var/www/escortvip/public/.well-known/assetlinks.json' },
       { local: 'public/.well-known/apple-app-site-association', remote: '/var/www/escortvip/public/.well-known/apple-app-site-association' },
       { local: 'public/apple-app-site-association', remote: '/var/www/escortvip/public/apple-app-site-association' },
       { local: 'public/manifest.json', remote: '/var/www/escortvip/public/manifest.json' },
       { local: 'public/drkcnay-elite-key.txt', remote: '/var/www/escortvip/public/drkcnay-elite-key.txt' },
-      { local: 'public/8f7c9e0a2b4d6f8a0c2e4f6a8b0d2e4f.txt', remote: '/var/www/escortvip/public/8f7c9e0a2b4d6f8a0c2e4f6a8b0d2e4f.txt' }
+      { local: 'public/8f7c9e0a2b4d6f8a0c2e4f6a8b0d2e4f.txt', remote: '/var/www/escortvip/public/8f7c9e0a2b4d6f8a0c2e4f6a8b0d2e4f.txt' },
+      { local: 'lib/google-indexing.ts', remote: '/var/www/escortvip/lib/google-indexing.ts' },
+      { local: 'lib/vitrin-images.ts', remote: '/var/www/escortvip/lib/vitrin-images.ts' },
+      { local: 'data/live_google_sites.json', remote: '/var/www/escortvip/data/live_google_sites.json' },
+      { local: 'data/amp_unique_content.json', remote: '/var/www/escortvip/data/amp_unique_content.json' },
+      { local: 'scripts/hydra-conqueror.ts', remote: '/var/www/escortvip/scripts/hydra-conqueror.ts' },
+      { local: 'scripts/rss-ping-generator.ts', remote: '/var/www/escortvip/scripts/rss-ping-generator.ts' },
+      { local: 'scripts/fleet-gsc-automation.ts', remote: '/var/www/escortvip/scripts/fleet-gsc-automation.ts' }
     ];
 
     for (const f of filesToUpload) {

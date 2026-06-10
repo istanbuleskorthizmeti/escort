@@ -17,7 +17,7 @@ export const vitrinImages = [
     "title": "Aynur",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-aynur-1.webp",
     "phone": "905016355053",
-    "niche": "VIP Sarışın Model",
+    "niche": "Kapalı VIP Escort",
     "isAd": true,
     "age": 26,
     "gallery": [
@@ -53,6 +53,62 @@ export const vitrinImages = [
       "/_media/vitrin/istanbul-kaporasiz-escort-ceren-2.webp",
       "/_media/vitrin/istanbul-kaporasiz-escort-ceren-3.webp",
       "/_media/vitrin/istanbul-kaporasiz-escort-ceren-4.webp"
+    ]
+  },
+  {
+    "title": "Ayla",
+    "src": "/_media/vitrin/istanbul-kaporasiz-escort-ayla-1.webp",
+    "niche": "Türk model - Ateşli uzman sevenlere",
+    "isAd": true,
+    "age": 25,
+    "gallery": [
+      "/_media/vitrin/istanbul-kaporasiz-escort-ayla-1.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-ayla-2.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-ayla-3.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-ayla-4.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-ayla-5.webp"
+    ]
+  },
+  {
+    "title": "Esila",
+    "src": "/_media/vitrin/istanbul-kaporasiz-escort-esila-1.webp",
+    "niche": "Boşnak - Ateşli, heyecan verici uzman",
+    "isAd": true,
+    "age": 27,
+    "gallery": [
+      "/_media/vitrin/istanbul-kaporasiz-escort-esila-1.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-esila-2.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-esila-3.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-esila-4.webp"
+    ]
+  },
+  {
+    "title": "Lamia",
+    "src": "/_media/vitrin/istanbul-kaporasiz-escort-lamia-1.webp",
+    "niche": "Moldovalı - Kondomsuz, oral, sınırsız",
+    "isAd": true,
+    "age": 26,
+    "gallery": [
+      "/_media/vitrin/istanbul-kaporasiz-escort-lamia-1.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-lamia-2.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-lamia-3.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-lamia-4.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-lamia-5.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-lamia-6.webp"
+    ]
+  },
+  {
+    "title": "Hande",
+    "src": "/_media/vitrin/istanbul-kaporasiz-escort-hande-1.webp",
+    "niche": "Türk model - Ön sevişme ve oral uzmanı",
+    "isAd": true,
+    "age": 24,
+    "gallery": [
+      "/_media/vitrin/istanbul-kaporasiz-escort-hande-1.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-hande-2.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-hande-3.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-hande-4.webp",
+      "/_media/vitrin/istanbul-kaporasiz-escort-hande-5.webp"
     ]
   },
   {

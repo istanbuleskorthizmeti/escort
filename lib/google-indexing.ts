@@ -54,7 +54,7 @@ class GoogleIndexingService {
     if (!this.keyFile) return null;
     try {
       const token = await this.getAccessToken();
-      const response = await fetch('https://indexing.googleapis.com/v1/urlNotifications:publish', {
+      const response = await fetch('https://indexing.googleapis.com/v3/urlNotifications:publish', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +65,14 @@ class GoogleIndexingService {
           type: 'URL_UPDATED',
         }),
       });
-      return await response.json();
+      
+      const text = await response.text();
+      try {
+        return JSON.parse(text);
+      } catch (jsonErr) {
+        console.warn(`[INDEXING] Failed to parse JSON response. Status: ${response.status}. Body: ${text.substring(0, 100)}`);
+        return { error: { code: response.status, message: text.substring(0, 200), status: 'FAILED' } };
+      }
     } catch (error: any) {
       console.error(`[INDEXING] critical failure: ${error.message}`);
       return null;
@@ -77,7 +84,8 @@ class GoogleIndexingService {
    */
   async pingIndexNow(url: string): Promise<void> {
     const host = new URL(url).hostname;
-    const key = process.env.INDEXNOW_KEY || "6aff73cfe0691c00fd5a92beb39bd287"; // Use verification key as fallback
+    const FALLBACK_INDEXNOW_KEY = "6aff73cfe0691c00fd5a92beb39bd287";
+    const key = process.env.INDEXNOW_KEY || FALLBACK_INDEXNOW_KEY;
     
     const endpoints = [
       'https://www.bing.com/indexnow',

@@ -173,12 +173,23 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
             </span>
           </div>
           
-          <h1 className="text-6xl md:text-[10rem] mb-12 tracking-tighter leading-none flex flex-col items-start font-black italic">
-            <span className="opacity-90">{String(safeDistName)}</span>
-            <span className="text-[var(--primary-color)] drop-shadow-[0_0_50px_var(--primary-color)] uppercase">
-              {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'ESCORT AJANSI'}
-            </span>
-          </h1>
+          {(() => {
+            const hostHash = host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+            const primaryEmojis = ['💎', '👑', '⭐', '🔥', '⚡', '✨', '💋', '🍒'];
+            const secondaryEmojis = ['🔥', '✨', '⚡', '👑', '💎', '💋', '🍒', '⭐'];
+            const emoji1 = primaryEmojis[hostHash % primaryEmojis.length];
+            const emoji2 = secondaryEmojis[(hostHash + 3) % secondaryEmojis.length];
+            return (
+              <h1 className="text-6xl md:text-[10rem] mb-12 tracking-tighter leading-none flex flex-col items-start font-black italic">
+                <span className="opacity-90 flex items-center gap-2">
+                  {emoji1} {String(safeDistName)}
+                </span>
+                <span className="text-[var(--primary-color)] drop-shadow-[0_0_50px_var(--primary-color)] uppercase flex items-center gap-2">
+                  {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'ESCORT AJANSI'} {emoji2}
+                </span>
+              </h1>
+            );
+          })()}
           
           <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-[var(--primary-color)] pl-12 max-w-4xl leading-tight opacity-90">
             {host.includes('dorukcanay.digital') ? (

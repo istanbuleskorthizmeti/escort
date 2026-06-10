@@ -13,7 +13,7 @@
     "hydra:report": "tsx scripts/send-comprehensive-report.ts",
     "hydra:provision": "tsx scripts/provision-google-services.ts",
     "hydra:seed": "tsx scripts/nuclear-seeding-56-domains.ts",
-    "hydra:conquer": "tsx scripts/hydra-conquer.ts",
+    "hydra:conquer": "tsx scripts/hydra-conqueror.ts",
     "hydra:dominion": "tsx scripts/master-dominion.ts",
     "hydra:deploy": "tsx scripts/deploy-dominion.ts",
     "hydra:phase4": "tsx scripts/phase4-commander.ts",

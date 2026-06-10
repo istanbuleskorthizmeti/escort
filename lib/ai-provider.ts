@@ -125,14 +125,21 @@ class OpenAIProvider {
         model = 'gpt-4o-mini';
       }
       console.log(`📡 [OPENAI] Calling API: ${model}`);
-      const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+      
+      const postData: any = {
         model: model,
         messages: [
           { role: 'system', content: options.systemPrompt || 'Sen bir Black Hat SEO dehasısın.' },
           { role: 'user', content: prompt }
         ],
         temperature: options.temperature || 0.7
-      }, {
+      };
+
+      if (options.isJson) {
+        postData.response_format = { type: "json_object" };
+      }
+
+      const response = await axios.post('https://api.openai.com/v1/chat/completions', postData, {
         headers: { 'Authorization': `Bearer ${key}` },
         timeout: 120000
       });
@@ -187,6 +194,10 @@ class DeepSeekProvider {
         postData.temperature = options.temperature || 0.7;
       }
 
+      if (options.isJson) {
+        postData.response_format = { type: "json_object" };
+      }
+
       const response = await axios.post(`${this.getBaseUrl()}/chat/completions`, postData, {
         headers: { 'Authorization': `Bearer ${key}` },
         timeout: 120000
@@ -225,7 +236,7 @@ class GroqProvider {
       const model = options.model || process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
       console.log(`📡 [GROQ] Calling API: ${model}`);
 
-      const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', {
+      const postData: any = {
         model: model,
         messages: [
           { role: 'system', content: options.systemPrompt || 'Sen bir SEO dehasısın.' },
@@ -233,7 +244,13 @@ class GroqProvider {
         ],
         temperature: options.temperature || 0.7,
         max_tokens: options.max_tokens || 4000
-      }, {
+      };
+
+      if (options.isJson) {
+        postData.response_format = { type: "json_object" };
+      }
+
+      const response = await axios.post('https://api.groq.com/openai/v1/chat/completions', postData, {
         headers: { 'Authorization': `Bearer ${key}` },
         timeout: 60000
       });
@@ -316,7 +333,8 @@ class OmniAIOrchestrator {
       const provider = this.providers[providerName as keyof typeof this.providers];
       
       try {
-        let result = await provider.generate(prompt, { ...options, provider: providerName });
+        let result = await provider.generate(prompt, { ...options, isJson: isJsonTask, provider: providerName });
+        console.log(`[OMNIAI DEBUG] Raw response from ${providerName} (length: ${result.length}):`, result.substring(0, 300) + "...");
 
         // If provider fell back internally to returning the generic content, treat as failure to trigger next provider
         if (result === `İstanbul'un en seçkin escort hizmetleri ağı. Profesyonel hizmet, gerçek profiller ve %100 gizlilik garantisi.`) {
@@ -325,6 +343,12 @@ class OmniAIOrchestrator {
 
         // If JSON is required, validate it
         if (isJsonTask && !this.isValidJson(result)) {
+          try {
+            const clean = result.includes('```json') ? result.split('```json')[1].split('```')[0].trim() : result;
+            JSON.parse(clean);
+          } catch (jsonErr: any) {
+            console.warn(`[OMNIAI DEBUG] JSON Parse Error:`, jsonErr.message);
+          }
           console.warn(`⚠️ [OMNIAI] ${providerName} returned invalid JSON. Trying self-correction...`);
           try {
             const corrected = await provider.generate(

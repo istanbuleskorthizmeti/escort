@@ -5,6 +5,7 @@ import path from 'path';
 import { DOMAIN_MATRIX } from '../config/domains';
 
 async function runFleetAutomation() {
+  const isDripFeed = process.env.DRIP_FEED === 'true';
   console.log("🔒 [AUTH] Initializing Google APIs...");
   const keyPath = path.join(process.cwd(), 'google-key.json');
   if (!fs.existsSync(keyPath)) {
@@ -71,13 +72,14 @@ async function runFleetAutomation() {
           });
           console.log(`   ✅ Submitted sitemap successfully.`);
         } else {
+          const sitemapAny = existingSitemap as any;
           console.log(`   ✔ Sitemap is already registered in GSC.`);
-          console.log(`     Last crawled: ${existingSitemap.lastCrawlTime || 'Never'}`);
-          console.log(`     Total pages: ${existingSitemap.contents?.[0]?.submitted || 0}`);
-          console.log(`     Status: ${existingSitemap.errors ? `Errors: ${existingSitemap.errors}` : 'OK'}`);
+          console.log(`     Last crawled: ${sitemapAny.lastCrawlTime || 'Never'}`);
+          console.log(`     Total pages: ${sitemapAny.contents?.[0]?.submitted || 0}`);
+          console.log(`     Status: ${sitemapAny.errors ? `Errors: ${sitemapAny.errors}` : 'OK'}`);
           
           // Re-submit if it has errors or was never crawled
-          if (!existingSitemap.lastCrawlTime || Number(existingSitemap.errors) > 0) {
+          if (!sitemapAny.lastCrawlTime || Number(sitemapAny.errors) > 0) {
             console.log(`   🔄 Sitemap has errors or wasn't crawled. Re-submitting...`);
             await sc.sitemaps.submit({
               auth,
@@ -146,7 +148,16 @@ async function runFleetAutomation() {
         } catch (inspectErr: any) {
           console.error(`     ❌ Inspection query failed:`, inspectErr.message);
         }
-        await new Promise(resolve => setTimeout(resolve, 500));
+        const urlDelay = isDripFeed 
+          ? Math.floor(Math.random() * (30000 - 10000 + 1) + 10000) // 10-30 seconds between URLs
+          : 500;
+        await new Promise(resolve => setTimeout(resolve, urlDelay));
+      }
+
+      if (isDripFeed && targetDomains.indexOf(target) < targetDomains.length - 1) {
+        const domainDelay = Math.floor(Math.random() * (180000 - 60000 + 1) + 60000); // 1-3 minutes between domains
+        console.log(`⏳ [SCHEDULER] Drip-feeding: Sleeping for ${(domainDelay / 60000).toFixed(1)} minutes before the next domain...`);
+        await new Promise(resolve => setTimeout(resolve, domainDelay));
       }
     }
 

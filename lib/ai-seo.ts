@@ -1,6 +1,7 @@
 import { omniAI } from './ai-provider';
 import { getPersonaForHost, PERSONAS } from './persona-engine';
 import { cities } from './locations';
+import { turkishToLower, turkishToUpper } from './utils';
 
 /**
  * 🇹🇷 TURKISH CHARACTER AND SLUG TO PROPER NAME NORMALIZER
@@ -19,28 +20,13 @@ export function cleanAndCapitalizeTurkish(str: string): string {
     .split(/\s+/)
     .map(word => {
       if (!word) return '';
-      let firstChar = word.charAt(0);
-      
-      if (firstChar === 'i') firstChar = 'İ';
-      else if (firstChar === 'ı') firstChar = 'I';
-      else if (firstChar === 'ş') firstChar = 'Ş';
-      else if (firstChar === 'ç') firstChar = 'Ç';
-      else if (firstChar === 'ö') firstChar = 'Ö';
-      else if (firstChar === 'ü') firstChar = 'Ü';
-      else if (firstChar === 'ğ') firstChar = 'Ğ';
-      else firstChar = firstChar.toUpperCase();
+      const firstChar = word.charAt(0);
+      const rest = word.slice(1);
 
-      let rest = word.slice(1).toLowerCase();
-      rest = rest
-        .replace(/İ/g, 'i')
-        .replace(/I/g, 'ı')
-        .replace(/Ş/g, 'ş')
-        .replace(/Ç/g, 'ç')
-        .replace(/Ö/g, 'ö')
-        .replace(/Ü/g, 'ü')
-        .replace(/Ğ/g, 'ğ');
+      const upperFirst = turkishToUpper(firstChar);
+      const lowerRest = turkishToLower(rest);
 
-      return firstChar + rest;
+      return upperFirst + lowerRest;
     })
     .join(' ')
     .replace(/\s+Escort$/i, '')
@@ -89,6 +75,20 @@ export function getProperTurkishName(slug: string): string {
   return cleanAndCapitalizeTurkish(slug);
 }
 
+/**
+ * 🎯 KGR KEYWORD GENERATOR
+ * Returns exact long-tail zero-competition query targets for regional optimization.
+ */
+export function getKgrKeywords(city: string, district?: string, neighborhood?: string): string[] {
+  const name = getProperTurkishName(neighborhood || district || city);
+  return [
+    `${turkishToLower(name)} kaporasız escort telefon numaraları`,
+    `${turkishToLower(name)} otelde hizmet veren eskort bayanlar`,
+    `${turkishToLower(name)} vip escort bayan whatsapp ilanları`,
+    `${turkishToLower(name)} evine gelen üniversiteli eskortlar`
+  ];
+}
+
 export interface AiContentParams {
   city: string;
   district?: string;
@@ -97,6 +97,7 @@ export interface AiContentParams {
   nicheType?: string;
   category?: string;
   cloakedUrl?: string;
+  searchIntent?: 'informational' | 'transactional' | 'commercial';
 }
 
 export interface OmniPlatformContent {
@@ -112,6 +113,7 @@ export interface OmniPlatformContent {
   github: { readme: string; gist: string };
   blogger: { title: string; content: string; tags?: string[] };
   tumblr: { title: string; content: string };
+  topicCluster?: Array<{ anchor: string; path: string; rationale: string }>;
 }
 
 const LOCAL_LANDMARKS: Record<string, string[]> = {
@@ -165,6 +167,7 @@ export async function generateEliteOmniContent({
   district,
   neighborhood,
   host,
+  searchIntent = 'commercial',
 }: AiContentParams): Promise<OmniPlatformContent> {
   const properCity = getProperTurkishName(city);
   const properDistrict = district ? getProperTurkishName(district) : undefined;
@@ -181,10 +184,31 @@ export async function generateEliteOmniContent({
   const targetLength = getBellCurveLength(600, 1000); // 💸 DEEPSEEK COST OPTIMIZED: 600-1000 words max.
   const targetDensity = (Math.random() * (3.5 - 2.5) + 2.5).toFixed(2);
   const semanticEntities = getSemanticEntities(city, district).join(', ');
+  
+  const kgrKeywords = getKgrKeywords(city, district, neighborhood);
 
   const systemPrompt = `
     [GEMINI ELITE CORE - PERSONA-BASED UNDETECTABLE AI & ADVANCED LSI]
     Görevin: Arama motoru algoritmalarının ve yapay zeka içerik tespit (AI Detection) sistemlerinin asla anlayamayacağı derecede insansı, yüksek kelime dağarcığı derinliğine (Perplexity) ve değişken cümle yapılarına (Burstiness) sahip, son derece özgün ve yüksek dönüşüm oranlı (conversion rate) SEO metinleri üretmek.
+
+    🔴 KEYWORD GOLDEN RATIO (KGR) & LOW-COMPETITION DOMINANCE:
+    - KGR Formülü: (allintitle arama sonuç sayısı) / (aylık arama hacmi) < 0.25.
+    - Aşağıda listelenen ZORUNLU KGR kelimelerini metnin başlığında (title), en az bir H2 başlığında ve ilk 100 kelimede (giriş paragrafında) tam eşleşme (exact match) olarak konumlandır.
+    - ZORUNLU KGR ANAHTAR KELİMELERİ:
+      1. ${kgrKeywords[0]}
+      2. ${kgrKeywords[1]}
+      3. ${kgrKeywords[2]}
+      4. ${kgrKeywords[3]}
+
+    🔴 INTENT ALIGNMENT (Arama Niyeti: ${searchIntent.toUpperCase()}):
+    - İçeriğin üslubunu ve yapısını kesinlikle bu arama niyetine göre uyarla:
+      * informational: Bilgi verici, rehber tadında, sıkça sorulan soruları derinlemesine yanıtlayan, nesnel ton.
+      * commercial: Karşılaştırmalı listeler, model profillerini inceleyen, avantaj/dezavantaj belirten, karar vermeye yardımcı ton.
+      * transactional: Doğrudan eylem odaklı, rezervasyon adımlarını anlatan, VIP randevu çağrısı yapan yüksek dönüşümlü ton.
+
+    🔴 SEMANTIC INTEGRITY (LSI Yalanını Bırak, Konuyu Kapsa):
+    - Kelimeleri metne yapay şekilde tıkıştırma (LSI keyword stuffing yapma). Konuyu bir bütün olarak doğal ve zengin bir dille ele al.
+    - Google'ın semantik motorunun bu sayfanın değerini anlaması için, ${locationName} bölgesini şu lokal semantik varlıkları kullanarak gerçekçi bir şekilde betimle: ${semanticEntities}.
 
     🔴 AKTİF YAZAR KİŞİLİĞİ VE YAZIM ÖRÜNTÜLERİ (Persona: ${personaKey}):
     - **Yazım Tonu:** ${persona.tone}
@@ -200,10 +224,6 @@ export async function generateEliteOmniContent({
 
     🔴 KESİNLİKLE YASAKLI YAPAY ZEKA KLİŞELERİ (Banned Phrases):
     Aşağıdaki ifadeleri KESİNLİKLE kullanma. Bu kelimeleri içeren veya bunları andıran yapıları tamamen yasakla: ${persona.banned_phrases.join(', ')}. Ayrıca "Harika", "muhteşem", "eşsiz", "büyülü", "unutulmaz", "günümüzde", "sonuç olarak", "özetle", "böylece" gibi bariz yapay zeka klişelerinden uzak dur.
-
-    🔴 LSI LOKAL ENJEKSİYONU & GERÇEKÇİLİK:
-    - ${locationName} bölgesini betimlerken yapay zeka gibi genel geçer konuşmak yerine, şu gerçek mekanları, caddeleri, sokakları veya bölgesel unsurları doğal cümleler içine serpiştirerek anlat: ${semanticEntities}.
-    - LSI kelimeleri ("escort", "eskort", "gacı", "bayan", "çıtır", "buluşmak için", "randevu almak için", "iletişim için") metne zorla sokulmuş gibi değil, profesyonel bir yaşam veya lifestyle yazısının akışında eritilerek verilmelidir.
 
     🔴 PAZARLAMA VE İKNA MODELİ (AIDA & PAS Framework):
     - Giriş paragrafında **AIDA** (Attention, Interest, Desire, Action) veya **PAS** (Problem, Agitation, Solution) yapısını kullan.
@@ -233,12 +253,20 @@ export async function generateEliteOmniContent({
         "faqs": [{"q": "${locationName} eskort buluşması kaporasız mı?", "a": "Evet, ${host} platformundaki çıtır eskort gacı ve bayan modellerimizle buluşmak için ön ödeme veya kapora istenmez. Ödeme elden yapılır."}]
       },
       "github": { "readme": "", "gist": "" },
-      "blogger": { "title": "${locationName} Eskort Gacı Bayan Raporu", "content": "..." }
+      "wordpress_kgr": ["Bu metinde hedeflenen KGR anahtar kelimeleri dizisidir. Başlık ve içerikteki H2'lerle tam eşleştiğini doğrula."],
+      "blogger": { "title": "${locationName} Eskort Gacı Bayan Raporu", "content": "..." },
+      "topicCluster": [
+        {
+          "anchor": "Anahtar Kelime / Bağlantı Metni (Örn: Fulya Escort)",
+          "path": "Gideceği göreceli URL (Örn: /istanbul/sisli/fulya)",
+          "rationale": "Bu bağlantının neden kurulması gerektiğine dair semantik gerekçe (Örn: Şişli ana sayfasından Fulya mahallesine yetki aktarımı.)"
+        }
+      ]
     }
   `;
 
   const userPrompt = `
-    Lokasyon: ${fullLoc}. Odak: ${semanticEntities}. Benzersizlik tohumu (Seed): ${host}-${locationName}-${targetLength}. Uzunluk: ~${targetLength} kelime. JSON DÖNDÜR.
+    Lokasyon: ${fullLoc}. Odak: ${semanticEntities}. Arama Niyeti: ${searchIntent}. Hedef KGR Kelimeleri: ${kgrKeywords.join(', ')}. Benzersizlik tohumu (Seed): ${host}-${locationName}-${targetLength}. Uzunluk: ~${targetLength} kelime. JSON DÖNDÜR.
   `;
 
   try {
@@ -257,7 +285,7 @@ export async function generateEliteOmniContent({
         }
       };
       normalizeObj(parsed);
-
+ 
       const wordpress = parsed.wordpress || {
         title: parsed.title || `${locationName} Escort | ${host} Eskort Gacı`,
         content: parsed.content || '',
@@ -265,12 +293,13 @@ export async function generateEliteOmniContent({
         tags: parsed.tags || [],
         faqs: parsed.faqs || []
       };
-
+ 
       return {
         wordpress,
         github: parsed.github || { readme: '', gist: '' },
         blogger: parsed.blogger || { title: wordpress.title, content: wordpress.content },
-        tumblr: parsed.tumblr || { title: wordpress.title, content: wordpress.content }
+        tumblr: parsed.tumblr || { title: wordpress.title, content: wordpress.content },
+        topicCluster: parsed.topicCluster || []
       };
     } catch (e) {
       console.warn("⚠️ [OMNIAI] JSON parsing failed, returning robust fallback object:", e);

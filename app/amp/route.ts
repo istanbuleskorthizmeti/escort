@@ -7,6 +7,56 @@ import { generateUltraGraphSchema } from '@/lib/seo-schema';
 import { getCanonicalHost } from '@/lib/site-context';
 import { slugify } from '@/lib/utils';
 import { getSafeVipProfileIdx } from '@/lib/vitrin-blacklist';
+import { DRKCNAYSpintax } from '@/lib/spintax-engine';
+import fs from 'fs';
+import path from 'path';
+function spinTextWithHost(text: string, host: string, brandName: string): string {
+  if (!text) return "";
+  
+  // Simple seed generation from host
+  let seed = 0;
+  for (let i = 0; i < host.length; i++) {
+    seed += host.charCodeAt(i);
+  }
+  
+  const rand = () => {
+    seed = (seed * 1103515245 + 12345) % 2147483648;
+    return seed / 2147483648;
+  };
+
+  const choose = (arr: string[]) => arr[Math.floor(rand() * arr.length)];
+
+  // Synonym dictionary for deterministic replacement
+  const synonyms: { [key: string]: string[] } = {
+    "seçkin": ["elit", "lüks", "vip", "seçkin", "premium", "kaliteli"],
+    "partner": ["arkadaş", "partner", "refakatçi", "eşlikçi"],
+    "deneyimi": ["deneyimi", "tecrübesi", "macerası", "birlikteliği"],
+    "sunuyoruz": ["sunuyoruz", "sağlıyoruz", "vermekteyiz", "vaat ediyoruz", "organize ediyoruz"],
+    "buluşmalarında": ["buluşmalarında", "görüşmelerinde", "randevularında", "seanslarında"],
+    "gerçek": ["gerçek", "doğal", "%100 gerçek", "doğrulanmış", "güncel"],
+    "zarif": ["zarif", "çekici", "hoş", "estetik", "seksi"],
+    "beklentilerinizi": ["beklentilerinizi", "isteklerinizi", "tüm arzularınızı", "hayallerinizi"],
+    "çalışıyoruz": ["çalışıyoruz", "hizmet veriyoruz", "aktif durumdayız"],
+    "herhangi bir": ["hiçbir", "herhangi bir", "hiçbir şekilde"],
+    "talep etmiyoruz": ["talep etmiyoruz", "istemiyoruz", "almamaktayız", "beklemiyoruz"],
+    "yüz yüze": ["yüz yüze", "birebir", "doğrudan", "yüz yüze güvenli"],
+    "servis": ["servis", "gönderim", "ulaşım", "hizmet"],
+    "güvenlidir": ["güvenlidir", "güvenilirdir", "emniyetlidir", "sorunsuzdur"],
+    "bizlere": ["bizlere", "ekiplerimize", "bize"],
+    "ulaşabilirsiniz": ["ulaşabilirsiniz", "ulaşım sağlayabilirsiniz", "yazabilirsiniz"],
+    "görüşmelerimiz": ["görüşmelerimiz", "buluşmalarımız", "seanslarımız"],
+  };
+
+  let spun = text;
+  
+  // Replace words deterministically if they exist in the text
+  Object.keys(synonyms).forEach(word => {
+    const regex = new RegExp(`\\b${word}\\b`, 'gi');
+    spun = spun.replace(regex, () => choose(synonyms[word]));
+  });
+
+  return spun;
+}
 
 export const dynamic = 'force-dynamic';
 
@@ -57,23 +107,126 @@ export async function GET(request: Request) {
     ? `https://${host}/${locParam.toLowerCase()}` 
     : `https://${host}`;
 
-  // Generate dynamic schema
+  // Resolve matching Google Sites page from live_google_sites.json
+  let relatedSiteLink = "";
+  try {
+    const filePath = path.join(process.cwd(), 'data', 'live_google_sites.json');
+    if (fs.existsSync(filePath)) {
+      const sites: string[] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      const slug = slugify(locationName);
+      // Try to find a site containing the district slug
+      const matched = sites.find(s => s.toLowerCase().includes(slug));
+      if (matched) {
+        relatedSiteLink = matched;
+      }
+    }
+  } catch (e) {
+    console.error("⚠️ Failed reading live_google_sites.json:", e);
+  }
+
+  // Resolve unique content from amp_unique_content.json
+  let uniqueText = "";
+  let uniqueFaqs: { q: string; a: string }[] = [];
+
+  try {
+    const contentPath = path.join(process.cwd(), 'data', 'amp_unique_content.json');
+    if (fs.existsSync(contentPath)) {
+      const contentMap = JSON.parse(fs.readFileSync(contentPath, 'utf8'));
+      const slug = slugify(locationName);
+      if (contentMap[slug]) {
+        if (contentMap[slug].text) {
+          uniqueText = spinTextWithHost(contentMap[slug].text, host, brandName);
+        }
+        if (contentMap[slug].faq && Array.isArray(contentMap[slug].faq)) {
+          uniqueFaqs = contentMap[slug].faq.map((faq: { q: string; a: string }) => {
+            return {
+              q: spinTextWithHost(faq.q, host + "-q", brandName),
+              a: spinTextWithHost(faq.a, host + "-a", brandName)
+            };
+          });
+        }
+      }
+    }
+  } catch (e) {
+    console.error("⚠️ Failed reading amp_unique_content.json:", e);
+  }
+
+  // If uniqueText is empty, dynamically spin generic texts using DRKCNAYSpintax Engine
+  if (!uniqueText) {
+    const seed = locationName + host;
+    const spintaxEngine = new DRKCNAYSpintax(seed);
+
+    const isFlagship = host.includes('dorukcanay.digital');
+    
+    const flagSpins = [
+      "{[LOC] genelinde {seçkin ve lüks|asillik ve ihtişam dolu} bir {refakatçi deneyimi|VIP partnerlik} sunuyoruz.} {Dorukcanay Elite güvencesi altında, {tamamen doğrulanmış fotoğraflar|profesyonel model vitrini} ile {akıllardan silinmeyecek|unutulmaz} bir seans planlayın.} {Buluşmalarımızda {kesinlikle ön ödeme|hiçbir şekilde kapora} talep edilmeyip, {yüz yüze ve elden ödeme|güvenilir elden ödemeli model} esastır.} {{Gizlilik ve maksimum mahremiyet|Üst düzey güvenlik standartları} altında otele ve eve gelen {seçkin manken ve partnerlerimizle|elit eşlikçilerimizle} {hayal ettiğiniz prestijli geceyi|C-Level buluşmayı} başlatın.}",
+      "{Lüks ve prestijin [LOC] bölgesindeki {en seçkin adresi|tek temsilcisi} olan platformumuzda, {gerçek podyum modelleri|bağımsız elite refakatçiler} sizi bekliyor.} {Ön ödemesiz, kaporasız ve %100 güvenli buluşma prensiplerimizle {7/24 hizmetinizdeyiz|ayrıcalıklı seanslar düzenliyoruz}.} {Eve ve otele servis seçeneklerimizle, {konforunuz ve gizliliğiniz|seçkin mahremiyet standartlarınız} en üst düzeyde korunmaktadır.}"
+    ];
+
+    const standardSpins = [
+      "{[LOC] genelinde {çıtır eskort bayan|ateşli eskort gacı} arayanlar için {en hiddetli ve çıtır|en genç kız} modeller burada listelenmektedir.} {Aradığınız {seçkin partner deneyimine|limitsiz tutkulu geceye} ulaşmak, randevu oluşturmak ve iletişim kurmak için telefon numaralarımız üzerinden {7/24 bizlere ulaşabilirsiniz|WhatsApp üzerinden anında yazabilirsiniz}.} {Rezidans, ev veya otel konseptli tüm görüşmelerimiz tamamen {kaporasız ve yüz yüze|ön ödemesiz elden ödemeli} güvenilir görüşmeler esasına dayanmaktadır.} {Hiçbir ön ödeme veya transfer ücreti talep edilmeden, doğrudan elden ödemeli VIP hizmet alırsınız.} {[LOC] eskort gacı, yerli çıtır kızlar ve üniversiteli eskort alternatiflerimizle hayal ettiğiniz geceyi planlayın.}",
+      "{[LOC] escort gacı arayışınızda, {gerçek ve doğrulanmış resimli|en çıtır} partnerlerle {kaporasız ve depozitosuz|yüz yüze} buluşma fırsatı sunuyoruz.} {Eve ve otele gelen {genç kız ve bayan|rus ve yerli eskort} modellerimizle {7/24 aktif görüşme|limitsiz fantezi geceleri} yapabilirsiniz.} {Gizlilik prensipleri altında, %100 elden ödemeli güvenli randevunuzu hemen oluşturun.}"
+    ];
+
+    const spins = isFlagship ? flagSpins : standardSpins;
+    const chosenSpin = spins[seed.length % spins.length];
+    
+    uniqueText = spintaxEngine.resolve(chosenSpin, { LOC: locationName });
+
+    if (uniqueFaqs.length === 0) {
+      if (isFlagship) {
+        uniqueFaqs = [
+          { 
+            q: spintaxEngine.resolve("{[LOC] VIP refakatçi seansları kaporasız mı?}", { LOC: locationName }), 
+            a: spintaxEngine.resolve("{Evet, Dorukcanay Elite bünyesindeki tüm seanslar %100 kaporasız ve elden ödemelidir. Hiçbir depozito talep edilmez.}", {})
+          },
+          { 
+            q: spintaxEngine.resolve("{[LOC] otele servis hizmetiniz var mı?}", { LOC: locationName }), 
+            a: spintaxEngine.resolve("{Evet, seçkin modellerimiz sadece lüks otellere ve rezidanslara servis sağlamaktadır. Güvenliğiniz ve gizliliğiniz en üst düzeyde korunur.}", {})
+          }
+        ];
+      } else {
+        uniqueFaqs = [
+          { 
+            q: spintaxEngine.resolve("{[LOC] escort gacı hizmetleri kaporasız mı?}", { LOC: locationName }), 
+            a: spintaxEngine.resolve("{Evet, listemizde yer alan tüm buluşmalar %100 ön ödemesiz, kaporasız ve elden ödemelidir.}", {})
+          },
+          { 
+            q: spintaxEngine.resolve("{[LOC] otele ve eve gelen bayan servisiniz var mı?}", { LOC: locationName }), 
+            a: spintaxEngine.resolve("{Evet, çıtır eskort bayan partnerlerimiz talep etmeniz halinde eve ve otele servis sağlamaktadır.}", {})
+          }
+        ];
+      }
+    }
+  }
+
+  // Generate host-specific dynamic schema details
+  const isFlagship = host.includes('dorukcanay.digital');
+  const schemaDescription = isFlagship
+    ? `${locationName} bölgesinde elit ve prestijli VIP model refakatçi hizmeti. ${brandName} ile %100 doğrulanmış gerçek profiller ve kaporasız randevu.`
+    : `${locationName} genelinde kaporasız çıtır eskort gacı kataloğu. ${brandName} ile ${locationName} escort bayan telefon numaraları ve aktif WhatsApp buluşma hattı.`;
+
+  const schemaCategoryTitle = isFlagship
+    ? `${brandName.toUpperCase()} PREMIUM PARTNER KATALOĞU`
+    : `${brandName.toUpperCase()} VIP ESCORT AJANSI`;
+
   const schema = generateUltraGraphSchema({
     locationName: locationName,
     city: "İstanbul",
-    description: `${locationName} bölgesinin en elit VIP escort ajansı rehberi. %100 gerçek escort bayan profilleri ve kaporasız randevu sistemi.`,
+    description: schemaDescription,
     url: canonicalUrl,
-    categoryTitle: "İSTANBUL ESCORT AJANSI v24.0"
+    categoryTitle: schemaCategoryTitle,
+    faqs: uniqueFaqs
   });
 
   // Select first 12 profiles from vitrinImages to display on AMP
   const ampProfiles = vitrinImages.slice(0, 12);
 
   const html = `<!doctype html>
-<html ⚡ lang="tr">
+<html amp lang="tr">
 <head>
   <meta charset="utf-8">
-  <title>🔞 ${locationName} ESCORT ESKORT | Buluşmak İçin Çıtır Gacı Bayan Randevu</title>
+  <title>🔞 ${locationName} Escort Bayan | ${brandName} VIP Kataloğu</title>
   <link rel="canonical" href="${canonicalUrl}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -245,6 +398,26 @@ export async function GET(request: Request) {
       text-decoration: none;
       margin: 0 10px;
     }
+    .amp-guide-box {
+      margin-top: 40px;
+      padding: 20px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+    }
+    .amp-guide-title {
+      font-size: 1.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+    .amp-guide-text {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -254,8 +427,8 @@ export async function GET(request: Request) {
   
   <div class="hero">
     <span class="badge">Buluşmak ve Randevu Almak İçin</span>
-    <h1>${locationName.toUpperCase()} ESCORT ESKORT GACI</h1>
-    <p>İletişim ve randevu için en seçkin ${locationName} escort, eskort, gacı, çıtır genç kız ve bayan modellerimizle hemen buluşun. Tüm görüşmeler yüz yüze kaporasızdır.</p>
+    <h1>${brandName.toUpperCase()} ${locationName.toUpperCase()} ESCORT</h1>
+    <p>İletişim ve randevu için en seçkin ${locationName} eskort gacı modelleri. ${brandName} güvencesiyle %100 kaporasız ve yüz yüze güvenli görüşme.</p>
   </div>
   
   <div class="container">
@@ -297,15 +470,17 @@ export async function GET(request: Request) {
     </div>
   </div>
   
-  <div class="container" style="margin-top: 40px; padding: 20px; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: 8px;">
-    <h2 style="font-size: 1.5rem; color: var(--primary); margin-bottom: 15px; font-weight: 900; text-transform: uppercase; font-style: italic;">
-      ${locationName} Escort, Eskort, Gacı Buluşma ve İletişim Rehberi
+  <div class="container amp-guide-box">
+    <h2 class="amp-guide-title">
+      ${brandName} ${locationName} Escort, Eskort, Gacı İletişim Rehberi
     </h2>
-    <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-      ${locationName} genelinde çıtır eskort bayan arayanlar için en hiddetli gacı ve genç kız modelleri burada listelenmektedir. 
-      Randevu almak için, buluşmak için ve iletişim kurmak için telefon numaralarımız üzerinden 7/24 bizlere ulaşabilirsiniz. 
-      Tamamen kaporasız ve yüz yüze güvenilir görüşmeler ile partnerinizle hemen buluşun.
+    <p class="amp-guide-text">
+      ${uniqueText}
     </p>
+    ${relatedSiteLink ? `
+    <p style="margin-top: 15px; font-weight: 700;">
+      🔗 <a href="${relatedSiteLink}" style="color: var(--primary); text-decoration: underline;" target="_blank" rel="noopener">Resmi ${locationName} Partner Portalı (Google Sites)</a>
+    </p>` : ''}
   </div>
 
   <div class="footer-section">
@@ -313,6 +488,7 @@ export async function GET(request: Request) {
     <p>
       <a href="${canonicalUrl}">Masaüstü Sürüm</a> | 
       <a href="https://wa.me/${siteConfig.contact.whatsappNumber}">WhatsApp İletişim</a>
+      ${relatedSiteLink ? ` | <a href="${relatedSiteLink}" target="_blank" rel="noopener">Google Sites Kataloğu</a>` : ''}
     </p>
   </div>
 </body>

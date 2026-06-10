@@ -2,6 +2,7 @@ import 'dotenv/config';
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import { siteConfig } from '../config/site';
+import * as path from 'path';
 
 puppeteer.use(StealthPlugin());
 
@@ -101,7 +102,7 @@ async function conquerDistrict(district: DistrictGeo, targetHost: string, proxyU
     }
 
     // Capture screenshot for audit/verification
-    const screenshotPath = `/root/esc/scratch/conquest_${district.slug}.png`;
+    const screenshotPath = path.join(process.cwd(), 'scratch', `conquest_${district.slug}.png`);
     await page.screenshot({ path: screenshotPath });
     console.log(`📸 [CONQUEROR] Captured conquest snapshot: ${screenshotPath}`);
 
@@ -123,9 +124,23 @@ async function startConquest() {
   console.log(`📡 [CONQUEROR] Targeted Conquest Domain: ${targetHost}`);
 
   const proxy = process.env.PREMIUM_PROXY_URL;
+  const isDripFeed = process.env.DRIP_FEED === 'true';
   
-  for (const district of DISTRICT_COORDINATES) {
+  for (let i = 0; i < DISTRICT_COORDINATES.length; i++) {
+    const district = DISTRICT_COORDINATES[i];
     await conquerDistrict(district, targetHost, proxy);
+    
+    if (i < DISTRICT_COORDINATES.length - 1) {
+      // If DRIP_FEED is enabled, we delay by a randomized duration between 30 to 60 minutes (1800000ms - 3600000ms)
+      // Otherwise, we do a safe rapid delay of 5 to 15 seconds to simulate light manual runs.
+      const minDelay = isDripFeed ? 30 * 60 * 1000 : 5 * 1000;
+      const maxDelay = isDripFeed ? 60 * 60 * 1000 : 15 * 1000;
+      const delayMs = Math.floor(Math.random() * (maxDelay - minDelay + 1) + minDelay);
+      
+      const delayMinutes = (delayMs / 60000).toFixed(1);
+      console.log(`⏳ [CONQUEROR] Sleeping for ${delayMinutes} minutes before targeting the next district...`);
+      await new Promise(r => setTimeout(r, delayMs));
+    }
   }
   
   console.log('🏁 [CONQUEROR] All districts targeted successfully.');

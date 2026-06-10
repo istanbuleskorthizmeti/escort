@@ -96,6 +96,12 @@ export default async function LandmarkPage({
     { name: realLandmarkName, item: `https://${siteConfig.domain}/${city}/${district}/${neighborhood}/${landmark}` },
   ];
 
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = hostHeader.split(':')[0];
+  const hostHash = host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+  const primaryEmojis = ['💎', '👑', '⭐', '🔥', '⚡', '✨', '💋', '🍒'];
+  const emoji = primaryEmojis[hostHash % primaryEmojis.length];
+
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans antialiased">
        <script
@@ -126,8 +132,8 @@ export default async function LandmarkPage({
         <section className="relative mt-20 mb-32">
           <div className="absolute -top-40 -left-20 w-[600px] h-[600px] bg-rose-600/5 blur-[200px] rounded-full z-0"></div>
           <VerificationBadge />
-          <h1 className="text-5xl md:text-[8rem] font-black mt-8 mb-12 tracking-tighter leading-[0.8] italic uppercase text-shadow-heavy relative z-10">
-            {realLandmarkName} <br />
+          <h1 className="text-5xl md:text-[8rem] font-black mt-8 mb-12 tracking-tighter leading-[0.8] italic uppercase text-shadow-heavy relative z-10 flex flex-col items-start">
+            <span className="flex items-center gap-2">{emoji} {realLandmarkName}</span>
             <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 via-rose-500 to-rose-300">
               ELITE VIP LOCA
             </span>

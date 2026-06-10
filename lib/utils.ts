@@ -22,6 +22,40 @@ if (typeof globalThis !== 'undefined' && !('returnNaN' in globalThis)) {
 }
 
 /**
+ * 🇹🇷 SOVEREIGN TURKISH CASE CONVERTERS
+ * Guaranteeing correct mapping for:
+ * I -> ı, ı -> I, i -> İ, İ -> i, ş -> Ş, Ş -> ş, etc.
+ * Enforces NFC normalization to prevent decomposed character bugs (e.g. i + combining dot).
+ */
+export function turkishToLower(str: string): string {
+  if (!str) return "";
+  return str
+    .normalize("NFC")
+    .replace(/İ/g, "i")
+    .replace(/I/g, "ı")
+    .replace(/Ş/g, "ş")
+    .replace(/Ç/g, "ç")
+    .replace(/Ö/g, "ö")
+    .replace(/Ü/g, "ü")
+    .replace(/Ğ/g, "ğ")
+    .toLowerCase();
+}
+
+export function turkishToUpper(str: string): string {
+  if (!str) return "";
+  return str
+    .normalize("NFC")
+    .replace(/i/g, "İ")
+    .replace(/ı/g, "I")
+    .replace(/ş/g, "Ş")
+    .replace(/ç/g, "Ç")
+    .replace(/ö/g, "Ö")
+    .replace(/ü/g, "Ü")
+    .replace(/ğ/g, "Ğ")
+    .toUpperCase();
+}
+
+/**
  * GOD-MODE: Sanitize Display Names
  * Cleans long SEO titles or encoded slugs into clean human-readable names.
  */
@@ -46,6 +80,7 @@ export function sanitizeDisplayName(name: string): string {
     return name.normalize('NFC').replace(/%C3%BC/g, 'ü').replace(/%C3%B6/g, 'ö').replace(/-/g, ' ').trim();
   }
 }
+
 /**
  * 🇹🇷 SOVEREIGN SLUGIFY: Ultimate Turkish Character Mapping
  * Fixes: ş, ç, ı, ğ, ö, ü -> s, c, i, g, o, u
@@ -58,7 +93,7 @@ export function slugify(text: string): string {
     'ğ': 'g', 'Ğ': 'g', 'ö': 'o', 'Ö': 'o', 'ü': 'u', 'Ü': 'u'
   };
 
-  let slug = text.toString().toLowerCase().trim();
+  let slug = turkishToLower(text.toString().trim());
   
   // Replace Turkish characters
   Object.keys(trMap).forEach(key => {
@@ -85,8 +120,8 @@ export function dedupeEscort(text: string): string {
   let foundEscort = false;
   
   for (const word of words) {
-    // Strip punctuation to check base word (e.g. "escort'lar" -> "escortlar", "escort," -> "escort")
-    const cleanWord = word.replace(/[^a-zA-Z\u00C0-\u017F]/g, '').toLowerCase();
+    // Strip punctuation to check base word
+    const cleanWord = turkishToLower(word.replace(/[^a-zA-Z\u00C0-\u017F]/g, ''));
     const isEscortWord = ['escort', 'escorts', 'eskort', 'eskortlar'].includes(cleanWord);
     
     if (isEscortWord) {
@@ -118,7 +153,7 @@ export function toTitleCaseTR(str: string): string {
     .map(word => {
       if (!word) return "";
       
-      const lowerWord = word.toLowerCase();
+      const lowerWord = turkishToLower(word);
       if (lowerWord === 'vip' || lowerWord === 'vıp') return 'VIP';
       if (lowerWord === 'dmca') return 'DMCA';
       if (lowerWord === 'gsc') return 'GSC';
@@ -139,20 +174,11 @@ export function toTitleCaseTR(str: string): string {
       const first = word.charAt(0);
       const rest = word.slice(1);
       
-      let upperFirst = first;
-      if (first === 'i') upperFirst = 'İ';
-      else if (first === 'ı') upperFirst = 'I';
-      else upperFirst = first.toUpperCase();
-      
-      let lowerRest = '';
-      for (let i = 0; i < rest.length; i++) {
-        const char = rest.charAt(i);
-        if (char === 'I') lowerRest += 'ı';
-        else if (char === 'İ') lowerRest += 'i';
-        else lowerRest += char.toLowerCase();
-      }
+      const upperFirst = turkishToUpper(first);
+      const lowerRest = turkishToLower(rest);
       
       return upperFirst + lowerRest;
     })
     .join(' ');
 }
+

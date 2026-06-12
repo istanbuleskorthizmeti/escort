@@ -1,20 +1,22 @@
 ┌────┬──────────────────────────────┬─────────────┬─────────┬─────────┬──────────┬────────┬──────┬───────────┬──────────┬──────────┬──────────┬──────────┐
 │ id │ name                         │ namespace   │ version │ mode    │ pid      │ uptime │ ↺    │ status    │ cpu      │ mem      │ user     │ watching │
 ├────┼──────────────────────────────┼─────────────┼─────────┼─────────┼──────────┼────────┼──────┼───────────┼──────────┼──────────┼──────────┼──────────┤
-│ 8  │ elite-blogger-autopilot      │ default     │ 0.1.0   │ fork    │ 1271607  │ 28h    │ 2    │ online    │ 0%       │ 135.6mb  │ root     │ disabled │
-│ 7  │ elite-bot                    │ default     │ 0.1.0   │ fork    │ 1028021  │ 2D     │ 2    │ online    │ 0%       │ 93.7mb   │ root     │ disabled │
-│ 9  │ elite-hydrator               │ default     │ 0.1.0   │ fork    │ 1028040  │ 2D     │ 2    │ online    │ 0%       │ 94.3mb   │ root     │ disabled │
-│ 11 │ elite-tumblr-autopilot       │ default     │ 0.1.0   │ fork    │ 1271601  │ 28h    │ 891… │ online    │ 0%       │ 137.5mb  │ root     │ disabled │
-│ 12 │ elite-wordpress-autopilot    │ default     │ 0.1.0   │ fork    │ 1271600  │ 28h    │ 4796 │ online    │ 0%       │ 119.3mb  │ root     │ disabled │
-│ 23 │ escortvip                    │ default     │ 15.1.0  │ cluster │ 1323334  │ 2h     │ 105  │ online    │ 0%       │ 581.0mb  │ root     │ disabled │
-│ 24 │ escortvip                    │ default     │ 15.1.0  │ cluster │ 1323346  │ 2h     │ 104  │ online    │ 0%       │ 577.7mb  │ root     │ disabled │
+│ 8  │ elite-blogger-autopilot      │ default     │ 0.1.0   │ fork    │ 1271607  │ 3D     │ 2    │ online    │ 0%       │ 129.4mb  │ root     │ disabled │
+│ 7  │ elite-bot                    │ default     │ 0.1.0   │ fork    │ 1028021  │ 4D     │ 2    │ online    │ 0%       │ 90.7mb   │ root     │ disabled │
+│ 9  │ elite-hydrator               │ default     │ 0.1.0   │ fork    │ 1028040  │ 4D     │ 2    │ online    │ 0%       │ 93.3mb   │ root     │ disabled │
+│ 11 │ elite-tumblr-autopilot       │ default     │ 0.1.0   │ fork    │ 1271601  │ 3D     │ 891… │ online    │ 0%       │ 135.2mb  │ root     │ disabled │
+│ 12 │ elite-wordpress-autopilot    │ default     │ 0.1.0   │ fork    │ 1271600  │ 3D     │ 4796 │ online    │ 0%       │ 120.3mb  │ root     │ disabled │
+│ 23 │ escortvip                    │ default     │ 15.1.0  │ cluster │ 1356440  │ 37h    │ 124  │ online    │ 0%       │ 704.1mb  │ root     │ disabled │
+│ 24 │ escortvip                    │ default     │ 15.1.0  │ cluster │ 1356453  │ 37h    │ 123  │ online    │ 0%       │ 657.6mb  │ root     │ disabled │
+│ 25 │ hydra-war                    │ default     │ N/A     │ fork    │ 1389960  │ 6m     │ 138  │ online    │ 0%       │ 81.4mb   │ root     │ disabled │
+│ 26 │ hydra-war                    │ default     │ N/A     │ fork    │ 1389904  │ 9m     │ 138  │ online    │ 0%       │ 81.9mb   │ root     │ disabled │
 │ 13 │ multi-server-bomber          │ default     │ N/A     │ fork    │ 0        │ 0      │ 127… │ stopped   │ 0%       │ 0b       │ root     │ disabled │
-│ 10 │ nuclear-swarm                │ default     │ 0.1.0   │ fork    │ 1028048  │ 2D     │ 2    │ online    │ 0%       │ 121.5mb  │ root     │ disabled │
-│ 14 │ traffic-blitz-v3             │ default     │ N/A     │ fork    │ 1028093  │ 2D     │ 1    │ online    │ 0%       │ 96.4mb   │ root     │ disabled │
+│ 10 │ nuclear-swarm                │ default     │ 0.1.0   │ fork    │ 1028048  │ 4D     │ 2    │ online    │ 0%       │ 122.4mb  │ root     │ disabled │
+│ 14 │ traffic-blitz-v3             │ default     │ N/A     │ fork    │ 1028093  │ 4D     │ 1    │ online    │ 0%       │ 97.3mb   │ root     │ disabled │
 └────┴──────────────────────────────┴─────────────┴─────────┴─────────┴──────────┴────────┴──────┴───────────┴──────────┴──────────┴──────────┴──────────┘
 Module
 ┌────┬──────────────────────────────┬───────────────┬──────────┬──────────┬──────┬──────────┬──────────┬──────────┐
 │ id │ module                       │ version       │ pid      │ status   │ ↺    │ cpu      │ mem      │ user     │
 ├────┼──────────────────────────────┼───────────────┼──────────┼──────────┼──────┼──────────┼──────────┼──────────┤
-│ 0  │ pm2-logrotate                │ 3.0.0         │ 1270088  │ online   │ 2    │ 0%       │ 70.0mb   │ root     │
+│ 0  │ pm2-logrotate                │ 3.0.0         │ 1270088  │ online   │ 2    │ 0%       │ 72.3mb   │ root     │
 └────┴──────────────────────────────┴───────────────┴──────────┴──────────┴──────┴──────────┴──────────┴──────────┘

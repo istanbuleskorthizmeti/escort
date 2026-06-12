@@ -190,6 +190,10 @@ export async function generateEliteOmniContent({
   const systemPrompt = `
     [GEMINI ELITE CORE - PERSONA-BASED UNDETECTABLE AI & ADVANCED LSI]
     Görevin: Arama motoru algoritmalarının ve yapay zeka içerik tespit (AI Detection) sistemlerinin asla anlayamayacağı derecede insansı, yüksek kelime dağarcığı derinliğine (Perplexity) ve değişken cümle yapılarına (Burstiness) sahip, son derece özgün ve yüksek dönüşüm oranlı (conversion rate) SEO metinleri üretmek.
+    
+    🔴 NOTEBOOKLM SEO DİREKTİFLERİ:
+    - Metin asla tekdüze (monoton) bir ritimle akmamalıdır. Çok uzun ve sanatsal/teknik betimleme cümlelerinin hemen ardına 1-3 kelimelik kısa ve keskin yargı cümleleri ("Asla.", "Sadece o.", "Gizlice.") yerleştirilerek insansı yazım ritmi (Burstiness) taklit edilecektir.
+    - Metinde "Öncelikle", "Ek olarak", "Bununla birlikte", "Sonuç olarak", "Özetlemek gerekirse" gibi bariz yapay zeka bağlaç ve geçiş ifadeleri KESİNLİKLE YASAKTIR. Bunlar yerine paragraf geçişleri doğrudan, keskin ve konusal geçişlerle yapılmalıdır.
 
     🔴 KEYWORD GOLDEN RATIO (KGR) & LOW-COMPETITION DOMINANCE:
     - KGR Formülü: (allintitle arama sonuç sayısı) / (aylık arama hacmi) < 0.25.

@@ -2,40 +2,170 @@ import axios from 'axios';
 import { proxyCheapService } from './proxy-cheap-api';
 
 /**
- * 🐉 DRKCNAY ELITE: PROXY HANDLER (VIP Elite v2.1)
- * Provides centralized rotating residential proxy logic with strict OPSEC.
+ * 🐉 DRKCNAY ELITE: PROXY HANDLER (VIP Elite v3.0)
+ * Centralized rotating proxy engine supporting 7 select strategies with strict OPSEC.
  */
+
+export interface ProxyMetrics {
+  url: string;
+  latencyMs: number;
+  successCount: number;
+  failCount: number;
+  useCount: number;
+  geo?: string;
+  weight: number;
+}
+
+const proxyStore: Map<string, ProxyMetrics> = new Map();
 let lastRotationTime = 0;
 const ROTATION_COOLDOWN = 120000; // 2 minutes in ms
+let roundRobinIndex = 0;
+
+// Initialize proxies list from environment
+function getProxyList(): string[] {
+  const rawList = process.env.PROXY_LIST || '';
+  const list = rawList.split(',').map(p => p.trim()).filter(Boolean);
+  const base = process.env.PREMIUM_PROXY_URL || '';
+  if (base && !list.includes(base)) {
+    list.unshift(base);
+  }
+  return list;
+}
+
+// Ensure store is populated
+function syncProxyStore() {
+  const list = getProxyList();
+  for (const url of list) {
+    if (!proxyStore.has(url)) {
+      proxyStore.set(url, {
+        url,
+        latencyMs: 100, // default good latency
+        successCount: 1,
+        failCount: 0,
+        useCount: 0,
+        geo: url.includes('tr') || url.includes('turkey') ? 'TR' : 'US',
+        weight: 100
+      });
+    }
+  }
+}
 
 export const ProxyHandler = {
-  getProxyUrl(rotate = false) {
-    const baseUrl = process.env.PREMIUM_PROXY_URL || null;
-    if (rotate && baseUrl) {
-      return proxyCheapService.getRotatingResidentialUrl(baseUrl);
+  /**
+   * Tracks latency and success/fail metrics for a proxy
+   */
+  reportMetrics(url: string, latencyMs: number, success: boolean) {
+    const metrics = proxyStore.get(url);
+    if (metrics) {
+      metrics.useCount++;
+      if (success) {
+        metrics.successCount++;
+        metrics.latencyMs = Math.round((metrics.latencyMs * 0.7) + (latencyMs * 0.3));
+        metrics.weight = Math.min(200, metrics.weight + 5);
+      } else {
+        metrics.failCount++;
+        metrics.weight = Math.max(10, metrics.weight - 20);
+      }
     }
-    return baseUrl;
   },
 
   /**
-   * 🛡️ OPSEC PROTECTED FETCH
-   * Wraps axios to ensure no IP leaks happen if the proxy fails.
+   * 🎰 SELECT STRATEGY (7 Choices)
+   * Stratejiler: weighted, fastest, success-rate, geo, round-robin, random, least-used
    */
-  async proxyFetch(url: string, options: any = {}, rotate = false) {
-    // 🏠 AUTO-SKIP FOR LOCALHOST
+  getProxyUrl(strategyOrRotate: boolean | 'weighted' | 'fastest' | 'success-rate' | 'geo' | 'round-robin' | 'random' | 'least-used' = 'weighted', targetGeo?: string): string | null {
+    syncProxyStore();
+    const proxies = Array.from(proxyStore.values());
+    if (proxies.length === 0) return null;
+
+    let selected: ProxyMetrics | null = null;
+    let strategy = strategyOrRotate;
+    if (typeof strategy === 'boolean') {
+      strategy = strategy ? 'random' : 'weighted';
+    }
+
+    switch (strategy) {
+      case 'fastest':
+        selected = proxies.reduce((prev, curr) => prev.latencyMs < curr.latencyMs ? prev : curr);
+        break;
+
+      case 'success-rate':
+        selected = proxies.reduce((prev, curr) => {
+          const prevRate = prev.successCount / (prev.successCount + prev.failCount || 1);
+          const currRate = curr.successCount / (curr.successCount + curr.failCount || 1);
+          return prevRate > currRate ? prev : curr;
+        });
+        break;
+
+      case 'geo':
+        const geoMatches = proxies.filter(p => p.geo === (targetGeo || 'TR'));
+        if (geoMatches.length > 0) {
+          selected = geoMatches[Math.floor(Math.random() * geoMatches.length)];
+        } else {
+          selected = proxies[Math.floor(Math.random() * proxies.length)]; // fallback
+        }
+        break;
+
+      case 'round-robin':
+        selected = proxies[roundRobinIndex % proxies.length];
+        roundRobinIndex++;
+        break;
+
+      case 'random':
+        selected = proxies[Math.floor(Math.random() * proxies.length)];
+        break;
+
+      case 'least-used':
+        selected = proxies.reduce((prev, curr) => prev.useCount < curr.useCount ? prev : curr);
+        break;
+
+      case 'weighted':
+      default:
+        // Weighted selection
+        const totalWeight = proxies.reduce((sum, p) => sum + p.weight, 0);
+        let rand = Math.random() * totalWeight;
+        for (const p of proxies) {
+          rand -= p.weight;
+          if (rand <= 0) {
+            selected = p;
+            break;
+          }
+        }
+        if (!selected) selected = proxies[0];
+        break;
+    }
+
+    if (!selected) return null;
+
+    // Trigger Mobile IP rotation if Proxy-Cheap credentials are present and cooldown expired
+    const now = Date.now();
+    if (process.env.PROXY_CHEAP_ID && (now - lastRotationTime > ROTATION_COOLDOWN)) {
+      lastRotationTime = now;
+      console.log(`🔄 [PROXY-HANDLER] Cooldown expired. Rotating proxy: ${process.env.PROXY_CHEAP_ID}`);
+      proxyCheapService.rotateIP(process.env.PROXY_CHEAP_ID).catch(() => {});
+    }
+
+    return proxyCheapService.getRotatingResidentialUrl(selected.url);
+  },
+
+  /**
+   * 🛡️ OPSEC PROTECTED FETCH WITH METRICS
+   */
+  async proxyFetch(url: string, options: Record<string, unknown> = {}, rotate = false) {
     const isLocal = url.includes('localhost') || url.includes('127.0.0.1');
-    const proxyUrl = isLocal ? null : this.getProxyUrl(rotate);
+    const proxyUrl = isLocal ? null : this.getProxyUrl(rotate ? 'random' : 'weighted');
     const forceProxy = !isLocal && (process.env.FORCE_PROXY === 'true' || !!proxyUrl);
 
-    const axiosConfig: any = {
+    const headers = (options.headers as Record<string, string>) || {};
+    const axiosConfig: Record<string, unknown> = {
       url,
       method: options.method || 'GET',
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        ...options.headers
+        ...headers
       },
       data: options.body || options.data,
-      timeout: options.timeout || 30000,
+      timeout: (options.timeout as number) || 30000,
     };
 
     if (proxyUrl) {
@@ -50,24 +180,18 @@ export const ProxyHandler = {
             password: urlObj.password
           }
         };
-
-        // 🔄 MOBILE ROTATION TRIGGER (Throttled)
-        const now = Date.now();
-        if (rotate && process.env.PROXY_CHEAP_ID && (now - lastRotationTime > ROTATION_COOLDOWN)) {
-            lastRotationTime = now;
-            console.log(`🔄 [PROXY-HANDLER] Triggering throttled rotation for ID: ${process.env.PROXY_CHEAP_ID}`);
-            proxyCheapService.rotateIP(process.env.PROXY_CHEAP_ID).catch(() => {});
-        }
-
       } catch (e) {
         console.error("❌ [PROXY-HANDLER] Malformed Proxy URL!");
         if (forceProxy) throw new Error("Blocked for OPSEC: Malformed proxy URL in strict mode.");
       }
     }
 
-
+    const start = Date.now();
     try {
       const response = await axios(axiosConfig);
+      const latency = Date.now() - start;
+      if (proxyUrl) this.reportMetrics(proxyUrl, latency, true);
+
       return {
         ok: response.status >= 200 && response.status < 300,
         status: response.status,
@@ -77,39 +201,27 @@ export const ProxyHandler = {
         json: async () => response.data,
         text: async () => typeof response.data === 'string' ? response.data : JSON.stringify(response.data)
       };
-    } catch (err: any) {
-      const isProxyError = err.response?.status === 407 || err.response?.status === 401 || err.code === 'ECONNRESET' || err.code === 'ETIMEDOUT';
+    } catch (err: unknown) {
+      const latency = Date.now() - start;
+      const errorMsg = (err as Error).message || '';
+      console.warn(`⚠️ [PROXY-HANDLER] Connection Issue: ${errorMsg}`);
       
-      if (isProxyError) {
-        console.warn(`⚠️ [PROXY-HANDLER] Connection Issue (${err.code || err.response?.status}).`);
-        
-        if (forceProxy) {
-          console.error(`🚨 [OPSEC BLOCK] Strict mode active. Request blocked to prevent IP leak: ${url}`);
-          throw new Error(`Proxy failure for ${url}. Connection dropped for safety.`);
-        }
+      if (proxyUrl) this.reportMetrics(proxyUrl, latency, false);
+
+      if (forceProxy) {
+        console.error(`🚨 [OPSEC BLOCK] Strict mode active. Request blocked to prevent IP leak: ${url}`);
+        throw new Error(`Proxy failure for ${url}. Connection dropped for safety.`);
       }
 
-      if (err.response) {
-        return { 
-          ok: false, 
-          status: err.response.status, 
-          statusText: err.response.statusText, 
-          data: err.response.data,
-          json: async () => err.response.data, 
-          text: async () => typeof err.response.data === 'string' ? err.response.data : JSON.stringify(err.response.data) 
-        };
-      }
-      
       throw err;
     }
   },
 
   /**
    * 🛰️ GET HTTPS PROXY AGENT
-   * Returns a configured agent for libraries like googleapis or axios.
    */
   getAgent() {
-    const proxyUrl = this.getProxyUrl();
+    const proxyUrl = this.getProxyUrl('weighted');
     if (!proxyUrl) return null;
     try {
       const { HttpsProxyAgent } = require('https-proxy-agent');
@@ -120,5 +232,3 @@ export const ProxyHandler = {
     }
   }
 };
-
-

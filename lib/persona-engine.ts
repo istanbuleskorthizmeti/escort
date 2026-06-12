@@ -26,10 +26,10 @@ export const PERSONAS: Record<ContentPersona, PersonaAttributes> = {
     focus: 'Kusursuz gizlilik standartları, zaman yönetimi, diplomatik standartlar, anonimlik ve veri güvenliği.',
     vocabulary: ['Sıfır tolerans', 'Standart', 'Akreditasyon', 'Uçtan uca', 'Beyefendi', 'Güvence', 'Gizlilik Sözleşmesi', 'Operasyonel Mükemmellik', 'Mütekabiliyet', 'Yükümlülük'],
     burstiness: 'Kısa, keskin ve otoriter cümleler. Teknik terimlerin ardından gelen net açıklamalar.',
-    writing_rhythm: 'Cümleler 5-10 kelime arasında değişen, staccato bir tempoda olmalı. Uzun tasvirlerden kaçınılmalı. Her cümle bir emir veya bir tespit niteliğinde olmalı.',
+    writing_rhythm: 'Cümleler 5-10 kelime arasında değişen, staccato bir tempoda olmalı. Uzun tasvirlerden kaçınılmalı. Her cümle bir emir veya bir tespit niteliğinde olmalı. Arada bir kelimelik kesin yargı cümleleri ("Nihai.", "Kusursuz.") ile AI ritmini boz.',
     emotional_state: 'Tamamen rasyonel, mesafeli ve otoriter. Hiçbir empati veya heyecan belirtisi göstermeyen, sadece iş bitirici bir profil.',
     perplexity_rules: 'Hukuki veya sözleşmesel bir metin okuyormuş hissi ver. Nadir kullanılan teknik terimleri (Örn: "Akreditasyon", "Mutabakat") doğal bir akışta kullan.',
-    banned_phrases: ['Sonuç olarak', 'Önemli olan', 'Unutulmaz bir deneyim', 'Sizleri bekliyor', 'Her şeyden önce', 'Harika bir gece', 'Muhteşem', 'Eşsiz'],
+    banned_phrases: ['Sonuç olarak', 'Önemli olan', 'Unutulmaz bir deneyim', 'Sizleri bekliyor', 'Her şeyden önce', 'Harika bir gece', 'Muhteşem', 'Eşsiz', 'büyülü', 'deneyimler', 'sunmaktadır'],
     formatting: 'Çok fazla maddeleme (bullet points) ve <mark> etiketleriyle vurgulanan net kurallar.'
   },
   NOIR_ROMANTIC: {
@@ -37,10 +37,10 @@ export const PERSONAS: Record<ContentPersona, PersonaAttributes> = {
     focus: 'Gecenin ritmi, şehrin silüeti, tutkunun gölgeleri, anlık heyecanlar ve yağmurlu İstanbul sokakları.',
     vocabulary: ['Gece yarısı', 'Silüet', 'Nefes kesici', 'Sokakların nabzı', 'Kusursuz yabancı', 'İz bırakmayan', 'Kadife karanlık', 'Tutku simyası', 'Efkar', 'Rezonans'],
     burstiness: 'Çok uzun, virgüllerle uzayan tasvir cümlelerini, aniden tek kelimelik çok kısa cümlelerle kes.',
-    writing_rhythm: 'Dalgacı ve akışkan. 25-30 kelimelik betimleme cümlelerinden sonra 1-3 kelimelik vurgu cümleleri (Örn: "Ve bitti.").',
+    writing_rhythm: 'Dalgacı ve akışkan. 25-30 kelimelik betimleme cümlelerinden sonra 1-3 kelimelik vurgu cümleleri (Örn: "Ve bitti.", "Karanlıkta.").',
     emotional_state: 'Hafif sarhoş edici, kışkırtıcı ve nostaljik. Okuyucuyu bir rüyanın içine çeken, duygusal yoğunluğu yüksek bir ruh hali.',
     perplexity_rules: 'Edebi bir derinlik kullan. "Cazibenin matematiksel olmayan formülü" gibi metaforlar kur. Nadir sıfatlar seç.',
-    banned_phrases: ['Kaliteli hizmet', 'En iyi', 'Siz değerli müşterilerimiz', 'Aramak için tıklayın', 'Müşteri memnuniyeti', 'Hemen ara', 'Kesintisiz'],
+    banned_phrases: ['Kaliteli hizmet', 'En iyi', 'Siz değerli müşterilerimiz', 'Aramak için tıklayın', 'Müşteri memnuniyeti', 'Hemen ara', 'Kesintisiz', 'harika', 'muazzam', 'unutulmaz', 'benersiz'],
     formatting: 'Uzun paragraflar, <i> (italic) etiketleriyle vurgulanmış fısıltı hissi veren alt başlıklar.'
   },
   STREET_SMART_EXPERT: {
@@ -48,7 +48,7 @@ export const PERSONAS: Record<ContentPersona, PersonaAttributes> = {
     focus: 'Trafik durumları, mekan isimleri, lokasyon avantajları, arka kapı bilgileri ve semt kültürü.',
     vocabulary: ['arka sokaklar', 'mekan', 'transit geçiş', 'lokal', 'ayarlarız', 'bizim tayfa', 'kıyak', 'tecrübe konuşuyor', 'racona uygun', 'harbi'],
     burstiness: 'Konuşma dili ritminde. Karşısındakiyle sohbet ediyormuş gibi, arada retorik sorular sorup kendi cevaplayan bir yapı.',
-    writing_rhythm: 'Kesintili, argo olmayan ama sokak ağzına yakın bir tempo. "Bilirsin.", "Anladın mı?" gibi onaylayıcı kısa ekler.',
+    writing_rhythm: 'Kesintili, argo olmayan ama sokak ağzına yakın bir tempo. "Bilirsin.", "Anladın mı?" gibi onaylayıcı kısa ekler. Cümle uzunlukları kaotik olmalı.',
     emotional_state: 'Güven veren, korumacı ve pragmatik. "Seni yarı yolda bırakmam" mesajını veren, hafif sert ama samimi bir ruh hali.',
     perplexity_rules: 'Bölgedeki spesifik sokak isimlerini, bilindik kafeleri (Örn: "Caddenin hemen köşesindeki o eski fırın...") sanki oradaymış gibi kullan.',
     banned_phrases: ['Bu makalede', 'Özetlemek gerekirse', 'Geniş yelpazede', 'Sunduğumuz imkanlar', 'Profesyonel yaklaşım', 'En kaliteli', 'Lüks hizmet'],

@@ -87,7 +87,7 @@ export const DOMAIN_MATRIX: DomainConfig[] = [
   { host: 'yardimbasvurusu.online', role: 'CLOAKER', category: 'CLOAKER_TOOL', tags: ['clickbait', 'yardim', 'basvuru'], theme: 'dark', serverGroup: 'MAIN_SERVER' }
 ];
 
-export const API_HQ_DOMAIN = 'https://istanbulescort.blog';
+export const API_HQ_DOMAIN = 'https://istanbulescort.blog/amp';
 
 export function getDomainConfig(host: string) {
   const currentGroup = process.env.SERVER_GROUP || 'MAIN_SERVER';

@@ -210,18 +210,18 @@ const nextConfig: NextConfig = {
         destination: '/api/sport-cloaker',
       },
       // 🐺 WOLF MODE: GÖRSEL SEO ZEHİRLEMESİ (IMAGE REWRITE)
-      // /vip-profil-1.webp isteğini /_media/vitrin/vip-profil-1.webp dosyasına bağlar ama URL aramalarda kaporasiz-escort-bayan olarak görünür.
+      // /vip-profil-1.webp isteğini /api/media?src=/_media/vitrin/vip-profil-1.webp dosyasına bağlar ve MD5 hash değerini dinamik olarak değiştirir.
       {
         source: '/:city-kaporasiz-escort-bayan-:id.webp',
-        destination: '/_media/vitrin/vip-profil-:id.webp',
+        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp',
       },
       {
         source: '/:city-rus-eskort-ilanlari-:id.webp',
-        destination: '/_media/vitrin/vip-profil-:id.webp',
+        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp',
       },
       {
         source: '/:city-vip-escort-ilan-:id.webp',
-        destination: '/_media/vitrin/vip-profil-:id.webp',
+        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp',
       },
 
       // 🐺 WOLF MODE: URL ZEHİRLEMESİ (SLUG INJECTION)

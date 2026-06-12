@@ -25,14 +25,23 @@ export const SmartImage: React.FC<SmartImageProps> = ({
   seoContext,
   ...props
 }) => {
-  const [currentSrc, setCurrentSrc] = useState(src);
+  const getObfuscatedSrc = (originalSrc: any): any => {
+    if (typeof originalSrc === 'string' && (originalSrc.startsWith('/') || originalSrc.startsWith('_media/'))) {
+      if (!originalSrc.startsWith('/api/media')) {
+        return `/api/media?src=${encodeURIComponent(originalSrc)}`;
+      }
+    }
+    return originalSrc;
+  };
+
+  const [currentSrc, setCurrentSrc] = useState(() => getObfuscatedSrc(src));
   const [hasError, setHasError] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   // 🛡️ [HYDRA-BLACK-HAT] Aggressive SEO Alt & Title Injection
   const aggressiveNiches = [
     "VIP Escort Numaraları", "Elit Partner", "Kaporasız Escort Bayan", 
-    "Rus VIP Model", "Üniversiteli Çıtır Escort", "Eve Gelen Lüks Partner",
+    "Rus VIP Model", "Üniversiteli VIP Partner", "Eve Gelen Lüks Partner",
     "Otel Servis VIP Escort", "En İyi Escort Ajansı", "Gerçek Görselli Partner",
     "Bireysel Escort İlanları", "İstanbul Elit Escort", "Luxury Companion"
   ];

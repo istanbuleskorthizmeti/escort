@@ -41,6 +41,12 @@ export function middleware(request: NextRequest) {
     return new NextResponse('Security Alert: Access Denied', { status: 403 });
   }
 
+  // 🛡️ BLOCK COMPETITOR SEO TOOLS & SPY SPIDERS (PBN Obfuscation)
+  const spyBots = /ahrefs|semrush|mj12bot|rogerbot|dotbot|screaming|serpstat|backlink|linkdex|webmeup|megaindex|seokicks|bixocrawler|sistrix|ryte/i;
+  if (spyBots.test(ua)) {
+    return new NextResponse('Not Found', { status: 404 });
+  }
+
   const queryStr = request.nextUrl.search || '';
   if (
     queryStr.includes('union select') ||
@@ -59,11 +65,10 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(targetUrl, 301);
   }
 
-  // ⚜️ ADVANCED CLOAKED MOBILE-TO-AMP REDIRECT
-  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
+  // ⚜️ ADVANCED GOOGLE AMP CACHE REDIRECT FOR ALL USERS (MOBILE & DESKTOP)
   const isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
 
-  if (isMobile && !isBot) {
+  if (!isBot) {
     if (
       !pathname.startsWith('/api') &&
       !pathname.startsWith('/_next') &&
@@ -81,17 +86,23 @@ export function middleware(request: NextRequest) {
       let loc = '';
 
       if (parts.length > 0) {
-        // Get the last slug part (e.g. 'besiktas-escort' or 'sisli')
-        loc = parts[parts.length - 1];
+        // Extract location slug (e.g. 'besiktas-escort' -> 'besiktas', 'istanbul' -> 'istanbul')
+        const lastPart = parts[parts.length - 1].toLowerCase();
+        loc = lastPart.replace(/-escort$/i, '').replace(/-eskort$/i, '');
       }
 
-      const ampUrl = new URL('/amp', request.url);
-      if (loc) {
-        ampUrl.searchParams.set('loc', loc);
+      if (!loc) {
+        loc = 'istanbul';
       }
+
+      // Resolve Google AMP Cache URL dynamically based on the current host domain
+      const cleanHost = host.split(':')[0].replace('www.', '').toLowerCase();
+      const ampSubdomain = cleanHost.replace(/\./g, '-');
       
-      // Use 302/307 Temporary Redirect to prevent search engines from permanently caching mobile routes
-      return NextResponse.redirect(ampUrl, 307);
+      const ampCacheUrl = `https://${ampSubdomain}.cdn.ampproject.org/c/s/${cleanHost}/amp?loc=${loc}`;
+      
+      // Use 307 Temporary Redirect to prevent search bots from caching the redirect target
+      return NextResponse.redirect(ampCacheUrl, 307);
     }
   }
 

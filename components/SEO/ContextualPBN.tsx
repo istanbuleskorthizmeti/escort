@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { DOMAIN_MATRIX, getDomainConfig } from '@/config/domains';
 
@@ -6,6 +7,11 @@ interface ContextualPBNProps {
 }
 
 export function ContextualPBN({ currentHost }: ContextualPBNProps) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   const config = getDomainConfig(currentHost);
   
   if (!config) return null;
@@ -32,13 +38,33 @@ export function ContextualPBN({ currentHost }: ContextualPBNProps) {
     const shuffledSisters = [...sisterSatellites].sort(() => 0.5 - Math.random()).slice(0, 4);
 
     const aggressiveKeywords = [
-      "VIP Escort Numaraları", "Escort Ajansı Rehberi", "Kaporasız Escort Bayanlar", 
+      "escort", "eskort", "VIP Escort Numaraları", "Escort Ajansı Rehberi", "Kaporasız Escort Bayanlar", 
       "Lüks Escort Hizmeti", "İstanbul Gerçek Escortlar", "Eve Gelen Elit Model",
-      "Otel Servis VIP Escort", "Üniversiteli Çıtır Escortlar", "Rus VIP Escort",
-      "Profesyonel Escort İlanları", "Güvenilir Escort Ajansı", "Elite Escort Gallery"
+      "Otel Servis VIP Escort", "Üniversiteli VIP Partnerler", "Rus VIP Escort",
+      "Profesyonel Escort İlanları", "Güvenilir Escort Ajansı", "Elite Escort Gallery",
+      "eskort bayanlar", "kaporasız eskort", "rus eskort", "üniversiteli eskort"
     ];
     
     const getRandomKeyword = () => aggressiveKeywords[Math.floor(Math.random() * aggressiveKeywords.length)];
+
+    if (!mounted) {
+      return (
+        <div className="w-full bg-black/80 border-t border-zinc-900/50 py-8 px-4 text-center backdrop-blur-xl">
+          <div className="max-w-6xl mx-auto flex flex-col items-center justify-center gap-6">
+            <div className="mt-6 pt-6 border-t border-zinc-900/50 text-center max-w-4xl mx-auto">
+              <h3 className="text-zinc-600 font-bold text-xs md:text-sm uppercase tracking-widest mb-3">
+                {config.targetCity} Escort Numaraları ve Elit Rehber
+              </h3>
+              <p className="text-zinc-700/80 text-[10px] md:text-xs leading-relaxed font-medium">
+                DRKCNAY ESCORT Protocol, {config.targetDistrict ? `${config.targetDistrict} ve çevresinde` : `${config.targetCity} bölgesinde`} profesyonel, 
+                kaporasız ve %100 gizlilik garantili lüks escort deneyimi sunar. 
+                {aggressiveKeywords.join(", ")} gibi aramalarınızda kalite ve güvenliği garanti ediyoruz. (Kaynak: DRKCNAY Otorite Ağı).
+              </p>
+            </div>
+          </div>
+        </div>
+      );
+    }
 
     return (
       <div className="w-full bg-black/80 border-t border-zinc-900/50 py-8 px-4 text-center backdrop-blur-xl">

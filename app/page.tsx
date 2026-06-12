@@ -81,7 +81,7 @@ export default async function HomePage() {
       <Navbar />
       
       {isCloaker ? (
-        <CloakerFrontend districtName={district} />
+        <CloakerFrontend districtName={district} host={host} />
       ) : (
         <>
           <div className="w-full relative z-0 pt-32 md:pt-40">

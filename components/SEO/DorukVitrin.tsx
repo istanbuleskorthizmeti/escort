@@ -472,18 +472,36 @@ export function DorukVitrin({
 
   const [displayedImages, setDisplayedImages] = useState<any[]>(() => {
     const premiumAds = vitrinImages.filter(img => img.isAd);
+    let fullPool: any[] = [];
     if (serverProfiles && serverProfiles.length > 0) {
       const cleanServer = serverProfiles.filter(m => !premiumAds.some(ad => ad.src === m.src));
       const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
-      return [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 20 - premiumAds.length - cleanServer.length))];
+      fullPool = [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 20 - premiumAds.length - cleanServer.length))];
+    } else {
+      const pool = vitrinImages.filter(img => !img.isAd);
+      fullPool = [...premiumAds, ...pool.slice(0, 20 - premiumAds.length)];
     }
-    const pool = vitrinImages.filter(img => !img.isAd);
-    return [...premiumAds, ...pool.slice(0, 20 - premiumAds.length)];
+    // Render only first 4 items initially on SSR/First Paint to maximize speed scores
+    return fullPool.slice(0, 4);
   });
   const [hasLoaded, setHasLoaded] = useState(serverProfiles && serverProfiles.length > 0);
 
   useEffect(() => {
     setIsMounted(true);
+    
+    // Load full pool on client mount
+    const premiumAds = vitrinImages.filter(img => img.isAd);
+    let fullPool: any[] = [];
+    if (serverProfiles && serverProfiles.length > 0) {
+      const cleanServer = serverProfiles.filter(m => !premiumAds.some(ad => ad.src === m.src));
+      const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
+      fullPool = [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 20 - premiumAds.length - cleanServer.length))];
+    } else {
+      const pool = vitrinImages.filter(img => !img.isAd);
+      fullPool = [...premiumAds, ...pool.slice(0, 20 - premiumAds.length)];
+    }
+    setDisplayedImages(fullPool);
+
     // Only enable carousel animation on desktop screens (>= 768px) to maximize mobile performance
     if (typeof window !== 'undefined' && window.innerWidth >= 768) {
       const timer = setTimeout(() => {

@@ -229,9 +229,6 @@ export async function GET(request: Request) {
   <title>🔞 ${locationName} Escort Bayan | ${brandName} VIP Kataloğu</title>
   <link rel="canonical" href="${canonicalUrl}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&family=Playfair+Display:ital,wght@0,700;1,900&display=swap" rel="stylesheet">
   
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style>
   <noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
@@ -254,7 +251,7 @@ export async function GET(request: Request) {
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: 'Outfit', sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       margin: 0;
       padding: 0;
       line-height: 1.5;
@@ -271,7 +268,7 @@ export async function GET(request: Request) {
       backdrop-filter: blur(10px);
     }
     .brand {
-      font-family: 'Playfair Display', serif;
+      font-family: Georgia, Cambria, "Times New Roman", Times, serif;
       font-size: 28px;
       font-weight: 900;
       font-style: italic;
@@ -455,6 +452,7 @@ export async function GET(request: Request) {
               width="300" 
               height="400" 
               layout="responsive" 
+              ${index < 2 ? 'data-hero' : ''}
               alt="${title} - ${locationName} buluşmak için eskort gacı bayan">
             </amp-img>
           </div>

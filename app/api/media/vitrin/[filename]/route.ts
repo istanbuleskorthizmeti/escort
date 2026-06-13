@@ -132,18 +132,18 @@ export async function GET(
       });
     }
   } catch (error: any) {
-    console.error(`[Morph Engine Error] Failed processing ${safeFilename}:`, error);
-    // Fallback: serve raw file if morphing fails
+    console.warn(`⚠️ [Morph Engine Fallback] Failed processing ${safeFilename}:`, error.message);
     try {
-      const fileBuffer = await fs.promises.readFile(filePath);
-      return new NextResponse(fileBuffer, {
+      const rawBuffer = fs.readFileSync(filePath);
+      return new NextResponse(rawBuffer, {
         status: 200,
         headers: {
           'Content-Type': mimeType,
-          'Cache-Control': 'public, max-age=86400, s-maxage=86400',
+          'Cache-Control': 'public, max-age=31536000, immutable',
         },
       });
-    } catch (fallbackError) {
+    } catch (fallbackError: any) {
+      console.error('❌ [Morph Engine Fallback Critical] Failed serving raw fallback image:', fallbackError.message);
       return new NextResponse('Internal Server Error', { status: 500 });
     }
   }

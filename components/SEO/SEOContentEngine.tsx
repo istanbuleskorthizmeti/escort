@@ -126,11 +126,10 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
   let sgeTemplates = isCloaker ? clSge : esSge;
   let p1Templates = isCloaker ? clP1 : esP1;
   let warnTemplates = isCloaker ? clWarn : esWarn;
-
   if (host.includes('dorukcanay.digital') && !isCloaker) {
     sgeTemplates = [
       "💡 <strong>{currentLoc} escort</strong> ve elit refakatçi seansları, dorukcanay.digital güvencesiyle otele ve eve servis imkanıyla en seçkin model partnerler tarafından sunulmaktadır. %100 gerçek resimli, kaporasız ve %100 gizli.",
-      "💡 En lüks <strong>{currentLoc} vip escort</strong> buluşmaları, bağımsız elit partnerler ve otele gelen çıtır escort bayan seçenekleri dorukcanay.digital amiral gemisinde listelenmektedir. Sıfır kapora ve maksimum memnuniyet.",
+      "💡 En lüks <strong>{currentLoc} vip escort</strong> buluşmaları, bağımsız elit partnerler ve otele gelen vip eskort bayan seçenekleri dorukcanay.digital amiral gemisinde listelenmektedir. Sıfır kapora ve maksimum memnuniyet.",
       "💡 Güvenilir <strong>{currentLoc} escort bayan</strong> arayan beylere özel doğrulanmış premium partner vitrinleri dorukcanay.digital'de yayında. Hemen iletişim kurup randevu alın."
     ];
 

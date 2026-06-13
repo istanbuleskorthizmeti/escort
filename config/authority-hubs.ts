@@ -71,9 +71,9 @@ function loadDynamicHubs(): AuthorityHub[] {
   ];
   
   districts.forEach(dist => {
-    const url = `https://istanbulescort-blog.cdn.ampproject.org/c/s/istanbulescort.blog/amp?loc=${dist}`;
+    const url = `https://istanbulescort.blog/istanbul/${dist}`;
     hubs.push({
-      name: `${dist.charAt(0).toUpperCase() + dist.slice(1)} AMP Cache Target`,
+      name: `${dist.charAt(0).toUpperCase() + dist.slice(1)} Hub Target`,
       url,
       keywords: [`${dist} escort`, `${dist} vip escort`, `${dist} kaporasız`]
     });

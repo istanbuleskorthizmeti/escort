@@ -74,7 +74,7 @@ export default function ProfilePage({ params: paramsPromise }: { params: Promise
     "sarışın escort, rus model ve üniversiteli",
     "olgun escort, azeri escort ve elit",
     "vip escort, esmer güzel ve manken",
-    "kaporasız escort, genç escort ve çıtır",
+    "kaporasız escort, genç escort ve vip partner",
     "yabancı escort, anal escort ve sınırsız"
   ];
   

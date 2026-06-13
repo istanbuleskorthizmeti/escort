@@ -154,7 +154,7 @@ export function toTitleCaseTR(str: string): string {
       if (!word) return "";
       
       const lowerWord = turkishToLower(word);
-      if (lowerWord === 'vip' || lowerWord === 'vıp') return 'VIP';
+      if (lowerWord === 'vip' || lowerWord === 'vıp') return 'Vip';
       if (lowerWord === 'dmca') return 'DMCA';
       if (lowerWord === 'gsc') return 'GSC';
       if (lowerWord === 'sge') return 'SGE';

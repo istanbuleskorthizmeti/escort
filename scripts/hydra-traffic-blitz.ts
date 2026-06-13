@@ -4,6 +4,7 @@
  * Fully features anti-detection, behavior profiles, GSC queries, and proxy metrics.
  */
 
+import 'dotenv/config';
 import puppeteer from 'puppeteer-extra';
 import StealthPlugin from 'puppeteer-extra-plugin-stealth';
 import fs from 'fs';
@@ -91,6 +92,10 @@ function getTargetKeywords(): string[] {
 
 async function simulateVisit(threadId: number, config: Config) {
   const proxyUrl = ProxyHandler.getProxyUrl('weighted', 'TR');
+  if (!proxyUrl && process.env.FORCE_PROXY === 'true') {
+    console.error(`🚨 [OPSEC BLOCK] [THREAD-${threadId}] Strict proxy mode active but no proxy URL loaded. Aborting visit.`);
+    return;
+  }
   const device = DEVICE_PROFILES[Math.floor(Math.random() * DEVICE_PROFILES.length)];
   const behaviorKeys = Object.keys(BEHAVIOR_PROFILES) as BehaviorType[];
   const behavior = BEHAVIOR_PROFILES[behaviorKeys[Math.floor(Math.random() * behaviorKeys.length)]];
@@ -125,6 +130,20 @@ async function simulateVisit(threadId: number, config: Config) {
     // Inject anti-detect & fingerprint noise overrides
     await page.evaluateOnNewDocument(injectStealthScripts());
 
+    if (proxyUrl) {
+      try {
+        const urlObj = new URL(proxyUrl);
+        if (urlObj.username && urlObj.password) {
+          await page.authenticate({
+            username: decodeURIComponent(urlObj.username),
+            password: decodeURIComponent(urlObj.password)
+          });
+        }
+      } catch (e) {
+        console.error("❌ Failed to set page proxy authentication:", e);
+      }
+    }
+
     // Basic session cookie loading
     if (fs.existsSync(config.sessionFile) && Math.random() > 0.4) {
       try {
@@ -134,25 +153,27 @@ async function simulateVisit(threadId: number, config: Config) {
       } catch { /* noop */ }
     }
 
-    // Go to Google Search
-    await page.goto('https://www.google.com.tr', { waitUntil: 'networkidle2', timeout: 45000 });
+    // Go to Google Search directly with 50 results parameter to find target keywords up to position 50 on page 1
+    const searchUrl = `https://www.google.com.tr/search?q=${encodeURIComponent(keyword)}&num=50&hl=tr&gl=tr`;
+    console.log(`🌐 [THREAD-${threadId}] Navigating directly to SERP for: "${keyword}" (50 results per page)...`);
+    await page.goto(searchUrl, { waitUntil: 'networkidle2', timeout: 45000 });
     
-    // Cookie Accept (Google Europe/Turkey consent screen)
+    // Cookie Accept (Google Europe/Turkey consent screen) - try if it pops up
     try {
       const consentBtn = await page.$('button#L2AGLb');
       if (consentBtn) await consentBtn.click();
     } catch { /* noop */ }
 
-    // Type query naturally
-    await page.waitForSelector('textarea[name="q"]', { timeout: 10000 });
-    await page.type('textarea[name="q"]', keyword, { delay: Math.floor(Math.random() * 80) + 70 });
-    await page.keyboard.press('Enter');
-    await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 30000 });
-
     // Search results scan
+    console.log(`🔍 [THREAD-${threadId}] Scanning SERP results...`);
     const foundLink = await page.evaluate((domain) => {
       const anchors = Array.from(document.querySelectorAll('a'));
-      const target = anchors.find(a => a.href && a.href.includes(domain));
+      const target = anchors.find(a => {
+        if (!a.href) return false;
+        const href = a.href.toLowerCase();
+        if (href.includes('google.com') || href.includes('webcache.googleusercontent.com')) return false;
+        return href.includes(domain);
+      });
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
         return target.href;
@@ -161,11 +182,16 @@ async function simulateVisit(threadId: number, config: Config) {
     }, config.targetDomain);
 
     if (foundLink) {
-      console.log(`🎯 [THREAD-${threadId}] Found target URL: ${foundLink}`);
+      console.log(`🎯 [THREAD-${threadId}] Found target URL in SERP: ${foundLink}`);
       // Click through standard RankBrain bypass
       await page.evaluate((domain) => {
         const anchors = Array.from(document.querySelectorAll('a'));
-        const target = anchors.find(a => a.href && a.href.includes(domain));
+        const target = anchors.find(a => {
+          if (!a.href) return false;
+          const href = a.href.toLowerCase();
+          if (href.includes('google.com') || href.includes('webcache.googleusercontent.com')) return false;
+          return href.includes(domain);
+        });
         if (target) target.click();
       }, config.targetDomain);
 

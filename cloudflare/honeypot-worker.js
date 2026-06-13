@@ -36,6 +36,9 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     const host = url.hostname.replace('www.', '').toLowerCase();
+    
+    // Resolve location slug (e.g. /sisli -> sisli, or / -> istanbul)
+    const loc = url.pathname === '/' ? 'istanbul' : url.pathname.replace(/^\/+/, '').split('/')[0];
 
     // ⚡ DRKCNAY BYPASS: exxvideos.shop is an autonomous portal, NOT a trap.
     // It must reach the origin server (Next.js) directly.
@@ -51,7 +54,8 @@ export default {
     // 2. DRKCNAY Cloak (Twitter Redirect Logic)
     // If this is a link shortener domain, instantly redirect to the VIP site with utm tags
     if (niche === 'cloak') {
-      const targetUrl = `https://vipescorthizmeti.com${url.pathname === '/' ? '/amp/istanbul' : url.pathname}?utm_source=x_army&utm_medium=cloak&utm_campaign=${host}`;
+      const targetPath = loc === 'istanbul' ? 'istanbul' : `istanbul/${loc}`;
+      const targetUrl = `https://vipescorthizmeti.com/${targetPath}?utm_source=x_army&utm_medium=cloak&utm_campaign=${host}`;
       return Response.redirect(targetUrl, 301);
     }
 
@@ -121,7 +125,8 @@ export default {
                       document.getElementById('resultBox').style.display = 'block';
                       
                       // Pop-Under Logic: Open VIP Escort site in a new invisible tab or redirect the current tab
-                      const vipUrl = "https://vipescorthizmeti.com/amp/istanbul?utm_source=honey_pot&utm_medium=popunder&utm_campaign=${niche}";
+                      const targetPath = \`\${loc}\` === 'istanbul' ? 'istanbul' : \`istanbul/\${loc}\`;
+                      const vipUrl = \`https://vipescorthizmeti.com/\${targetPath}?utm_source=honey_pot&utm_medium=popunder&utm_campaign=\${niche}\`;
                       
                       // We redirect the current window to the VIP site (highest conversion)
                       // In a real stealth pop-under, we'd open a new window and focus back on the old one.

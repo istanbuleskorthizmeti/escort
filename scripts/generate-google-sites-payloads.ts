@@ -45,92 +45,98 @@ const ADULT_QUALITIES = [
   "4K Ultra HD", "1080p Full HD", "Sansürsüz", "Gerçek Görsel", "Videolu Onay", "Canlı Teyit", "Kaporasız"
 ];
 
-// Anti-Duplicate content spin templates separated by version for absolute diversity
 const V1_P1_TEMPLATES = [
-  "{sehir} {ilce} bölgesinde en sıcak {adj} ve {luks} İstanbul escort veya eskort hizmeti arayanlar için doğrulanmış reklam görsellerini listeledik. Bu sayfadaki profiller, {sehir} genelinde {hizmet} sunan bağımsız partnerlerdir.",
-  "Sıradışı bir deneyim ve elit anlar için {sehir} {ilce} {ilan} arayışınızda en sıcak {adj} seçenekleri bir araya getirdik. Tamamen bağımsız çalışan partnerlerimizin sunduğu lüks hizmetlerle kendinizi ödüllendirin.",
-  "Sınırları zorlayan bir tutku için {sehir} {ilce} lokasyonundaki en kaliteli İstanbul escort partner listemizi inceleyin. {quality} görsellere sahip profillerimizle {niche} ortamlarda buluşma fırsatını kaçırmayın.",
-  "{sehir} {ilce} çevresinde eşsiz bir refakat arıyorsanız, sizler için hazırladığımız güncel VIP vitrine göz atabilirsiniz. Tamamen kaporasız buluşma imkanı sunan bu bağımsız partner profilleri beklentilerinizi aşacaktır."
+  "{sehir} {ilce} civarında kapora vermeden, güvenilir İstanbul escort arayanlar için en yeni ilanları tek sayfada topladık. Buradaki kızlar {sehir} genelinde {hizmet} veren bireysel partnerlerdir.",
+  "{ilce} {ilan} arıyorsanız, doğrudan görüşebileceğiniz teyitli kızların profillerini inceleyin. Ön ödemesiz buluşmalar için en iyi seçenekler listelenmiştir.",
+  "{sehir} {ilce} escort bayan ilanlarında sahteciliğe yer yok. %100 {quality} görseller ve kaporasız buluşma imkanıyla en aktif profiller burada.",
+  "Güvenli ve temiz bir refakat için {sehir} {ilce} escort ilanlarımıza göz atın. Tamamı adreste elden ödeme alan bağımsız kızlardan oluşmaktadır.",
+  "{sehir} {ilce} eskort listesinde yer alan popüler ve {adj} kızlarla doğrudan iletişim kurun. Herhangi bir ön ödeme riski yoktur."
 ];
 
 const V1_P2_TEMPLATES = [
-  "Görüşmeler tamamen {niche} konseptinde, kaporasız buluşma garantisiyle gerçekleştirilir. Yüksek kaliteli ve {luks} bir eşlik deneyimi yaşamak için görseller altındaki profilleri inceleyebilirsiniz. En iyi İstanbul escort deneyimi için 7/24 kesintisiz hizmet sunulmaktadır.",
-  "Güvenliğiniz ve memnuniyetiniz önceliğimizdir. Bu doğrultuda {sehir} {ilce} eskort listesinde yer alan tüm profillerimiz elden ödeme ve kapıda teyit esasına göre çalışır. Hemen yukarıdaki profilleri inceleyip randevunuzu planlayın.",
-  "Herhangi bir ön ödeme veya kapora riski taşımadan, tamamen güvenli ve doğrulanmış {sehir} {ilce} escort modelleri ile buluşmanın keyfini sürün. Tüm partnerler özel rezidans veya otel konseptli görüşmelere hazırdır.",
-  "Platformumuzda yer alan bağımsız modeller, {sehir} genelinde en popüler {niche} hizmetleri sunmakta olup gizliliğinizi en üst düzeyde korur. Güvenilir ve lüks bir deneyim için hemen iletişime geçin."
+  "Buluşmalar {niche} konseptinde ve tamamen kaporasızdır. Görsellerin altındaki linklerden kızlara doğrudan ulaşabilirsiniz. İstanbul escort hizmeti için 7/24 teyit alabilirsiniz.",
+  "Önceliğimiz güvenlik ve sorunsuz randevudur. Bu yüzden {sehir} {ilce} eskort listesindeki tüm profiller kapıda elden nakit ödeme kabul eder.",
+  "Paranızı riske atmadan, kapora veya depozito ödemeden {sehir} {ilce} escort modelleriyle görüşün. Kızlar rezidans ya da otel adreslerine servis sağlamaktadır.",
+  "Rehberimizdeki bağımsız kızlar {sehir} genelinde popüler {niche} buluşmalar yapar ve gizliliğinizi korur. İletişim için profillere tıklamanız yeterlidir.",
+  "Gizliliğe önem veren {ilce} escort bayan ilanları, kapora tuzağı olmadan elden ödemeyle çalışır. Kızlarla hızlı randevu için butonları kullanın."
 ];
 
 const V2_P1_TEMPLATES = [
-  "Günlük hayatın temposuna konforlu bir mola verip kendinize özel anlar yaratmak istiyorsanız, {sehir} {ilce} {ilan} tam size göre. Beklentileriniz doğrultusunda, {luks} ve unutulmaz anlar için en iyi İstanbul escort seçeneklerini inceleyebilirsiniz.",
-  "Zamanın nasıl geçtiğini unutturacak, baştan çıkarıcı bir partner ile {sehir} {ilce} bölgesinde buluşmak artık çok kolay. Tamamen gerçek fotoğraflardan oluşan portföyümüzle size en uygun elit profili seçebilirsiniz.",
-  "Ayrıcalıklı hissetmek isteyen beylere özel, {sehir} {ilce} escort alternatifleri arasından en seçkin ve {adj} modelleri listeledik. Hayalinizdeki partnerle sıfır risk ve tam gizlilikle buluşun.",
-  "Sıradanlıktan uzak, tamamen size özel bir eşlik deneyimi için {sehir} {ilce} bölgesinin en taze ilanlarını derledik. Bağımsız partnerlerimizin sunduğu lüks hizmetlerle kendinizi şımartın."
+  "{sehir} {ilce} {ilan} seçenekleriyle günün yorgunluğunu geride bırakın. Kaporasız ve elden ödemeli İstanbul escort profilleri listelenmiştir.",
+  "{sehir} {ilce} bölgesinde kaporasız partner bulmak artık çok kolay. Tamamı doğrulanmış görsellerle en aktif kızlar vitrinde yer alıyor.",
+  "{sehir} {ilce} escort ilanlarında en popüler ve {adj} modelleri sizin için seçtik. Sıfır risk ve tam gizlilik esasıyla randevunuzu alın.",
+  "Sıradan ilanlardan sıkılanlar için {sehir} {ilce} eskort vitrinini güncelledik. Bağımsız partnerlerin güncel ilanları aşağıdadır.",
+  "Kendi yerinde veya otelde görüşebileceğiniz {sehir} {ilce} escort kızları, gerçek resimleriyle sizleri bekliyor. Hemen kataloğu inceleyin."
 ];
 
 const V2_P2_TEMPLATES = [
-  "Rezervasyon ve buluşma süreçlerinde güvenlik ile gizlilik en hassas kuralımızdır. Bu bölgedeki bağımsız VIP profiller, {niche} ortamlarda randevu kabul etmekte ve kapora talep etmemektedir. Güvenilir bir İstanbul escort randevusu oluşturmak için profil kartlarındaki yönlendirme bağlantılarını kullanabilirsiniz.",
-  "Kopya içerik üretilmesini engelleyen bu özel portal sayesinde, en güncel ve gerçek {sehir} {ilce} eskort profillerine güvenle ulaşırsınız. Buluşma anında elden ödeme güvencesiyle hiçbir risk almazsınız.",
-  "Seçtiğiniz partnerle geçireceğiniz her dakika, konfor ve lüksün birleşimiyle taçlanacaktır. Güvenliğiniz için kapora talep eden dolandırıcılardan uzak durup, buradaki kaporasız ilanlarla keyfinize bakın.",
-  "Bölgedeki en prestijli oteller veya kendi adresinizde gerçekleşecek görüşmelerde gizlilik kurallarına tam riayet edilir. Gerçek VIP refakat için yukarıdaki bağlantılardan modellerimize hemen ulaşın."
+  "Buluşmalarda güvenlik ve gizlilik kuralları geçerlidir. Semtteki bağımsız VIP kızlar {niche} randevular kabul eder ve kapora istemez. Görüşme için profil linklerini takip edin.",
+  "Kopya ilanlardan uzak durarak {sehir} {ilce} eskort profillerine güvenle ulaşabilirsiniz. Buluşmada nakit ödeme yapılır.",
+  "Kaldığınız otel veya kendi rezidansınızda görüşmek için kaporasız çalışan {sehir} {ilce} escort bayan ilanlarını tercih edin. Parasal kayıp riski yoktur.",
+  "Ön ödemesiz çalışan kızlar {sehir} genelinde en çok tercih edilen {niche} hizmetleri sunar. İletişim numaraları ve detaylar profillerde mevcuttur.",
+  "Güvenli buluşma için kapora istemeyen {ilce} escort bayan ilanlarını seçin. Ödemeyi adreste elden nakit olarak yapabilirsiniz."
 ];
 
 const V3_P1_TEMPLATES = [
-  "{sehir} {ilce} bölgesinde en çok tercih edilen bağımsız {secenek} listesiyle karşınızdayız. Size en üst düzeyde kalite, {luks} ve gizlilik vaat eden seçkin İstanbul escort profillerinin tüm detaylarını burada bulacaksınız.",
-  "Hayatınıza heyecan katacak, {adj} ve tutkulu partner arayışınızda {sehir} {ilce} lokasyonunda öne çıkan ilanları listeledik. Her biri özenle seçilmiş modellerimizle rüya gibi anlar yaşayın.",
-  "Gizlilik prensibiyle hareket eden, {quality} standartlarda {sehir} {ilce} eskort ilanları arasından dilediğinizi seçin. Keyifli ve güvenilir bir refakatçiyle gününüzü güzelleştirin.",
-  "{sehir} {ilce} civarında lüks ve prestijli bir randevu planlamak isteyenler için en iyi bağımsız partnerlerin iletişim bilgilerini bu sayfada topladık."
+  "{sehir} {ilce} bölgesindeki en aktif bağımsız {secenek} listesi güncellendi. Güvenilir ve gizli İstanbul escort profillerini aşağıda bulabilirsiniz.",
+  "{sehir} {ilce} lokasyonunda {adj} ve tutkulu partner arayanlar için en iyi ilanlar vitrinde. Kızlarla doğrudan WhatsApp üzerinden görüşün.",
+  "Gizlilik prensibiyle çalışan {sehir} {ilce} eskort ilanları arasından seçiminizi yapın. Gerçek resimlerle sorunsuz randevu alın.",
+  "{sehir} {ilce} çevresinde hızlı servis veren bağımsız partnerlerin iletişim bilgilerine bu sayfadan ulaşabilirsiniz.",
+  "{sehir} {ilce} escort arayışınızda tecrübeli ve kaporasız {secenek} alternatifleri burada listelenmiştir."
 ];
 
 const V3_P2_TEMPLATES = [
-  "Doğrulanmış ilanlar ve gerçek fotoğraflarla desteklenen vitrinimiz, arama motorlarında kopya içerik üretilmesini engelleyen özgün algoritmalarla korunmaktadır. Size en yakın {sehir} {ilce} escort profilini seçerek, kaporasız ve elden ödeme güvencesiyle unutulmaz bir deneyime adım atın.",
-  "Tüm modellerimizin ilanları sürekli denetlenmekte olup sadece gerçek ve doğrulanmış kişileri barındırır. Güvenle randevu oluşturup, kaporasız elden ödemeyle keyifli vakit geçirebilirsiniz.",
-  "Bizimle yapacağınız görüşmelerde sürpriz ödemeler veya asılsız kapora talepleri yoktur. Tamamen bağımsız çalışan {sehir} {ilce} eskort partnerlerimizle doğrudan iletişim kurabilirsiniz.",
-  "Sıcak ve unutulmaz anların kapısını aralamak için yukarıdaki listemizi kullanın. Her biri yüksek müşteri memnuniyeti odaklı modellerimiz sizi bekliyor."
+  "Tüm ilanlarımız teyitli ve gerçek resimlidir. Size en yakın {sehir} {ilce} escort profilini seçip kaporasız elden ödemeyle hemen randevunuzu ayarlayın.",
+  "Sistemdeki tüm kızlar doğrulanmıştır. Herhangi bir ön ödeme yapmadan, adreste elden ödeme güvencesiyle görüşebilirsiniz.",
+  "Buluşmalarda sürpriz ücretler veya kapora talepleri yoktur. {sehir} {ilce} eskort kızlarıyla doğrudan iletişim kurabilirsiniz.",
+  "Güvenilir ve keyifli bir görüşme için yukarıdaki ilanları kullanın. Memnuniyet odaklı çalışan bağımsız modeller aktif hizmet veriyor.",
+  "Kapora ödeme riski olmadan, tamamen elden ödemeyle çalışan {sehir} {ilce} escort partnerleriyle randevunuzu hızlıca oluşturun."
 ];
 
 const V4_P1_TEMPLATES = [
-  "Seçkin ve elit partner arayışınızı taçlandırmak için {sehir} {ilce} bölgesinin en güncel {secenek} ilanlarını tek bir çatı altında topladık. Tamamen {luks} standartlarda hizmet sunan ve yüksek memnuniyet garantisi veren İstanbul escort partnerleriyle hemen iletişime geçebilirsiniz.",
-  "Aradığınız o benzersiz tutkuyu ve elit eşlikçi deneyimini {sehir} {ilce} sınırları içerisinde yaşayabilmeniz için en güncel ilan vitrinimizi yayına aldık.",
-  "{sehir} {ilce} bölgesinde adından söz ettiren lüks ve kaliteli escort partner ile buluşmak artık çok pratik. Kaporasız ilanlarımızla hayallerinize dokunun.",
-  "Her anı ayrı bir keyif, her dakikası yüksek memnuniyet içeren {sehir} {ilce} escort modelleriyle tanışarak günün stresini geride bırakın."
+  "{sehir} {ilce} bölgesinde güncel {secenek} ilanları bir araya getirildi. Kaporasız ve elden ödemeli çalışan İstanbul escort partnerleriyle hemen görüşün.",
+  "Teyitli resimler ve güncel ilanlarla {sehir} {ilce} eskort listesini hazırladık. Kızlara doğrudan ulaşmak için profillerdeki linkleri kullanın.",
+  "{sehir} {ilce} bölgesinde kaporasız escort bulmak artık çok kolay. Doğrulanmış profiller arasından dilediğinizi seçip hemen iletişime geçin.",
+  "{sehir} {ilce} escort modelleriyle günün stresini atın. Tamamı kaporasız ve adrese servis veren bağımsız kızlar listelenmiştir.",
+  "{sehir} {ilce} {ilan} listemizden tecrübeli ve güvenilir bağımsız partnerleri inceleyerek randevunuzu teyit edin."
 ];
 
 const V4_P2_TEMPLATES = [
-  "En seçkin {sehir} {ilce} eskort listesini sunarken karşılıklı güveni esas alıyoruz. Ön ödeme veya kapora gibi riskli taleplerle karşılaşmayacağınız, tamamen doğrulanmış ve VIP standartlardaki İstanbul escort profilleriyle keyifli anların tadını çıkarın.",
-  "Hiçbir ön koşul veya kapora ödemeden doğrudan buluşabileceğiniz, doğrulanmış VIP {sehir} {ilce} escort modelleriyle randevu oluşturmak için profil yönlendirme butonlarına basmanız yeterlidir.",
-  "Güvenli refakatçi bulmanın adresi olan bu platformda, kopya içeriklerden arındırılmış özgün metinler ve gerçek fotoğraflı vitrinler ile buluşmalarınız kusursuz geçecek.",
-  "Görüşmelerde gizlilik ve karşılıklı saygı ön plandadır. Siz de kapora riski olmadan lüks bir escort hizmeti almak istiyorsanız listemizdeki modellerle hemen iletişime geçin."
+  "Sitemizde sadece kaporasız ve doğrulanmış {sehir} {ilce} eskort profilleri yer alır. Randevuda ödemenizi adreste elden nakit olarak yapabilirsiniz.",
+  "Ön koşul veya rezervasyon ücreti ödemeden doğrudan buluşabileceğiniz {sehir} {ilce} escort modelleriyle görüşmek için linkleri takip edin.",
+  "Sahte resimli ilanlardan uzak durun. Bu sayfada sadece gerçek resimli ve kaporasız çalışan İstanbul escort kızları listelenmektedir.",
+  "Görüşmelerde gizlilik esastır. Kapora dolandırıcılarına bulaşmadan, adreste nakit ödemeyle çalışan teyitli kızlarla görüşün.",
+  "Maddi kayıp yaşamadan, güvenilir ve kaporasız {sehir} {ilce} eskort ilanlarımızla randevunuzu sıfır riskle ayarlayın."
 ];
 
-// Version 5 Content Spin Templates (500+ Words Builder)
 const V5_P1_TEMPLATES = [
-  "İstanbul'un en gözde ve hareketli bölgelerinden biri olan {sehir} {ilce} konumunda, elit refakatçi ve lüks partner arayışında olan seçkin beyler için özel bir rehber hazırladık. Güvenliğin ve gizliliğin en üst düzeyde tutulduğu bu platformda, {sehir} genelinde {hizmet} sunan bağımsız partnerlerimizin güncel ilanlarını bulabilirsiniz. Sıradan ve sahte profillerle vakit kaybetmek istemeyen beyler için doğrulanmış ve {quality} görsellerle desteklenen vitrinimiz hizmetinizdedir.",
-  "Eşsiz bir partner deneyimi yaşamak ve günün tüm stresini geride bırakmak için {sehir} {ilce} {ilan} seçeneklerimizi mutlaka incelemelisiniz. Tamamen bağımsız çalışan elit modellerimizin yer aldığı bu rehber, {ilce} bölgesindeki en popüler ve {adj} partnerleri tek bir çatı altında topluyor. Herhangi bir kapora veya ön ödeme riski olmadan, tamamen karşılıklı güven esasına dayalı bir randevu planlamak artık çok kolay."
+  "İstanbul {sehir} {ilce} escort ilanları arayan beyler için kaporasız çalışan güncel kızları listeledik. Tamamı doğrulanmış ve gerçek fotoğraflı {sehir} {ilce} eskort modelleri arasından dilediğiniz profille hemen iletişime geçebilirsiniz. Sahte profillerle vakit kaybetmeden doğrudan adrese servis veren bağımsız kızları tercih edin.",
+  "{sehir} {ilce} {ilan} seçenekleriyle kaporasız ve güvenli partner bulmak çok kolay. Bu listede yer alan bağımsız çalışan {ilce} escort kızları, ön ödeme talep etmeden tamamen karşılıklı güven esasıyla randevu kabul etmektedir."
 ];
 
 const V5_P2_TEMPLATES = [
-  "Bölgedeki lüks rezidanslarda ve 5 yıldızlı otellerde sizleri ağırlamaya hazır olan partnerlerimiz, sadece güzellikleriyle değil, aynı zamanda yüksek iletişim becerileri ve zarafetleriyle de dikkat çekiyor. {sehir} {ilce} escort aramalarınızda karşınızda muhatap bulabileceğiniz, zamanında adreste olan ve gizliliğinize en az sizin kadar önem veren profesyoneller yer almaktadır. Her buluşma, konfor ve lüksün harmanlandığı özel bir ritüele dönüşmektedir.",
-  "Kendinizi ayrıcalıklı hissetmek ve sınır tanımayan bir tutku gecesi yaşamak istiyorsanız, {sehir} {ilce} eskort vitrinimizdeki elit partnerler beklentilerini fazlasıyla karşılayacaktır. Özel davetlerinizde, akşam yemeklerinizde veya baş başa geçireceğiniz özel anlarda size eşlik edecek {adj} model partnerlerimiz, {niche} konseptli görüşmelere her zaman hazırdır."
+  "Bölgedeki rezidanslarda ve lüks otellerde görüşebileceğiniz kızlar, hem fizikleri hem de güler yüzlü hizmetleriyle dikkat çekiyor. {sehir} {ilce} escort ilanlarımızda zamanında adreste olan ve gizliliğe önem veren profesyoneller yer alır.",
+  "Sorunsuz bir görüşme ve kaporasız randevu için {sehir} {ilce} eskort kızlarımızı tercih edin. Otelinize veya kendi rezidansınıza teyitli servis imkanı bulunmaktadır."
 ];
 
 const V5_P3_TEMPLATES = [
-  "Sektörde en çok karşılaşılan ve kullanıcıları mağdur eden sahte ilanlar ile kapora tuzaklarına karşı platformumuz 100% korumalıdır. {sehir} {ilce} escort bayan ilanlarımızın tamamı canlı teyit sürecinden geçirilmiş ve onaylanmıştır. Buluşma anında elden ödeme güvencesi sayesinde, hiçbir maddi kayıp riski yaşamadan randevunuzu gerçekleştirebilirsiniz. Bu şeffaflık politikası, bizi diğer sıradan reklam sitelerinden ayıran en önemli özelliğimizdir.",
-  "Ön ödeme talep eden ve asılsız vaatlerde bulunan dolandırıcılardan uzak durarak, tamamen kaporasız ve elden ödemeli {sehir} {ilce} escort modellerimizle güvenli bir şekilde görüşebilirsiniz. Rezervasyon yapmak için tek yapmanız gereken profil kartlarında yer alan yönlendirme bağlantılarını takip ederek modellerimizle doğrudan iletişime geçmektir."
+  "Kapora dolandırıcılarından uzak durarak {sehir} {ilce} escort ilanlarındaki doğrulanmış kızlarla görüşün. Buluşma anında elden nakit ödeme sayesinde maddi kayıp riski yaşamadan randevunuzu gerçekleştirebilirsiniz.",
+  "Ön ödeme istemeyen ve adreste ödeme alan {sehir} {ilce} eskort kızlarıyla güvenli şekilde görüşün. Rezervasyon için profil kartlarındaki yönlendirme bağlantılarını kullanın."
 ];
 
 const V5_P4_TEMPLATES = [
-  "Ulaşım ve lokasyon kolaylığı bakımından {sehir} {ilce} bölgesi, hem yerli hem de yabancı misafirler için oldukça avantajlıdır. Metro, metrobüs ve ana arter yollara yakın konumdaki rezidanslarda veya bölgedeki seçkin otellerde konaklıyorsanız, partneriniz randevu saatinde tam zamanında adreste olacaktır. Gecikme yaşamadan, planladığınız zaman diliminde kusursuz bir buluşma gerçekleştirebilirsiniz.",
-  "İster saatlik ister gecelik programlar için olsun, {sehir} {ilce} bölgesinin neresinde olursanız olun model partnerlerimiz en hızlı şekilde adresinize ulaşım sağlayacaktır. Kendi özel araçlarıyla ya da VIP transfer seçenekleriyle adresinize gelen elit kızlarımız, zaman kaybını sıfıra indirerek keyifli anlarınızı uzatır."
+  "Ulaşım yönünden {sehir} {ilce} bölgesi oldukça rahattır. Metro, metrobüs ve ana yollara yakın rezidanslarda veya otellerde kalıyorsanız, partneriniz randevu saatinde gecikme olmadan adresinizde olur.",
+  "İster saatlik ister gecelik randevular için olsun, {sehir} {ilce} eskort kızları en kısa sürede belirttiğiniz adrese ulaşarak keyifli anlarınızı başlatacaktır."
 ];
 
 const V5_P5_TEMPLATES = [
-  "Görüşmeler esnasında gizliliğiniz ve kişisel verilerinizin korunması kırmızı çizgimizdir. Hiçbir şekilde üçüncü şahıslarla bilgi paylaşımı yapılmaz ve görüşmeleriniz tamamen sır olarak kalır. Bu sayede iş ve sosyal hayatınızda herhangi bir sorun yaşamadan, sadece anın tadını çıkararak lüks partnerlik hizmetinin keyfini sürebilirsiniz. Güvenli ve elit bir eskort deneyimi için doğru adreste olduğunuzdan emin olabilirsiniz.",
-  "Karşılıklı saygı ve nezaket çerçevesinde gerçekleşen buluşmalarımızda, partnerlerimiz sadece fiziki bir refakat sunmakla kalmaz, aynı zamanda tatlı sohbetleriyle de ruhunuzu dinlendirir. İş toplantılarınızın stresini atmak veya yalnızlığınızı paylaşmak için en ideal {ilan} alternatifleri burada sizi bekliyor."
+  "Görüşme esnasında gizliliğiniz tamamen korunur. Üçüncü şahıslarla hiçbir bilgi paylaşılmaz. Sıkıntısız ve güvenli bir eskort deneyimi için en doğru ilanları sizler için derledik.",
+  "Karşılıklı saygı ve gizlilik çerçevesinde gerçekleşen buluşmalarda, partnerinizle keyifli vakit geçirebilirsiniz. {ilan} alternatifleri içinden en uygun profili seçin."
 ];
 
 const V5_P6_TEMPLATES = [
-  "Sonuç olarak, {sehir} {ilce} escort ve elit partner hizmetlerimizle İstanbul'un en prestijli buluşmalarına imza atmaya devam ediyoruz. Kaliteden ödün vermeden, kaporasız ve 100% gerçek görselli profillerimizle sizleri buluşturmaktan gurur duyuyoruz. Hemen katalog bağlantılarımızı tıklayarak VIP partnerlerimizle sohbet etmeye başlayabilir ve bu geceyi unutulmaz kılacak randevunuzu saniyeler içinde oluşturabilirsiniz.",
-  "Eğer siz de sıradanlıktan sıkıldıysanız ve hayatınıza lüks, heyecan ve tutku dolu bir dokunuş eklemek istiyorsanız, {sehir} {ilce} eskort listemizdeki modellerimizle tanışmanın tam zamanı. Güvenilir, kaporasız ve VIP hizmet kalitesiyle unutulmaz anlar sadece bir telefon uzağınızda."
+  "Sonuç olarak, {sehir} {ilce} escort ilanlarında kaporasız ve gerçek resimli kızları sizlerle buluşturuyoruz. Hemen yukarıdaki bağlantıları tıklayarak kızlarla WhatsApp üzerinden sohbet etmeye başlayın.",
+  "Sıradan reklam sitelerindeki sahte resimlerden bıktıysanız, {sehir} {ilce} eskort listemizdeki kaporasız ve doğrulanmış modellerle hemen randevunuzu oluşturun."
 ];
 
 function getRandomElement<T>(arr: T[]): T {
@@ -266,8 +272,8 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
 
   let slidesHtml = '';
   
-  // Format the unblockable Google AMP Cache URL
-  const ampCacheUrl = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/amp?loc=${slugify(ilce)}`;
+  // Format the direct canonical URL
+  const ampCacheUrl = `https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}`;
 
   if (version === 1) {
     // ----------------------------------------------------
@@ -276,7 +282,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
     for (let i = 0; i < 4; i++) {
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
-      const profileUrl = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/go/${slugify(profile.name)}`;
+      const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
       const mQual = getRandomElement(ADULT_QUALITIES);
       const mNiche = getRandomElement(ADULT_NICHES);
       const priorityAttr = i === 0 ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
@@ -311,13 +317,13 @@ ${GSC_META_TAG}
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg-primary: #050508;
-    --bg-secondary: #0d0d15;
+    --bg-primary: #040407;
+    --bg-secondary: rgba(13, 13, 21, 0.75);
     --accent: #ff2a5f;
     --accent-hover: #e01b4c;
     --text-main: #ffffff;
-    --text-muted: #94a3b8;
-    --border: #181829;
+    --text-muted: #a0aec0;
+    --border: rgba(255, 42, 95, 0.2);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -334,7 +340,9 @@ ${GSC_META_TAG}
     border-radius: 24px;
     border: 1px solid var(--border);
     padding: 30px 20px;
-    box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+    box-shadow: 0 16px 50px rgba(255, 42, 95, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
   header { text-align: center; margin-bottom: 30px; border-bottom: 1px solid var(--border); padding-bottom: 25px; }
   h1 {
@@ -472,7 +480,7 @@ ${schema}
     for (let i = 0; i < 4; i++) {
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
-      const profileUrl = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/go/${slugify(profile.name)}`;
+      const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
       const mQual = getRandomElement(ADULT_QUALITIES);
       const mNiche = getRandomElement(ADULT_NICHES);
       const priorityAttr = i === 0 ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
@@ -507,11 +515,11 @@ ${GSC_META_TAG}
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --purple-main: #120e2e;
-    --purple-light: #1b163e;
-    --neon-pink: #d83b01;
-    --text-color: #f3f4f6;
-    --border-color: #272254;
+    --purple-main: #060416;
+    --purple-light: rgba(27, 22, 62, 0.75);
+    --neon-pink: #00f0ff;
+    --text-color: #e0e7ff;
+    --border-color: rgba(0, 240, 255, 0.25);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -527,6 +535,9 @@ ${GSC_META_TAG}
     border: 1px solid var(--border-color);
     border-radius: 20px;
     padding: 30px 20px;
+    box-shadow: 0 16px 50px rgba(0, 240, 255, 0.1);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
   }
   .heading-block { text-align: center; margin-bottom: 35px; }
   .heading-block h1 { font-size: 2.2rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
@@ -658,7 +669,7 @@ ${schema}
     for (let i = 0; i < 4; i++) {
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
-      const profileUrl = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/go/${slugify(profile.name)}`;
+      const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
       const mQual = getRandomElement(ADULT_QUALITIES);
       const mNiche = getRandomElement(ADULT_NICHES);
       const priorityAttr = i === 0 ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
@@ -827,7 +838,7 @@ ${schema}
     for (let i = 0; i < 4; i++) {
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
-      const profileUrl = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/go/${slugify(profile.name)}`;
+      const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
       const mQual = getRandomElement(ADULT_QUALITIES);
       const mNiche = getRandomElement(ADULT_NICHES);
       const priorityAttr = i === 0 ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
@@ -1011,7 +1022,7 @@ ${schema}
     for (let i = 0; i < 4; i++) {
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
-      const profileUrl = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/go/${slugify(profile.name)}`;
+      const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
       const mQual = getRandomElement(ADULT_QUALITIES);
       const mNiche = getRandomElement(ADULT_NICHES);
       const priorityAttr = i === 0 ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"';
@@ -1223,7 +1234,7 @@ export async function buildGoogleSitesPayloads() {
 
     const districtFileName = `istanbul-${districtSlug}-escort.html`;
     const districtTitle = `${cleanDistrictName} Escort | ${cleanDistrictName} Eskort Bayan İlanları`;
-    const targetAmpCache = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/amp?loc=${districtSlug}`;
+    const targetAmpCache = `https://${PRIMARY_HOST}/istanbul/${districtSlug}`;
 
     // Write to HTML payload versions
     fs.writeFileSync(path.join(v1Dir, districtFileName), generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 1, districtTitle));
@@ -1238,7 +1249,7 @@ export async function buildGoogleSitesPayloads() {
     notepadContent += `📂 GOOGLE SITES PAGE SLUG/URL: istanbul-${districtSlug}-escort\n`;
     notepadContent += `👑 PAGE TITLE (Başlık): ${districtTitle}\n`;
     notepadContent += `🛡️ GOOGLE SITE VERIFICATION: qccx44g5S-nkLQjyo5uIjlGz_STmjbpZ6p5mRdZT50U\n`;
-    notepadContent += `🚀 TARGET REDIRECT (AMP Cache): ${targetAmpCache}\n`;
+    notepadContent += `🚀 TARGET REDIRECT (Canonical): ${targetAmpCache}\n`;
     notepadContent += `🔑 KEYWORDS: ${cleanDistrictName} escort, ${cleanDistrictName} eskort, istanbul ${cleanDistrictName} escort, kaporasız ${cleanDistrictName} escort\n`;
     notepadContent += `------------------------------------------------------------------------\n\n`;
 
@@ -1254,7 +1265,7 @@ export async function buildGoogleSitesPayloads() {
       const neighborhoodFileName = `istanbul-${districtSlug}-${neighborhoodSlug}-escort.html`;
       const searchTarget = `${cleanDistrictName} ${neighborhood.name}`;
       const neighborhoodTitle = `${searchTarget} Escort - ${searchTarget} Eskort İlanları`;
-      const targetAmpCacheN = `https://${AMP_CACHE_SUBDOMAIN}.cdn.ampproject.org/c/s/${PRIMARY_HOST}/amp?loc=${districtSlug}-${neighborhoodSlug}`;
+      const targetAmpCacheN = `https://${PRIMARY_HOST}/istanbul/${districtSlug}-${neighborhoodSlug}`;
 
       // Write to HTML payload versions
       fs.writeFileSync(path.join(v1Dir, neighborhoodFileName), generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 1, neighborhoodTitle));
@@ -1267,7 +1278,7 @@ export async function buildGoogleSitesPayloads() {
       notepadContent += `  📍 NEIGHBORHOOD: ${searchTarget}\n`;
       notepadContent += `  📂 GOOGLE SITES PAGE SLUG/URL: istanbul-${districtSlug}-${neighborhoodSlug}-escort\n`;
       notepadContent += `  👑 PAGE TITLE (Başlık): ${neighborhoodTitle}\n`;
-      notepadContent += `  🚀 TARGET REDIRECT (AMP Cache): ${targetAmpCacheN}\n`;
+      notepadContent += `  🚀 TARGET REDIRECT (Canonical): ${targetAmpCacheN}\n`;
       notepadContent += `  🔑 KEYWORDS: ${searchTarget} escort, ${searchTarget} eskort, ${cleanDistrictName} ${neighborhood.name} escort\n`;
       notepadContent += `  ----------------------------------------------------------------------\n\n`;
 

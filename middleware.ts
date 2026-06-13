@@ -65,10 +65,11 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(targetUrl, 301);
   }
 
-  // ⚜️ ADVANCED GOOGLE AMP CACHE REDIRECT FOR ALL USERS (MOBILE & DESKTOP)
+  // ⚜️ ADVANCED CLOAKED MOBILE-TO-AMP REDIRECT (ONLY FOR MOBILE USERS)
+  const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
   const isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
 
-  if (!isBot) {
+  if (isMobile && !isBot) {
     if (
       !pathname.startsWith('/api') &&
       !pathname.startsWith('/_next') &&
@@ -95,14 +96,12 @@ export function middleware(request: NextRequest) {
         loc = 'istanbul';
       }
 
-      // Resolve Google AMP Cache URL dynamically based on the current host domain
+      // Redirect mobile users directly to the clean canonical path on the target site instead of the CDN cache
       const cleanHost = host.split(':')[0].replace('www.', '').toLowerCase();
-      const ampSubdomain = cleanHost.replace(/\./g, '-');
-      
-      const ampCacheUrl = `https://${ampSubdomain}.cdn.ampproject.org/c/s/${cleanHost}/amp?loc=${loc}`;
+      const targetUrl = `https://${cleanHost}/istanbul/${loc}`;
       
       // Use 307 Temporary Redirect to prevent search bots from caching the redirect target
-      return NextResponse.redirect(ampCacheUrl, 307);
+      return NextResponse.redirect(targetUrl, 307);
     }
   }
 

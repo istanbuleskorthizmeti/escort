@@ -109,15 +109,13 @@ export default async function NeighborhoodPage({
 
   const landmarks = districtLandmarks[district] || ["Modern Rezidanslar", "Lüks Oteller", "Exclusive Mekanlar"];
   const transport = transportProfiles[district] || "Bölge, özel transfer ve profesyonel ulaşım ağlarına tam entegre konumdadır.";
-
   // Dynamic Content with City context
   const intros = [
-    `Buluşmak için ${nName} escort gacı buluşma rehberi! ${cityName} ${dName} ilçesinde randevu almak ve iletişim kurmak için en güzel çıtır eskort bayan ve çıtır genç kız profilleri burada.`,
-    `${nName} eskort gacı bayan seçenekleriyle heyecan dolu anlar yaşayın. İletişim kurmak için telefon numaraları, buluşmak için otele eve servis genç kız ve randevu için seksi bayan eskortlar.`,
-    `Görüşmek ve randevu almak için en seçkin ${nName} eskort gacı modelleri! ${cityName} genelinde çıtır genç kız escort bayan ve daha fazlası için 7/24 randevu oluşturabilirsiniz.`,
-    `İletişim için en popüler ${nName} escort bayan profilleri. Buluşmak için eskort, randevu için çıtır gacı, kadını ve genç kız seçenekleriyle güncel kataloğu hemen inceleyin.`
+    `Buluşmak için ${nName} escort buluşma rehberi! ${cityName} ${dName} ilçesinde randevu almak ve iletişim kurmak için en güzel vip eskort bayan ve seçkin partner profilleri burada.`,
+    `${nName} eskort bayan seçenekleriyle heyecan dolu anlar yaşayın. İletişim kurmak için telefon numaraları, buluşmak için otele eve servis vip partner ve randevu için seksi bayan eskortlar.`,
+    `Görüşmek ve randevu almak için en seçkin ${nName} eskort vip modelleri! ${cityName} genelinde elit escort bayan ve daha fazlası için 7/24 randevu oluşturabilirsiniz.`,
+    `İletişim için en popüler ${nName} escort bayan profilleri. Buluşmak için eskort, randevu için vip partner, kadını ve seksi model seçenekleriyle güncel kataloğu hemen inceleyin.`
   ];
-
   const intro = getRand(intros);
 
   const breadcrumbs = [
@@ -136,7 +134,7 @@ export default async function NeighborhoodPage({
         name={`${nName} Elit Hub`}
         city={cityName}
         district={dName}
-        description={`${nName} bölgesinde buluşmak için eskort gacı, randevu için genç kız ve iletişim için eskort bayan rehberlik hizmetleri.`}
+        description={`${nName} bölgesinde buluşmak için vip eskort, randevu için vip partner ve iletişim için eskort bayan rehberlik hizmetleri.`}
         ratingValue={4.9}
         reviewCount={Math.floor(2800 + rand() * 4000)}
       />
@@ -155,7 +153,7 @@ export default async function NeighborhoodPage({
                   "name": `${nName} bölgesinde eskort randevusu ve buluşma süreci nasıl işler?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `${nName} bölgesinde tüm süreçler gizlilik odaklı ilerler. Sektörün en güvenilir eskort gacı bayan rehberliği ile buluşmak için randevu alabilirsiniz.`
+                    "text": `${nName} bölgesinde tüm süreçler gizlilik odaklı ilerler. Sektörün en güvenilir vip eskort bayan danışmanlığı ile buluşmak için randevu alabilirsiniz.`
                   }
                 },
                 {
@@ -264,7 +262,7 @@ export default async function NeighborhoodPage({
               02. İletişim ve Buluşmak İçin Escort Bayan Standartları
             </h2>
             <div className="prose prose-invert max-w-none text-zinc-400 text-lg md:text-2xl leading-relaxed lowercase first-letter:uppercase italic font-medium bg-zinc-950/40 p-12 md:p-24 border-l-8 border-rose-600 rounded-r-3xl">
-              <p>İletişim kurmak ve buluşmak için eskort gacı bayan kadromuz {nName} bölgesinde 7/24 hizmet vermektedir. Buluşmak için escort, randevu almak için eskort ve seksi genç kız bayan alternatiflerimiz sunulmaktadır.</p>
+              <p>İletişim kurmak ve buluşmak için vip eskort bayan kadromuz {nName} bölgesinde 7/24 hizmet vermektedir. Buluşmak için escort, randevu almak için eskort ve seksi model alternatiflerimiz sunulmaktadır.</p>
             </div>
           </section>
         </article>
@@ -306,10 +304,10 @@ export default async function NeighborhoodPage({
       <footer className="py-40 border-t border-zinc-900 mt-20 bg-zinc-950/80 text-center px-10 backdrop-blur-3xl">
         <div className="max-w-7xl mx-auto space-y-20">
           <h2 className="text-3xl md:text-5xl font-black italic text-white tracking-[0.3em] uppercase">
-            {cityName.toUpperCase()} ESCORT BAYAN GACI NETWORK
+            {cityName.toUpperCase()} ESCORT BAYAN VIP NETWORK
           </h2>
           <div className="text-[9px] font-black tracking-[1em] text-zinc-800 uppercase italic opacity-20">
-            ESCORT ESKORT GACI BAYAN // 2026
+            ESCORT ESKORT VIP BAYAN // 2026
           </div>
         </div>
       </footer>

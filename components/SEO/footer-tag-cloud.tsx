@@ -41,13 +41,13 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
           <h2 className="text-[var(--primary-color)] text-sm font-black uppercase tracking-[0.25em] mb-2">
-            {isFlagship ? "DORUKCANAY ELITE VIP MODEL REHBERİ & BÖLGESEL HİZMET AĞI" : "İSTANBUL ESCORT ESKORT GACI BAYAN REHBERİ & BÖLGELER"}
+            {isFlagship ? "DORUKCANAY ELITE VIP MODEL REHBERİ & BÖLGESEL HİZMET AĞI" : "İSTANBUL ESCORT ESKORT VIP BAYAN REHBERİ & BÖLGELER"}
           </h2>
           <p className="text-zinc-500 text-xs max-w-2xl mx-auto leading-relaxed">
             {isFlagship ? (
               <>İstanbul genelinde lüks ve prestijli refakatçi seansları sunan seçkin bağımsız model partnerlerimize ve bölgesel hizmet alanlarımıza aşağıdaki listeden ulaşabilirsiniz.</>
             ) : (
-              <>İstanbul genelinde buluşmak için eskort gacı, randevu için genç kız ve iletişim için escort bayan arayanlara özel bölgesel kataloglarımıza ve detaylı rehberlerimize aşağıdaki bağlantılardan ulaşabilirsiniz.</>
+              <>İstanbul genelinde buluşmak için eskort bayan, randevu için vip partner ve iletişim için escort bayan arayanlara özel bölgesel kataloglarımıza ve detaylı rehberlerimize aşağıdaki bağlantılardan ulaşabilirsiniz.</>
             )}
           </p>
         </div>
@@ -56,20 +56,20 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
           {DISTRICTS.map((district) => {
             const niches = isFlagship
               ? [
-                  'VIP Companion',
-                  'Elite Model',
+                  'Vip Escort',
+                  'Elite Eskort',
                   'Lüks Partner',
-                  'Bağımsız Refakatçi',
+                  'VIP Companion',
                   'Premium Model',
                   'Seçkin Eşlik'
                 ]
               : [
                   'Escort Bayan',
-                  'Çıtır Eskort',
-                  'Genç Kız Gacı',
-                  'Görüşmek İçin Bayan',
-                  'Buluşmak İçin Kadın',
-                  'Randevu İçin Escort'
+                  'Eskort Bayan',
+                  'Elite Eskort',
+                  'VIP Partner',
+                  'Randevu İçin Escort',
+                  'Buluşmak İçin Eskort'
                 ];
             // Deterministic selection based on length to maintain hydration stability
             const niche = niches[district.name.length % niches.length];
@@ -94,7 +94,7 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
 
         <div className="mt-8 pt-8 border-t border-zinc-900/60 text-center flex flex-col sm:flex-row items-center justify-between gap-4">
           <span className="text-zinc-600 text-[11px]">
-            {isFlagship ? "© 2026 Dorukcanay Elite VIP Rehberi. Tüm Hakları Saklıdır." : "© 2026 Escort Eskort Gacı Bayan Hizmeti. Tüm Hakları Saklıdır."}
+            {isFlagship ? "© 2026 Dorukcanay Elite VIP Rehberi. Tüm Hakları Saklıdır." : "© 2026 Escort Eskort VIP Bayan Hizmeti. Tüm Hakları Saklıdır."}
           </span>
           <div className="flex gap-4">
             <Link 

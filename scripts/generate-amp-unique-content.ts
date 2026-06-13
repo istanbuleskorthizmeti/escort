@@ -11,7 +11,7 @@ const districts = [
   'kagitthane', 'sancaktepe', 'basaksehir', 'esenler', 'eyupsultan', 'beykoz', 
   'beyoglu', 'cekmekoy', 'tuzla', 'arnavutkoy', 'gaziosmanpasa', 'sultanbeyli', 
   'gungoren', 'zeytinburnu', 'sile', 'catalca', 'silivri', 'buyukcekmece', 
-  'kucukcekmece', 'adalar', 'bayrampasa', 'sultangazi'
+  'kucukcekmece', 'adalar', 'bayrampasa', 'sultangazi', 'sefakoy', 'besyol'
 ];
 
 const trMapNames: { [key: string]: string } = {
@@ -28,7 +28,7 @@ const trMapNames: { [key: string]: string } = {
   gungoren: 'Güngören', zeytinburnu: 'Zeytinburnu', sile: 'Şile',
   catalca: 'Çatalca', silivri: 'Silivri', buyukcekmece: 'Büyükçekmece',
   kucukcekmece: 'Küçükçekmece', adalar: 'Adalar', bayrampasa: 'Bayrampaşa',
-  sultangazi: 'Sultangazi'
+  sultangazi: 'Sultangazi', sefakoy: 'Sefaköy', besyol: 'Beşyol'
 };
 
 const DATA_FILE = path.join(process.cwd(), 'data', 'amp_unique_content.json');
@@ -76,7 +76,7 @@ async function run() {
 
     const prompt = `İstanbul'un ${locName} ilçesi için, o bölgede lüks ve VIP escort/partner arayan seçkin müşterilere yönelik 120-150 kelimelik tamamen özgün bir SEO tanıtım ve rehber metni yaz. Ardından o ilçeye özel 2 adet Soru-Cevap (FAQ) oluştur.
     
-Metin içinde şu anahtar kelimeleri ve varyasyonlarını tamamen doğal, akıcı ve profesyonel bir üslupla erit: "${locName} escort", "çıtır gacı", "kaporasız randevu", "eve ve otele servis", "doğrulanmış fotoğraflar".
+Metin içinde şu anahtar kelimeleri ve varyasyonlarını tamamen doğal, akıcı ve profesyonel bir üslupla erit: "${locName} escort", "vip partner", "kaporasız randevu", "eve ve otele servis", "doğrulanmış fotoğraflar".
 Ödeme modelinin kesinlikle kaporasız olduğunu, herhangi bir ön ödeme veya depozito alınmadığını, görüşmenin tamamen yüz yüze ve elden ödemeli olduğunu vurgula. Güvenlik ve gizlilik ilkelerinden bahset.
 
 Çıktıyı kesinlikle şu JSON formatında döndür, markdown veya açıklama yazısı ekleme:

@@ -68,14 +68,12 @@ export default async function DistrictHubPage({
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
-
   const intros = [
-    `Buluşmak için ${dName} escort arayanlara özel çıtır gacı eskort rehberi! ${cityName} genelinde randevu almak ve iletişim kurmak için en güzel seksi bayan ve çıtır genç kız profillerini listeliyoruz. **Ödemeler yüz yüze görüşme anında yapılır.**`,
-    `${dName} bölgesinde çıtır eskort gacı buluşma noktası. Görüşmek için ve randevu almak için 7/24 hizmet veren en hiddetli ve seksi bayan escort alternatifleriyle tanışın.`,
-    `${cityName} ${dName} eskort bayan kataloğu. İletişim için telefon numarası, buluşmak için otele eve gelen çıtır genç kız eskortlar ve randevu için olgun gacı seçenekleri.`,
-    `Buluşmak ve görüşmek için en güvenilir ${dName} eskort gacı bayan seçenekleri. Randevu almak için, iletişim ve daha fazlası için listemizde yer alan doğrulanmış modellerimizi hemen inceleyin.`
+    `Buluşmak için ${dName} escort arayanlara özel Vip eskort bayan rehberi! ${cityName} genelinde randevu almak ve iletişim kurmak için en güzel seksi bayan ve seçkin partner profillerini listeliyoruz. **Ödemeler yüz yüze görüşme anında yapılır.**`,
+    `${dName} bölgesinde Vip eskort bayan buluşma noktası. Görüşmek için ve randevu almak için 7/24 hizmet veren en elit ve seksi bayan escort alternatifleriyle tanışın.`,
+    `${cityName} ${dName} eskort bayan kataloğu. İletişim için telefon numarası, buluşmak için otele eve gelen Vip partner eskortlar ve randevu için olgun model seçenekleri.`,
+    `Buluşmak ve görüşmek için en güvenilir ${dName} eskort bayan seçenekleri. Randevu almak için, iletişim ve daha fazlası için listemizde yer alan doğrulanmış modellerimizi hemen inceleyin.`
   ];
-
   const intro = intros[Math.floor(rand() * intros.length)];
 
   // Veritabanı bağlantıları
@@ -100,7 +98,7 @@ export default async function DistrictHubPage({
             {
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              "name": `${dName} Escort Eskort Gacı Bayan Hub`,
+              "name": `${dName} Vip Escort Eskort Bayan Hub`,
               "image": "https://istanbulescort.blog/og-premium.png",
               "telephone": siteConfig.contact.whatsappNumber,
               "url": `https://istanbulescort.blog/${city}/${district}`,
@@ -135,7 +133,7 @@ export default async function DistrictHubPage({
                   "name": `${dName} bölgesinde buluşmak için escort randevu süreci nasıl ilerler?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `EscortVIP platformu üzerinden ${dName} lokasyonundaki eskort gacı temsilcimiz ${adminProfile.name} ile iletişime geçerek buluşmak için güvenli bir süreç başlatabilirsiniz.`
+                    "text": `EscortVIP platformu üzerinden ${dName} lokasyonundaki Vip eskort danışmanımız ${adminProfile.name} ile iletişime geçerek buluşmak için güvenli bir süreç başlatabilirsiniz.`
                   }
                 }
               ]
@@ -186,7 +184,7 @@ export default async function DistrictHubPage({
         {siteConfig.features.enableProfileShowcase ? (
           <section className="mb-40">
             <div className="flex items-center justify-between mb-12">
-              <h2 className="text-3xl font-black tracking-tighter uppercase italic text-zinc-200">Randevu İçin Escort Gacılar</h2>
+              <h2 className="text-3xl font-black tracking-tighter uppercase italic text-zinc-200">Randevu İçin Elit Modeller</h2>
               <div className="text-sm font-bold text-rose-600 animate-pulse hidden md:block">● AKTİF BULUŞMA RANDEVUSU</div>
             </div>
             
@@ -265,7 +263,7 @@ export default async function DistrictHubPage({
         <section className="mb-40 relative bg-zinc-950 border border-zinc-900 rounded-[3rem] p-12 overflow-hidden flex flex-col md:flex-row items-center justify-between">
            <div className="absolute top-0 right-0 w-full h-full bg-linear-to-r from-transparent to-rose-900/10 pointer-events-none"></div>
            <div className="max-w-2xl z-10">
-              <p className="text-zinc-400 mb-6">Escort, eskort, gacı veya bayan olarak kadromuza dahil olmak isteyen hanımefendiler için sıfır-iz (Tam Gizlilik) prensibiyle çalışan başvuru protokolü. Başvurular sunucularımızda KESİNLİKLE loglanmaz. IP adresiniz şifrelenir ve tüm dosyalar offshore ağlara aktarılır.</p>
+              <p className="text-zinc-400 mb-6">Escort, eskort, model veya bayan olarak kadromuza dahil olmak isteyen hanımefendiler için sıfır-iz (Tam Gizlilik) prensibiyle çalışan başvuru protokolü. Başvurular sunucularımızda KESİNLİKLE loglanmaz. IP adresiniz şifrelenir ve tüm dosyalar offshore ağlara aktarılır.</p>
               <Link href="/katilim-protokolu" className="inline-block bg-white text-black px-8 py-4 rounded-full font-black uppercase tracking-widest hover:bg-zinc-200 transition-colors">
                  İletişim ve Başvuru Başlat
               </Link>
@@ -282,16 +280,16 @@ export default async function DistrictHubPage({
                  {dName} bölgesinde buluşmak için escort randevusu nasıl planlanır?
                </summary>
                <div className="p-6 pt-0 text-zinc-400 leading-relaxed">
-                 EscortVIP ağı üzerinden yaptığınız tüm işlemler {adminProfile.name} yönetimi altında tamamen gizlidir. {cityName} şehrinin dinamiklerine tam hakimiyetimiz sayesinde, {dName} içindeki en lüks otel, residence veya eve gelen çıtır eskort yönlendirmeleri tarafımızca sağlanır. İletişim kurup randevu almak için bize yazmanız yeterlidir.
+                  EscortVIP ağı üzerinden yaptığınız tüm işlemler {adminProfile.name} yönetimi altında tamamen gizlidir. {cityName} şehrinin dinamiklerine tam hakimiyetimiz sayesinde, {dName} içindeki en lüks otel, residence veya eve gelen vip eskort yönlendirmeleri tarafımızca sağlanır. İletişim kurup randevu almak için bize yazmanız yeterlidir.
                </div>
              </details>
 
              <details className="group bg-zinc-950 border border-zinc-900 rounded-2xl [&_summary::-webkit-details-marker]:hidden">
                 <summary className="cursor-pointer p-6 font-bold text-lg hover:text-rose-600 transition-colors outline-hidden">
-                  Görüşmelerde güvenlik ve gizlilik protokolleri eskort gacı bayan kadromuzda nasıl işler?
+                  Görüşmelerde güvenlik ve gizlilik protokolleri eskort bayan kadromuzda nasıl işler?
                 </summary>
                 <div className="p-6 pt-0 text-zinc-400 leading-relaxed">
-                  Kesinlikle. Elit eskort bayan kod adıyla yürüttüğümüz bu sistemde; telefon numaralarınız maskelenir, veriler 24 saat içinde sistemimizden tamamen silinir. Hem profil onayları hem de beyefendilerin güvenliği açısından Türkiye&apos;nin tartışmasız en sıkı escort randevu protokolünü uyguluyoruz. Buluşmak için escort gacı aramalarınız tamamen güvenlidir.
+                  Kesinlikle. Elit eskort bayan kod adıyla yürüttüğümüz bu sistemde; telefon numaralarınız maskelenir, veriler 24 saat içinde sistemimizden tamamen silinir. Hem profil onayları hem de beyefendilerin güvenliği açısından Türkiye&apos;nin tartışmasız en sıkı escort randevu protokolünü uyguluyoruz. Buluşmak için escort aramalarınız tamamen güvenlidir.
                 </div>
              </details>
            </div>
@@ -304,7 +302,7 @@ export default async function DistrictHubPage({
       <PanicButton />
       <footer className="py-20 border-t border-zinc-900 bg-zinc-950/80 text-center px-10">
           <div className="text-[10px] font-black tracking-[1em] text-zinc-700 uppercase italic">
-            ESCORT ESKORT GACI BAYAN // ESCORTVIP.NET
+            ESCORT ESKORT VIP BAYAN // ESCORTVIP.NET
           </div>
          <p className="mt-4 text-xs text-zinc-800 uppercase tracking-widest">Buluşmak ve randevu almak için aramalarınız tamamen şifreli özel protokolü altındadır.</p>
       </footer>

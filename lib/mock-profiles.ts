@@ -26,7 +26,7 @@ export const mockProfiles: PartnerProfile[] = [
     height: "1.74",
     weight: "54",
     tier: 'Supreme',
-    features: ["+18 Çıtır", "Üniversiteli", "Konumuna En Yakın"],
+    features: ["+18 VIP", "Üniversiteli", "Konumuna En Yakın"],
     adultBoundaries: {
       included: ["Fransız (Oral) Öpüşme", "Masaj ve Happy Ending", "Sınırsız Zevk", "Anal (Ekstra)"],
       excluded: ["Korunmasız İlişki", "BDSM / Sert Fantaziler"]

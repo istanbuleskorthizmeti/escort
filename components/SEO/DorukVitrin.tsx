@@ -330,7 +330,7 @@ function VitrinCard({
                       : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
               }
               
-              const lsiNiches = ["eskort", "üniversiteli eskort", "rus gacı", "sınırsız randevu", "anal buluşma", "kaporasız", "bayan escort", "gecelik bayan", "otele gelen çıtır", "genç kız"];
+              const lsiNiches = ["eskort", "üniversiteli eskort", "rus escort", "sınırsız randevu", "anal buluşma", "kaporasız", "bayan escort", "gecelik bayan", "otele gelen eskort", "vip partner"];
               const domainLsi = lsiNiches[charSum % lsiNiches.length];
               const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} buluşmak için`;
 
@@ -381,7 +381,7 @@ function VitrinCard({
                    currSeoPath = isCustomImage ? item.src : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
               }
               
-              const lsiNiches = ["eskort", "üniversiteli eskort", "rus gacı", "sınırsız randevu", "anal buluşma", "kaporasız", "bayan escort", "gecelik bayan", "otele gelen çıtır", "genç kız"];
+              const lsiNiches = ["eskort", "üniversiteli eskort", "rus escort", "sınırsız randevu", "anal buluşma", "kaporasız", "bayan escort", "gecelik bayan", "otele gelen eskort", "vip partner"];
               const domainLsi = lsiNiches[charSum % lsiNiches.length];
               const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} buluşmak için`;
 
@@ -612,11 +612,11 @@ export function DorukVitrin({
             const profileSlug = slugify(firstName);
             
             const fallbackNiches = [
-               'buluşmak için gacı', 'randevu için eskort', 'iletişim için bayan', 'gecelik eskort gacı',
-               'otele gelen çıtır', 'genç kız eskort', 'kaporasız eskort gacı', 'çıtır gacı bayan',
-               'rus eskort bayan', 'türbanlı çıtır eskort', 'üniversiteli gacı', 'sarışın eskort gacı',
-               'esmer bayan eskort', 'kızıl gacı eskort', 'hafta sonu eskort', 'randevu için çıtır gacı'
-             ];
+              'buluşmak için eskort', 'randevu için eskort', 'iletişim için bayan', 'gecelik eskort bayan',
+              'otele gelen eskort', 'vip eskort', 'kaporasız eskort bayan', 'vip partner bayan',
+              'rus eskort bayan', 'türbanlı eskort', 'üniversiteli model', 'sarışın eskort',
+              'esmer bayan eskort', 'kızıl model eskort', 'hafta sonu eskort', 'randevu için vip partner'
+            ];
             
             const niche = item.niche || fallbackNiches[idx % fallbackNiches.length];
             const age = item.age || (19 + (idx % 7));

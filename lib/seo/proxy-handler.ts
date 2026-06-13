@@ -145,7 +145,7 @@ export const ProxyHandler = {
       proxyCheapService.rotateIP(process.env.PROXY_CHEAP_ID).catch(() => {});
     }
 
-    return proxyCheapService.getRotatingResidentialUrl(selected.url);
+    return selected.url;
   },
 
   /**

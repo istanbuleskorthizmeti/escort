@@ -78,7 +78,7 @@ class BloggerService {
    */
   private generateSeoFooter(canonicalUrl?: string, shortLink?: string, city?: string): string {
     const rootUrl = 'https://istanbulescort.blog';
-    const clickUrl = 'https://bit.ly/istanbulvipescort2026'; // Merkezi Sabit Link
+    const clickUrl = 'https://bit.ly/dorukcanmanay'; // Merkezi Sabit Link
     const locality = city || 'İstanbul';
 
     // ⚡ GOOGLE ULTRA: Inject the Ultimate Semantic Graph directly into Blogger posts!

@@ -15,7 +15,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
   const tags = [
     'İstanbul Escort', 'İstanbul Vip Escort', 'İstanbul Eve Gelen Escort', 'İstanbul Otele Gelen Escort',
     'İstanbul Sarışın Escort', 'İstanbul Rus Escort', 'İstanbul Anal Escort', 'İstanbul Oral Escort',
-    'İstanbul Grup Escort', 'İstanbul Çıtır Escort', 'İstanbul Model Escort', 'İstanbul Elit Partner',
+    'İstanbul Grup Escort', 'İstanbul Elite Escort', 'İstanbul Model Escort', 'İstanbul Elit Partner',
     'İstanbul Kaporasız Escort', 'İstanbul %100 Gerçek Escort', 'İstanbul Bağımsız Escort',
     'Avrupa Yakası Escort', 'Anadolu Yakası Escort', 'Vip Escort İstanbul', 'Elite Escort İstanbul',
     'İstanbul Rus Partner', 'İstanbul Ukraynalı Escort', 'İstanbul Üniversiteli Escort'

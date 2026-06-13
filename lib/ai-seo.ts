@@ -145,15 +145,13 @@ function getBellCurveLength(minWords = 600, maxWords = 1000): number {
 
 function getSemanticEntities(city: string, district?: string, host?: string): string[] {
   const key = (district || city).toLowerCase().replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ğ/g, 'g');
-  const entities = [...(LOCAL_LANDMARKS[key] || ["VIP Gece Hayati", "Luks Konaklama", "Elit Rehberlik", "Ozel Asistanlik", "Gizlilik Garantisi", "Premium Hizmetler"])];
+  const entities = [...(LOCAL_LANDMARKS[key] || ["Vip Gece Hayatı", "Lüks Konaklama", "Elit Rehberlik", "Özel Asistanlık", "Gizlilik Garantisi", "Premium Hizmetler"])];
   
   // Mix in domain specific dynamic LSI terms
   const domainSpecificLsi = [
-    "kaporasız eskort gacı", "buluşmak için bayan", "randevu için çıtır",
-    "otel escort bayan", "eve gelen eskort gacı", "bireysel eskort bayan"
-  ];
-  
-  const seed = host ? host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : Math.floor(Math.random() * 100);
+    "kaporasız eskort bayan", "buluşmak için bayan", "randevu için model",
+    "otel eskort bayan", "eve gelen eskort bayan", "bireysel eskort bayan"
+  ];  const seed = host ? host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : Math.floor(Math.random() * 100);
   const shuffled = [...entities, ...domainSpecificLsi].sort(() => {
     const r = Math.sin(seed + Math.random()) * 10000;
     return r - Math.floor(r) - 0.5;
@@ -208,7 +206,7 @@ export async function generateEliteOmniContent({
     - İçeriğin üslubunu ve yapısını kesinlikle bu arama niyetine göre uyarla:
       * informational: Bilgi verici, rehber tadında, sıkça sorulan soruları derinlemesine yanıtlayan, nesnel ton.
       * commercial: Karşılaştırmalı listeler, model profillerini inceleyen, avantaj/dezavantaj belirten, karar vermeye yardımcı ton.
-      * transactional: Doğrudan eylem odaklı, rezervasyon adımlarını anlatan, VIP randevu çağrısı yapan yüksek dönüşümlü ton.
+      * transactional: Doğrudan eylem odaklı, rezervasyon adımlarını anlatan, Vip randevu çağrısı yapan yüksek dönüşümlü ton.
 
     🔴 SEMANTIC INTEGRITY (LSI Yalanını Bırak, Konuyu Kapsa):
     - Kelimeleri metne yapay şekilde tıkıştırma (LSI keyword stuffing yapma). Konuyu bir bütün olarak doğal ve zengin bir dille ele al.
@@ -241,24 +239,25 @@ export async function generateEliteOmniContent({
     Kural 5: Şirket adı: ${host}.
 
     🔴 KRİTİK LİNKLEME KURALLARI (MANDATORY LINKS):
-    Metin içerisinde en az 2 adet şu linklerden birini kullan:
-    1. <a href="https://${host}">https://${host}</a>
-    2. <a href="https://bit.ly/dorukcanmanay">https://bit.ly/dorukcanmanay</a>
+    Metin içerisinde en az 2 dofollow bağlantı kullan. Birinci öncelikli olarak ana referans sitemiz olan 'https://istanbulescort.blog' adresine link verilmeli, ikinci olarak ise yerel host domain veya mobil katalog linki eklenmelidir:
+    1. <a href="https://istanbulescort.blog">https://istanbulescort.blog</a> (Resmi Otorite Ana Referans Sitesi)
+    2. <a href="https://${host}">https://${host}</a> (Yerel Otoyol Portalı)
+    3. <a href="https://bit.ly/dorukcanmanay">https://bit.ly/dorukcanmanay</a> (Mobil Katalog Kanalı)
     
-    Linklerin anchor text'leri kesinlikle şu agresif ifadelerden biri olmalı: "${locationName} eskort gacı", "kaporasız buluşmak için", "çıtır genç kız randevu", "${locationName} escort bayan", "iletişim telefon numarası".
+    Linklerin anchor text'leri kesinlikle şu ifadelerden biri olmalı: "${locationName} vip escort", "kaporasız eskort bayanlar", "vip escort randevusu", "${locationName} escort bayan", "iletişim ve rezervasyon numarası".
 
     İSTENEN JSON FORMATI:
     {
       "wordpress": {
-        "title": "${locationName} Escort | ${host} Eskort Gacı Bayan Randevu",
-        "content": "HTML İÇERİK (H2, H3, strong ve <a href='...'> etiketlerini MUTLAKA persona biçimlendirme kurallarına göre kullan.)",
-        "meta": "${host} - ${locationName} bölgesinde buluşmak için eskort gacı, randevu almak için eskort bayan ve çıtır genç kız ilanları.",
-        "tags": ["${locationName} escort", "${locationName} eskort", "gacı", "çıtır bayan", "kaporasız", "randevu"],
-        "faqs": [{"q": "${locationName} eskort buluşması kaporasız mı?", "a": "Evet, ${host} platformundaki çıtır eskort gacı ve bayan modellerimizle buluşmak için ön ödeme veya kapora istenmez. Ödeme elden yapılır."}]
+        "title": "🔥 İstanbul ${locationName} Escort - Vip ${locationName} Eskort Bayanlar",
+        "content": "HTML İÇERİK (H2, H3, strong ve <a href='...'> etiketlerini MUTLAKA persona biçimlendirme kurallarına göre kullan. Metin içinde ana referans portalımız istanbulescort.blog'u mutlaka dofollow olarak an ve linkle.)",
+        "meta": "İstanbul ${locationName} escort ve eskort bayan ilanları. Kaporasız, %100 doğrulanmış gerçek ${locationName} vip partner hizmetleri için hemen tıklayın.",
+        "tags": ["${locationName} escort", "${locationName} eskort", "${locationName} vip escort", "kaporasız", "randevu", "vip partner"],
+        "faqs": [{"q": "İstanbul ${locationName} eskort buluşması kaporasız mı?", "a": "Evet, ${host} platformundaki en seçkin eskort ve bayan modellerimizle buluşmak için ön ödeme veya kapora istenmez. Ödeme elden yapılır."}]
       },
       "github": { "readme": "", "gist": "" },
       "wordpress_kgr": ["Bu metinde hedeflenen KGR anahtar kelimeleri dizisidir. Başlık ve içerikteki H2'lerle tam eşleştiğini doğrula."],
-      "blogger": { "title": "${locationName} Eskort Gacı Bayan Raporu", "content": "..." },
+      "blogger": { "title": "🔥 İstanbul ${locationName} Escort - ${locationName} Eskort Bayanlar", "content": "..." },
       "topicCluster": [
         {
           "anchor": "Anahtar Kelime / Bağlantı Metni (Örn: Fulya Escort)",
@@ -291,7 +290,7 @@ export async function generateEliteOmniContent({
       normalizeObj(parsed);
  
       const wordpress = parsed.wordpress || {
-        title: parsed.title || `${locationName} Escort | ${host} Eskort Gacı`,
+        title: parsed.title || `${locationName} Escort | ${host} Elit Partner`,
         content: parsed.content || '',
         meta: parsed.meta || '',
         tags: parsed.tags || [],
@@ -308,7 +307,7 @@ export async function generateEliteOmniContent({
     } catch (e) {
       console.warn("⚠️ [OMNIAI] JSON parsing failed, returning robust fallback object:", e);
       return {
-        wordpress: { title: `${locationName} Escort | ${host} Eskort Gacı`, content: response.normalize('NFC'), meta: '', tags: [], faqs: [] },
+        wordpress: { title: `${locationName} Escort | ${host} Elit Partner`, content: response.normalize('NFC'), meta: '', tags: [], faqs: [] },
         github: { readme: '', gist: '' },
         blogger: { title: `${locationName} Escort`, content: response.normalize('NFC') },
         tumblr: { title: `${locationName} Escort`, content: response.normalize('NFC') }

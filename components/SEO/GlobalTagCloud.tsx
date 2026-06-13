@@ -25,11 +25,14 @@ export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
 
   // High-volume aggressive keywords including 'eskort' variants
   const escortKeywords = [
-    "escort", "vip escort", "escort bayan", "eve gelen escort", "otele gelen escort",
-    "vip escort transfer", "elit escort", "kaporasız escort", "yabancı escort", "rus escort",
-    "üniversiteli escort", "sarışın escort", "esmer escort", "zengin escort",
-    "lüks escort transfer", "premium eşlik", "elit partner", "istanbul escort", "özel şoförlü escort",
-    "havalimanı vip karşılama", "gizli otel intikali", "vip havaalanı escort", "lüks yat transferi", "helikopter karşılama"
+    "escort", "eskort", "vip escort", "vip eskort", "escort bayan", "eskort bayan", 
+    "eve gelen escort", "eve gelen eskort", "otele gelen escort", "otele gelen eskort",
+    "vip escort transfer", "vip eskort transfer", "elit escort", "elit eskort", 
+    "kaporasız escort", "kaporasız eskort", "yabancı escort", "yabancı eskort", 
+    "rus escort", "rus eskort", "üniversiteli escort", "üniversiteli eskort", 
+    "sarışın escort", "sarışın eskort", "esmer escort", "esmer eskort", "zengin escort",
+    "lüks escort transfer", "premium eşlik", "elit partner", "istanbul escort", "istanbul eskort", 
+    "özel şoförlü escort", "havalimanı vip karşılama", "gizli otel intikali"
   ];
 
   // Scandal / Honey-Pot keywords for CLOAKER domains

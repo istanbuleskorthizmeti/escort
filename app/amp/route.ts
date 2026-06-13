@@ -162,10 +162,9 @@ export async function GET(request: Request) {
       "{[LOC] genelinde {seçkin ve lüks|asillik ve ihtişam dolu} bir {refakatçi deneyimi|VIP partnerlik} sunuyoruz.} {Dorukcanay Elite güvencesi altında, {tamamen doğrulanmış fotoğraflar|profesyonel model vitrini} ile {akıllardan silinmeyecek|unutulmaz} bir seans planlayın.} {Buluşmalarımızda {kesinlikle ön ödeme|hiçbir şekilde kapora} talep edilmeyip, {yüz yüze ve elden ödeme|güvenilir elden ödemeli model} esastır.} {{Gizlilik ve maksimum mahremiyet|Üst düzey güvenlik standartları} altında otele ve eve gelen {seçkin manken ve partnerlerimizle|elit eşlikçilerimizle} {hayal ettiğiniz prestijli geceyi|C-Level buluşmayı} başlatın.}",
       "{Lüks ve prestijin [LOC] bölgesindeki {en seçkin adresi|tek temsilcisi} olan platformumuzda, {gerçek podyum modelleri|bağımsız elite refakatçiler} sizi bekliyor.} {Ön ödemesiz, kaporasız ve %100 güvenli buluşma prensiplerimizle {7/24 hizmetinizdeyiz|ayrıcalıklı seanslar düzenliyoruz}.} {Eve ve otele servis seçeneklerimizle, {konforunuz ve gizliliğiniz|seçkin mahremiyet standartlarınız} en üst düzeyde korunmaktadır.}"
     ];
-
     const standardSpins = [
-      "{[LOC] genelinde {çıtır eskort bayan|ateşli eskort gacı} arayanlar için {en hiddetli ve çıtır|en genç kız} modeller burada listelenmektedir.} {Aradığınız {seçkin partner deneyimine|limitsiz tutkulu geceye} ulaşmak, randevu oluşturmak ve iletişim kurmak için telefon numaralarımız üzerinden {7/24 bizlere ulaşabilirsiniz|WhatsApp üzerinden anında yazabilirsiniz}.} {Rezidans, ev veya otel konseptli tüm görüşmelerimiz tamamen {kaporasız ve yüz yüze|ön ödemesiz elden ödemeli} güvenilir görüşmeler esasına dayanmaktadır.} {Hiçbir ön ödeme veya transfer ücreti talep edilmeden, doğrudan elden ödemeli VIP hizmet alırsınız.} {[LOC] eskort gacı, yerli çıtır kızlar ve üniversiteli eskort alternatiflerimizle hayal ettiğiniz geceyi planlayın.}",
-      "{[LOC] escort gacı arayışınızda, {gerçek ve doğrulanmış resimli|en çıtır} partnerlerle {kaporasız ve depozitosuz|yüz yüze} buluşma fırsatı sunuyoruz.} {Eve ve otele gelen {genç kız ve bayan|rus ve yerli eskort} modellerimizle {7/24 aktif görüşme|limitsiz fantezi geceleri} yapabilirsiniz.} {Gizlilik prensipleri altında, %100 elden ödemeli güvenli randevunuzu hemen oluşturun.}"
+      "{[LOC] genelinde {vip eskort bayan|ateşli eskort model} arayanlar için {en elit ve çekici|en seksi} modeller burada listelenmektedir.} {Aradığınız {seçkin partner deneyimine|limitsiz tutkulu geceye} ulaşmak, randevu oluşturmak ve iletişim kurmak için telefon numaralarımız üzerinden {7/24 bizlere ulaşabilirsiniz|WhatsApp üzerinden anında yazabilirsiniz}.} {Rezidans, ev veya otel konseptli tüm görüşmelerimiz tamamen {kaporasız ve yüz yüze|ön ödemesiz elden ödemeli} güvenilir görüşmeler esasına dayanmaktadır.} {Hiçbir ön ödeme veya transfer ücreti talep edilmeden, doğrudan elden ödemeli VIP hizmet alırsınız.} {[LOC] vip eskort, yerli model partnerler ve üniversiteli eskort alternatiflerimizle hayal ettiğiniz geceyi planlayın.}",
+      "{[LOC] escort model arayışınızda, {gerçek ve doğrulanmış resimli|en seçkin} partnerlerle {kaporasız ve depozitosuz|yüz yüze} buluşma fırsatı sunuyoruz.} {Eve ve otele gelen {vip model ve bayan|rus ve yerli eskort} modellerimizle {7/24 aktif görüşme|limitsiz fantezi geceleri} yapabilirsiniz.} {Gizlilik prensipleri altında, %100 elden ödemeli güvenli randevunuzu hemen oluşturun.}"
     ];
 
     const spins = isFlagship ? flagSpins : standardSpins;
@@ -188,12 +187,12 @@ export async function GET(request: Request) {
       } else {
         uniqueFaqs = [
           { 
-            q: spintaxEngine.resolve("{[LOC] escort gacı hizmetleri kaporasız mı?}", { LOC: locationName }), 
+            q: spintaxEngine.resolve("{[LOC] escort vip hizmetleri kaporasız mı?}", { LOC: locationName }), 
             a: spintaxEngine.resolve("{Evet, listemizde yer alan tüm buluşmalar %100 ön ödemesiz, kaporasız ve elden ödemelidir.}", {})
           },
           { 
             q: spintaxEngine.resolve("{[LOC] otele ve eve gelen bayan servisiniz var mı?}", { LOC: locationName }), 
-            a: spintaxEngine.resolve("{Evet, çıtır eskort bayan partnerlerimiz talep etmeniz halinde eve ve otele servis sağlamaktadır.}", {})
+            a: spintaxEngine.resolve("{Evet, vip eskort bayan partnerlerimiz talep etmeniz halinde eve ve otele servis sağlamaktadır.}", {})
           }
         ];
       }
@@ -204,8 +203,7 @@ export async function GET(request: Request) {
   const isFlagship = host.includes('dorukcanay.digital');
   const schemaDescription = isFlagship
     ? `${locationName} bölgesinde elit ve prestijli VIP model refakatçi hizmeti. ${brandName} ile %100 doğrulanmış gerçek profiller ve kaporasız randevu.`
-    : `${locationName} genelinde kaporasız çıtır eskort gacı kataloğu. ${brandName} ile ${locationName} escort bayan telefon numaraları ve aktif WhatsApp buluşma hattı.`;
-
+    : `${locationName} genelinde kaporasız vip eskort bayan kataloğu. ${brandName} ile ${locationName} escort bayan telefon numaraları ve aktif WhatsApp buluşma hattı.`;
   const schemaCategoryTitle = isFlagship
     ? `${brandName.toUpperCase()} PREMIUM PARTNER KATALOĞU`
     : `${brandName.toUpperCase()} VIP ESCORT AJANSI`;
@@ -419,13 +417,13 @@ export async function GET(request: Request) {
 </head>
 <body>
   <header>
-    <div class="brand">${brandName.toUpperCase()} <span>GACI</span></div>
+    <div class="brand">${brandName.toUpperCase()} <span>VIP</span></div>
   </header>
   
   <div class="hero">
     <span class="badge">Buluşmak ve Randevu Almak İçin</span>
     <h1>${brandName.toUpperCase()} ${locationName.toUpperCase()} ESCORT</h1>
-    <p>İletişim ve randevu için en seçkin ${locationName} eskort gacı modelleri. ${brandName} güvencesiyle %100 kaporasız ve yüz yüze güvenli görüşme.</p>
+    <p>İletişim ve randevu için en seçkin ${locationName} vip eskort bayan modelleri. ${brandName} güvencesiyle %100 kaporasız ve yüz yüze güvenli görüşme.</p>
   </div>
   
   <div class="container">
@@ -453,7 +451,7 @@ export async function GET(request: Request) {
               height="400" 
               layout="responsive" 
               ${index < 2 ? 'data-hero' : ''}
-              alt="${title} - ${locationName} buluşmak için eskort gacı bayan">
+              alt="${title} - ${locationName} buluşmak için vip eskort bayan">
             </amp-img>
           </div>
           <div class="card-info">
@@ -470,7 +468,7 @@ export async function GET(request: Request) {
   
   <div class="container amp-guide-box">
     <h2 class="amp-guide-title">
-      ${brandName} ${locationName} Escort, Eskort, Gacı İletişim Rehberi
+      ${brandName} ${locationName} Escort, Eskort, VIP İletişim Rehberi
     </h2>
     <p class="amp-guide-text">
       ${uniqueText}

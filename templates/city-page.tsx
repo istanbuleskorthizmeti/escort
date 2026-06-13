@@ -57,14 +57,12 @@ export default async function CityHubPage({
     t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
     return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
   };
-
   const intros = [
-    `Buluşmak için ${cityName} escort arayanlara, her biri kendi hikayesine sahip çıtır gacı, eskort ve olgun bayan seçenekleri. Randevu almak için ve iletişim kurmak için en doğru adrestesiniz.`,
-    `Görüşmek ve buluşmak için ${cityName} genelinde çıtır eskort bayan rehberi! Genç kız ve olgun kadın alternatiflerimizle, iletişim ve randevu için 7/24 kesintisiz hizmet vermekteyiz.`,
-    `İletişim için ${cityName} eskort gacı buluşma noktası. En güzel kadın, seksi bayan ve çıtır genç kız profillerimizle randevu almak için rehberimizi hemen inceleyin.`,
-    `${cityName} şehrinin nabzını tutan eskort gacı ve bayan ekosistemine hoş geldiniz. Buluşmak için en seçkin çıtır gacı, eskort, kadın ve genç kız randevu seçenekleri burada.`
+    `Buluşmak için ${cityName} escort arayanlara, her biri kendi hikayesine sahip vip partner, eskort ve olgun bayan seçenekleri. Randevu almak için ve iletişim kurmak için en doğru adrestesiniz.`,
+    `Görüşmek ve buluşmak için ${cityName} genelinde vip eskort bayan rehberi! Seçkin model ve olgun partner alternatiflerimizle, iletişim ve randevu için 7/24 kesintisiz hizmet vermekteyiz.`,
+    `İletişim için ${cityName} vip eskort buluşma noktası. En güzel kadın, seksi bayan ve vip model profillerimizle randevu almak için rehberimizi hemen inceleyin.`,
+    `${cityName} şehrinin nabzını tutan vip eskort ve bayan ekosistemine hoş geldiniz. Buluşmak için en seçkin vip partner, eskort, bayan ve elit model randevu seçenekleri burada.`
   ];
-
   const intro = intros[Math.floor(rand() * intros.length)];
 
   const breadcrumbs = [
@@ -85,10 +83,10 @@ export default async function CityHubPage({
               "mainEntity": [
                 {
                   "@type": "Question",
-                  "name": `${cityName} escort eskort gacı bayan ve çıtır genç kız rehberi detayları nelerdir?`,
+                  "name": `${cityName} escort eskort vip bayan ve vip model rehberi detayları nelerdir?`,
                   "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": `${cityName} genelinde buluşmak için sunulan tüm çıtır gacı eskort seçenekleri, en katı gizlilik kurallarımız ve %100 gerçek görselli bayan profillerimizle randevu için sizi bekliyor.`
+                    "text": `${cityName} genelinde buluşmak için sunulan tüm vip eskort seçenekleri, en katı gizlilik kurallarımız ve %100 gerçek görselli bayan profillerimizle randevu için sizi bekliyor.`
                   }
                 },
                 {
@@ -136,7 +134,7 @@ export default async function CityHubPage({
           <h1 className="text-7xl md:text-[13rem] font-black mb-12 tracking-tighter leading-[0.8] italic uppercase">
             {cityName} <br />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 via-rose-500 to-rose-300">
-              ESCORT ESKORT GACI BAYAN HUB
+              ESCORT ESKORT VIP BAYAN HUB
             </span>
           </h1>
 
@@ -204,13 +202,13 @@ export default async function CityHubPage({
       <footer className="py-40 border-t border-zinc-900 mt-20 bg-zinc-950/80 text-center px-10 backdrop-blur-3xl">
         <div className="max-w-7xl mx-auto space-y-20">
           <h2 className="text-3xl md:text-5xl font-black italic text-white tracking-[0.3em] uppercase">
-            {cityName.toUpperCase()} ESCORT BAYAN GACI NETWORK
+            {cityName.toUpperCase()} ESCORT BAYAN VIP NETWORK
           </h2>
           <p className="text-zinc-600 text-md leading-loose lowercase first-letter:uppercase font-medium max-w-4xl mx-auto italic">
-            Escortvip.net, {cityName}&apos;nın tüm semtlerinde buluşmak için eskort gacı, randevu için genç kız ve iletişim için escort bayan hizmetlerinin tek adresidir.
+            Escortvip.net, {cityName}&apos;nın tüm semtlerinde buluşmak için vip eskort, randevu için vip partner ve iletişim için escort bayan hizmetlerinin tek adresidir.
           </p>
           <div className="text-[9px] font-black tracking-[1em] text-zinc-800 uppercase italic opacity-20">
-            CITY PARTNER PROTOCOLS // ESCORT ESKORT GACI 2026
+            CITY PARTNER PROTOCOLS // ESCORT ESKORT VIP 2026
           </div>
         </div>
       </footer>

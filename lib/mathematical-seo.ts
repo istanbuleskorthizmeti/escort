@@ -7,8 +7,8 @@ export const SEO_NICHE_CLUSTERS = {
   GENERAL: ["escort", "vip escort transfer", "escort hizmetleri", "vip transfer ilanları", "ajans", "numaraları"],
   VIP: ["vip escort", "elit escort", "manken escort", "model escort", "premium escort", "kaliteli escort"],
   SAFETY: ["kaporasız escort", "doğrulanmış escort", "gerçek escort", "güvenilir escort", "gizli escort"],
-  NICHES: ["rus escort", "üniversiteli escort", "sarışın escort", "olgun escort", "çıtır escort", "türbanlı escort", "yabancı escort"],
-  SEXSI: ["seksi escort", "genç escort", "rus escort", "kızıl escort", "çıtır escort", "seksi deneyim", "fantazi escort", "evde escort", "otele gelen escort"],
+  NICHES: ["rus escort", "üniversiteli escort", "sarışın escort", "olgun escort", "vip partner", "türbanlı escort", "yabancı escort"],
+  SEXSI: ["seksi escort", "genç escort", "rus escort", "kızıl escort", "vip eskort", "seksi deneyim", "fantazi escort", "evde escort", "otele gelen escort"],
   AIRPORT_TRANSFER: ["havalimanı vip escort transfer", "sabiha gökçen lüks karşılama", "istanbul havalimanı premium eşlik", "özel şoförlü vip escort", "gizli otel intikali", "havaalanı elit partner", "marina yat transferi"],
   SCANDAL: ["ifşa video", "gizli çekim kaset", "telegram sızıntısı", "yasak aşk skandalı", "sansürsüz arşiv", "vip ifşa", "ünlü skandalı"]
 };

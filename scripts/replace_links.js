@@ -35,8 +35,9 @@ function processFiles() {
     let changed = false;
 
     // Bit.ly linkini güncelle
-    if (content.includes('bit.ly/dorukcanmanay')) {
+    if (content.includes('bit.ly/dorukcanmanay') || content.includes('bit.ly/dorukcanmanay')) {
       content = content.replace(/bit\.ly\/istanbulescort2026/g, 'bit.ly/dorukcanmanay');
+      content = content.replace(/bit\.ly\/istanbulvipescort2026/g, 'bit.ly/dorukcanmanay');
       changed = true;
     }
     

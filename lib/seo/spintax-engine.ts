@@ -36,29 +36,30 @@ export class SpintaxEngine {
   ];
 
   private static readonly KEYWORDS = [
-    "VIP Escort", "Elit Escort", "Kaporasız Escort", "Lüks Partner",
-    "Sınırsız Hizmet", "Anal Yapan Escort", "Öpüşen Escort", "Grup Escort",
-    "Gece Hayatı", "Masaj Yapan Escort", "Yabancı Escort",
-    "Rus Escort", "Üniversiteli Escort", "Olgun Escort", "Evlere Servis Escort",
-    "Anal Uzmanı", "Talebe Çıtır", "Kolejli Escort", "Öğrenci Escort",
-    "Bireysel Escort", "Kendi Evinde Escort", "Otele Gelen Escort", "Zenci Escort",
-    "Sarışın Escort", "Esmer Escort", "Minyon Escort", "Balıketli Escort",
+    "escort", "eskort",
+    "VIP Escort", "VIP Eskort", "Elit Escort", "Elit Eskort", "Kaporasız Escort", "Kaporasız Eskort", "Lüks Partner",
+    "Sınırsız Hizmet", "Anal Yapan Escort", "Anal Yapan Eskort", "Öpüşen Escort", "Öpüşen Eskort", "Grup Escort",
+    "Gece Hayatı", "Masaj Yapan Escort", "Masaj Yapan Eskort", "Yabancı Escort", "Yabancı Eskort",
+    "Rus Escort", "Rus Eskort", "Üniversiteli Escort", "Üniversiteli Eskort", "Olgun Escort", "Olgun Eskort", "Evlere Servis Escort",
+    "Anal Uzmanı", "Elite Model", "Kolejli Escort", "Öğrenci Escort",
+    "Bireysel Escort", "Bireysel Eskort", "Kendi Evinde Escort", "Otele Gelen Escort", "Otele Gelen Eskort", "Zenci Escort",
+    "Sarışın Escort", "Sarışın Eskort", "Esmer Escort", "Esmer Eskort", "Minyon Escort", "Balıketli Escort",
     "Fetiş Escort", "Dominant Escort", "BDSM Partner", "Köle Arayan Escort",
     "Tesettürlü Escort", "Türbanlı Escort", "Muhafazakar Escort", "Gizli Görüşme",
-    "Sefaköy Escort", "Cennet Mahallesi Escort", "Halkalı Escort", "İkitelli Escort",
-    "Bağcılar Escort", "Güneşli Escort", "Kirazlı Escort", "Mahmutbey Escort",
-    "Beylikdüzü Escort", "Esenyurt Escort", "Avcılar Escort", "Büyükçekmece Escort",
-    "Beşiktaş Escort", "Levent Escort", "Etiler Escort", "Bebek Escort",
-    "Şişli Escort", "Mecidiyeköy Escort", "Nişantaşı Escort", "Fulya Escort",
-    "Bakırköy Escort", "Florya Escort", "Yeşilköy Escort", "Ataköy Escort",
-    "Kadıköy Escort", "Ataşehir Escort", "Maltepe Escort", "Kartal Escort",
+    "Sefaköy Escort", "Sefaköy Eskort", "Cennet Mahallesi Escort", "Halkalı Escort", "İkitelli Escort",
+    "Bağcılar Escort", "Bağcılar Eskort", "Güneşli Escort", "Kirazlı Escort", "Mahmutbey Escort",
+    "Beylikdüzü Escort", "Beylikdüzü Eskort", "Esenyurt Escort", "Esenyurt Eskort", "Avcılar Escort", "Avcılar Eskort", "Büyükçekmece Escort",
+    "Beşiktaş Escort", "Beşiktaş Eskort", "Levent Escort", "Etiler Escort", "Bebek Escort",
+    "Şişli Escort", "Şişli Eskort", "Mecidiyeköy Escort", "Nişantaşı Escort", "Fulya Escort",
+    "Bakırköy Escort", "Bakırköy Eskort", "Florya Escort", "Yeşilköy Escort", "Ataköy Escort",
+    "Kadıköy Escort", "Kadıköy Eskort", "Ataşehir Escort", "Ataşehir Eskort", "Maltepe Escort", "Maltepe Eskort", "Kartal Escort",
     "Ümraniye Escort", "Üsküdar Escort", "Beykoz Escort", "Çekmeköy Escort",
-    "Sarıyer Escort", "Tarabya Escort", "Zekeriyaköy Escort", "İstinye Escort",
+    "Sarıyer Escort", "Sarıyer Eskort", "Tarabya Escort", "Zekeriyaköy Escort", "İstinye Escort",
     // 🚘 Premium & VIP Transfer Layer (Elit Odaklı)
-    "vip escort transfer", "lüks transfer escort", "istanbul vip transfer", "özel şoförlü escort", "premium eşlik",
+    "vip escort transfer", "vip eskort transfer", "lüks transfer escort", "istanbul vip transfer", "özel şoförlü escort", "premium eşlik",
     "şişli vip transfer", "beşiktaş lüks escort", "avcılar vip escort transfer", "beylikdüzü elit lojistik",
-    "kaporasız vip transfer", "elit eşlik", "lüks lojistik", "rus escort",
-    "vip escortlar", "elit escortlar", "premium partnerler", "escortlar", "vip bayanlar", "seçkin partnerler"
+    "kaporasız vip transfer", "elit eşlik", "lüks lojistik", "rus escort", "rus eskort",
+    "vip escortlar", "vip eskortlar", "elit escortlar", "elit eskortlar", "premium partnerler", "escortlar", "eskortlar", "vip bayanlar", "seçkin partnerler"
   ];
 
   // --- 2. ENGINE LOGIC ---

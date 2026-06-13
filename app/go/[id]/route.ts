@@ -14,8 +14,10 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const { id } = await params;
-  const host = request.headers.get('host') || 'istanbulescort.blog';
-  const protocol = request.headers.get('x-forwarded-proto') || 'https';
+  const rawHost = request.headers.get('host') || 'istanbulescort.blog';
+  const host = rawHost.replace(/[^a-zA-Z0-9.:-]/g, '');
+  const rawProto = request.headers.get('x-forwarded-proto') || 'https';
+  const protocol = rawProto.toLowerCase() === 'http' ? 'http' : 'https';
   const referer = request.headers.get('referer') || 'Direct';
   const ua = request.headers.get('user-agent') || 'unknown';
   const ip = request.headers.get('x-forwarded-for') || request.headers.get('x-real-ip') || 'unknown';

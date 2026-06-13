@@ -18,7 +18,9 @@ const BOT_USER_AGENTS = [
 
 export async function GET(request: NextRequest) {
   const userAgent = (request.headers.get('user-agent') || '').toLowerCase();
-  const host = request.headers.get('host') || '';
+  const rawHost = request.headers.get('host') || '';
+  // Sanitize host header to allow only clean domain names (alphanumeric, dot, dash, colon)
+  const host = rawHost.replace(/[^a-zA-Z0-9.:-]/g, '');
   const isBot = BOT_USER_AGENTS.some(bot => userAgent.includes(bot));
 
   if (isBot) {

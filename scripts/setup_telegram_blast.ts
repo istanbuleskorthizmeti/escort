@@ -5,9 +5,9 @@ import path from 'path';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
+  host: '187.77.111.203',
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: 'Z4-nN8JfiUIh5,;g'
 };
 
 async function run() {
@@ -25,7 +25,7 @@ async function run() {
 
     console.log('🚀 Launching automated hourly telegram-blast cron job in PM2...');
     // Runs every 1 hour (0 * * * *) to post profiles to Telegram
-    const cronRes = await ssh.execCommand('pm2 start npx --name "telegram-blast" --cron "0 * * * *" -- tsx scripts/master/telegram-blast.ts', { cwd: '/root/esc' });
+    const cronRes = await ssh.execCommand('pm2 start npx --name "telegram-blast" --cron "0 * * * *" --no-autorestart -- tsx scripts/master/telegram-blast.ts', { cwd: '/root/esc' });
     console.log(cronRes.stdout || cronRes.stderr || 'PM2 started.');
 
     console.log('🔄 Restarting hydra-telegram-bot to apply crash fixes...');

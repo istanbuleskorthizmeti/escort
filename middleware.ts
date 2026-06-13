@@ -47,22 +47,51 @@ export function middleware(request: NextRequest) {
     return new NextResponse('Not Found', { status: 404 });
   }
 
+  // 🛡️ ADVANCED INJECTION FILTER (SQLi, XSS, LFI, Command Injection)
   const queryStr = request.nextUrl.search || '';
+  const decodedQuery = (() => {
+    try {
+      return decodeURIComponent(queryStr).toLowerCase();
+    } catch {
+      return queryStr.toLowerCase();
+    }
+  })();
+
+  const decodedPath = (() => {
+    try {
+      return decodeURIComponent(pathname).toLowerCase();
+    } catch {
+      return pathname.toLowerCase();
+    }
+  })();
+
+  const injectionPatterns = [
+    /union\s+select/i,
+    /group_concat/i,
+    /concat\s*\(/i,
+    /information_schema/i,
+    /select\s+.*\s+from/i,
+    /insert\s+into/i,
+    /update\s+.*set/i,
+    /delete\s+from/i,
+    /<script>/i,
+    /javascript:/i,
+    /onclick/i,
+    /onerror/i,
+    /onload/i,
+    /\.\.\//, // Path Traversal
+    /etc\/passwd/i,
+    /bin\/sh/i,
+    /bin\/bash/i,
+    /exec\s*\(/i,
+    /system\s*\(/i,
+    /cmd\.exe/i
+  ];
+
   if (
-    queryStr.includes('union select') ||
-    queryStr.includes('group_concat') ||
-    queryStr.includes('<script>') ||
-    queryStr.includes('javascript:') ||
-    queryStr.includes('../') ||
-    queryStr.includes('etc/passwd')
+    injectionPatterns.some(pattern => pattern.test(decodedQuery) || pattern.test(decodedPath))
   ) {
     return new NextResponse('Security Alert: Malicious Request Blocked', { status: 403 });
-  }
-
-  // 301 Permanent Redirect from legacy domain and other domains to the new target blog
-  if (host.includes('istanbulescdrkcn.com')) {
-    const targetUrl = new URL(pathname + request.nextUrl.search, 'https://istanbulescort.blog');
-    return NextResponse.redirect(targetUrl, 301);
   }
 
   // ⚜️ ADVANCED CLOAKED MOBILE-TO-AMP REDIRECT (ONLY FOR MOBILE USERS)
@@ -75,6 +104,7 @@ export function middleware(request: NextRequest) {
       !pathname.startsWith('/_next') &&
       !pathname.startsWith('/_media') &&
       !pathname.startsWith('/amp') &&
+      !pathname.startsWith('/istanbul') &&
       !pathname.startsWith('/.well-known') &&
       pathname !== '/apple-app-site-association' &&
       pathname !== '/manifest.json' &&

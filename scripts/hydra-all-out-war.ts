@@ -59,36 +59,16 @@ async function executeTotalWar() {
             // 🎯 LINK ROTATION: Pick a target URL (50% Money Site, 50% Authority Hub)
             const useHub = Math.random() > 0.5;
             const hub = AUTHORITY_HUBS.find(h => h.name.toLowerCase().includes(zone.toLowerCase())) || getRandomAuthorityHub();
-            const targetUrl = useHub ? hub.url : MONEY_SITE;
+            
+            // Clean/Direct URL selection: Ensure no cache domain/path is used
+            const targetUrl = useHub ? hub.url : "https://vipescorthizmeti.com";
             const targetName = useHub ? hub.name : "Vip Escort Hizmeti";
 
             console.log(`🔗 [LINK-WAR] Target URL: ${targetUrl} (${targetName})`);
 
-            // 🎯 BITLY & CLOAKING: Protect the target (Only shorten HOME pages or use Premium Bit.ly)
-            let finalLink = targetUrl;
-            
-            if (targetUrl === MONEY_SITE) {
-                // Ana sitemiz için kullanıcımızın en premium markalı linkini doğrudan kullanıyoruz!
-                finalLink = "https://bit.ly/dorukcanmanay";
-                console.log(`💎 [PREMIUM BITLY] Linked target dynamically to: ${finalLink}`);
-            } else {
-                // Uydular veya diğer siteler
-                try {
-                    const urlObj = new URL(targetUrl);
-                    const isHomePage = urlObj.pathname === '/' || urlObj.pathname === '';
-                    
-                    if (isHomePage) {
-                        console.log(`🔗 [BITLY] Shortening satellite HOME domain via Premium Tokens...`);
-                        finalLink = await shortenUrl({ longUrl: targetUrl, title: `${zone} Infiltration`, tags: ['hydra', zone] });
-                    } else {
-                        console.log(`🛡️ [CLOAK] Inner path detected. Using Cloak URL...`);
-                        finalLink = await getOrGenerateShortLink(`${zone}_cloak`, targetUrl);
-                    }
-                } catch (err) {
-                    finalLink = await getOrGenerateShortLink(`${zone}_cloak`, targetUrl);
-                }
-            }
-            console.log(`🛡️ [CLOAK] Masked Link: ${finalLink}`);
+            // Use the direct link to maximize SEO flow to the actual target domain
+            const finalLink = targetUrl;
+            console.log(`🛡️ [DIRECT LINK] Using direct canonical URL: ${finalLink}`);
 
             // 2. BLOGGER (SMART POSTING)
             const blogTitle = `💎 ${zone} Escort | VIP Partner | Rus & Üniversiteli (2026)`;

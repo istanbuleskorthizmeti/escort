@@ -413,6 +413,14 @@ export async function GET(request: Request) {
       font-size: 0.9rem;
       line-height: 1.6;
     }
+    .amp-related-link-box {
+      margin-top: 15px;
+      font-weight: 700;
+    }
+    .amp-related-link-box a {
+      color: var(--primary);
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -474,8 +482,8 @@ export async function GET(request: Request) {
       ${uniqueText}
     </p>
     ${relatedSiteLink ? `
-    <p style="margin-top: 15px; font-weight: 700;">
-      🔗 <a href="${relatedSiteLink}" style="color: var(--primary); text-decoration: underline;" target="_blank" rel="noopener">Resmi ${locationName} Partner Portalı (Google Sites)</a>
+    <p class="amp-related-link-box">
+      🔗 <a href="${relatedSiteLink}" target="_blank" rel="noopener">Resmi ${locationName} Partner Portalı (Google Sites)</a>
     </p>` : ''}
   </div>
 

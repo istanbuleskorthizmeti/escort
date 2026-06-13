@@ -52,6 +52,7 @@ async function run() {
       { local: 'app/page.tsx', remote: '/var/www/escortvip/app/page.tsx' },
       { local: 'app/amp/route.ts', remote: '/var/www/escortvip/app/amp/route.ts' },
       { local: 'app/go/[id]/route.ts', remote: '/var/www/escortvip/app/go/[id]/route.ts' },
+      { local: 'app/api/media/route.ts', remote: '/var/www/escortvip/app/api/media/route.ts' },
       { local: 'app/api/media/vitrin/[filename]/route.ts', remote: '/var/www/escortvip/app/api/media/vitrin/[filename]/route.ts' },
       { local: 'lib/seo-metadata.ts', remote: '/var/www/escortvip/lib/seo-metadata.ts' },
       { local: 'lib/spintax-engine.ts', remote: '/var/www/escortvip/lib/spintax-engine.ts' },

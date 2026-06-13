@@ -42,6 +42,8 @@ const TARGET_DOMAINS = DOMAIN_MATRIX
   .filter(d => d.role === 'MONEY_SITE' || d.host.includes('istanbulescort.blog'))
   .map(d => d.host);
 
+import * as cheerio from 'cheerio';
+
 // 🔍 Real-time SERP Check
 async function checkSerpRankings(): Promise<string> {
   const userAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
@@ -54,25 +56,35 @@ async function checkSerpRankings(): Promise<string> {
         headers: { "User-Agent": userAgent },
         timeout: 5000
       });
+      
       const html = response.data;
+      const $ = cheerio.load(html);
+      
       const seenDomains = new Set();
       let currentPosition = 1;
       let matches: { domain: string, rank: number }[] = [];
-      
-      const linkRegex = /<a[^>]+href="(https?:\/\/([^"\/]+))"/gi;
-      let match;
-      const noise = ['google.com', 'w3.org', 'youtube.com', 'facebook.com', 'instagram.com', 'twitter.com', 'apple.com'];
+      const noise = ['google.com', 'w3.org', 'youtube.com', 'facebook.com', 'instagram.com', 'twitter.com', 'apple.com', 'ampproject.org'];
 
-      while ((match = linkRegex.exec(html)) !== null && currentPosition <= 30) {
-        const domain = match[2].toLowerCase();
-        if (noise.some(n => domain.includes(n)) || seenDomains.has(domain)) continue;
-        seenDomains.add(domain);
-        
-        if (TARGET_DOMAINS.some(td => domain.includes(td))) {
-          matches.push({ domain, rank: currentPosition });
+      // Google organic result link wrappers typically are under div.g or inside h3/a tags inside the search result container
+      $('div.g, div.yuRUbf, div.kvH3rc').each((_, elem) => {
+        const link = $(elem).find('a').attr('href');
+        if (!link) return;
+
+        try {
+          const urlObj = new URL(link);
+          const domain = urlObj.hostname.toLowerCase();
+          
+          if (noise.some(n => domain.includes(n)) || seenDomains.has(domain)) return;
+          seenDomains.add(domain);
+          
+          if (TARGET_DOMAINS.some(td => domain.includes(td))) {
+            matches.push({ domain, rank: currentPosition });
+          }
+          currentPosition++;
+        } catch {
+          // Ignore invalid URLs
         }
-        currentPosition++;
-      }
+      });
 
       block += `• <b>${kw.toUpperCase()}:</b>\n`;
       if (matches.length > 0) {
@@ -85,7 +97,7 @@ async function checkSerpRankings(): Promise<string> {
       }
       
       // Delay to avoid blocking
-      await new Promise(r => setTimeout(r, 1000));
+      await new Promise(r => setTimeout(r, 1200));
     } catch (e: any) {
       block += `• <b>${kw.toUpperCase()}:</b> ⚠️ <i>Sorgulama limitlendi (${e.message})</i>\n`;
     }

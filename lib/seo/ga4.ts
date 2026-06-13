@@ -15,7 +15,7 @@ const analyticsDataClient = new BetaAnalyticsDataClient({
 });
 
 export class GA4Service {
-  private static propertyId = process.env.GA4_PROPERTY_ID || 'PROPERTIES_ID_MISSING';
+  private static propertyId = process.env.GOOGLE_GA4_PROPERTY_ID || process.env.GA4_PROPERTY_ID || 'PROPERTIES_ID_MISSING';
 
   static async sendRealtimeReport() {
     console.log("🛰️ [GA4] Fetching Real-time Traffic Data...");

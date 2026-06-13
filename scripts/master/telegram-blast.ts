@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { vitrinImages } from '../../lib/vitrin-images';
 import { siteConfig } from '../../config/site';
 import { slugify } from '../../lib/utils';

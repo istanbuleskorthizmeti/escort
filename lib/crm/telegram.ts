@@ -597,7 +597,8 @@ bot?.command(['yardim', 'help'], async (ctx) => {
   const helpMsg = `
 🛡️ <b>DRKCNAY KOMUTA MERKEZİ</b>
 ${THEME.DIVIDER}
-📊 /seo       → Tam SEO Performans Raporu
+📊 /seo       → Özet SEO Performans Raporu
+📊 /seo_detay → Detaylı Tüm Alan Adları Raporu
 ⚡ /health    → Sistem Sağlık Raporu
 🧛‍♂️ /shadow    → Shadow Warrior (CTR) Raporu
 🏴‍☠️ /parasite  → Parasite SEO (Backlink) Raporu
@@ -673,10 +674,15 @@ bot?.command('seo', async (ctx) => {
       if (gscStats.isAvailable && gscStats.domains.length > 0) {
           gscBlock += `\n🔍 <b>GSC TOPLAM (Son 7 Gün):</b>\n• Tıklama: <code>${gscStats.aggregateClicks.toLocaleString('tr-TR')}</code>\n• Gösterim: <code>${gscStats.aggregateImpressions.toLocaleString('tr-TR')}</code>\n\n`;
 
-          gscStats.domains.forEach(domain => {
+          gscBlock += `🏆 <b>TOP 5 ALAN ADI:</b>\n`;
+          gscStats.domains.slice(0, 5).forEach(domain => {
               const domainName = domain.siteUrl.replace('https://', '').replace('/', '').replace('sc-domain:', '');
               gscBlock += `🌐 <b>${domainName}</b>\n• Tık: ${domain.totalClicks} | Gör: ${domain.totalImpressions} | Ort: ${domain.avgPosition}\n${domain.topKeywords.map((k, i) => `${i + 1}. <code>${k.keyword}</code> -> #${k.position} (${k.clicks} tık)`).join('\n')}\n\n`;
           });
+
+          if (gscStats.domains.length > 5) {
+              gscBlock += `ℹ️ <i>Diğer ${gscStats.domains.length - 5} alan adının detaylı analizi için /seo_detay komutunu kullanabilirsiniz.</i>\n\n`;
+          }
       } else {
           gscBlock = `\n⚠️ <i>GSC verisi şu an erişilemiyor.</i>`;
       }
@@ -734,6 +740,41 @@ ${THEME.FOOTER}
     } catch (err: any) {
       await ctx.replyWithHTML(`${THEME.ERROR} SEO raporu alınamadı: <code>${err.message}</code>`);
     }
+  }
+});
+
+bot?.command('seo_detay', async (ctx) => {
+  if (!checkAuth(ctx)) return;
+  await ctx.replyWithHTML(`⏳ <b>DRKCNAY DETAYLI SEO RAPORU</b> oluşturuluyor...`);
+  try {
+    const { PerformanceReportEngine } = await import("../seo/performance-report");
+    const engine = PerformanceReportEngine.getInstance();
+    const report = await engine.buildFullReport();
+
+    const { gscStats } = report;
+
+    if (!gscStats.isAvailable || gscStats.domains.length === 0) {
+      return ctx.replyWithHTML(`⚠️ <i>GSC verisi şu an erişilemiyor veya doğrulanmış mülk yok.</i>`);
+    }
+
+    const chunkLimit = 5;
+    let currentChunk = `⚔️ <b>[HYDRA GSC TÜM ALAN ADLARI DETAYLI RAPORU]</b>\n${THEME.DIVIDER}\n\n`;
+    let sentCount = 0;
+
+    for (let idx = 0; idx < gscStats.domains.length; idx++) {
+      const domain = gscStats.domains[idx];
+      const domainName = domain.siteUrl.replace('https://', '').replace('/', '').replace('sc-domain:', '');
+      
+      currentChunk += `🌐 <b>${domainName}</b>\n• Tık: <code>${domain.totalClicks}</code> | Gör: <code>${domain.totalImpressions}</code> | Ort: <code>#${domain.avgPosition}</code>\n${domain.topKeywords.map((k, i) => `${i + 1}. <code>${k.keyword}</code> -> #${k.position} (${k.clicks} tık)`).join('\n')}\n\n`;
+      
+      sentCount++;
+      if (sentCount % chunkLimit === 0 || idx === gscStats.domains.length - 1) {
+        await ctx.replyWithHTML(currentChunk + THEME.DIVIDER);
+        currentChunk = `⚔️ <b>[HYDRA GSC TÜM ALAN ADLARI DETAYLI RAPORU - DEVAM]</b>\n${THEME.DIVIDER}\n\n`;
+      }
+    }
+  } catch (err: any) {
+    await ctx.replyWithHTML(`${THEME.ERROR} Detaylı rapor alınamadı: <code>${err.message}</code>`);
   }
 });
 

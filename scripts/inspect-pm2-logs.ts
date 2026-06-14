@@ -18,10 +18,10 @@ async function run() {
     const listRes = await ssh.execCommand('ls -la /root/.pm2/logs/');
     console.log(listRes.stdout || listRes.stderr || 'No files found');
 
-    console.log('📡 Tailing multi-server-bomber-error.log...');
-    const result = await ssh.execCommand('tail -n 50 /root/.pm2/logs/multi-server-bomber-error.log');
-    fs.writeFileSync('bomber_logs.txt', result.stdout || result.stderr || 'No logs found');
-    console.log('Logs saved to bomber_logs.txt');
+    console.log('📡 Tailing Next.js app logs...');
+    const result = await ssh.execCommand('pm2 logs --lines 100 --raw --nostream');
+    fs.writeFileSync('pm2_app_logs.txt', result.stdout || result.stderr || 'No logs found');
+    console.log('Logs saved to pm2_app_logs.txt');
 
     ssh.dispose();
   } catch (err) {

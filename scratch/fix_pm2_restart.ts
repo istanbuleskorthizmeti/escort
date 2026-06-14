@@ -41,7 +41,7 @@ async function restartPm2() {
 
     console.log('\n--- CURL DYNAMIC DISTRICT PAGE VIA LOCAL NGINX ---');
     const curlRes = await ssh.execCommand(
-      'curl -I -H "Host: istanbulescdrkcn.com" http://127.0.0.1/istanbul/esenyurt-escort-gercek-gorseller'
+      'curl -I -H "Host: istanbulescort.blog" http://127.0.0.1/istanbul/esenyurt-escort-gercek-gorseller'
     );
     console.log(curlRes.stdout || curlRes.stderr);
 

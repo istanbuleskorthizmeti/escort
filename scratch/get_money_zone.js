@@ -13,8 +13,8 @@ async function checkMoneyZone() {
   };
 
   try {
-    console.log('📡 Searching for istanbulescdrkcn.com zone...');
-    const res = await axios.get('https://api.cloudflare.com/client/v4/zones?name=istanbulescdrkcn.com', { headers });
+    console.log('📡 Searching for istanbulescort.blog zone...');
+    const res = await axios.get('https://api.cloudflare.com/client/v4/zones?name=istanbulescort.blog', { headers });
     console.log('Result:', JSON.stringify(res.data.result, null, 2));
   } catch (err) {
     console.error('Failed:', err.response?.data || err.message);

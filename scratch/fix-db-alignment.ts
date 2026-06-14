@@ -8,7 +8,7 @@ async function main() {
     
     // 1. Get the main site ID
     const mainSite = await prisma.site.findUnique({
-        where: { domain: 'vipescorthizmeti.com' }
+        where: { domain: 'istanbulescort.blog' }
     });
 
     if (!mainSite) {

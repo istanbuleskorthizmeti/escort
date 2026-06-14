@@ -1,0 +1,978 @@
+[TAILING] Tailing last 100 lines for [all] processes (change the value with --lines option)
+/root/.pm2/logs/pm2-logrotate-error.log last 100 lines:
+/root/.pm2/logs/elite-hydrator-error.log last 100 lines:
+/root/.pm2/logs/traffic-blitz-v3-error.log last 100 lines:
+/root/.pm2/logs/elite-bot-out.log last 100 lines:
+🔐 [MASTER_LOCK] [EliteBot] Attempting to acquire lock for IP: 187.77.111.203
+✅ [MASTER_LOCK] Lock acquired successfully.
+🚀 SOVEREIGN BOT STARTING...
+📡 Group: -1003961137983
+
+/root/.pm2/logs/elite-bot-error.log last 100 lines:
+
+/root/.pm2/logs/elite-wordpress-autopilot-error.log last 100 lines:
+
+/root/.pm2/logs/pm2-logrotate-out.log last 100 lines:
+"/root/.pm2/logs/elite-bot-out__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/pm2-logrotate-out__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/nuclear-swarm-error__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/elite-hydrator-out__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/nuclear-swarm-out__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/elite-bot-error__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/elite-wordpress-autopilot-out__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/elite-wordpress-autopilot-error__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/escortvip-out-23__2026-06-13_00-00-00.log" has been created
+"pm2-logrotate-out__2026-06-02_00-00-00.log" has been deleted
+"nuclear-swarm-out__2026-06-03_00-00-00.log" has been deleted
+"elite-bot-out__2026-05-29_00-00-00.log" has been deleted
+"nuclear-swarm-error__2026-06-03_00-00-00.log" has been deleted
+"elite-wordpress-autopilot-error__2026-05-30_00-00-00.log" has been deleted
+"elite-wordpress-autopilot-out__2026-06-03_00-00-00.log" has been deleted
+"elite-hydrator-out__2026-06-03_00-00-00.log" has been deleted
+"/root/.pm2/logs/elite-tumblr-autopilot-error__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/elite-blogger-autopilot-error__2026-06-13_00-00-00.log" has been created
+"elite-blogger-autopilot-error__2026-06-03_00-00-00.log" has been deleted
+"elite-tumblr-autopilot-error__2026-06-03_00-00-00.log" has been deleted
+"/root/.pm2/logs/elite-tumblr-autopilot-out__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/escortvip-error-23__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/elite-blogger-autopilot-out__2026-06-13_00-00-00.log" has been created
+"elite-blogger-autopilot-out__2026-06-03_00-00-00.log" has been deleted
+"/root/.pm2/logs/traffic-blitz-v3-out__2026-06-13_00-00-00.log" has been created
+"traffic-blitz-v3-out__2026-06-03_00-00-00.log" has been deleted
+"/root/.pm2/logs/hydra-war-out__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/hydra-war-out__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/hydra-war-error__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/hydra-war-error__2026-06-13_00-00-00.log" has been created
+"/root/.pm2/logs/multi-server-bomber-error__2026-06-13_00-00-00.log" has been created
+"multi-server-bomber-error__2026-05-31_00-00-00.log" has been deleted
+"/root/.pm2/pm2__2026-06-13_09-43-17.log" has been created
+
+/root/.pm2/logs/elite-wordpress-autopilot-out.log last 100 lines:
+💤 [WORKER] Sleeping for 15 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 10]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 19 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 11]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 19 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 12]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 19 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 13]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 18 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 14]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 19 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 15]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 16 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 16]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 15 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 17]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 19 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 18]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 16 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 19]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 20]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 21]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 22]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 23]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 18 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 24]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 16 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 25]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 18 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 26]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 27]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 16 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 28]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 15 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 29]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 16 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 30]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 31]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 18 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 32]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 33]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 34]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 18 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 35]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 15 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 36]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 17 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 37]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 19 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 38]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 16 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 39]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 16 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 40]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 15 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 41]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 18 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign WordPress Engine [Cycle 42]...
+🔍 [AUTOPILOT] WP_AUTH not found or missing access token. Please authenticate via Admin Panel.
+💤 [WORKER] Sleeping for 18 minutes...
+
+/root/.pm2/logs/elite-tumblr-autopilot-error.log last 100 lines:
+
+/root/.pm2/logs/elite-tumblr-autopilot-out.log last 100 lines:
+🛸 Syncing: istanbul-istanbul: [██████████████████████████░░░░] 88% (22/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-istanbul: [████████████████████████████░░] 92% (23/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: bursa-orhangazi: [█████████████████████████████░] 96% (24/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for bursa-orhangazi...
+🛸 Batch Complete: [██████████████████████████████] 100% (25/25)
+✅ Operation Complete.
+✅ [TUMBLR] Cycle 48 batch complete.
+💤 [WORKER] Sleeping for 10 minutes...
+🚀 [TUMBLR] Initializing Niche Engine [Cycle 49] for escvipnet...
+📡 [ENGINE] Found 25 pages for Tumblr distribution.
+🛸 Syncing: istanbul-avcilar: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0% (0/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-avcilar...
+🛸 Syncing: agri-dogubayazit-kategori-trans-travesti-vip: [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 4% (1/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for agri-dogubayazit-kategori-trans-travesti-vip...
+🛸 Syncing: kocaeli: [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 8% (2/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kocaeli...
+🛸 Syncing: sakarya-arifiye: [████░░░░░░░░░░░░░░░░░░░░░░░░░░] 12% (3/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sakarya-arifiye...
+🛸 Syncing: eskisehir-beylikova: [█████░░░░░░░░░░░░░░░░░░░░░░░░░] 16% (4/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for eskisehir-beylikova...
+🛸 Syncing: istanbul-istanbul: [██████░░░░░░░░░░░░░░░░░░░░░░░░] 20% (5/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-sariyer: [███████░░░░░░░░░░░░░░░░░░░░░░░] 24% (6/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-sariyer...
+🛸 Syncing: burdur-kemer-kategori-milf-maturing: [████████░░░░░░░░░░░░░░░░░░░░░░] 28% (7/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for burdur-kemer-kategori-milf-maturing...
+🛸 Syncing: cankiri-cerkes: [██████████░░░░░░░░░░░░░░░░░░░░] 32% (8/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for cankiri-cerkes...
+🛸 Syncing: kastamonu-cide: [███████████░░░░░░░░░░░░░░░░░░░] 36% (9/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kastamonu-cide...
+🛸 Syncing: istanbul-istanbul: [████████████░░░░░░░░░░░░░░░░░░] 40% (10/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: sanliurfa-harran-kategori-yabanci-egzotik-modeller: [█████████████░░░░░░░░░░░░░░░░░] 44% (11/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sanliurfa-harran-kategori-yabanci-egzotik-modeller...
+🛸 Syncing: kirsehir-mucur: [██████████████░░░░░░░░░░░░░░░░] 48% (12/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kirsehir-mucur...
+🛸 Syncing: istanbul-atasehir: [████████████████░░░░░░░░░░░░░░] 52% (13/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-atasehir...
+🛸 Syncing: konya-bozkir: [█████████████████░░░░░░░░░░░░░] 56% (14/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for konya-bozkir...
+🛸 Syncing: antalya-gundogmus: [██████████████████░░░░░░░░░░░░] 60% (15/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for antalya-gundogmus...
+🛸 Syncing: istanbul-beyoglu: [███████████████████░░░░░░░░░░░] 64% (16/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-beyoglu...
+🛸 Syncing: eskisehir-inonu: [████████████████████░░░░░░░░░░] 68% (17/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for eskisehir-inonu...
+🛸 Syncing: sivas-akincilar: [██████████████████████░░░░░░░░] 72% (18/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sivas-akincilar...
+🛸 Syncing: istanbul-istanbul: [███████████████████████░░░░░░░] 76% (19/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul: [████████████████████████░░░░░░] 80% (20/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul...
+🛸 Syncing: elazig-madem: [█████████████████████████░░░░░] 84% (21/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for elazig-madem...
+🛸 Syncing: istanbul-istanbul: [██████████████████████████░░░░] 88% (22/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-istanbul: [████████████████████████████░░] 92% (23/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-istanbul: [█████████████████████████████░] 96% (24/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Batch Complete: [██████████████████████████████] 100% (25/25)
+✅ Operation Complete.
+✅ [TUMBLR] Cycle 49 batch complete.
+💤 [WORKER] Sleeping for 15 minutes...
+🚀 [TUMBLR] Initializing Niche Engine [Cycle 50] for escvipnet...
+📡 [ENGINE] Found 25 pages for Tumblr distribution.
+🛸 Syncing: giresun-tirebolu: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0% (0/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for giresun-tirebolu...
+🛸 Syncing: istanbul-istanbul: [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 4% (1/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-istanbul: [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 8% (2/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-avcilar: [████░░░░░░░░░░░░░░░░░░░░░░░░░░] 12% (3/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-avcilar...
+🛸 Syncing: agri-dogubayazit-kategori-trans-travesti-vip: [█████░░░░░░░░░░░░░░░░░░░░░░░░░] 16% (4/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for agri-dogubayazit-kategori-trans-travesti-vip...
+🛸 Syncing: kocaeli: [██████░░░░░░░░░░░░░░░░░░░░░░░░] 20% (5/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kocaeli...
+🛸 Syncing: sakarya-arifiye: [███████░░░░░░░░░░░░░░░░░░░░░░░] 24% (6/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sakarya-arifiye...
+🛸 Syncing: eskisehir-beylikova: [████████░░░░░░░░░░░░░░░░░░░░░░] 28% (7/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for eskisehir-beylikova...
+🛸 Syncing: istanbul-istanbul: [██████████░░░░░░░░░░░░░░░░░░░░] 32% (8/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-sariyer: [███████████░░░░░░░░░░░░░░░░░░░] 36% (9/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-sariyer...
+🛸 Syncing: burdur-kemer-kategori-milf-maturing: [████████████░░░░░░░░░░░░░░░░░░] 40% (10/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for burdur-kemer-kategori-milf-maturing...
+🛸 Syncing: cankiri-cerkes: [█████████████░░░░░░░░░░░░░░░░░] 44% (11/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for cankiri-cerkes...
+🛸 Syncing: kastamonu-cide: [██████████████░░░░░░░░░░░░░░░░] 48% (12/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kastamonu-cide...
+🛸 Syncing: istanbul-istanbul: [████████████████░░░░░░░░░░░░░░] 52% (13/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: sanliurfa-harran-kategori-yabanci-egzotik-modeller: [█████████████████░░░░░░░░░░░░░] 56% (14/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sanliurfa-harran-kategori-yabanci-egzotik-modeller...
+🛸 Syncing: kirsehir-mucur: [██████████████████░░░░░░░░░░░░] 60% (15/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kirsehir-mucur...
+🛸 Syncing: istanbul-atasehir: [███████████████████░░░░░░░░░░░] 64% (16/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-atasehir...
+🛸 Syncing: konya-bozkir: [████████████████████░░░░░░░░░░] 68% (17/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for konya-bozkir...
+🛸 Syncing: antalya-gundogmus: [██████████████████████░░░░░░░░] 72% (18/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for antalya-gundogmus...
+🛸 Syncing: istanbul-beyoglu: [███████████████████████░░░░░░░] 76% (19/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-beyoglu...
+🛸 Syncing: eskisehir-inonu: [████████████████████████░░░░░░] 80% (20/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for eskisehir-inonu...
+🛸 Syncing: sivas-akincilar: [█████████████████████████░░░░░] 84% (21/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sivas-akincilar...
+🛸 Syncing: istanbul-istanbul: [██████████████████████████░░░░] 88% (22/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul: [████████████████████████████░░] 92% (23/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul...
+🛸 Syncing: elazig-madem: [█████████████████████████████░] 96% (24/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for elazig-madem...
+🛸 Batch Complete: [██████████████████████████████] 100% (25/25)
+✅ Operation Complete.
+✅ [TUMBLR] Cycle 50 batch complete.
+💤 [WORKER] Sleeping for 10 minutes...
+🚀 [TUMBLR] Initializing Niche Engine [Cycle 51] for escvipnet...
+📡 [ENGINE] Found 25 pages for Tumblr distribution.
+🛸 Syncing: bursa-keles: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0% (0/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for bursa-keles...
+🛸 Syncing: istanbul-istanbul: [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 4% (1/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: giresun-tirebolu: [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 8% (2/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for giresun-tirebolu...
+🛸 Syncing: istanbul-istanbul: [████░░░░░░░░░░░░░░░░░░░░░░░░░░] 12% (3/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-istanbul: [█████░░░░░░░░░░░░░░░░░░░░░░░░░] 16% (4/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-avcilar: [██████░░░░░░░░░░░░░░░░░░░░░░░░] 20% (5/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-avcilar...
+🛸 Syncing: agri-dogubayazit-kategori-trans-travesti-vip: [███████░░░░░░░░░░░░░░░░░░░░░░░] 24% (6/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for agri-dogubayazit-kategori-trans-travesti-vip...
+🛸 Syncing: kocaeli: [████████░░░░░░░░░░░░░░░░░░░░░░] 28% (7/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kocaeli...
+🛸 Syncing: sakarya-arifiye: [██████████░░░░░░░░░░░░░░░░░░░░] 32% (8/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sakarya-arifiye...
+🛸 Syncing: eskisehir-beylikova: [███████████░░░░░░░░░░░░░░░░░░░] 36% (9/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for eskisehir-beylikova...
+🛸 Syncing: istanbul-istanbul: [████████████░░░░░░░░░░░░░░░░░░] 40% (10/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: istanbul-sariyer: [█████████████░░░░░░░░░░░░░░░░░] 44% (11/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-sariyer...
+🛸 Syncing: burdur-kemer-kategori-milf-maturing: [██████████████░░░░░░░░░░░░░░░░] 48% (12/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for burdur-kemer-kategori-milf-maturing...
+🛸 Syncing: cankiri-cerkes: [████████████████░░░░░░░░░░░░░░] 52% (13/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for cankiri-cerkes...
+🛸 Syncing: kastamonu-cide: [█████████████████░░░░░░░░░░░░░] 56% (14/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kastamonu-cide...
+🛸 Syncing: istanbul-istanbul: [██████████████████░░░░░░░░░░░░] 60% (15/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Syncing: sanliurfa-harran-kategori-yabanci-egzotik-modeller: [███████████████████░░░░░░░░░░░] 64% (16/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sanliurfa-harran-kategori-yabanci-egzotik-modeller...
+🛸 Syncing: kirsehir-mucur: [████████████████████░░░░░░░░░░] 68% (17/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for kirsehir-mucur...
+🛸 Syncing: istanbul-atasehir: [██████████████████████░░░░░░░░] 72% (18/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-atasehir...
+🛸 Syncing: konya-bozkir: [███████████████████████░░░░░░░] 76% (19/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for konya-bozkir...
+🛸 Syncing: antalya-gundogmus: [████████████████████████░░░░░░] 80% (20/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for antalya-gundogmus...
+🛸 Syncing: istanbul-beyoglu: [█████████████████████████░░░░░] 84% (21/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-beyoglu...
+🛸 Syncing: eskisehir-inonu: [██████████████████████████░░░░] 88% (22/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for eskisehir-inonu...
+🛸 Syncing: sivas-akincilar: [████████████████████████████░░] 92% (23/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for sivas-akincilar...
+🛸 Syncing: istanbul-istanbul: [█████████████████████████████░] 96% (24/25)✨ [AUTOPILOT] Generating Elite Tumblr Content for istanbul-istanbul...
+🛸 Batch Complete: [██████████████████████████████] 100% (25/25)
+✅ Operation Complete.
+✅ [TUMBLR] Cycle 51 batch complete.
+💤 [WORKER] Sleeping for 16 minutes...
+
+/root/.pm2/logs/escortvip-out-23.log last 100 lines:
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3001
+   - Network:      http://187.77.111.203:3001
+
+ ✓ Starting...
+ ✓ Ready in 1008ms
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3001
+   - Network:      http://187.77.111.203:3001
+
+ ✓ Starting...
+ ✓ Ready in 682ms
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3001
+   - Network:      http://187.77.111.203:3001
+
+ ✓ Starting...
+ ✓ Ready in 647ms
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3001
+   - Network:      http://187.77.111.203:3001
+
+ ✓ Starting...
+ ✓ Ready in 617ms
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3001
+   - Network:      http://187.77.111.203:3001
+
+ ✓ Starting...
+ ✓ Ready in 740ms
+
+/root/.pm2/logs/telegram-blast-error.log last 100 lines:
+
+/root/.pm2/logs/telegram-blast-out.log last 100 lines:
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Photo posted to @istanbulescorthizmeti: SARIŞIN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+✅ [BLAST] Photo posted to @turkifsaonlyfansdrkcn: Hande
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @OnlyfansPremiumvideolar
+✅ [BLAST] Photo posted to @OnlyfansPremiumvideolar: SARIŞIN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsavipescort
+✅ [BLAST] Photo posted to @turkifsavipescort: VAHŞİ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Photo posted to @istanbulescorthizmeti: KAPORASIZ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+✅ [BLAST] Photo posted to @turkifsaonlyfansdrkcn: ÜNİVERSİTELİ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @OnlyfansPremiumvideolar
+✅ [BLAST] Photo posted to @OnlyfansPremiumvideolar: ANAL
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsavipescort
+✅ [BLAST] Photo posted to @turkifsavipescort: ESMER
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Photo posted to @istanbulescorthizmeti: ELİT
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+✅ [BLAST] Photo posted to @turkifsaonlyfansdrkcn: VAHŞİ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @OnlyfansPremiumvideolar
+✅ [BLAST] Photo posted to @OnlyfansPremiumvideolar: Hande
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsavipescort
+✅ [BLAST] Photo posted to @turkifsavipescort: VAHŞİ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Video posted to @istanbulescorthizmeti: VİTRİN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+✅ [BLAST] Photo posted to @turkifsaonlyfansdrkcn: SARIŞIN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @OnlyfansPremiumvideolar
+✅ [BLAST] Photo posted to @OnlyfansPremiumvideolar: ELİT
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsavipescort
+✅ [BLAST] Photo posted to @turkifsavipescort: ELİT
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Photo posted to @istanbulescorthizmeti: SARIŞIN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+✅ [BLAST] Photo posted to @turkifsaonlyfansdrkcn: SARIŞIN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @OnlyfansPremiumvideolar
+✅ [BLAST] Video posted to @OnlyfansPremiumvideolar: VİTRİN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsavipescort
+✅ [BLAST] Photo posted to @turkifsavipescort: KAPORASIZ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Video posted to @istanbulescorthizmeti: VİTRİN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+✅ [BLAST] Photo posted to @turkifsaonlyfansdrkcn: ANAL
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @OnlyfansPremiumvideolar
+✅ [BLAST] Photo posted to @OnlyfansPremiumvideolar: SARIŞIN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsavipescort
+✅ [BLAST] Photo posted to @turkifsavipescort: SARIŞIN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Photo posted to @istanbulescorthizmeti: ESMER
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+✅ [BLAST] Photo posted to @turkifsaonlyfansdrkcn: ANAL
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @OnlyfansPremiumvideolar
+✅ [BLAST] Photo posted to @OnlyfansPremiumvideolar: VAHŞİ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsavipescort
+✅ [BLAST] Photo posted to @turkifsavipescort: VAHŞİ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Photo posted to @istanbulescorthizmeti: VAHŞİ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @OnlyfansPremiumvideolar
+✅ [BLAST] Photo posted to @OnlyfansPremiumvideolar: ESMER
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsavipescort
+✅ [BLAST] Photo posted to @turkifsavipescort: KAPORASIZ
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @istanbulescorthizmeti
+✅ [BLAST] Photo posted to @istanbulescorthizmeti: OLGUN
+🏁 [HYDRA-BLAST] Staggered single post complete.
+🎯 [HYDRA-BLAST] Staggered rotation: targeting @turkifsaonlyfansdrkcn
+✅ [BLAST] Photo posted to @turkifsaonlyfansdrkcn: ELİT
+🏁 [HYDRA-BLAST] Staggered single post complete.
+
+/root/.pm2/logs/elite-hydrator-out.log last 100 lines:
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+🌊 [HYDRATOR] Scanning for empty page content (Batch: 5)...
+✅ [HYDRATOR] All pages are hydrated. Database is at full depth.
+💤 [HYDRATOR] Sleeping for 300s...
+
+/root/.pm2/logs/escortvip-out-24.log last 100 lines:
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3001
+   - Network:      http://187.77.111.203:3001
+
+ ✓ Starting...
+ ✓ Ready in 652ms
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3001
+   - Network:      http://187.77.111.203:3001
+
+ ✓ Starting...
+ ✓ Ready in 653ms
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+   ▲ Next.js 15.1.0
+   - Local:        http://localhost:3001
+   - Network:      http://187.77.111.203:3001
+
+ ✓ Starting...
+ ✓ Ready in 665ms
+prisma:error 
+Invalid `prisma.site.create()` invocation:
+
+
+Unique constraint failed on the fields: (`domain`)
+
+/root/.pm2/logs/elite-blogger-autopilot-error.log last 100 lines:
+
+/root/.pm2/logs/elite-blogger-autopilot-out.log last 100 lines:
+🛸 Blogging: istanbul-istanbul: [██████████████████████████░░░░] 88% (22/25)
+🧵 [PROCESS] Targeting: istanbul-istanbul
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-istanbul...
+🛸 Blogging: istanbul: [████████████████████████████░░] 92% (23/25)
+🧵 [PROCESS] Targeting: istanbul
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul...
+🛸 Blogging: elazig-madem: [█████████████████████████████░] 96% (24/25)
+🧵 [PROCESS] Targeting: elazig-madem
+✨ [AUTOPILOT] Generating Elite Niche Content for elazig-madem...
+🛸 Cycle Complete: [██████████████████████████████] 100% (25/25)
+✅ Operation Complete.
+
+🏁 [FINISH] Autopilot cycle complete.
+✅ [AUTOPILOT] Cycle 46 finished.
+💤 [WORKER] Sleeping for 19 minutes...
+🚀 [AUTOPILOT] Initializing Sovereign Blogger Engine [Cycle 47]...
+📡 [HYDRA] Active Blog Pool: 1 blogs.
+🎯 [AUTOPILOT] Processing batch of 25 pages...
+🛸 Blogging: sinop-ayancik: [░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 0% (0/25)
+🧵 [PROCESS] Targeting: sinop-ayancik
+📡 [SEO ROULETTE] Generating DRKCNAY Cloak Link for: sinop-ayancik
+✨ [AUTOPILOT] Generating Elite Niche Content for sinop-ayancik...
+🛸 Blogging: istanbul-sisli-kategori-vip-escort: [█░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 4% (1/25)
+🧵 [PROCESS] Targeting: istanbul-sisli-kategori-vip-escort
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-sisli-kategori-vip-escort...
+🛸 Blogging: bursa-keles: [██░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 8% (2/25)
+🧵 [PROCESS] Targeting: bursa-keles
+✨ [AUTOPILOT] Generating Elite Niche Content for bursa-keles...
+🛸 Blogging: istanbul-istanbul: [████░░░░░░░░░░░░░░░░░░░░░░░░░░] 12% (3/25)
+🧵 [PROCESS] Targeting: istanbul-istanbul
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-istanbul...
+🛸 Blogging: giresun-tirebolu: [█████░░░░░░░░░░░░░░░░░░░░░░░░░] 16% (4/25)
+🧵 [PROCESS] Targeting: giresun-tirebolu
+✨ [AUTOPILOT] Generating Elite Niche Content for giresun-tirebolu...
+🛸 Blogging: istanbul-istanbul: [██████░░░░░░░░░░░░░░░░░░░░░░░░] 20% (5/25)
+🧵 [PROCESS] Targeting: istanbul-istanbul
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-istanbul...
+🛸 Blogging: istanbul-istanbul: [███████░░░░░░░░░░░░░░░░░░░░░░░] 24% (6/25)
+🧵 [PROCESS] Targeting: istanbul-istanbul
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-istanbul...
+🛸 Blogging: istanbul-avcilar: [████████░░░░░░░░░░░░░░░░░░░░░░] 28% (7/25)
+🧵 [PROCESS] Targeting: istanbul-avcilar
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-avcilar...
+🛸 Blogging: agri-dogubayazit-kategori-trans-travesti-vip: [██████████░░░░░░░░░░░░░░░░░░░░] 32% (8/25)
+🧵 [PROCESS] Targeting: agri-dogubayazit-kategori-trans-travesti-vip
+✨ [AUTOPILOT] Generating Elite Niche Content for agri-dogubayazit-kategori-trans-travesti-vip...
+🛸 Blogging: kocaeli: [███████████░░░░░░░░░░░░░░░░░░░] 36% (9/25)
+🧵 [PROCESS] Targeting: kocaeli
+✨ [AUTOPILOT] Generating Elite Niche Content for kocaeli...
+🛸 Blogging: sakarya-arifiye: [████████████░░░░░░░░░░░░░░░░░░] 40% (10/25)
+🧵 [PROCESS] Targeting: sakarya-arifiye
+✨ [AUTOPILOT] Generating Elite Niche Content for sakarya-arifiye...
+🛸 Blogging: eskisehir-beylikova: [█████████████░░░░░░░░░░░░░░░░░] 44% (11/25)
+🧵 [PROCESS] Targeting: eskisehir-beylikova
+✨ [AUTOPILOT] Generating Elite Niche Content for eskisehir-beylikova...
+🛸 Blogging: istanbul-istanbul: [██████████████░░░░░░░░░░░░░░░░] 48% (12/25)
+🧵 [PROCESS] Targeting: istanbul-istanbul
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-istanbul...
+🛸 Blogging: istanbul-sariyer: [████████████████░░░░░░░░░░░░░░] 52% (13/25)
+🧵 [PROCESS] Targeting: istanbul-sariyer
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-sariyer...
+🛸 Blogging: burdur-kemer-kategori-milf-maturing: [█████████████████░░░░░░░░░░░░░] 56% (14/25)
+🧵 [PROCESS] Targeting: burdur-kemer-kategori-milf-maturing
+✨ [AUTOPILOT] Generating Elite Niche Content for burdur-kemer-kategori-milf-maturing...
+🛸 Blogging: cankiri-cerkes: [██████████████████░░░░░░░░░░░░] 60% (15/25)
+🧵 [PROCESS] Targeting: cankiri-cerkes
+✨ [AUTOPILOT] Generating Elite Niche Content for cankiri-cerkes...
+🛸 Blogging: kastamonu-cide: [███████████████████░░░░░░░░░░░] 64% (16/25)
+🧵 [PROCESS] Targeting: kastamonu-cide
+✨ [AUTOPILOT] Generating Elite Niche Content for kastamonu-cide...
+🛸 Blogging: istanbul-istanbul: [████████████████████░░░░░░░░░░] 68% (17/25)
+🧵 [PROCESS] Targeting: istanbul-istanbul
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-istanbul...
+🛸 Blogging: sanliurfa-harran-kategori-yabanci-egzotik-modeller: [██████████████████████░░░░░░░░] 72% (18/25)
+🧵 [PROCESS] Targeting: sanliurfa-harran-kategori-yabanci-egzotik-modeller
+✨ [AUTOPILOT] Generating Elite Niche Content for sanliurfa-harran-kategori-yabanci-egzotik-modeller...
+🛸 Blogging: kirsehir-mucur: [███████████████████████░░░░░░░] 76% (19/25)
+🧵 [PROCESS] Targeting: kirsehir-mucur
+✨ [AUTOPILOT] Generating Elite Niche Content for kirsehir-mucur...
+🛸 Blogging: istanbul-atasehir: [████████████████████████░░░░░░] 80% (20/25)
+🧵 [PROCESS] Targeting: istanbul-atasehir
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-atasehir...
+🛸 Blogging: konya-bozkir: [█████████████████████████░░░░░] 84% (21/25)
+🧵 [PROCESS] Targeting: konya-bozkir
+✨ [AUTOPILOT] Generating Elite Niche Content for konya-bozkir...
+🛸 Blogging: antalya-gundogmus: [██████████████████████████░░░░] 88% (22/25)
+🧵 [PROCESS] Targeting: antalya-gundogmus
+✨ [AUTOPILOT] Generating Elite Niche Content for antalya-gundogmus...
+🛸 Blogging: istanbul-beyoglu: [████████████████████████████░░] 92% (23/25)
+🧵 [PROCESS] Targeting: istanbul-beyoglu
+✨ [AUTOPILOT] Generating Elite Niche Content for istanbul-beyoglu...
+🛸 Blogging: eskisehir-inonu: [█████████████████████████████░] 96% (24/25)
+🧵 [PROCESS] Targeting: eskisehir-inonu
+✨ [AUTOPILOT] Generating Elite Niche Content for eskisehir-inonu...
+🛸 Cycle Complete: [██████████████████████████████] 100% (25/25)
+✅ Operation Complete.
+
+🏁 [FINISH] Autopilot cycle complete.
+✅ [AUTOPILOT] Cycle 47 finished.
+💤 [WORKER] Sleeping for 12 minutes...
+
+/root/.pm2/logs/nuclear-swarm-out.log last 100 lines:
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/vipesc2027
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+💤 1 saat bekleme (Anti-Spam & Sunucu Sağlığı)...
+
+🔥 HEDEF LİNK: https://bit.ly/dorukcanmanay
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/grandveracasino
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/istanbulvipescort2026
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/3QTcL2z
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/vipesc2027
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+💤 1 saat bekleme (Anti-Spam & Sunucu Sağlığı)...
+
+🔥 HEDEF LİNK: https://bit.ly/dorukcanmanay
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/grandveracasino
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/istanbulvipescort2026
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/3QTcL2z
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/vipesc2027
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+💤 1 saat bekleme (Anti-Spam & Sunucu Sağlığı)...
+
+🔥 HEDEF LİNK: https://bit.ly/dorukcanmanay
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/grandveracasino
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/istanbulvipescort2026
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/3QTcL2z
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/vipesc2027
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+💤 1 saat bekleme (Anti-Spam & Sunucu Sağlığı)...
+
+🔥 HEDEF LİNK: https://bit.ly/dorukcanmanay
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/grandveracasino
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/istanbulvipescort2026
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/3QTcL2z
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/vipesc2027
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+💤 1 saat bekleme (Anti-Spam & Sunucu Sağlığı)...
+
+🔥 HEDEF LİNK: https://bit.ly/dorukcanmanay
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/grandveracasino
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/istanbulvipescort2026
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/3QTcL2z
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/vipesc2027
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+💤 1 saat bekleme (Anti-Spam & Sunucu Sağlığı)...
+
+🔥 HEDEF LİNK: https://bit.ly/dorukcanmanay
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/grandveracasino
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/istanbulvipescort2026
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/3QTcL2z
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+🔥 HEDEF LİNK: https://bit.ly/vipesc2027
+   -> [TIER 0] GitHub/Rest Spoofing simulation...
+
+/root/.pm2/logs/nuclear-swarm-error.log last 100 lines:
+
+/root/.pm2/logs/escortvip-error-23.log last 100 lines:
+
+/root/.pm2/logs/escortvip-error-24.log last 100 lines:
+
+/root/.pm2/logs/traffic-blitz-v3-out.log last 100 lines:
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs
+🎯 Hit: https://meritbet.mex.com
+🎯 Hit: https://grandpashabet.space
+🎯 Hit: https://casiboom.sbs

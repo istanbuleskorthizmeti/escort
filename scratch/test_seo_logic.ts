@@ -30,7 +30,7 @@ async function test() {
   console.log('  Robots Indexable:', meta2.robots);
 
   // Test Case 3: District mismatch without dedicated satellite (e.g. Kağıthane on Esenyurt satellite)
-  console.log('\n3. Testing Kağıthane page on esenyurtescorthizmeti.shop (Expected: Noindexed, Canonical to vipescorthizmeti.com):');
+  console.log('\n3. Testing Kağıthane page on esenyurtescorthizmeti.shop (Expected: Noindexed, Canonical to istanbulescort.blog):');
   const meta3 = generateLocationMetadata({
     city: 'istanbul',
     cityName: 'İstanbul',
@@ -42,7 +42,7 @@ async function test() {
   console.log('  Robots Indexable:', meta3.robots);
 
   // Test Case 4: City page on district-specific satellite domain (e.g. /istanbul on Esenyurt satellite)
-  console.log('\n4. Testing City page on esenyurtescorthizmeti.shop (Expected: Noindexed, Canonical to vipescorthizmeti.com):');
+  console.log('\n4. Testing City page on esenyurtescorthizmeti.shop (Expected: Noindexed, Canonical to istanbulescort.blog):');
   const meta4 = generateLocationMetadata({
     city: 'istanbul',
     cityName: 'İstanbul',

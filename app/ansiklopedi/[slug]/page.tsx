@@ -8,8 +8,77 @@ import { getStitchedContent } from "@/lib/obsidian-fragments";
 import { SmartImage } from "@/components/UI/SmartImage";
 import { siteConfig } from "@/config/site";
 import { BreadcrumbSchema } from "@/components/SEO/JsonLd";
+import { headers } from "next/headers";
+import { prisma } from "../../../lib/prisma";
+import { omniAI } from "../../../lib/ai-provider";
+import { getPersonaForHost, PERSONAS } from "../../../lib/persona-engine";
+import { getSiteId, getCanonicalHost } from "../../../lib/site-context";
 
 export const dynamic = "force-dynamic";
+
+async function getEncyclopediaContent(slug: string, host: string, siteId: string | null, entry: any) {
+  const dbSlug = `ansiklopedi-${slug}`;
+  let page = await prisma.pageContent.findFirst({
+    where: {
+      slug: dbSlug,
+      OR: [{ siteId }, { siteId: null }]
+    },
+    orderBy: { siteId: 'desc' }
+  });
+
+  if (page && page.content) {
+    return page.content;
+  }
+
+  const personaKey = getPersonaForHost(host);
+  const persona = PERSONAS[personaKey];
+  
+  const systemPrompt = `
+    [GEMINI ELITE CORE - PERSONA-BASED UNDETECTABLE AI & ACADEMIC EEAT]
+    Görevin: "${entry.title}" konusunu derinlemesine ve son derece akademik/yaşam kültürü kalitesinde ele alan elit bir makale yazmaktır.
+    
+    Yazım Tonu: ${persona.tone}
+    Odak Noktaları: ${persona.focus}
+    Duygu Durumu: ${persona.emotional_state}
+    Yazım Ritmi (Burstiness): Kısa ve keskin cümleler ile uzun betimleme cümlelerinin bir arada kullanıldığı son derece insansı ve akıcı bir tempo.
+    Kelimeler: ${persona.vocabulary.join(', ')}
+    
+    KURALLAR:
+    - Yapay zeka bağlaçları ("Sonuç olarak", "Öncelikle", "Bununla birlikte") KESİNLİKLE YASAKTIR.
+    - Metni zengin H2, H3 alt başlıkları ve HTML paragrafları ile oluştur.
+    - Yazının uzunluğu en az 1200 kelime olmalıdır.
+    - Metin içinde şu 2 linki dofollow olarak ekle:
+      1. <a href="https://istanbulescort.blog">https://istanbulescort.blog</a> (Anchor: "kaporasız eskort bayanlar")
+      2. <a href="https://${host}">https://${host}</a> (Anchor: "vip escort randevusu")
+  `;
+
+  const userPrompt = `Konu: ${entry.title}. Lütfen bu konuya dair, okuyucuya en lüks dergi kalitesini hissettiren derinlikte, ${personaKey} üslubuna tam uyumlu bir makale gövdesi oluştur. Sadece HTML etiketlerini (p, h2, h3, strong) kullanarak yanıtla. JSON veya markdown kod bloğu kullanma.`;
+
+  try {
+    let htmlContent = await omniAI.generate(userPrompt, { systemPrompt, temperature: 0.75, max_tokens: 3000 });
+    
+    if (htmlContent.includes('```html')) {
+      htmlContent = htmlContent.split('```html')[1].split('```')[0].trim();
+    } else if (htmlContent.includes('```')) {
+      htmlContent = htmlContent.split('```')[1].trim();
+    }
+
+    // Cache content asynchronously
+    await prisma.pageContent.create({
+      data: {
+        slug: dbSlug,
+        siteId: siteId,
+        title: entry.title,
+        content: htmlContent,
+      }
+    });
+
+    return htmlContent;
+  } catch (err: any) {
+    console.error("⚠️ Dynamic article generation failed, falling back to spintax:", err.message);
+    return getStitchedContent(slug.length * 100, 2000).replace(/\n\n/g, '<br/><br/>');
+  }
+}
 
 const encyclopediaData: Record<string, { title: string, expertId: string, description: string }> = {
   "fantezi-arkeolojisi": {
@@ -92,10 +161,12 @@ export default async function EncyclopediaPage({ params }: { params: Promise<{ s
   const entry = encyclopediaData[slug as string];
   if (!entry) notFound();
 
+  const hostHeader = (await headers()).get("host") || siteConfig.domain;
+  const host = getCanonicalHost(hostHeader);
+  const siteId = await getSiteId(host);
+
   const expert = experts.find(e => e.id === entry.expertId);
-
-
-  const content = getStitchedContent(slug.length * 100, 3000);
+  const content = await getEncyclopediaContent(slug, host, siteId, entry);
 
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-rose-600 selection:text-white antialiased">
@@ -180,6 +251,24 @@ export default async function EncyclopediaPage({ params }: { params: Promise<{ s
                           {data.title.split(":")[0]}
                         </Link>
                       )
+                    ))}
+                 </nav>
+              </div>
+
+              <div className="bg-zinc-950/50 border border-zinc-900 rounded-[3rem] p-10 space-y-6">
+                 <h4 className="text-zinc-500 font-black text-xs tracking-widest uppercase">OTORİTE BÖLGELERİ</h4>
+                 <nav className="flex flex-col gap-4">
+                    {[
+                      { name: "Şişli Escort", path: "/istanbul/sisli" },
+                      { name: "Beşiktaş Escort", path: "/istanbul/besiktas" },
+                      { name: "Kadıköy Escort", path: "/istanbul/kadikoy" },
+                      { name: "Bakırköy Escort", path: "/istanbul/bakirkoy" },
+                      { name: "Beylikdüzü Escort", path: "/istanbul/beylikduzu" },
+                      { name: "Sefaköy Escort", path: "/istanbul/kucukcekmece/sefakoy" }
+                    ].map((loc, idx) => (
+                      <Link key={idx} href={loc.path} className="text-zinc-400 hover:text-rose-500 transition-colors font-black italic uppercase tracking-tighter text-lg">
+                        {loc.name}
+                      </Link>
                     ))}
                  </nav>
               </div>

@@ -104,7 +104,7 @@ export default async function ProfilePage({ params }: PageProps) {
              />
              <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent" />
              <div className="absolute bottom-6 left-6">
-                <span className="bg-[var(--brand-color)] text-white px-4 py-1 text-xs font-black italic rounded-full shadow-lg uppercase">
+                <span className="bg-(--brand-color) text-white px-4 py-1 text-xs font-black italic rounded-full shadow-lg uppercase">
                   %100 Gerçek Profil
                 </span>
              </div>
@@ -116,7 +116,7 @@ export default async function ProfilePage({ params }: PageProps) {
               <h1 className="text-4xl md:text-6xl font-black italic tracking-tighter leading-none">
                 <span className="text-white uppercase">{profile.name}</span>
                 <br />
-                <span className="text-[var(--brand-color)] uppercase">{profile.district} VIP</span>
+                <span className="text-(--brand-color) uppercase">{profile.district} VIP</span>
               </h1>
               <p className="text-xl text-zinc-400 font-medium italic opacity-80 leading-relaxed">
                 {profile.description}

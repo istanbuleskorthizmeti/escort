@@ -3,7 +3,7 @@
     "allow": [
       "Bash(npm -v)",
       "Bash(git --version)",
-      "Bash(curl -vL http://vipescorthizmeti.com)",
+      "Bash(curl -vL http://istanbulescort.blog)",
       "Bash(grep -rn \"escortvip\" /c/Users/DRKCNAY --max-depth=3 --exclude-dir=node_modules)",
       "Bash(rm -rf .claude)",
       "Bash(git clone:*)",

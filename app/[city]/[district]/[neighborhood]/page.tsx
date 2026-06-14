@@ -151,7 +151,7 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
   });
 
   return (
-    <div className="min-h-screen bg-black text-white antialiased selection:bg-[var(--primary-color)]/30 selection:text-white">
+    <div className="min-h-screen bg-black text-white antialiased selection:bg-(--primary-color)/30 selection:text-white">
       <link rel="amphtml" href={`https://${host}/amp?loc=${neighborhood}`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ultraSchema) }} />
       <Navbar />
@@ -163,8 +163,8 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
           
           <Breadcrumbs items={[{ name: cityName, item: `/${city}` }, { name: dName, item: `/${city}/${district}` }, { name: nName, item: `/${city}/${district}/${neighborhood}` }]} />
           
-          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-[var(--primary-color)]/20 px-8 py-3 rounded-full mb-16 animate-fade-in shadow-glow-[var(--primary-color)] mt-12">
-            <span className="w-2.5 h-2.5 bg-[var(--primary-color)] rounded-full animate-glow-pulse" />
+          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-(--primary-color)/20 px-8 py-3 rounded-full mb-16 animate-fade-in shadow-glow-(--primary-color) mt-12">
+            <span className="w-2.5 h-2.5 bg-(--primary-color) rounded-full animate-glow-pulse" />
             <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
                {nName.toUpperCase()} {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'LOCAL AUTHORITY'}
             </span>
@@ -181,23 +181,23 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
                 <span className="opacity-90 flex items-center gap-2">
                   {emoji1} {nName}
                 </span>
-                <span className="text-[var(--primary-color)] drop-shadow-[0_0_50px_var(--primary-color)] flex items-center gap-2">
+                <span className="text-(--primary-color) drop-shadow-[0_0_50px_(--primary-color)] flex items-center gap-2">
                   {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'ESCORT AJANSI'} {emoji2}
                 </span>
               </h1>
             );
           })()}
           
-          <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-[var(--primary-color)] pl-12 max-w-4xl leading-tight opacity-90">
+          <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-(--primary-color) pl-12 max-w-4xl leading-tight opacity-90">
             {host.includes('dorukcanay.digital') ? (
               <>
                 {cityName} {dName} {nName} bölgesinde lüks yaşam tarzına özel <br className="hidden md:block"/>
-                <span className="text-white border-b-2 border-[var(--primary-color)]/30 pb-1">kaporasız elit model</span> refakatçiler.
+                <span className="text-white border-b-2 border-(--primary-color)/30 pb-1">kaporasız elit model</span> refakatçiler.
               </>
             ) : (
               <>
                 {cityName} {dName} {nName} bölgesindeki en elit escort rehberi ve <br className="hidden md:block"/>
-                <span className="text-white border-b-2 border-[var(--primary-color)]/30 pb-1">doğrulanmış gerçek</span> escort bayanlar.
+                <span className="text-white border-b-2 border-(--primary-color)/30 pb-1">doğrulanmış gerçek</span> escort bayanlar.
               </>
             )}
           </p>

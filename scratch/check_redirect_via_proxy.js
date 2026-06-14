@@ -7,9 +7,9 @@ async function checkRedirect() {
   const httpAgent = new HttpProxyAgent(proxyUrl);
   const httpsAgent = new HttpsProxyAgent(proxyUrl);
   
-  console.log('📡 Requesting https://vipescorthizmeti.com/ via proxy...');
+  console.log('📡 Requesting https://istanbulescort.blog/ via proxy...');
   try {
-    const res = await axios.get('https://vipescorthizmeti.com/', {
+    const res = await axios.get('https://istanbulescort.blog/', {
       httpAgent,
       httpsAgent,
       maxRedirects: 0,

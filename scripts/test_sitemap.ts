@@ -2,11 +2,10 @@ import axios from 'axios';
 
 async function run() {
   const urls = [
-    'https://istanbulescort.blog/api/seo?host=istanbulescort.blog&file=sitemap.xml',
-    'https://istanbulescort.blog/sitemap.xml',
-    'https://istanbulescort.blog/sitemap-index.xml',
-    'https://istanbulescort.blog/sitemap-districts.xml',
-    'https://istanbulescort.blog/sitemap-categories.xml'
+    'http://127.0.0.1:3001/sitemap.xml',
+    'http://127.0.0.1:3001/sitemap-index.xml',
+    'http://127.0.0.1:3001/sitemap-districts.xml',
+    'http://127.0.0.1:3001/sitemap-categories.xml'
   ];
 
   for (const sitemapUrl of urls) {

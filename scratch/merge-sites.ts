@@ -48,7 +48,7 @@ async function main() {
     }
 
     // Ensure main domain is correct
-    const mainDomain = 'vipescorthizmeti.com';
+    const mainDomain = 'istanbulescort.blog';
     const mainSites = sites.filter(s => s.domain === mainDomain);
     if (mainSites.length > 0) {
         console.log(`🌐 Main site resolved: ${mainSites[0].id}`);

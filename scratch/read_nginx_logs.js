@@ -22,8 +22,8 @@ async function run() {
     const curlLocal = await ssh.execCommand('curl -I --max-time 5 http://127.0.0.1:3000/');
     console.log(curlLocal.stdout || curlLocal.stderr);
 
-    console.log('\n=== CURL 127.0.0.1:3000 with Host istanbulescdrkcn.com (timeout 5s) ===');
-    const curlHost = await ssh.execCommand('curl -I --max-time 5 -H "Host: istanbulescdrkcn.com" http://127.0.0.1:3000/');
+    console.log('\n=== CURL 127.0.0.1:3000 with Host istanbulescort.blog (timeout 5s) ===');
+    const curlHost = await ssh.execCommand('curl -I --max-time 5 -H "Host: istanbulescort.blog" http://127.0.0.1:3000/');
     console.log(curlHost.stdout || curlHost.stderr);
 
   } catch (e) {

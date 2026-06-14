@@ -15,9 +15,9 @@ async function testFinalRender() {
     await ssh.connect(config);
     console.log('✅ SSH Connected.');
 
-    console.log('\n--- CURLING DYNAMIC PATH ON istanbulescdrkcn.com HOST ---');
+    console.log('\n--- CURLING DYNAMIC PATH ON istanbulescort.blog HOST ---');
     const curlRes = await ssh.execCommand(
-      'curl -I -H "Host: istanbulescdrkcn.com" http://127.0.0.1/istanbul/esenyurt-escort-gercek-gorseller'
+      'curl -I -H "Host: istanbulescort.blog" http://127.0.0.1/istanbul/esenyurt-escort-gercek-gorseller'
     );
     console.log(curlRes.stdout || curlRes.stderr);
 

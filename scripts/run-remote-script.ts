@@ -17,7 +17,7 @@ async function main() {
   }
 
   const localPath = path.resolve(localFileName);
-  const remotePath = `/var/www/escortvip/scratch/${path.basename(localFileName)}`;
+  const remotePath = `/root/esc/scratch/${path.basename(localFileName)}`;
 
   try {
     await ssh.connect(config);
@@ -28,7 +28,7 @@ async function main() {
     console.log('✅ Uploaded.');
 
     console.log(`🚀 Executing script on VPS...`);
-    const result = await ssh.execCommand(`npx tsx ${remotePath}`, { cwd: '/var/www/escortvip' });
+    const result = await ssh.execCommand(`npx tsx ${remotePath}`, { cwd: '/root/esc' });
     
     console.log('\n--- OUTPUT ---');
     console.log(result.stdout);

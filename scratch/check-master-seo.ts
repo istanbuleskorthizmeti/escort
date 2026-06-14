@@ -10,7 +10,7 @@ async function check() {
             password: '4TVuj7qiHMfh7CxH6K!'
         });
 
-        const domain = 'vipescorthizmeti.com';
+        const domain = 'istanbulescort.blog';
         console.log(`🔍 Auditing Master Domain: ${domain}`);
 
         // 1. Get Site ID

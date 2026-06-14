@@ -40,7 +40,7 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
     <div className="w-full bg-[#0a0a0a] border-t border-zinc-900 py-12 px-6 mt-16 relative z-30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-8">
-          <h2 className="text-[var(--primary-color)] text-sm font-black uppercase tracking-[0.25em] mb-2">
+          <h2 className="text-(--primary-color) text-sm font-black uppercase tracking-[0.25em] mb-2">
             {isFlagship ? "DORUKCANAY ELITE VIP MODEL REHBERİ & BÖLGESEL HİZMET AĞI" : "İSTANBUL ESCORT ESKORT VIP BAYAN REHBERİ & BÖLGELER"}
           </h2>
           <p className="text-zinc-500 text-xs max-w-2xl mx-auto leading-relaxed">
@@ -79,9 +79,9 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
                 key={district.slug}
                 href={`/istanbul/${district.slug}`}
                 title={`${district.name} ${niche} 2026 Kılavuzu`}
-                className="group block p-3 bg-zinc-950/40 border border-zinc-900/60 rounded-xl hover:border-[var(--primary-color)]/30 hover:bg-zinc-900/20 transition-all duration-300 text-left"
+                className="group block p-3 bg-zinc-950/40 border border-zinc-900/60 rounded-xl hover:border-(--primary-color)/30 hover:bg-zinc-900/20 transition-all duration-300 text-left"
               >
-                <span className="block text-zinc-400 group-hover:text-[var(--primary-color)] text-xs font-bold transition-colors">
+                <span className="block text-zinc-400 group-hover:text-(--primary-color) text-xs font-bold transition-colors">
                   {district.name}
                 </span>
                 <span className="block text-zinc-600 group-hover:text-zinc-500 text-[10px] uppercase tracking-wider mt-0.5">
@@ -99,14 +99,14 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
           <div className="flex gap-4">
             <Link 
               href="/"
-              className="text-zinc-500 hover:text-[var(--primary-color)] text-[11px] font-medium transition-colors"
+              className="text-zinc-500 hover:text-(--primary-color) text-[11px] font-medium transition-colors"
             >
               {isFlagship ? "Lüks Refakatçi Ana Sayfa" : "Buluşmak ve Randevu İçin Ana Sayfa"}
             </Link>
             <a 
               href="/ULTIMATE_VIP_GUIDE_2026.pdf" 
               target="_blank"
-              className="text-zinc-500 hover:text-[var(--primary-color)] text-[11px] font-medium transition-colors"
+              className="text-zinc-500 hover:text-(--primary-color) text-[11px] font-medium transition-colors"
             >
               Detaylı Rehber PDF İndir
             </a>
@@ -114,7 +114,7 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
               href="https://escort-randevu.stoplight.io/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-500 hover:text-[var(--primary-color)] text-[11px] font-medium transition-colors"
+              className="text-zinc-500 hover:text-(--primary-color) text-[11px] font-medium transition-colors"
             >
               API Dokümantasyonu
             </a>

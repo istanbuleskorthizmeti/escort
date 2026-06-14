@@ -5,7 +5,7 @@ import path from 'path';
 dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const CF_API_TOKEN = process.env.CF_API_TOKEN;
-const zoneId = 'dec506a3da6a0231ffe8f3f921ded5ea'; // istanbulescdrkcn.com
+const zoneId = 'dec506a3da6a0231ffe8f3f921ded5ea'; // istanbulescort.blog
 
 async function getDns() {
   const headers = {
@@ -14,7 +14,7 @@ async function getDns() {
   };
 
   try {
-    console.log('📡 Fetching DNS records for istanbulescdrkcn.com...');
+    console.log('📡 Fetching DNS records for istanbulescort.blog...');
     const res = await axios.get(`https://api.cloudflare.com/client/v4/zones/${zoneId}/dns_records`, { headers });
     console.log('DNS Records:', JSON.stringify(res.data.result.map(r => ({
       type: r.type,

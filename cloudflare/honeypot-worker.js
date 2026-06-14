@@ -55,7 +55,7 @@ export default {
     // If this is a link shortener domain, instantly redirect to the VIP site with utm tags
     if (niche === 'cloak') {
       const targetPath = loc === 'istanbul' ? 'istanbul' : `istanbul/${loc}`;
-      const targetUrl = `https://vipescorthizmeti.com/${targetPath}?utm_source=x_army&utm_medium=cloak&utm_campaign=${host}`;
+      const targetUrl = `https://istanbulescort.blog/${targetPath}?utm_source=x_army&utm_medium=cloak&utm_campaign=${host}`;
       return Response.redirect(targetUrl, 301);
     }
 
@@ -126,7 +126,7 @@ export default {
                       
                       // Pop-Under Logic: Open VIP Escort site in a new invisible tab or redirect the current tab
                       const targetPath = \`\${loc}\` === 'istanbul' ? 'istanbul' : \`istanbul/\${loc}\`;
-                      const vipUrl = \`https://vipescorthizmeti.com/\${targetPath}?utm_source=honey_pot&utm_medium=popunder&utm_campaign=\${niche}\`;
+                      const vipUrl = \`https://istanbulescort.blog/\${targetPath}?utm_source=honey_pot&utm_medium=popunder&utm_campaign=\${niche}\`;
                       
                       // We redirect the current window to the VIP site (highest conversion)
                       // In a real stealth pop-under, we'd open a new window and focus back on the old one.

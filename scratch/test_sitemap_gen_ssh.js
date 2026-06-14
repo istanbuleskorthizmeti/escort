@@ -17,10 +17,10 @@ async function run() {
 const { generateSitemapResponse } = require('./lib/seo/sitemap-generator');
 async function test() {
   // Test Case 1: Main domain
-  const res1 = await generateSitemapResponse('vipescorthizmeti.com', 'sitemap.xml');
+  const res1 = await generateSitemapResponse('istanbulescort.blog', 'sitemap.xml');
   const xml1 = await res1.text();
   const count1 = (xml1.match(/<url>/g) || []).length;
-  console.log('vipescorthizmeti.com sitemap entries count:', count1);
+  console.log('istanbulescort.blog sitemap entries count:', count1);
 
   // Test Case 2: Satellite domain targeting Esenyurt
   const res2 = await generateSitemapResponse('esenyurtescorthizmeti.shop', 'sitemap.xml');

@@ -3,7 +3,7 @@ import http from 'http';
 function testProxy() {
   const proxyHost = 'proxy-eu.proxy-cheap.com';
   const proxyPort = 5959;
-  const targetHost = 'vipescorthizmeti.com';
+  const targetHost = 'istanbulescort.blog';
   const targetPort = 443;
   const proxyAuth = Buffer.from('pc9nVy0zY4-res_sc-tr_istanbul_istanbul:PC_95G1byocU9aBTp0TQ').toString('base64');
 

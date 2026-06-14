@@ -5,7 +5,7 @@ import { ThemeEngine } from '@/lib/theme-engine';
 import { getDomainConfig } from '@/config/domains';
 import { generateUltraGraphSchema } from '@/lib/seo-schema';
 import { getCanonicalHost } from '@/lib/site-context';
-import { slugify } from '@/lib/utils';
+import { slugify, turkishToLower, toTitleCaseTR } from '@/lib/utils';
 import { getSafeVipProfileIdx } from '@/lib/vitrin-blacklist';
 import { DRKCNAYSpintax } from '@/lib/spintax-engine';
 import fs from 'fs';
@@ -91,9 +91,9 @@ export async function GET(request: Request) {
         kucukcekmece: 'Küçükçekmece', adalar: 'Adalar', bayrampasa: 'Bayrampaşa',
         sultangazi: 'Sultangazi'
       };
-      const lower = word.toLowerCase();
+      const lower = turkishToLower(word);
       if (trMap[lower]) return trMap[lower];
-      return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+      return toTitleCaseTR(word);
     })
     .join(' ');
   
@@ -122,6 +122,17 @@ export async function GET(request: Request) {
     }
   } catch (e) {
     console.error("⚠️ Failed reading live_google_sites.json:", e);
+  }
+
+  // 🛡️ TİB Bypass: Satellite pages redirect to high-DR Google Sites or flagship domain
+  const isSatellite = domainConfig?.role === 'SATELLITE';
+  let redirectDestinationUrl = canonicalUrl;
+  if (isSatellite) {
+    if (relatedSiteLink) {
+      redirectDestinationUrl = relatedSiteLink;
+    } else {
+      redirectDestinationUrl = `https://dorukcanay.digital/istanbul/${slugify(locationName)}`;
+    }
   }
 
   // Resolve unique content from amp_unique_content.json
@@ -466,7 +477,7 @@ export async function GET(request: Request) {
             <div class="card-badge">${niche}</div>
             <div class="card-title">${title}</div>
             <div class="card-meta">${age} • ${locationName}</div>
-            <a href="https://wa.me/${siteConfig.contact.whatsappNumber}" class="btn" target="_blank" rel="noopener noreferrer">Buluşmak İçin Randevu Al</a>
+            <a href="${redirectDestinationUrl}" class="btn" target="_blank" rel="noopener noreferrer">Buluşmak İçin Randevu Al</a>
           </div>
         </div>
         `;
@@ -490,7 +501,7 @@ export async function GET(request: Request) {
   <div class="footer-section">
     <p>© ${new Date().getFullYear()} ${brandName} ESCORT ESKORT GACI NETWORK. TÜM HAKLARI SAKLIDIR.</p>
     <p>
-      <a href="${canonicalUrl}">Masaüstü Sürüm</a> | 
+      <a href="${redirectDestinationUrl}">Masaüstü Sürüm</a> | 
       <a href="https://wa.me/${siteConfig.contact.whatsappNumber}">WhatsApp İletişim</a>
       ${relatedSiteLink ? ` | <a href="${relatedSiteLink}" target="_blank" rel="noopener">Google Sites Kataloğu</a>` : ''}
     </p>

@@ -8,7 +8,7 @@ const config = {
   password: 'Z4-nN8JfiUIh5,;g'
 };
 
-const domains = ['escortvip.net', 'vipescorthizmeti.com', 'istanbulescdrkcn.com'];
+const domains = ['escortvip.net', 'istanbulescort.blog', 'istanbulescort.blog'];
 
 async function run() {
   try {

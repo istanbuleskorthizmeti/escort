@@ -32,10 +32,10 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
   const isFlagship = host.includes('dorukcanay.digital');
 
   return (
-    <footer className="relative bg-black text-zinc-500 py-32 px-6 border-t border-[var(--primary-color)]/10 mt-32 overflow-hidden">
+    <footer className="relative bg-black text-zinc-500 py-32 px-6 border-t border-(--primary-color)/10 mt-32 overflow-hidden">
       {/* 🔮 MASTER AMBIANCE */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-[var(--primary-color)]/40 to-transparent" />
-      <div className="absolute -top-64 left-1/2 -translate-x-1/2 w-[1000px] h-96 bg-[var(--primary-color)]/[0.03] blur-[160px] rounded-full pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-linear-to-r from-transparent via-(--primary-color)/40 to-transparent" />
+      <div className="absolute -top-64 left-1/2 -translate-x-1/2 w-[1000px] h-96 bg-(--primary-color)/[0.03] blur-[160px] rounded-full pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-24 mb-32">
@@ -43,13 +43,13 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
           <div className="xl:col-span-4 space-y-12">
             <div className="space-y-4">
               <h2 className="text-5xl font-black italic tracking-tighter text-white uppercase leading-none">
-                DRKCNAY <span className="text-[var(--primary-color)]">ELITE</span>
+                DRKCNAY <span className="text-(--primary-color)">ELITE</span>
               </h2>
               <p className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.5em] italic">DRKCNAY ELİT REHBER</p>
             </div>
 
             <div className="space-y-8">
-               <div className="glass-card p-10 rounded-[3rem] border-[var(--primary-color)]/5 hover:border-[var(--primary-color)]/20 transition-all duration-700">
+               <div className="glass-card p-10 rounded-[3rem] border-(--primary-color)/5 hover:border-(--primary-color)/20 transition-all duration-700">
                   <h4 className="text-white text-sm font-black uppercase tracking-widest italic mb-6 flex items-center gap-3">
                     🔱 {isFlagship ? 'PRESTİJ VE LÜKS COMPANION' : 'İSTANBUL VIP DENEYİMİ'}
                   </h4>
@@ -60,13 +60,13 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
                       </>
                     ) : (
                       <>
-                        İstanbul şehrinin en seçkin ve prestijli bölgelerinden biri olan İstanbul, elit yaşam tarzını benimsemiş beyler için benzersiz bir partner kataloğu sunuyor. <span className="text-[var(--primary-color)] font-bold">{host}</span> ağımız üzerinden ulaştığınız tüm profiller, %100 gerçeklik kontrolünden geçmiş, profesyonel ve bağımsız modellerden oluşmaktadır.
+                        İstanbul şehrinin en seçkin ve prestijli bölgelerinden biri olan İstanbul, elit yaşam tarzını benimsemiş beyler için benzersiz bir partner kataloğu sunuyor. <span className="text-(--primary-color) font-bold">{host}</span> ağımız üzerinden ulaştığınız tüm profiller, %100 gerçeklik kontrolünden geçmiş, profesyonel ve bağımsız modellerden oluşmaktadır.
                       </>
                     )}
                   </p>
                </div>
-
-               <div className="glass-card p-10 rounded-[3rem] border-[var(--primary-color)]/5 hover:border-[var(--primary-color)]/20 transition-all duration-700">
+ 
+               <div className="glass-card p-10 rounded-[3rem] border-(--primary-color)/5 hover:border-(--primary-color)/20 transition-all duration-700">
                   <h4 className="text-white text-sm font-black uppercase tracking-widest italic mb-6 flex items-center gap-3">
                     🛡️ {isFlagship ? 'DRKCNAY ELITE STANDARTLARI' : 'NEDEN ELİT SEÇKİ?'}
                   </h4>
@@ -88,11 +88,11 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
           <div className="xl:col-span-8 space-y-20">
             <div className="space-y-10">
                <div className="flex items-center gap-4">
-                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">POPÜLER KATEGORİLER // <span className="text-[var(--primary-color)]">SEÇKİN ETİKETLER</span></h4>
+                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">POPÜLER KATEGORİLER // <span className="text-(--primary-color)">SEÇKİN ETİKETLER</span></h4>
                </div>
                <div className="flex flex-wrap gap-3">
                   {tags.map(tag => (
-                    <span key={tag} className="px-5 py-2.5 bg-zinc-950/50 border border-zinc-900/50 rounded-full text-[10px] font-black text-zinc-600 hover:text-[var(--primary-color)] hover:border-[var(--primary-color)]/30 transition-all cursor-pointer uppercase tracking-widest italic">
+                    <span key={tag} className="px-5 py-2.5 bg-zinc-950/50 border border-zinc-900/50 rounded-full text-[10px] font-black text-zinc-600 hover:text-(--primary-color) hover:border-(--primary-color)/30 transition-all cursor-pointer uppercase tracking-widest italic">
                        #{tag.replace(' ', '')}
                     </span>
                   ))}
@@ -101,7 +101,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
 
             <div className="space-y-10">
                <div className="flex items-center gap-4">
-                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">NETWORK NODES // <span className="text-[var(--primary-color)]">ÖZEL NETWORK</span></h4>
+                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">NETWORK NODES // <span className="text-(--primary-color)">ÖZEL NETWORK</span></h4>
                </div>
                <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem' }}>
                   {[
@@ -115,7 +115,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
                       href={`https://${node}`} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group p-5 bg-zinc-950/30 border border-zinc-900/30 rounded-2xl hover:border-[var(--primary-color)]/40 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl"
+                      className="group p-5 bg-zinc-950/30 border border-zinc-900/30 rounded-2xl hover:border-(--primary-color)/40 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl"
                       style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
                       <span className="text-[10px] font-black text-zinc-600 group-hover:text-white uppercase tracking-[0.2em] italic block transition-colors" style={{ color: '#52525b' }}>
@@ -128,14 +128,14 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
 
             <div className="space-y-10">
                <div className="flex items-center gap-4">
-                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">BÖLGESEL HİZMET AĞI // <span className="text-[var(--primary-color)]">İSTANBUL SEÇKİSİ</span></h4>
+                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">BÖLGESEL HİZMET AĞI // <span className="text-(--primary-color)">İSTANBUL SEÇKİSİ</span></h4>
                </div>
                <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem' }}>
                   {districts.map(area => (
                     <Link 
                       key={area} 
                       href={`/${area.toLowerCase().replace(' ', '-')}-escort`} 
-                      className="group p-5 bg-zinc-950/30 border border-zinc-900/30 rounded-2xl hover:border-[var(--primary-color)]/40 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl"
+                      className="group p-5 bg-zinc-950/30 border border-zinc-900/30 rounded-2xl hover:border-(--primary-color)/40 hover:bg-zinc-900/50 transition-all duration-500 shadow-xl"
                       style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
                     >
                       <span className="text-[10px] font-black text-zinc-600 group-hover:text-white uppercase tracking-[0.2em] italic block transition-colors" style={{ color: '#52525b' }}>
@@ -148,11 +148,11 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
           </div>
         </div>
 
-        <div className="glass-card p-12 rounded-[3rem] border-[var(--primary-color)]/10 mb-20">
+        <div className="glass-card p-12 rounded-[3rem] border-(--primary-color)/10 mb-20">
            <div className="flex flex-col md:flex-row gap-12 items-center">
               <div className="flex items-center gap-6 min-w-fit">
-                 <div className="w-20 h-20 rounded-full border-4 border-[var(--primary-color)] flex items-center justify-center">
-                    <span className="text-[var(--primary-color)] text-3xl font-black italic">18+</span>
+                 <div className="w-20 h-20 rounded-full border-4 border-(--primary-color) flex items-center justify-center">
+                    <span className="text-(--primary-color) text-3xl font-black italic">18+</span>
                  </div>
                  <div className="space-y-1">
                     <h5 className="text-white font-black uppercase tracking-widest italic">YETİŞKİN İÇERİĞİ</h5>
@@ -160,7 +160,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
                  </div>
               </div>
               <p className="text-xs text-zinc-500 font-medium italic leading-relaxed text-center md:text-left">
-                 Bu web sitesi, yalnızca 18 yaş ve üzeri yetişkinlerin erişimine açık olan, bağımsız elit escort partnerlerin ilanlarını barındıran global bir katalog ve reklam ajansıdır. Sitede yer alan tüm profiller %100 gerçektir. <span className="text-[var(--primary-color)] font-bold uppercase">Digital Identity Secured by Elit Seçki Network.</span>
+                 Bu web sitesi, yalnızca 18 yaş ve üzeri yetişkinlerin erişimine açık olan, bağımsız elit escort partnerlerin ilanlarını barındıran global bir katalog ve reklam ajansıdır. Sitede yer alan tüm profiller %100 gerçektir. <span className="text-(--primary-color) font-bold uppercase">Digital Identity Secured by Elit Seçki Network.</span>
               </p>
            </div>
         </div>
@@ -168,7 +168,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
          <div className="pt-16 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex flex-col items-center md:items-start gap-3">
               <p className="text-[11px] font-black tracking-[0.6em] text-zinc-800 uppercase italic">
-                 © {currentYear} DRKCNAY ELITE // VIP REHBER // <span className="text-[var(--primary-color)] uppercase">GÜVENLİ</span>
+                 © {currentYear} DRKCNAY ELITE // VIP REHBER // <span className="text-(--primary-color) uppercase">GÜVENLİ</span>
               </p>
           </div>
 

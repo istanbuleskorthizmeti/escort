@@ -14,7 +14,7 @@ function replaceInFile(filePath) {
     content = content.replace(/gather@dorukcanay\.digital/g, 'info@dorukcanay.digital');
     
     // Replace domains
-    content = content.replace(/iqostobacco\.online/g, 'vipescorthizmeti.com');
+    content = content.replace(/iqostobacco\.online/g, 'istanbulescort.blog');
     
     fs.writeFileSync(filePath, content, 'utf8');
 }

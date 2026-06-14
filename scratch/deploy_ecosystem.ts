@@ -44,8 +44,8 @@ async function deployEcosystem() {
     const curlLocal = await ssh.execCommand('curl -I http://127.0.0.1:8081');
     console.log(curlLocal.stdout || curlLocal.stderr);
 
-    console.log('\n--- TEST CURL VIPESCORTHIZMETI.COM VIA NGINX ---');
-    const curlNginx = await ssh.execCommand('curl -I -H "Host: vipescorthizmeti.com" http://127.0.0.1');
+    console.log('\n--- TEST CURL istanbulescort.blog VIA NGINX ---');
+    const curlNginx = await ssh.execCommand('curl -I -H "Host: istanbulescort.blog" http://127.0.0.1');
     console.log(curlNginx.stdout || curlNginx.stderr);
 
     ssh.dispose();

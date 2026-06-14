@@ -7,9 +7,13 @@ function getFiles(dir, fileList = []) {
   for (const file of files) {
     const filePath = path.join(dir, file);
     if (fs.statSync(filePath).isDirectory()) {
+      const base = path.basename(filePath);
+      if (base === 'node_modules' || base === '.next' || base === '.git' || base === 'dist' || base === 'dist_scripts' || base === 'artifacts' || base === '.gemini') {
+        continue;
+      }
       getFiles(filePath, fileList);
     } else {
-      if (filePath.endsWith('.ts') || filePath.endsWith('.js') || filePath.endsWith('.tsx') || filePath.endsWith('.json')) {
+      if (filePath.endsWith('.ts') || filePath.endsWith('.js') || filePath.endsWith('.tsx') || filePath.endsWith('.json') || filePath.endsWith('.xml')) {
         fileList.push(filePath);
       }
     }
@@ -20,12 +24,7 @@ function getFiles(dir, fileList = []) {
 function processFiles() {
   const baseDir = path.join(__dirname, '..');
   const dirs = [
-    path.join(baseDir, 'config'),
-    path.join(baseDir, 'lib'),
-    path.join(baseDir, 'app'),
-    path.join(baseDir, 'components'),
-    path.join(baseDir, 'templates'),
-    path.join(baseDir, 'scripts')
+    baseDir
   ];
   
   let files = [];

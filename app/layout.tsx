@@ -227,7 +227,7 @@ export default async function RootLayout({
           })();
         `}} />
       </head>
-      <body className="font-sans min-h-full flex flex-col text-white antialiased bg-[var(--bg-color)]">
+      <body className="font-sans min-h-full flex flex-col text-white antialiased bg-(--bg-color)">
         {/* Google Analytics (gtag.js) - Advanced Consent Mode V2 with Crawler Camouflage */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-5N1LVB5EWE"

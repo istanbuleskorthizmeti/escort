@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* 🏗️ MULTI-DOMAIN ASSET BRIDGE */
-  // assetPrefix: process.env.NODE_ENV === 'production' ? 'https://vipescorthizmeti.com' : undefined,
+  // assetPrefix: process.env.NODE_ENV === 'production' ? 'https://istanbulescort.blog' : undefined,
   
   /* OPSEC: Hide Next.js fingerprint from OSINT */
   poweredByHeader: false,
@@ -47,7 +47,7 @@ const nextConfig: NextConfig = {
       "https://sites.google.com",
       "https://*.google.com",
       "https://istanbulescort.blog",
-      "https://istanbulescdrkcn.com",
+      "https://istanbulescort.blog",
       "https://escortvip.net",
       "https://vipescorthizmeti.shop",
       "https://bagcilarescort.shop",

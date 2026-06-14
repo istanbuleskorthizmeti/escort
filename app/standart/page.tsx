@@ -36,13 +36,13 @@ export default async function VIPStandardsPage() {
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-rose-600 selection:text-white antialiased overflow-hidden">
       {/* BACKGROUND GRAPHICS */}
       <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
-        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-[var(--primary-color)]/10 blur-[200px] rounded-full animate-pulse"></div>
-        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-[var(--primary-color)]/5 blur-[200px] rounded-full animate-pulse delay-700"></div>
+        <div className="absolute top-[-10%] right-[-10%] w-[50%] h-[50%] bg-(--primary-color)/10 blur-[200px] rounded-full animate-pulse"></div>
+        <div className="absolute bottom-[-10%] left-[-10%] w-[50%] h-[50%] bg-(--primary-color)/5 blur-[200px] rounded-full animate-pulse delay-700"></div>
         <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-[0.02] mix-blend-overlay"></div>
       </div>
-
+ 
       <Navbar />
-
+ 
       <main className="max-w-5xl mx-auto py-24 px-6 md:px-12 relative">
         <section className="text-center mb-32">
           <div className="mb-8 flex justify-center">
@@ -50,7 +50,7 @@ export default async function VIPStandardsPage() {
           </div>
           <h1 className="text-6xl md:text-[8rem] font-black mb-8 tracking-tighter leading-[0.85] italic uppercase">
             HİZMET <br />
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-[var(--primary-color)] via-rose-500 to-amber-300 drop-shadow-glow">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-(--primary-color) via-rose-500 to-amber-300 drop-shadow-glow">
               STANDARTLARI
             </span>
           </h1>
@@ -62,8 +62,8 @@ export default async function VIPStandardsPage() {
         {/* THE 4 PILLARS OF OUR QUALITY ASSURANCE */}
         <section className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-32">
           {/* Pillar 1: No Pre-payments */}
-          <div className="bg-zinc-950/60 border border-zinc-900 rounded-[2.5rem] p-12 hover:border-[var(--primary-color)]/50 transition-all duration-500">
-            <div className="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800 text-[var(--primary-color)] font-black text-xl mb-8">
+          <div className="bg-zinc-950/60 border border-zinc-900 rounded-[2.5rem] p-12 hover:border-(--primary-color)/50 transition-all duration-500">
+            <div className="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800 text-(--primary-color) font-black text-xl mb-8">
               01
             </div>
             <h3 className="text-2xl font-black italic uppercase text-white mb-4">KAPORASIZ BULUŞMA</h3>
@@ -73,8 +73,8 @@ export default async function VIPStandardsPage() {
           </div>
 
           {/* Pillar 2: 100% Real Visuals */}
-          <div className="bg-zinc-950/60 border border-zinc-900 rounded-[2.5rem] p-12 hover:border-[var(--primary-color)]/50 transition-all duration-500">
-            <div className="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800 text-[var(--primary-color)] font-black text-xl mb-8">
+          <div className="bg-zinc-950/60 border border-zinc-900 rounded-[2.5rem] p-12 hover:border-(--primary-color)/50 transition-all duration-500">
+            <div className="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800 text-(--primary-color) font-black text-xl mb-8">
               02
             </div>
             <h3 className="text-2xl font-black italic uppercase text-white mb-4">%100 GERÇEK GÖRSELLER</h3>
@@ -84,8 +84,8 @@ export default async function VIPStandardsPage() {
           </div>
 
           {/* Pillar 3: Absolute Privacy */}
-          <div className="bg-zinc-950/60 border border-zinc-900 rounded-[2.5rem] p-12 hover:border-[var(--primary-color)]/50 transition-all duration-500">
-            <div className="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800 text-[var(--primary-color)] font-black text-xl mb-8">
+          <div className="bg-zinc-950/60 border border-zinc-900 rounded-[2.5rem] p-12 hover:border-(--primary-color)/50 transition-all duration-500">
+            <div className="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800 text-(--primary-color) font-black text-xl mb-8">
               03
             </div>
             <h3 className="text-2xl font-black italic uppercase text-white mb-4">DİJİTAL MAHREMİYET</h3>
@@ -95,8 +95,8 @@ export default async function VIPStandardsPage() {
           </div>
 
           {/* Pillar 4: Quality & Hygiene */}
-          <div className="bg-zinc-950/60 border border-zinc-900 rounded-[2.5rem] p-12 hover:border-[var(--primary-color)]/50 transition-all duration-500">
-            <div className="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800 text-[var(--primary-color)] font-black text-xl mb-8">
+          <div className="bg-zinc-950/60 border border-zinc-900 rounded-[2.5rem] p-12 hover:border-(--primary-color)/50 transition-all duration-500">
+            <div className="w-14 h-14 bg-zinc-900 rounded-full flex items-center justify-center border border-zinc-800 text-(--primary-color) font-black text-xl mb-8">
               04
             </div>
             <h3 className="text-2xl font-black italic uppercase text-white mb-4">HİJYEN VE PRESTİJ</h3>
@@ -108,7 +108,7 @@ export default async function VIPStandardsPage() {
 
         {/* SYSTEM DISCIPLINE DETAILS */}
         <section className="bg-zinc-950/30 border border-zinc-900 rounded-[3.5rem] p-16 relative">
-          <h3 className="text-3xl font-black italic uppercase tracking-wider text-[var(--primary-color)] mb-10 border-l-8 border-[var(--primary-color)] pl-8">
+          <h3 className="text-3xl font-black italic uppercase tracking-wider text-(--primary-color) mb-10 border-l-8 border-(--primary-color) pl-8">
             GÜVENLİK BİLGİLENDİRMESİ
           </h3>
           <p className="text-zinc-400 text-base leading-relaxed mb-8">
@@ -126,9 +126,9 @@ export default async function VIPStandardsPage() {
             {brandName} // ESTABLISHED 2026
           </div>
           <div className="flex justify-center flex-wrap gap-12 text-zinc-700 text-[10px] font-black uppercase tracking-[0.5em] italic">
-            <Link href="/" className="hover:text-[var(--primary-color)] transition-colors">ANASAYFA</Link>
-            <Link href="/protokol" className="hover:text-[var(--primary-color)] transition-colors">PROTOKOL</Link>
-            <Link href="/rehber" className="hover:text-[var(--primary-color)] transition-colors">REHBER</Link>
+            <Link href="/" className="hover:text-(--primary-color) transition-colors">ANASAYFA</Link>
+            <Link href="/protokol" className="hover:text-(--primary-color) transition-colors">PROTOKOL</Link>
+            <Link href="/rehber" className="hover:text-(--primary-color) transition-colors">REHBER</Link>
           </div>
         </div>
       </footer>

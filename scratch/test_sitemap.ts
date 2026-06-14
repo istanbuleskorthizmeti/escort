@@ -2,7 +2,7 @@ import { cities } from './lib/locations';
 import { slugify } from './lib/utils';
 
 async function validateSitemap() {
-  const baseUrl = 'https://vipescorthizmeti.com';
+  const baseUrl = 'https://istanbulescort.blog';
   const urls = [];
 
   for (const citySlug of Object.keys(cities)) {

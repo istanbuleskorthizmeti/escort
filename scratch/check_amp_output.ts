@@ -17,7 +17,7 @@ async function checkAMP() {
 
     console.log('\n--- CURL AMP PAGE ---');
     const resAmp = await ssh.execCommand(
-      'curl -i -H "Host: istanbulescdrkcn.com" "http://127.0.0.1/amp?loc=sariyer"'
+      'curl -i -H "Host: istanbulescort.blog" "http://127.0.0.1/amp?loc=sariyer"'
     );
     console.log(resAmp.stdout.substring(0, 1500));
 

@@ -11,7 +11,7 @@ async function run() {
   try {
     await ssh.connect(config);
     console.log('--- Testing Port 3000 with Host header ---');
-    const res = await ssh.execCommand('curl -I -s -H "Host: istanbulescdrkcn.com" http://localhost:3000');
+    const res = await ssh.execCommand('curl -I -s -H "Host: istanbulescort.blog" http://localhost:3000');
     console.log(res.stdout || res.stderr);
   } catch (e) {
     console.error(e);

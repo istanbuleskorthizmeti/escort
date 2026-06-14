@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import Navbar from "../components/UI/Navbar";
 import { DorukVitrin } from "../components/SEO/DorukVitrin";
 import nextDynamic from "next/dynamic";
+import { isSearchEngineBot } from "../lib/bot-detector";
 
 const UltraFooter = nextDynamic(() => import("../components/SEO/UltraFooter").then(mod => mod.UltraFooter), {
   ssr: true
@@ -58,7 +59,14 @@ export default async function HomePage() {
     ? (domainConfig.targetDistrict.charAt(0).toUpperCase() + domainConfig.targetDistrict.slice(1)) 
     : "İSTANBUL";
   
-  const vitrinProfiles = await getVitrinProfiles().catch(() => []);
+  const isCloaker = domainConfig?.role === 'CLOAKER';
+  const userAgent = (await headers()).get("user-agent") || "";
+  const isBot = isSearchEngineBot(userAgent);
+  const showCloaker = isCloaker && !isBot;
+
+  const vitrinProfiles = !showCloaker 
+    ? await getVitrinProfiles().catch(() => []) 
+    : [];
 
   const schema = generateUltraGraphSchema({
     locationName: district,
@@ -72,15 +80,15 @@ export default async function HomePage() {
   const brandName = theme.brandName;
   const slogan = theme.slogan;
   
-  const isCloaker = domainConfig?.role === 'CLOAKER';
+
 
   return (
-    <main className="min-h-screen bg-[var(--bg-color)] text-white antialiased selection:bg-primary/30 selection:text-white">
+    <main className="min-h-screen bg-(--bg-color) text-white antialiased selection:bg-primary/30 selection:text-white">
       <link rel="amphtml" href={`https://${host}/amp`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
       
-      {isCloaker ? (
+      {showCloaker ? (
         <CloakerFrontend districtName={district} host={host} />
       ) : (
         <>
@@ -91,27 +99,27 @@ export default async function HomePage() {
              <DorukVitrin city={district} host={host} serverProfiles={vitrinProfiles} />
           </div>
           <section className="pb-32 px-6 max-w-7xl mx-auto relative overflow-hidden text-center md:text-left mt-10">
-            <div className="absolute top-0 left-0 w-full h-full opacity-5 blur-[150px] rounded-full -z-10 bg-[var(--primary-color)]" />
+            <div className="absolute top-0 left-0 w-full h-full opacity-5 blur-[150px] rounded-full -z-10 bg-(--primary-color)" />
             
-            <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-[var(--primary-color)]/20 px-8 py-3 rounded-full mb-12 animate-fade-in shadow-2xl">
-              <span className="w-2.5 h-2.5 rounded-full animate-glow-pulse bg-[var(--primary-color)] shadow-[0_0_15px_var(--primary-color)]" />
+            <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-(--primary-color)/20 px-8 py-3 rounded-full mb-12 animate-fade-in shadow-2xl">
+              <span className="w-2.5 h-2.5 rounded-full animate-glow-pulse bg-(--primary-color) shadow-[0_0_15px_var(--primary-color)]" />
               <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
-                 {district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()}
+                  {district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()}
               </span>
             </div>
 
             <h1 className="text-6xl md:text-[10rem] font-black italic tracking-tighter leading-[0.8] mb-12 flex flex-col items-center md:items-start drop-shadow-2xl">
               <span className="opacity-90">{brandName.toUpperCase()}</span>
-              <span className="text-[var(--primary-color)] drop-shadow-[0_0_40px_var(--primary-color)]">{district === "İSTANBUL" ? "İSTANBUL" : district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()}</span>
+              <span className="text-(--primary-color) drop-shadow-[0_0_40px_var(--primary-color)]">{district === "İSTANBUL" ? "İSTANBUL" : district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()}</span>
             </h1>
 
-            <div className="max-w-4xl border-l-8 border-[var(--primary-color)] pl-12 py-4 mx-auto md:mx-0">
+            <div className="max-w-4xl border-l-8 border-(--primary-color) pl-12 py-4 mx-auto md:mx-0">
                <p className="text-zinc-400 text-xl md:text-2xl font-black uppercase italic tracking-widest leading-relaxed">
                  {slogan}. <br className="hidden md:block"/>
                  {host.includes('dorukcanay.digital') ? (
                    <>İstanbul'un en seçkin ve kaporasız VIP model partner kataloğu. Benzersiz refakatçi standartları.</>
                  ) : (
-                   <>{district.replace(/[-\u2013\u2014]/g, ' ')} bölgesinin en seçkin escort vitrinii. <span className="text-white underline underline-offset-8 decoration-[var(--primary-color)]/55">Kaporasız</span> ve elit.</>
+                   <>{district.replace(/[-\u2013\u2014]/g, ' ')} bölgesinin en seçkin escort vitrinii. <span className="text-white underline underline-offset-8 decoration-(--primary-color)/55">Kaporasız</span> ve elit.</>
                  )}
                </p>
             </div>
@@ -138,14 +146,14 @@ export default async function HomePage() {
 
       <footer className="py-20 border-t border-zinc-900 bg-zinc-950/50 backdrop-blur-xl">
          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
-            <div className="text-2xl font-black italic tracking-tighter text-white">DRKCNAY <span className="text-[var(--primary-color)]">ELITE</span></div>
+            <div className="text-2xl font-black italic tracking-tighter text-white">DRKCNAY <span className="text-(--primary-color)">ELITE</span></div>
             <div className="text-[10px] font-bold text-zinc-600 uppercase tracking-[0.5em] text-center md:text-left">
                © {new Date().getFullYear()} {district.replace(/[-\u2013\u2014]/g, ' ').toUpperCase()} VIP // TÜM HAKLARI SAKLIDIR.
             </div>
             <div className="flex gap-8 text-[11px] font-black uppercase tracking-widest text-zinc-400 italic">
-               <Link href="/terms" className="hover:text-[var(--primary-color)] transition-colors">ŞARTLAR</Link>
-               <Link href="/privacy" className="hover:text-[var(--primary-color)] transition-colors">GİZLİLİK</Link>
-               <Link href="/contact" className="hover:text-[var(--primary-color)] transition-colors">İLETİŞİM</Link>
+               <Link href="/terms" className="hover:text-(--primary-color) transition-colors">ŞARTLAR</Link>
+               <Link href="/privacy" className="hover:text-(--primary-color) transition-colors">GİZLİLİK</Link>
+               <Link href="/contact" className="hover:text-(--primary-color) transition-colors">İLETİŞİM</Link>
             </div>
          </div>
       </footer>

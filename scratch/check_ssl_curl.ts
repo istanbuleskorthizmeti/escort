@@ -17,7 +17,7 @@ async function checkSSL() {
 
     console.log('\n--- CURL HTTPS HOME PAGE ---');
     const resHttps = await ssh.execCommand(
-      'curl -I -k https://127.0.0.1/ -H "Host: istanbulescdrkcn.com"'
+      'curl -I -k https://127.0.0.1/ -H "Host: istanbulescort.blog"'
     );
     console.log(resHttps.stdout || resHttps.stderr);
 

@@ -13,7 +13,7 @@ server {
     listen 80;
     listen 443 ssl http2 default_server;
     
-    server_name .dorukcanay.digital .vipescorthizmeti.com .vipescorthizmeti.shop .sisliescort.shop .kadikoyescort.shop .besiktasescorthizmeti.shop .esenyurtescorthizmeti.shop .beylikduzuescortlistesi.shop .avrupayakasiescort.shop .istanbulescorthizmeti.shop .pendikescorthizmeti.shop .bucaescorthizmeti.shop .izmitescorthizmeti.shop .sariyerdrkcnay.shop .leventdrkcnay.shop .istanbuldrkcnay.shop .istanbulescortkaporasiz.shop;
+    server_name .dorukcanay.digital .istanbulescort.blog .vipescorthizmeti.shop .sisliescort.shop .kadikoyescort.shop .besiktasescorthizmeti.shop .esenyurtescorthizmeti.shop .beylikduzuescortlistesi.shop .avrupayakasiescort.shop .istanbulescorthizmeti.shop .pendikescorthizmeti.shop .bucaescorthizmeti.shop .izmitescorthizmeti.shop .sariyerdrkcnay.shop .leventdrkcnay.shop .istanbuldrkcnay.shop .istanbulescortkaporasiz.shop;
 
     ssl_certificate /etc/ssl/certs/drkcnay-selfsigned.crt;
     ssl_certificate_key /etc/ssl/private/drkcnay-selfsigned.key;

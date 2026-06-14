@@ -6,7 +6,7 @@ async function run() {
     const res = await axios.get('http://187.77.111.203/', {
       timeout: 8000,
       headers: {
-        'Host': 'istanbulescdrkcn.com',
+        'Host': 'istanbulescort.blog',
         'User-Agent': 'Mozilla/5.0'
       }
     });
@@ -20,7 +20,7 @@ async function run() {
     const res = await axios.get('https://187.77.111.203/', {
       timeout: 8000,
       headers: {
-        'Host': 'istanbulescdrkcn.com',
+        'Host': 'istanbulescort.blog',
         'User-Agent': 'Mozilla/5.0'
       },
       // ignore self-signed cert

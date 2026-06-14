@@ -35,9 +35,9 @@ async function apiCall(path, method = 'GET', body = null) {
 
 async function run() {
   try {
-    const zones = await apiCall('/client/v4/zones?name=vipescorthizmeti.com');
+    const zones = await apiCall('/client/v4/zones?name=istanbulescort.blog');
     if (!zones.success || zones.result.length === 0) {
-      console.log('vipescorthizmeti.com not found in this account.');
+      console.log('istanbulescort.blog not found in this account.');
       return;
     }
 

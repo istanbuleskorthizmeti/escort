@@ -28,7 +28,7 @@ export default async function TransferPage() {
   const theme = ThemeEngine.getTheme(host);
 
   return (
-    <main className="min-h-screen bg-black text-zinc-100 flex flex-col font-sans selection:bg-[var(--brand-color)] selection:text-white">
+    <main className="min-h-screen bg-black text-zinc-100 flex flex-col font-sans selection:bg-(--brand-color) selection:text-white">
       <Navbar />
       
       {/* 🚀 HERO SECTION (LOGISTICS CAMOUFLAGE) */}
@@ -38,22 +38,22 @@ export default async function TransferPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           <div className="max-w-3xl space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-[10px] font-black uppercase tracking-widest text-zinc-400">
-              <span className="w-2 h-2 rounded-full bg-[var(--brand-color)] animate-pulse" />
+              <span className="w-2.5 h-2.5 rounded-full bg-(--brand-color) animate-pulse" />
               7/24 Operasyon Merkezi
             </div>
             
             <h1 className="text-4xl md:text-6xl font-black italic tracking-tighter uppercase text-white leading-[1.1]">
-              <span className="text-[var(--brand-color)]">VIP Transfer</span> ve Gizli İntikal Yönetimi
+              <span className="text-(--brand-color)">VIP Transfer</span> ve Gizli İntikal Yönetimi
             </h1>
             
             <p className="text-xl text-zinc-400 font-medium max-w-2xl">
-              İstanbul Havalimanı, Sabiha Gökçen, Galataport ve özel marinalarda <strong className="text-white">özel şoförlü lüks araçlarla</strong> karşılama ve otele intikal hizmeti. İş seyahatlerinizde size <strong className="text-[var(--brand-color)]">bilingual (iki dil bilen) premium elit partnerlerimiz</strong> eşlik eder.
+              İstanbul Havalimanı, Sabiha Gökçen, Galataport ve özel marinalarda <strong className="text-white">özel şoförlü lüks araçlarla</strong> karşılama ve otele intikal hizmeti. İş seyahatlerinizde size <strong className="text-(--brand-color)">bilingual (iki dil bilen) premium elit partnerlerimiz</strong> eşlik eder.
             </p>
             
             <div className="pt-6 flex flex-wrap gap-4">
               <Link 
                 href="/tg?ref=transfer_hero"
-                className="bg-[var(--brand-color)] text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-[0_0_20px_var(--brand-color)]"
+                className="bg-(--brand-color) text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest text-sm hover:scale-105 transition-transform shadow-[0_0_20px_var(--brand-color)]"
               >
                 Transfer Rezerve Et
               </Link>
@@ -67,7 +67,7 @@ export default async function TransferPage() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            <div className="bg-zinc-900/50 p-8 rounded-3xl border border-white/5 hover:border-[var(--brand-color)] transition-colors group">
+            <div className="bg-zinc-900/50 p-8 rounded-3xl border border-white/5 hover:border-(--brand-color) transition-colors group">
               <div className="w-12 h-12 bg-black rounded-xl border border-zinc-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
                 🛩️
               </div>
@@ -76,8 +76,8 @@ export default async function TransferPage() {
                 Özel jetiniz piste teker koyduğu anda başlayan operasyon. Sivil havacılık standartlarıyle uçak altı karşılama ve VIP lounge intikali. İsteğe bağlı olarak <strong className="text-zinc-200">iki dil bilen hostes partnerlerimiz</strong> tüm check-in süreçlerinizi yönetir.
               </p>
             </div>
-
-            <div className="bg-zinc-900/50 p-8 rounded-3xl border border-white/5 hover:border-[var(--brand-color)] transition-colors group">
+ 
+            <div className="bg-zinc-900/50 p-8 rounded-3xl border border-white/5 hover:border-(--brand-color) transition-colors group">
               <div className="w-12 h-12 bg-black rounded-xl border border-zinc-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
                 🚘
               </div>
@@ -86,8 +86,8 @@ export default async function TransferPage() {
                 Maybach, Mercedes V-Class ve zırhlı SUV filomuzla İstanbul trafiğinden tamamen izole bir seyahat. Tam mahremiyet (Zero-Footprint) prensibiyle, <strong className="text-zinc-200">özel şoförlü vip escort</strong> hizmetlerimiz kusursuzca birleştirilir.
               </p>
             </div>
-
-            <div className="bg-zinc-900/50 p-8 rounded-3xl border border-white/5 hover:border-[var(--brand-color)] transition-colors group">
+ 
+            <div className="bg-zinc-900/50 p-8 rounded-3xl border border-white/5 hover:border-(--brand-color) transition-colors group">
               <div className="w-12 h-12 bg-black rounded-xl border border-zinc-800 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
                 🛥️
               </div>

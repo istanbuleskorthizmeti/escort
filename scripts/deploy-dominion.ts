@@ -63,8 +63,8 @@ async function deployDominion() {
     
     if (fs.existsSync(tarFile)) fs.unlinkSync(tarFile);
     ssh.dispose();
-  } catch (e) {
-    console.error('💥 [DEPLOYMENT FAILED]', e);
+  } catch (e: unknown) {
+    console.error('💥 [DEPLOYMENT FAILED]', e instanceof Error ? e.message : e);
     ssh.dispose();
   }
 }

@@ -19,14 +19,14 @@ async function testMobileCurl() {
 
     console.log('\n--- CURL HOME PAGE (MOBILE UA) ---');
     const resHome = await ssh.execCommand(
-      `curl -I -A "${mobileUA}" -H "Host: istanbulescdrkcn.com" http://127.0.0.1/`
+      `curl -I -A "${mobileUA}" -H "Host: istanbulescort.blog" http://127.0.0.1/`
     );
     console.log(resHome.stdout || resHome.stderr);
 
     console.log('\n--- CURL DISTRICT PAGE (MOBILE UA) ---');
     // Using a known valid path or checking if it returns 200/404/500/308
     const resDist = await ssh.execCommand(
-      `curl -I -A "${mobileUA}" -H "Host: istanbulescdrkcn.com" http://127.0.0.1/istanbul/esenyurt-escort-gercek-gorseller`
+      `curl -I -A "${mobileUA}" -H "Host: istanbulescort.blog" http://127.0.0.1/istanbul/esenyurt-escort-gercek-gorseller`
     );
     console.log(resDist.stdout || resDist.stderr);
 

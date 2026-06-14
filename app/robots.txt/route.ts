@@ -9,6 +9,8 @@ export async function GET(request: NextRequest) {
   const robots = `
 User-agent: *
 Allow: /
+Allow: /_next/static/
+Allow: /_next/image/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/

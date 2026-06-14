@@ -39,7 +39,7 @@ export default async function GalleryPage() {
         <div className="absolute inset-0 bg-linear-to-b from-black via-zinc-900/20 to-black z-0" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 text-center space-y-6">
           <h1 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-white drop-shadow-[0_0_20px_rgba(255,255,255,0.1)]">
-            <span className="text-[var(--brand-color)]">Elit</span> Görsel Galeri
+            <span className="text-(--brand-color)">Elit</span> Görsel Galeri
           </h1>
           <p className="text-xl md:text-2xl text-zinc-400 font-medium italic max-w-3xl mx-auto">
             {theme.brandName} güvencesiyle İstanbul'un en seçkin ve onaylı profilleri. Tüm görseller %100 teyitlidir.
@@ -56,7 +56,7 @@ export default async function GalleryPage() {
             <Link 
               href={`/p/${profile.slug}`} 
               key={`${profile.id}-${idx}`}
-              className="break-inside-avoid block group relative bg-zinc-900/50 rounded-3xl overflow-hidden border border-white/5 shadow-2xl hover:border-[var(--brand-color)] transition-all duration-500"
+              className="break-inside-avoid block group relative bg-zinc-900/50 rounded-3xl overflow-hidden border border-white/5 shadow-2xl hover:border-(--brand-color) transition-all duration-500"
             >
               {/* Image Container */}
               <div className="relative w-full aspect-[3/4] overflow-hidden">
@@ -84,11 +84,11 @@ export default async function GalleryPage() {
 
               {/* Content / LSI Metadata */}
               <div className="absolute bottom-0 left-0 right-0 p-6 space-y-2">
-                <h2 className="text-2xl font-black italic uppercase tracking-tighter text-white group-hover:text-[var(--brand-color)] transition-colors">
+                <h2 className="text-2xl font-black italic uppercase tracking-tighter text-white group-hover:text-(--brand-color) transition-colors">
                   {profile.name}
                 </h2>
                 <div className="flex items-center gap-2 text-zinc-400 text-xs font-bold uppercase tracking-widest">
-                  <span className="text-[var(--brand-color)]">📍</span> {profile.district}
+                  <span className="text-(--brand-color)">📍</span> {profile.district}
                 </div>
                 
                 {/* LSI Keywords for Context */}

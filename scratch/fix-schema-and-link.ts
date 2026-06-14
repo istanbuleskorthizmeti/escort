@@ -2,7 +2,7 @@ import { NodeSSH } from 'node-ssh';
 
 const server = { host: '213.232.235.181', username: 'root', password: '4TVuj7qiHMfh7CxH6K!' };
 const dbUrl = 'postgresql://vuc2026_user:DorukElite2026Secure@localhost:5432/vuc2026?sslmode=disable';
-const mainSiteId = 'cmp345juw000gzwqneu6js99o'; // vipescorthizmeti.com
+const mainSiteId = 'cmp345juw000gzwqneu6js99o'; // istanbulescort.blog
 
 async function fixSchemaAndLinkContent() {
   const ssh = new NodeSSH();
@@ -16,7 +16,7 @@ async function fixSchemaAndLinkContent() {
 
     // 2. Link all records to the main siteId
     await ssh.execCommand(`psql "${dbUrl}" -c "UPDATE \\"PageContent\\" SET \\"siteId\\" = '${mainSiteId}' WHERE \\"siteId\\" IS NULL;"`);
-    console.log('✅ All 9715 records linked to vipescorthizmeti.com.');
+    console.log('✅ All 9715 records linked to istanbulescort.blog.');
 
     // 3. Add Foreign Key
     await ssh.execCommand(`psql "${dbUrl}" -c "ALTER TABLE \\"PageContent\\" ADD CONSTRAINT \\"PageContent_siteId_fkey\\" FOREIGN KEY (\\"siteId\\") REFERENCES \\"Site\\"(id) ON DELETE SET NULL ON UPDATE CASCADE;"`).catch(() => console.log('FK already exists or failed.'));

@@ -3,7 +3,7 @@ import dns from 'dns';
 
 function customLookup(hostname, options, callback) {
   const cb = typeof callback === 'function' ? callback : options;
-  if (hostname === 'vipescorthizmeti.com') {
+  if (hostname === 'istanbulescort.blog') {
     if (options && options.all) {
       cb(null, [{ address: '104.21.0.182', family: 4 }]);
     } else {
@@ -16,7 +16,7 @@ function customLookup(hostname, options, callback) {
 
 async function checkRedirect() {
   const req = https.get({
-    hostname: 'vipescorthizmeti.com',
+    hostname: 'istanbulescort.blog',
     path: '/',
     lookup: customLookup,
     headers: {

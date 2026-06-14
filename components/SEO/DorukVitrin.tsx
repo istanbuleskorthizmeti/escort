@@ -173,18 +173,18 @@ function VitrinCard({
 
           <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
             {item.isAd && (
-              <span className="text-[9px] text-amber-400 font-extrabold tracking-widest border border-amber-500/50 bg-gradient-to-r from-amber-500/25 to-black/50 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)]">
+              <span className="text-[9px] text-amber-400 font-extrabold tracking-widest border border-amber-500/50 bg-linear-to-r from-amber-500/25 to-black/50 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)]">
                   ⭐ 5.0 (120+ Verified)
               </span>
             )}
-            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word whitespace-normal bg-gradient-to-r from-white/20 to-white/5 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] vitrin-card-border-left-${idx}`}>
+            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word whitespace-normal bg-linear-to-r from-white/20 to-white/5 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] vitrin-card-border-left-${idx}`}>
                 <Home className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> 
                 <span className="line-clamp-1 break-all overflow-hidden">{niche}</span>
             </span>
-            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
+            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-linear-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
                 <User className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> Bireysel
             </span>
-            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-gradient-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
+            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-linear-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
                 <CalendarHeart className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> Yaş {age}
             </span>
           </div>
@@ -195,7 +195,7 @@ function VitrinCard({
               onClick={handleTrack}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white py-1.5 px-4 rounded-full text-[11px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 border-[1.5px] border-white hover:scale-105 transition-transform bg-gradient-to-r from-[#25D366] to-[#128C7E] animate-neon-pulse"
+              className="text-white py-1.5 px-4 rounded-full text-[11px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 border-[1.5px] border-white hover:scale-105 transition-transform bg-linear-to-r from-[#25D366] to-[#128C7E] animate-neon-pulse"
             >
               <MessageCircle className="w-3.5 h-3.5" /> İletişim
             </a>
@@ -239,7 +239,7 @@ function VitrinCard({
               onClick={handleTrack}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-white py-1.5 px-4 rounded-xl text-[10px] font-black uppercase tracking-widest inline-flex items-center justify-center gap-1.5 border border-white/10 bg-gradient-to-r from-emerald-500 to-green-600 hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
+              className="w-full text-white py-1.5 px-4 rounded-xl text-[10px] font-black uppercase tracking-widest inline-flex items-center justify-center gap-1.5 border border-white/10 bg-linear-to-r from-emerald-500 to-green-600 hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
             >
               <MessageCircle className="w-3.5 h-3.5" /> WHATSAPP İLETİŞİM
             </a>
@@ -250,8 +250,7 @@ function VitrinCard({
       // Gold/Bronze Luxury Variant (Left overlay with Gold themed accents)
       return (
         <div 
-          className="absolute left-0 top-0 bottom-0 w-[42%] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-amber-500/30 pointer-events-none"
-          style={{ background: 'linear-gradient(135deg, rgba(20, 16, 10, 0.9) 0%, rgba(5, 4, 3, 0.96) 100%)' }}
+          className="absolute left-0 top-0 bottom-0 w-[42%] backdrop-blur-md z-10 p-4 flex flex-col justify-center items-start border-r border-amber-500/30 pointer-events-none bg-linear-to-br from-[#14100a]/90 to-[#050403]/96"
         >
           <div 
             className={`italic text-[26px] text-[#e5c158] font-bold tracking-widest mb-3 leading-none flex items-center gap-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] vitrin-card-name-${idx}`}
@@ -286,7 +285,7 @@ function VitrinCard({
               onClick={handleTrack}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black py-1.5 px-4 rounded-full text-[10px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 bg-gradient-to-r from-[#e5c158] to-[#b8860b] hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(229,193,88,0.4)]"
+              className="text-black py-1.5 px-4 rounded-full text-[10px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 bg-linear-to-r from-[#e5c158] to-[#b8860b] hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(229,193,88,0.4)]"
             >
               <MessageCircle className="w-3.5 h-3.5" /> REZERVASYON
             </a>
@@ -418,7 +417,7 @@ function VitrinCard({
       {/* 🔴 AD BADGE */}
       {item.isAd && (
         <div className="absolute top-3 right-3 z-20">
-          <div className="text-black text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded shadow-lg flex items-center gap-1 border border-black/20 bg-[var(--primary-color)]">
+          <div className="text-black text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded shadow-lg flex items-center gap-1 border border-black/20 bg-(--primary-color)">
             <AlertTriangle className="w-3 h-3" />
             REKLAM
           </div>
@@ -467,7 +466,7 @@ export function DorukVitrin({
 
   // 🛡️ [GOD-MODE] SSR-SAFE SELECTION
   const initialImages = useMemo(() => {
-    return vitrinImages.slice(0, 20);
+    return vitrinImages.slice(0, 60);
   }, []);
 
   const [displayedImages, setDisplayedImages] = useState<any[]>(() => {
@@ -476,10 +475,10 @@ export function DorukVitrin({
     if (serverProfiles && serverProfiles.length > 0) {
       const cleanServer = serverProfiles.filter(m => !premiumAds.some(ad => ad.src === m.src));
       const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
-      fullPool = [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 20 - premiumAds.length - cleanServer.length))];
+      fullPool = [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 60 - premiumAds.length - cleanServer.length))];
     } else {
       const pool = vitrinImages.filter(img => !img.isAd);
-      fullPool = [...premiumAds, ...pool.slice(0, 20 - premiumAds.length)];
+      fullPool = [...premiumAds, ...pool.slice(0, 60 - premiumAds.length)];
     }
     // Render only first 4 items initially on SSR/First Paint to maximize speed scores
     return fullPool.slice(0, 4);
@@ -495,10 +494,10 @@ export function DorukVitrin({
     if (serverProfiles && serverProfiles.length > 0) {
       const cleanServer = serverProfiles.filter(m => !premiumAds.some(ad => ad.src === m.src));
       const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
-      fullPool = [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 20 - premiumAds.length - cleanServer.length))];
+      fullPool = [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 60 - premiumAds.length - cleanServer.length))];
     } else {
       const pool = vitrinImages.filter(img => !img.isAd);
-      fullPool = [...premiumAds, ...pool.slice(0, 20 - premiumAds.length)];
+      fullPool = [...premiumAds, ...pool.slice(0, 60 - premiumAds.length)];
     }
     setDisplayedImages(fullPool);
 
@@ -525,12 +524,12 @@ export function DorukVitrin({
       const premiumAds = vitrinImages.filter(img => img.isAd);
       const cleanMasters = masters.filter(m => !premiumAds.some(ad => ad.src === m.src));
       const pool = vitrinImages.filter(img => !img.isAd && !cleanMasters.some((m: { src: string }) => m.src === img.src));
-      setDisplayedImages([...premiumAds, ...cleanMasters, ...pool.slice(0, Math.max(0, 20 - premiumAds.length - cleanMasters.length))]);
+      setDisplayedImages([...premiumAds, ...cleanMasters, ...pool.slice(0, Math.max(0, 60 - premiumAds.length - cleanMasters.length))]);
       setHasLoaded(true);
     }).catch(e => {
       const premiumAds = vitrinImages.filter(img => img.isAd);
       const pool = vitrinImages.filter(img => !img.isAd);
-      setDisplayedImages([...premiumAds, ...pool.slice(0, 20 - premiumAds.length)]);
+      setDisplayedImages([...premiumAds, ...pool.slice(0, 60 - premiumAds.length)]);
       setHasLoaded(true);
     });
   }, [hasLoaded]);
@@ -597,14 +596,39 @@ export function DorukVitrin({
           {imagesToRender.map((item, idx) => {
             if (!item || !item.src) return null;
             
-            const isOrganic = !item.isAd;
-            const realisticNames = [
+            // FNV-1a hash based deterministic shuffle
+            let seed = 2166136261;
+            const hostString = host || 'default';
+            for (let i = 0; i < hostString.length; i++) {
+              seed = seed ^ hostString.charCodeAt(i);
+              seed = Math.imul(seed, 16777619);
+            }
+            
+            const shuffleArray = <T,>(arr: T[]): T[] => {
+              const result = [...arr];
+              let currentSeed = seed;
+              for (let i = result.length - 1; i > 0; i--) {
+                currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
+                const j = Math.abs(currentSeed) % (i + 1);
+                const temp = result[i];
+                result[i] = result[j];
+                result[j] = temp;
+              }
+              return result;
+            };
+
+            const realisticNames = shuffleArray([
               "Buse", "Gizem", "Ayla", "Derin", "Selin", "Simge", "Melisa", "Tuğçe", 
               "Ebru", "Aleyna", "Burcu", "Cansel", "Sude", "Dilan", "Ece", "Berna", 
-              "Didem", "Pelin", "Merve", "Aslı", "İrem", "Bengü", 
-              "Damla", "Hazal", "Öykü", "Gamze", "Ceren", "Derya", "Seda", "Meltem"
-            ];
+              "Didem", "Pelin", "Merve", "Aslı", "İrem", "Bengü", "Damla", "Hazal", 
+              "Öykü", "Gamze", "Ceren", "Derya", "Seda", "Meltem", "Aylin",
+              "Helin", "Elena", "Svetlana", "Milena", "Almira", "Ilgın", "Beste", 
+              "Tanya", "Nadia", "Selinay", "Eylül", "Yaren", "Yağmur", "Gözde", 
+              "Banu", "Tuğba", "Deniz", "Esra", "Fatma", "Hande",
+              "İpek", "Jale", "Kader", "Lale", "Mine", "Nalan", "Oya", "Pınar",
+            ]);
             
+            const isOrganic = !item.isAd;
             const firstName = isOrganic 
               ? realisticNames[idx % realisticNames.length]
               : (item.title || 'VIP').split(' ')[0];

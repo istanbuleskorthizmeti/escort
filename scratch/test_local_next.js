@@ -16,7 +16,7 @@ async function run() {
 
     console.log('\n--- Testing one of the domains via Cloudflare / Nginx routing ---');
     console.log('We will resolve local Nginx response for a sample domain from config:');
-    const headerRes = await ssh.execCommand('curl -I -s -H "Host: vipescorthizmeti.com" http://localhost');
+    const headerRes = await ssh.execCommand('curl -I -s -H "Host: istanbulescort.blog" http://localhost');
     console.log(headerRes.stdout || headerRes.stderr);
   } catch (e) {
     console.error(e);

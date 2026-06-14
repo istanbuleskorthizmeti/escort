@@ -1,5 +1,6 @@
 
 import { google } from 'googleapis';
+import { googleAuth } from '../google-auth';
 import { TelegramService } from '../crm/telegram';
 import dotenv from 'dotenv';
 
@@ -9,13 +10,6 @@ dotenv.config();
  * 🧛‍♂️ HYDRA BLOGGER ADAPTER (SMART MODE)
  * Automates high-authority blog creation with anti-spam protections.
  */
-
-const auth = new google.auth.GoogleAuth({
-  keyFile: 'google-key.json',
-  scopes: ['https://www.googleapis.com/auth/blogger'],
-});
-
-const blogger = google.blogger({ version: 'v3', auth });
 
 // Static tracker to prevent rapid-fire posting across the runtime
 let lastPostTimestamp = 0;
@@ -38,6 +32,8 @@ export class BloggerAdapter {
     console.log(`🚀 [BLOGGER] Posting (Smart Mode): ${title}...`);
     
     try {
+      const authClient = await googleAuth.getAuthorizedClient();
+      const blogger = google.blogger({ version: 'v3', auth: authClient });
       const res = await blogger.posts.insert({
         blogId: blogId,
         requestBody: {

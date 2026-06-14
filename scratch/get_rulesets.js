@@ -6,7 +6,7 @@ dotenv.config({ path: path.resolve(process.cwd(), '.env') });
 
 const CF_API_TOKEN = process.env.CF_API_TOKEN;
 const CF_EMAIL = process.env.CF_EMAIL;
-const zoneId = '793134edf1e811e91e2d1d6c98526f3c'; // vipescorthizmeti.com
+const zoneId = '793134edf1e811e91e2d1d6c98526f3c'; // istanbulescort.blog
 
 async function getRulesets() {
   const headers = {

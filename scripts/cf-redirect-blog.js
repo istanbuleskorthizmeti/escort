@@ -9,8 +9,7 @@ const CF_API_TOKEN = process.env.CF_API_TOKEN;
 const CF_EMAIL = process.env.CF_EMAIL;
 
 const REDIRECTS = [
-  { old: 'istanbulescort.blog', new: 'istanbulescort.blog' },
-  { old: 'istanbulescort.blog', new: 'istanbulescort.blog' },
+  { old: 'vipescorthizmeti.com', new: 'istanbulescort.blog' },
   { old: 'escortvip.net', new: 'istanbulescort.blog' }
 ];
 
@@ -22,13 +21,13 @@ async function setupCloudflareRedirects() {
 
   const headers = {
     'Authorization': `Bearer ${CF_API_TOKEN}`,
-    'X-Auth-Email': CF_EMAIL,
     'Content-Type': 'application/json'
   };
 
   for (const pair of REDIRECTS) {
     const OLD_DOMAIN = pair.old;
     const NEW_DOMAIN = pair.new;
+    let zoneId = null;
     try {
       console.log(`🔍 [1/3] ${OLD_DOMAIN} için Cloudflare Zone ID aranıyor...`);
       const zonesRes = await axios.get(`https://api.cloudflare.com/client/v4/zones?name=${OLD_DOMAIN}`, { headers });
@@ -38,7 +37,7 @@ async function setupCloudflareRedirects() {
         continue;
       }
       
-      const zoneId = zonesRes.data.result[0].id;
+      zoneId = zonesRes.data.result[0].id;
       console.log(`✅ Zone ID bulundu: ${zoneId}`);
 
       console.log(`🚀 [2/3] Dynamic Redirect ruleset kontrol ediliyor...`);
@@ -117,8 +116,53 @@ async function setupCloudflareRedirects() {
       }
 
     } catch (error) {
-      console.error("❌ Hata oluştu:");
+      console.error("❌ Hata oluştu (Dynamic Redirect denemesi):");
       console.error(error.response?.data || error.message);
+      
+      // Fallback: Page Rules
+      try {
+        console.log(`🔄 [Page Rules Fallback] ${OLD_DOMAIN} için Page Rule oluşturulmaya çalışılıyor...`);
+        // List existing page rules
+        const rulesRes = await axios.get(`https://api.cloudflare.com/client/v4/zones/${zoneId}/pagerules`, { headers });
+        const existingRules = rulesRes.data.result || [];
+        
+        const hasRule = existingRules.some(r => r.targets.some(t => t.constraint.value.includes(OLD_DOMAIN)));
+        if (hasRule) {
+          console.log(`⚠️ Bu domain için zaten Page Rule mevcut! İşlem atlanıyor.`);
+          continue;
+        }
+
+        console.log(`📤 Page Rule oluşturuluyor...`);
+        const newRule = {
+          targets: [
+            {
+              target: "url",
+              constraint: {
+                operator: "matches",
+                value: `*${OLD_DOMAIN}/*`
+              }
+            }
+          ],
+          actions: [
+            {
+              id: "forwarding_url",
+              value: {
+                url: `https://${NEW_DOMAIN}/$2`,
+                status_code: 301
+              }
+            }
+          ],
+          status: "active"
+        };
+        
+        const createRuleRes = await axios.post(`https://api.cloudflare.com/client/v4/zones/${zoneId}/pagerules`, newRule, { headers });
+        if (createRuleRes.data.success) {
+          console.log(`🔥 [PAGE RULE] BAŞARILI! ${OLD_DOMAIN} -> ${NEW_DOMAIN} Yönlendirmesi aktif.`);
+        }
+      } catch (pageruleErr) {
+        console.error("❌ Page Rule oluşturma hatası:");
+        console.error(pageruleErr.response?.data || pageruleErr.message);
+      }
     }
   }
 }

@@ -2,7 +2,7 @@ import axios from 'axios';
 
 async function checkHttp() {
   const cfIp = '104.21.0.182';
-  const domain = 'vipescorthizmeti.com';
+  const domain = 'istanbulescort.blog';
   
   console.log(`🌐 Connecting to HTTP ${cfIp} with Host: ${domain}...`);
   try {

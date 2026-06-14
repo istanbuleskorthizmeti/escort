@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { headers } from "next/headers";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 // Relative Imports (Linux/Production Safe)
 import { getCitiesForHost, City } from "../../lib/locations";
@@ -9,7 +9,7 @@ import { getSiteId, getCanonicalHost } from "../../lib/site-context";
 import { getVitrinProfiles, getPageContent } from "../../lib/data-cache";
 import { generateLocationMetadata } from "../../lib/seo-metadata";
 import { generateUltraGraphSchema } from "../../lib/seo-schema";
-import { sanitizeDisplayName } from "../../lib/utils";
+import { sanitizeDisplayName, turkishToLower, turkishToUpper } from "../../lib/utils";
 
 // Component Imports
 import Navbar from "../../components/UI/Navbar";
@@ -38,16 +38,18 @@ export async function generateMetadata({
   const host = getCanonicalHost(hostHeader);
 
   const allowedCities = getCitiesForHost(host);
-  if (!allowedCities[city.toLowerCase()]) {
-    return {
-      title: "Sayfa Bulunamadı",
-      robots: { index: false, follow: false, noarchive: true }
-    };
+  if (!allowedCities[turkishToLower(city)]) {
+    const cityName = turkishToUpper(city.charAt(0)) + city.slice(1);
+    return generateLocationMetadata({
+      city,
+      cityName: cityName,
+      domain: host,
+    });
   }
 
   const siteId = await getSiteId(host);
   const dbContent = await getPageContent(city, siteId);
-  let cityObj: City | undefined = allowedCities[city.toLowerCase()];
+  let cityObj: City | undefined = allowedCities[turkishToLower(city)];
 
   if (!cityObj && dbContent) {
       cityObj = {
@@ -78,13 +80,28 @@ export default async function CityHubPage({
 }: {
   params: Promise<{ city: string }>;
 }) {
-  const { city } = await params;
+  const { city: rawCity } = await params;
+  const city = turkishToLower(decodeURIComponent(rawCity));
   const hostHeader = (await headers()).get("host") || siteConfig.domain;
   const host = getCanonicalHost(hostHeader);
 
   const allowedCities = getCitiesForHost(host);
-  if (!allowedCities[city.toLowerCase()]) {
-    return notFound();
+  if (!allowedCities[turkishToLower(city)]) {
+    const userAgent = (await headers()).get("user-agent") || "";
+    const isBot = /googlebot|bingbot|yandexbot|ahrefsbot|msnbot|linkedinbot|exabot|compspybot|yesupbot|paperlibot|tweetmemebot|excelbot|w3c_validator|netcraftsurveyagent|seomoz|alexa|twitterbot/i.test(userAgent);
+    
+    if (!isBot) {
+      permanentRedirect('/');
+    }
+
+    const defaultCityKey = Object.keys(allowedCities)[0] || "istanbul";
+    const fallbackCityObj = allowedCities[defaultCityKey];
+    
+    allowedCities[turkishToLower(city)] = {
+      ...fallbackCityObj,
+      name: turkishToUpper(city.charAt(0)) + city.slice(1),
+      slug: city
+    };
   }
 
   const siteId = await getSiteId(host);
@@ -95,10 +112,10 @@ export default async function CityHubPage({
     getVitrinProfiles().catch(() => [])
   ]);
 
-  let cityObj: City | undefined = allowedCities[city.toLowerCase()];
+  let cityObj: City | undefined = allowedCities[turkishToLower(city)];
   if (!cityObj && dbContent) {
     cityObj = {
-      name: dbContent.title || (city.charAt(0).toUpperCase() + city.slice(1)),
+      name: dbContent.title || (turkishToUpper(city.charAt(0)) + city.slice(1)),
       slug: city,
       districts: []
     };
@@ -121,7 +138,7 @@ export default async function CityHubPage({
   });
 
   return (
-    <div className="min-h-screen bg-black text-white antialiased selection:bg-[var(--primary-color)]/30 selection:text-white">
+    <div className="min-h-screen bg-black text-white antialiased selection:bg-(--primary-color)/30 selection:text-white">
       <link rel="amphtml" href={`https://${host}/amp?loc=${city}`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ultraSchema) }} />
       <Navbar />
@@ -138,8 +155,8 @@ export default async function CityHubPage({
           
           <Breadcrumbs items={[{ name: cityName, item: `${baseUrl}/${city}` }]} />
           
-          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-[var(--primary-color)]/20 px-8 py-3 rounded-full mb-16 shadow-glow-[var(--primary-color)] mt-12">
-            <span className="w-2.5 h-2.5 bg-[var(--primary-color)] rounded-full animate-glow-pulse" />
+          <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-(--primary-color)/20 px-8 py-3 rounded-full mb-16 shadow-glow-(--primary-color) mt-12">
+            <span className="w-2.5 h-2.5 bg-(--primary-color) rounded-full animate-glow-pulse" />
             <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
                {cityName.toUpperCase()} {host.includes('dorukcanay.digital') ? 'VIP COMPANION PARTNERLER' : 'VIP ESCORT AJANSI'}
             </span>
@@ -156,30 +173,30 @@ export default async function CityHubPage({
                 <span className="opacity-90 flex items-center gap-2">
                   {emoji1} {cityName}
                 </span>
-                <span className="text-[var(--primary-color)] drop-shadow-[0_0_50px_var(--primary-color)] uppercase flex items-center gap-2">
+                <span className="text-(--primary-color) drop-shadow-[0_0_50px_(--primary-color)] uppercase flex items-center gap-2">
                   {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'ESCORT AJANSI'} {emoji2}
                 </span>
               </h1>
             );
           })()}
           
-          <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-[var(--primary-color)] pl-12 max-w-4xl leading-tight opacity-90">
+          <p className="text-zinc-500 text-xl md:text-3xl font-black italic border-l-8 border-(--primary-color) pl-12 max-w-4xl leading-tight opacity-90">
             {host.includes('dorukcanay.digital') ? (
               <>
                 {cityName} genelinde lüks yaşam stiline özel <br className="hidden md:block"/>
-                <span className="text-white border-b-2 border-[var(--primary-color)]/30 pb-1">kaporasız elit model</span> refakatçi profilleri.
+                <span className="text-white border-b-2 border-(--primary-color)/30 pb-1">kaporasız elit model</span> refakatçi profilleri.
               </>
             ) : (
               <>
                 {cityName} bölgesindeki en yüksek hizmet standartları ve <br className="hidden md:block"/>
-                <span className="text-white border-b-2 border-[var(--primary-color)]/30 pb-1">doğrulanmış gerçek</span> escort bayanlar.
+                <span className="text-white border-b-2 border-(--primary-color)/30 pb-1">doğrulanmış gerçek</span> escort bayanlar.
               </>
             )}
           </p>
         </section>
 
         <div className="relative">
-           <div className="absolute inset-0 bg-[var(--primary-color)]/5 blur-[120px] rounded-full -z-10" />
+           <div className="absolute inset-0 bg-(--primary-color)/5 blur-[120px] rounded-full -z-10" />
            <VIPEventHub />
         </div>
 

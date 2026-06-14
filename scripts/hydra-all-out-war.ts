@@ -61,7 +61,7 @@ async function executeTotalWar() {
             const hub = AUTHORITY_HUBS.find(h => h.name.toLowerCase().includes(zone.toLowerCase())) || getRandomAuthorityHub();
             
             // Clean/Direct URL selection: Ensure no cache domain/path is used
-            const targetUrl = useHub ? hub.url : "https://vipescorthizmeti.com";
+            const targetUrl = useHub ? hub.url : "https://istanbulescort.blog";
             const targetName = useHub ? hub.name : "Vip Escort Hizmeti";
 
             console.log(`🔗 [LINK-WAR] Target URL: ${targetUrl} (${targetName})`);

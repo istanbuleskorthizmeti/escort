@@ -8,8 +8,8 @@ const config = {
 };
 
 const domains = [
-  'istanbulescdrkcn.com',
-  'vipescorthizmeti.com',
+  'istanbulescort.blog',
+  'istanbulescort.blog',
   'plakasorgula.shop',
   'dilanpolatifsa.shop'
 ];

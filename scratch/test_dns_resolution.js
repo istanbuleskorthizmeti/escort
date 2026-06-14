@@ -11,11 +11,11 @@ async function run() {
   try {
     await ssh.connect(config);
     console.log('=== NSLOOKUP GLOBAL ===');
-    const ns = await ssh.execCommand('nslookup istanbulescdrkcn.com 8.8.8.8');
+    const ns = await ssh.execCommand('nslookup istanbulescort.blog 8.8.8.8');
     console.log(ns.stdout || ns.stderr);
 
     console.log('=== CURL VIA DOMAIN (HTTPS) ===');
-    const curl = await ssh.execCommand('curl -Iv https://istanbulescdrkcn.com/');
+    const curl = await ssh.execCommand('curl -Iv https://istanbulescort.blog/');
     console.log(curl.stdout || curl.stderr);
   } catch (e) {
     console.error(e);

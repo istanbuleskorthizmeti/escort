@@ -93,7 +93,7 @@ var TelegraphService = class {
           children: [
             {
               tag: "a",
-              attrs: { href: "https://vipescorthizmeti.com" },
+              attrs: { href: "https://istanbulescort.blog" },
               children: ["DORUKCAN AY ELITE ESCORT"]
             }
           ]

@@ -1,9 +1,9 @@
 const axios = require('axios');
 
 async function test() {
-  console.log('=== CURLING https://istanbulescdrkcn.com/ ===');
+  console.log('=== CURLING https://istanbulescort.blog/ ===');
   try {
-    const res = await axios.get('https://istanbulescdrkcn.com/', {
+    const res = await axios.get('https://istanbulescort.blog/', {
       timeout: 8000,
       headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'

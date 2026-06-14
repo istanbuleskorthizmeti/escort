@@ -41,7 +41,7 @@ Kardocum, PBN ağını "İfşa" domainleri ile hibrit hale getirdim. İşte uygu
 📐 <b>KATMANLI LİNK PİRAMİDİ (Tiered Linking):</b>
 • <b>Tier 3:</b> İfşa siteleri (Link Bombaları)
 • <b>Tier 2:</b> PBN Bloglar & Uydu Siteler
-• <b>Tier 1:</b> <code>dorukcanay.digital</code> & <code>vipescorthizmeti.com</code>
+• <b>Tier 1:</b> <code>dorukcanay.digital</code> & <code>istanbulescort.blog</code>
 • Bu sayede ana sitelerin "Link Juice" kalitesi tavan yapıyor.
 
 🕸️ <b>CONTEXTUAL SILO (Bağlamsal Örgü):</b>

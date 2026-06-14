@@ -47,6 +47,28 @@ module.exports = {
       args: "-r dotenv/config dist_scripts/scripts/master/audit-engine.js",
       cwd: "/root/esc",
       autorestart: true
+    },
+    {
+      name: "hydra-fleet-gsc-automation",
+      script: "npx",
+      args: "tsx scripts/fleet-gsc-automation.ts",
+      cwd: "/root/esc",
+      autorestart: false,
+      cron_restart: "0 5 * * *", // 🕒 RUN EVERY DAY AT 5 AM
+      env: {
+        NODE_ENV: "production"
+      }
+    },
+    {
+      name: "hydra-gsc-enterprise",
+      script: "npx",
+      args: "tsx scripts/google-enterprise-integration.ts",
+      cwd: "/root/esc",
+      autorestart: false,
+      cron_restart: "0 6 * * *", // 🕒 RUN EVERY DAY AT 6 AM
+      env: {
+        NODE_ENV: "production"
+      }
     }
   ]
 }

@@ -77,7 +77,9 @@ class GoogleAuthService {
             continue;
         }
         
-        const subject = process.env.GOOGLE_WORKSPACE_EMAIL || undefined;
+        const subject = (keyFile.startsWith('google-key') && !keyFile.includes('sovereign') && !keyFile.includes('strong-return'))
+          ? (process.env.GOOGLE_WORKSPACE_EMAIL || undefined) 
+          : undefined;
         const client = new google.auth.JWT(
           keyData.client_email,
           undefined,
@@ -93,7 +95,7 @@ class GoogleAuthService {
           subject
         );
         this.serviceAccountClients.push(client);
-        console.log(`🔐 [AUTH] Service Account initialized: ${keyFile} (${keyData.client_email})`);
+        console.log(`🔐 [AUTH] Service Account initialized: ${keyFile} (${keyData.client_email})${subject ? ' impersonating ' + subject : ''}`);
       } catch (err) {
         console.error(`⚠️ [AUTH] Failed to initialize Service Account ${keyFile}:`, err);
       }

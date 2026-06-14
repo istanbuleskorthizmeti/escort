@@ -19,7 +19,7 @@ async function run() {
 
     console.log('=== CURLING SITE FROM LOCAL MACHINE ===');
     try {
-      const res = await axios.get('https://istanbulescdrkcn.com/', {
+      const res = await axios.get('https://istanbulescort.blog/', {
         timeout: 8000,
         headers: { 'User-Agent': 'Mozilla/5.0' }
       });

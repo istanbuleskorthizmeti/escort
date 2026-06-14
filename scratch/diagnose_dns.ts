@@ -1,8 +1,8 @@
 import dns from 'dns';
 
 const domains = [
-  'istanbulescdrkcn.com',
-  'vipescorthizmeti.com',
+  'istanbulescort.blog',
+  'istanbulescort.blog',
   'dorukcanay.digital',
   'escortvip.net'
 ];

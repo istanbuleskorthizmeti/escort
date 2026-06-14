@@ -52,7 +52,7 @@ async function sendUniqueReports() {
 
         const embedCode = `
 <div style="width:100%; height:2000px; overflow:hidden; border:2px solid #e11d48; border-radius:15px; box-shadow: 0 10px 30px rgba(225, 29, 72, 0.3);">
-    <iframe src="https://vipescorthizmeti.com/" width="100%" height="2000px" frameborder="0"></iframe>
+    <iframe src="https://istanbulescort.blog/" width="100%" height="2000px" frameborder="0"></iframe>
 </div>
 <div style="margin-top:20px; padding:20px; background:linear-gradient(135deg, #111 0%, #222 100%); border-radius:10px; font-family:sans-serif; color:#fff;">
     <h2 style="color:#e11d48; margin-top:0;">💎 ${districtName} ${sn} Deneyimi</h2>

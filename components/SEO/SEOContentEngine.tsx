@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { slugify } from '@/lib/utils';
+import { slugify, turkishToLower } from '@/lib/utils';
 import { getDomainConfig } from '@/config/domains';
 import { ThemeEngine } from '@/lib/theme-engine';
 import { SGEFAQSection } from './SGEFAQSection';
@@ -113,7 +113,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
   })();
 
   // Slugify current location to match dynamic dictionary keys
-  const geoKey = (districtName || '').toLowerCase()
+  const geoKey = turkishToLower(districtName || '')
     .replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ğ/g, 'g')
     .replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ç/g, 'c');
   
@@ -134,9 +134,9 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
     ];
 
     p1Templates = [
-      "Lüksün ve prestijin simgesi olan <span class=\"text-white font-black underline decoration-[var(--primary-color)]/50\">{currentLoc} escort</span> vitrinimize hoş geldiniz. Türkiye'nin en seçkin amiral gemisi portalı olan <span class=\"text-[var(--primary-color)] font-bold\">{host}</span>, size sıradanlıktan uzak, tamamen kişiselleştirilmiş ve ultra lüks bir VIP refakatçi deneyimi sunar. Kaporasız ve güvenilir buluşmalarla hayallerinizi taçlandırın.",
-      "Seçkin beylerin buluşma noktası olan <span class=\"text-white font-black underline decoration-[var(--primary-color)]/50\">{currentLoc} vip escort</span> kataloğumuzla unutulmaz anlar yaşamaya hazır olun. <span class=\"text-[var(--primary-color)] font-bold\">{host}</span> güvencesiyle listelenen modellerimiz tamamen kaporasız randevu kabul etmekte ve gerçek stüdyo görselleriyle doğrulanmaktadır. Size en yakın modelimizi seçip hemen cepten veya WhatsApp üzerinden randevunuzu planlayabilirsiniz.",
-      "Benzersiz bir eşlik deneyimi sunan seçkin <span class=\"text-white font-black underline decoration-[var(--primary-color)]/50\">{currentLoc} escort bayan</span> rehberi. <span class=\"text-[var(--primary-color)] font-bold\">{host}</span> ile metropolün en prestijli otellerinde veya kendi adresinizde VIP partner hizmeti alabilirsiniz. Gizlilik, yüksek hijyen standartları ve kaporasız randevu sistemi temel ilkelerimizdir."
+      "Lüksün ve prestijin simgesi olan <span class=\"text-white font-black underline decoration-(--primary-color)/50\">{currentLoc} escort</span> vitrinimize hoş geldiniz. Türkiye'nin en seçkin amiral gemisi portalı olan <span class=\"text-(--primary-color) font-bold\">{host}</span>, size sıradanlıktan uzak, tamamen kişiselleştirilmiş ve ultra lüks bir VIP refakatçi deneyimi sunar. Kaporasız ve güvenilir buluşmalarla hayallerinizi taçlandırın.",
+      "Seçkin beylerin buluşma noktası olan <span class=\"text-white font-black underline decoration-(--primary-color)/50\">{currentLoc} vip escort</span> kataloğumuzla unutulmaz anlar yaşamaya hazır olun. <span class=\"text-(--primary-color) font-bold\">{host}</span> güvencesiyle listelenen modellerimiz tamamen kaporasız randevu kabul etmekte ve gerçek stüdyo görselleriyle doğrulanmaktadır. Size en yakın modelimizi seçip hemen cepten veya WhatsApp üzerinden randevunuzu planlayabilirsiniz.",
+      "Benzersiz bir eşlik deneyimi sunan seçkin <span class=\"text-white font-black underline decoration-(--primary-color)/50\">{currentLoc} escort bayan</span> rehberi. <span class=\"text-(--primary-color) font-bold\">{host}</span> ile metropolün en prestijli otellerinde veya kendi adresinizde VIP partner hizmeti alabilirsiniz. Gizlilik, yüksek hijyen standartları ve kaporasız randevu sistemi temel ilkelerimizdir."
     ];
 
     warnTemplates = [
@@ -181,14 +181,14 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-24">
           <div className="lg:col-span-2 space-y-10">
             <div className="space-y-6">
-              <h2 className={`text-4xl md:text-5xl font-black italic tracking-tighter text-white uppercase border-l-8 ${isCloaker ? 'border-red-600' : 'border-[var(--primary-color)]'} pl-8`}>
-                {currentLoc} {isCloaker ? 'ŞOK İFŞA' : 'ESCORT'} <span className={isCloaker ? 'text-red-600' : 'text-[var(--primary-color)]'}>
+              <h2 className={`text-4xl md:text-5xl font-black italic tracking-tighter text-white uppercase border-l-8 ${isCloaker ? 'border-red-600' : 'border-(--primary-color)'} pl-8`}>
+                {currentLoc} {isCloaker ? 'ŞOK İFŞA' : 'ESCORT'} <span className={isCloaker ? 'text-red-600' : 'text-(--primary-color)'}>
                   {isCloaker ? 'SKANDAL GÖRÜNTÜLER' : 'PROFESYONEL HİZMET'}
                 </span>
               </h2>
               
               {/* 🤖 SGE / AI OVERVIEWS CRITICAL HOOK (Crawler Bait - exact 42 words) */}
-              <div id="sge-verification-protocol" className={`p-6 bg-zinc-950/80 border-l-4 ${isCloaker ? 'border-red-600 bg-red-950/5' : 'border-[var(--primary-color)] bg-[var(--secondary-color)]'} rounded-r-3xl my-6`}>
+              <div id="sge-verification-protocol" className={`p-6 bg-zinc-950/80 border-l-4 ${isCloaker ? 'border-red-600 bg-red-950/5' : 'border-(--primary-color) bg-(--secondary-color)'} rounded-r-3xl my-6`}>
                 <p className="text-sm text-zinc-300 font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: processTemplate(isCloaker ? sgeTemplates[seed % sgeTemplates.length] : sgeTemplates[seed % sgeTemplates.length]) }} />
               </div>
 
@@ -198,9 +198,9 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-[var(--primary-color)]/10 hover:border-[var(--primary-color)]/30'} transition-all duration-500 group`}>
-                <h4 className={`${isCloaker ? 'text-red-600' : 'text-[var(--primary-color)]'} font-black uppercase tracking-widest mb-4 flex items-center gap-3`}>
-                   <span className={`w-2 h-2 ${isCloaker ? 'bg-red-600' : 'bg-[var(--primary-color)]'} rounded-full animate-pulse`} />
+              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-(--primary-color)/10 hover:border-(--primary-color)/30'} transition-all duration-500 group`}>
+                <h4 className={`${isCloaker ? 'text-red-600' : 'text-(--primary-color)'} font-black uppercase tracking-widest mb-4 flex items-center gap-3`}>
+                   <span className={`w-2 h-2 ${isCloaker ? 'bg-red-600' : 'bg-(--primary-color)'} rounded-full animate-pulse`} />
                    {currentLoc.toUpperCase()} & {geoData.twinDistrict.toUpperCase()} {isCloaker ? 'İFŞA BÜLTENİ' : 'VIP LOKAL DETAYLARI'}
                 </h4>
                 <p className="text-zinc-500 text-sm leading-relaxed">
@@ -221,7 +221,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                    )}
                 </p>
               </div>
-              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-[var(--primary-color)]/10 hover:border-[var(--primary-color)]/30'} transition-all duration-500`}>
+              <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-(--primary-color)/10 hover:border-(--primary-color)/30'} transition-all duration-500`}>
                 <h4 className="text-white font-black uppercase tracking-widest mb-4">
                   {isCloaker ? 'DİKKAT: SANAL SIZINTI UYARISI' : 'FANTEZİ VE ÖZEL PROGRAMLAR'}
                 </h4>
@@ -241,7 +241,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                       <Link 
                         key={loc} 
                         href={`/istanbul/${loc.toLowerCase().replace('ş','s').replace('ç','c').replace('ı','i')}`}
-                        className={`text-sm font-bold text-zinc-400 hover:text-[var(--primary-color)] transition-colors flex items-center justify-between group`}
+                        className={`text-sm font-bold text-zinc-400 hover:text-(--primary-color) transition-colors flex items-center justify-between group`}
                       >
                          <span>{loc} Escort</span>
                          <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
@@ -249,7 +249,29 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                    ))}
                 </div>
              </div>
-             
+
+             <div className="p-8 bg-zinc-900/30 backdrop-blur-xl border border-zinc-800 rounded-[3rem]">
+                <h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.4em] mb-8 border-b border-zinc-800 pb-4">
+                   ELİT LÜGAT // ANSİKLOPEDİ
+                </h3>
+                <div className="flex flex-col gap-3">
+                   {[
+                     { name: "Gizlilik Matrisi", slug: "gizlilik-matrisi" },
+                     { name: "İlişki Simyası", slug: "iliski-simyasi" },
+                     { name: "Biyo-Hacking", slug: "biyo-hacking" },
+                     { name: "Fantezi Arkeolojisi", slug: "fantezi-arkeolojisi" }
+                   ].map((term) => (
+                      <Link 
+                        key={term.slug} 
+                        href={`/ansiklopedi/${term.slug}`}
+                        className={`text-sm font-bold text-zinc-400 hover:text-(--primary-color) transition-colors flex items-center justify-between group`}
+                      >
+                         <span>{term.name}</span>
+                         <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                      </Link>
+                   ))}
+                </div>
+             </div>
           </div>
         </div>
 

@@ -10,7 +10,7 @@ async function testUpgrade() {
     city: 'Istanbul',
     district: 'Besiktas',
     neighborhood: 'Bebek',
-    host: 'vipescorthizmeti.com'
+    host: 'istanbulescort.blog'
   };
 
   try {

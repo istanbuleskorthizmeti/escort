@@ -9,7 +9,7 @@ const prisma = new PrismaClient();
 async function getGA4Code() {
     console.log("🔍 Veritabanından GA4 kodun sorgulanıyor...");
     try {
-        const domain = process.env.SITE_DOMAIN || "vipescorthizmeti.com";
+        const domain = process.env.SITE_DOMAIN || "istanbulescort.blog";
         const site = await prisma.site.findUnique({
             where: { domain: domain }
         });

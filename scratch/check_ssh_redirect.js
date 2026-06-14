@@ -17,7 +17,7 @@ function runRemoteCommand() {
   
   conn.on('ready', () => {
     console.log('✅ SSH Connection established! Running curl check on target domain...');
-    conn.exec('curl -I -L --connect-timeout 10 https://vipescorthizmeti.com/', (err, stream) => {
+    conn.exec('curl -I -L --connect-timeout 10 https://istanbulescort.blog/', (err, stream) => {
       if (err) {
         console.error('Execution Error:', err.message);
         conn.end();

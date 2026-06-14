@@ -11,11 +11,11 @@ async function run() {
   try {
     await ssh.connect(config);
     console.log('=== CURLING NEXT.JS (localhost:3000) ===');
-    const nextRes = await ssh.execCommand('curl -I -H "Host: istanbulescdrkcn.com" http://127.0.0.1:3000/');
+    const nextRes = await ssh.execCommand('curl -I -H "Host: istanbulescort.blog" http://127.0.0.1:3000/');
     console.log(nextRes.stdout || nextRes.stderr);
 
     console.log('=== CURLING NGINX (localhost:80) ===');
-    const nginxRes = await ssh.execCommand('curl -I -H "Host: istanbulescdrkcn.com" http://127.0.0.1/');
+    const nginxRes = await ssh.execCommand('curl -I -H "Host: istanbulescort.blog" http://127.0.0.1/');
     console.log(nginxRes.stdout || nginxRes.stderr);
 
     console.log('=== PM2 STATUS ===');

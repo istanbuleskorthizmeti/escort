@@ -11,7 +11,7 @@ const config = {
 
 async function remediateAndBoost() {
   try {
-    console.log('🚀 [REMEDIATION] Connecting to Alexhost root@213.232.235.181...');
+    console.log('🚀 [REMEDIATION] Connecting to Alexhost root@187.77.111.203...');
     await ssh.connect(config);
     console.log('✅ SSH Connected.');
 
@@ -20,9 +20,8 @@ async function remediateAndBoost() {
     const startRes = await ssh.execCommand('pm2 start hydra-auto-index');
     console.log('PM2 Start:', startRes.stdout || startRes.stderr);
 
-    // 2. Also run the indexing sniper script in the foreground/background just to be sure it executes
     console.log('📡 [EXEC] Running indexing sniper manually to force database update...');
-    const runRes = await ssh.execCommand('node -r dotenv/config dist_scripts/scripts/master/indexing-sniper.js', { cwd: '/root/esc' });
+    const runRes = await ssh.execCommand('npx tsx scripts/master/indexing-sniper.ts', { cwd: '/root/esc' });
     console.log('Sniper Output:', runRes.stdout || runRes.stderr);
 
     // 3. Ensure all PM2 services are running stable

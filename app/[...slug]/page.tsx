@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { headers } from "next/headers";
-import { permanentRedirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 
 // Relative Imports (Linux/Production Safe)
 import { prisma } from "../../lib/prisma";
@@ -30,7 +30,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   const content = await getPageContent(slug, siteId);
 
-  if (!content) return { title: "🔞 ESCORT AJANSI | DRKCNAY ELITE" };
+  if (!content) {
+    const cityFromName = slug.split('-')[0] || "istanbul";
+    const cityName = cityFromName.charAt(0).toUpperCase() + cityFromName.slice(1);
+    return {
+      title: dedupeEscort(`🔞 ${cityName} Escort Bayan | %100 GERÇEK VİTRİN`),
+      description: dedupeEscort(`${cityName} genelinde lüks ve seçkin escort model rehberi. Ön ödemesiz, kaporasız ve %100 güvenli buluşmalar için VIP model partnerler.`),
+    };
+  }
 
   return {
     title: dedupeEscort(`🔥 ${(content.title || "Elite Escort").replace(/[-\u2013\u2014]/g, ' ')} | %100 GERÇEK VİTRİN`),
@@ -53,7 +60,52 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
   const isCloaker = domainConfig?.role === 'CLOAKER';
 
   if (!content) {
-    permanentRedirect("/");
+    if (!isBot) {
+      permanentRedirect('/');
+    }
+
+    const cityFromName = slug.split('-')[0] || "istanbul";
+    const cityName = cityFromName.charAt(0).toUpperCase() + cityFromName.slice(1);
+    const fallbackTitle = `${cityName} Escort Bayan | VIP Vitrin`;
+    const fallbackParagraph = `${cityName} genelinde VIP model partnerler, elite escort hizmetleri ve kaporasız doğrudan elden ödemeli güvenilir buluşmalar. Telefon numaraları ve aktif WhatsApp hattı ile 7/24 randevu planlayın.`;
+
+    return (
+      <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
+        <link rel="amphtml" href={`https://${host}/amp?loc=${slug}`} />
+        <Navbar />
+        <main className="pt-32 pb-32">
+          <div className="max-w-7xl mx-auto px-6">
+            <Breadcrumbs items={[{ name: fallbackTitle, item: `/${slug}` }]} />
+            
+            <div className="mt-16 mb-16">
+              <h1 className="text-5xl md:text-8xl font-black italic mb-12 text-rose-600 uppercase tracking-tighter leading-none">
+                {fallbackTitle}
+              </h1>
+              <div className="h-px w-full bg-linear-to-r from-rose-600/50 via-zinc-800 to-transparent mb-12" />
+              
+              <div className="grid grid-cols-1 gap-12">
+                  <div className="w-full prose prose-invert">
+                      <p className="text-zinc-400 text-xl leading-relaxed">
+                        {fallbackParagraph}
+                      </p>
+                  </div>
+              </div>
+  
+              <div className="mt-24">
+                  <div className="inline-flex items-center gap-4 bg-zinc-950/40 border border-rose-600/20 px-8 py-3 rounded-full mb-12">
+                      <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
+                      <span className="text-[11px] font-black uppercase tracking-[0.4em] text-zinc-400">VİP VİTRİN</span>
+                  </div>
+                  <DorukVitrin host={host} />
+              </div>
+            </div>
+  
+            <IstanbulConquestMatrix />
+          </div>
+        </main>
+        <UltraFooter host={host} cityName={cityName.toUpperCase()} />
+      </div>
+    );
   }
 
   return (

@@ -25,7 +25,7 @@ export function getCanonicalHost(host: string): string {
 export async function getSiteId(host: string): Promise<string> {
   let domain = getCanonicalHost(host);
 
-  const mirrors = ['escortvip.net', 'istanbulescort.blog', 'vipescorthizmeti.shop', 'dorukcanay.digital', 'vipescorthizmeti.com'];
+  const mirrors = ['escortvip.net', 'istanbulescort.blog', 'vipescorthizmeti.shop', 'dorukcanay.digital', 'istanbulescort.blog'];
   if (mirrors.includes(domain)) {
     domain = 'istanbulescort.blog';
   }
@@ -41,13 +41,24 @@ export async function getSiteId(host: string): Promise<string> {
     });
 
     if (!site) {
-      site = await prisma.site.create({
-        data: {
-          domain,
-          status: 'ACTIVE',
-          healthScore: 100
+      try {
+        site = await prisma.site.create({
+          data: {
+            domain,
+            status: 'ACTIVE',
+            healthScore: 100
+          }
+        });
+      } catch (createErr: any) {
+        // If unique constraint failed (code P2002), retrieve the site again
+        if (createErr.code === 'P2002') {
+          site = await prisma.site.findUnique({
+            where: { domain }
+          });
+        } else {
+          throw createErr;
         }
-      });
+      }
     }
 
     if (site) {

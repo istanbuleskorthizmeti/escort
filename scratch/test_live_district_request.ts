@@ -20,7 +20,7 @@ async function testLiveDistrictRequest() {
 
     console.log('\n--- CURL DISTRICT /istanbul/esenyurt ---');
     const res = await ssh.execCommand(
-      'curl -I -H "Host: istanbulescdrkcn.com" http://127.0.0.1/istanbul/esenyurt'
+      'curl -I -H "Host: istanbulescort.blog" http://127.0.0.1/istanbul/esenyurt'
     );
     console.log(res.stdout || res.stderr);
 

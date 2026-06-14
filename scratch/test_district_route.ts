@@ -17,7 +17,7 @@ async function testDistrict() {
 
     console.log('\n--- CURL /istanbul/esenyurt ---');
     const res = await ssh.execCommand(
-      'curl -I -H "Host: istanbulescdrkcn.com" "http://127.0.0.1/istanbul/esenyurt"'
+      'curl -I -H "Host: istanbulescort.blog" "http://127.0.0.1/istanbul/esenyurt"'
     );
     console.log(res.stdout || res.stderr);
 

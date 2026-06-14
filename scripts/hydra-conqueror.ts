@@ -146,6 +146,9 @@ async function startConquest() {
   console.log('🏁 [CONQUEROR] All districts targeted successfully.');
 }
 
-if (require.main === module) {
-  startConquest().then(() => process.exit(0)).catch(console.error);
-}
+startConquest()
+  .then(() => process.exit(0))
+  .catch((err: unknown) => {
+    console.error(err);
+    process.exit(1);
+  });

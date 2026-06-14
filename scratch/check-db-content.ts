@@ -7,7 +7,7 @@ async function checkContent() {
   const ssh = new NodeSSH();
   try {
     await ssh.connect(server);
-    console.log('📝 Checking PageContent for vipescorthizmeti.com ...');
+    console.log('📝 Checking PageContent for istanbulescort.blog ...');
     
     const siteId = 'cmp345juw000gzwqneu6js99o';
     const content = await ssh.execCommand(`psql "${dbUrl}" -c "SELECT slug, title FROM \\"PageContent\\" WHERE \\"siteId\\" = '${siteId}' LIMIT 20;"`);

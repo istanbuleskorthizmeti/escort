@@ -15,11 +15,11 @@ async function run() {
     console.log(nginxStatus.stdout || nginxStatus.stderr);
 
     console.log('\n=== CURL PORT 80 LOCAL ===');
-    const curl80 = await ssh.execCommand('curl -I --max-time 5 -H "Host: istanbulescdrkcn.com" http://127.0.0.1:80/');
+    const curl80 = await ssh.execCommand('curl -I --max-time 5 -H "Host: istanbulescort.blog" http://127.0.0.1:80/');
     console.log(curl80.stdout || curl80.stderr);
 
     console.log('\n=== CURL PORT 443 LOCAL ===');
-    const curl443 = await ssh.execCommand('curl -I -k --max-time 5 -H "Host: istanbulescdrkcn.com" https://127.0.0.1:443/');
+    const curl443 = await ssh.execCommand('curl -I -k --max-time 5 -H "Host: istanbulescort.blog" https://127.0.0.1:443/');
     console.log(curl443.stdout || curl443.stderr);
 
   } catch (e) {

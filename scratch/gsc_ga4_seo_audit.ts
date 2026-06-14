@@ -96,11 +96,11 @@ async function main() {
   // 3. Local HTTP Scraper for Domain Matrix
   // Load DOMAIN_MATRIX from config/domains.ts if possible, or read from next.config.ts
   const domains = [
-    'vipescorthizmeti.com',
+    'istanbulescort.blog',
     'escortvip.net',
     'vipescorthizmeti.shop',
     'dorukcanay.digital',
-    'istanbulescdrkcn.com',
+    'istanbulescort.blog',
     'sariyerdrkcnay.shop',
     'leventdrkcnay.shop',
     'istanbuldrkcnay.shop',

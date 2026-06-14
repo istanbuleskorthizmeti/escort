@@ -8,7 +8,7 @@ import { DOMAIN_MATRIX } from '../config/domains';
 async function main() {
   const apiKey = process.env.GOOGLE_API_KEY || ''; // Optional but recommended
   const targets = [
-    'https://vipescorthizmeti.com',
+    'https://istanbulescort.blog',
     'https://escortvip.net',
     'https://bagcilarescort.shop',
     'https://esenyurtescort.blog'

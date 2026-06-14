@@ -15,7 +15,7 @@ async function run() {
     console.log(res3000.stdout || res3000.stderr);
 
     console.log('\n--- Testing sitemap.xml on Port 80 (Nginx) ---');
-    const res80 = await ssh.execCommand('curl -i -s -H "Host: istanbulescdrkcn.com" http://localhost/sitemap.xml');
+    const res80 = await ssh.execCommand('curl -i -s -H "Host: istanbulescort.blog" http://localhost/sitemap.xml');
     console.log(res80.stdout || res80.stderr);
   } catch (e) {
     console.error(e);

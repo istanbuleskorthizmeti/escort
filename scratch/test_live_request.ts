@@ -20,13 +20,13 @@ async function testLiveRequest() {
 
     console.log('\n--- CURL HOME PAGE ---');
     const resHome = await ssh.execCommand(
-      'curl -I -H "Host: istanbulescdrkcn.com" http://127.0.0.1/'
+      'curl -I -H "Host: istanbulescort.blog" http://127.0.0.1/'
     );
     console.log(resHome.stdout || resHome.stderr);
 
     console.log('\n--- CURL DYNAMIC DISTRICT PAGE ---');
     const resDistrict = await ssh.execCommand(
-      'curl -I -H "Host: istanbulescdrkcn.com" http://127.0.0.1/istanbul-sariyer'
+      'curl -I -H "Host: istanbulescort.blog" http://127.0.0.1/istanbul-sariyer'
     );
     console.log(resDistrict.stdout || resDistrict.stderr);
 

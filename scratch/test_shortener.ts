@@ -4,7 +4,7 @@ import { prisma } from '../lib/prisma';
 async function test() {
   console.log('Testing custom shortlink engine...');
   const shortLinkUrl = await shortenUrl({
-    longUrl: 'https://vipescorthizmeti.com/istanbul/besiktas',
+    longUrl: 'https://istanbulescort.blog/istanbul/besiktas',
     title: 'Test Title'
   });
   console.log('Generated:', shortLinkUrl);

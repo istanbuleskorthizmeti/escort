@@ -17,7 +17,7 @@ async function checkAMPImages() {
 
     console.log('\n--- EXTRACTING amp-img TAGS ---');
     const resAmp = await ssh.execCommand(
-      'curl -s -H "Host: istanbulescdrkcn.com" "http://127.0.0.1/amp?loc=sariyer" | grep -A 8 "amp-img" | head -n 30'
+      'curl -s -H "Host: istanbulescort.blog" "http://127.0.0.1/amp?loc=sariyer" | grep -A 8 "amp-img" | head -n 30'
     );
     console.log(resAmp.stdout || 'No tags found.');
 

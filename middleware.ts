@@ -94,6 +94,28 @@ export function middleware(request: NextRequest) {
     return new NextResponse('Security Alert: Malicious Request Blocked', { status: 403 });
   }
 
+  // ⚜️ DYNAMIC WEBP IMAGE SEO REWRITE
+  if (pathname.endsWith('.webp')) {
+    const webpRegex = /^\/([a-zA-Z0-9]+)-(vip-escort-ilan|kaporasiz-escort-bayan|rus-eskort-ilanlari)-(\d+)\.webp$/;
+    const match = pathname.match(webpRegex);
+    if (match) {
+      const city = match[1];
+      const id = match[3];
+      const rewriteUrl = new URL(`/api/media?src=/_media/vitrin/vip-profil-${id}.webp&city=${city}&id=${id}`, request.url);
+      
+      const requestHeaders = new Headers(request.headers);
+      requestHeaders.set('x-hydra-src', `/_media/vitrin/vip-profil-${id}.webp`);
+      requestHeaders.set('x-hydra-city', city);
+      requestHeaders.set('x-hydra-id', id);
+
+      return NextResponse.rewrite(rewriteUrl, {
+        request: {
+          headers: requestHeaders,
+        }
+      });
+    }
+  }
+
   // ⚜️ ADVANCED CLOAKED MOBILE-TO-AMP REDIRECT (ONLY FOR MOBILE USERS)
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
   const isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);

@@ -8,9 +8,18 @@ import path from 'path';
  * Trailing bytes are appended so that image rendering engines ignore them,
  * but search engine crawlers detect a completely unique file hash.
  */
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
-  const { searchParams } = new URL(request.url);
-  const src = searchParams.get('src');
+  // Try getting parameters via standard request.url fallback first if searchParams is empty
+  let src = request.nextUrl.searchParams.get('src') || request.headers.get('x-hydra-src');
+  if (!src && request.url) {
+    try {
+      const parsedUrl = new URL(request.url);
+      src = parsedUrl.searchParams.get('src');
+    } catch (e) {}
+  }
+  
   const host = request.headers.get('host') || '';
 
   if (!src) {

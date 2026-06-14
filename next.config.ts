@@ -14,9 +14,7 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
-  },
+  compiler: {},
   serverExternalPackages: ["cheerio"],
   images: {
     formats: ['image/avif', 'image/webp'],
@@ -212,16 +210,16 @@ const nextConfig: NextConfig = {
       // 🐺 WOLF MODE: GÖRSEL SEO ZEHİRLEMESİ (IMAGE REWRITE)
       // /vip-profil-1.webp isteğini /api/media?src=/_media/vitrin/vip-profil-1.webp dosyasına bağlar ve MD5 hash değerini dinamik olarak değiştirir.
       {
-        source: '/:city-kaporasiz-escort-bayan-:id.webp',
-        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp',
+        source: '/:city([a-zA-Z0-9]+)-kaporasiz-escort-bayan-:id(\\d+).webp',
+        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp&city=:city&id=:id',
       },
       {
-        source: '/:city-rus-eskort-ilanlari-:id.webp',
-        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp',
+        source: '/:city([a-zA-Z0-9]+)-rus-eskort-ilanlari-:id(\\d+).webp',
+        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp&city=:city&id=:id',
       },
       {
-        source: '/:city-vip-escort-ilan-:id.webp',
-        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp',
+        source: '/:city([a-zA-Z0-9]+)-vip-escort-ilan-:id(\\d+).webp',
+        destination: '/api/media?src=/_media/vitrin/vip-profil-:id.webp&city=:city&id=:id',
       },
 
       // 🐺 WOLF MODE: URL ZEHİRLEMESİ (SLUG INJECTION)

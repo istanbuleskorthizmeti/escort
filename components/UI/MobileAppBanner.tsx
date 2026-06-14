@@ -24,7 +24,7 @@ export function MobileAppBanner() {
 
   if (!isVisible) return null;
 
-  const whatsappNumber = "+905520949245";
+  const whatsappNumber = "+12495448982";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Merhaba, mobil uygulama üzerinden VIP randevu talebi oluşturmak istiyorum.")}`;
 
   return (

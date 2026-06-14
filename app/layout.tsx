@@ -170,7 +170,7 @@ export default async function RootLayout({
                   "description": `${brandTitle}: İstanbul genelinde kaporasız ve %100 gerçek escort bayan hizmetleri.`,
                   "image": `https://${host}/og-image.jpg`,
                   "url": `https://${host}`,
-                  "telephone": "+905520949245",
+                  "telephone": "+12495448982",
                   "priceRange": "₺₺₺",
                   "address": {
                     "@type": "PostalAddress",

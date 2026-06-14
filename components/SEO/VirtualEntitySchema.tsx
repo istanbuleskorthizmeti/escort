@@ -80,7 +80,7 @@ export function VirtualEntitySchema({ currentHost }: VirtualEntitySchemaProps) {
     "sameAs": [
       "https://www.pinterest.com/istanbulescorthizmeti",
       "https://t.me/istanbulescorthizmeti",
-      "https://wa.me/905520949245"
+      "https://wa.me/12495448982"
     ]
   };
 

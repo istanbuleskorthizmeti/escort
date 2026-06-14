@@ -66,7 +66,7 @@ export default function VitrinManager() {
         body: JSON.stringify({
           name,
           age: parseInt(age),
-          phone: phone || "905520949245", // Fallback to site default
+          phone: phone || "12495448982", // Fallback to site default
           image,
           tier,
           features: [tier]

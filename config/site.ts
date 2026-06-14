@@ -17,7 +17,7 @@ export const siteConfig = {
 
   // Merkezi İletişim Bilgileri
   contact: {
-    whatsappNumber: "905520949245",
+    whatsappNumber: "12495448982",
     whatsappLink: "/whatsapp",
     whatsappChannelLink: "/whatsapp", 
     fixedShortLink: "/whatsapp",

@@ -7,7 +7,7 @@ import { BRANCHES, generateBranchSchema } from './gbp-pinning-data';
 
 // Centralized number management - change here to update ALL branches
 const GLOBAL_CONFIG = {
-    whatsappNumber: "905520949245",
+    whatsappNumber: "12495448982",
     redirectDelay: 0 // ms
 };
 

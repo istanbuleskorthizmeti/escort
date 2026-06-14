@@ -18,7 +18,7 @@ const TARGET_REGIONS = [
   { ilce: 'Bakırköy', title: 'Florya ve Bakırköy Lüks Yaşam Danışmanlığı & Partner Seçimleri' }
 ];
 
-const WA_BRIDGE = "https://wa.me/905520949245?text=Merhaba,%20Premium%202026%20Rehberi%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.";
+const WA_BRIDGE = "https://wa.me/12495448982?text=Merhaba,%20Premium%202026%20Rehberi%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.";
 
 function slugify(text: string): string {
   return text.toLowerCase()

@@ -85,7 +85,7 @@ export function generateGhostSchema(city: string, district: string) {
       "longitude": data.lng
     },
     "url": `https://dorukcanay.digital/${district.toLowerCase()}`,
-    "telephone": "+905520949245",
+    "telephone": "+12495448982",
     "priceRange": "$$$",
     "openingHours": "Mo,Tu,We,Th,Fr,Sa,Su 24h"
   };

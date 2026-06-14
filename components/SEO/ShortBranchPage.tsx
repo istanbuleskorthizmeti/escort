@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 
 // Static district handler for ultra-short URLs
 const WHATSAPP_CONFIG = {
-  number: "905520949245",
+  number: "12495448982",
   defaultMessage: "Merhaba, dorukcanay.digital üzerinden ulaşıyorum."
 };
 

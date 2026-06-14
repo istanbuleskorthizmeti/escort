@@ -107,7 +107,7 @@ export const LocalBusinessSchema = ({
         longitude: '32.8597',
       },
       priceRange: '₺₺₺',
-      telephone: '+905520949245',
+      telephone: '+12495448982',
       ...(ratingValue && {
         aggregateRating: {
           '@type': 'AggregateRating',

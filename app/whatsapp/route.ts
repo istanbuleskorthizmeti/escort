@@ -42,7 +42,7 @@ export async function GET(request: Request) {
   }).catch((err: any) => console.error('[WHATSAPP] DB Logging failed:', err));
 
   const text = encodeURIComponent(`Merhaba, ${host} üzerinden ulaşıyorum. Bilgi almak istiyorum.`);
-  const whatsappLink = `https://wa.me/905520949245?text=${text}`;
+  const whatsappLink = `https://wa.me/12495448982?text=${text}`;
   
   return NextResponse.redirect(whatsappLink, 307);
 }

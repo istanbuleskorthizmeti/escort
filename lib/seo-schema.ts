@@ -29,7 +29,7 @@ export function getDeterministicRating(seed: string) {
  */
 export function generateAdvancedSchema({ locationName, city, description, url, telephone }: SchemaParams) {
   const { ratingValue, reviewCount } = getDeterministicRating(url);
-  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+905520949245";
+  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982";
 
   const baseSchema = {
     "@context": "https://schema.org",
@@ -167,7 +167,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
   const title = `${locationName} DORUKCANAY ELITE | ${categoryTitle || 'VIP Standart'}`;
 
   const { ratingValue, reviewCount } = getDeterministicRating(url);
-  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+905520949245";
+  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982";
 
   // Deterministic address house number
   const houseNumber = (locationName.length % 99) + 1;

@@ -147,7 +147,7 @@ export default async function DistrictHubPage({ params }: { params: Promise<Para
       { q: `${safeDistName} escort hizmetleri kaporasız mı?`, a: "Evet, tüm buluşmalarımız %100 kaporasız ve güvenlidir." },
       { q: `${safeDistName} bölgesinde eve servis var mı?`, a: "Evet, seçkin modellerimiz hem eve hem de otellere servis sağlamaktadır." }
     ],
-    telephone: siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+905520949245"
+    telephone: siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982"
   });
 
   return (

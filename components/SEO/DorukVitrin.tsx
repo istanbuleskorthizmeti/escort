@@ -323,7 +323,7 @@ function VitrinCard({
               if (item.gallery && item.gallery.length > 0) {
                  currSeoPath = item.gallery[offset % item.gallery.length];
               } else {
-                   const currentSafeIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset) % 310 + 1, idx + offset);
+                   const currentSafeIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset) % 221 + 1, idx + offset);
                    currSeoPath = isCustomImage && offset === 0 
                       ? item.src 
                       : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
@@ -356,7 +356,7 @@ function VitrinCard({
                       if (item.gallery && item.gallery.length > 0) {
                         e.target.src = getSeoImageUrl(item.src);
                       } else {
-                        const fallbackIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset + 1) % 310 + 1, idx + offset + 1);
+                        const fallbackIdx = getSafeVipProfileIdx((safeIdx + offset * 13 + blackHatOffset + 1) % 221 + 1, idx + offset + 1);
                         const fallbackSrc = `/_media/vitrin/vip-profil-${fallbackIdx}.webp`;
                         e.target.src = isCustomImage && offset === 0 
                            ? getSeoImageUrl(item.src)
@@ -376,7 +376,7 @@ function VitrinCard({
               if (item.gallery && item.gallery.length > 0) {
                  currSeoPath = item.gallery[0];
               } else {
-                   const currentSafeIdx = getSafeVipProfileIdx((safeIdx + blackHatOffset) % 310 + 1, idx);
+                   const currentSafeIdx = getSafeVipProfileIdx((safeIdx + blackHatOffset) % 221 + 1, idx);
                    currSeoPath = isCustomImage ? item.src : `/_media/vitrin/vip-profil-${currentSafeIdx}.webp`;
               }
               
@@ -646,7 +646,7 @@ export function DorukVitrin({
             const age = item.age || (19 + (idx % 7));
 
             const domainPrefix = host ? host.split('.')[0] : 'doruk';
-            const safeIdx = (idx % 310) + 1;
+            const safeIdx = (idx % 221) + 1;
             
             const isCustomImage = item.src && (item.src.startsWith('http') || item.src.includes('uploads') || !item.src.includes('seo_'));
             

@@ -8,7 +8,7 @@ import { slugify } from '@/lib/utils';
 
 const REDIRECT_URL = "https://dorukcanay.digital/go";
 
-const DRKCNAY_MODELS = Array.from({ length: 314 }, (_, i) => {
+const DRKCNAY_MODELS = Array.from({ length: 221 }, (_, i) => {
   const id = i + 1;
   const titles = [
     "RUS & UKRAYNA VIP", "ANAL UZMANI", "ÜNİVERSİTELİ", "OLGUN ELİT", "ÖĞRENCİ BİREYSEL", 
@@ -85,7 +85,7 @@ const PureAngelVitrin = () => {
                   onError={(e: any) => {
                     if (e.target.dataset.failed) return;
                     e.target.dataset.failed = 'true';
-                    const fallbackIdx = (idx % 310) + 1;
+                    const fallbackIdx = (idx % 221) + 1;
                     e.target.src = `/${slugify("istanbul")}-vip-escort-ilan-${fallbackIdx}.webp`;
                   }}
                   sizes="(max-width: 768px) 50vw, 20vw"

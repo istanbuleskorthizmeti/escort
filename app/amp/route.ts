@@ -454,7 +454,7 @@ export async function GET(request: Request) {
         if (isCustomImage) {
           imageSrc = p.src.startsWith('http') ? p.src : `https://${host}${p.src}`;
         } else {
-          const safeIdx = (index % 310) + 1;
+          const safeIdx = (index % 221) + 1;
           const currentSafeIdx = getSafeVipProfileIdx(safeIdx, index + 1);
           imageSrc = `https://${host}/${slugify(locationName)}-vip-escort-ilan-${currentSafeIdx}.webp`;
         }

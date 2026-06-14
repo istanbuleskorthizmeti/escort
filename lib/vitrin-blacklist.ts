@@ -21,7 +21,7 @@ export function getSafeVipProfileIdx(id: number, fallbackOffset: number = 1): nu
     let currentId = id;
     let attempts = 0;
     while (isBlacklisted(currentId) && attempts < 50) {
-        currentId = (currentId + fallbackOffset) % 310 + 1;
+        currentId = (currentId + fallbackOffset) % 221 + 1;
         attempts++;
     }
     return currentId;

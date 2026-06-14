@@ -6,9 +6,9 @@ function replaceInFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     
     // Replace phones
-    content = content.replace(/37258113650/g, '905520949245');
-    content = content.replace(/\+37258113650/g, '+905520949245');
-    content = content.replace(/\+905303542448/g, '+905520949245');
+    content = content.replace(/37258113650/g, '12495448982');
+    content = content.replace(/\+37258113650/g, '+12495448982');
+    content = content.replace(/\+905303542448/g, '+12495448982');
     
     // Replace emails
     content = content.replace(/gather@dorukcanay\.digital/g, 'info@dorukcanay.digital');

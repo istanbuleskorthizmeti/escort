@@ -5,7 +5,7 @@ module.exports = {
     {
       name: "drkcnay-web-cluster",
       script: "node_modules/.bin/next",
-      args: "start -p 8081",
+      args: "start -p 3001",
       cwd: "/root/esc",
       instances: 2,
       exec_mode: "cluster",
@@ -17,7 +17,7 @@ module.exports = {
       autorestart: true,
       env: {
         NODE_ENV: "production",
-        PORT: "8081"
+        PORT: "3001"
       }
     },
     {

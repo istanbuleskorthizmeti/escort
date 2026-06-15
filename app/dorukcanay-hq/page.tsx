@@ -151,10 +151,10 @@ export default function CommandHQ() {
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </Link>
 
-                  <Link href="/dorukcanay-hq/integrations" className="w-full bg-black border border-rose-900/50 hover:border-rose-500 hover:bg-rose-900/10 text-zinc-100 hover:text-rose-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(225,29,72,0.1)]">
+                  <Link href="/dorukcanay-hq/whatsapp" className="w-full bg-black border border-green-900/50 hover:border-green-500 hover:bg-green-900/10 text-zinc-100 hover:text-green-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(34,197,94,0.1)]">
                     <span className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-rose-600 rounded-full animate-pulse"></span>
-                      INTEGRATION HUB
+                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                      WHATSAPP CONTROLLER
                     </span>
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </Link>

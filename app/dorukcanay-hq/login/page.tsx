@@ -17,7 +17,7 @@ export default function ElitAuthGate() {
     const res = await authenticateProtocol(password);
     
     if (res.success) {
-      window.location.href = "/Elit-hq";
+      window.location.href = "/dorukcanay-hq";
     } else {
       setError(res.error || "UNKNOWN SECURITY EXCEPTION");
       setLoading(false);

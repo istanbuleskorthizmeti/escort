@@ -201,3 +201,51 @@ export async function fetchBotActivity() {
     orderBy: { createdAt: 'desc' }
   });
 }
+
+import path from "path";
+
+export async function addNewDomainToMatrix(data: {
+  host: string;
+  role: 'MONEY_SITE' | 'SATELLITE' | 'CLOAKER';
+  theme: 'gold' | 'rose' | 'emerald' | 'dark' | 'luxury';
+  targetCity?: string;
+  targetDistrict?: string;
+}) {
+  const cookieStore = await cookies();
+  if (cookieStore.get("Elit_clearance_level")?.value !== "GRANTED") throw new Error("UNAUTHORIZED");
+
+  const { host, role, theme, targetCity, targetDistrict } = data;
+  if (!host || !role) throw new Error("Host and Role are required.");
+
+  // 1. Write to database Prisma Site table
+  await prisma.site.upsert({
+    where: { domain: host },
+    update: { status: 'ACTIVE' },
+    create: { domain: host, status: 'ACTIVE' }
+  });
+
+  // 2. Read config/domains.ts and append new config
+  const configPath = path.join(process.cwd(), 'config/domains.ts');
+  let configContent = await fs.readFile(configPath, 'utf-8');
+
+  const category = role === 'CLOAKER' ? 'CLOAKER_TOOL' : role === 'MONEY_SITE' ? 'MONEY_SITE' : 'SATELLITE_LOCAL';
+  const tag = host.split('.')[0];
+  
+  const newEntry = `  { host: '${host}', role: '${role}', category: '${category}', tags: ['${tag}'], theme: '${theme}', serverGroup: 'MAIN_SERVER', targetCity: ${targetCity ? `'${targetCity}'` : 'undefined'}, targetDistrict: ${targetDistrict ? `'${targetDistrict}'` : 'undefined'} },\n`;
+
+  const targetStr = 'export const DOMAIN_MATRIX: DomainConfig[] = [\n';
+  if (configContent.includes(targetStr)) {
+    configContent = configContent.replace(targetStr, targetStr + newEntry);
+    await fs.writeFile(configPath, configContent, 'utf-8');
+    
+    // Trigger remote Next.js rebuild/restart in the background asynchronously if on VPS
+    try {
+      exec("pm2 reload drkcnay-web-cluster");
+    } catch (e) {}
+  } else {
+    throw new Error("Could not find DOMAIN_MATRIX definition in config file.");
+  }
+
+  return { success: true };
+}
+

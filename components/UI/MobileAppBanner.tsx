@@ -60,14 +60,14 @@ export function MobileAppBanner() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3.5 py-2 rounded-lg bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-bold text-xs shadow-md shadow-rose-600/20 transition-all duration-300"
+              className="px-5 py-3 rounded-lg bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-bold text-xs shadow-md shadow-rose-600/20 transition-all duration-300 min-h-[44px] flex items-center justify-center"
             >
               YÜKLE
             </a>
             
             <button
               onClick={handleDismiss}
-              className="p-2 text-zinc-400 hover:text-white transition-colors duration-200"
+              className="p-3 text-zinc-400 hover:text-white transition-colors duration-200 min-w-[44px] min-h-[44px] flex items-center justify-center"
               aria-label="Kapat"
             >
               <svg

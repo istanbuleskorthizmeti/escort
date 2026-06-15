@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Globe, Shield, Zap, Search, Server, Activity, ArrowUpRight, Filter } from "lucide-react";
-import { fetchDomainMatrix } from "../actions";
+import { Globe, Shield, Zap, Search, Server, Activity, ArrowUpRight, Filter, Plus, X } from "lucide-react";
+import { fetchDomainMatrix, addNewDomainToMatrix } from "../actions";
 
 export default function DomainMatrixPage() {
   const [domains, setDomains] = useState<any[]>([]);
@@ -10,12 +10,51 @@ export default function DomainMatrixPage() {
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
 
+  // Add Form State
+  const [showAddForm, setShowAddForm] = useState(false);
+  const [newHost, setNewHost] = useState("");
+  const [newRole, setNewRole] = useState<'MONEY_SITE' | 'SATELLITE' | 'CLOAKER'>("SATELLITE");
+  const [newTheme, setNewTheme] = useState<'gold' | 'rose' | 'emerald' | 'dark' | 'luxury'>("luxury");
+  const [newCity, setNewCity] = useState("istanbul");
+  const [newDistrict, setNewDistrict] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   useEffect(() => {
     fetchDomainMatrix().then(data => {
       setDomains(data);
       setIsLoading(false);
     });
   }, []);
+
+  const handleAddDomain = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!newHost) return alert("Host is required!");
+    setIsSubmitting(true);
+    try {
+      const res = await addNewDomainToMatrix({
+        host: newHost.trim().toLowerCase(),
+        role: newRole,
+        theme: newTheme,
+        targetCity: newCity ? newCity.trim().toLowerCase() : undefined,
+        targetDistrict: newDistrict ? newDistrict.trim().toLowerCase() : undefined
+      });
+      if (res.success) {
+        alert("Domain başarıyla eklendi! Değişikliklerin sunucuda aktifleşmesi için arka planda yeniden derleme tetiklendi.");
+        setNewHost("");
+        setNewDistrict("");
+        setShowAddForm(false);
+        setIsLoading(true);
+        fetchDomainMatrix().then(data => {
+          setDomains(data);
+          setIsLoading(false);
+        });
+      }
+    } catch (err: any) {
+      alert("Hata: " + err.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const filteredDomains = domains.filter(d => {
     const matchesSearch = d.host.toLowerCase().includes(search.toLowerCase());
@@ -60,8 +99,103 @@ export default function DomainMatrixPage() {
                 <option value="SATELLITE">SATELLITES</option>
                 <option value="CLOAKER">CLOAKERS</option>
              </select>
+             <button 
+               onClick={() => setShowAddForm(!showAddForm)}
+               className="bg-emerald-500 hover:bg-emerald-600 text-black font-black uppercase tracking-widest text-[10px] py-2 px-4 rounded-xl flex items-center gap-2 transition-all whitespace-nowrap cursor-pointer"
+             >
+                {showAddForm ? <X size={12} /> : <Plus size={12} />}
+                {showAddForm ? "Kapat" : "Yeni Site Ekle"}
+             </button>
           </div>
         </header>
+
+        {/* ADD DOMAIN FORM */}
+        {showAddForm && (
+          <form onSubmit={handleAddDomain} className="bg-zinc-950 border border-emerald-900/40 p-6 rounded-2xl space-y-4 relative overflow-hidden">
+             <div className="absolute inset-0 z-0 pointer-events-none bg-[radial-gradient(circle_at_top_right,var(--tw-gradient-stops))] from-emerald-950/10 via-transparent to-transparent"></div>
+             
+             <div className="relative z-10">
+                <h2 className="text-sm font-black uppercase tracking-widest text-emerald-400 mb-4 flex items-center gap-2">
+                   <Plus size={14} /> Yeni Alan Adı Enjekte Et
+                </h2>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                   <div className="space-y-1">
+                      <label className="text-[9px] text-zinc-500 uppercase font-black">Alan Adı (Domain)</label>
+                      <input 
+                        type="text" 
+                        placeholder="Örn: yeniescort.com" 
+                        value={newHost}
+                        onChange={(e) => setNewHost(e.target.value)}
+                        required
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-2 px-3 text-xs text-white focus:outline-none focus:border-emerald-500 transition-all font-mono"
+                      />
+                   </div>
+                   
+                   <div className="space-y-1">
+                      <label className="text-[9px] text-zinc-500 uppercase font-black">Rol (Role)</label>
+                      <select 
+                        value={newRole}
+                        onChange={(e: any) => setNewRole(e.target.value)}
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-2 px-3 text-xs text-white focus:outline-none focus:border-emerald-500 transition-all"
+                      >
+                         <option value="SATELLITE">SATELLITE (Uydu PBN)</option>
+                         <option value="MONEY_SITE">MONEY SITE (Ana Gelir)</option>
+                         <option value="CLOAKER">CLOAKER (Yönlendirme)</option>
+                      </select>
+                   </div>
+
+                   <div className="space-y-1">
+                      <label className="text-[9px] text-zinc-500 uppercase font-black">Tema (Theme)</label>
+                      <select 
+                        value={newTheme}
+                        onChange={(e: any) => setNewTheme(e.target.value)}
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-2 px-3 text-xs text-white focus:outline-none focus:border-emerald-500 transition-all"
+                      >
+                         <option value="luxury">LUXURY (Gold/Premium)</option>
+                         <option value="dark">DARK (Siyah/Premium)</option>
+                         <option value="emerald">EMERALD (Zümrüt Yeşili)</option>
+                         <option value="gold">GOLD (Altın Sarısı)</option>
+                         <option value="rose">ROSE (Gül Kurusu)</option>
+                      </select>
+                   </div>
+
+                   <div className="space-y-1">
+                      <label className="text-[9px] text-zinc-500 uppercase font-black">Hedef Şehir (City)</label>
+                      <input 
+                        type="text" 
+                        placeholder="Örn: istanbul" 
+                        value={newCity}
+                        onChange={(e) => setNewCity(e.target.value)}
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-2 px-3 text-xs text-white focus:outline-none focus:border-emerald-500 transition-all font-mono"
+                      />
+                   </div>
+
+                   <div className="space-y-1">
+                      <label className="text-[9px] text-zinc-500 uppercase font-black">Hedef İlçe (District)</label>
+                      <input 
+                        type="text" 
+                        placeholder="Örn: kadikoy (İsteğe Bağlı)" 
+                        value={newDistrict}
+                        onChange={(e) => setNewDistrict(e.target.value)}
+                        className="w-full bg-zinc-900 border border-zinc-800 rounded-xl py-2 px-3 text-xs text-white focus:outline-none focus:border-emerald-500 transition-all font-mono"
+                      />
+                   </div>
+                </div>
+
+                <div className="flex justify-end mt-4">
+                   <button 
+                     type="submit" 
+                     disabled={isSubmitting}
+                     className="bg-emerald-500 hover:bg-emerald-600 disabled:opacity-50 text-black font-black uppercase tracking-widest text-[10px] py-2.5 px-6 rounded-xl transition-all cursor-pointer"
+                   >
+                      {isSubmitting ? "Enjekte Ediliyor..." : "Sisteme Enjekte Et"}
+                   </button>
+                </div>
+             </div>
+          </form>
+        )}
+
 
         {/* STATS OVERVIEW */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">

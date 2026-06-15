@@ -20,7 +20,11 @@ const FILES_TO_PATCH = [
   'ecosystem.config.js',
   'cloudflare/honeypot-worker.js',
   'config/domains.ts',
-  'lib/site-context.ts'
+  'lib/site-context.ts',
+  'lib/seo-metadata.ts',
+  'lib/seo/spintax.ts',
+  'lib/seo/templates.ts',
+  'app/ansiklopedi/[slug]/page.tsx'
 ];
 
 async function runPatch() {

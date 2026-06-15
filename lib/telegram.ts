@@ -1,4 +1,12 @@
 export async function sendTelegramReport(message: string) {
+  if (process.env.DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS === 'true') {
+    const isLeadOrRedirect = message.includes('YÖNLENDİRME') || message.includes('WHATSAPP') || message.includes('LEAD') || message.includes('RADAR: ETKİLEŞİM');
+    if (!isLeadOrRedirect) {
+      console.log("🚫 [TELEGRAM] Backlink/Automation notification suppressed (DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS is true).");
+      return;
+    }
+  }
+
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const chatId = process.env.TELEGRAM_CHAT_ID;
 

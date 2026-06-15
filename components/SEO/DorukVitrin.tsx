@@ -13,6 +13,13 @@ import { ThemeEngine } from '../../lib/theme-engine';
 import { getSafeVipProfileIdx } from '../../lib/vitrin-blacklist';
 import { FooterTagCloud } from './footer-tag-cloud';
 
+const FALLBACK_NICHES = [
+  'buluşmak için eskort', 'randevu için eskort', 'iletişim için bayan', 'gecelik eskort bayan',
+  'otele gelen eskort', 'vip eskort', 'kaporasız eskort bayan', 'vip partner bayan',
+  'rus eskort bayan', 'türbanlı eskort', 'üniversiteli model', 'sarışın eskort',
+  'esmer bayan eskort', 'kızıl model eskort', 'hafta sonu eskort', 'randevu için vip partner'
+];
+
 interface VitrinCardProps {
   item: any;
   idx: number;
@@ -173,18 +180,18 @@ function VitrinCard({
 
           <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
             {item.isAd && (
-              <span className="text-[9px] text-amber-400 font-extrabold tracking-widest border border-amber-500/50 bg-linear-to-r from-amber-500/25 to-black/50 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)]">
-                  ⭐ 5.0 (120+ Verified)
+              <span className="text-[11px] text-amber-400 font-extrabold tracking-widest border border-amber-500/50 bg-linear-to-r from-amber-500/25 to-black/50 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)]">
+                  ⭐ 5.0 (120+)
               </span>
             )}
-            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word whitespace-normal bg-linear-to-r from-white/20 to-white/5 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] vitrin-card-border-left-${idx}`}>
+            <span className={`text-[12px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word whitespace-normal bg-linear-to-r from-white/20 to-white/5 shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] vitrin-card-border-left-${idx}`}>
                 <Home className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> 
                 <span className="line-clamp-1 break-all overflow-hidden">{niche}</span>
             </span>
-            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-linear-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
+            <span className={`text-[12px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-linear-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
                 <User className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> Bireysel
             </span>
-            <span className={`text-[10px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-linear-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
+            <span className={`text-[12px] text-white font-bold tracking-wide border border-white/30 border-l-[3px] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 wrap-break-word shadow-[0_4px_10px_rgba(0,0,0,0.3)] drop-shadow-[1px_1px_2px_rgba(0,0,0,0.9)] bg-linear-to-r from-white/20 to-white/5 vitrin-card-border-left-${idx}`}>
                 <CalendarHeart className={`w-[11px] h-[11px] shrink-0 vitrin-card-icon-color-${idx}`} /> Yaş {age}
             </span>
           </div>
@@ -195,9 +202,9 @@ function VitrinCard({
               onClick={handleTrack}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white py-1.5 px-4 rounded-full text-[11px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 border-[1.5px] border-white hover:scale-105 transition-transform bg-linear-to-r from-[#25D366] to-[#128C7E] animate-neon-pulse"
+              className="text-white py-3.5 px-6 rounded-full text-[12px] font-black uppercase tracking-widest inline-flex items-center gap-2 border-[1.5px] border-white hover:scale-105 transition-transform bg-linear-to-r from-[#25D366] to-[#128C7E] animate-neon-pulse"
             >
-              <MessageCircle className="w-3.5 h-3.5" /> İletişim
+              <MessageCircle className="w-4 h-4" /> İletişim
             </a>
           </div>
         </div>
@@ -216,18 +223,18 @@ function VitrinCard({
               )}
             </div>
             {item.isAd && (
-              <span className="text-[8px] text-amber-400 font-extrabold tracking-widest border border-amber-500/40 bg-black/40 py-0.5 px-2 rounded-full">
+              <span className="text-[11px] text-amber-400 font-extrabold tracking-widest border border-amber-500/40 bg-black/40 py-0.5 px-2 rounded-full">
                 ⭐ 5.0 VERIFIED
               </span>
             )}
           </div>
 
           <div className="flex gap-2 overflow-x-auto no-scrollbar py-0.5 w-full">
-            <span className="text-[9px] text-zinc-300 font-bold tracking-wide border border-white/10 bg-white/5 py-1 px-2.5 rounded-full shrink-0 flex items-center gap-1.5">
+            <span className="text-[12px] text-zinc-300 font-bold tracking-wide border border-white/10 bg-white/5 py-1 px-2.5 rounded-full shrink-0 flex items-center gap-1.5">
               <Home className="w-[10px] h-[10px] text-rose-400" />
               {niche}
             </span>
-            <span className="text-[9px] text-zinc-300 font-bold tracking-wide border border-white/10 bg-white/5 py-1 px-2.5 rounded-full shrink-0 flex items-center gap-1.5">
+            <span className="text-[12px] text-zinc-300 font-bold tracking-wide border border-white/10 bg-white/5 py-1 px-2.5 rounded-full shrink-0 flex items-center gap-1.5">
               <CalendarHeart className="w-[10px] h-[10px] text-rose-400" />
               Yaş {age}
             </span>
@@ -239,9 +246,9 @@ function VitrinCard({
               onClick={handleTrack}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full text-white py-1.5 px-4 rounded-xl text-[10px] font-black uppercase tracking-widest inline-flex items-center justify-center gap-1.5 border border-white/10 bg-linear-to-r from-emerald-500 to-green-600 hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
+              className="w-full text-white py-3.5 px-6 rounded-xl text-[12px] font-black uppercase tracking-widest inline-flex items-center justify-center gap-2 border border-white/10 bg-linear-to-r from-emerald-500 to-green-600 hover:scale-[1.02] active:scale-[0.98] transition-transform shadow-[0_4px_12px_rgba(16,185,129,0.2)]"
             >
-              <MessageCircle className="w-3.5 h-3.5" /> WHATSAPP İLETİŞİM
+              <MessageCircle className="w-4 h-4" /> WHATSAPP İLETİŞİM
             </a>
           </div>
         </div>
@@ -263,18 +270,18 @@ function VitrinCard({
 
           <div className="flex flex-col gap-1.5 mb-5 w-full pr-2">
             {item.isAd && (
-              <span className="text-[9px] text-[#e5c158] font-black tracking-widest border border-amber-500/40 bg-amber-500/10 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0">
+              <span className="text-[11px] text-[#e5c158] font-black tracking-widest border border-amber-500/40 bg-amber-500/10 py-1 px-2 rounded-xl w-fit flex items-center gap-1 shrink-0">
                 ⚜️ 5.0 VERIFIED
               </span>
             )}
-            <span className="text-[10px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
+            <span className="text-[12px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
               <Home className="w-[11px] h-[11px] text-[#d4af37] shrink-0" />
               <span className="line-clamp-1 break-all overflow-hidden">{niche}</span>
             </span>
-            <span className="text-[10px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
+            <span className="text-[12px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
               <User className="w-[11px] h-[11px] text-[#d4af37] shrink-0" /> Bireysel
             </span>
-            <span className="text-[10px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
+            <span className="text-[12px] text-zinc-300 font-bold tracking-wide border border-amber-500/20 border-l-[3px] border-l-[#d4af37] py-1.5 px-2.5 rounded-xl w-fit flex items-center gap-1.5 bg-black/40">
               <CalendarHeart className="w-[11px] h-[11px] text-[#d4af37] shrink-0" /> Yaş {age}
             </span>
           </div>
@@ -285,9 +292,9 @@ function VitrinCard({
               onClick={handleTrack}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-black py-1.5 px-4 rounded-full text-[10px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 bg-linear-to-r from-[#e5c158] to-[#b8860b] hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(229,193,88,0.4)]"
+              className="text-black py-3.5 px-6 rounded-full text-[12px] font-black uppercase tracking-widest inline-flex items-center gap-2 bg-linear-to-r from-[#e5c158] to-[#b8860b] hover:scale-105 active:scale-95 transition-all shadow-[0_0_15px_rgba(229,193,88,0.4)]"
             >
-              <MessageCircle className="w-3.5 h-3.5" /> REZERVASYON
+              <MessageCircle className="w-4 h-4" /> REZERVASYON
             </a>
           </div>
         </div>
@@ -339,7 +346,7 @@ function VitrinCard({
                     src={getSeoImageUrl(currSeoPath)} 
                     alt=""
                     fill
-                    sizes="10vw"
+                    sizes="(max-width: 600px) 33vw, (max-width: 1200px) 15vw, 200px"
                     className="object-cover opacity-30 scale-125 blur-xl pointer-events-none"
                   />
                   <Image 
@@ -390,7 +397,7 @@ function VitrinCard({
                     src={getSeoImageUrl(currSeoPath)} 
                     alt=""
                     fill
-                    sizes="10vw"
+                    sizes="(max-width: 600px) 100vw, 300px"
                     className="object-cover opacity-30 scale-125 blur-xl pointer-events-none"
                   />
                   <Image 
@@ -458,6 +465,7 @@ export function DorukVitrin({
 }) {
   const [isMounted, setIsMounted] = useState(false);
   const [renderAllCarouselImages, setRenderAllCarouselImages] = useState(false);
+  const [visibleCount, setVisibleCount] = useState(6);
   
   // 🛡️ [GOD-MODE] DYNAMIC THEME ENGINE INJECTION
   const theme = useMemo(() => {
@@ -480,10 +488,56 @@ export function DorukVitrin({
       const pool = vitrinImages.filter(img => !img.isAd);
       fullPool = [...premiumAds, ...pool.slice(0, 60 - premiumAds.length)];
     }
-    // Render only first 4 items initially on SSR/First Paint to maximize speed scores
-    return fullPool.slice(0, 4);
+    
+    // Host-seeded deterministic shuffle
+    let seed = 2166136261;
+    const hostString = host || 'default';
+    for (let i = 0; i < hostString.length; i++) {
+      seed = seed ^ hostString.charCodeAt(i);
+      seed = Math.imul(seed, 16777619);
+    }
+    const shuffled = [...fullPool];
+    let currentSeed = seed;
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
+      const j = Math.abs(currentSeed) % (i + 1);
+      const temp = shuffled[i];
+      shuffled[i] = shuffled[j];
+      shuffled[j] = temp;
+    }
+    return shuffled.slice(0, 4);
   });
   const [hasLoaded, setHasLoaded] = useState(serverProfiles && serverProfiles.length > 0);
+
+  // pre-memoize shuffled names list to avoid O(N^2) complexity and recreation inside render loop
+  const shuffledNames = useMemo(() => {
+    let seed = 2166136261;
+    const hostString = host || 'default';
+    for (let i = 0; i < hostString.length; i++) {
+      seed = seed ^ hostString.charCodeAt(i);
+      seed = Math.imul(seed, 16777619);
+    }
+    const rawNames = [
+      "Buse", "Gizem", "Ayla", "Derin", "Selin", "Simge", "Melisa", "Tuğçe", 
+      "Ebru", "Aleyna", "Burcu", "Cansel", "Sude", "Dilan", "Ece", "Berna", 
+      "Didem", "Pelin", "Merve", "Aslı", "İrem", "Bengü", "Damla", "Hazal", 
+      "Öykü", "Gamze", "Ceren", "Derya", "Seda", "Meltem", "Aylin",
+      "Helin", "Elena", "Svetlana", "Milena", "Almira", "Ilgın", "Beste", 
+      "Tanya", "Nadia", "Selinay", "Eylül", "Yaren", "Yağmur", "Gözde", 
+      "Banu", "Tuğba", "Deniz", "Esra", "Fatma", "Hande",
+      "İpek", "Jale", "Kader", "Lale", "Mine", "Nalan", "Oya", "Pınar",
+    ];
+    const result = [...rawNames];
+    let currentSeed = seed;
+    for (let i = result.length - 1; i > 0; i--) {
+      currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
+      const j = Math.abs(currentSeed) % (i + 1);
+      const temp = result[i];
+      result[i] = result[j];
+      result[j] = temp;
+    }
+    return result;
+  }, [host]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -499,7 +553,39 @@ export function DorukVitrin({
       const pool = vitrinImages.filter(img => !img.isAd);
       fullPool = [...premiumAds, ...pool.slice(0, 60 - premiumAds.length)];
     }
-    setDisplayedImages(fullPool);
+
+    // Host-seeded deterministic shuffle
+    let seed = 2166136261;
+    const hostString = host || 'default';
+    for (let i = 0; i < hostString.length; i++) {
+      seed = seed ^ hostString.charCodeAt(i);
+      seed = Math.imul(seed, 16777619);
+    }
+    const shuffled = [...fullPool];
+    let currentSeed = seed;
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
+      const j = Math.abs(currentSeed) % (i + 1);
+      const temp = shuffled[i];
+      shuffled[i] = shuffled[j];
+      shuffled[j] = temp;
+    }
+    setDisplayedImages(shuffled);
+
+    // Progressive rendering chunks to prevent main thread blocking (FCP, LCP, TBT optimizations)
+    if (typeof window !== 'undefined') {
+      const loadNextChunk = (current: number) => {
+        if (current >= 60) return;
+        setTimeout(() => {
+          setVisibleCount(prev => {
+            const next = prev + 12;
+            loadNextChunk(next);
+            return next;
+          });
+        }, 150);
+      };
+      loadNextChunk(6);
+    }
 
     // Only enable carousel animation on desktop screens (>= 768px) to maximize mobile performance
     if (typeof window !== 'undefined' && window.innerWidth >= 768) {
@@ -524,12 +610,48 @@ export function DorukVitrin({
       const premiumAds = vitrinImages.filter(img => img.isAd);
       const cleanMasters = masters.filter(m => !premiumAds.some(ad => ad.src === m.src));
       const pool = vitrinImages.filter(img => !img.isAd && !cleanMasters.some((m: { src: string }) => m.src === img.src));
-      setDisplayedImages([...premiumAds, ...cleanMasters, ...pool.slice(0, Math.max(0, 60 - premiumAds.length - cleanMasters.length))]);
+      const fullPool = [...premiumAds, ...cleanMasters, ...pool.slice(0, Math.max(0, 60 - premiumAds.length - cleanMasters.length))];
+
+      // Host-seeded deterministic shuffle
+      let seed = 2166136261;
+      const hostString = host || 'default';
+      for (let i = 0; i < hostString.length; i++) {
+        seed = seed ^ hostString.charCodeAt(i);
+        seed = Math.imul(seed, 16777619);
+      }
+      const shuffled = [...fullPool];
+      let currentSeed = seed;
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
+        const j = Math.abs(currentSeed) % (i + 1);
+        const temp = shuffled[i];
+        shuffled[i] = shuffled[j];
+        shuffled[j] = temp;
+      }
+      setDisplayedImages(shuffled);
       setHasLoaded(true);
     }).catch(e => {
       const premiumAds = vitrinImages.filter(img => img.isAd);
       const pool = vitrinImages.filter(img => !img.isAd);
-      setDisplayedImages([...premiumAds, ...pool.slice(0, 60 - premiumAds.length)]);
+      const fullPool = [...premiumAds, ...pool.slice(0, 60 - premiumAds.length)];
+
+      // Host-seeded deterministic shuffle
+      let seed = 2166136261;
+      const hostString = host || 'default';
+      for (let i = 0; i < hostString.length; i++) {
+        seed = seed ^ hostString.charCodeAt(i);
+        seed = Math.imul(seed, 16777619);
+      }
+      const shuffled = [...fullPool];
+      let currentSeed = seed;
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
+        const j = Math.abs(currentSeed) % (i + 1);
+        const temp = shuffled[i];
+        shuffled[i] = shuffled[j];
+        shuffled[j] = temp;
+      }
+      setDisplayedImages(shuffled);
       setHasLoaded(true);
     });
   }, [hasLoaded]);
@@ -593,56 +715,17 @@ export function DorukVitrin({
 
         {/* 🔱 CARDS LIST */}
         <div className={host?.includes('dorukcanay.digital') ? "grid grid-cols-1 md:grid-cols-2 gap-6 w-full px-4" : "flex flex-col gap-8 w-full px-4"}>
-          {imagesToRender.map((item, idx) => {
+          {imagesToRender.slice(0, visibleCount).map((item, idx) => {
             if (!item || !item.src) return null;
-            
-            // FNV-1a hash based deterministic shuffle
-            let seed = 2166136261;
-            const hostString = host || 'default';
-            for (let i = 0; i < hostString.length; i++) {
-              seed = seed ^ hostString.charCodeAt(i);
-              seed = Math.imul(seed, 16777619);
-            }
-            
-            const shuffleArray = <T,>(arr: T[]): T[] => {
-              const result = [...arr];
-              let currentSeed = seed;
-              for (let i = result.length - 1; i > 0; i--) {
-                currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
-                const j = Math.abs(currentSeed) % (i + 1);
-                const temp = result[i];
-                result[i] = result[j];
-                result[j] = temp;
-              }
-              return result;
-            };
-
-            const realisticNames = shuffleArray([
-              "Buse", "Gizem", "Ayla", "Derin", "Selin", "Simge", "Melisa", "Tuğçe", 
-              "Ebru", "Aleyna", "Burcu", "Cansel", "Sude", "Dilan", "Ece", "Berna", 
-              "Didem", "Pelin", "Merve", "Aslı", "İrem", "Bengü", "Damla", "Hazal", 
-              "Öykü", "Gamze", "Ceren", "Derya", "Seda", "Meltem", "Aylin",
-              "Helin", "Elena", "Svetlana", "Milena", "Almira", "Ilgın", "Beste", 
-              "Tanya", "Nadia", "Selinay", "Eylül", "Yaren", "Yağmur", "Gözde", 
-              "Banu", "Tuğba", "Deniz", "Esra", "Fatma", "Hande",
-              "İpek", "Jale", "Kader", "Lale", "Mine", "Nalan", "Oya", "Pınar",
-            ]);
             
             const isOrganic = !item.isAd;
             const firstName = isOrganic 
-              ? realisticNames[idx % realisticNames.length]
+              ? shuffledNames[idx % shuffledNames.length]
               : (item.title || 'VIP').split(' ')[0];
 
             const profileSlug = slugify(firstName);
             
-            const fallbackNiches = [
-              'buluşmak için eskort', 'randevu için eskort', 'iletişim için bayan', 'gecelik eskort bayan',
-              'otele gelen eskort', 'vip eskort', 'kaporasız eskort bayan', 'vip partner bayan',
-              'rus eskort bayan', 'türbanlı eskort', 'üniversiteli model', 'sarışın eskort',
-              'esmer bayan eskort', 'kızıl model eskort', 'hafta sonu eskort', 'randevu için vip partner'
-            ];
-            
-            const niche = item.niche || fallbackNiches[idx % fallbackNiches.length];
+            const niche = item.niche || FALLBACK_NICHES[idx % FALLBACK_NICHES.length];
             const age = item.age || (19 + (idx % 7));
 
             const domainPrefix = host ? host.split('.')[0] : 'doruk';

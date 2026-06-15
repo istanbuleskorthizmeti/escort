@@ -82,7 +82,7 @@ export class ThemeEngine {
         const brandNames = [
             "DRKCNAY ELITE", "VIP ESCORT REHBERİ", "İSTANBUL GİZLİ VİTRİN",
             "PREMIUM ESCORT NETWORK", "2026 ELİT AJANS", "GOLD ESCORT VİTRİN",
-            "İSTANBUL VIP LOUNGE", "LUXURY ESCORT GUIDE", "OFFICIAL VIP ESCORT",
+            "İSTANBUL VIP ESCORT", "LUXURY ESCORT GUIDE", "OFFICIAL VIP ESCORT",
             "BİREYSEL ESCORT REHBERİ", "GÜVENLİ ESCORT AĞI", "İSTANBUL ESCORT KULÜBÜ"
         ];
         

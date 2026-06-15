@@ -104,7 +104,7 @@ export default function DRKCNAYGeoMap({ city, latitude, longitude, branchName }:
             />
 
             {/* @ts-ignore */}
-            <gmpx-api-loader key={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || ""} solution-channel="GMP_GE_mapsandplacesautocomplete_v2"></gmpx-api-loader>
+            <gmpx-api-loader key={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY || "AIzaSyCJrkR6g0LqhMj32rq6GT8dpmpUDskyqiQ"} solution-channel="GMP_GE_mapsandplacesautocomplete_v2"></gmpx-api-loader>
             
             {/* @ts-ignore */}
             <gmp-map ref={mapRef} center={`${latitude},${longitude}`} zoom="13" map-id="DEMO_MAP_ID" style={{ height: '500px', width: '100%' }}>

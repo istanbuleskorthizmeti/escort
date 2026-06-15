@@ -110,6 +110,14 @@ export default async function RootLayout({
   
   const theme = ThemeEngine.getTheme(host);
   const brandTitle = toTitleCaseTR(theme.brandName);
+  
+  const cleanHost = host.replace(/^www\./, '').toLowerCase();
+  const gaId = ({
+    'istanbulescort.blog': 'G-5N1LVB5EWE',
+    'escortvip.net': 'G-HL8P9QQDSV',
+    'dorukcanay.digital': 'G-1KYYJ5TD5Z',
+    'vipescorthizmeti.shop': 'G-5N1LVB5EWE'
+  } as Record<string, string>)[cleanHost] || '';
 
   return (
     <html lang="tr" className={`h-full antialiased ${inter.variable} ${outfit.variable} ${playfair.variable}`}>
@@ -229,51 +237,55 @@ export default async function RootLayout({
       </head>
       <body className="font-sans min-h-full flex flex-col text-white antialiased bg-(--bg-color)">
         {/* Google Analytics (gtag.js) - Advanced Consent Mode V2 with Crawler Camouflage */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-5N1LVB5EWE"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            
-            // Check stored consent or automatically grant for crawlers (Googlebot, Bingbot, Yandexbot)
-            var isGranted = false;
-            try {
-              isGranted = localStorage.getItem('Elit_cookie_consent') === 'granted';
-            } catch(e){}
-            
-            var ua = navigator.userAgent.toLowerCase();
-            var isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
-            
-            if (isGranted || isBot) {
-              gtag('consent', 'default', {
-                'analytics_storage': 'granted',
-                'ad_storage': 'granted',
-                'ad_user_data': 'granted',
-                'ad_personalization': 'granted'
-              });
-            } else {
-              gtag('consent', 'default', {
-                'analytics_storage': 'denied',
-                'ad_storage': 'denied',
-                'ad_user_data': 'denied',
-                'ad_personalization': 'denied',
-                'wait_for_update': 500
-              });
-            }
-            
-            gtag('js', new Date());
-            gtag('config', 'G-5N1LVB5EWE', {
-              'allow_google_signals': true,
-              'anonymize_ip': false,
-              'linker': {
-                'domains': ['istanbulescort.blog', 'bit.ly', 'escrehberi.click']
-              }
-            });
-          `}
-        </Script>
+        {gaId && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+              strategy="lazyOnload"
+            />
+            <Script id="google-analytics" strategy="lazyOnload">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                
+                // Check stored consent or automatically grant for crawlers (Googlebot, Bingbot, Yandexbot)
+                var isGranted = false;
+                try {
+                  isGranted = localStorage.getItem('Elit_cookie_consent') === 'granted';
+                } catch(e){}
+                
+                var ua = navigator.userAgent.toLowerCase();
+                var isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
+                
+                if (isGranted || isBot) {
+                  gtag('consent', 'default', {
+                    'analytics_storage': 'granted',
+                    'ad_storage': 'granted',
+                    'ad_user_data': 'granted',
+                    'ad_personalization': 'granted'
+                  });
+                } else {
+                  gtag('consent', 'default', {
+                    'analytics_storage': 'denied',
+                    'ad_storage': 'denied',
+                    'ad_user_data': 'denied',
+                    'ad_personalization': 'denied',
+                    'wait_for_update': 500
+                  });
+                }
+                
+                gtag('js', new Date());
+                gtag('config', '${gaId}', {
+                  'allow_google_signals': true,
+                  'anonymize_ip': false,
+                  'linker': {
+                    'domains': ['istanbulescort.blog', 'bit.ly', 'escrehberi.click']
+                  }
+                });
+              `}
+            </Script>
+          </>
+        )}
         <BrowserIntelligence />
         <MobileAppBanner />
         <div className="flex-1 flex flex-col">

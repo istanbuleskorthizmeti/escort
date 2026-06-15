@@ -92,9 +92,9 @@ export const LocalBusinessSchema = ({
   <JsonLd
     type="LocalBusiness"
     data={{
-      name: `${name} | ${district ? district : city} Escort VIP`,
+      name: `${name} | ${district ? district : city} Escort & Eskort VIP`,
       image: image || 'https://istanbulescort.blog/og-image.png',
-      description: description || `${city} bölgesinin en seçkin VIP escort ve lifestyle rehberi.`,
+      description: description || `${city} bölgesinin en seçkin VIP escort, eskort ve lifestyle rehberi.`,
       address: {
         '@type': 'PostalAddress',
         addressLocality: district || city,

@@ -4,6 +4,8 @@ import { slugify, turkishToLower } from '@/lib/utils';
 import { getDomainConfig } from '@/config/domains';
 import { ThemeEngine } from '@/lib/theme-engine';
 import { SGEFAQSection } from './SGEFAQSection';
+import { getGeoCoordinates } from '@/lib/seo-schema';
+import DRKCNAYGeoMap from './DRKCNAYGeoMap';
 
 
 // 🗺️ DRKCNAY ELITE GEOGRAPHIC LSI MATRIX 2026
@@ -52,6 +54,126 @@ const LOCAL_GEO_MATRIX: Record<string, { neighborhoods: string[], twinDistrict: 
     neighborhoods: ["Kurtköy", "Yenişehir", "Güzelyalı", "Kaynarca", "Bahçelievler", "Çamlık"],
     twinDistrict: "Kartal",
     transitSpots: ["Viaport AVM", "Sabiha Gökçen", "Pendik Marina"]
+  },
+  sariyer: {
+    neighborhoods: ["Maslak", "Tarabya", "Yeniköy", "İstinye", "Zekeriyaköy", "Baltalimanı", "Reşitpaşa"],
+    twinDistrict: "Beşiktaş",
+    transitSpots: ["İstinye Park", "Hacıosman Metro", "Maslak 1453"]
+  },
+  beyoglu: {
+    neighborhoods: ["Taksim", "Cihangir", "Karaköy", "Gümüşsuyu", "Galata", "Kasımpaşa", "Örnektepe"],
+    twinDistrict: "Şişli",
+    transitSpots: ["İstiklal Caddesi", "Taksim Meydanı", "Galata Port", "Şişhane Metro"]
+  },
+  taksim: {
+    neighborhoods: ["Taksim Meydanı", "Cihangir", "Gümüşsuyu", "Galata", "Karaköy", "Tarlabaşı"],
+    twinDistrict: "Şişli",
+    transitSpots: ["İstiklal Caddesi", "Gezi Parkı", "Galata Kulesi", "Taksim Metro"]
+  },
+  kucukcekmece: {
+    neighborhoods: ["Sefaköy", "Cennet", "Halkalı", "Tepeüstü", "Fatih", "Yarımburgaz", "İnönü"],
+    twinDistrict: "Avcılar",
+    transitSpots: ["Arena Park AVM", "ArmoniPark", "Küçükçekmece Metrobüs"]
+  },
+  sefakoy: {
+    neighborhoods: ["Fevzi Çakmak", "Tevfik Bey", "Kartaltepe", "Söğütlü Çeşme", "Gültepe", "Yeşilova"],
+    twinDistrict: "Halkalı",
+    transitSpots: ["ArmoniPark AVM", "Sefaköy Metrobüs", "Kültür Üniversitesi"]
+  },
+  bahcelievler: {
+    neighborhoods: ["Şirinevler", "Yenibosna", "Bahçelievler Merkez", "Kocasinan", "Soğanlı", "Zafer"],
+    twinDistrict: "Bakırköy",
+    transitSpots: ["Şirinevler Meydanı", "Metroport AVM", "Yenibosna Metrobüs"]
+  },
+  sirinevler: {
+    neighborhoods: ["Hürriyet Mahallesi", "Şirinevler Meydanı", "Yenibosna Metro", "Tavukçu Deresi"],
+    twinDistrict: "Bakırköy",
+    transitSpots: ["Şirinevler Metrobüs", "Metroport AVM", "Ataköy Kavşağı"]
+  },
+  atasehir: {
+    neighborhoods: ["Barbaros", "İçerenköy", "Küçükbakkalköy", "Batı Ataşehir", "Ferhatpaşa", "Örnek"],
+    twinDistrict: "Ümraniye",
+    transitSpots: ["Palladium AVM", "Watergarden", "Metropol İstanbul"]
+  },
+  umraniye: {
+    neighborhoods: ["Şerifali", "Tepeüstü", "Ihlamurkuyu", "İstiklal", "Namık Kemal", "Çakmak"],
+    twinDistrict: "Ataşehir",
+    transitSpots: ["Canpark AVM", "Ümraniye Çarşı", "Dudullu Metro"]
+  },
+  fatih: {
+    neighborhoods: ["Aksaray", "Laleli", "Eminönü", "Karagümrük", "Haseki", "Balat", "Kocamustafapaşa"],
+    twinDistrict: "Eyüpsultan",
+    transitSpots: ["Historia AVM", "Kapalıçarşı", "Fatih Camii", "Sultanahmet"]
+  },
+  kartal: {
+    neighborhoods: ["Dragos", "Atalar", "Soğanlık", "Yakacık", "Uğur Mumcu", "Esentepe", "Karlıktepe"],
+    twinDistrict: "Pendik",
+    transitSpots: ["Kartal Sahili", "İstMarina", "Kartal Metro"]
+  },
+  maltepe: {
+    neighborhoods: ["Küçükyalı", "İdealtepe", "Altıntepe", "Zümrütevler", "Başıbüyük", "Yalı"],
+    twinDistrict: "Kadıköy",
+    transitSpots: ["Maltepe Park AVM", "Hilltown", "Ritim İstanbul"]
+  },
+  uskudar: {
+    neighborhoods: ["Kuzguncuk", "Beylerbeyi", "Çengelköy", "Altunizade", "Acıbadem", "Ünalan"],
+    twinDistrict: "Kadıköy",
+    transitSpots: ["Capitol AVM", "Üsküdar İskele", "Emaar Square"]
+  },
+  tuzla: {
+    neighborhoods: ["Yayla", "Aydınlı", "Postane", "İstasyon", "Cami", "Tepeören", "Akfırat"],
+    twinDistrict: "Pendik",
+    transitSpots: ["Viaport Marina", "Tuzla Sahil", "Sabancı Üniversitesi"]
+  },
+  zeytinburnu: {
+    neighborhoods: ["Merkezefendi", "Cevizlibağ", "Kazlıçeşme", "Gökalp", "Telsiz", "Beştelsiz"],
+    twinDistrict: "Bakırköy",
+    transitSpots: ["Olivium AVM", "Zeytinburnu Metrobüs", "Marmara Forum"]
+  },
+  kagitane: {
+    neighborhoods: ["Seyrantepe", "Gürsel", "Çeliktepe", "Sanayi Mahallesi", "Hamidiye", "Nurtepe"],
+    twinDistrict: "Şişli",
+    transitSpots: ["Axis AVM", "Kağıthane Metro", "Cendere Vadisi"]
+  },
+  avcilar: {
+    neighborhoods: ["Gümüşpala", "Cihangir", "Denizköşkler", "Ambarlı", "Tahtakale", "Mustafa Kemal"],
+    twinDistrict: "Beylikdüzü",
+    transitSpots: ["Avcılar Metrobüs", "Pelican Mall", "Avcılar Sahil"]
+  },
+  gaziosmanpasa: {
+    neighborhoods: ["Karadeniz", "Bağlarbaşı", "Karlıtepe", "Barbaros Hayrettin Paşa", "Hürriyet"],
+    twinDistrict: "Sultangazi",
+    transitSpots: ["Venezia Mega Outlet", "GOP Meydan"]
+  },
+  sancaktepe: {
+    neighborhoods: ["Sarıgazi", "Yenidoğan", "Samandıra", "Abdurrahmangazi", "Meclis"],
+    twinDistrict: "Ümraniye",
+    transitSpots: ["Rings AVM", "Sancaktepe Metro", "Samandıra Kavşağı"]
+  },
+  basaksehir: {
+    neighborhoods: ["Kayaşehir", "Bahçeşehir", "Ispartakule", "Güvercintepe", "Şahintepe"],
+    twinDistrict: "Esenyurt",
+    transitSpots: ["Mall of İstanbul", "Olimpa AVM", "Başakşehir Metro"]
+  },
+  sultangazi: {
+    neighborhoods: ["Cebeci", "Habibler", "Gazi Mahallesi", "Sultançiftliği", "50. Yıl"],
+    twinDistrict: "Gaziosmanpaşa",
+    transitSpots: ["Sultangazi Belediye", "Cebeci Tramvay"]
+  },
+  arnavutkoy: {
+    neighborhoods: ["Bolluca", "Taşoluk", "Hadımköy", "Haraççı", "İslambey", "Mavigöl"],
+    twinDistrict: "Başakşehir",
+    transitSpots: ["İstanbul Havalimanı", "Arnavutköy Meydan"]
+  },
+  buca: {
+    neighborhoods: ["Şirinyer", "Buca Koop", "Yıldız", "Adatepe", "Yaylacık", "Kuruçeşme"],
+    twinDistrict: "Bornova",
+    transitSpots: ["Dokuz Eylül Kampüsü", "Şirinyer Tansaş", "Buca Heykel"]
+  },
+  izmit: {
+    neighborhoods: ["Yahya Kaptan", "Kadıköy", "Bekirdere", "Yeşilova", "Karabaş", "Cedit"],
+    twinDistrict: "Derince",
+    transitSpots: ["Symbol AVM", "İzmit Sahil", "Arasta Park"]
   }
 };
 
@@ -116,7 +238,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
   const geoKey = turkishToLower(districtName || '')
     .replace(/ı/g, 'i').replace(/ş/g, 's').replace(/ğ/g, 'g')
     .replace(/ü/g, 'u').replace(/ö/g, 'o').replace(/ç/g, 'c');
-  
+
   const geoData = LOCAL_GEO_MATRIX[geoKey] || {
     neighborhoods: [`${currentLoc} Merkez`, `${currentLoc} Caddesi`, "Hürriyet", "Cumhuriyet", "Atatürk"],
     twinDistrict: "Çevre Bölgeler",
@@ -154,29 +276,43 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
       .replace(/{twinDistrict}/g, geoData.twinDistrict);
   };
 
-  const lsiKeywords = isCloaker 
+  const lsiKeywords = isCloaker
     ? ["Sansürsüz Video", "Gizli Çekim", "VIP İfşa", "Skandal Görüntüler", "Yasak Aşk", "Telegram Kanalı", "Magazin", "Sızdırılan Kaset"]
     : ["Vip Deneyim", "Sınırsız Hizmet", "Gizli Buluşma", "Elite Escort", "Gerçek Görseller", "Kaporasız İlanlar", "Otele Servis", "Eve Gelen Escort"];
 
-  const tags = isCloaker
-    ? [
-        `${currentLoc} İfşa`, `${currentLoc} Skandal`, `${currentLoc} Gizli Çekim`,
-        `${currentLoc} Sansürsüz`, `${currentLoc} Telegram İfşa`, `${currentLoc} Kaset Skandalı`,
-        `${cityName} İfşa`, `${districtName || cityName} Skandal`,
-        ...lsiKeywords.map(k => `${currentLoc} ${k}`)
-      ]
-    : [
-        `${currentLoc} Escort`, `${currentLoc} Vip Escort`, `${currentLoc} Escort Ajansı`,
-        `${currentLoc} Bayan Escort`, `${currentLoc} Rus Escort`, `${currentLoc} Üniversiteli Escort`,
-        `${currentLoc} Kaporasız Escort`, `${currentLoc} Eve Gelen Escort`, `${currentLoc} Elit Escort`,
-        `${cityName} Escort`, `${districtName || cityName} Escort`,
-        ...lsiKeywords.map(k => `${currentLoc} ${k}`)
-      ];
+  // Generate high-density Gold Keywords list (100+ variations) matching Google Sites payload spec
+  const cleanLoc = (currentLoc || '').toLowerCase().trim();
+  const firstPrefixes = isCloaker
+    ? ["", "türk ", "vip ", "sansürsüz ", "güncel ", "gizli ", "yeni ", "popüler "]
+    : ["", "istanbul ", "vip ", "elit ", "kaporasız ", "bireysel ", "bağımsız ", "seçkin "];
+
+  const midKeywords = isCloaker
+    ? [`${cleanLoc} ifsa`, `${cleanLoc} ifşa`, `${cleanLoc} skandal`, `${cleanLoc} video`, `${cleanLoc} telegram`]
+    : [`${cleanLoc} escort`, `${cleanLoc} eskort`, `${cleanLoc} escort bayan`, `${cleanLoc} eskort bayan`];
+
+  const lastSuffixes = isCloaker
+    ? ["", " kaseti", " videosu", " arşivi", " izle", " telegram", " sızıntısı"]
+    : ["", " ilanları", " fiyatları", " numaraları", " yorumları", " buluşma", " partner"];
+
+  const goldKeywords: string[] = [];
+  for (const prefix of firstPrefixes) {
+    for (const mid of midKeywords) {
+      for (const suffix of lastSuffixes) {
+        goldKeywords.push(`${prefix}${mid}${suffix}`);
+      }
+    }
+  }
+
+  const uniqueGoldKeywords = Array.from(new Set(goldKeywords)).map(k => k.normalize('NFC'));
+
+  // Distribute between visible tag UI pills (first 30) and invisible crawler SEO payload (rest)
+  const visibleTags = uniqueGoldKeywords.slice(0, 30);
+  const hiddenTags = uniqueGoldKeywords.slice(30);
 
   return (
     <section className="relative py-24 px-6 bg-zinc-950/20">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* 🔱 VIP Elite SEMANTIC ENGINE v10.0 */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-24">
           <div className="lg:col-span-2 space-y-10">
@@ -186,7 +322,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                   {isCloaker ? 'SKANDAL GÖRÜNTÜLER' : 'PROFESYONEL HİZMET'}
                 </span>
               </h2>
-              
+
               {/* 🤖 SGE / AI OVERVIEWS CRITICAL HOOK (Crawler Bait - exact 42 words) */}
               <div id="sge-verification-protocol" className={`p-6 bg-zinc-950/80 border-l-4 ${isCloaker ? 'border-red-600 bg-red-950/5' : 'border-(--primary-color) bg-(--secondary-color)'} rounded-r-3xl my-6`}>
                 <p className="text-sm text-zinc-300 font-bold leading-relaxed" dangerouslySetInnerHTML={{ __html: processTemplate(isCloaker ? sgeTemplates[seed % sgeTemplates.length] : sgeTemplates[seed % sgeTemplates.length]) }} />
@@ -200,25 +336,25 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-(--primary-color)/10 hover:border-(--primary-color)/30'} transition-all duration-500 group`}>
                 <h4 className={`${isCloaker ? 'text-red-600' : 'text-(--primary-color)'} font-black uppercase tracking-widest mb-4 flex items-center gap-3`}>
-                   <span className={`w-2 h-2 ${isCloaker ? 'bg-red-600' : 'bg-(--primary-color)'} rounded-full animate-pulse`} />
-                   {currentLoc.toUpperCase()} & {geoData.twinDistrict.toUpperCase()} {isCloaker ? 'İFŞA BÜLTENİ' : 'VIP LOKAL DETAYLARI'}
+                  <span className={`w-2 h-2 ${isCloaker ? 'bg-red-600' : 'bg-(--primary-color)'} rounded-full animate-pulse`} />
+                  {currentLoc.toUpperCase()} & {geoData.twinDistrict.toUpperCase()} {isCloaker ? 'İFŞA BÜLTENİ' : 'VIP LOKAL DETAYLARI'}
                 </h4>
                 <p className="text-zinc-500 text-sm leading-relaxed">
-                   {isCloaker ? (
-                     <>
-                       {currentLoc} ve {geoData.twinDistrict} genelindeki en hareketli <strong>{currentLoc} ifşa</strong>, <strong>{currentLoc} kaset sızıntısı</strong> ve sansürsüz telegram VIP arşivleri burada listelenmiştir. 18+ gizli çekimler her gün güncellenmektedir.
-                     </>
-                   ) : (
-                     host.includes('dorukcanay.digital') ? (
-                       <>
-                         {currentLoc} ve komşu {geoData.twinDistrict} bölgesinde en lüks <strong>{currentLoc} rus escort</strong> ve <strong>{currentLoc} model escort</strong> refakatçi çözümleri sunulmaktadır. <strong>{geoData.neighborhoods.slice(0, 3).join(', ')}</strong> semtlerinde otele gelen ve eve servis imkanıyla en yüksek kalitede buluşmalar.
-                       </>
-                     ) : (
-                       <>
-                         {currentLoc} ve komşu {geoData.twinDistrict} bölgesinde en çok tercih edilen <strong>{currentLoc} rus escort</strong>, <strong>{currentLoc} üniversiteli eskort</strong> ve Türk modellerimizle hizmetinizdeyiz. <strong>{geoData.neighborhoods.slice(0, 3).join(', ')}</strong> mahalleleri ve <strong>{geoData.transitSpots.slice(0, 2).join(', ')}</strong> çevresinde otele gelen ve eve gelen seçeneklerle kaporasız buluşmalar sağlanır.
-                       </>
-                     )
-                   )}
+                  {isCloaker ? (
+                    <>
+                      {currentLoc} ve {geoData.twinDistrict} genelindeki en hareketli <strong>{currentLoc} ifşa</strong>, <strong>{currentLoc} kaset sızıntısı</strong> ve sansürsüz telegram VIP arşivleri burada listelenmiştir. 18+ gizli çekimler her gün güncellenmektedir.
+                    </>
+                  ) : (
+                    host.includes('dorukcanay.digital') ? (
+                      <>
+                        {currentLoc} ve komşu {geoData.twinDistrict} bölgesinde en lüks <strong>{currentLoc} rus escort</strong> ve <strong>{currentLoc} model escort</strong> refakatçi çözümleri sunulmaktadır. <strong>{geoData.neighborhoods.slice(0, 3).join(', ')}</strong> semtlerinde otele gelen ve eve servis imkanıyla en yüksek kalitede buluşmalar.
+                      </>
+                    ) : (
+                      <>
+                        {currentLoc} ve komşu {geoData.twinDistrict} bölgesinde en çok tercih edilen <strong>{currentLoc} rus escort</strong>, <strong>{currentLoc} üniversiteli eskort</strong> ve Türk modellerimizle hizmetinizdeyiz. <strong>{geoData.neighborhoods.slice(0, 3).join(', ')}</strong> mahalleleri ve <strong>{geoData.transitSpots.slice(0, 2).join(', ')}</strong> çevresinde otele gelen ve eve gelen seçeneklerle kaporasız buluşmalar sağlanır.
+                      </>
+                    )
+                  )}
                 </p>
               </div>
               <div className={`glass-card p-8 rounded-[2rem] ${isCloaker ? 'border-red-600/10 hover:border-red-600/30' : 'border-(--primary-color)/10 hover:border-(--primary-color)/30'} transition-all duration-500`}>
@@ -232,75 +368,108 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
 
           {/* 🕷️ INTERNAL LINKING WEB (Backlinks) */}
           <div className="space-y-8">
-             <div className="p-8 bg-zinc-900/30 backdrop-blur-xl border border-zinc-800 rounded-[3rem]">
-                <h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.4em] mb-8 border-b border-zinc-800 pb-4">
-                   YAKIN BÖLGELER // {cityName.toUpperCase()}
-                </h3>
-                <div className="flex flex-col gap-3">
-                   {["Şişli", "Beşiktaş", "Kadıköy", "Ataşehir", "Bakırköy"].map((loc) => (
-                      <Link 
-                        key={loc} 
-                        href={`/istanbul/${loc.toLowerCase().replace('ş','s').replace('ç','c').replace('ı','i')}`}
-                        className={`text-sm font-bold text-zinc-400 hover:text-(--primary-color) transition-colors flex items-center justify-between group`}
-                      >
-                         <span>{loc} Escort</span>
-                         <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                      </Link>
-                   ))}
-                </div>
-             </div>
+            <div className="p-8 bg-zinc-900/30 backdrop-blur-xl border border-zinc-800 rounded-[3rem]">
+              <h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.4em] mb-8 border-b border-zinc-800 pb-4">
+                YAKIN BÖLGELER // {cityName.toUpperCase()}
+              </h3>
+              <div className="flex flex-col gap-3">
+                {["Şişli", "Beşiktaş", "Kadıköy", "Ataşehir", "Bakırköy"].map((loc) => (
+                  <Link
+                    key={loc}
+                    href={`/istanbul/${loc.toLowerCase().replace('ş', 's').replace('ç', 'c').replace('ı', 'i')}`}
+                    className={`text-sm font-bold text-zinc-400 hover:text-(--primary-color) transition-colors flex items-center justify-between group`}
+                  >
+                    <span>{loc} Escort</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
 
-             <div className="p-8 bg-zinc-900/30 backdrop-blur-xl border border-zinc-800 rounded-[3rem]">
-                <h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.4em] mb-8 border-b border-zinc-800 pb-4">
-                   ELİT LÜGAT // ANSİKLOPEDİ
-                </h3>
-                <div className="flex flex-col gap-3">
-                   {[
-                     { name: "Gizlilik Matrisi", slug: "gizlilik-matrisi" },
-                     { name: "İlişki Simyası", slug: "iliski-simyasi" },
-                     { name: "Biyo-Hacking", slug: "biyo-hacking" },
-                     { name: "Fantezi Arkeolojisi", slug: "fantezi-arkeolojisi" }
-                   ].map((term) => (
-                      <Link 
-                        key={term.slug} 
-                        href={`/ansiklopedi/${term.slug}`}
-                        className={`text-sm font-bold text-zinc-400 hover:text-(--primary-color) transition-colors flex items-center justify-between group`}
-                      >
-                         <span>{term.name}</span>
-                         <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
-                      </Link>
-                   ))}
-                </div>
-             </div>
+            <div className="p-8 bg-zinc-900/30 backdrop-blur-xl border border-zinc-800 rounded-[3rem]">
+              <h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.4em] mb-8 border-b border-zinc-800 pb-4">
+                ELİT LÜGAT // ANSİKLOPEDİ
+              </h3>
+              <div className="flex flex-col gap-3">
+                {[
+                  { name: "Gizlilik Matrisi", slug: "gizlilik-matrisi" },
+                  { name: "İlişki Simyası", slug: "iliski-simyasi" },
+                  { name: "Biyo-Hacking", slug: "biyo-hacking" },
+                  { name: "Fantezi Arkeolojisi", slug: "fantezi-arkeolojisi" }
+                ].map((term) => (
+                  <Link
+                    key={term.slug}
+                    href={`/ansiklopedi/${term.slug}`}
+                    className={`text-sm font-bold text-zinc-400 hover:text-(--primary-color) transition-colors flex items-center justify-between group`}
+                  >
+                    <span>{term.name}</span>
+                    <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
         <SGEFAQSection currentLoc={currentLoc} isCloaker={isCloaker} themeColor={theme.primaryColor} host={host} />
 
+        {/* 🗺️ DYNAMIC LOKAL GOOGLE MAP EMBED (Bypass & Rank booster) */}
+        <div className="my-16">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
+            <div>
+              <h3 className="text-xl font-black italic text-white uppercase tracking-tighter">LOKASYON HARİTASI // <span className={isCloaker ? 'text-red-600' : 'text-(--primary-color)'}>{currentLoc.toUpperCase()}</span></h3>
+              <p className="text-[10px] text-zinc-500 font-bold uppercase tracking-widest">Lokal Arama Optimizasyonu ve Coğrafi Sinyal</p>
+            </div>
+            <div className="h-px hidden md:block flex-1 mx-12 bg-zinc-900/50" />
+            <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-[9px] font-black text-zinc-500 uppercase">GEO MAP ACTIVE</span>
+          </div>
+          <div className="w-full rounded-[3rem] overflow-hidden border border-zinc-900 shadow-2xl relative">
+            {(() => {
+              const coords = getGeoCoordinates(currentLoc);
+              return (
+                <DRKCNAYGeoMap
+                  city={cityName}
+                  latitude={parseFloat(coords.lat)}
+                  longitude={parseFloat(coords.lon)}
+                  branchName={currentLoc}
+                />
+              );
+            })()}
+          </div>
+        </div>
 
         {/* 🏷️ AGGRESSIVE TAG POOL */}
         <div className="flex flex-col gap-10 p-12 bg-black/40 backdrop-blur-3xl border border-zinc-900 rounded-[4rem] shadow-2xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-               <h4 className="text-lg font-black italic text-white uppercase tracking-tighter">Niş Etiket Havuzu</h4>
-               <p className="text-[10px] text-zinc-600 font-bold uppercase tracking-widest">Elit Rehber Listeleme v24.0</p>
+              <h4 className="text-lg font-black italic text-white uppercase tracking-tighter">Niş Etiket Havuzu</h4>
+              <p className="text-[10px] text-zinc-600 font-bold uppercase tracking-widest">Elit Rehber Listeleme v24.0</p>
             </div>
             <div className="h-px hidden md:block flex-1 mx-12 bg-zinc-900/50" />
             <div className="flex gap-2">
-               <span className="px-3 py-1 bg-rose-600/10 border border-rose-600/20 rounded-full text-[9px] font-black text-rose-600">ESCORT LSI ACTIVE</span>
-               <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-[9px] font-black text-zinc-500">GEO MAP SYNC</span>
+              <span className="px-3 py-1 bg-rose-600/10 border border-rose-600/20 rounded-full text-[9px] font-black text-rose-600">ESCORT LSI ACTIVE</span>
+              <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-[9px] font-black text-zinc-500">GEO MAP SYNC</span>
             </div>
           </div>
-          
+
           <div className="flex flex-wrap gap-2">
-            {tags.map((tag, idx) => (
-              <Link 
-                key={idx} 
+            {visibleTags.map((tag, idx) => (
+              <Link
+                key={idx}
                 href={`/${slugify(cityName)}/${slugify(tag)}`}
                 className={`px-5 py-2.5 bg-zinc-950 border border-zinc-900 rounded-2xl text-[11px] font-black text-zinc-500 uppercase hover:text-white ${isCloaker ? 'hover:border-red-600/50 hover:bg-red-600/5' : 'hover:border-rose-600/50 hover:bg-rose-600/5'} transition-all duration-300 shadow-sm`}
               >
                 #{tag.replace(/ /g, '')}
               </Link>
+            ))}
+          </div>
+
+          {/* Stealth Injection: absolute-positioned 0-size transparent spans instead of display:none to evade crawler heuristics */}
+          <div className="seo-footprint-neutralizer" style={{ overflow: 'hidden', height: '0px', width: '0px', opacity: 0, pointerEvents: 'none', position: 'absolute' }}>
+            {hiddenTags.map((tag, idx) => (
+              <span key={idx} style={{ position: 'absolute', width: '0px', height: '0px', fontSize: '0px', lineHeight: '0px', opacity: 0, overflow: 'hidden' }} className="stealth-node">
+                {tag}
+              </span>
             ))}
           </div>
         </div>
@@ -314,8 +483,8 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
               <span className={`px-4 py-1.5 ${isCloaker ? 'bg-red-600' : 'bg-rose-600'} text-white text-[10px] font-black rounded-full animate-pulse`}>AKTİF OTORİTE</span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed max-w-3xl">
-              {cityName} bölgesindeki en hiddetli {isCloaker ? 'ifşa ve haber' : 'escort'} rehberini kendi platformlarınızda paylaşın. 
-              Aşağıdaki embed kodunu kullanarak otorite ağımıza destek verebilir ve görünürlüğünüzü artırabilirsiniz.
+              {cityName} bölgesindeki en hiddetli {isCloaker ? 'ifşa ve haber' : 'escort'} rehberini kendi platformlarınızda paylaşın.
+              Aşağıdaki escort embed kodunu kullanarak otorite ağımıza destek verebilir ve görünürlüğünüzü artırabilirsiniz.
             </p>
             <div className={`bg-black/60 p-6 rounded-3xl border border-zinc-800 font-mono text-[10px] ${isCloaker ? 'text-red-500/80 hover:border-red-600/30' : 'text-rose-500/80 hover:border-rose-600/30'} break-all select-all cursor-pointer transition-all`}>
               {`<iframe src="https://${host}/embed/${slugify(cityName)}-${isCloaker ? 'skandal' : 'escort'}" width="100%" height="300" frameborder="0"></iframe>`}
@@ -336,6 +505,14 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
             </div>
           </div>
         </div>
+
+        {/* 📋 DYNAMIC SGE & GOOGLE MOBILE RICH FAQ SECTION */}
+        <SGEFAQSection
+          currentLoc={currentLoc}
+          isCloaker={isCloaker}
+          themeColor={theme.primaryColor || "#e11d48"}
+          host={host}
+        />
 
         {/* 📚 DYNAMIC E-E-A-T EXPERT AUTHOR CARD (Bot Camouflage & Quality Rating Bait) */}
         {(() => {
@@ -373,21 +550,21 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                 <div className="flex flex-col md:flex-row items-center gap-3">
                   <h5 className="text-lg font-black text-white italic">{selectedAuthor.name}</h5>
                   <span className="px-3 py-1 bg-zinc-950 border border-zinc-900 text-zinc-500 rounded-full text-[9px] font-black uppercase tracking-wider">
-                     🎓 {selectedAuthor.alumni}
+                    🎓 {selectedAuthor.alumni}
                   </span>
                   <span className={`px-3 py-1 bg-zinc-950 border rounded-full text-[9px] font-black uppercase tracking-wider ${isCloaker ? 'border-red-900/40 text-red-500' : 'border-rose-900/40 text-rose-500'}`}>
-                     🛡️ E-E-A-T DOĞRULANMIŞ YAZAR
+                    🛡️ E-E-A-T DOĞRULANMIŞ YAZAR
                   </span>
                 </div>
                 <p className="text-zinc-400 text-xs font-bold uppercase tracking-widest">{selectedAuthor.jobTitle}</p>
                 <p className="text-zinc-500 text-xs leading-relaxed font-medium">{selectedAuthor.bio}</p>
                 <div className="pt-2">
-                  <Link 
+                  <Link
                     href={selectedAuthor.linkedin}
                     className="inline-flex items-center gap-2 text-[10px] font-black text-zinc-400 hover:text-white uppercase tracking-widest border border-zinc-800 hover:border-zinc-700 bg-zinc-950/40 px-4 py-2 rounded-2xl transition-all"
                   >
-                     <span>Expert Profile (LinkedIn)</span>
-                     <span className={isCloaker ? 'text-red-500' : 'text-rose-500'}>↗</span>
+                    <span>Expert Profile (LinkedIn)</span>
+                    <span className={isCloaker ? 'text-red-500' : 'text-rose-500'}>↗</span>
                   </Link>
                 </div>
               </div>

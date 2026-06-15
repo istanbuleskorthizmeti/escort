@@ -13,10 +13,12 @@ import { prisma } from "../../../lib/prisma";
 import { omniAI } from "../../../lib/ai-provider";
 import { getPersonaForHost, PERSONAS } from "../../../lib/persona-engine";
 import { getSiteId, getCanonicalHost } from "../../../lib/site-context";
+import { getDomainConfig } from "../../../config/domains";
+import { toTitleCaseTR } from "../../../lib/utils";
 
 export const dynamic = "force-dynamic";
 
-async function getEncyclopediaContent(slug: string, host: string, siteId: string | null, entry: any) {
+async function getEncyclopediaContent(slug: string, host: string, siteId: string | null, entry: any, anchorText: string) {
   const dbSlug = `ansiklopedi-${slug}`;
   let page = await prisma.pageContent.findFirst({
     where: {
@@ -49,7 +51,7 @@ async function getEncyclopediaContent(slug: string, host: string, siteId: string
     - Yazının uzunluğu en az 1200 kelime olmalıdır.
     - Metin içinde şu 2 linki dofollow olarak ekle:
       1. <a href="https://istanbulescort.blog">https://istanbulescort.blog</a> (Anchor: "kaporasız eskort bayanlar")
-      2. <a href="https://${host}">https://${host}</a> (Anchor: "vip escort randevusu")
+      2. <a href="https://${host}">https://${host}</a> (Anchor: "${anchorText}")
   `;
 
   const userPrompt = `Konu: ${entry.title}. Lütfen bu konuya dair, okuyucuya en lüks dergi kalitesini hissettiren derinlikte, ${personaKey} üslubuna tam uyumlu bir makale gövdesi oluştur. Sadece HTML etiketlerini (p, h2, h3, strong) kullanarak yanıtla. JSON veya markdown kod bloğu kullanma.`;
@@ -130,6 +132,66 @@ const encyclopediaData: Record<string, { title: string, expertId: string, descri
     title: "Biyo-Hacking: VIP Performans Zirvesi",
     expertId: "dorukcan-ay",
     description: "Mitokondriyal enerji yönetimi ve stres kontrolü ile kesintisiz güç standartları."
+  },
+  "ulser-nasil-gecer": {
+    title: "Ülser Nasıl Geçer: Modern Mide Sağlığı Tedavisi",
+    expertId: "dorukcan-ay",
+    description: "Sindirim sistemi sağlığı, ülser nedenleri, belirtileri ve en güncel tedavi yaklaşımları."
+  },
+  "kortizon-kullanimi": {
+    title: "Kortizon Kullananların Yorumları ve Dikkat Edilmesi Gerekenler",
+    expertId: "dorukcan-ay",
+    description: "Kortizon tedavisinin vücut üzerindeki etkileri, yan etkileri ve iyileşme süreci analizleri."
+  },
+  "cinsellikte-oglak-burcu": {
+    title: "Cinsellikte Oğlak Burcu: İlişki ve Haz Uyumu",
+    expertId: "eda-nur",
+    description: "Astrolojik haritada Oğlak burcunun cinsel karakteri, partner uyumu ve gizli haz noktaları."
+  },
+  "cinsellikte-beden-dili": {
+    title: "Cinsellikte Beden Dili: Arzularınızı Sözsüz İfade Etmenin Yolları",
+    expertId: "eda-nur",
+    description: "Partnerinizle sözsüz iletişim kurarak yakınlığı ve heyecanı artırmanın psikolojik metotları."
+  },
+  "istanbul-seks-hikayeleri": {
+    title: "İstanbul Erotik Hikayeler: Şehir Yaşamının Gizli Anları",
+    expertId: "eda-nur",
+    description: "Metropol yaşamının gizli, heyecanlı ve tutkulu anlarından derlenen ilişki hikayeleri."
+  },
+  "cinsel-isteksizlik-nedenleri": {
+    title: "Cinsel İsteksizlik Nedenleri ve Çözüm Yolları",
+    expertId: "eda-nur",
+    description: "İlişkilerde cinsel soğukluk, nedenleri, psikolojik faktörler ve heyecanı geri kazanma yolları."
+  },
+  "erken-bosalma-cozumleri": {
+    title: "Erken Boşalma Önleme Yöntemleri ve Egzersizleri",
+    expertId: "dorukcan-ay",
+    description: "Erkeklerde kontrol ve kondisyon artırıcı egzersizler, nefes teknikleri ve biyolojik kontrol metotları."
+  },
+  "seksin-faydalari": {
+    title: "Düzenli Cinsel İlişkinin Sağlığa ve Psikolojiye Faydaları",
+    expertId: "eda-nur",
+    description: "Biyolojik ve hormonal açılardan cinsel hayatın kalp sağlığına, strese ve bağışıklık sistemine faydaları."
+  },
+  "afrodizyak-besinler": {
+    title: "Afrodizyak Etkili Besinler: Gücü ve Tutkuyu Artıran Gıdalar",
+    expertId: "dorukcan-ay",
+    description: "Kan akışını hızlandıran, libidoyu artıran ve performansı optimize eden doğal gıdalar ve beslenme rehberi."
+  },
+  "iliski-sonrasi-temizlik": {
+    title: "Cinsel İlişki Sonrası Temizlik ve Sağlık Kuralları",
+    expertId: "dorukcan-ay",
+    description: "İlişki sonrasında enfeksiyon riskini önlemek için yapılması gereken kişisel hijyen ve sağlık pratikleri."
+  },
+  "cinsel-guc-artirici": {
+    title: "Doğal Performans Artırıcı Yöntemler ve Bitkisel Çözümler",
+    expertId: "dorukcan-ay",
+    description: "Herhangi bir kimyasal maddeye ihtiyaç duymadan, doğal performans artırıcı formüller ve yaşam tarzı değişiklikleri."
+  },
+  "vip-yasanti-ve-kultur": {
+    title: "VIP Yaşam Kültürü: Elit Bir Sosyal Hayatın Şifreleri",
+    expertId: "dorukcan-ay",
+    description: "Metropollerde lüks yaşam standartları, kaliteli sosyalleşme pratikleri ve elit bir hayat tarzının anahtarları."
   }
 };
 
@@ -165,8 +227,12 @@ export default async function EncyclopediaPage({ params }: { params: Promise<{ s
   const host = getCanonicalHost(hostHeader);
   const siteId = await getSiteId(host);
 
+  const config = getDomainConfig(host);
+  const targetLoc = config.targetDistrict || config.targetCity || "istanbul";
+  const anchorText = `${toTitleCaseTR(targetLoc)} Escort`;
+
   const expert = experts.find(e => e.id === entry.expertId);
-  const content = await getEncyclopediaContent(slug, host, siteId, entry);
+  const content = await getEncyclopediaContent(slug, host, siteId, entry, anchorText);
 
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-rose-600 selection:text-white antialiased">

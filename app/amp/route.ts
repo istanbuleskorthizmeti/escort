@@ -235,7 +235,7 @@ export async function GET(request: Request) {
 <html amp lang="tr">
 <head>
   <meta charset="utf-8">
-  <title>🔞 ${locationName} Escort Bayan | ${brandName} VIP Kataloğu</title>
+  <title>🔞 ${locationName} Escort | ${brandName} VIP Görsel Kataloğu</title>
   <link rel="canonical" href="${canonicalUrl}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
   
@@ -247,7 +247,7 @@ export async function GET(request: Request) {
   <script type="application/ld+json">
     ${JSON.stringify(schema)}
   </script>
-
+ 
   <style amp-custom>
     :root {
       --primary: ${primaryColor};
@@ -436,13 +436,13 @@ export async function GET(request: Request) {
 </head>
 <body>
   <header>
-    <div class="brand">${brandName.toUpperCase()} <span>VIP</span></div>
+    <div class="brand">${brandName.toUpperCase()} <span>ESCORT</span></div>
   </header>
   
   <div class="hero">
     <span class="badge">Buluşmak ve Randevu Almak İçin</span>
     <h1>${brandName.toUpperCase()} ${locationName.toUpperCase()} ESCORT</h1>
-    <p>İletişim ve randevu için en seçkin ${locationName} vip eskort bayan modelleri. ${brandName} güvencesiyle %100 kaporasız ve yüz yüze güvenli görüşme.</p>
+    <p>İletişim ve randevu için en seçkin ${locationName} escort bayan modelleri. ${brandName} güvencesiyle %100 kaporasız ve yüz yüze güvenli görüşme.</p>
   </div>
   
   <div class="container">
@@ -477,7 +477,7 @@ export async function GET(request: Request) {
             <div class="card-badge">${niche}</div>
             <div class="card-title">${title}</div>
             <div class="card-meta">${age} • ${locationName}</div>
-            <a href="${redirectDestinationUrl}" class="btn" target="_blank" rel="noopener noreferrer">Buluşmak İçin Randevu Al</a>
+            <a href="${redirectDestinationUrl}" class="btn" target="_blank" rel="noopener noreferrer">Escort Randevusu Al</a>
           </div>
         </div>
         `;
@@ -497,7 +497,7 @@ export async function GET(request: Request) {
       🔗 <a href="${relatedSiteLink}" target="_blank" rel="noopener">Resmi ${locationName} Partner Portalı (Google Sites)</a>
     </p>` : ''}
   </div>
-
+ 
   <div class="footer-section">
     <p>© ${new Date().getFullYear()} ${brandName} ESCORT ESKORT GACI NETWORK. TÜM HAKLARI SAKLIDIR.</p>
     <p>

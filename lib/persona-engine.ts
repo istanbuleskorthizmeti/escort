@@ -57,7 +57,7 @@ export const PERSONAS: Record<ContentPersona, PersonaAttributes> = {
   LUXURY_LIFESTYLE: {
     tone: 'Küstah derecede lüks, sadece %1\'lik kesime hitap eden, snob bir dergi yazarı. Elitist ve seçici.',
     focus: 'Marka isimleri (Patek Philippe, Hermes), premium araçlar, exclusive mekanlar, ulaşılamazlık.',
-    vocabulary: ['Exclusive', 'Haute couture', 'High-end', 'Sınırlı kontenjan', 'VIP Lounge', 'Ayrıcalık', 'Rafine', 'Prestij Mertebesi', 'Kurasyon', 'Seçkin'],
+    vocabulary: ['Exclusive', 'Haute couture', 'High-end', 'Sınırlı kontenjan', 'VIP Escort', 'Ayrıcalık', 'Rafine', 'Prestij Mertebesi', 'Kurasyon', 'Seçkin'],
     burstiness: 'Akıcı, ritmik ve elitist. Zenginlik tasvirlerinde uzun cümleler, reddetme veya kural koyarken kısa cümleler.',
     writing_rhythm: 'Zarif ve yavaş. Cümleler arası geçişler yumuşak. Kelime seçimleri pahalı ve nadir olmalı.',
     emotional_state: 'Küstah, seçici ve ulaşılmaz. Okuyucuyu bir teste tabi tutuyormuş gibi, sadece "hak edenlerin" içeri girebileceğini hissettiren bir snobluk.',

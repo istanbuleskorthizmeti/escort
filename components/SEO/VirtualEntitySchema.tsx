@@ -44,7 +44,7 @@ export function VirtualEntitySchema({ currentHost }: VirtualEntitySchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": `${targetDistrict.charAt(0).toUpperCase() + targetDistrict.slice(1)} VIP Escort Agency`,
+    "name": `${targetDistrict.charAt(0).toUpperCase() + targetDistrict.slice(1)} VIP Escort & Eskort Agency`,
     "image": `https://${currentHost}/dorukcanay-favicon.png`,
     "@id": `https://${currentHost}`,
     "url": `https://${currentHost}`,

@@ -28,7 +28,7 @@ export default function WhatsAppCommandCenter() {
           <p className="text-red-800 text-sm mt-1 uppercase">WhatsApp Autonomous Sales Engine v1.0</p>
         </div>
         <div className="flex gap-4">
-          <Link href="/DRKCNAY-hq" className="px-4 py-2 border border-red-900 hover:bg-red-900 hover:text-white transition-colors uppercase text-xs">
+          <Link href="/dorukcanay-hq" className="px-4 py-2 border border-red-900 hover:bg-red-900 hover:text-white transition-colors uppercase text-xs">
             [HQ Dön]
           </Link>
         </div>

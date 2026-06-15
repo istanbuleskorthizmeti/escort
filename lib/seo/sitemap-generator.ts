@@ -180,7 +180,7 @@ export async function generateSitemapResponse(host: string, file: string): Promi
       const city = config?.targetCity?.toLowerCase() || 'istanbul';
       xmlBody = niches.map(niche => `
   <url>
-    <loc>https://${canonicalHost}/${city}?niche=${niche}</loc>
+    <loc>https://${canonicalHost}/${city}/kategori/${niche}</loc>
     <lastmod>${timestamp}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
@@ -264,7 +264,7 @@ export async function generateSitemapResponse(host: string, file: string): Promi
       const city = config?.targetCity?.toLowerCase() || 'istanbul';
       const categoriesXml = niches.map(niche => `
   <url>
-    <loc>https://${canonicalHost}/${city}?niche=${niche}</loc>
+    <loc>https://${canonicalHost}/${city}/kategori/${niche}</loc>
     <lastmod>${timestamp}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>

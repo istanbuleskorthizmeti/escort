@@ -106,7 +106,7 @@ export default function CommandHQ() {
             <div className="bg-zinc-950 border border-zinc-900 rounded-xl p-6 flex-1">
                <h3 className="text-zinc-500 text-sm font-bold uppercase tracking-widest mb-4">Battle Control</h3>
                <div className="space-y-3">
-                  <Link href="/DRKCNAY-hq/matrix" className="w-full bg-black border border-emerald-900/50 hover:border-emerald-500 hover:bg-emerald-900/10 text-zinc-100 hover:text-emerald-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(16,185,129,0.1)]">
+                  <Link href="/sovereign-hq/matrix" className="w-full bg-black border border-emerald-900/50 hover:border-emerald-500 hover:bg-emerald-900/10 text-zinc-100 hover:text-emerald-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(16,185,129,0.1)]">
                     <span className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
                       HYDRA MATRIX
@@ -114,7 +114,7 @@ export default function CommandHQ() {
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </Link>
 
-                  <Link href="/DRKCNAY-hq/integrations" className="w-full bg-black border border-rose-900/50 hover:border-rose-500 hover:bg-rose-900/10 text-zinc-100 hover:text-rose-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(225,29,72,0.1)]">
+                  <Link href="/sovereign-hq/integrations" className="w-full bg-black border border-rose-900/50 hover:border-rose-500 hover:bg-rose-900/10 text-zinc-100 hover:text-rose-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(225,29,72,0.1)]">
                     <span className="flex items-center gap-3">
                       <span className="w-2 h-2 bg-rose-600 rounded-full animate-pulse"></span>
                       INTEGRATION HUB
@@ -151,10 +151,10 @@ export default function CommandHQ() {
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </Link>
 
-                  <Link href="/DRKCNAY-hq/integrations" className="w-full bg-black border border-rose-900/50 hover:border-rose-500 hover:bg-rose-900/10 text-zinc-100 hover:text-rose-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(225,29,72,0.1)]">
+                  <Link href="/sovereign-hq/whatsapp" className="w-full bg-black border border-green-900/50 hover:border-green-500 hover:bg-green-900/10 text-zinc-100 hover:text-green-500 transition-all py-4 px-4 text-xs tracking-widest uppercase flex justify-between items-center group shadow-[0_0_15px_rgba(34,197,94,0.1)]">
                     <span className="flex items-center gap-3">
-                      <span className="w-2 h-2 bg-rose-600 rounded-full animate-pulse"></span>
-                      INTEGRATION HUB
+                      <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                      WHATSAPP CONTROLLER
                     </span>
                     <span className="opacity-0 group-hover:opacity-100 transition-opacity">→</span>
                   </Link>

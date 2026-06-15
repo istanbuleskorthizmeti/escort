@@ -16,8 +16,8 @@ export function NicheSnippetSchema({ locationName }: NicheSnippetSchemaProps) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Product",
-    "name": `${locationName} VIP Escort ve Elit Partner Hizmetleri`,
-    "description": `${locationName} bölgesindeki en seçkin ve lüks escort hizmet ağı. %100 onaylı kaporasız randevu.`,
+    "name": `${locationName} VIP Escort, Eskort ve Elit Partner Hizmetleri`,
+    "description": `${locationName} bölgesindeki en seçkin ve lüks escort ve eskort hizmet ağı. %100 onaylı kaporasız randevu.`,
     "image": "https://istanbulescort.blog/dorukcanay-favicon.png",
     "brand": {
       "@type": "Brand",

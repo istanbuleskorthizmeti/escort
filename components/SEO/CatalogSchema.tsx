@@ -9,14 +9,14 @@ export function CatalogSchema({ locationName, nicheVariations = ["VIP", "Sarış
   const schema = {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": `${locationName} Escort ve Partner Kataloğu`,
+    "name": `${locationName} Escort ve Eskort Partner Kataloğu`,
     "description": `${locationName} bölgesindeki %100 onaylı, kaporasız ve seçkin partnerlerin tam listesi.`,
     "itemListElement": nicheVariations.map((niche, index) => ({
       "@type": "ListItem",
       "position": index + 1,
       "item": {
         "@type": "Service",
-        "name": `${locationName} ${niche} Escort`,
+        "name": `${locationName} ${niche} Escort & Eskort`,
         "description": `${locationName} merkezinde özel ve gizli ${niche.toLowerCase()} elit partner hizmeti.`,
         "provider": {
           "@type": "Organization",

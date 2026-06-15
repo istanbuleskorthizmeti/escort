@@ -1,0 +1,9 @@
+{
+  "name": "hydra-telemetry-cf",
+  "version": "1.0.0",
+  "main": "gcp-pipeline-handler.js",
+  "dependencies": {
+    "googleapis": "^144.0.0",
+    "google-auth-library": "^9.0.0"
+  }
+}

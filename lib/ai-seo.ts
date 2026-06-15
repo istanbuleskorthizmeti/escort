@@ -160,12 +160,49 @@ function getSemanticEntities(city: string, district?: string, host?: string): st
   return shuffled.slice(0, 7);
 }
 
+/**
+ * 🧛‍♂️ GOLD KEYWORDS HTML PAYLOAD GENERATOR
+ * Generates high-density LSI keyword cloud wrapped in an invisible container.
+ */
+export function generateGoldKeywordsHtml(locationName: string, isCloaker: boolean): string {
+  const cleanLoc = locationName.toLowerCase().trim();
+  const firstPrefixes = isCloaker 
+    ? ["", "türk ", "vip ", "sansürsüz ", "güncel ", "gizli ", "yeni ", "popüler "]
+    : ["", "istanbul ", "vip ", "elit ", "kaporasız ", "bireysel ", "bağımsız ", "seçkin "];
+  
+  const midKeywords = isCloaker
+    ? [`${cleanLoc} ifsa`, `${cleanLoc} ifşa`, `${cleanLoc} skandal`, `${cleanLoc} video`, `${cleanLoc} telegram`]
+    : [`${cleanLoc} escort`, `${cleanLoc} eskort`, `${cleanLoc} escort bayan`, `${cleanLoc} eskort bayan`];
+    
+  const lastSuffixes = isCloaker
+    ? ["", " kaseti", " videosu", " arşivi", " izle", " telegram", " sızıntısı"]
+    : ["", " ilanları", " fiyatları", " numaraları", " yorumları", " buluşma", " partner"];
+
+  const goldKeywords: string[] = [];
+  for (const prefix of firstPrefixes) {
+    for (const mid of midKeywords) {
+      for (const suffix of lastSuffixes) {
+        goldKeywords.push(`${prefix}${mid}${suffix}`);
+      }
+    }
+  }
+
+  const uniqueGoldKeywords = Array.from(new Set(goldKeywords)).map(k => k.normalize('NFC'));
+  
+  const spans = uniqueGoldKeywords
+    .map(k => `<span style="position:absolute; width:0px; height:0px; font-size:0px; line-height:0px; opacity:0; overflow:hidden;" class="stealth-node">${k}</span>`)
+    .join('');
+    
+  return `<div class="seo-footprint-neutralizer" style="overflow:hidden; height:0px; width:0px; opacity:0; pointer-events:none; position:absolute;">${spans}</div>`;
+}
+
 export async function generateEliteOmniContent({
   city,
   district,
   neighborhood,
   host,
   searchIntent = 'commercial',
+  nicheType,
 }: AiContentParams): Promise<OmniPlatformContent> {
   const properCity = getProperTurkishName(city);
   const properDistrict = district ? getProperTurkishName(district) : undefined;
@@ -296,21 +333,42 @@ export async function generateEliteOmniContent({
         tags: parsed.tags || [],
         faqs: parsed.faqs || []
       };
+
+      const isCloaker = host.includes('ifsa') || host.includes('skandal') || (nicheType && nicheType.toLowerCase().includes('cloaker'));
+      const goldKeywordsHtml = generateGoldKeywordsHtml(locationName, !!isCloaker);
+
+      if (wordpress.content && !wordpress.content.includes('seo-footprint-neutralizer')) {
+        wordpress.content = wordpress.content + "\n" + goldKeywordsHtml;
+      }
+ 
+      const blogger = parsed.blogger || { title: wordpress.title, content: wordpress.content };
+      if (blogger.content && !blogger.content.includes('seo-footprint-neutralizer')) {
+        blogger.content = blogger.content + "\n" + goldKeywordsHtml;
+      }
+
+      const tumblr = parsed.tumblr || { title: wordpress.title, content: wordpress.content };
+      if (tumblr.content && !tumblr.content.includes('seo-footprint-neutralizer')) {
+        tumblr.content = tumblr.content + "\n" + goldKeywordsHtml;
+      }
  
       return {
         wordpress,
         github: parsed.github || { readme: '', gist: '' },
-        blogger: parsed.blogger || { title: wordpress.title, content: wordpress.content },
-        tumblr: parsed.tumblr || { title: wordpress.title, content: wordpress.content },
+        blogger,
+        tumblr,
         topicCluster: parsed.topicCluster || []
       };
     } catch (e) {
       console.warn("⚠️ [OMNIAI] JSON parsing failed, returning robust fallback object:", e);
+      const isCloaker = host.includes('ifsa') || host.includes('skandal') || (nicheType && nicheType.toLowerCase().includes('cloaker'));
+      const goldKeywordsHtml = generateGoldKeywordsHtml(locationName, !!isCloaker);
+      const fallbackContent = response.normalize('NFC') + "\n" + goldKeywordsHtml;
       return {
-        wordpress: { title: `${locationName} Escort | ${host} Elit Partner`, content: response.normalize('NFC'), meta: '', tags: [], faqs: [] },
+        wordpress: { title: `${locationName} Escort | ${host} Elit Partner`, content: fallbackContent, meta: '', tags: [], faqs: [] },
         github: { readme: '', gist: '' },
-        blogger: { title: `${locationName} Escort`, content: response.normalize('NFC') },
-        tumblr: { title: `${locationName} Escort`, content: response.normalize('NFC') }
+        blogger: { title: `${locationName} Escort`, content: fallbackContent },
+        tumblr: { title: `${locationName} Escort`, content: fallbackContent },
+        topicCluster: []
       };
     }
   } catch (error) {

@@ -8,11 +8,9 @@ import path from 'path';
  * response times, and canonical URL header matches.
  */
 
-const TARGET_HOSTS = [
-  'istanbulescort.blog',
-  'escortvip.net',
-  'istanbulescort.blog'
-];
+import { DOMAIN_MATRIX } from '../config/domains';
+
+const TARGET_HOSTS = DOMAIN_MATRIX.filter(d => d.role === 'MONEY_SITE' || d.role === 'SATELLITE').map(d => d.host);
 
 interface AuditResult {
   url: string;

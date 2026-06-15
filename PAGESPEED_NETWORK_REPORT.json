@@ -1,20 +1,20 @@
 [
   {
-    "domain": "escortvip.net",
+    "domain": "istanbulescort.blog",
     "mobile": {
-      "score": 73,
-      "fcp": "2.0 s",
-      "lcp": "6.5 s",
-      "tbt": "30 ms",
+      "score": 64,
+      "fcp": "2.4 s",
+      "lcp": "9.6 s",
+      "tbt": "230 ms",
       "cls": "0"
     },
     "desktop": {
-      "score": 77,
-      "fcp": "0.5 s",
-      "lcp": "1.6 s",
-      "tbt": "380 ms",
-      "cls": "0"
+      "score": 68,
+      "fcp": "0.6 s",
+      "lcp": "1.1 s",
+      "tbt": "810 ms",
+      "cls": "0.004"
     },
-    "timestamp": "2026-06-13T18:49:20.928Z"
+    "timestamp": "2026-06-15T12:33:48.818Z"
   }
 ]

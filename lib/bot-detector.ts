@@ -5,12 +5,8 @@
 
 export function isSearchEngineBot(userAgent: string | null): boolean {
   if (!userAgent) return false;
-  
-  const botKeywords = [
-    'googlebot', 'bingbot', 'yandexbot', 'duckduckbot', 'slurp', 
-    'baiduspider', 'ia_archiver', 'twitterbot', 'facebookexternalhit'
-  ];
-  
   const ua = userAgent.toLowerCase();
-  return botKeywords.some(keyword => ua.includes(keyword));
+  
+  // Broad and secure bot detection matching modern search engines, social crawlers, and inspection tools
+  return /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu|slurp|ia_archiver|facebookexternalhit|twitterbot/i.test(ua);
 }

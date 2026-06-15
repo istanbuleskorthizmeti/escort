@@ -96,18 +96,10 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
   } catch (error) {
     console.error("❌ [HYDRA] Content Generation Failed:", error);
     
-    // 🛡️ [FALLBACK] Return a high-quality localized template instead of throwing 500
+    // 🛡️ [FALLBACK] Return a high-quality localized template generated dynamically via SpintaxEngine
+    const { SpintaxEngine } = require("./seo/spintax-engine");
+    const fallbackHtml = SpintaxEngine.generateMonsterContent(neighborhood || district || city, category || "VIP Escort");
     const fallbackTitle = `${(neighborhood || district || city).toUpperCase()} VIP ESCORT | %100 GERÇEK VE GİZLİ`;
-    const fallbackHtml = `
-      <div class="seo-fallback">
-        <p>${city} ${district || ""} ${neighborhood || ""} bölgesinde elit ve profesyonel escort hizmetleri için en doğru adrestesiniz. DORUKCANAY ELITE güvencesiyle kaporasız ve gerçek profillerle tanışın.</p>
-        <ul>
-          <li>%100 Gerçek ve Güncel Fotoğraflar</li>
-          <li>Kaporasız Güvenilir Randevu Sistemi</li>
-          <li>Gizlilik ve Hijyen Garantili Hizmet</li>
-        </ul>
-      </div>
-    `;
 
     return {
       html: fallbackHtml,

@@ -3,6 +3,7 @@
  * Generates Ultra-Advanced JSON-LD for Google SGE, Perplexity and Voice Search.
  */
 import { siteConfig } from "@/config/site";
+import { slugify } from "@/lib/utils";
 
 interface SchemaParams {
   locationName: string;
@@ -11,6 +12,58 @@ interface SchemaParams {
   url: string;
   telephone?: string;
   storeCode?: string;
+}
+
+interface GeoCoords {
+  lat: string;
+  lon: string;
+}
+
+const DISTRICT_COORDS: { [key: string]: GeoCoords } = {
+  "kadikoy": { lat: "40.9910", lon: "29.0270" },
+  "besiktas": { lat: "41.0430", lon: "29.0060" },
+  "sisli": { lat: "41.0600", lon: "28.9870" },
+  "bakirkoy": { lat: "40.9780", lon: "28.8720" },
+  "beylikduzu": { lat: "41.0010", lon: "28.6420" },
+  "atasehir": { lat: "40.9850", lon: "29.1160" },
+  "esenyurt": { lat: "41.0340", lon: "28.6800" },
+  "fatih": { lat: "41.0130", lon: "28.9490" },
+  "bagcilar": { lat: "41.0340", lon: "28.8430" },
+  "bahcelievler": { lat: "40.9990", lon: "28.8610" },
+  "umraniye": { lat: "41.0260", lon: "29.1240" },
+  "pendik": { lat: "40.8769", lon: "29.2575" },
+  "maltepe": { lat: "40.9246", lon: "29.1311" },
+  "kartal": { lat: "40.8886", lon: "29.1862" },
+  "sariyer": { lat: "41.1667", lon: "29.0500" },
+  "uskudar": { lat: "41.0238", lon: "29.0133" },
+  "avcilar": { lat: "40.9799", lon: "28.7217" },
+  "kagitthane": { lat: "41.0806", lon: "28.9742" },
+  "sancaktepe": { lat: "40.9902", lon: "29.2239" },
+  "basaksehir": { lat: "41.0972", lon: "28.7964" },
+  "esenler": { lat: "41.0381", lon: "28.8906" },
+  "eyupsultan": { lat: "41.0478", lon: "28.9328" },
+  "beykoz": { lat: "41.1167", lon: "29.1000" },
+  "beyoglu": { lat: "41.0283", lon: "28.9739" },
+  "cekmekoy": { lat: "41.0353", lon: "29.3087" },
+  "tuzla": { lat: "40.8167", lon: "29.3000" },
+  "arnavutkoy": { lat: "41.1853", lon: "28.7408" },
+  "gaziosmanpasa": { lat: "41.0578", lon: "28.9156" },
+  "sultanbeyli": { lat: "40.9667", lon: "29.2667" },
+  "gungoren": { lat: "41.0247", lon: "28.8733" },
+  "zeytinburnu": { lat: "40.9881", lon: "28.8967" },
+  "sile": { lat: "41.1750", lon: "29.6125" },
+  "catalca": { lat: "41.1428", lon: "28.4606" },
+  "silivri": { lat: "41.0742", lon: "28.2481" },
+  "buyukcekmece": { lat: "41.0219", lon: "28.5908" },
+  "kucukcekmece": { lat: "40.9919", lon: "28.7711" },
+  "adalar": { lat: "40.8744", lon: "29.1294" },
+  "bayrampasa": { lat: "41.0456", lon: "28.9025" },
+  "sultangazi": { lat: "41.1044", lon: "28.8903" }
+};
+
+export function getGeoCoordinates(locationName: string): GeoCoords {
+  const slug = slugify(locationName);
+  return DISTRICT_COORDS[slug] || { lat: "41.0082", lon: "28.9784" }; // Default to Istanbul center
 }
 
 export function getDeterministicRating(seed: string) {
@@ -30,6 +83,8 @@ export function getDeterministicRating(seed: string) {
 export function generateAdvancedSchema({ locationName, city, description, url, telephone }: SchemaParams) {
   const { ratingValue, reviewCount } = getDeterministicRating(url);
   const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982";
+  const { lat, lon } = getGeoCoordinates(locationName);
+  const mapUrl = siteConfig.contact.googleMapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationName)}+${encodeURIComponent(city)}`;
 
   const baseSchema = {
     "@context": "https://schema.org",
@@ -37,7 +92,7 @@ export function generateAdvancedSchema({ locationName, city, description, url, t
       {
         "@type": "LocalBusiness",
         "@id": `${url}#localbusiness`,
-        "name": `${locationName} DORUKCANAY ELITE VIP | Lüks Eşlik & Concierge`,
+        "name": `${locationName} Escort & Eskort - DORUKCANAY ELITE VIP | Kaporasız Randevu`,
         "description": description.substring(0, 160),
         "url": url,
         "telephone": telephone || defaultPhone,
@@ -48,6 +103,12 @@ export function generateAdvancedSchema({ locationName, city, description, url, t
           "addressRegion": "TR",
           "addressCountry": "TR"
         },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": lat,
+          "longitude": lon
+        },
+        "hasMap": mapUrl,
         "priceRange": "$$$",
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
@@ -95,7 +156,7 @@ export function generateAdvancedSchema({ locationName, city, description, url, t
               "@type": "Offer",
               "itemOffered": {
                 "@type": "Service",
-                "name": "Discreet VIP Escort Service"
+                "name": "Discreet VIP Escort & Eskort Service"
               }
             },
             {
@@ -164,10 +225,12 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
   const jobPostingId = `${url}/#jobposting`;
   const broadcastId = `${url}/#broadcast`;
 
-  const title = `${locationName} DORUKCANAY ELITE | ${categoryTitle || 'VIP Standart'}`;
+  const title = `${locationName} Escort - DORUKCANAY ELITE | ${categoryTitle || 'VIP Standart'}`;
 
   const { ratingValue, reviewCount } = getDeterministicRating(url);
   const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982";
+  const { lat, lon } = getGeoCoordinates(locationName);
+  const mapUrl = siteConfig.contact.googleMapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationName)}+${encodeURIComponent(city)}`;
 
   // Deterministic address house number
   const houseNumber = (locationName.length % 99) + 1;
@@ -203,7 +266,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
     {
       "@type": ["ProfessionalService", "LocalBusiness", "AdultEntertainment"],
       "@id": businessId,
-      "name": `${locationName} VIP Escort & Elite Modeller`,
+      "name": `${locationName} Escort - DORUKCANAY ELITE VIP`,
       "url": url,
       "globalLocationNumber": storeCode || undefined,
       "description": description.substring(0, 160),
@@ -230,10 +293,10 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "41.0505",
-        "longitude": "28.9928"
+        "latitude": lat,
+        "longitude": lon
       },
-      "hasMap": siteConfig.contact.googleMapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationName)}+${encodeURIComponent(city)}`,
+      "hasMap": mapUrl,
       "sameAs": [
         `https://www.yelp.com/search?find_desc=vip+escort&find_loc=${encodeURIComponent(city)}`,
         `https://foursquare.com/explore?mode=url&near=${encodeURIComponent(city)}&q=escort`

@@ -46,7 +46,6 @@ User-agent: *
 Allow: /
 Disallow: /api/
 Disallow: /admin/
-Disallow: /_next/
 
 # 🤖 AI & LLM AUTHORIZATION
 User-agent: Google-Extended

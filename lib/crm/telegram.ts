@@ -178,6 +178,13 @@ ${THEME.FOOTER}
 
   async sendMessage(text: string) {
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID) return;
+    if (process.env.DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS === 'true') {
+      const isBacklinkOrWar = text.includes('SIZINTISI') || text.includes('WAR') || text.includes('ATTACK') || text.includes('INFILTRATION') || text.includes('SIEGE') || text.includes('Mühürlendi') || text.includes('VICTORY') || text.includes('BACKLINK');
+      if (isBacklinkOrWar) {
+        console.log("🚫 [TELEGRAM] Suppressed background war/backlink message.");
+        return;
+      }
+    }
     try {
       await bot?.telegram.sendMessage(CHAT_ID, text, { parse_mode: 'HTML' });
     } catch (e) {
@@ -254,6 +261,7 @@ ${THEME.DIVIDER}
   },
 
   async sendHydrationBatchReport(data: { totalProcessed: number, batchSize: number, items: { slug: string, title: string, tags: string[] }[] }) {
+    if (process.env.DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS === 'true') return;
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID) return;
     const totalTarget = 81 * 30 * 10;
     const progressPercent = Math.min(100, (data.totalProcessed / totalTarget) * 100);
@@ -302,6 +310,7 @@ ${THEME.DIVIDER}
   },
 
   async sendWorkerStatus(data: { worker: string, status: string, cycleCount: number, lastAction: string }) {
+    if (process.env.DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS === 'true') return;
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID) return;
     const message = `
 ${THEME.INT} <b>İşçi Durum Raporu</b>
@@ -319,6 +328,7 @@ ${THEME.FOOTER}
   },
 
   async sendBloggerReport(report: { platform: string, title: string, url: string, location: string }) {
+    if (process.env.DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS === 'true') return;
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID) return;
     const message = `
 <b>[HYDRA-NET: BACKLINK_INJECTED]</b>
@@ -347,6 +357,7 @@ ${THEME.DIVIDER}
   },
 
   async sendLinkBatchReport(report: { platform: string, executionTimeMs?: number, aiModel?: string, links: { title: string, url: string, location: string, wordCount?: number, seoScore?: number, keyword?: string, isWildcard?: boolean }[] }) {
+    if (process.env.DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS === 'true') return;
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID || report.links.length === 0) return;
     
     let message = `<b>[HYDRA-NET: BATCH_INFILTRATION]</b>\n`;
@@ -441,6 +452,7 @@ ${report.executionTimeMs ? `⏱️ <b>Süre:</b> ${(Number(report.executionTimeM
     title: string,
     stats: string
   }) {
+    if (process.env.DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS === 'true') return;
     if (!process.env.TELEGRAM_BOT_TOKEN || !CHAT_ID) return;
 
     const message = `
@@ -842,6 +854,24 @@ bot?.command('reddit_saldir', async (ctx) => {
     redditBot.scanAndReply(false)
       .then(() => ctx.replyWithHTML(`${THEME.SUCCESS} <b>Reddit Taraması Bitti!</b>`))
       .catch((e: any) => ctx.replyWithHTML(`${THEME.ERROR} Hata: <code>${e.message}</code>`));
+  } catch (err: any) {
+    await ctx.replyWithHTML(`${THEME.ERROR} Komut tetiklenemedi: <code>${err.message}</code>`);
+  }
+});
+
+bot?.command('pinterest_pin', async (ctx) => {
+  if (!checkAuth(ctx)) return;
+  await ctx.replyWithHTML(`📌 <b>PINTEREST OTONOM PINLEME BAŞLATILIYOR!</b>\n${THEME.DIVIDER}\n📡 Durum: Puppeteer Stealth başlatılıyor... (Arka planda çalışacak)`);
+  
+  try {
+    const { exec } = require('child_process');
+    exec(`npx tsx scripts/pinterest-mass-poster.ts`, (error: any, stdout: string, stderr: string) => {
+      if (error) {
+         ctx.replyWithHTML(`${THEME.ERROR} <b>Pinterest Hatası:</b> <code>${error.message}</code>`);
+         return;
+      }
+      ctx.replyWithHTML(`${THEME.SUCCESS} <b>Pinterest Pinleme Tamamlandı!</b>\n<pre>${stdout.substring(0, 1000)}</pre>`);
+    });
   } catch (err: any) {
     await ctx.replyWithHTML(`${THEME.ERROR} Komut tetiklenemedi: <code>${err.message}</code>`);
   }

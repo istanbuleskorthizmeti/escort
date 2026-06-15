@@ -1,5 +1,6 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { vitrinImages } from "../../lib/vitrin-images";
 import { isBlacklisted } from "../../lib/vitrin-blacklist";
@@ -27,7 +28,16 @@ const LIVE_PHOTOS = ALL_LIVE_PHOTOS.filter(path => {
 });
 
 export function LivePhotoMarquee({ city = "İstanbul" }: { city?: string }) {
-  const visiblePhotos = [...LIVE_PHOTOS, ...LIVE_PHOTOS].slice(0, 16);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setIsMobile(window.innerWidth < 768);
+    }
+  }, []);
+
+  const limit = isMobile ? 6 : 12;
+  const visiblePhotos = [...LIVE_PHOTOS, ...LIVE_PHOTOS].slice(0, limit);
 
   const realisticNames = [
     "Buse", "Gizem", "Ayla", "Derin", "Selin", "Simge", "Melisa", "Tuğçe", 
@@ -49,9 +59,7 @@ export function LivePhotoMarquee({ city = "İstanbul" }: { city?: string }) {
           return (
             <div 
               key={index} 
-              className={`relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-rose-600/30 hover:border-rose-600 transition-colors shadow-glow-rose cursor-pointer shrink-0 ${
-                index >= 8 ? "hidden md:block" : ""
-              }`}
+              className="relative w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-rose-600/30 hover:border-rose-600 transition-colors shadow-glow-rose cursor-pointer shrink-0"
             >
               <Image
                 src={fullSrc}
@@ -60,7 +68,7 @@ export function LivePhotoMarquee({ city = "İstanbul" }: { city?: string }) {
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 96px, 128px"
-                priority={index < 3}
+                priority={index < (isMobile ? 2 : 4)}
               />
               <div className="absolute inset-0 bg-black/20 hover:bg-transparent transition-colors" />
               <div className="absolute bottom-1 left-1/2 -translate-x-1/2 flex items-center gap-1 bg-black/60 px-2 py-0.5 rounded-full backdrop-blur-sm">

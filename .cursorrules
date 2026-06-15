@@ -24,6 +24,11 @@
   * Puppeteer Stealth ile gerçek ev interneti (Residential TR/Istanbul) proxy'lerini page.authenticate üzerinden kimliklendir.
   * İnsansı harflerle yazma gecikmeleri (150ms) ve rastgele sayfa scroll (Dwell time 1-2 dk) hareketleri simüle et.
   * Her başarılı CTR manipülasyonunda Telegram kanalına zengin HTML rapor gönder!
+* **Telegram Silence Mode & Lead Priority**:
+  * Tüm arka plan otonom betiklerinde ve sızıntı raporlarında `DISABLE_BACKLINK_TELEGRAM_NOTIFICATIONS="true"` ise Telegram bildirimlerini O(1) hızında suppress et!
+  * WhatsApp yönlendirmeleri (`RADAR: ETKİLEŞİM`, `YÖNLENDİRME`) ve el ile tetiklenen komut yanıtlarını (`/seo`, `/durum` vb.) her zaman açık tut!
+* **Infinite Spintax Metadata Sovereignty**:
+  * `lib/seo/templates.ts` içindeki 30+ Standard ve 15+ Money Site spintax şablonlarını kullanarak her sayfa ve host için trilyonlarca varyasyondan oluşan tamamen özgün SEO başlığı (title) ve açıklaması (description) üret!
 
 ## 🖼️ IMAGE & MEDIA SOVEREIGNTY (SENSITIVE ASSETS)
 

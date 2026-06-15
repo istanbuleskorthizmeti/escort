@@ -23,7 +23,7 @@ export const DRKCNAYGeoMap: React.FC<DRKCNAYGeoMapProps> = ({
   iframeSrc,
   placeId,
 }) => {
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY;
+  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_KEY || "AIzaSyCJrkR6g0LqhMj32rq6GT8dpmpUDskyqiQ";
 
   // Dark Mode / DRKCNAY ELITE Styling for Google Static Maps
   const styles = [

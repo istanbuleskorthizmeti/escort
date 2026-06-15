@@ -20,13 +20,17 @@ export const dynamic = "force-dynamic";
 
 async function getEncyclopediaContent(slug: string, host: string, siteId: string | null, entry: any, anchorText: string) {
   const dbSlug = `ansiklopedi-${slug}`;
-  let page = await prisma.pageContent.findFirst({
-    where: {
-      slug: dbSlug,
-      OR: [{ siteId }, { siteId: null }]
-    },
-    orderBy: { siteId: 'desc' }
-  });
+  
+  // Strict unique per-site content check to avoid duplicate PBN footprint
+  let page = null;
+  if (siteId) {
+    page = await prisma.pageContent.findFirst({
+      where: {
+        slug: dbSlug,
+        siteId: siteId
+      }
+    });
+  }
 
   if (page && page.content) {
     return page.content;

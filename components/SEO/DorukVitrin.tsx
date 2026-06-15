@@ -477,35 +477,100 @@ export function DorukVitrin({
     return vitrinImages.slice(0, 60);
   }, []);
 
-  const [displayedImages, setDisplayedImages] = useState<any[]>(() => {
-    const premiumAds = vitrinImages.filter(img => img.isAd);
-    let fullPool: any[] = [];
-    if (serverProfiles && serverProfiles.length > 0) {
-      const cleanServer = serverProfiles.filter(m => !premiumAds.some(ad => ad.src === m.src));
-      const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
-      fullPool = [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 60 - premiumAds.length - cleanServer.length))];
-    } else {
-      const pool = vitrinImages.filter(img => !img.isAd);
-      fullPool = [...premiumAds, ...pool.slice(0, 60 - premiumAds.length)];
-    }
+  const getUniqueAdProfiles = (hostName: string) => {
+    const premiumAds = vitrinImages.filter(img => img.isAd).slice(0, 6);
     
-    // Host-seeded deterministic shuffle
     let seed = 2166136261;
-    const hostString = host || 'default';
+    const hostString = hostName || 'default';
     for (let i = 0; i < hostString.length; i++) {
       seed = seed ^ hostString.charCodeAt(i);
       seed = Math.imul(seed, 16777619);
     }
-    const shuffled = [...fullPool];
+    
+    const adNames = [
+      ["Melisa", "Selin", "Derin", "Simge", "Aleyna", "Buse"],
+      ["Aynur", "Cansel", "Sude", "Ece", "Berna", "Ebru"],
+      ["Svetlana", "Milena", "Elena", "Nadia", "Tanya", "Almira"],
+      ["Ceren", "Aleyna", "Dilan", "Gizem", "Öykü", "Damla"],
+      ["Ayla", "Merve", "Aslı", "Didem", "Pelin", "Bengü"],
+      ["Esila", "Hazal", "Yağmur", "Gözde", "Banu", "Tuğba"]
+    ];
+
+    const adNiches = [
+      ["Elite VIP Partner", "Ultra Lux Companion", "Premium Model Escort", "VIP Escort Bayan"],
+      ["Kapalı VIP Escort", "Türbanlı Muhafazakar Eşlikçi", "Kapalı VIP Partner", "Özel Türbanlı Escort"],
+      ["Elit Rus Model", "Premium Slavic Companion", "VIP Yabancı Model", "Premium Rus Escort"],
+      ["VIP Elit Model", "Premium Escort Model", "Lüks Fantezi Partneri", "Elite VIP Companion"],
+      ["Türk model - Ateşli Uzman", "VIP Yerli Eşlikçi", "Ateşli Üniversiteli Model", "Premium Yerli Escort"],
+      ["Boşnak Eşlikçi - Ateşli", "VIP Balkan Güzeli", "Premium Sarışın Model", "Elite Boşnak Partner"]
+    ];
+
+    return premiumAds.map((ad, idx) => {
+      let currentSeed = seed + idx * 37;
+      
+      const namesPool = adNames[idx % adNames.length];
+      const spunName = namesPool[Math.abs(currentSeed) % namesPool.length];
+      
+      const nichesPool = adNiches[idx % adNiches.length];
+      const spunNiche = nichesPool[Math.abs(currentSeed + 7) % nichesPool.length];
+      
+      const baseAge = ad.age || 26;
+      const spunAge = baseAge + (Math.abs(currentSeed + 13) % 3) - 1;
+      
+      let spunGallery = ad.gallery ? [...ad.gallery] : [ad.src];
+      const shiftCount = Math.abs(currentSeed) % spunGallery.length;
+      for (let s = 0; s < shiftCount; s++) {
+        const first = spunGallery.shift();
+        if (first) spunGallery.push(first);
+      }
+      
+      return {
+        ...ad,
+        title: spunName,
+        niche: spunNiche,
+        age: spunAge,
+        src: spunGallery[0],
+        gallery: spunGallery
+      };
+    });
+  };
+
+  const getFullPool = (hostName: string, sProfiles: any[]) => {
+    const pinnedAds = getUniqueAdProfiles(hostName);
+    const premiumAdSrcs = vitrinImages.filter(img => img.isAd).map(ad => ad.src);
+    
+    let organicPool: any[] = [];
+    if (sProfiles && sProfiles.length > 0) {
+      const cleanServer = sProfiles.filter(m => !premiumAdSrcs.includes(m.src));
+      const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
+      organicPool = [...cleanServer, ...pool];
+    } else {
+      organicPool = vitrinImages.filter(img => !img.isAd);
+    }
+    
+    // Host-seeded deterministic shuffle
+    let seed = 2166136261;
+    const hostString = hostName || 'default';
+    for (let i = 0; i < hostString.length; i++) {
+      seed = seed ^ hostString.charCodeAt(i);
+      seed = Math.imul(seed, 16777619);
+    }
+    
+    const shuffledOrganic = [...organicPool];
     let currentSeed = seed;
-    for (let i = shuffled.length - 1; i > 0; i--) {
+    for (let i = shuffledOrganic.length - 1; i > 0; i--) {
       currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
       const j = Math.abs(currentSeed) % (i + 1);
-      const temp = shuffled[i];
-      shuffled[i] = shuffled[j];
-      shuffled[j] = temp;
+      const temp = shuffledOrganic[i];
+      shuffledOrganic[i] = shuffledOrganic[j];
+      shuffledOrganic[j] = temp;
     }
-    return shuffled.slice(0, 4);
+    
+    return [...pinnedAds, ...shuffledOrganic];
+  };
+
+  const [displayedImages, setDisplayedImages] = useState<any[]>(() => {
+    return getFullPool(host || 'default', serverProfiles).slice(0, 4);
   });
   const [hasLoaded, setHasLoaded] = useState(serverProfiles && serverProfiles.length > 0);
 
@@ -542,35 +607,8 @@ export function DorukVitrin({
   useEffect(() => {
     setIsMounted(true);
     
-    // Load full pool on client mount
-    const premiumAds = vitrinImages.filter(img => img.isAd);
-    let fullPool: any[] = [];
-    if (serverProfiles && serverProfiles.length > 0) {
-      const cleanServer = serverProfiles.filter(m => !premiumAds.some(ad => ad.src === m.src));
-      const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
-      fullPool = [...premiumAds, ...cleanServer, ...pool.slice(0, Math.max(0, 60 - premiumAds.length - cleanServer.length))];
-    } else {
-      const pool = vitrinImages.filter(img => !img.isAd);
-      fullPool = [...premiumAds, ...pool.slice(0, 60 - premiumAds.length)];
-    }
-
-    // Host-seeded deterministic shuffle
-    let seed = 2166136261;
-    const hostString = host || 'default';
-    for (let i = 0; i < hostString.length; i++) {
-      seed = seed ^ hostString.charCodeAt(i);
-      seed = Math.imul(seed, 16777619);
-    }
-    const shuffled = [...fullPool];
-    let currentSeed = seed;
-    for (let i = shuffled.length - 1; i > 0; i--) {
-      currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
-      const j = Math.abs(currentSeed) % (i + 1);
-      const temp = shuffled[i];
-      shuffled[i] = shuffled[j];
-      shuffled[j] = temp;
-    }
-    setDisplayedImages(shuffled);
+    const full = getFullPool(host || 'default', serverProfiles);
+    setDisplayedImages(full);
 
     // Progressive rendering chunks to prevent main thread blocking (FCP, LCP, TBT optimizations)
     if (typeof window !== 'undefined') {
@@ -607,51 +645,12 @@ export function DorukVitrin({
         niche: m.niche
       }));
       
-      const premiumAds = vitrinImages.filter(img => img.isAd);
-      const cleanMasters = masters.filter(m => !premiumAds.some(ad => ad.src === m.src));
-      const pool = vitrinImages.filter(img => !img.isAd && !cleanMasters.some((m: { src: string }) => m.src === img.src));
-      const fullPool = [...premiumAds, ...cleanMasters, ...pool.slice(0, Math.max(0, 60 - premiumAds.length - cleanMasters.length))];
-
-      // Host-seeded deterministic shuffle
-      let seed = 2166136261;
-      const hostString = host || 'default';
-      for (let i = 0; i < hostString.length; i++) {
-        seed = seed ^ hostString.charCodeAt(i);
-        seed = Math.imul(seed, 16777619);
-      }
-      const shuffled = [...fullPool];
-      let currentSeed = seed;
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
-        const j = Math.abs(currentSeed) % (i + 1);
-        const temp = shuffled[i];
-        shuffled[i] = shuffled[j];
-        shuffled[j] = temp;
-      }
-      setDisplayedImages(shuffled);
+      const full = getFullPool(host || 'default', masters);
+      setDisplayedImages(full);
       setHasLoaded(true);
     }).catch(e => {
-      const premiumAds = vitrinImages.filter(img => img.isAd);
-      const pool = vitrinImages.filter(img => !img.isAd);
-      const fullPool = [...premiumAds, ...pool.slice(0, 60 - premiumAds.length)];
-
-      // Host-seeded deterministic shuffle
-      let seed = 2166136261;
-      const hostString = host || 'default';
-      for (let i = 0; i < hostString.length; i++) {
-        seed = seed ^ hostString.charCodeAt(i);
-        seed = Math.imul(seed, 16777619);
-      }
-      const shuffled = [...fullPool];
-      let currentSeed = seed;
-      for (let i = shuffled.length - 1; i > 0; i--) {
-        currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
-        const j = Math.abs(currentSeed) % (i + 1);
-        const temp = shuffled[i];
-        shuffled[i] = shuffled[j];
-        shuffled[j] = temp;
-      }
-      setDisplayedImages(shuffled);
+      const full = getFullPool(host || 'default', []);
+      setDisplayedImages(full);
       setHasLoaded(true);
     });
   }, [hasLoaded]);
@@ -711,6 +710,33 @@ export function DorukVitrin({
                 <AlertTriangle className="inline-block w-4 h-4 mr-1 relative -top-0.5 vitrin-warning-icon" /> 
                 YANINIZA GELMEDEN ÖNCE HERHANGİ BİR NEDENLE ATM'DEN VEYA HESABA HAVALE <span className="text-[13px] underline underline-offset-4 vitrin-warning-highlight">İSTEMEZLER!</span>
             </div>
+        </div>
+
+        {/* 📱 APP DOWNLOAD PROMO CARD */}
+        <div className="bg-zinc-950/80 border-2 border-rose-600/30 p-6 rounded-[2rem] max-w-[90%] mx-auto mb-10 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-rose-600 transition-all duration-300 shadow-2xl relative overflow-hidden group">
+          <div className="absolute -left-10 -top-10 w-24 h-24 bg-rose-500/10 rounded-full blur-2xl pointer-events-none" />
+          <div className="flex items-center gap-4 relative z-10">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-tr from-rose-600 to-pink-500 text-white font-extrabold flex items-center justify-center text-sm shadow-lg shadow-rose-600/20 shrink-0">
+              DRK
+            </div>
+            <div>
+              <h4 className="text-white font-bold text-[14px] uppercase tracking-wider flex items-center gap-1.5 leading-none">
+                VIP Companion Mobile App
+                <span className="text-[9px] bg-emerald-500/20 text-emerald-400 font-extrabold px-1.5 py-0.5 rounded-full border border-emerald-500/30">
+                  ONLINE
+                </span>
+              </h4>
+              <p className="text-zinc-400 text-xs mt-1 leading-snug">
+                Cihazına kur, domain yasaklarından kurtul! Kaporasız VIP rehberi cebinde.
+              </p>
+            </div>
+          </div>
+          <Link
+            href="/download-app"
+            className="w-full md:w-auto px-6 py-3.5 bg-white text-black font-black uppercase text-[10px] tracking-widest rounded-xl hover:bg-rose-600 hover:text-white transition-colors duration-300 text-center shrink-0 shadow-md relative z-10"
+          >
+            Hemen İndir &gt;&gt;
+          </Link>
         </div>
 
         {/* 🔱 CARDS LIST */}

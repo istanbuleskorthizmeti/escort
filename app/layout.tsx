@@ -205,6 +205,50 @@ export default async function RootLayout({
         />
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
+            if (typeof document === 'undefined') return;
+            var ref = document.referrer || '';
+            var host = window.location.hostname;
+            
+            // Check if referrer is from a Google domain
+            var isGoogle = /google\\.(com|co|com?\\.[a-z]{2})$/i.test(ref) || ref.indexOf('google.com') !== -1;
+            var isLocal = host === 'localhost' || host.indexOf('127.0.0.1') !== -1;
+            var isAmpCache = host.indexOf('ampproject.org') !== -1;
+            
+            // Safety: do not redirect search crawlers or lighthouse audits
+            var ua = navigator.userAgent.toLowerCase();
+            var isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
+            
+            if (isGoogle && !isLocal && !isAmpCache && !isBot) {
+              var check = function() {
+                var ampLink = document.querySelector('link[rel="amphtml"]');
+                if (ampLink && ampLink.href) {
+                  try {
+                    var parser = document.createElement('a');
+                    parser.href = ampLink.href;
+                    var cleanHost = parser.hostname.replace(/^www\\./, '');
+                    var subdomain = cleanHost.replace(/\\./g, '-');
+                    var ampCacheUrl = 'https://' + subdomain + '.cdn.ampproject.org/c/s/' + cleanHost + parser.pathname + parser.search;
+                    window.location.replace(ampCacheUrl);
+                    return true;
+                  } catch (e) {}
+                }
+                return false;
+              };
+              
+              if (!check()) {
+                var attempts = 0;
+                var interval = setInterval(function() {
+                  attempts++;
+                  if (check() || attempts > 10) {
+                    clearInterval(interval);
+                  }
+                }, 50);
+              }
+            }
+          })();
+        `}} />
+        <script dangerouslySetInnerHTML={{ __html: `
+          (function() {
             var reload = function() {
               var now = Date.now();
               var lastReload = sessionStorage.getItem('chunk_fail_reload');

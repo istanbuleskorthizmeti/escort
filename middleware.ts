@@ -20,6 +20,11 @@ export function middleware(request: NextRequest) {
   const ua = request.headers.get('user-agent') || '';
   const host = request.headers.get('host') || '';
 
+  // 🗺️ BYPASS MIDDLEWARE FOR SITEMAPS & ROBOTS.TXT (CRAWLER OPTIMIZATION)
+  if (pathname.startsWith('/sitemap') || pathname === '/robots.txt' || pathname === '/feed.xml') {
+    return NextResponse.next();
+  }
+
   // 🛡️ SECURITY: Block exploit probes, scanners, and legacy PHP pathways
   if (
     pathname.endsWith('.php') ||

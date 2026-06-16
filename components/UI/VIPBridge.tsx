@@ -17,7 +17,7 @@ export function VIPBridge() {
             </div>
             <div className="flex flex-col gap-2">
               <span className="text-white text-xl font-black tracking-tighter uppercase italic group-hover:text-rose-600 transition-colors">Kimlik Onaylı</span>
-              <span className="text-[10px] text-zinc-600 font-black uppercase tracking-[0.4em] opacity-60 group-hover:opacity-100 transition-opacity">%100 Gerçek Modeller</span>
+              <span className="text-[10px] text-zinc-600 font-black uppercase tracking-[0.4em] opacity-60 group-hover:opacity-100 transition-opacity">%100 Gerçek Escortlar</span>
             </div>
           </div>
 

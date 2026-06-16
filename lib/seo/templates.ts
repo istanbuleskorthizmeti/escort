@@ -32,29 +32,24 @@ export const STANDARD_TITLES: string[] = [
   "{👑|⭐|📞} {locTitle} Escort Rehberi | En Çok Tercih Edilen Partner Listesi",
   "{🔥|💎|✨} {locTitle} Lüks Escort | Elite Sınıf Partner Deneyimi | {currentMonth}",
   "{🔞|👑|💬} {locTitle} Escort Bayanlar | Güvenilir Ajans Ve Bağımsız Modeller",
-  "{💎|🔥|🌹} {locTitle} Sarışın Escort | Rus Ve Yabancı Elit Partnerler | {currentYear}",
-  "{👑|✨|⭐} {locTitle} Olgun Escort | Deneyimli Ve Sıcak Bayan Partnerler | {currentMonth}",
-  "{🔞|🔥|💎} {locTitle} Esmer Escort | Çekici Ve Sempatik Genç Bayanlar | {currentYear}",
-  "{📞|💬|✨} {locTitle} Escort Adresleri | Güvenli Ev Ve Otel Randevusu | DRKCNAY",
-  "{👑|💎|🔞} {locTitle} VIP Partner | Kapıda Ödemeli Güvenilir Buluşmalar"
+  "{💎|🔥|🌹} {locTitle} Sarışın Escort | Rus Ve Yabancı Elit Partnerler | {currentYear}"
 ];
 
 export const MONEY_SITE_TITLES: string[] = [
-  "{💎|👑|✨} {locTitle} Vip Escort | DORUKCANAY ELITE VIP ESCORT AJANSI",
-  "{👑|🔞|🔥} {locTitle} Escort Bayan | %100 Gerçek Ve Kaporasız Escortlar {currentYear}",
-  "{🔥|💎|✨} {locTitle} Eskort Bayan | Elit Ve Lüks Vip Eskortlar | {currentMonth}",
-  "{🔞|👑|💋} {locTitle} Rus Escort | En Seçkin Escort Vitrini | DRKCNAY",
-  "{💎|✨|👑} {locTitle} Exclusive Escort | Randevu Ve İletişim Hattı",
-  "{👑|🔥|🔞} {locTitle} Üniversiteli Escort | Görüşmek İçin Eskortlar | {currentYear}",
-  "{👑|💎|✨} {locTitle} Lüks Escort Hizmeti | Prestijli Ve Bireysel Escortlar",
-  "{💎|👑|💋} {locTitle} VIP Partner | Premium Hizmet Sunan Elit Escortlar | {currentYear}",
-  "{🔥|✨|⭐} {locTitle} Elit Escort | %100 Doğrulanmış Ve Gerçek Profil İlanları",
-  "{👑|🔞|💎} {locTitle} Yabancı Escort | Exclusive Rus Ve Ukraynalı Modeller",
-  "{💎|👑|📞} {locTitle} Escort Numaraları | VIP Rezervasyon Ve WhatsApp Hattı",
-  "{🔥|✨|🔞} {locTitle} Bağımsız Escort | Kendi Evinde Veya Otelde Buluşma | {currentMonth}",
-  "{👑|💎|🌹} {locTitle} Premium Escort | Lüks Lifestyle Partnerlik Hizmeti",
-  "{🔞|🔥|💎} {locTitle} Kaporasız Escort | Güvenilir Ve Gizli Randevu Sistemi",
-  "{👑|✨|⭐} {locTitle} Luxury Escort | Elit Profiller Ve Memnuniyet Garantisi"
+  "{💎|👑|✨} {locTitle} Escort | VIP {locTitle} Eskort Hizmetleri",
+  "{👑|🔞|🔥} {locTitle} Escort Bayan | %100 Gerçek Ve Kaporasız Eskortlar {currentYear}",
+  "{🔥|💎|✨} {locTitle} Eskort Bayan | Elit Ve Lüks VIP Escortlar | {currentMonth}",
+  "{🔞|👑|💋} {locTitle} Rus Escort | Seçkin {locTitle} Eskort Vitrini | DRKCNAY",
+  "{💎|✨|👑} {locTitle} VIP Escort | Özel Eskort Randevu Ve İletişim Hattı",
+  "{👑|💎|✨} {locTitle} Lüks Escort | Prestijli Bireysel Eskort Bayanlar",
+  "{💎|👑|💋} {locTitle} VIP Escort | Premium Bireysel Eskortlar | {currentYear}",
+  "{🔥|✨|⭐} {locTitle} Elit Eskort | %100 Doğrulanmış Gerçek Escort İlanları",
+  "{👑|🔞|💎} {locTitle} Yabancı Escort | Exclusive Rus Ve Ukraynalı Eskortlar",
+  "{💎|👑|📞} {locTitle} Escort Numaraları | VIP Rezervasyon Ve Eskort WhatsApp Hattı",
+  "{🔥|✨|🔞} {locTitle} Bağımsız Escort | Kendi Evinde Buluşan Elit Eskortlar | {currentMonth}",
+  "{👑|💎|🌹} {locTitle} Premium Escort | Lüks Lifestyle Partner Ve Eskort Hizmeti",
+  "{🔞|🔥|💎} {locTitle} Kaporasız Escort | Güvenilir Ve Gizli Eskort Randevu Sistemi",
+  "{👑|✨|⭐} {locTitle} Luxury Escort | Elit Profiller Ve VIP Eskort Garantisi"
 ];
 
 export const STANDARD_DESCRIPTIONS: string[] = [
@@ -76,8 +71,8 @@ export const STANDARD_DESCRIPTIONS: string[] = [
 ];
 
 export const MONEY_SITE_DESCRIPTIONS: string[] = [
-  "{👑|💎|✨} dorukcanay.digital'in lüks escort rehberinde {fullLocTitle} bölgesinin en {seçkin|elit} {Vip ve eskort|bağımsız} escort bayan profillerini bulabilirsiniz. Tamamen {kaporasız|ön ödemesiz} ve {%100 gerçek resimli|doğrulanmış} eskortlar.",
-  "{💎|👑|🔥} {fullLocTitle} {Vip eskort|elit escort bayan} ilanları. {Dorukcanay.digital|Amiral gemisi} güvencesiyle otele ve eve gelen {genç eskortlarla|lüks eskortlarla} {kaporasız|ön ödemesiz}, güvenli ve elit randevu.",
+  "{👑|💎|✨} dorukcanay.digital'in lüks escort rehberinde {fullLocTitle} bölgesinin en {seçkin|elit} {VIP ve eskort|bağımsız} escort bayan profillerini bulabilirsiniz. Tamamen {kaporasız|ön ödemesiz} ve {%100 gerçek resimli|doğrulanmış} eskortlar.",
+  "{💎|👑|🔥} {fullLocTitle} {VIP eskort|elit escort bayan} ilanları. {dorukcanay.digital|Amiral gemisi} güvencesiyle otele ve eve gelen {genç eskortlarla|lüks eskortlarla} {kaporasız|ön ödemesiz}, güvenli ve elit randevu.",
   "{🔞|💎|✨} {fullLocTitle} bölgesinde {kaporasız|ön ödemesiz} buluşabileceğiniz, {doğrulanmış|seçkin} ve {elit|vip} escort eskortlar. {Rus eskortlardan|Ukraynalı elit eskortlardan} oluşan özel seçkiyi inceleyin.",
   "{🔥|👑|🔞} En {hiddetli|kışkırtıcı|lüks} ve {prestijli} {fullLocTitle} eskort bayanları. Kendi özel evinde veya otelinizde randevu oluşturabileceğiniz {bireysel eskort|bağımsız eskort} katalogları.",
   "{💎|👑|🛡️} dorukcanay.digital ile {fullLocTitle} bölgesinde {premium|vip} escort deneyimi. {%100 gerçek ve videolu|doğrulanmış} elite model partnerlerle {kaporasız|ön ödemesiz} buluşma imkanı.",

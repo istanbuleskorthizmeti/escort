@@ -41,8 +41,8 @@ export const SmartImage: React.FC<SmartImageProps> = ({
   // 🛡️ [HYDRA-BLACK-HAT] Aggressive SEO Alt & Title Injection
   const aggressiveNiches = [
     "VIP Escort Numaraları", "Elit Partner", "Kaporasız Escort Bayan", 
-    "Rus VIP Model", "Üniversiteli VIP Partner", "Eve Gelen Lüks Partner",
-    "Otel Servis VIP Escort", "En İyi Escort Ajansı", "Gerçek Görselli Partner",
+    "Rus VIP Escort", "Üniversiteli VIP Escort", "Eve Gelen Lüks Escort",
+    "Otel Servis VIP Escort", "En İyi Escort Ajansı", "Gerçek Görselli Escort",
     "Bireysel Escort İlanları", "İstanbul Elit Escort", "Luxury Companion"
   ];
   
@@ -52,7 +52,7 @@ export const SmartImage: React.FC<SmartImageProps> = ({
 
   const finalAlt = seoContext 
     ? `${seoContext} ${niche} | DRKCNAY ELITE` 
-    : `${alt || 'VIP Partner'} - ${niche} | DRKCNAY`;
+    : `${alt || 'VIP Escort'} - ${niche} | DRKCNAY`;
   
   const finalTitle = `${niche} - ${seoContext || 'Elit Hizmet'}`;
 

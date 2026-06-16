@@ -51,7 +51,7 @@ class GeminiUltraProvider {
     }
   }
 
-  async generate(prompt: string, options: AiOptions = {}): Promise<string> {
+  async generate(prompt: string, options: AiOptions = {}, retryCount = 0): Promise<string> {
     const apiKey = this.getApiKey();
     if (!apiKey) return this.getFallbackContent();
 
@@ -79,17 +79,25 @@ class GeminiUltraProvider {
       console.warn(`⚠️ [GEMINI] Unexpected response format:`, JSON.stringify(response.data));
       return this.getFallbackContent();
     } catch (error: any) {
-      if (error.response?.status === 429) {
+      const errorData = error.response?.data?.error;
+      const errMsg = errorData?.message || error.message || "";
+      
+      if (errMsg.toLowerCase().includes("depleted") || errMsg.toLowerCase().includes("credit") || errMsg.toLowerCase().includes("billing")) {
+        console.warn(`⚠️ [GEMINI] Prepayment credits depleted/billing issue. Skipping retries.`);
+        return this.getFallbackContent();
+      }
+
+      if (error.response?.status === 429 && retryCount < 1) {
         console.warn(`⚠️ [GEMINI] Rate limit hit (429).`);
         if (this.config.apiKeys.length > 1) {
           this.rotateKey();
-          return this.generate(prompt, options);
+          return this.generate(prompt, options, retryCount + 1);
         }
-        console.warn('🕒 [GEMINI] Only 1 key available. Waiting 30s before retry...');
-        await new Promise(r => setTimeout(r, 30000));
-        return this.generate(prompt, options);
+        console.warn('🕒 [GEMINI] Only 1 key available. Waiting 5s before retry...');
+        await new Promise(r => setTimeout(r, 5000));
+        return this.generate(prompt, options, retryCount + 1);
       }
-      console.error('❌ [GEMINI] Generation failed:', error.message || error);
+      console.error('❌ [GEMINI] Generation failed:', errMsg);
       return this.getFallbackContent();
     }
   }

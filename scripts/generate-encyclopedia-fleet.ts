@@ -3,6 +3,7 @@ import { omniAI } from '../lib/ai-provider';
 import { getPersonaForHost, PERSONAS } from '../lib/persona-engine';
 import { getDomainConfig } from '../config/domains';
 import { toTitleCaseTR } from '../lib/utils';
+import { generateLocalArticle } from './encyclopedia-templates';
 
 const encyclopediaData: Record<string, { title: string, expertId: string, description: string }> = {
   "fantezi-arkeolojisi": {
@@ -217,6 +218,31 @@ async function main() {
         await new Promise(resolve => setTimeout(resolve, 1000));
       } catch (err: any) {
         console.error(`❌ Failed to generate [${slug}] for ${host}:`, err.message);
+        console.log(`⚙️ [${slug}] Using high-quality local spintax fallback for ${host}...`);
+        try {
+          const localHtml = generateLocalArticle(slug, host, anchorText, targetLoc);
+          await prisma.pageContent.upsert({
+            where: {
+              slug_siteId: {
+                slug: dbSlug,
+                siteId: siteId
+              }
+            },
+            update: {
+              title: entry.title,
+              content: localHtml
+            },
+            create: {
+              slug: dbSlug,
+              siteId: siteId,
+              title: entry.title,
+              content: localHtml
+            }
+          });
+          console.log(`✨ [${slug}] Successfully populated using local generator for ${host}.`);
+        } catch (localErr: any) {
+          console.error(`❌ Local fallback generation failed for [${slug}] on ${host}:`, localErr.message);
+        }
       }
     }
   }

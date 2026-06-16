@@ -137,7 +137,19 @@ export function generateLocationMetadata({
     description: finalDesc,
     keywords: keywords.join(', '),
     metadataBase: new URL(baseUrl.startsWith('http') ? baseUrl : `https://${baseUrl}`),
-    alternates: { canonical: url, ...alternates },
+    alternates: { 
+      canonical: url, 
+      languages: {
+        'tr-TR': url,
+        'en-US': `${url}?lang=en`,
+        'ru-RU': `${url}?lang=ru`,
+        'de-DE': `${url}?lang=de`,
+        'ar-AE': `${url}?lang=ar`,
+        'x-default': url,
+        ...alternates?.languages
+      },
+      ...alternates 
+    },
     openGraph: {
       title: finalTitle,
       description: finalDesc,
@@ -198,7 +210,7 @@ export function generateStructuredData(params: MetaParams) {
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": `${locName} Vip Escort Hizmetleri`,
+      "name": `${locName} VIP Escort Hizmetleri`,
       "description": `${locName} lokasyonunda profesyonel kaporasız escort, rus escort ve üniversiteli lüks eşlik hizmeti.`,
       "url": url,
       "telephone": "+12495448982",
@@ -210,7 +222,7 @@ export function generateStructuredData(params: MetaParams) {
           "@type": "Review",
           "author": { "@type": "Person", "name": "Murat T." },
           "datePublished": "2026-02-14",
-          "reviewBody": `${locName} bölgesindeki en profesyonel vip escort deneyimiydi. Kaporasız ve güvenilir.`,
+          "reviewBody": `${locName} bölgesindeki en profesyonel VIP escort deneyimiydi. Kaporasız ve güvenilir.`,
           "reviewRating": { "@type": "Rating", "ratingValue": "5" }
         }
       ]
@@ -224,7 +236,7 @@ export function generateStructuredData(params: MetaParams) {
           "name": `${locName} escort fiyatları ne kadar?`,
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": `${locName} bölgesinde Vip escort hizmetleri modelin tecrübesine ve seçilen standarta göre değişiklik göstermektedir. Detaylı bilgi için 7/24 arayabilirsiniz.`
+            "text": `${locName} bölgesinde VIP escort hizmetleri escortun tecrübesine ve seçilen standarta göre değişiklik göstermektedir. Detaylı bilgi için 7/24 arayabilirsiniz.`
           }
         },
         {

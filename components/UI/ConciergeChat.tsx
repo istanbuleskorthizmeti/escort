@@ -76,7 +76,7 @@ export const ConciergeChat = () => {
         setChatStep('category');
         addChatMessage({
           role: 'assistant',
-          content: 'Mükemmel. Aradığınız deneyim tarzı nedir? Size en uygun kategoriyi seçin.'
+          content: 'Mükemmel. Aradığınız deneyim tarzı nedir? Size en uygun escort türünü seçin.'
         });
       } else if (type === 'category') {
         setChatStep('final');

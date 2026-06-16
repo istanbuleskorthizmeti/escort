@@ -103,9 +103,15 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   let host = siteConfig.domain;
+  let lang = "tr";
   try {
     const h = await headers();
     host = h.get("host") || siteConfig.domain;
+    const acceptLanguage = h.get("accept-language") || "";
+    const primaryLang = acceptLanguage.split(",")[0].split("-")[0].toLowerCase();
+    if (["tr", "en", "ru", "de", "ar"].includes(primaryLang)) {
+      lang = primaryLang;
+    }
   } catch (e) {}
   
   const theme = ThemeEngine.getTheme(host);
@@ -120,7 +126,7 @@ export default async function RootLayout({
   } as Record<string, string>)[cleanHost] || '';
 
   return (
-    <html lang="tr" className={`h-full antialiased ${inter.variable} ${outfit.variable} ${playfair.variable}`}>
+    <html lang={lang} className={`h-full antialiased ${inter.variable} ${outfit.variable} ${playfair.variable}`}>
       <head>
         <style dangerouslySetInnerHTML={{ __html: `
           :root {

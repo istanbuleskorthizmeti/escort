@@ -109,25 +109,33 @@ export function slugify(text: string): string {
 }
 
 /**
- * 🛡️ SEO DEDUPE: Prevent "Escort Escort" or "Escort Eskort" keyword stuffing.
- * Enforces that the word "escort" or "eskort" (and their plural forms) appears at most once in any generated text/title.
+ * 🛡️ SEO DEDUPE: Prevent spammy keyword stuffing of the exact same spelling.
+ * Allows 'escort' and 'eskort' to coexist in the same text for dual-intent rankings,
+ * but deduplicates multiple instances of the same spelling.
  */
 export function dedupeEscort(text: string): string {
   if (!text) return "";
   
   const words = text.split(/\s+/);
   const result: string[] = [];
-  let foundEscort = false;
+  let foundEscortEnglish = false;
+  let foundEscortTurkish = false;
   
   for (const word of words) {
     // Strip punctuation to check base word
     const cleanWord = turkishToLower(word.replace(/[^a-zA-Z\u00C0-\u017F]/g, ''));
-    const isEscortWord = ['escort', 'escorts', 'eskort', 'eskortlar'].includes(cleanWord);
+    const isEnglish = ['escort', 'escorts'].includes(cleanWord);
+    const isTurkish = ['eskort', 'eskortlar'].includes(cleanWord);
     
-    if (isEscortWord) {
-      if (!foundEscort) {
+    if (isEnglish) {
+      if (!foundEscortEnglish) {
         result.push(word);
-        foundEscort = true;
+        foundEscortEnglish = true;
+      }
+    } else if (isTurkish) {
+      if (!foundEscortTurkish) {
+        result.push(word);
+        foundEscortTurkish = true;
       }
     } else {
       result.push(word);

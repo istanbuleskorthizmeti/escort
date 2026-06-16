@@ -1,17 +1,20 @@
-import { omniAI } from '../lib/ai-provider';
-import dotenv from 'dotenv';
+import axios from 'axios';
 
-dotenv.config();
+async function main() {
+  const apiKey = "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";
+  const url = "https://api.openai.com/v1/chat/completions";
 
-async function testOpenAI() {
-  console.log('🚀 [TEST] OpenAI Testi Baslatiliyor...');
   try {
-    // Adding "json" to the prompt to force OpenAI provider
-    const res = await omniAI.generate('Selam, bir cümlelik bir selam ver. (json formatinda olsun)', { temperature: 0.7 });
-    console.log('AI Cevabi:', res);
-  } catch (e) {
-    console.error('HATA:', e);
+    const response = await axios.post(url, {
+      model: "gpt-4o-mini",
+      messages: [{ role: "user", content: "Say hello in Turkish" }]
+    }, {
+      headers: { "Authorization": `Bearer ${apiKey}` }
+    });
+    console.log("Success! Response:", response.data.choices?.[0]?.message?.content);
+  } catch (error: any) {
+    console.error("Failed:", error.response?.data || error.message);
   }
 }
 
-testOpenAI();
+main();

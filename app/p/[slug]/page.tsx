@@ -137,8 +137,8 @@ export default async function ProfilePage({ params }: PageProps) {
                 <span className="text-white font-black italic">{profile.district} / İstanbul</span>
               </div>
               <div className="flex items-center justify-between border-b border-white/5 pb-4">
-                <span className="text-zinc-500 font-bold uppercase text-xs tracking-tighter">Kategori</span>
-                <span className="text-white font-black italic">VIP Partner</span>
+                <span className="text-zinc-500 font-bold uppercase text-xs tracking-tighter">Escort Tipi</span>
+                <span className="text-white font-black italic">VIP Escort</span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-zinc-500 font-bold uppercase text-xs tracking-tighter">Doğrulama</span>

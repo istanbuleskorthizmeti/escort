@@ -16,7 +16,7 @@ export const templates: Record<string, EncyclopediaTemplate> = {
       },
       {
         title: "BDSM ve Rol Yapma Dinamikleri",
-        content: "Rol yapma süreçleri, sıradan buluşmaları birer sanat eserine dönüştürür. {Kostümler, senaryolar ve diyaloglar|Özel kurgular ve sınır sınır belirlemeleri}, tarafların günlük kimliklerinden sıyrılarak tamamen farklı karakterlere bürünmesini sağlar. Bu durum, partnerler arasındaki kimyayı ve çekimi en üst seviyeye taşır. Güvenli kelimelerin (safe word) kullanımı, bu egzotik oyunların sınırlarını netleştirerek güvenliği garanti altına alır."
+        content: "Rol yapma süreçleri, sıradan buluşmaları birer sanat eserine dönüştürür. {Kostümler, senaryolar ve diyaloglar|Özel kurgular ve sınır belirlemeleri}, tarafların günlük kimliklerinden sıyrılarak tamamen farklı karakterlere bürünmesini sağlar. Bu durum, partnerler arasındaki kimyayı ve çekimi en üst seviyeye taşır. Güvenli kelimelerin (safe word) kullanımı, bu egzotik oyunların sınırlarını netleştirerek güvenliği garanti altına alır."
       },
       {
         title: "Bilişsel Rahatlama ve Güven Alanları",
@@ -354,7 +354,7 @@ export const templates: Record<string, EncyclopediaTemplate> = {
       },
       {
         title: "Cinsel İsteksizliği Aşmanın Yolları",
-        content: "Çözüm için öncelikle uzman bir doktordan yardım alınmalıdır. Hormon tedavileri, psikolojik danışmanlık ve çift terapileri etkili çözümler sunar. Yaşam tarzını değiştirmek, spora başlamak and afrodizyak besinleri diyetinize eklemek de fayda sağlayacaktır."
+        content: "Çözüm için öncelikle uzman bir doktordan yardım alınmalıdır. Hormon tedavileri, psikolojik danışmanlık ve çift terapileri etkili çözümler sunar. Yaşam tarzını değiştirmek, spora başlamak ve afrodizyak besinleri diyetinize eklemek de fayda sağlayacaktır."
       }
     ],
     conclusion: "Cinsel isteksizlik, utanılacak bir durum değil, çözülmesi gereken tıbbi ve psikolojik bir konudur. Doğru tedavi adımlarıyla sağlıklı ve mutlu bir cinsel hayata geri dönülebilir."
@@ -408,19 +408,19 @@ export const templates: Record<string, EncyclopediaTemplate> = {
     sections: [
       {
         title: "Kan Dolaşımını Hızlandıran Gıdalar",
-        content: "L-arjinin ve nitrik oksit yönünden zengin olan pancar, karpuz and nar, damarları genişleterek cinsel organlara giden kan akışını artırır. Güçlü bir dolaşım sistemi, daha kaliteli ereksiyon ve uyarılma anlamına gelir."
+        content: "L-arjinin ve nitrik oksit yönünden zengin olan pancar, karpuz ve nar, damarları genişleterek cinsel organlara giden kan akışını artırır. Güçlü bir dolaşım sistemi, daha kaliteli ereksiyon ve uyarılma anlamına gelir."
       },
       {
         title: "Hormon Üretimini Destekleyen Mineraller",
-        content: "İstridye, kabak çekirdeği and çiğ kuruyemişler (ceviz, badem), testosteron üretimi için kritik olan çinko ve magnezyum depolarıdır. Bu besinlerin düzenli tüketimi, hormon seviyelerini optimize ederek cinsel isteği (libido) artırır."
+        content: "İstridye, kabak çekirdeği ve çiğ kuruyemişler (ceviz, badem), testosteron üretimi için kritik olan çinko ve magnezyum depolarıdır. Bu besinlerin düzenli tüketimi, hormon seviyelerini optimize ederek cinsel isteği (libido) artırır."
       },
       {
         title: "Enerji Veren ve Stres Azaltan Süper Gıdalar",
-        content: "Maca kökü, ginseng and bitter çikolata, vücuttaki enerji seviyelerini yükseltir ve dopamin salınımını tetikler. Çikolatanın içindeki feniletilamin hormonu, mutluluk ve uyarılma hissi yaratarak buluşma öncesi motivasyonu artırır."
+        content: "Maca kökü, ginseng ve bitter çikolata, vücuttaki enerji seviyelerini yükseltir ve dopamin salınımını tetikler. Çikolatanın içindeki feniletilamin hormonu, mutluluk ve uyarılma hissi yaratarak buluşma öncesi motivasyonu artırır."
       },
       {
         title: "Baharatların Isıtıcı ve Tetikleyici Etkisi",
-        content: "Zencefil, karanfil, acı biber and tarçın gibi baharatlar, vücut sıcaklığını yükseltir ve kalp atış hızını artırır. Bu durum, uyarılma reflekslerini hızlandırarak performansa katkıda bulunur. Yemeklere eklenen bu baharatlar doğal bir uyarıcıdır."
+        content: "Zencefil, karanfil, acı biber ve tarçın gibi baharatlar, vücut sıcaklığını yükseltir ve kalp atış hızını artırır. Bu durum, uyarılma reflekslerini hızlandırarak performansa katkıda bulunur. Yemeklere eklenen bu baharatlar doğal bir uyarıcıdır."
       }
     ],
     conclusion: "Afrodizyak besinler, kimyasal ilaçlara ihtiyaç duymadan cinsel sağlığı ve performansı destekleyen doğal çözümlerdir. Sağlıklı beslenme rutini, cinsel enerjinizi zirveye taşır."
@@ -430,7 +430,7 @@ export const templates: Record<string, EncyclopediaTemplate> = {
     sections: [
       {
         title: "İdrara Çıkma ve Enfeksiyon Önleme",
-        content: "Buluşma sonrasında ilk 15-30 dakika içinde idrara çıkmak, ürethraya kaçan bakterilerin dışarı atılmasını sağlar. Özellikle kadınlarda idrar yolu enfeksiyonu (sistit) riskini önemli ölçüde azaltan bu pratik, en basit korunma yöntemidir."
+        content: "Buluşma sonrasında ilk 15-30 dakika içinde idrara çıkmak, üretraya kaçan bakterilerin dışarı atılmasını sağlar. Özellikle kadınlarda idrar yolu enfeksiyonu (sistit) riskini önemli ölçüde azaltan bu pratik, en basit korunma yöntemidir."
       },
       {
         title: "Bölgesel Hijyen ve Yıkama Kuralları",
@@ -452,7 +452,7 @@ export const templates: Record<string, EncyclopediaTemplate> = {
     sections: [
       {
         title: "Doğal Performans Artırıcı Bitkiler",
-        content: "Kırmızı Kore Ginsengi, Maca kökü and Tribulus Terrestris gibi adaptojen bitkiler, binlerce yıldır cinsel gücü artırmak için kullanılır. Bu bitkiler, vücudun enerji seviyesini yükseltir, kan dolaşımını destekler and hormonal dengeyi optimize eder."
+        content: "Kırmızı Kore Ginsengi, Maca kökü ve Tribulus Terrestris gibi adaptojen bitkiler, binlerce yıldır cinsel gücü artırmak için kullanılır. Bu bitkiler, vücudun enerji seviyesini yükseltir, kan dolaşımını destekler ve hormonal dengeyi optimize eder."
       },
       {
         title: "Kardiyovasküler Egzersizler ve Kondisyon",

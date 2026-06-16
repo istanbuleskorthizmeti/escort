@@ -165,7 +165,26 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
            </div>
         </div>
 
-         <div className="pt-16 border-t border-zinc-900 flex flex-col md:flex-row justify-between items-center gap-10">
+        {/* 🛡️ TRUST SIGNALS & POLICY NAVIGATION */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 pb-12 border-b border-zinc-900 mb-12">
+          <div className="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-4 text-[10px] font-black uppercase tracking-widest italic text-zinc-500">
+            <Link href="/gizlilik-politikasi" className="hover:text-(--primary-color) transition-colors">Gizlilik Politikası</Link>
+            <Link href="/kvkk" className="hover:text-(--primary-color) transition-colors">KVKK Aydınlatma</Link>
+            <Link href="/cerez-politikasi" className="hover:text-(--primary-color) transition-colors">Çerez Politikası</Link>
+            <Link href="/hukuki-bilgilendirme" className="hover:text-(--primary-color) transition-colors">Hukuki Bilgilendirme</Link>
+            <Link href="/sik-sorulan-sorular" className="hover:text-(--primary-color) transition-colors">S.S.S.</Link>
+            <Link href="/telif-haklari" className="hover:text-(--primary-color) transition-colors">Telif Hakları</Link>
+            <Link href="/hakkimizda" className="hover:text-(--primary-color) transition-colors">Hakkımızda</Link>
+            <Link href="/iletisim" className="hover:text-(--primary-color) transition-colors">İletişim</Link>
+          </div>
+          <div className="flex items-center gap-3">
+             <span className="text-[9px] font-black bg-zinc-950 px-5 py-2.5 border border-zinc-900 rounded-full text-zinc-600 uppercase tracking-widest italic">
+               🔒 SSL SECURED 256-BIT
+             </span>
+          </div>
+        </div>
+
+         <div className="pt-16 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex flex-col items-center md:items-start gap-3">
               <p className="text-[11px] font-black tracking-[0.6em] text-zinc-800 uppercase italic">
                  © {currentYear} DRKCNAY ELITE // VIP REHBER // <span className="text-(--primary-color) uppercase">GÜVENLİ</span>

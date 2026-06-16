@@ -2,19 +2,19 @@
   {
     "domain": "istanbulescort.blog",
     "mobile": {
-      "score": 64,
-      "fcp": "2.4 s",
-      "lcp": "9.6 s",
-      "tbt": "230 ms",
+      "score": 59,
+      "fcp": "2.5 s",
+      "lcp": "7.6 s",
+      "tbt": "370 ms",
       "cls": "0"
     },
     "desktop": {
-      "score": 68,
-      "fcp": "0.6 s",
-      "lcp": "1.1 s",
-      "tbt": "810 ms",
+      "score": 78,
+      "fcp": "0.5 s",
+      "lcp": "1.4 s",
+      "tbt": "380 ms",
       "cls": "0.004"
     },
-    "timestamp": "2026-06-15T12:33:48.818Z"
+    "timestamp": "2026-06-16T22:17:26.468Z"
   }
 ]

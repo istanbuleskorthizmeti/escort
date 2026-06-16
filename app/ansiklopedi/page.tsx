@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 import Navbar from '@/components/UI/Navbar';
 import { Shield } from 'lucide-react';
+import { slugify } from '@/lib/utils';
 
 export const metadata: Metadata = {
   title: 'Elit Ansiklopedi | Escortvip Premium Lügat 2026',
@@ -135,7 +136,7 @@ export default function EncyclopediaPage() {
           {indexTerms.map((t, idx) => (
             <a
               key={idx}
-              href={`#${t.term.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+              href={`#${slugify(t.term)}`}
               className="w-2 h-2 rounded-full bg-zinc-800 hover:bg-rose-600 hover:scale-150 transition-all duration-300 group relative"
             >
               <span className="absolute left-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap text-[8px] font-black uppercase tracking-widest text-zinc-500">
@@ -160,7 +161,7 @@ export default function EncyclopediaPage() {
 
         <div className="space-y-12">
           {terms.map((t, idx) => {
-            const anchorId = t.term.toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const anchorId = slugify(t.term);
 
             return (
               <div

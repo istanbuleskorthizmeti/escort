@@ -13,8 +13,8 @@ async function run() {
     await ssh.connect(config);
     console.log('✅ Connected to VPS.');
 
-    const catRes = await ssh.execCommand('pm2 logs escortvip --lines 40 --raw --nostream');
-    console.log('📋 [VPS LOGS] Last 40 lines of escortvip logs:');
+    const catRes = await ssh.execCommand('tail -n 40 /root/esc/logs/indexing.log');
+    console.log('📋 [VPS LOGS] Last 40 lines of GSC Indexing Blast logs:');
     console.log(catRes.stdout || catRes.stderr || 'No logs found.');
 
     ssh.dispose();

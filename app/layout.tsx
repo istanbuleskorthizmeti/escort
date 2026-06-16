@@ -20,6 +20,7 @@ import { BrowserIntelligence } from "@/components/SEO/BrowserIntelligence";
 import { LocalAuthority } from "@/components/SEO/LocalAuthority";
 import { toTitleCaseTR } from "@/lib/utils";
 import { MobileAppBanner } from "@/components/UI/MobileAppBanner";
+import { TrustConsent } from "@/components/UI/TrustConsent";
 
 export async function generateViewport(): Promise<Viewport> {
   let host = siteConfig.domain;
@@ -284,6 +285,39 @@ export default async function RootLayout({
             });
           })();
         `}} />
+        {/* 🚀 CLIENT-SIDE SPECULATION RULES API PREFETCHING */}
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prefetch: [
+                {
+                  source: "document",
+                  where: {
+                    and: [
+                      { href_matches: "/*" },
+                      {
+                        not: {
+                          href_matches: [
+                            "/wp-*.php",
+                            "/wp-admin/*",
+                            "/wp-content/*",
+                            "/api/*",
+                            "/admin/*",
+                            "/dorukcanay-hq/*",
+                            "/sovereign-hq/*",
+                            "/*\\?(.+)"
+                          ]
+                        }
+                      }
+                    ]
+                  },
+                  eagerness: "conservative"
+                }
+              ]
+            })
+          }}
+        />
       </head>
       <body className="font-sans min-h-full flex flex-col text-white antialiased bg-(--bg-color)">
         {/* Google Analytics (gtag.js) - Advanced Consent Mode V2 with Crawler Camouflage */}
@@ -338,6 +372,7 @@ export default async function RootLayout({
         )}
         <BrowserIntelligence />
         <MobileAppBanner />
+        <TrustConsent />
         <div className="flex-1 flex flex-col">
           {children}
         </div>

@@ -341,14 +341,7 @@ function VitrinCard({
               const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} buluşmak için`;
 
               return (
-                <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111] overflow-hidden">
-                  <Image 
-                    src={getSeoImageUrl(currSeoPath)} 
-                    alt=""
-                    fill
-                    sizes="(max-width: 600px) 33vw, (max-width: 1200px) 15vw, 200px"
-                    className="object-cover opacity-30 scale-125 blur-xl pointer-events-none"
-                  />
+                <div key={`scroll-${idx}-${scrollIdx}`} className="relative h-full w-[16.666%] border-l border-[#111] overflow-hidden bg-zinc-950">
                   <Image 
                     src={getSeoImageUrl(currSeoPath)} 
                     alt={`${altTag} - Poz ${offset + 1}`}
@@ -392,14 +385,7 @@ function VitrinCard({
               const altTag = `${domainPrefix.toUpperCase()} ${generateGoldenAlt(city, idx + blackHatOffset)} - ${firstName} ${domainLsi} buluşmak için`;
 
               return (
-                <div className="relative h-full w-full overflow-hidden">
-                  <Image 
-                    src={getSeoImageUrl(currSeoPath)} 
-                    alt=""
-                    fill
-                    sizes="(max-width: 600px) 100vw, 300px"
-                    className="object-cover opacity-30 scale-125 blur-xl pointer-events-none"
-                  />
+                <div className="relative h-full w-full overflow-hidden bg-zinc-950">
                   <Image 
                     src={getSeoImageUrl(currSeoPath)} 
                     alt={`${altTag} - Poz 1`}
@@ -454,11 +440,15 @@ function VitrinCard({
 
 export function DorukVitrin({ 
   city = 'İstanbul', 
+  district = '',
+  neighborhood = '',
   isEmbed = false, 
   host, 
   serverProfiles = [] 
 }: { 
   city?: string, 
+  district?: string,
+  neighborhood?: string,
   isEmbed?: boolean, 
   host?: string,
   serverProfiles?: any[]
@@ -481,9 +471,9 @@ export function DorukVitrin({
     const premiumAds = vitrinImages.filter(img => img.isAd).slice(0, 6);
     
     let seed = 2166136261;
-    const hostString = hostName || 'default';
-    for (let i = 0; i < hostString.length; i++) {
-      seed = seed ^ hostString.charCodeAt(i);
+    const seedString = (hostName || 'default') + '-' + (city || '') + '-' + (district || '') + '-' + (neighborhood || '');
+    for (let i = 0; i < seedString.length; i++) {
+      seed = seed ^ seedString.charCodeAt(i);
       seed = Math.imul(seed, 16777619);
     }
     
@@ -550,9 +540,9 @@ export function DorukVitrin({
     
     // Host-seeded deterministic shuffle
     let seed = 2166136261;
-    const hostString = hostName || 'default';
-    for (let i = 0; i < hostString.length; i++) {
-      seed = seed ^ hostString.charCodeAt(i);
+    const seedString = (hostName || 'default') + '-' + (city || '') + '-' + (district || '') + '-' + (neighborhood || '');
+    for (let i = 0; i < seedString.length; i++) {
+      seed = seed ^ seedString.charCodeAt(i);
       seed = Math.imul(seed, 16777619);
     }
     
@@ -577,9 +567,9 @@ export function DorukVitrin({
   // pre-memoize shuffled names list to avoid O(N^2) complexity and recreation inside render loop
   const shuffledNames = useMemo(() => {
     let seed = 2166136261;
-    const hostString = host || 'default';
-    for (let i = 0; i < hostString.length; i++) {
-      seed = seed ^ hostString.charCodeAt(i);
+    const seedString = (host || 'default') + '-' + (city || '') + '-' + (district || '') + '-' + (neighborhood || '');
+    for (let i = 0; i < seedString.length; i++) {
+      seed = seed ^ seedString.charCodeAt(i);
       seed = Math.imul(seed, 16777619);
     }
     const rawNames = [
@@ -602,7 +592,7 @@ export function DorukVitrin({
       result[j] = temp;
     }
     return result;
-  }, [host]);
+  }, [host, city, district, neighborhood]);
 
   useEffect(() => {
     setIsMounted(true);
@@ -632,7 +622,7 @@ export function DorukVitrin({
       }, 1500);
       return () => clearTimeout(timer);
     }
-  }, []);
+  }, [host, city, district, neighborhood]);
 
   useEffect(() => {
     if (hasLoaded) return;
@@ -653,7 +643,7 @@ export function DorukVitrin({
       setDisplayedImages(full);
       setHasLoaded(true);
     });
-  }, [hasLoaded]);
+  }, [hasLoaded, host, city, district, neighborhood]);
 
   const imagesToRender = displayedImages;
 

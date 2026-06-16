@@ -22,7 +22,7 @@ interface MetaParams {
   categoryTitle?: string;
   customTitle?: string;
   niche?: 'rus' | 'yabanci' | 'ogrenci' | 'turbanli' | 'bireysel';
-  alternates?: Record<string, string>;
+  alternates?: any;
   domain?: string;
   isHome?: boolean;
 }

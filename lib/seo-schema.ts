@@ -4,6 +4,7 @@
  */
 import { siteConfig } from "@/config/site";
 import { slugify } from "@/lib/utils";
+import { CITY_COORDINATES } from "./geo-data";
 
 interface SchemaParams {
   locationName: string;
@@ -61,9 +62,52 @@ const DISTRICT_COORDS: { [key: string]: GeoCoords } = {
   "sultangazi": { lat: "41.1044", lon: "28.8903" }
 };
 
-export function getGeoCoordinates(locationName: string): GeoCoords {
+export function getGeoCoordinates(locationName: string, parentName?: string): GeoCoords {
   const slug = slugify(locationName);
-  return DISTRICT_COORDS[slug] || { lat: "41.0082", lon: "28.9784" }; // Default to Istanbul center
+  if (DISTRICT_COORDS[slug]) {
+    return DISTRICT_COORDS[slug];
+  }
+
+  const cityKey = slug
+    .replace(/ğ/g, 'g').replace(/ş/g, 's').replace(/ı/g, 'i')
+    .replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ç/g, 'c');
+  if (CITY_COORDINATES[cityKey]) {
+    return {
+      lat: CITY_COORDINATES[cityKey].lat.toFixed(6),
+      lon: CITY_COORDINATES[cityKey].lng.toFixed(6)
+    };
+  }
+
+  let baseLat = 41.0082;
+  let baseLng = 28.9784;
+
+  if (parentName) {
+    const parentSlug = slugify(parentName);
+    const parentKey = parentSlug
+      .replace(/ğ/g, 'g').replace(/ş/g, 's').replace(/ı/g, 'i')
+      .replace(/ö/g, 'o').replace(/ü/g, 'u').replace(/ç/g, 'c');
+    
+    if (DISTRICT_COORDS[parentSlug]) {
+      baseLat = parseFloat(DISTRICT_COORDS[parentSlug].lat);
+      baseLng = parseFloat(DISTRICT_COORDS[parentSlug].lon);
+    } else if (CITY_COORDINATES[parentKey]) {
+      baseLat = CITY_COORDINATES[parentKey].lat;
+      baseLng = CITY_COORDINATES[parentKey].lng;
+    }
+  }
+
+  let hash = 0;
+  for (let i = 0; i < locationName.length; i++) {
+    hash = locationName.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const absHash = Math.abs(hash);
+  const latOffset = ((absHash % 3000) - 1500) / 100000;
+  const lngOffset = (((absHash >> 5) % 3000) - 1500) / 100000;
+
+  return {
+    lat: (baseLat + latOffset).toFixed(6),
+    lon: (baseLng + lngOffset).toFixed(6)
+  };
 }
 
 export function getDeterministicRating(seed: string) {
@@ -83,7 +127,7 @@ export function getDeterministicRating(seed: string) {
 export function generateAdvancedSchema({ locationName, city, description, url, telephone }: SchemaParams) {
   const { ratingValue, reviewCount } = getDeterministicRating(url);
   const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982";
-  const { lat, lon } = getGeoCoordinates(locationName);
+  const { lat, lon } = getGeoCoordinates(locationName, city);
   const mapUrl = siteConfig.contact.googleMapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationName)}+${encodeURIComponent(city)}`;
 
   const baseSchema = {
@@ -229,7 +273,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
 
   const { ratingValue, reviewCount } = getDeterministicRating(url);
   const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982";
-  const { lat, lon } = getGeoCoordinates(locationName);
+  const { lat, lon } = getGeoCoordinates(locationName, city);
   const mapUrl = siteConfig.contact.googleMapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationName)}+${encodeURIComponent(city)}`;
 
   // Deterministic address house number

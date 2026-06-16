@@ -98,7 +98,7 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
     
     // 🛡️ [FALLBACK] Return a high-quality localized template generated dynamically via SpintaxEngine
     const { SpintaxEngine } = require("./seo/spintax-engine");
-    const fallbackHtml = SpintaxEngine.generateMonsterContent(neighborhood || district || city, category || "VIP Escort");
+    const fallbackHtml = SpintaxEngine.generateMonsterContent(neighborhood || district || city, host, category || "VIP Escort");
     const fallbackTitle = `${(neighborhood || district || city).toUpperCase()} VIP ESCORT | %100 GERÇEK VE GİZLİ`;
 
     return {

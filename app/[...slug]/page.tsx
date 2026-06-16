@@ -7,7 +7,7 @@ import { prisma } from "../../lib/prisma";
 import { getSiteId, getCanonicalHost } from "../../lib/site-context";
 import { siteConfig } from "../../config/site";
 import { getDomainConfig } from "../../config/domains";
-import { dedupeEscort } from "../../lib/utils";
+import { dedupeEscort, toTitleCaseTR, turkishToUpper } from "../../lib/utils";
 
 // Component Imports
 import Navbar from "../../components/UI/Navbar";
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!content) {
     const cityFromName = slug.split('-')[0] || "istanbul";
-    const cityName = cityFromName.charAt(0).toUpperCase() + cityFromName.slice(1);
+    const cityName = toTitleCaseTR(cityFromName);
     return {
       title: dedupeEscort(`🔞 ${cityName} Escort Bayan | %100 GERÇEK VİTRİN`),
       description: dedupeEscort(`${cityName} genelinde lüks ve seçkin escort model rehberi. Ön ödemesiz, kaporasız ve %100 güvenli buluşmalar için VIP model partnerler.`),
@@ -65,7 +65,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
     }
 
     const cityFromName = slug.split('-')[0] || "istanbul";
-    const cityName = cityFromName.charAt(0).toUpperCase() + cityFromName.slice(1);
+    const cityName = toTitleCaseTR(cityFromName);
     const fallbackTitle = `${cityName} Escort Bayan | VIP Vitrin`;
     const fallbackParagraph = `${cityName} genelinde VIP model partnerler, elite escort hizmetleri ve kaporasız doğrudan elden ödemeli güvenilir buluşmalar. Telefon numaraları ve aktif WhatsApp hattı ile 7/24 randevu planlayın.`;
 
@@ -103,7 +103,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
             <IstanbulConquestMatrix />
           </div>
         </main>
-        <UltraFooter host={host} cityName={cityName.toUpperCase()} />
+        <UltraFooter host={host} cityName={turkishToUpper(cityName)} />
       </div>
     );
   }

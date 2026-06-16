@@ -34,7 +34,7 @@ async function runPageSpeedTest(url: string, strategy: 'mobile' | 'desktop'): Pr
   try {
     const response = await axios.get(`https://www.googleapis.com/pagespeedonline/v5/runPagespeed`, {
       params: {
-        url: `https://${url}`,
+        url: `https://${url}/?v=${Date.now()}`,
         strategy,
         category: 'performance',
         ...(API_KEY ? { key: API_KEY } : {})

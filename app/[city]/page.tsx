@@ -158,7 +158,7 @@ export default async function CityHubPage({
           <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-(--primary-color)/20 px-8 py-3 rounded-full mb-16 shadow-glow-(--primary-color) mt-12">
             <span className="w-2.5 h-2.5 bg-(--primary-color) rounded-full animate-glow-pulse" />
             <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
-               {cityName.toUpperCase()} {host.includes('dorukcanay.digital') ? 'VIP COMPANION PARTNERLER' : 'VIP ESCORT AJANSI'}
+               {turkishToUpper(cityName)} {host.includes('dorukcanay.digital') ? 'VIP COMPANION PARTNERLER' : 'VIP ESCORT AJANSI'}
             </span>
           </div>
           

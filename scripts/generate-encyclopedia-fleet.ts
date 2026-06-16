@@ -114,7 +114,7 @@ const encyclopediaData: Record<string, { title: string, expertId: string, descri
   "vip-yasanti-ve-kultur": {
     title: "VIP Yaşam Kültürü: Elit Bir Sosyal Hayatın Şifreleri",
     expertId: "dorukcan-ay",
-    description: "Metropollerde lüks yaşam standartları, kaliteli sosyalleşme pratikleri and elit bir hayat tarzının anahtarları."
+    description: "Metropollerde lüks yaşam standartları, kaliteli sosyalleşme pratikleri ve elit bir hayat tarzının anahtarları."
   }
 };
 

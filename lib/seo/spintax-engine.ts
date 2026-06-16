@@ -1,18 +1,80 @@
 /**
- * ☠️ DRKCNAY HYDRA: ZERO-COST SPINTAX ENGINE (v6.2)
- * Sıfır maliyetle, sınırsız API limitsiz, 3000+ kelimelik devasa SEO ansiklopedileri üretir.
- * Googlebot'u kendi LSI ağımızda boğmak için tasarlanmıştır.
+ * ☠️ DRKCNAY HYDRA: ZERO-COST SPINTAX ENGINE (v7.0)
+ * Sıfır maliyetle, limitsiz, 100% benzersiz ve lokalize SEO makaleleri üretir.
+ * Lokasyon bazlı LSI varlıkları ve seeded deterministik PRNG içerir.
  */
 
+// Seeded PRNG for deterministic random generations
+class SeededRandom {
+  private seed: number;
+
+  constructor(seedStr: string) {
+    let h = 2166136261;
+    for (let i = 0; i < seedStr.length; i++) {
+      h = Math.imul(h ^ seedStr.charCodeAt(i), 16777619);
+    }
+    this.seed = h;
+  }
+
+  // Returns a pseudo-random float between 0 and 1
+  next(): number {
+    this.seed = (this.seed * 1103515245 + 12345) % 2147483648;
+    return Math.abs(this.seed) / 2147483648;
+  }
+
+  // Returns a random element from an array
+  choice<T>(arr: T[]): T {
+    const idx = Math.floor(this.next() * arr.length);
+    return arr[idx];
+  }
+
+  // Shuffles an array in place deterministically
+  shuffle<T>(arr: T[]): T[] {
+    const copy = [...arr];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(this.next() * (i + 1));
+      const temp = copy[i];
+      copy[i] = copy[j];
+      copy[j] = temp;
+    }
+    return copy;
+  }
+}
+
 export class SpintaxEngine {
-  // --- 1. SPINTAX DICTIONARIES (LSI & NIŞ KELİMELER) ---
+  private static readonly LOCAL_LANDMARKS: Record<string, string[]> = {
+    "sisli": ["Mecidiyeköy", "Nişantaşı", "Bomonti", "Zorlu Center", "Cevahir", "Fulya", "Halaskargazi", "Teşvikiye", "Maçka Palas"],
+    "besiktas": ["Bebek", "Etiler", "Ortaköy", "Akaretler", "Levent", "Ulus", "Çırağan Sarayı", "Arnavutköy", "Gayrettepe"],
+    "kadikoy": ["Moda Sahili", "Caddebostan", "Bağdat Caddesi", "Fenerbahçe", "Suadiye", "Bostancı", "Göztepe", "Acıbadem"],
+    "atasehir": ["Batı Ataşehir", "Brandium", "Varyap Meridian", "Watergarden", "Kayışdağı", "İçerenköy"],
+    "bakirkoy": ["Yeşilköy", "Florya", "Ataköy Marina", "Capacity AVM", "Bakırköy Meydan", "Yeşilyurt"],
+    "beylikduzu": ["Beylikdüzü Marina", "Adnan Kahveci", "Cumhuriyet Caddesi", "Perlavista", "Gürpınar Sahili"],
+    "esenyurt": ["Esenyurt Meydan", "Akbatı AVM", "Mehterçeşme", "Haramidere", "Güzelyurt"],
+    "avcilar": ["Avcılar Sahil", "Cihangir", "Mustafa Kemal Paşa", "Gümüşpala", "Parseller"],
+    "umraniye": ["Şerifali", "Akyaka Park", "Tepeüstü", "Çakmak", "Ihlamurkuyu", "İnkılap"],
+    "uskudar": ["Kuzguncuk", "Beylerbeyi Sarayı", "Çengelköy Sahili", "Kandilli", "Üsküdar Sahil", "Altunizade", "Acıbadem"],
+    "sariyer": ["Tarabya Sahili", "Zekeriyaköy Villaları", "İstinye Park", "Yeniköy", "Maslak İş Merkezleri", "Emirgan Korusu", "Baltalimanı"],
+    "fatih": ["Aksaray", "Laleli", "Sultanahmet", "Eminönü", "Fındıkzade", "Vatan Caddesi", "Balat Sokakları"],
+    "bagcilar": ["Güneşli", "Kirazlı", "Mahmutbey", "Yüzyıl", "Bağcılar Meydan"],
+    "kucukcekmece": ["Halkalı", "Cennet Mahallesi", "Sefaköy", "Küçükçekmece Göl Kenarı", "Atakent"],
+    "bahcelievler": ["Yenibosna", "Yayla", "Şirinevler", "Bahçelievler Ömür", "Kocasinan"],
+    "kartal": ["Kartal Sahil", "Dragos Tepesi", "Yakacık", "Soğanlık", "Uğurmumcu"],
+    "maltepe": ["Maltepe Sahili", "Küçükyalı", "İdealtepe", "Altıntepe", "Başıbüyük"],
+    "pendik": ["Pendik Marina", "Kurtköy", "Viaport AVM", "Kaynarca", "Güzelyalı"],
+    "tuzla": ["Tuzla Marina", "Tuzla Sahil", "Aydınlı", "İçmeler"],
+    "cekmekoy": ["Taşdelen", "Alemdağ", "Mimar Sinan", "Hamidiye"],
+    "beykoz": ["Kanlıca Sahili", "Kavacık", "Göksu Deresi", "Anadolu Hisarı", "Acarlar Villaları"],
+    "sile": ["Şile Limanı", "Şile Kalesi", "Ağva", "Kumbaba", "Şile Feneri"],
+    "silivri": ["Silivri Sahil", "Mimar Sinan", "Gümüşyaka", "Selimpaşa"],
+    "basaksehir": ["Bahçeşehir Göleti", "Kayaşehir", "İkitelli", "Başakşehir Metrokent"]
+  };
+
   private static readonly INTRO_SPINS = [
-    "Nefes kesici. Sadece bir saniye. {location} sokaklarında sıradanlığı reddeden o seçkin zümre için DRKCNAY ELITE, mahremiyetin ipeklere sarılı dünyasını sunuyor. Kaporasız. Ve tamamen kusursuz.",
-    "Zamanın durduğu an. Biliyoruz. {location} silüeti altında lüksün doruklarına tırmanırken yanınızda sadece bir partner değil, gecenin ritmini dikte eden bir kraliçe arıyorsunuz. Ön ödeme yok. Sadece saf tutku.",
-    "Bir dokunuş. Sadece bir dokunuş yeterlidir her şeyi değiştirmeye. {location} bölgesindeki VIP beyler, sıradanlıktan sıyrılıp ruhlarını teslim edebilecekleri o nadide eşlikçiyi arıyor. Biz tam da buradayız. Gizli. Kusursuz.",
-    "Bayağılığa tahammülünüz yok. Olmamalı da. {location} gecelerinde %100 gizlilik ve görsel bir şölen arayışınızda, DRKCNAY ELITE o görünmez kalkanı inşa ediyor. Sahte profillerin karanlık dehlizlerinden uzakta. Sadece zirve.",
-    "Otel odasının sessizliği. Ve kapı çalınır. {location} civarında profesyonelliği bir sanat eseri gibi işleyen nadide partnerler... Kesinlikle kaporasız. Kesinlikle nefes kesici.",
-    "Gecenin nabzı. {location} sınırları içerisinde elit beylere kesintisiz bir güç gösterisi sunuyoruz. İtaat eden, sınırları eriten partnerler. Ön ödemenin o zehirli şüphesine yer bırakmadan."
+    "Nefes kesici. {Sadece bir an|Bir saniye bile yeter}. {location} sokaklarında sıradanlığı {bütünüyle reddeden|tamamen dışlayan} o seçkin zümre için {DORUKCANAY ELITE|ajansımız}, mahremiyetin {ipeklere sarılı|kadife dokulu} dünyasını sunuyor. Kaporasız, ön ödemesiz {ve tamamen kusursuz|ve bütünüyle güvenli}.",
+    "Zamanın adeta durduğu o an. {Biliyoruz|Farkındayız}. {location} silüeti altında lüksün {en uç doruklarına|zirvesine} tırmanırken yanınızda sadece bir partner değil, gecenin {bütün ritmini|akışını} dikte eden bir kraliçe arıyorsunuz. Ön ödeme {şüphesi yok|baskısı yok}. Sadece saf tutku.",
+    "Bir dokunuş. {Sadece ufak bir temas|Küçük bir dokunuş} yeterlidir her şeyi değiştirmeye. {location} bölgesindeki {seçkin beyler|VIP konuklar}, sıradanlıktan sıyrılıp ruhlarını teslim edebilecekleri o {nadide eşlikçiyi|büyüleyici partneri} arıyor. Biz tam da buradayız. Gizli, emniyetli ve kusursuz.",
+    "Bayağılığa ve amatörlüğe tahammülünüz yok. {Olmamalı da|Çok haklısınız}. {location} gecelerinde %100 gizlilik ve {görsel bir şölen|olağanüstü bir aura} arayışınızda, {DORUKCANAY ELITE|VIP ekibimiz} o görünmez kalkanı inşa ediyor. Sahte profillerin {karanlık ve aldatıcı} dehlizlerinden uzakta. Sadece zirve.",
+    "Otel odasının o {loş sessizliği|heyecanlı bekleyişi}. Ve kapı hafifçe çalınır. {location} civarında profesyonelliği {bir sanat eseri|adeta bir ibadet} gibi işleyen nadide partnerler... Kesinlikle kaporasız, tamamen {güvenilir|nefes kesici}."
   ];
 
   private static readonly FEATURES = [
@@ -26,57 +88,13 @@ export class SpintaxEngine {
     "Uluslararası Dil Bilen Mankenler"
   ];
 
-  private static readonly PARAGRAPH_TEMPLATES = [
-    "Kaos. Günümüz metropolünün o sağır edici kaosu. {location} bölgesinin gri duvarları arasında sıkışmış VIP beyler, aslında etten ve kemikten ziyade bir statü sembolü, bir nefes alanı arıyor. {keyword}. Bizim ajansımız, sıradanlığın o zehirli döngüsünü kırıp atıyor. Asla bir tesadüfe yer yok.",
-    "Bir düşünün. Sadece saniyeler süren bir bakışma. {location} lokasyonunun en gözde ve izole mekanlarına giriş yaparken, kolunuzdaki o zarafet abidesi her şeyi anlatır. Sözlere gerek kalmaz. Sadece {keyword} arayanlar için değil. Zekanın ve estetiğin o nadir çarpışmasını isteyenler için. Üst düzey. Emsalsiz.",
-    "Mahremiyet. Bu bizim en keskin kılıcımız. {location} bölgesinde fısıltıyla konuşulan isimlerin güvendiği o görünmez kalkan. {keyword} standartlarında bir gecenin anatomisini çizerken, amatörlüğe asla tahammülümüz yok. Asla. Güvenlik standartlarımiz sizi her nefeste korur.",
-    "Google'ın dipsiz çöplüğü. {location} VIP partner araması yaptığınızda karşınıza çıkan o bayağı ve ucuz vizyonları tamamen unutun. Sisteme dahil ettiğimiz her bir kraliçe, entelektüel bir elekten geçer. {keyword} normlarını paramparça eden bir aurayla odaya girer.",
-    "Asfaltın fısıltısı. Havalimanı ve özel marinalardan başlayan o izole yolculuğunuzda, lüks araçlarımız devrededir. {location} bölgesinin en gizli kapıları size açılırken, otele intikaliniz gölgelerin arasından yapılır. Yanınızda ise {keyword} standartlarının dahi ötesinde, size tapan bir eşlikçi.",
-    "Kalabalık. Etrafınızdaki o gürültülü yığın. {location} trafiğinden tamamen soyutlanmış, deri koltukların kokusuna karışan bir ihtiras. {keyword} arayan konuklarımız için biz sadece bir ajans değiliz. Biz devasa, sessiz ve kusursuz çalışan bir lojistik dehasıyız."
-  ];
-
   private static readonly KEYWORDS = [
-    "escort", "eskort",
-    "VIP Escort", "VIP Eskort", "Elit Escort", "Elit Eskort", "Kaporasız Escort", "Kaporasız Eskort", "Lüks Partner",
-    "Sınırsız Hizmet", "Anal Yapan Escort", "Anal Yapan Eskort", "Öpüşen Escort", "Öpüşen Eskort", "Grup Escort",
-    "Gece Hayatı", "Masaj Yapan Escort", "Masaj Yapan Eskort", "Yabancı Escort", "Yabancı Eskort",
-    "Rus Escort", "Rus Eskort", "Üniversiteli Escort", "Üniversiteli Eskort", "Olgun Escort", "Olgun Eskort", "Evlere Servis Escort",
-    "Anal Uzmanı", "Elite Model", "Kolejli Escort", "Öğrenci Escort",
-    "Bireysel Escort", "Bireysel Eskort", "Kendi Evinde Escort", "Otele Gelen Escort", "Otele Gelen Eskort", "Zenci Escort",
-    "Sarışın Escort", "Sarışın Eskort", "Esmer Escort", "Esmer Eskort", "Minyon Escort", "Balıketli Escort",
-    "Fetiş Escort", "Dominant Escort", "BDSM Partner", "Köle Arayan Escort",
-    "Tesettürlü Escort", "Türbanlı Escort", "Muhafazakar Escort", "Gizli Görüşme",
-    "Sefaköy Escort", "Sefaköy Eskort", "Cennet Mahallesi Escort", "Halkalı Escort", "İkitelli Escort",
-    "Bağcılar Escort", "Bağcılar Eskort", "Güneşli Escort", "Kirazlı Escort", "Mahmutbey Escort",
-    "Beylikdüzü Escort", "Beylikdüzü Eskort", "Esenyurt Escort", "Esenyurt Eskort", "Avcılar Escort", "Avcılar Eskort", "Büyükçekmece Escort",
-    "Beşiktaş Escort", "Beşiktaş Eskort", "Levent Escort", "Etiler Escort", "Bebek Escort",
-    "Şişli Escort", "Şişli Eskort", "Mecidiyeköy Escort", "Nişantaşı Escort", "Fulya Escort",
-    "Bakırköy Escort", "Bakırköy Eskort", "Florya Escort", "Yeşilköy Escort", "Ataköy Escort",
-    "Kadıköy Escort", "Kadıköy Eskort", "Ataşehir Escort", "Ataşehir Eskort", "Maltepe Escort", "Maltepe Eskort", "Kartal Escort",
-    "Ümraniye Escort", "Üsküdar Escort", "Beykoz Escort", "Çekmeköy Escort",
-    "Sarıyer Escort", "Sarıyer Eskort", "Tarabya Escort", "Zekeriyaköy Escort", "İstinye Escort",
-    // 🚘 Premium & VIP Transfer Layer (Elit Odaklı)
-    "vip escort transfer", "vip eskort transfer", "lüks transfer escort", "istanbul vip transfer", "özel şoförlü escort", "premium eşlik",
-    "şişli vip transfer", "beşiktaş lüks escort", "avcılar vip escort transfer", "beylikdüzü elit lojistik",
-    "kaporasız vip transfer", "elit eşlik", "lüks lojistik", "rus escort", "rus eskort",
-    "vip escortlar", "vip eskortlar", "elit escortlar", "elit eskortlar", "premium partnerler", "escortlar", "eskortlar", "vip bayanlar", "seçkin partnerler"
+    "escort", "eskort", "VIP Escort", "VIP Eskort", "Elit Escort", "Elit Eskort", "Kaporasız Escort",
+    "Lüks Partner", "Sınırsız Hizmet", "Anal Yapan Escort", "Öpüşen Escort", "Masaj Yapan Escort",
+    "Yabancı Escort", "Rus Escort", "Rus Eskort", "Üniversiteli Escort", "Olgun Escort", "Bireysel Escort",
+    "Otele Gelen Escort", "Sarışın Escort", "Esmer Escort", "Minyon Escort", "Fetiş Escort", "Dominant Escort",
+    "BDSM Partner", "Türbanlı Escort", "Muhafazakar Escort", "Gizli Görüşme", "seçkin partnerler", "elit escortlar"
   ];
-
-  // --- 2. ENGINE LOGIC ---
-
-  /**
-   * Spintax metni çözer: {A|B|C} formatını rastgele seçer
-   */
-  private static spin(text: string): string {
-    return text.replace(/\{([^{}]*)\}/g, (match, contents) => {
-      const parts = contents.split('|');
-      return parts[Math.floor(Math.random() * parts.length)];
-    });
-  }
-
-  private static getRandom<T>(arr: T[]): T {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
 
   private static readonly AGGRESSIVE_SUFFIXES = [
     "Kusursuzluğun İmzası - Gerçek Zirve",
@@ -85,21 +103,67 @@ export class SpintaxEngine {
     "Gençliğin o Yırtıcı Ateşi - Üniversiteli",
     "Deneyimin Keskin Kılıcı - Olgun Elit",
     "Podyumdan Yatağınıza - Lüks Deneyim",
-    "Nefessiz Bırakan Detaylar - Dar & Oral Uzmanı",
+    "Nefessiz Bırakan Detaylar - VIP Hizmet",
     "Soğuk İklimin Sıcak Teması - Slav Partner",
     "Maskesiz. Saf. Gerçek."
   ];
 
-  /**
-   * Verilen lokasyon için devasa (2000-3500 kelime) bir SEO makalesi üretir.
-   */
-  public static generateMonsterContent(location: string, titleCategory: string = "VIP Escort"): string {
-    const locName = location.charAt(0).toUpperCase() + location.slice(1);
-    const suffix = this.getRandom(this.AGGRESSIVE_SUFFIXES);
+  // Devasa ve özgün spintax şablonları listesi (20 Benzersiz Şablon)
+  private static readonly PARAGRAPH_TEMPLATES = [
+    "Kaos. Günümüz metropolünün o {sağır edici|boğucu} kaosu. {location} bölgesinin gri duvarları arasında sıkışmış {seçkin beyler|VIP misafirler}, aslında etten ve kemikten ziyade bir statü sembolü, bir nefes alanı arıyor. {keyword} ihtiyacınızda, ajansımız sıradanlığın o zehirli döngüsünü {kırıp atıyor|bütünüyle yok ediyor}. {landmark} çevresindeki konaklamalarınızda asla bir tesadüfe yer yok.",
+    "Bir düşünün. Sadece saniyeler süren {büyüleyici|anlamlı} bir bakışma. {location} lokasyonunun en gözde ve izole mekanlarına giriş yaparken, kolunuzdaki o zarafet abidesi her şeyi anlatır. Sözlere gerek kalmaz. Sadece {keyword} arayanlar için değil, zekanın ve estetiğin o nadir çarpışmasını isteyenler için. {landmark} bölgesine özel premium sunumumuzla, emsalsiz bir deneyim vaat ediyoruz.",
+    "Mahremiyet. Bu bizim en keskin kılıcımız. {location} bölgesinde fısıltıyla konuşulan isimlerin güvendiği o görünmez kalkan. {keyword} standartlarında bir gecenin anatomisini çizerken, amatörlüğe asla tahammülümüz yok. {landmark} yakınlarındaki elit rezidanslarda ve otellerde güvenlik standartlarımız sizi her nefeste korur.",
+    "Google'ın dipsiz çöplüğü. {location} VIP partner araması yaptığınızda karşınıza çıkan o bayağı ve ucuz vizyonları tamamen unutun. Sisteme dahil ettiğimiz her bir kraliçe, entelektüel bir elekten geçer. {keyword} normlarını paramparça eden bir aurayla odaya girer ve {landmark} dolaylarında unutulmaz anlar yaşatır.",
+    "Asfaltın fısıltısı. Havalimanı ve özel marinalardan başlayan o izole yolculuğunuzda, lüks araçlarımız devrededir. {location} bölgesinin en gizli kapıları size açılırken, otele intikaliniz gölgelerin arasından yapılır. Yanınızda ise {keyword} standartlarının dahi ötesinde, size tapan ve {landmark} ruhuna uyum sağlayan bir eşlikçi.",
+    "Kalabalık. Etrafınızdaki o gürültülü yığın. {location} trafiğinden tamamen soyutlanmış, deri koltukların kokusuna karışan bir ihtiras. {keyword} arayan konuklarımız için biz sadece sıradan bir platform değiliz. {landmark} civarında devasa, sessiz ve kusursuz çalışan bir lojistik dehasıyız.",
+    "Bütün o yorucu iş toplantılarından sonra kendinize bir ödül verin. {location} gecelerinde tüm stresi arkanızda bırakıp, ruhunuzu dinlendirecek {bir escort|bir elit model} ile buluşmak hakkınız. {keyword} ayrıcalığıyla gecenin karanlığında kaybolun. {landmark} semtinin en seçkin suitlerinde sizi bekleyen bu lüks, hayallerinizin ötesinde.",
+    "Sınırları zorlamayı sever misiniz? {location} bölgesinde fantezilerini özgürce yaşamak isteyen beyler için hazırladığımız özel portföyümüz, tabuları yıkmaya geliyor. {keyword} konseptinde, en gizli arzularınızı gerçeğe dönüştürüyoruz. {landmark} yakınlarındaki buluşma noktalarımızda tamamen size adanmış bir hizmet.",
+    "Zarafet ve zekanın birleşimi. Ajansımızın en büyük farkı, mankenlerimizin sadece fiziksel güzellikleriyle değil, sohbet kaliteleriyle de büyülemesidir. {location} genelinde {keyword} arayan entelektüel beylere hitap ediyoruz. {landmark} çevresindeki özel akşam yemeklerinize eşlik edecek mükemmel partneri bulun.",
+    "Kendi kurallarınızı kendiniz koyun. {location} VIP buluşmalarında sahte vaatlerden arınmış, tamamen gerçekçi ve dürüst bir yaklaşımla yanınızdayız. {keyword} hizmetinde ön ödemesiz rezervasyon kolaylığıyla çalışıyoruz. {landmark} dolaylarındaki lüks otellerde sadece bir tıkla yanınızdayız.",
+    "Gözlerinizi kapatın ve hayal edin. {location} manzarasında, şampanyanın köpükleri arasında size eşlik eden kusursuz bir ten. {keyword} standardı, hak ettiğiniz lüks yaşam tarzının bir parçasıdır. {landmark} bölgesindeki en lüks penthouse dairenizde bu rüyayı gerçeğe dönüştürün.",
+    "Zaman en değerli hazinedir. Onu boşa harcamayın. {location} escort aramalarınızda sizi saatlerce bekleten amatörlerden uzak durun. {keyword} kadromuz tam zamanında, belirtilen adreste yerini alır. {landmark} lokasyonunda hızlı ve dakik servisimizle fark yaratıyoruz.",
+    "Estetik bir tutku. Her detayın incelikle düşünüldüğü, partnerinizin saç tellerinden tırnak ucuna kadar özenli olduğu bir gece. {location} bölgesinde {keyword} farkını bizimle yaşayın. {landmark} yakınlarında unutamayacağınız bir şölen için yerinizi şimdiden ayırtın.",
+    "Gizlilik bizim için bir sözleşmedir. {location} genelinde tanınmış iş insanlarının, sanatçıların ve elit bürokratların bizi tercih etmesinin tek sebebi %100 sızdırmazlık politikamızdır. {keyword} dünyasında isminiz ve verileriniz güvendedir. {landmark} ve çevresinde tam koruma.",
+    "Yüksek standartlar tesadüf değildir. {location} bölgesinde en kaliteli eşlikçi hizmetini sunabilmek adına mankenlerimizi özenle seçiyoruz. {keyword} deneyiminde hijyen, nezaket ve tutku önceliğimizdir. {landmark} bölgesinde konforun keyfini sürün.",
+    "Sıra dışı bir macera. Rutin hayatınızdan sıkıldıysanız ve adrenalin dolu anlar arıyorsanız, {location} eskort kadromuz size yeni kapılar açacak. {keyword} ile sınırları esnetin ve {landmark} sokaklarında gecenin ritmine kendinizi bırakın.",
+    "Doğallık en büyük cazibedir. Fotoğraflardakinin birebir aynısı olan, samimi ve güler yüzlü partnerlerimizle hayal kırıklığına uğramayacaksınız. {location} bölgesindeki {keyword} hizmetimizde sahteciliğe geçit vermiyoruz. {landmark} bölgesinde dürüst hizmet.",
+    "Gecenin sessiz çığlığı. {location} bölgesinin en özel köşelerinde, arzularınızın sesini dinleyin. {keyword} ile tabuları yıkmaya hazır model partnerler, size hayatınızın en heyecanlı deneyimini yaşatacak. {landmark} yakınlarında heyecan dorukta.",
+    "Sadece fiziksel bir buluşma değil, zihinsel bir arınma. {location} VIP mankenlerimiz, sizinle geçirdikleri her dakikada kendinizi özel hissettirecek. {keyword} kalitesiyle ruhsal bir doyum sağlayın. {landmark} çevresinde lüks ve huzur bir arada.",
+    "Son sözü siz söyleyin. {location} elit escort dünyasında kendi hikayenizi yazmak için en doğru yerdesiniz. {keyword} konseptinde tüm fantezi ve istekleriniz saygıyla karşılanır. {landmark} semtinin en seçkin otellerinde unutulmaz anlar."
+  ];
 
+  // Helper function to resolve nested spintax
+  private static resolveSpintax(text: string, rng: SeededRandom): string {
+    let processed = text;
+    while (processed.includes('{') && processed.includes('}')) {
+      processed = processed.replace(/\{([^{}]+)\}/g, (match, choices) => {
+        const parts = choices.split('|');
+        return rng.choice(parts);
+      });
+    }
+    return processed;
+  }
+
+  /**
+   * Generates a fully deterministic, unique and highly optimized long-form SEO article.
+   */
+  public static generateMonsterContent(location: string, host: string, titleCategory: string = "VIP Escort"): string {
+    const locName = location.charAt(0).toUpperCase() + location.slice(1);
+    
+    // Seed generator with Host + Location to ensure stable and fully unique content per page
+    const seedString = `${host}-${location}`.toLowerCase();
+    const rng = new SeededRandom(seedString);
+
+    const suffix = rng.choice(this.AGGRESSIVE_SUFFIXES);
     const today = new Date().toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric' });
 
+    // Resolve local landmarks for this specific location
+    const cleanLocKey = location.toLowerCase().replace(/ı/g, 'i').replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ö/g, 'o').replace(/ç/g, 'c');
+    const landmarks = this.LOCAL_LANDMARKS[cleanLocKey] || ["Lüks Rezidanslar", "Premium Oteller", "Vip Gece Kulüpleri", "Elit Mekanlar"];
+
     const htmlParts: string[] = [];
+    
+    // 1. Header Structure
     htmlParts.push(`
       <header class="mb-10">
         <h2 class="text-3xl md:text-5xl font-black mb-6 text-[#ff8600] uppercase italic tracking-tighter leading-tight">${locName} ${suffix}</h2>
@@ -122,39 +186,53 @@ export class SpintaxEngine {
            </p>
         </div>
 
-        <p class="lead font-bold text-xl mb-8 text-zinc-100">${this.getRandom(this.INTRO_SPINS).replace(/\{location\}/g, locName)}</p>
+        <p class="lead font-bold text-xl mb-8 text-zinc-100">${this.resolveSpintax(rng.choice(this.INTRO_SPINS).replace(/\{location\}/g, locName), rng)}</p>
       </header>
     `);
 
-    // 1. Ana Paragraf Döngüsü (Yaklaşık 10-15 uzun paragraf üretelim)
-    for (let i = 0; i < 15; i++) {
-      let para = this.getRandom(this.PARAGRAPH_TEMPLATES)
+    // 2. Select 5 unique paragraph templates to avoid duplicate sentences on a single page
+    const shuffledTemplates = rng.shuffle(this.PARAGRAPH_TEMPLATES);
+    const selectedTemplates = shuffledTemplates.slice(0, 5);
+
+    // 3. Process each selected paragraph
+    selectedTemplates.forEach((template, index) => {
+      const keyword = rng.choice(this.KEYWORDS);
+      const landmark = rng.choice(landmarks);
+
+      // Replace variables first so curly brackets are gone
+      let paraText = template
         .replace(/\{location\}/g, locName)
-        .replace(/\{keyword\}/g, this.getRandom(this.KEYWORDS));
+        .replace(/\{keyword\}/g, keyword)
+        .replace(/\{landmark\}/g, landmark);
+      
+      // Now resolve nested spintax
+      paraText = this.resolveSpintax(paraText, rng);
 
-      htmlParts.push(`<p class="mb-6 leading-relaxed text-zinc-400">${para}</p>`);
+      htmlParts.push(`<p class="mb-6 leading-relaxed text-zinc-400">${paraText}</p>`);
 
-      // Araya LSI Başlıklar ve İnsan Dokunuşları (Human Breaks) Serpiştir
-      if (i % 3 === 0) {
+      // Add a human touch break with key features
+      if (index === 1 || index === 3) {
+        const featuresList = rng.shuffle(this.FEATURES).slice(0, 4);
         htmlParts.push(`
           <div class="my-10 border-t border-zinc-900/50 pt-8">
             <h3 class="text-2xl font-bold mb-4 text-white italic">Sahadan Gerçek Gözlemler: ${locName} Farkı</h3>
             <p class="text-sm text-zinc-500 mb-4">Bizim yıllara dayanan tecrübemize göre, bu bölgedeki konuklarımızın en çok dikkat ettiği detaylar şunlardır:</p>
             <ul class="list-disc pl-6 mb-6 space-y-3 text-zinc-400">
         `);
-        for (let j = 0; j < 4; j++) {
-          htmlParts.push(`<li><span class="text-[#ff8600] font-bold">Öncelik:</span> ${this.getRandom(this.FEATURES)}</li>`);
-        }
+        featuresList.forEach(feat => {
+          htmlParts.push(`<li><span class="text-[#ff8600] font-bold">Öncelik:</span> ${feat}</li>`);
+        });
         htmlParts.push(`</ul></div>`);
       }
-    }
+    });
 
-    // 2. SEO Agresif Katmanı (Gizlenmiş ama doğal yedirilmiş LSI yığını)
+    // 4. SEO Conversion Booster & Dofollow link schema
+    const linkAnchor = this.resolveSpintax("{istanbulescort.blog|istanbul escort blogu|İstanbul eskort portalı}", rng);
     htmlParts.push(`
       <div class="mt-16 p-8 bg-zinc-950/30 border border-zinc-900 rounded-3xl">
         <!-- SEO DID YOU MEAN BLOCK (Semantic LSI) -->
         <div class="text-xs text-zinc-500 mb-6 text-center border-b border-zinc-900/50 pb-4">
-           Sıkça Arananlar: ${locName} vip escort, ${locName} elit escort, güvenilir partnerler.
+           Sıkça Arananlar: ${locName} vip escort, ${locName} elit escort, güvenilir partnerler. Güvenli ağımız hakkında daha fazla bilgi edinmek için <a href="https://istanbulescort.blog" class="text-rose-600 underline font-bold" target="_blank">${linkAnchor}</a> adresini ziyaret edebilirsiniz.
         </div>
 
         <!-- PROMOTIONAL LAYER (Conversion Booster) -->
@@ -167,7 +245,7 @@ export class SpintaxEngine {
               <h4 class="text-2xl font-black text-white italic uppercase tracking-tighter mb-2">Geceyi Uzat: Elite Destek</h4>
               <p class="text-zinc-400 font-medium">Geciktirici & Afrodizyak Parfümlerde <span class="text-rose-600 font-black">%70 Özel İndirim</span> ile enerjinizi koruyun. Elit partnerlerimizin tercihi.</p>
            </div>
-           <a href="http://dorukcanay.digital/go" class="bg-rose-600 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all">
+           <a href="https://${host}/go" class="bg-rose-600 text-white px-8 py-4 rounded-2xl font-black uppercase tracking-widest text-sm hover:bg-white hover:text-black transition-all">
               İNDİRİMİ YAKALA →
            </a>
         </div>
@@ -178,14 +256,15 @@ export class SpintaxEngine {
         <p class="text-sm text-zinc-600 leading-relaxed text-justify opacity-70">
     `);
 
-    // Kelime yığınını mantıklı cümleler içinde sonsuz bir döngüyle uzatalım.
-    // Human Signature: Yüksek Burstiness, anlık geçişler
+    // 5. De-duplicated semantic suffix matrix
     const humanTransitions = ["Dürüst olmak gerekirse... Evet. ", "Ve şunu anladık ki: ", "Olay tam da bu. ", "Bize inanın; "];
-
-    for (let k = 0; k < 5; k++) {
-      const lsi = this.getRandom(this.KEYWORDS);
-      const trans = this.getRandom(humanTransitions);
-      const sentence = `${trans} ${locName} bölgesindeki müşterilerimizin en çok tercih ettiği ${lsi} hizmetleri, gizlilik politikamız çerçevesinde %100 memnuniyet garantisiyle sunulmaktadır. Özel zaman dilimlerinde ${locName} vip konaklama alanlarında lüksün doruklarına ulaşabilirsiniz. `;
+    const spunTransitions = rng.shuffle(humanTransitions);
+    
+    for (let k = 0; k < 4; k++) {
+      const lsi = rng.choice(this.KEYWORDS);
+      const trans = spunTransitions[k % spunTransitions.length];
+      const landmark = rng.choice(landmarks);
+      const sentence = `${trans} ${locName} bölgesindeki müşterilerimizin en çok tercih ettiği ${lsi} hizmetleri, gizlilik politikamız çerçevesinde %100 memnuniyet garantisiyle sunulmaktadır. ${landmark} ve civarında özel zaman dilimlerinizde konaklama alanlarında lüksün doruklarına ulaşabilirsiniz. `;
       htmlParts.push(sentence);
     }
 
@@ -194,6 +273,6 @@ export class SpintaxEngine {
       </div>
     `);
 
-    return this.spin(htmlParts.join(''));
+    return htmlParts.join('');
   }
 }

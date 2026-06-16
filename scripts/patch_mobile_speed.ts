@@ -4,9 +4,10 @@ import path from 'path';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
+  host: '187.77.111.203',
+  port: 22,
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: 'Z4-nN8JfiUIh5,;g'
 };
 
 async function patchMobileSpeed() {
@@ -18,6 +19,7 @@ async function patchMobileSpeed() {
     });
 
     const files = [
+      'components/UI/TrustConsent.tsx',
       'components/SEO/DorukVitrin.tsx',
       'app/page.tsx',
       'app/actions/vitrin.ts',

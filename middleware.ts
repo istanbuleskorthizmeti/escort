@@ -47,7 +47,7 @@ export function middleware(request: NextRequest) {
   }
 
   // 🛡️ BLOCK COMPETITOR SEO TOOLS & SPY SPIDERS (PBN Obfuscation)
-  const spyBots = /ahrefs|semrush|mj12bot|rogerbot|dotbot|screaming|serpstat|backlink|linkdex|webmeup|megaindex|seokicks|bixocrawler|sistrix|ryte/i;
+  const spyBots = /ahrefs|semrush|mj12bot|rogerbot|dotbot|screaming|serpstat|backlink|linkdex|webmeup|megaindex|seokicks|bixocrawler|sistrix|ryte|petalbot|barkrowler|blexbot|ia_archiver|python|curl|wget|go-http-client|axios|node-fetch|java/i;
   if (spyBots.test(ua)) {
     return new NextResponse('Not Found', { status: 404 });
   }

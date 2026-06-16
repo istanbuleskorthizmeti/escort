@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { sanitizeDisplayName } from "@/lib/utils";
+import { sanitizeDisplayName, turkishToUpper } from "@/lib/utils";
 import { cities, getCitiesForHost } from "@/lib/locations";
 import { ThemeEngine } from "@/lib/theme-engine";
 import { siteConfig } from "@/config/site";
@@ -123,8 +123,8 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
     let dbContent = await getPageContent(fullSlug, siteId);
     if (dbContent) {
       neighObj = { name: sanitizeDisplayName(dbContent.title || neighborhood), slug: neighborhood } as any;
-      cityObj = cityObj || { name: city.toUpperCase() };
-      distObj = distObj || { name: district.toUpperCase() };
+      cityObj = cityObj || { name: turkishToUpper(city) };
+      distObj = distObj || { name: turkishToUpper(district) };
     }
   }
 
@@ -166,7 +166,7 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
           <div className="inline-flex items-center gap-4 bg-zinc-950/40 backdrop-blur-2xl border border-(--primary-color)/20 px-8 py-3 rounded-full mb-16 animate-fade-in shadow-glow-(--primary-color) mt-12">
             <span className="w-2.5 h-2.5 bg-(--primary-color) rounded-full animate-glow-pulse" />
             <span className="text-[11px] font-black uppercase tracking-[0.5em] text-zinc-400">
-               {nName.toUpperCase()} {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'LOCAL AUTHORITY'}
+               {turkishToUpper(nName)} {host.includes('dorukcanay.digital') ? 'VIP COMPANION' : 'LOCAL AUTHORITY'}
             </span>
           </div>
 
@@ -205,7 +205,7 @@ export default async function NeighborhoodHubPage({ params }: { params: Promise<
 
         {/* 🏆 LOCAL SHOWCASE */}
         <div className="w-full relative z-0 mb-12">
-            <DorukVitrin city={cityName} host={host} />
+            <DorukVitrin city={cityName} district={dName} neighborhood={nName} host={host} />
         </div>
 
         {/* 🏆 EVENT HUB */}

@@ -12,6 +12,7 @@ const config = {
 };
 
 const FILES_TO_PATCH = [
+  'middleware.ts',
   'app/profile/[slug]/page.tsx',
   'components/SEO/SEOContentEngine.tsx',
   'app/amp/route.ts',

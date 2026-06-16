@@ -28,6 +28,7 @@ import { VIPBridge } from "../components/UI/VIPBridge";
 import { getDomainConfig } from "../config/domains";
 import { generateLocationMetadata } from "../lib/seo-metadata";
 import { CloakerFrontend } from "../components/UI/CloakerFrontend";
+import { toTitleCaseTR } from "../lib/utils";
 import { getCanonicalHost } from "../lib/site-context";
 
 export const dynamic = "force-dynamic";
@@ -42,9 +43,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return generateLocationMetadata({
     city: city.toLowerCase(),
-    cityName: city.charAt(0).toUpperCase() + city.slice(1),
+    cityName: toTitleCaseTR(city),
     district: district?.toLowerCase(),
-    districtName: district ? (district.charAt(0).toUpperCase() + district.slice(1)) : undefined,
+    districtName: district ? toTitleCaseTR(district) : undefined,
     domain: host,
     isHome: true
   });
@@ -56,7 +57,7 @@ export default async function HomePage() {
   const domainConfig = getDomainConfig(host);
   
   const district = domainConfig?.targetDistrict 
-    ? (domainConfig.targetDistrict.charAt(0).toUpperCase() + domainConfig.targetDistrict.slice(1)) 
+    ? toTitleCaseTR(domainConfig.targetDistrict) 
     : "İSTANBUL";
   
   const isCloaker = domainConfig?.role === 'CLOAKER';

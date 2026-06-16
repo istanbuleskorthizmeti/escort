@@ -425,7 +425,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
           </div>
           <div className="w-full rounded-[3rem] overflow-hidden border border-zinc-900 shadow-2xl relative">
             {(() => {
-              const coords = getGeoCoordinates(currentLoc);
+              const coords = getGeoCoordinates(currentLoc, districtName || cityName);
               return (
                 <DRKCNAYGeoMap
                   city={cityName}

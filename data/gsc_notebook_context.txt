@@ -1,649 +1,142 @@
 ==================================================
 HYDRA SEO FLEET PERFORMANCE REPORT FOR NOTEBOOKLM
-Date Range: 2026-05-27 to 2026-06-10
+Date Range: 2026-06-02 to 2026-06-16
 ==================================================
 
 Domain Property: dorukcanay.digital
 --------------------------------------------------
-- Query: "arenapark escort" | Clicks: 2 | Impressions: 12 | CTR: 16.67% | Position: #7.83
-- Query: "arena park escort" | Clicks: 1 | Impressions: 7 | CTR: 14.29% | Position: #5.86
-- Query: "arena park eskort" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #5.75
-- Query: "arenapark eskort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #6.50
+- Query: "arenapark escort" | Clicks: 3 | Impressions: 17 | CTR: 17.65% | Position: #7.29
+- Query: "arenapark eskort" | Clicks: 2 | Impressions: 13 | CTR: 15.38% | Position: #10.38
+- Query: "idealtepe escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #34.00
+- Query: "istanbul vip escort" | Clicks: 1 | Impressions: 11 | CTR: 9.09% | Position: #29.00
+- Query: "acarkent escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #11.00
+- Query: "arena park escort" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #10.75
+- Query: "arena park eskort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #4.00
+- Query: "beylerbeyi escort" | Clicks: 0 | Impressions: 8 | CTR: 0.00% | Position: #17.38
+- Query: "beşiktaş vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #20.00
+- Query: "bieskort.com istanbul'un en büyük manken eskort servisidir" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #30.50
+- Query: "cadde bostan eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #36.00
+- Query: "caddebostan escort" | Clicks: 0 | Impressions: 11 | CTR: 0.00% | Position: #12.64
+- Query: "callgirlsturkey" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
+- Query: "dolapdere escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #18.00
+- Query: "elit escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #21.00
+- Query: "elit escort istanbul" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #26.00
+- Query: "ercort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #71.00
+- Query: "escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #71.00
+- Query: "escort girl vip" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #27.00
+- Query: "escort göztepe" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #14.00
+- Query: "escort ilan sitesi" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #27.00
+- Query: "escort istanbul" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
+- Query: "escort istanbul vip" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
+- Query: "escort klub" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
+- Query: "escort partner istanbul" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
+- Query: "escort sitesi" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
 - Query: "escort vip" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
-- Query: "gayrettepe escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #24.00
-- Query: "gültepe escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #11.00
-- Query: "harbiye escort" | Clicks: 0 | Impressions: 8 | CTR: 0.00% | Position: #17.38
+- Query: "escortvip" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
+- Query: "eskort ajansı" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #39.00
+- Query: "eskort club" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #29.00
+- Query: "etiler escort" | Clicks: 0 | Impressions: 1866 | CTR: 0.00% | Position: #40.77
+- Query: "etiler escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #21.00
+- Query: "fulya escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
+- Query: "gayrettepe escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #21.67
+- Query: "gültepe escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #11.00
+- Query: "habibler escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #15.00
+- Query: "halkalı escort bayan peri ile sihirli dakikalar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #24.00
+- Query: "harbiye escort" | Clicks: 0 | Impressions: 8 | CTR: 0.00% | Position: #20.13
+- Query: "haseki escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
+- Query: "istanbul elit escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #26.00
+- Query: "istanbul escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #24.50
+- Query: "istanbul escort agency" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #37.00
+- Query: "istanbul vip eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #48.00
+- Query: "kadriye escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #41.00
+- Query: "kadıköy sahrayıcedit escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
+- Query: "kadıköy vip escort" | Clicks: 0 | Impressions: 25 | CTR: 0.00% | Position: #34.00
+- Query: "kartal escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #10.50
 - Query: "kemerdere escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #9.00
-- Query: "ofis eskort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #23.50
-- Query: "soğanlık escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #17.00
-- Query: "vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #26.00
-- Query: "vişnelik escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
-- Query: "şişhane escort" | Clicks: 0 | Impressions: 5 | CTR: 0.00% | Position: #12.60
-
-Domain Property: istanbulescort.blog
---------------------------------------------------
-- Query: "arena park escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "arenapark escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "ataşehir rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #31.00
-- Query: "istanbul vip rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #72.00
-- Query: "kadıköy rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
-
-Domain Property: onlyfansizle.shop
---------------------------------------------------
-- Query: "ataşehir escort bayanlar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #25.00
-- Query: "ataşehir escort" | Clicks: 0 | Impressions: 232 | CTR: 0.00% | Position: #46.62
-
-Domain Property: vipescorthizmeti.com
---------------------------------------------------
-- Query: "batışehir escort" | Clicks: 3 | Impressions: 6 | CTR: 50.00% | Position: #4.67
-- Query: "batışehir eskort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #5.00
-- Query: "ataşehir vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
-- Query: "elit escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #46.00
-- Query: "elit vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #39.00
-- Query: "istanbul vip escort" | Clicks: 0 | Impressions: 6 | CTR: 0.00% | Position: #57.83
-- Query: "istanbul vip escort bayan" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #87.50
-- Query: "vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #40.00
-- Query: "vip istanbul escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #49.00
-
-Domain Property: leventdrkcnay.shop
---------------------------------------------------
-- Query: "bagcılar escort" | Clicks: 2 | Impressions: 3 | CTR: 66.67% | Position: #49.67
-- Query: "bağcılar escort" | Clicks: 2 | Impressions: 750 | CTR: 0.27% | Position: #37.43
-- Query: "bağcılar escort fotoğraflar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #42.00
-- Query: "bağcılar eskort" | Clicks: 1 | Impressions: 7 | CTR: 14.29% | Position: #44.71
-- Query: "gop escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #38.00
-- Query: "4 levent escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
-- Query: "bagcilar escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #29.00
-- Query: "bağcılar escort bayan" | Clicks: 0 | Impressions: 18 | CTR: 0.00% | Position: #34.11
-- Query: "bağcılar escırt" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #39.00
-- Query: "bağcılarescort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #35.00
-- Query: "beylikdüzü elit escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #24.00
-- Query: "beylikdüzü orospu" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #26.00
-- Query: "beylikdüzü vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "beşiktaş escort ukraynalı" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #24.00
-- Query: "beşiktaş rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #20.00
-- Query: "escort bağcılar" | Clicks: 0 | Impressions: 26 | CTR: 0.00% | Position: #47.00
-- Query: "gop eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #50.00
-- Query: "maltepe escort" | Clicks: 0 | Impressions: 55 | CTR: 0.00% | Position: #27.58
-- Query: "maltepe vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #24.00
-- Query: "maltepe yabancı escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #20.00
-- Query: "pendik vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #40.00
-- Query: "sultanbeyli escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #36.00
-- Query: "vip escort beylikdüzü" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #26.00
-
-Domain Property: shopistanbulescortkaporasiz.site
---------------------------------------------------
-- Query: "bağcılar escort" | Clicks: 6 | Impressions: 4589 | CTR: 0.13% | Position: #28.98
-- Query: "bağcılar eskort" | Clicks: 5 | Impressions: 12 | CTR: 41.67% | Position: #41.75
-- Query: "beyoğlu escort" | Clicks: 2 | Impressions: 5134 | CTR: 0.04% | Position: #38.09
-- Query: "yesilpinar escort" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #19.00
-- Query: "bagcilar escort" | Clicks: 1 | Impressions: 550 | CTR: 0.18% | Position: #37.71
-- Query: "beyoğlu escort bayanlar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #37.00
-- Query: "eyüp escort" | Clicks: 1 | Impressions: 144 | CTR: 0.69% | Position: #31.35
-- Query: "eyüp eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #31.00
-- Query: "eyüp sultan eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #23.00
-- Query: "eyüpsultan escort" | Clicks: 1 | Impressions: 71 | CTR: 1.41% | Position: #19.96
-- Query: "eyüpsultan eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #21.00
-- Query: "istanbul bağcılar escort" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #36.25
-- Query: "küçükçekmece sefaköy eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #31.00
-- Query: "pendik vip escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #39.00
-- Query: "ayupsultan escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #9.00
-- Query: "bagcilar escort bayan" | Clicks: 0 | Impressions: 40 | CTR: 0.00% | Position: #37.92
-- Query: "bagcilar ucuz escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
-- Query: "bagcılar escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #22.67
-- Query: "bağcılar escort bayan" | Clicks: 0 | Impressions: 43 | CTR: 0.00% | Position: #31.23
-- Query: "bağcılar escort fotoğraflar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #34.00
-- Query: "bağcılar escort vip" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #32.00
-- Query: "bağcılar escort vip servıce" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #10.00
-- Query: "bağcılareskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #41.00
-- Query: "behçelievler vip escort" | Clicks: 0 | Impressions: 89 | CTR: 0.00% | Position: #31.90
-- Query: "beyoglu escort" | Clicks: 0 | Impressions: 55 | CTR: 0.00% | Position: #33.91
-- Query: "beyoğlu eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #33.00
-- Query: "escort bagcılar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "escort bayan şile" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
-- Query: "escort bağcılar" | Clicks: 0 | Impressions: 19 | CTR: 0.00% | Position: #45.58
-- Query: "escort beyoglu" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #26.00
-- Query: "escort eyüp" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
-- Query: "escort eyüpsultan" | Clicks: 0 | Impressions: 31 | CTR: 0.00% | Position: #20.16
-- Query: "escort sefakoy" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #35.00
-- Query: "escort sefaköy" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #33.00
-- Query: "eskort bayan bağcılar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #37.00
-- Query: "eskort sefaköy" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #37.00
-- Query: "eyupsultan escort" | Clicks: 0 | Impressions: 260 | CTR: 0.00% | Position: #18.97
-- Query: "eyupsultan escort bayan" | Clicks: 0 | Impressions: 35 | CTR: 0.00% | Position: #13.89
-- Query: "eyüp sultan escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #23.00
-- Query: "eyüpsultan escort bayan" | Clicks: 0 | Impressions: 545 | CTR: 0.00% | Position: #17.19
-- Query: "güneşli corridor escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #56.00
-- Query: "istanbul eyüpsultan escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #18.00
-- Query: "istanbul sefaköy escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
-- Query: "pendik eskort vip" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "pendik rus escort" | Clicks: 0 | Impressions: 13 | CTR: 0.00% | Position: #24.62
-- Query: "sefakoy escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #32.00
-- Query: "sefakoy eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #34.00
-- Query: "sefaköy beşyol escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
-- Query: "vip escort pendik" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #46.00
-- Query: "yesilpinar eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #21.00
-
-Domain Property: kucukcekmecescort.shop
---------------------------------------------------
-- Query: "istanbul küçükçekmece eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #43.00
-- Query: "kucukcekmece escort" | Clicks: 0 | Impressions: 221 | CTR: 0.00% | Position: #31.48
-- Query: "kucukcekmece eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #53.00
-
-Domain Property: istanbulescorthizmeti.shop
---------------------------------------------------
-- Query: "beykoz eskort" | Clicks: 2 | Impressions: 3 | CTR: 66.67% | Position: #28.33
-- Query: "arnavutkoy escort" | Clicks: 1 | Impressions: 23 | CTR: 4.35% | Position: #19.04
-- Query: "escort istanbul" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #37.00
-- Query: "istanbul escort" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #52.50
-- Query: "istanbulescort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #29.00
-- Query: "bahcelievler escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
-- Query: "beykoz escort" | Clicks: 0 | Impressions: 1711 | CTR: 0.00% | Position: #26.24
-- Query: "beylikdüzü rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
-- Query: "buyukcekmece escort" | Clicks: 0 | Impressions: 14 | CTR: 0.00% | Position: #19.71
-- Query: "cekmekoy escort" | Clicks: 0 | Impressions: 57 | CTR: 0.00% | Position: #30.91
-- Query: "escort beykoz" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #23.00
-- Query: "escort bireysel" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #71.00
-- Query: "escort kağıthane" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "escort küçükçekmece" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
-- Query: "escort çekmeköy" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #26.00
-- Query: "escort üsküdar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #38.00
-- Query: "escortlar istanbul" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #36.50
-- Query: "ist eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #23.00
-- Query: "istabul rus escort" | Clicks: 0 | Impressions: 16 | CTR: 0.00% | Position: #33.44
-- Query: "istanbul bireysel eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #70.00
-- Query: "istanbul elit escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #49.50
-- Query: "istanbul rus escort" | Clicks: 0 | Impressions: 8 | CTR: 0.00% | Position: #44.88
-- Query: "kağıthane escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #44.00
-- Query: "kucukcekmece escort" | Clicks: 0 | Impressions: 42 | CTR: 0.00% | Position: #38.07
-- Query: "rus escort bayan istanbul" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #36.00
-- Query: "vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #34.00
-- Query: "çekmeköy escort" | Clicks: 0 | Impressions: 6 | CTR: 0.00% | Position: #67.83
-- Query: "üsküdar escort" | Clicks: 0 | Impressions: 60 | CTR: 0.00% | Position: #45.47
-- Query: "üsküdar escort bayan" | Clicks: 0 | Impressions: 7 | CTR: 0.00% | Position: #26.86
-- Query: "üsküdar vip escort" | Clicks: 0 | Impressions: 8 | CTR: 0.00% | Position: #18.13
-- Query: "şile escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #27.00
-- Query: "şile yabancı escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #42.00
-
-Domain Property: esenyurtescorthizmeti.shop
---------------------------------------------------
-- Query: "gop escort" | Clicks: 4 | Impressions: 38 | CTR: 10.53% | Position: #35.97
-- Query: "esenyurt vip escort" | Clicks: 3 | Impressions: 10 | CTR: 30.00% | Position: #22.60
-- Query: "silivri escort" | Clicks: 2 | Impressions: 260 | CTR: 0.77% | Position: #28.59
-- Query: "beykoz escort" | Clicks: 1 | Impressions: 575 | CTR: 0.17% | Position: #26.82
-- Query: "escort beykoz" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #27.00
-- Query: "escort gop" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #46.00
-- Query: "esenyurt vip eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #19.00
-- Query: "gop eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #43.00
-- Query: "silivri escort fotoğraflar" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #12.50
-- Query: "silivri escory" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #30.00
-- Query: "silivri eskort" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #30.00
-- Query: "beykoz eskort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #25.00
-- Query: "beykoz kilolu escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #9.00
-- Query: "beykoz liseli escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #12.00
-- Query: "beykoz olgun escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #10.50
-- Query: "beykoz rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #18.00
-- Query: "beykoz ukraynalı escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #16.00
-- Query: "beykoz öğrenci escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #23.50
-- Query: "escort bayan gaziosmanpaşa" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #32.00
-- Query: "esenyurt escoet" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #68.00
-- Query: "esenyurt escort" | Clicks: 0 | Impressions: 7261 | CTR: 0.00% | Position: #40.77
-- Query: "esenyurt escort ajans" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #17.00
-- Query: "esenyurt escort fiyatları" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
-- Query: "esenyurt escort ucuz" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
-- Query: "esenyurt ucuz escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #21.00
-- Query: "esenyurt yeni escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #20.00
-- Query: "eskirt esenyurt" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #67.00
-- Query: "gazi osman paşa escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
-- Query: "gaziosmanpasa escort bayan" | Clicks: 0 | Impressions: 25 | CTR: 0.00% | Position: #29.44
-- Query: "gaziosmanpaşa escort bayan" | Clicks: 0 | Impressions: 8 | CTR: 0.00% | Position: #37.13
-- Query: "gaziosmanpaşaescort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #29.00
-- Query: "gop escort bayan" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #23.00
-- Query: "olgun escort esenyurt" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
-- Query: "sikivri escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
-
-Domain Property: sanalsms.site
---------------------------------------------------
-- Query: "sanal sms" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #89.00
-
-Domain Property: dilanpolatifsa.shop
---------------------------------------------------
-- Query: "escort dilan" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #41.33
-
-Domain Property: istanbuldrkcnay.shop
---------------------------------------------------
-- Query: "rus escort bayan istanbul" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #33.00
-- Query: "üsküdar escort bayan" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #22.00
-- Query: "üsküdar vip escort" | Clicks: 0 | Impressions: 7 | CTR: 0.00% | Position: #14.43
-
-Domain Property: dizicehennemi.site
---------------------------------------------------
-- Query: "avcılar escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #48.00
-
-Domain Property: escortcoin.space
---------------------------------------------------
-- Query: "dumankaya ikon escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #32.00
-- Query: "escort manken istanbul" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #43.00
-- Query: "istanbul vip rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #90.00
-
-Domain Property: sefakoyescorthizmeti.shop
---------------------------------------------------
-- Query: "küçükçekmece escort" | Clicks: 13 | Impressions: 32961 | CTR: 0.04% | Position: #23.16
-- Query: "istanbul küçükçekmece escort" | Clicks: 2 | Impressions: 5 | CTR: 40.00% | Position: #31.20
-- Query: "küçükcekmece eskort" | Clicks: 2 | Impressions: 4 | CTR: 50.00% | Position: #32.00
-- Query: "sefakoy escort" | Clicks: 2 | Impressions: 13 | CTR: 15.38% | Position: #31.46
-- Query: "escort avcilar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #47.00
-- Query: "escort istanbul küçükçekmece" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #32.00
-- Query: "escort sefakoy" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #37.00
-- Query: "eskort besiktas" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #46.00
-- Query: "eskort küçükcekmece" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #25.00
-- Query: "eskort sefakoy" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #41.00
-- Query: "eskort sefaköy" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #39.00
-- Query: "kucukcekmece escort" | Clicks: 1 | Impressions: 708 | CTR: 0.14% | Position: #33.68
-- Query: "küçükçekmece escort fotoğraflar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #37.00
-- Query: "küçükçekmece eskort" | Clicks: 1 | Impressions: 8 | CTR: 12.50% | Position: #34.88
-- Query: "avcilar escort" | Clicks: 0 | Impressions: 39 | CTR: 0.00% | Position: #28.97
-- Query: "avcılar escort" | Clicks: 0 | Impressions: 71 | CTR: 0.00% | Position: #26.97
-- Query: "avcılar escort modelleri" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #26.00
-- Query: "avcılar fetis escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #32.00
-- Query: "avcılar sınırsız escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #20.00
-- Query: "beşiktaş escort ukraynalı" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
-- Query: "beşiktaş rus escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #31.33
-- Query: "beşiktaş vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #58.00
-- Query: "escort küçükçekmece" | Clicks: 0 | Impressions: 187 | CTR: 0.00% | Position: #32.87
-- Query: "escort sefaköy" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #36.50
-- Query: "eskort küçükçekmece" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "istanbul avrupa yakası beşiktaş esc fotoğraflar" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #8.50
-- Query: "istanbul küçükçekmece eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #29.00
-- Query: "istanbul sefaköy escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #25.50
-- Query: "kadıköy vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #46.00
-- Query: "kucukcekmece eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #33.00
-- Query: "kücükcekmece escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #13.00
-- Query: "küçükcekmece escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #15.00
-- Query: "küçükçekmece escort bayan" | Clicks: 0 | Impressions: 43 | CTR: 0.00% | Position: #34.86
-- Query: "küçükçekmece escort fiyatları" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #31.00
-- Query: "küçükçekmece sefaköy eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #33.00
-- Query: "sefakoy esc" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #27.00
-- Query: "sefakoy eskort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #31.00
-- Query: "sefaköy bayan eskort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #37.00
-- Query: "sefaköy escort" | Clicks: 0 | Impressions: 6 | CTR: 0.00% | Position: #32.83
-- Query: "sisli escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #64.67
-
-Domain Property: sites.google.com/dorukcanay.digital/sefakoyistanbul-drkcnay2026/ana-sayfa
---------------------------------------------------
-- Query: "sefaköy escort" | Clicks: 41 | Impressions: 326 | CTR: 12.58% | Position: #13.62
-- Query: "sefaköy eskort" | Clicks: 22 | Impressions: 129 | CTR: 17.05% | Position: #13.47
-- Query: "sefakoy escort" | Clicks: 5 | Impressions: 46 | CTR: 10.87% | Position: #10.28
-- Query: "sefaköy escort bayan" | Clicks: 5 | Impressions: 27 | CTR: 18.52% | Position: #16.48
-- Query: "sefakoy eskort" | Clicks: 4 | Impressions: 23 | CTR: 17.39% | Position: #8.78
-- Query: "escort sefaköy" | Clicks: 2 | Impressions: 15 | CTR: 13.33% | Position: #14.67
-- Query: "küçükçekmece sefaköy escort" | Clicks: 2 | Impressions: 4 | CTR: 50.00% | Position: #21.00
-- Query: "küçükçekmece sefaköy eskort" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #15.50
-- Query: "sefaköy e***** bayan" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #21.00
-- Query: "sefaköy escort fotoğraflar" | Clicks: 2 | Impressions: 6 | CTR: 33.33% | Position: #24.50
-- Query: "sefaköy eskort bayan" | Clicks: 2 | Impressions: 6 | CTR: 33.33% | Position: #18.33
-- Query: "beşyol escort" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #10.33
-- Query: "escort sefakoy" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #21.00
-- Query: "eskort sefaköy" | Clicks: 1 | Impressions: 13 | CTR: 7.69% | Position: #15.38
-- Query: "istanbul escort 2026" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #1.00
-- Query: "istanbul sefaköy escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #17.00
-- Query: "sefaköy beşyol escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #10.00
-- Query: "sefaköy e*****" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #173.00
-- Query: "sefaköy esc" | Clicks: 1 | Impressions: 16 | CTR: 6.25% | Position: #13.75
-- Query: "sefaköy escory" | Clicks: 1 | Impressions: 8 | CTR: 12.50% | Position: #17.00
-- Query: "sefaköy escırt" | Clicks: 1 | Impressions: 6 | CTR: 16.67% | Position: #15.17
-- Query: "beşyol eskort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #8.00
-- Query: "eskort sefakoy" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #16.50
-- Query: "inönü escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #20.00
-- Query: "sefa köy escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #18.00
-- Query: "sefa köy eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
-- Query: "sefakoy esc" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #11.00
-- Query: "sefaköy beşyol eskort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #10.00
-- Query: "sefaköy escoet" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #10.00
-- Query: "sefaköy escor" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #15.00
-- Query: "sefaköy escort yorumlar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #6.00
-- Query: "sefaköy eskot" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #17.00
-- Query: "sefaköyescort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #14.00
-- Query: "sefaköyeskort" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #11.50
-- Query: "sefsköy escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #9.33
-
-Domain Property: besiktasescort.fun
---------------------------------------------------
-- Query: "ümraniye escort" | Clicks: 30 | Impressions: 102306 | CTR: 0.03% | Position: #22.91
-- Query: "ümraniye eskort" | Clicks: 22 | Impressions: 90 | CTR: 24.44% | Position: #35.60
-- Query: "escort ümraniye" | Clicks: 8 | Impressions: 99 | CTR: 8.08% | Position: #35.05
-- Query: "üsküdar escort" | Clicks: 8 | Impressions: 47630 | CTR: 0.02% | Position: #21.27
-- Query: "şile escort" | Clicks: 6 | Impressions: 33039 | CTR: 0.02% | Position: #20.72
-- Query: "beşiktaş escort" | Clicks: 5 | Impressions: 5694 | CTR: 0.09% | Position: #38.03
-- Query: "kağıthane eskort" | Clicks: 5 | Impressions: 9 | CTR: 55.56% | Position: #35.00
-- Query: "çekmeköy escort" | Clicks: 5 | Impressions: 21954 | CTR: 0.02% | Position: #25.40
-- Query: "cekmekoy eskort" | Clicks: 4 | Impressions: 7 | CTR: 57.14% | Position: #27.00
-- Query: "kağıthane escort" | Clicks: 4 | Impressions: 2713 | CTR: 0.15% | Position: #32.69
-- Query: "üsküdar eskort" | Clicks: 4 | Impressions: 12 | CTR: 33.33% | Position: #34.33
-- Query: "kadıköy escort" | Clicks: 3 | Impressions: 19061 | CTR: 0.02% | Position: #24.90
-- Query: "umraniye escort" | Clicks: 3 | Impressions: 339 | CTR: 0.88% | Position: #28.35
-- Query: "umraniye eskort" | Clicks: 3 | Impressions: 14 | CTR: 21.43% | Position: #32.00
-- Query: "beşiktaş eskort" | Clicks: 2 | Impressions: 8 | CTR: 25.00% | Position: #36.50
-- Query: "cekmekoy escort" | Clicks: 2 | Impressions: 334 | CTR: 0.60% | Position: #35.32
-- Query: "escort umraniye" | Clicks: 2 | Impressions: 6 | CTR: 33.33% | Position: #31.67
-- Query: "sarıyer eskort" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #21.00
-- Query: "sile escort" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #34.50
-- Query: "çekmeköy eskort" | Clicks: 2 | Impressions: 30 | CTR: 6.67% | Position: #14.53
-- Query: "ümraniye escort sitesi" | Clicks: 2 | Impressions: 5 | CTR: 40.00% | Position: #6.20
-- Query: "ümraniye vip escort" | Clicks: 2 | Impressions: 3 | CTR: 66.67% | Position: #17.00
-- Query: "ümraniyeeskort" | Clicks: 2 | Impressions: 4 | CTR: 50.00% | Position: #37.75
-- Query: "bakırköy escort kendi yeri" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #7.00
-- Query: "bakırköy escort resimleri" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #24.00
-- Query: "bakırköy eskort kendi yeri" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #5.00
-- Query: "bakırköy vip escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #2.50
-- Query: "besiktas escort" | Clicks: 1 | Impressions: 272 | CTR: 0.37% | Position: #29.96
-- Query: "besiktas eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #33.00
-- Query: "beşiktaş escort bayan" | Clicks: 1 | Impressions: 19 | CTR: 5.26% | Position: #23.16
-- Query: "beşiktaş eskort bayan" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #34.00
-- Query: "beşiktaş vip escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #25.00
-- Query: "beşiltaş escort" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #41.50
-- Query: "cekmekoyescort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #11.00
-- Query: "escort bakirkoy" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #44.00
-- Query: "escort uskudar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #47.00
-- Query: "escort üsküdar" | Clicks: 1 | Impressions: 77 | CTR: 1.30% | Position: #43.32
-- Query: "escort şile" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #28.00
-- Query: "esenyurt vip escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #10.50
-- Query: "eskort cekmekoy" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #28.33
-- Query: "eskort sisli" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #53.00
-- Query: "eskort ümraniye" | Clicks: 1 | Impressions: 13 | CTR: 7.69% | Position: #35.69
-- Query: "eskort şile" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #22.00
-- Query: "istanbul escort kağıthane" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #36.00
-- Query: "istanbul vip esc" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #82.00
-- Query: "istanbul vip eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #55.00
-- Query: "istanbul çekmeköy escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #35.00
-- Query: "istanbul çekmeköy eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #38.00
-- Query: "kadiköy esc" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #50.00
-- Query: "kadıkoy eskort" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #30.33
-
-Domain Property: esenyurtescort.blog
---------------------------------------------------
-- Query: "esenyurt escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #28.00
-- Query: "esenyurt vip escort" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #51.75
-- Query: "esenyurt yeni escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #35.00
-
-Domain Property: konumbulucu.xyz
---------------------------------------------------
-- Query: "kadiköy escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #42.00
-- Query: "escort bayan küçükçekmece" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #33.00
-- Query: "escort küçükçekmece" | Clicks: 0 | Impressions: 5 | CTR: 0.00% | Position: #29.80
-- Query: "kadıköy escort" | Clicks: 0 | Impressions: 51610 | CTR: 0.00% | Position: #25.17
-- Query: "kadıköy esxort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #46.00
-- Query: "küçükçekmece escort" | Clicks: 0 | Impressions: 106 | CTR: 0.00% | Position: #26.31
-- Query: "küçükçekmece escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #36.00
-
-Domain Property: kadikoyescort.shop
---------------------------------------------------
-- Query: "kadıköy escort vip" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #60.00
-- Query: "eskort elit" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #170.00
-- Query: "kadikoy escort" | Clicks: 0 | Impressions: 74 | CTR: 0.00% | Position: #81.31
-- Query: "kadikoy eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #33.00
-- Query: "kadiköy escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #55.00
-- Query: "kadıköy elit escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #40.00
-- Query: "kadıköy escort" | Clicks: 0 | Impressions: 1818 | CTR: 0.00% | Position: #48.46
-- Query: "kadıköy escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #35.00
-- Query: "kadıköy eğitim escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #81.00
-- Query: "kadıköy vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #59.00
-- Query: "kadıköy öğrenci escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #32.00
-- Query: "kadıköyescort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #47.00
-
-Domain Property: sariyerdrkcnay.shop
---------------------------------------------------
-- Query: "escort fatih" | Clicks: 4 | Impressions: 189 | CTR: 2.12% | Position: #45.41
-- Query: "sarıyer eskort" | Clicks: 4 | Impressions: 8 | CTR: 50.00% | Position: #36.00
-- Query: "sarıyer escort" | Clicks: 3 | Impressions: 2881 | CTR: 0.10% | Position: #32.57
-- Query: "fatih escort" | Clicks: 2 | Impressions: 1690 | CTR: 0.12% | Position: #33.98
-- Query: "sarıyer escort bayan fotoğraflar" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #18.50
-- Query: "fatih escort kendi yeri" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #42.00
-- Query: "fatih eskort" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #59.00
-- Query: "sariyer escort" | Clicks: 1 | Impressions: 106 | CTR: 0.94% | Position: #36.67
-- Query: "sarıyer escort bayan" | Clicks: 1 | Impressions: 80 | CTR: 1.25% | Position: #25.46
-- Query: "adalar escort" | Clicks: 0 | Impressions: 12 | CTR: 0.00% | Position: #19.17
-- Query: "adalar eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #17.00
-- Query: "adalar genç escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #14.00
-- Query: "adalar liseli escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #20.00
-- Query: "adalar suriyeli escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #12.00
-- Query: "adalar türbanlı escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #13.00
-- Query: "adalar ukraynalı escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #33.00
-- Query: "adalar yabancı escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
-- Query: "adalar öğrenci escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #13.00
-- Query: "adalar şişman escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #14.00
-- Query: "escort bayan adalar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #20.00
-- Query: "escort bayan fatih" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #49.00
-- Query: "escort bayan sarıyer" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #30.33
-- Query: "escort sarıyer" | Clicks: 0 | Impressions: 148 | CTR: 0.00% | Position: #34.58
-- Query: "eskort fatih" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #84.00
-- Query: "eskort sarıyer" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #14.50
-- Query: "fatih escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #53.00
-- Query: "istanbul eskort fatih" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #64.00
-- Query: "istanbul sarıyer escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #29.00
-- Query: "olgun escort fatih" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #38.00
-- Query: "sarıyer escırt" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #36.67
-- Query: "zekeriyaköy escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #22.33
-
-Domain Property: escortvip.net
---------------------------------------------------
-- Query: "escortvip" | Clicks: 15 | Impressions: 44 | CTR: 34.09% | Position: #2.02
-- Query: "etimesgut escort" | Clicks: 13 | Impressions: 3484 | CTR: 0.37% | Position: #25.68
-- Query: "gayrettepe escort" | Clicks: 13 | Impressions: 79 | CTR: 16.46% | Position: #6.42
-- Query: "balat eskort" | Clicks: 9 | Impressions: 22 | CTR: 40.91% | Position: #7.09
-- Query: "balat escort" | Clicks: 8 | Impressions: 55 | CTR: 14.55% | Position: #6.71
-- Query: "batışehir escort" | Clicks: 6 | Impressions: 11 | CTR: 54.55% | Position: #1.18
-- Query: "etimesgut eskort" | Clicks: 5 | Impressions: 9 | CTR: 55.56% | Position: #23.44
-- Query: "batışehir eskort" | Clicks: 4 | Impressions: 7 | CTR: 57.14% | Position: #1.00
-- Query: "kocamustafapaşa escort" | Clicks: 4 | Impressions: 11 | CTR: 36.36% | Position: #6.55
-- Query: "bursa demirtaş escort" | Clicks: 3 | Impressions: 15 | CTR: 20.00% | Position: #6.67
-- Query: "haliç escort" | Clicks: 3 | Impressions: 5 | CTR: 60.00% | Position: #2.80
-- Query: "behçelievler vip escort" | Clicks: 2 | Impressions: 60 | CTR: 3.33% | Position: #6.23
-- Query: "escort batışehir" | Clicks: 2 | Impressions: 3 | CTR: 66.67% | Position: #1.00
-- Query: "eyüpsultan escort" | Clicks: 2 | Impressions: 225 | CTR: 0.89% | Position: #15.67
-- Query: "gayrettepe eskort" | Clicks: 2 | Impressions: 12 | CTR: 16.67% | Position: #5.92
-- Query: "istanbul bayan partner" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #49.00
-- Query: "vip elit escort" | Clicks: 2 | Impressions: 10 | CTR: 20.00% | Position: #7.10
-- Query: "ankara etimesgut escort bayan" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #13.00
-- Query: "ankara gölbaşı escort" | Clicks: 1 | Impressions: 9 | CTR: 11.11% | Position: #9.33
-- Query: "bursa demirtaş eskort" | Clicks: 1 | Impressions: 7 | CTR: 14.29% | Position: #6.14
-- Query: "demirtaş escort" | Clicks: 1 | Impressions: 22 | CTR: 4.55% | Position: #8.41
-- Query: "diyarbakır vip escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #13.00
-- Query: "escort etimesgut" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #21.00
-- Query: "escort istanbul sınırsız" | Clicks: 1 | Impressions: 6 | CTR: 16.67% | Position: #2.83
-- Query: "escortrus" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #8.00
-- Query: "etimesgut e***** bayan" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #39.00
-- Query: "etimesgut escort bayan" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #31.00
-- Query: "etimesgut escort fotoğraflar" | Clicks: 1 | Impressions: 7 | CTR: 14.29% | Position: #7.71
-- Query: "etimesgut escort kızlar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #16.00
-- Query: "etimesgut eskort bayan" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #12.00
-- Query: "eve gelen escort istanbul" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #11.50
-- Query: "eyüp eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #36.00
-- Query: "gizli escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #22.00
-- Query: "istanbul escort ajansı" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #25.00
-- Query: "istanbul escort gecelik" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #9.00
-- Query: "istanbul escort gerçek" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #27.00
-- Query: "istanbul gecelik eskort" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #10.00
-- Query: "istanbul sınırsız escort" | Clicks: 1 | Impressions: 5 | CTR: 20.00% | Position: #12.20
-- Query: "istanbul üniversiteli escort" | Clicks: 1 | Impressions: 5 | CTR: 20.00% | Position: #8.60
-- Query: "kartal rus escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #5.00
-- Query: "kocamustafapaşa eskort" | Clicks: 1 | Impressions: 8 | CTR: 12.50% | Position: #6.50
-- Query: "kuruçeşme escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #15.50
-- Query: "rize escort telegram" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #20.00
-- Query: "yeşilpınar escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #20.00
-- Query: "zorlu center escort" | Clicks: 1 | Impressions: 5 | CTR: 20.00% | Position: #8.20
-- Query: "şahintepe eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #2.00
-- Query: "adatepe escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #4.00
-- Query: "adatepe eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #15.00
-- Query: "altunizade escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #17.00
-- Query: "altındağ escort" | Clicks: 0 | Impressions: 854 | CTR: 0.00% | Position: #41.54
-
-Domain Property: bagcilarescort.shop
---------------------------------------------------
-- Query: "bağcılar escort" | Clicks: 11 | Impressions: 27082 | CTR: 0.04% | Position: #35.74
-- Query: "bağcılar eskort" | Clicks: 5 | Impressions: 16 | CTR: 31.25% | Position: #50.13
-- Query: "bagcılar escort" | Clicks: 3 | Impressions: 7 | CTR: 42.86% | Position: #35.86
-- Query: "bagcılar eskort" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #33.00
-- Query: "bağcılar escort fotoğraflar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #41.00
-- Query: "bağcılarescort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #37.50
-- Query: "escort bayan bağcılar" | Clicks: 1 | Impressions: 5 | CTR: 20.00% | Position: #53.20
-- Query: "eskort bağcılar" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #61.00
-- Query: "istanbul bağcılar escort" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #43.67
-- Query: "istanbul eskort bağcılar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #57.00
-- Query: "bagcilar escort" | Clicks: 0 | Impressions: 326 | CTR: 0.00% | Position: #39.33
-- Query: "bagcilar escort bayan" | Clicks: 0 | Impressions: 30 | CTR: 0.00% | Position: #36.77
-- Query: "bagcilarr escort" | Clicks: 0 | Impressions: 10 | CTR: 0.00% | Position: #29.70
-- Query: "bağcilar escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #39.00
-- Query: "bağcılar bayan escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #31.00
-- Query: "bağcılar escort bayan" | Clicks: 0 | Impressions: 1317 | CTR: 0.00% | Position: #37.21
-- Query: "bağcılar escort vip" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #43.00
-- Query: "bağcılar escırt" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #44.00
-- Query: "bağxılar escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #26.00
-- Query: "escort bağcılar" | Clicks: 0 | Impressions: 21 | CTR: 0.00% | Position: #45.14
-
-Domain Property: telegramifsaizle.shop
---------------------------------------------------
-- Query: "bakırköy escort telegram" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #40.00
-- Query: "esenler escort telegram" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #10.00
-- Query: "telegram istanbul ifşa" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #98.00
+- Query: "maltepe cevizli eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
+- Query: "mimaroba escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #16.00
 
 Domain Property: sites.google.com/dorukcanay.digital/beylikduzu-vip-escort
 --------------------------------------------------
-- Query: "istanbul eskord" | Clicks: 5 | Impressions: 13 | CTR: 38.46% | Position: #1.00
-- Query: "beylikdüzü vip escort" | Clicks: 2 | Impressions: 4 | CTR: 50.00% | Position: #1.00
-- Query: "beylikdüzü elit escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #2.00
-- Query: "beylikdüzü vip eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #2.00
-- Query: "beylikdüzü'nde escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #5.00
-- Query: "vip escort beylikdüzü" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #1.00
+- Query: "beylikdüzü vip escort" | Clicks: 5 | Impressions: 9 | CTR: 55.56% | Position: #1.00
+- Query: "istanbul eskord" | Clicks: 4 | Impressions: 14 | CTR: 28.57% | Position: #1.00
+- Query: "beylikdüzü'nde escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #8.00
+- Query: "vip eskort beylikdüzü" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #1.00
+- Query: "beylikdüzü vip eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #1.00
 - Query: "maltepe eskord" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #4.00
+- Query: "vip escort beylikdüzü" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #1.00
 
-Domain Property: santajci-tespit.site
+Domain Property: istanbulescort.blog
 --------------------------------------------------
-- Query: "gültepe escort" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #24.25
-- Query: "kağıthane escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #49.50
+- Query: "batışehir escort" | Clicks: 5 | Impressions: 11 | CTR: 45.45% | Position: #3.45
+- Query: "batışehir eskort" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #2.00
+- Query: "arena park escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
+- Query: "arenapark escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
+- Query: "bieskort.com istanbul'un en büyük manken eskort servisidir" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #64.00
+- Query: "eskort vip istanbul" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #34.00
+- Query: "güneşli corridor escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #64.50
+- Query: "istanbul escort ajans" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #66.00
+- Query: "istanbul vip escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #64.33
+- Query: "istanbul vip rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #72.00
+- Query: "kadıköy 19 mayıs escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
+- Query: "kadıköy rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
+- Query: "mahmutpaşa escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #37.50
+- Query: "vip escort istanbul" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #27.00
+- Query: "yedikule escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
+- Query: "çekmeköy kilolu escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #47.00
+- Query: "üsküdar bahçelievler escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #37.00
+- Query: "ıspartakule escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #24.67
 
-Domain Property: izmitescorthizmeti.shop
+Domain Property: sites.google.com/dorukcanay.digital/sefakoyistanbul-drkcnay2026/ana-sayfa
 --------------------------------------------------
-- Query: "izmit escort" | Clicks: 4 | Impressions: 61748 | CTR: 0.01% | Position: #37.45
-- Query: "izmit escort bayan" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #35.00
-- Query: "izmit escortlar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #69.00
-- Query: "izmit eskort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #28.50
-- Query: "elit vip escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #9.00
-- Query: "escord izmit" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #39.00
-- Query: "eskort izmit" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #36.00
-- Query: "eskortizmit" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #62.00
-- Query: "izmit esc" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #50.00
-- Query: "izmit escort alev" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #47.00
-- Query: "izmit escort kapali" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #20.00
-- Query: "izmit escort kent konut" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #35.00
-- Query: "izmit orospu" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #27.00
-- Query: "izmit rus escort" | Clicks: 0 | Impressions: 10 | CTR: 0.00% | Position: #27.40
-- Query: "izmit vip escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #23.67
-- Query: "izmit vip eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #39.00
-- Query: "i̇zmit escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
-- Query: "kocaeli izmit escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #48.50
-- Query: "ucuz escort izmit" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #30.00
-- Query: "çekmeköy escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #41.00
-
-Domain Property: taksimescorthizmeti.shop
---------------------------------------------------
-- Query: "beyoğlu escort" | Clicks: 2 | Impressions: 5958 | CTR: 0.03% | Position: #40.49
-- Query: "maltepe escort fotoğraflar" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #35.50
-- Query: "beyoglu escort" | Clicks: 1 | Impressions: 189 | CTR: 0.53% | Position: #22.65
-- Query: "beyoğlu escort bayanlar" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #35.00
-- Query: "beyoğlu eskort" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #30.50
-- Query: "esenyurt vip escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #47.00
-- Query: "taksim eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #42.00
-- Query: "adalar escort" | Clicks: 0 | Impressions: 47 | CTR: 0.00% | Position: #49.83
-- Query: "beyoglu eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #10.00
-- Query: "escort beyoglu" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
-- Query: "escort beyoğlu" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #27.00
-- Query: "escort dilan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #35.00
-- Query: "escort eyüpsultan" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #30.50
-- Query: "escort maltepe" | Clicks: 0 | Impressions: 39 | CTR: 0.00% | Position: #41.05
-- Query: "eskort maltepe" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #46.00
-- Query: "eyüpsultan escort" | Clicks: 0 | Impressions: 8 | CTR: 0.00% | Position: #31.38
-- Query: "istanbul bireysel eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #40.00
-- Query: "istanbul maltepe escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #26.00
-- Query: "maltepe escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #27.00
-- Query: "maltepe sınırsız escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #23.00
-- Query: "maltepe vip escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #37.00
-- Query: "okmeydanı escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #22.00
-- Query: "taksim escort" | Clicks: 0 | Impressions: 15 | CTR: 0.00% | Position: #48.33
-- Query: "taksim escort bayan" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #34.50
-- Query: "üsküdar escort" | Clicks: 0 | Impressions: 18 | CTR: 0.00% | Position: #57.72
-- Query: "üsküdar escort bayan" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #33.50
-
-Domain Property: bucaescorthizmeti.shop
---------------------------------------------------
-- Query: "buca escort" | Clicks: 1 | Impressions: 8 | CTR: 12.50% | Position: #38.75
-- Query: "buca escort bayan" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #7.00
-- Query: "buca escort bayan fotoğraflar" | Clicks: 0 | Impressions: 5 | CTR: 0.00% | Position: #7.80
-- Query: "buca eskort" | Clicks: 0 | Impressions: 18 | CTR: 0.00% | Position: #34.17
-- Query: "buca rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #17.00
-- Query: "buca vip escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #34.50
-- Query: "büyükçekmece escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #45.00
-
-Domain Property: istanbulescortkaporasiz.shop
---------------------------------------------------
-- Query: "istanbul eskort bayan" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #71.50
-- Query: "elit eskort istanbul" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #4.00
-- Query: "florya eskort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #15.00
-- Query: "istanbul bireysel eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #48.00
-- Query: "istanbul escort rus" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #3.00
-- Query: "istanbul gerçek escort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #8.00
-- Query: "istanbul rus escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #4.00
-- Query: "istanbul rus eskort" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #3.00
-- Query: "küçükçekmece vip escort" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #8.50
-- Query: "vip rus escort istanbul" | Clicks: 1 | Impressions: 2 | CTR: 50.00% | Position: #4.50
-- Query: "ataşehir escort" | Clicks: 0 | Impressions: 16 | CTR: 0.00% | Position: #38.94
-- Query: "bahçelievler escort" | Clicks: 0 | Impressions: 13 | CTR: 0.00% | Position: #29.69
-- Query: "bakırköy anal escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #14.00
-- Query: "bakırköy escort" | Clicks: 0 | Impressions: 51 | CTR: 0.00% | Position: #39.76
-- Query: "bakırköy rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #36.00
-- Query: "bayrampaşa escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #32.00
-- Query: "bayrampaşa rus escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "beyoglu escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #14.00
-- Query: "büyükçekmece escort" | Clicks: 0 | Impressions: 33 | CTR: 0.00% | Position: #39.30
-- Query: "büyükçekmece escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #32.00
-- Query: "escort kağıthane" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #34.00
-- Query: "escort küçükçekmece" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #38.00
-- Query: "escort sultangazi" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #37.00
-- Query: "esenler escort" | Clicks: 0 | Impressions: 10 | CTR: 0.00% | Position: #41.50
-- Query: "eyüpsultan escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #23.00
-- Query: "eyüpsultan escort bayan" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #22.50
-- Query: "florya escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #10.00
-- Query: "gaziosmanpaşa escort bayan" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #28.00
-- Query: "genc eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #54.00
-- Query: "gungoren escort bayan" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #33.50
-- Query: "güngören escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #25.00
-- Query: "istanbul elit escort" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #51.50
-- Query: "istanbul elit eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #78.00
-- Query: "istanbul escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #82.00
-- Query: "istanbul escort bayan fotoğraflar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #59.00
-- Query: "istanbul vip escort" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #62.33
-- Query: "kadıköy escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #41.50
-- Query: "kadıköy escort kızlar" | Clicks: 0 | Impressions: 6 | CTR: 0.00% | Position: #15.50
-- Query: "küçükçekmece escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #45.00
-- Query: "rus escort kızlar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #4.00
-- Query: "sultangazi escort" | Clicks: 0 | Impressions: 70 | CTR: 0.00% | Position: #39.56
-- Query: "sultangazi escort bayan" | Clicks: 0 | Impressions: 7 | CTR: 0.00% | Position: #38.43
-- Query: "sultangazide escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #28.00
-- Query: "sultangaziescort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #32.00
-- Query: "çekmeköy escort" | Clicks: 0 | Impressions: 10 | CTR: 0.00% | Position: #40.80
-- Query: "çekmeköy escort bayan" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #21.00
-- Query: "ümraniye escort vip" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #13.00
-- Query: "üsküdar escort" | Clicks: 0 | Impressions: 82 | CTR: 0.00% | Position: #45.12
-- Query: "üsküdar escort bayan" | Clicks: 0 | Impressions: 47 | CTR: 0.00% | Position: #19.47
-- Query: "üsküdar escort kızlar" | Clicks: 0 | Impressions: 16 | CTR: 0.00% | Position: #13.38
-
-Domain Property: sisliescort.shop
---------------------------------------------------
-- Query: "şişli escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #97.00
-
-Domain Property: tiktokhilesi.sbs
---------------------------------------------------
-- Query: "bakırköy escort telegram" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #35.00
-- Query: "ifşaizle sbs" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #45.00
-- Query: "tiktok escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #9.00
+- Query: "sefaköy escort" | Clicks: 117 | Impressions: 818 | CTR: 14.30% | Position: #10.49
+- Query: "sefaköy eskort" | Clicks: 47 | Impressions: 330 | CTR: 14.24% | Position: #10.63
+- Query: "sefakoy eskort" | Clicks: 12 | Impressions: 50 | CTR: 24.00% | Position: #9.90
+- Query: "sefakoy escort" | Clicks: 11 | Impressions: 70 | CTR: 15.71% | Position: #10.17
+- Query: "escort sefaköy" | Clicks: 10 | Impressions: 37 | CTR: 27.03% | Position: #11.65
+- Query: "sefaköy escort bayan" | Clicks: 8 | Impressions: 35 | CTR: 22.86% | Position: #14.49
+- Query: "sefaköyescort" | Clicks: 5 | Impressions: 14 | CTR: 35.71% | Position: #8.50
+- Query: "küçükçekmece sefaköy eskort" | Clicks: 4 | Impressions: 5 | CTR: 80.00% | Position: #14.60
+- Query: "sefaköy esc" | Clicks: 4 | Impressions: 40 | CTR: 10.00% | Position: #10.80
+- Query: "sefaköy'de e***** bayan" | Clicks: 4 | Impressions: 8 | CTR: 50.00% | Position: #6.38
+- Query: "eskort sefaköy" | Clicks: 3 | Impressions: 28 | CTR: 10.71% | Position: #11.89
+- Query: "sefaköy escort fotoğraflar" | Clicks: 3 | Impressions: 7 | CTR: 42.86% | Position: #23.14
+- Query: "sefaköy'de e***** bayanlar" | Clicks: 3 | Impressions: 7 | CTR: 42.86% | Position: #8.00
+- Query: "beşyol escort" | Clicks: 2 | Impressions: 7 | CTR: 28.57% | Position: #7.00
+- Query: "escort bayan sefaköy" | Clicks: 2 | Impressions: 2 | CTR: 100.00% | Position: #11.00
+- Query: "küçükçekmece sefaköy escort" | Clicks: 2 | Impressions: 5 | CTR: 40.00% | Position: #18.60
+- Query: "sefa köy eskort" | Clicks: 2 | Impressions: 6 | CTR: 33.33% | Position: #9.67
+- Query: "sefaköy beşyol escort" | Clicks: 2 | Impressions: 5 | CTR: 40.00% | Position: #9.20
+- Query: "sefaköy e***** bayan" | Clicks: 2 | Impressions: 5 | CTR: 40.00% | Position: #12.60
+- Query: "sefaköy eskort bayan" | Clicks: 2 | Impressions: 10 | CTR: 20.00% | Position: #14.10
+- Query: "escort sefakoy" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #19.50
+- Query: "eskort bayan sefaköy" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #17.00
+- Query: "eskort sefakoy" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #18.33
+- Query: "istanbul escort 2026" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #1.00
+- Query: "istanbul sefaköy escort" | Clicks: 1 | Impressions: 3 | CTR: 33.33% | Position: #11.33
+- Query: "sefa köy escort" | Clicks: 1 | Impressions: 4 | CTR: 25.00% | Position: #12.00
+- Query: "sefaköy e*****" | Clicks: 1 | Impressions: 1 | CTR: 100.00% | Position: #173.00
+- Query: "sefaköy escory" | Clicks: 1 | Impressions: 14 | CTR: 7.14% | Position: #14.14
+- Query: "sefaköy escırt" | Clicks: 1 | Impressions: 14 | CTR: 7.14% | Position: #11.64
+- Query: "beşyol eskort" | Clicks: 0 | Impressions: 5 | CTR: 0.00% | Position: #11.80
+- Query: "esc sefaköy" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #24.00
+- Query: "inönü escort" | Clicks: 0 | Impressions: 5 | CTR: 0.00% | Position: #15.20
+- Query: "inönü mahallesi escort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #9.00
+- Query: "istanbul escort sefaköy" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #9.00
+- Query: "istanbul sefaköy eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #10.00
+- Query: "istinye escort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #16.50
+- Query: "sefakoy escort bayan" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #8.67
+- Query: "sefaköy bayan eskort" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #14.00
+- Query: "sefaköy beşyol eskort" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #10.00
+- Query: "sefaköy escoet" | Clicks: 0 | Impressions: 5 | CTR: 0.00% | Position: #8.60
+- Query: "sefaköy escor" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #12.00
+- Query: "sefaköy escort bayanlar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #19.00
+- Query: "sefaköy escort kendi yeri" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #14.00
+- Query: "sefaköy escort yorumlar" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #6.00
+- Query: "sefaköy eskirt" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #9.00
+- Query: "sefaköy eskort kendi yeri" | Clicks: 0 | Impressions: 3 | CTR: 0.00% | Position: #10.00
+- Query: "sefaköy eskot" | Clicks: 0 | Impressions: 1 | CTR: 0.00% | Position: #17.00
+- Query: "sefaköy eskırt" | Clicks: 0 | Impressions: 2 | CTR: 0.00% | Position: #8.50
+- Query: "sefaköyeskort" | Clicks: 0 | Impressions: 7 | CTR: 0.00% | Position: #10.29
+- Query: "sefsköy escort" | Clicks: 0 | Impressions: 4 | CTR: 0.00% | Position: #9.50
 

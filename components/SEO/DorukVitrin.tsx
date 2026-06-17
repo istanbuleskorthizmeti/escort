@@ -464,7 +464,7 @@ export function DorukVitrin({
 
   // 🛡️ [GOD-MODE] SSR-SAFE SELECTION
   const initialImages = useMemo(() => {
-    return vitrinImages.slice(0, 60);
+    return vitrinImages.slice(0, 100);
   }, []);
 
   const getUniqueAdProfiles = (hostName: string) => {
@@ -603,7 +603,7 @@ export function DorukVitrin({
     // Progressive rendering chunks to prevent main thread blocking (FCP, LCP, TBT optimizations)
     if (typeof window !== 'undefined') {
       const loadNextChunk = (current: number) => {
-        if (current >= 60) return;
+        if (current >= 100) return;
         setTimeout(() => {
           setVisibleCount(prev => {
             const next = prev + 12;

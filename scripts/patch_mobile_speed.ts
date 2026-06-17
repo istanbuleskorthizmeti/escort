@@ -33,7 +33,8 @@ async function patchMobileSpeed() {
       'app/amp/route.ts',
       'config/domains.ts',
       'lib/seo/templates.ts',
-      'components/SEO/UltraFooter.tsx'
+      'components/SEO/UltraFooter.tsx',
+      'components/SEO/footer-tag-cloud.tsx'
     ];
 
     for (const f of files) {

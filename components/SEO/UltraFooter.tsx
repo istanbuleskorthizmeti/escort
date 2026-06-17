@@ -43,16 +43,16 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
           <div className="xl:col-span-4 space-y-12">
             <div className="space-y-4">
               <h2 className="text-5xl font-black italic tracking-tighter text-white uppercase leading-none">
-                DRKCNAY <span className="text-(--primary-color)">ELITE</span>
+                DRKCNAY <span className="text-(--primary-color)">VIP</span>
               </h2>
-              <p className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.5em] italic">DRKCNAY ELİT REHBER</p>
+              <p className="text-zinc-600 text-[10px] font-black uppercase tracking-[0.2em] italic">DRKCNAY VIP ESCORT AJANSI</p>
             </div>
 
             <div className="space-y-8">
                {host.includes('istanbulescort.blog') && (
                  <div className="glass-card p-10 rounded-[3rem] border-rose-600/30 bg-rose-950/10 hover:border-rose-600/50 transition-all duration-700 animate-pulse-glow">
                    <h4 className="text-white text-sm font-black uppercase tracking-widest italic mb-6 flex items-center gap-3">
-                     🟢 RESMİ VIP ORTAĞIMIZ // DRKCNAY ELITE
+                     🟢 RESMİ VIP ORTAĞIMIZ // DRKCNAY VIP ESCORT AJANSI
                    </h4>
                    <p className="text-xs leading-relaxed font-semibold text-zinc-300 italic mb-6">
                      Türkiye&apos;nin en kaliteli escort rehberi olan 
@@ -87,7 +87,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
  
                <div className="glass-card p-10 rounded-[3rem] border-(--primary-color)/5 hover:border-(--primary-color)/20 transition-all duration-700">
                   <h4 className="text-white text-sm font-black uppercase tracking-widest italic mb-6 flex items-center gap-3">
-                    🛡️ {isFlagship ? 'DRKCNAY ELITE STANDARTLARI' : 'NEDEN ELİT SEÇKİ?'}
+                    🛡️ {isFlagship ? 'DRKCNAY VIP ESCORT AJANSI STANDARTLARI' : 'NEDEN VIP AJANS?'}
                   </h4>
                   <p className="text-xs leading-relaxed font-medium text-zinc-500 italic">
                     {isFlagship ? (
@@ -211,7 +211,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
          <div className="pt-16 flex flex-col md:flex-row justify-between items-center gap-10">
           <div className="flex flex-col items-center md:items-start gap-3">
               <p className="text-[11px] font-black tracking-[0.6em] text-zinc-800 uppercase italic">
-                 © {currentYear} DRKCNAY ELITE // VIP REHBER // <span className="text-(--primary-color) uppercase">GÜVENLİ</span>
+                 © {currentYear} DRKCNAY VIP ESCORT AJANSI // <span className="text-(--primary-color) uppercase">GÜVENLİ</span>
               </p>
           </div>
 

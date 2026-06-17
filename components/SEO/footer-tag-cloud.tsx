@@ -56,7 +56,7 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
         <div className="text-center mb-10">
           <h2 className="text-(--primary-color) text-xs font-black uppercase tracking-[0.3em] mb-4">
             {isFlagship 
-              ? "DORUKCANAY ELITE // BÖLGESEL ULTRA LSI HEDEFLEME MATRİSİ" 
+              ? "DORUKCANAY VIP ESCORT AJANSI // BÖLGESEL ULTRA LSI HEDEFLEME MATRİSİ" 
               : "İSTANBUL ESCORT ESKORT VIP GÜVENLİ BÖLGESEL NETWORK HARİTASI"
             }
           </h2>
@@ -82,7 +82,7 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
 
         <div className="mt-10 pt-8 border-t border-zinc-900/40 text-center flex flex-col md:flex-row items-center justify-between gap-6">
           <span className="text-zinc-600 text-[10px] uppercase tracking-widest font-semibold">
-            © 2026 DRKCNAY ELITE NETWORK. ALL RIGHTS RESERVED.
+            © 2026 DRKCNAY VIP ESCORT AJANSI NETWORK. ALL RIGHTS RESERVED.
           </span>
           <div className="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-widest font-black italic">
             <Link href="/" className="text-zinc-500 hover:text-rose-600 transition-colors">

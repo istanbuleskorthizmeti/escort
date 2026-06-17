@@ -49,6 +49,25 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
             </div>
 
             <div className="space-y-8">
+               {host.includes('istanbulescort.blog') && (
+                 <div className="glass-card p-10 rounded-[3rem] border-rose-600/30 bg-rose-950/10 hover:border-rose-600/50 transition-all duration-700 animate-pulse-glow">
+                   <h4 className="text-white text-sm font-black uppercase tracking-widest italic mb-6 flex items-center gap-3">
+                     🟢 RESMİ VIP ORTAĞIMIZ // DRKCNAY ELITE
+                   </h4>
+                   <p className="text-xs leading-relaxed font-semibold text-zinc-300 italic mb-6">
+                     Türkiye&apos;nin en kaliteli escort rehberi olan 
+                     <a href="https://dorukcanay.digital" className="text-rose-500 font-bold hover:underline mx-1 text-sm tracking-wider uppercase" target="_blank" rel="noopener noreferrer">dorukcanay.digital</a> 
+                     üzerinden %100 doğrulanmış, kaporasız ve VIP escort bayan profillerini inceleyebilirsiniz. En seçkin bağımsız modeller burada yer almaktadır.
+                   </p>
+                   <div className="flex flex-wrap gap-x-4 gap-y-2 text-[10px] font-black uppercase tracking-widest">
+                     <a href="https://dorukcanay.digital/istanbul/sisli-escort" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-rose-500 transition-colors">#ŞişliEscort</a>
+                     <a href="https://dorukcanay.digital/istanbul/besiktas-escort" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-rose-500 transition-colors">#BeşiktaşEscort</a>
+                     <a href="https://dorukcanay.digital/istanbul/kadikoy-escort" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-rose-500 transition-colors">#KadıköyEscort</a>
+                     <a href="https://dorukcanay.digital/istanbul/beylikduzu-escort" target="_blank" rel="noopener noreferrer" className="text-zinc-500 hover:text-rose-500 transition-colors">#BeylikdüzüEscort</a>
+                   </div>
+                 </div>
+               )}
+
                <div className="glass-card p-10 rounded-[3rem] border-(--primary-color)/5 hover:border-(--primary-color)/20 transition-all duration-700">
                   <h4 className="text-white text-sm font-black uppercase tracking-widest italic mb-6 flex items-center gap-3">
                     🔱 {isFlagship ? 'PRESTİJ VE LÜKS COMPANION' : 'İSTANBUL VIP DENEYİMİ'}

@@ -18,8 +18,9 @@ import Breadcrumbs from "../../components/UI/Breadcrumbs";
 import { DorukVitrin } from "../../components/SEO/DorukVitrin";
 
 import { getPageContent } from "../../lib/data-cache";
+import { generateUltraGraphSchema } from "../../lib/seo-schema";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string[] }> }): Promise<Metadata> {
   const { slug: slugArr } = await params;
@@ -31,7 +32,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const content = await getPageContent(slug, siteId);
 
   if (!content) {
-    const cityFromName = slug.split('-')[0] || "istanbul";
+    const rawCityPart = slug.includes('/') ? slug.split('/').pop() : slug.split('-')[0];
+    const cityFromName = rawCityPart || "istanbul";
     const cityName = toTitleCaseTR(cityFromName);
     return {
       title: dedupeEscort(`🔞 ${cityName} Escort Bayan | %100 GERÇEK VİTRİN`),
@@ -64,14 +66,24 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
       permanentRedirect('/');
     }
 
-    const cityFromName = slug.split('-')[0] || "istanbul";
+    const rawCityPart = slug.includes('/') ? slug.split('/').pop() : slug.split('-')[0];
+    const cityFromName = rawCityPart || "istanbul";
     const cityName = toTitleCaseTR(cityFromName);
     const fallbackTitle = `${cityName} Escort Bayan | VIP Vitrin`;
     const fallbackParagraph = `${cityName} genelinde VIP model partnerler, elite escort hizmetleri ve kaporasız doğrudan elden ödemeli güvenilir buluşmalar. Telefon numaraları ve aktif WhatsApp hattı ile 7/24 randevu planlayın.`;
 
+    const schema = generateUltraGraphSchema({
+      locationName: cityName,
+      city: "İstanbul",
+      description: fallbackParagraph,
+      url: `https://${host}/${slug}`,
+      categoryTitle: "VIP ESCORT VİTRİNİ"
+    });
+
     return (
       <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
         <link rel="amphtml" href={`https://${host}/amp?loc=${slug}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
         <Navbar />
         <main className="pt-32 pb-32">
           <div className="max-w-7xl mx-auto px-6">
@@ -108,9 +120,22 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
     );
   }
 
+  const rawCityPart = slug.includes('/') ? slug.split('/').pop() : slug.split('-')[0];
+  const cityFromName = rawCityPart || "istanbul";
+  const cityName = toTitleCaseTR(cityFromName);
+
+  const schema = generateUltraGraphSchema({
+    locationName: content.title || cityName,
+    city: "İstanbul",
+    description: content.content?.substring(0, 160).replace(/<[^>]*>?/gm, '').replace(/[-\u2013\u2014]/g, ' ') || "VIP escort hizmetleri.",
+    url: `https://${host}/${slug}`,
+    categoryTitle: "VIP ESCORT PORTALI"
+  });
+
   return (
     <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
       <link rel="amphtml" href={`https://${host}/amp?loc=${slug}`} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <Navbar />
       <main className="pt-32 pb-32">
         <div className="max-w-7xl mx-auto px-6">

@@ -28,7 +28,12 @@ async function patchMobileSpeed() {
       'lib/vitrin-images.ts',
       'app/error.tsx',
       'app/global-error.tsx',
-      'public/recovery.js'
+      'public/recovery.js',
+      'app/[...slug]/page.tsx',
+      'app/amp/route.ts',
+      'config/domains.ts',
+      'lib/seo/templates.ts',
+      'components/SEO/UltraFooter.tsx'
     ];
 
     for (const f of files) {

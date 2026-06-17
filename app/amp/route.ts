@@ -102,10 +102,13 @@ export async function GET(request: Request) {
   const slogan = theme.slogan || "Lüks ve Seçkin VIP Eşlik Hizmeti";
   const primaryColor = theme.primaryColor || "#e11d48";
   
-  // Set canonical URL pointing to the standard HTML version
-  const canonicalUrl = locParam 
-    ? `https://${host}/${locParam.toLowerCase()}` 
-    : `https://${host}`;
+  // Set canonical URL pointing to the standard HTML version (aligned with regional /istanbul/[district] hierarchy)
+  const canonicalUrl = (() => {
+    if (!locParam) return `https://${host}`;
+    const cleanLoc = locParam.toLowerCase().replace(/-escort$/i, '').replace(/-eskort$/i, '');
+    if (cleanLoc === 'istanbul') return `https://${host}/istanbul`;
+    return `https://${host}/istanbul/${cleanLoc}`;
+  })();
 
   // Resolve matching Google Sites page from live_google_sites.json
   let relatedSiteLink = "";

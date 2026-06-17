@@ -31,7 +31,7 @@ import { CloakerFrontend } from "../components/UI/CloakerFrontend";
 import { toTitleCaseTR } from "../lib/utils";
 import { getCanonicalHost } from "../lib/site-context";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 export async function generateMetadata(): Promise<Metadata> {
   const hostHeader = (await headers()).get("host") || siteConfig.domain;

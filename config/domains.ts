@@ -18,12 +18,9 @@ export interface DomainConfig {
 }
 
 export const DOMAIN_MATRIX: DomainConfig[] = [
-  // --- MONEY SITES ---
   { host: 'istanbulescort.blog', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'premium', 'luxury', 'main'], theme: 'luxury', serverGroup: 'MAIN_SERVER' },
   { host: 'escortvip.net', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'directory', 'main'], theme: 'dark', serverGroup: 'MAIN_SERVER' },
   { host: 'vipescorthizmeti.shop', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'luxury', 'shop'], theme: 'gold', serverGroup: 'MAIN_SERVER' },
-  { host: 'istanbulescort.blog', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'premium', 'com'], theme: 'luxury', serverGroup: 'MAIN_SERVER' },
-  { host: 'istanbulescort.blog', role: 'MONEY_SITE', category: 'MONEY_SITE', tags: ['vip', 'luxury', 'com'], theme: 'gold', serverGroup: 'MAIN_SERVER' },
 
   // --- SATELLITE LOCAL DOMAINS (ISTANBUL & OTHERS) ---
   { host: 'bagcilarescort.shop', role: 'SATELLITE', category: 'SATELLITE_LOCAL', tags: ['local', 'bagcilar', 'young'], targetCity: 'istanbul', targetDistrict: 'bagcilar', theme: 'dark', serverGroup: 'MAIN_SERVER' },

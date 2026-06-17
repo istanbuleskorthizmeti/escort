@@ -92,9 +92,14 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
                </div>
                <div className="flex flex-wrap gap-3">
                   {tags.map(tag => (
-                    <span key={tag} className="px-5 py-2.5 bg-zinc-950/50 border border-zinc-900/50 rounded-full text-[10px] font-black text-zinc-600 hover:text-(--primary-color) hover:border-(--primary-color)/30 transition-all cursor-pointer uppercase tracking-widest italic">
+                    <Link 
+                      key={tag} 
+                      href="/"
+                      className="px-5 py-2.5 bg-zinc-950/50 border border-zinc-900/50 rounded-full text-[10px] font-black text-zinc-600 hover:text-(--primary-color) hover:border-(--primary-color)/30 transition-all cursor-pointer uppercase tracking-widest italic"
+                      style={{ textDecoration: 'none' }}
+                    >
                        #{tag.replace(' ', '')}
-                    </span>
+                    </Link>
                   ))}
                </div>
             </div>

@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react';
+import Link from 'next/link';
 import { ISTANBUL_DISTRICTS } from '@/lib/istanbul-aggressive-seo';
 import { slugify } from '@/lib/utils';
 

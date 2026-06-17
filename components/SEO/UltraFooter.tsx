@@ -107,7 +107,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
           <div className="xl:col-span-8 space-y-20">
             <div className="space-y-10">
                <div className="flex items-center gap-4">
-                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">POPÜLER KATEGORİLER // <span className="text-(--primary-color)">SEÇKİN ETİKETLER</span></h4>
+                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">POPÜLER <span className="text-(--primary-color)">KATEGORİLER</span></h4>
                </div>
                <div className="flex flex-wrap gap-3">
                   {tags.map(tag => (
@@ -125,7 +125,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
 
             <div className="space-y-10">
                <div className="flex items-center gap-4">
-                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">NETWORK NODES // <span className="text-(--primary-color)">ÖZEL NETWORK</span></h4>
+                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">ÖNERİLEN <span className="text-(--primary-color)">PARTNERLERİMİZ</span></h4>
                </div>
                <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem' }}>
                   {[
@@ -152,7 +152,7 @@ export function UltraFooter({ host, cityName: _cityName, districtName: _district
 
             <div className="space-y-10">
                <div className="flex items-center gap-4">
-                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">BÖLGESEL HİZMET AĞI // <span className="text-(--primary-color)">İSTANBUL SEÇKİSİ</span></h4>
+                  <h4 className="text-white text-xl font-black uppercase tracking-widest italic">HİZMET VERİLEN <span className="text-(--primary-color)">BÖLGELER</span></h4>
                </div>
                <div className="grid grid-cols-2 md:grid-cols-4 gap-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '1rem' }}>
                   {districts.map(area => (

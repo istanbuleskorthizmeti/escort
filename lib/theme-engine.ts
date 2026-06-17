@@ -48,8 +48,8 @@ export class ThemeEngine {
                 bodyFont: 'var(--font-inter)',
                 layoutType: 'grid',
                 borderStyle: 'rounded-[3rem]',
-                brandName: 'DORUKCANAY DIGITAL',
-                slogan: 'İstanbul VIP Escort & Lüks Eşlik Hizmetleri Amiral Gemisi'
+                brandName: 'DRKCNAY VIP ESCORT AJANSI',
+                slogan: 'İstanbul VIP Escort & Lüks Eşlik Hizmetleri Portalı'
             };
         }
 
@@ -80,16 +80,16 @@ export class ThemeEngine {
         const borders = ['rounded-none', 'rounded-xl', 'rounded-3xl', 'rounded-[3rem]'];
 
         const brandNames = [
-            "DRKCNAY ELITE", "VIP ESCORT REHBERİ", "İSTANBUL GİZLİ VİTRİN",
-            "PREMIUM ESCORT NETWORK", "2026 ELİT AJANS", "GOLD ESCORT VİTRİN",
-            "İSTANBUL VIP ESCORT", "LUXURY ESCORT GUIDE", "OFFICIAL VIP ESCORT",
-            "BİREYSEL ESCORT REHBERİ", "GÜVENLİ ESCORT AĞI", "İSTANBUL ESCORT KULÜBÜ"
+            "DRKCNAY VIP ESCORT", "DRKCNAY VIP REHBERİ", "DRKCNAY ESCORT AJANSI",
+            "DRKCNAY PRESTİJ ORTAĞI", "DRKCNAY SEÇKİN AJANS", "DRKCNAY GOLD REHBER",
+            "DRKCNAY MODEL AJANSI", "DRKCNAY VIP PARTNER", "DRKCNAY LÜKS ESCORT",
+            "DRKCNAY BİREYSEL PORTAL", "DRKCNAY GÜVENLİ AJANS", "DRKCNAY ESCORT NETWORK"
         ];
         
         const slogans = [
-            "İstanbul'un En Hiddetli ve Gizli Escort Rehberi", "Seçkin Beyefendilere Özel Kaporasız Escort Deneyimi",
+            "İstanbul'un En Prestijli ve Gizli Escort Rehberi", "Seçkin Beyefendilere Özel Kaporasız Escort Deneyimi",
             "Gerçek Görselli ve %100 Doğrulanmış VIP Escort İlanları", "Sadece Elit ve Profesyonel Escort Bayanlar",
-            "7/24 Kesintisiz VIP Escort ve Gizlilik Standartları", "İstanbul'un En Prestijli ve Güvenilir Vitrini",
+            "7/24 Kesintisiz VIP Escort ve Gizlilik Standartları", "İstanbul'un En Güvenilir ve Seçkin Vitrini",
             "Otorite Puanı En Yüksek Elit Escort Platformu", "Kaporasız, Gizli ve Sınırsız VIP Deneyim"
         ];
 

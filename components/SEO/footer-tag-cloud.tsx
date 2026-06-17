@@ -56,19 +56,19 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
         <div className="text-center mb-10">
           <h2 className="text-(--primary-color) text-xs font-black uppercase tracking-[0.3em] mb-4">
             {isFlagship 
-              ? "DORUKCANAY VIP ESCORT AJANSI // BÖLGESEL ULTRA LSI HEDEFLEME MATRİSİ" 
-              : "İSTANBUL ESCORT ESKORT VIP GÜVENLİ BÖLGESEL NETWORK HARİTASI"
+              ? "DRKCNAY VIP ESCORT AJANSI // BÖLGESEL LİSTE REHBERİ" 
+              : "İSTANBUL VIP PARTNER VE LOKASYON LİSTESİ"
             }
           </h2>
           <p className="text-zinc-500 text-xs max-w-3xl mx-auto leading-relaxed italic">
             {isFlagship 
               ? "İstanbul genelinde VIP partnerlik, lüks refakatçi ve elit eşlik hizmeti sunan doğrulanmış model profillerimizin bölgesel indeksleme arşivi. Tüm profiller kaporasızdır."
-              : "İstanbul bölgesinde buluşmak için eskort bayan, randevu için vip partner ilanları ve telefon numaraları arşivi. Arama motorları için optimize edilmiş doğrulanmış lokasyon matrisi."
+              : "İstanbul bölgesinde buluşmak için eskort bayan, randevu için vip partner ilanları ve telefon numaraları arşivi. Doğrulanmış lokasyon listesi."
             }
           </p>
         </div>
 
-        {/* 🚀 [GOD-MODE] Scrollable SEO Tag Matrix Container */}
+        {/* Scrollable SEO Tag Container */}
         <div className="relative rounded-3xl border border-zinc-900/80 bg-black/60 p-6">
           <div className="absolute top-0 left-0 right-0 h-8 bg-gradient-to-b from-black/80 to-transparent pointer-events-none rounded-t-3xl" />
           

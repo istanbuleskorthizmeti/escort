@@ -447,7 +447,7 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
             </div>
             <div className="h-px hidden md:block flex-1 mx-12 bg-zinc-900/50" />
             <div className="flex gap-2">
-              <span className="px-3 py-1 bg-rose-600/10 border border-rose-600/20 rounded-full text-[9px] font-black text-rose-600">ESCORT LSI ACTIVE</span>
+              <span className="px-3 py-1 bg-rose-600/10 border border-rose-600/20 rounded-full text-[9px] font-black text-rose-600">VIP AKTİF PROFİLLER</span>
               <span className="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-[9px] font-black text-zinc-500">GEO MAP SYNC</span>
             </div>
           </div>

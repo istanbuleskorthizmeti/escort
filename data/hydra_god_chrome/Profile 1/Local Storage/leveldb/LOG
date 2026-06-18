@@ -1,2 +1,3 @@
-2026/05/16-22:00:40.899 1ce0 Creating DB C:\Users\onurk\esc\data\hydra_god_chrome\Profile 1\Local Storage\leveldb since it was missing.
-2026/05/16-22:00:40.923 1ce0 Reusing MANIFEST C:\Users\onurk\esc\data\hydra_god_chrome\Profile 1\Local Storage\leveldb/MANIFEST-000001
+2026/06/17-09:53:22.600 4948 Reusing MANIFEST C:\Users\onurk\esc\data\hydra_god_chrome\Profile 1\Local Storage\leveldb/MANIFEST-000001
+2026/06/17-09:53:22.609 4948 Recovering log #3
+2026/06/17-09:53:22.611 4948 Reusing old log C:\Users\onurk\esc\data\hydra_god_chrome\Profile 1\Local Storage\leveldb/000003.log 

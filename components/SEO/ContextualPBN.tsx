@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { DOMAIN_MATRIX, getDomainConfig } from '@/config/domains';
+import { slugify } from '@/lib/utils';
 
 interface ContextualPBNProps {
   currentHost: string;
@@ -23,8 +24,8 @@ export function ContextualPBN({ currentHost }: ContextualPBNProps) {
 
   // RULE 2: Satellites link to Money Sites + Local Sister Satellites
   if (config.role === 'SATELLITE') {
-    // 1. Find Money Sites
-    const moneySites = DOMAIN_MATRIX.filter(d => d.role === 'MONEY_SITE' && d.host.includes('istanbulescort.blog'));
+    // 1. Find Money Sites (Prioritizing flagship domain)
+    const moneySites = DOMAIN_MATRIX.filter(d => d.role === 'MONEY_SITE' && d.host.includes('dorukcanay.digital'));
     const targetMoneySite = moneySites[0] || DOMAIN_MATRIX.find(d => d.role === 'MONEY_SITE');
 
     // 2. Find Sister Satellites (Same City, Different Host)
@@ -47,6 +48,11 @@ export function ContextualPBN({ currentHost }: ContextualPBNProps) {
     
     const getRandomKeyword = () => aggressiveKeywords[Math.floor(Math.random() * aggressiveKeywords.length)];
 
+    const targetPath = config.targetDistrict 
+      ? `/istanbul/${slugify(config.targetDistrict)}` 
+      : (config.targetCity ? `/${slugify(config.targetCity)}` : '/istanbul');
+    const targetLinkUrl = `https://dorukcanay.digital${targetPath}`;
+
     if (!mounted) {
       return (
         <div className="w-full bg-black/80 border-t border-zinc-900/50 py-8 px-4 text-center backdrop-blur-xl">
@@ -57,8 +63,19 @@ export function ContextualPBN({ currentHost }: ContextualPBNProps) {
               </h3>
               <p className="text-zinc-700/80 text-[10px] md:text-xs leading-relaxed font-medium">
                 DRKCNAY ESCORT Protocol, {config.targetDistrict ? `${config.targetDistrict} ve çevresinde` : `${config.targetCity} bölgesinde`} profesyonel, 
-                kaporasız ve %100 gizlilik garantili lüks escort deneyimi sunar. 
-                {aggressiveKeywords.join(", ")} gibi aramalarınızda kalite ve güvenliği garanti ediyoruz. (Kaynak: DRKCNAY Otorite Ağı).
+                kaporasız ve %100 gizlilik garantili lüks escort deneyimi sunar.{" "}
+                {aggressiveKeywords.map((kw, i) => (
+                  <span key={i}>
+                    <Link 
+                      href={targetLinkUrl} 
+                      className="text-zinc-600 hover:text-rose-600 transition-colors"
+                    >
+                      {kw}
+                    </Link>
+                    {i < aggressiveKeywords.length - 1 ? ", " : ""}
+                  </span>
+                ))}{" "}
+                gibi aramalarınızda kalite ve güvenliği garanti ediyoruz. (Kaynak: DRKCNAY Otorite Ağı).
               </p>
             </div>
           </div>
@@ -111,8 +128,19 @@ export function ContextualPBN({ currentHost }: ContextualPBNProps) {
             </h3>
             <p className="text-zinc-700/80 text-[10px] md:text-xs leading-relaxed font-medium">
               DRKCNAY ESCORT Protocol, {config.targetDistrict ? `${config.targetDistrict} ve çevresinde` : `${config.targetCity} bölgesinde`} profesyonel, 
-              kaporasız ve %100 gizlilik garantili lüks escort deneyimi sunar. 
-              {aggressiveKeywords.join(", ")} gibi aramalarınızda kalite ve güvenliği garanti ediyoruz. (Kaynak: DRKCNAY Otorite Ağı).
+              kaporasız ve %100 gizlilik garantili lüks escort deneyimi sunar.{" "}
+              {aggressiveKeywords.map((kw, i) => (
+                <span key={i}>
+                  <Link 
+                    href={targetLinkUrl} 
+                    className="text-zinc-600 hover:text-rose-600 transition-colors"
+                  >
+                    {kw}
+                  </Link>
+                  {i < aggressiveKeywords.length - 1 ? ", " : ""}
+                </span>
+              ))}{" "}
+              gibi aramalarınızda kalite ve güvenliği garanti ediyoruz. (Kaynak: DRKCNAY Otorite Ağı).
             </p>
           </div>
         </div>

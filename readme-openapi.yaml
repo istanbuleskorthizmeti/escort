@@ -1,0 +1,210 @@
+openapi: 3.0.3
+info:
+  title: VIP Partner Directory & Booking Integration API
+  description: |
+    Official integration API for verified VIP Partners, location routing matrix, 
+    and secure reservation protocols. Designed for seamless synchronization with 
+    high-performance directory nodes and edge delivery networks.
+    
+    ### Security Protocols
+    All request payloads must be signed and authenticated using edge domain keys.
+  version: 1.0.0
+servers:
+  - url: https://istanbulescort.blog/api/v1
+    description: Production Edge Node
+paths:
+  /partners:
+    get:
+      summary: Retrieve VIP Partners Directory
+      description: Returns a list of active, verified VIP partners filtered by geographic region, availability, and tags.
+      parameters:
+        - name: city
+          in: query
+          description: Target city (e.g. istanbul, ankara, izmir)
+          required: false
+          schema:
+            type: string
+            default: istanbul
+        - name: district
+          in: query
+          description: Specific district filter (e.g. besiktas, sisli, beylikduzu)
+          required: false
+          schema:
+            type: string
+        - name: status
+          in: query
+          description: Availability state of the partner
+          required: false
+          schema:
+            type: string
+            enum: [online, offline, busy]
+      responses:
+        '200':
+          description: Successful directory retrieval
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PartnerProfile'
+        '400':
+          description: Invalid query parameters
+        '500':
+          description: Internal gateway failure
+
+  /partners/{id}:
+    get:
+      summary: Get Partner Profile Details
+      description: Returns complete verification metadata, category tags, and direct secure contact channels for a specific VIP partner.
+      parameters:
+        - name: id
+          in: path
+          description: Unique slug or ID of the partner
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Profile metadata retrieved successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PartnerProfile'
+        '404':
+          description: Partner profile not found or deactivated
+
+  /locations:
+    get:
+      summary: Retrieve Geographic Matrix
+      description: Fetches all supported cities, districts, and active neighborhood coverage indicators.
+      responses:
+        '200':
+          description: Location nodes schema
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  cities:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        slug:
+                          type: string
+                        districts:
+                          type: array
+                          items:
+                            type: string
+
+  /bookings:
+    post:
+      summary: Initialize Secure Reservation
+      description: Creates a secure appointment request between the client and verified partner. Operates strictly under the cash-on-delivery (elden odeme) protocol.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BookingRequest'
+      responses:
+        '201':
+          description: Booking token successfully generated
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  bookingId:
+                    type: string
+                  status:
+                    type: string
+                    example: CONFIRMED
+                  verificationCode:
+                    type: string
+                    example: VIP-9821-X
+        '400':
+          description: Bad request, missing parameters or verification mismatch
+        '422':
+          description: Validation error (e.g. booking requirements not met)
+
+components:
+  schemas:
+    PartnerProfile:
+      type: object
+      properties:
+        id:
+          type: string
+          example: melissa-vip
+        name:
+          type: string
+          example: Melissa
+        city:
+          type: string
+          example: istanbul
+        district:
+          type: string
+          example: besiktas
+        category:
+          type: string
+          example: Boutique Escort
+        race:
+          type: string
+          example: Russian
+        features:
+          type: array
+          items:
+            type: string
+          example: ["Canlı Teyit", "Gerçek Fotoğraflı", "Kaporasız"]
+        status:
+          type: string
+          example: online
+        media:
+          type: object
+          properties:
+            avatarUrl:
+              type: string
+              example: https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp
+            verificationVideo:
+              type: string
+              example: https://istanbulescort.blog/_media/video/melissa-verify.mp4
+        createdAt:
+          type: string
+          format: date-time
+
+    BookingRequest:
+      type: object
+      required:
+        - partnerId
+        - clientName
+        - contactPhone
+        - appointmentTime
+        - durationHours
+        - locationType
+      properties:
+        partnerId:
+          type: string
+          example: melissa-vip
+        clientName:
+          type: string
+          example: Dorukcan Ay
+        contactPhone:
+          type: string
+          example: "+905320000000"
+        appointmentTime:
+          type: string
+          format: date-time
+          example: "2026-06-17T21:00:00Z"
+        durationHours:
+          type: integer
+          minimum: 1
+          example: 2
+        locationType:
+          type: string
+          enum: [HOTEL, RESIDENCE, PRIVATE_APARTMENT]
+          example: HOTEL
+        specialNotes:
+          type: string
+          example: Elden ödeme, kaporasız VIP protokolü geçerlidir.

@@ -39,7 +39,44 @@ async function generateTelegraphContent(zone: string, targetSite: string) {
         ${zone} Escort, Rus Escort, Üniversiteli Escort, VIP Escort ve Kaporasız Escort nişlerini en az 3'er kez geçir.
         Okuyucuyu doğrudan randevu için kataloğa yönlendir.
     `;
-    return await omniAI.generate(prompt, { provider: "deepseek", model: "deepseek-reasoner", max_tokens: 3000 });
+    let content = "";
+    try {
+        content = await omniAI.generate(prompt, { max_tokens: 3000 });
+    } catch (e) {}
+
+    if (!content || content.includes("seçkin escort hizmetleri ağı") || content.length < 200) {
+        const intros = [
+            `İstanbul'un en gözde noktalarından biri olan ${zone} bölgesinde lüks ve konforlu bir eşlik deneyimi mi arıyorsunuz? Doğru yerdesiniz.`,
+            `${zone} genelinde premium standartlarda, gizliliğe ve konfora önem veren bağımsız partnerlerle tanışmaya hazır olun.`,
+            `${zone} VIP escort rehberimiz, size bölgedeki en güncel, gerçek fotoğraflı ve güvenilir partner ilanlarını sunmak için tasarlığıdır.`
+        ];
+        const bodies = [
+            `Randevularınızda kapora veya ön ödeme riski olmadan, tamamen güvenli ve karşılıklı memnuniyet esasına dayalı görüşmeler gerçekleştirebilirsiniz. Bu rehberde yer alan profillerin tamamı doğrulanmış gerçek kişilerden oluşmaktadır. Otelinizde veya kendi özel rezidansınızda unutulmaz anlar geçirmek için tek yapmanız gereken katalogdan dilediğiniz partneri seçmek.`,
+            `Görüşmelerde gizliliğiniz en üst düzeyde korunur. ${zone} Rus escort ve üniversiteli eskort seçenekleriyle hayallerinizdeki partner deneyimine kapora tuzağı olmadan, adreste elden ödeme güvencesiyle ulaşabilirsiniz. Bölgenin en aktif ve kaporasız VIP escort modelleri burada listelenmiştir.`
+        ];
+        const ctas = [
+            `Hemen şimdi güncel listemizi ve aktif üyelerimizi incelemek için <a href="${targetSite}">${zone} Escort Profil Kataloğu</a> adresini ziyaret edin ve randevunuzu anında oluşturun!`,
+            `Daha fazla bilgi, güncel telefon numaraları ve aktif kızlar için <a href="${targetSite}">${zone} Escort Profil Kataloğu</a> linkini tıklayarak ana sitemize güvenli giriş yapabilirsiniz.`
+        ];
+        
+        content = `
+# 👑 ${zone} VIP Escort | ${zone} Rus & Üniversiteli Partnerler
+
+${intros[Math.floor(Math.random() * intros.length)]}
+
+## 🛡️ Neden Kaporasız ${zone} Escort?
+
+${bodies[Math.floor(Math.random() * bodies.length)]}
+
+## 🔞 ${zone} VIP Escort Profil Kataloğu
+
+${ctas[Math.floor(Math.random() * ctas.length)]}
+
+---
+*Bu içerik Hydra Otomasyon Sistemi tarafından ${zone} bölgesine özel olarak üretilmiştir. Tüm hakları saklıdır.*
+        `.trim();
+    }
+    return content;
 }
 
 async function executeSitesAttack() {

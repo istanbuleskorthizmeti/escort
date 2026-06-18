@@ -118,32 +118,15 @@ export class GoogleSitesFactory {
             console.log(`🎯 [TARGET] ${siteTitle} hedefleniyor...`);
             
             // 1. Yeni Site Oluştur
-            await page.goto('https://sites.google.com/new', { waitUntil: 'load', timeout: 120000 });
+            await page.goto('https://sites.google.com/create', { waitUntil: 'load', timeout: 120000 });
             
             if (page.url().includes('signin')) {
                  console.log("⚠️ [ACTION] Lutfen GIRIS YAP.");
                  await page.waitForFunction(() => !window.location.href.includes('signin'), { timeout: 0 });
-                 await page.goto('https://sites.google.com/new', { waitUntil: 'load', timeout: 120000 });
+                 await page.goto('https://sites.google.com/create', { waitUntil: 'load', timeout: 120000 });
             }
 
-            console.log("🖱️ '+' (Yeni site) butonuna tiklaniyor...");
-            const createSelectors = [
-                '[aria-label="Create new site"]', '[aria-label="Yeni site oluştur"]', '[aria-label="Boş"]',
-                '.docs-homescreen-templates-templateview-preview', '[data-tooltip="Create new site"]'
-            ];
-            
-            await page.waitForSelector(createSelectors.join(','));
-            const clicked = await page.evaluate((selList: string[]) => {
-                for (const sel of selList) {
-                    const el = document.querySelector(sel) as HTMLElement;
-                    if (el) { el.click(); return true; }
-                }
-                return false;
-            }, createSelectors);
-
-            if (!clicked) throw new Error("COULD_NOT_FIND_CREATE_BUTTON");
-            
-            // Handle potential new tab
+            // Direct link lands directly in the editor, no tab or template list button click needed
             await page.waitForTimeout(5000);
             const pages = await this.browserContext.pages();
             let editorPage = pages[pages.length - 1];
@@ -278,7 +261,7 @@ async function runPlaywrightSiege() {
              await factory.constructSite({
                  district: district,
                  city: city,
-                 targetUrl: "https://istanbulescort.blog",
+                 targetUrl: "https://dorukcanay.digital",
                  round: round
              });
              

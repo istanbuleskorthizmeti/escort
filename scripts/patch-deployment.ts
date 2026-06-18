@@ -25,7 +25,13 @@ const FILES_TO_PATCH = [
   'lib/seo-metadata.ts',
   'lib/seo/spintax.ts',
   'lib/seo/templates.ts',
-  'app/ansiklopedi/[slug]/page.tsx'
+  'app/ansiklopedi/[slug]/page.tsx',
+  'components/SEO/GlobalTagCloud.tsx',
+  'components/SEO/ContextualPBN.tsx',
+  'components/SEO/GodModeCopyright.tsx',
+  'components/SEO/UltraFooter.tsx',
+  'components/SEO/footer-tag-cloud.tsx',
+  'public/pdf/istanbul-vip-escort-katalogu.pdf'
 ];
 
 async function runPatch() {

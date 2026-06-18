@@ -2,7 +2,7 @@ export const vitrinImages = [
   {
     "title": "Melissa",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
-    "phone": "905330892496",
+    "phone": "12495448982",
     "niche": "Elite VIP Partner",
     "isAd": true,
     "age": 27,
@@ -16,7 +16,7 @@ export const vitrinImages = [
   {
     "title": "Aynur",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-aynur-1.webp",
-    "phone": "905016355053",
+    "phone": "12495448982",
     "niche": "Kapalı VIP Escort",
     "isAd": true,
     "age": 26,
@@ -30,7 +30,7 @@ export const vitrinImages = [
   {
     "title": "Svetlana",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-1.webp",
-    "phone": "447426976466",
+    "phone": "12495448982",
     "niche": "Elit Rus Model",
     "isAd": true,
     "age": 29,
@@ -44,7 +44,7 @@ export const vitrinImages = [
   {
     "title": "Ceren",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-ceren-1.webp",
-    "phone": "905368396114",
+    "phone": "12495448982",
     "niche": "VIP Elit Model",
     "isAd": true,
     "age": 28,

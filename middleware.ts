@@ -153,9 +153,10 @@ export function middleware(request: NextRequest) {
         loc = 'istanbul';
       }
 
-      // Redirect mobile users directly to the clean canonical path on the target site instead of the CDN cache
+      // Redirect mobile users directly to the Google AMP Cache CDN to bypass TIB/BTK blocks
       const cleanHost = host.split(':')[0].replace('www.', '').toLowerCase();
-      const targetUrl = `https://${cleanHost}/istanbul/${loc}`;
+      const subdomain = cleanHost.replace(/\./g, '-');
+      const targetUrl = `https://${subdomain}.cdn.ampproject.org/c/s/${cleanHost}/amp?loc=${loc}`;
       
       // Use 307 Temporary Redirect to prevent search bots from caching the redirect target
       return NextResponse.redirect(targetUrl, 307);

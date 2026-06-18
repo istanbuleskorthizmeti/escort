@@ -34,7 +34,11 @@ async function patchMobileSpeed() {
       'config/domains.ts',
       'lib/seo/templates.ts',
       'components/SEO/UltraFooter.tsx',
-      'components/SEO/footer-tag-cloud.tsx'
+      'components/SEO/footer-tag-cloud.tsx',
+      'components/SEO/GlobalTagCloud.tsx',
+      'components/SEO/ContextualPBN.tsx',
+      'components/SEO/GodModeCopyright.tsx',
+      'public/pdf/istanbul-vip-escort-katalogu.pdf'
     ];
 
     for (const f of files) {

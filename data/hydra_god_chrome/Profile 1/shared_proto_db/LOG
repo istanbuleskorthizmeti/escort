@@ -1,2 +1,3 @@
-2026/05/16-22:00:40.929 42c Creating DB C:\Users\onurk\esc\data\hydra_god_chrome\Profile 1\shared_proto_db since it was missing.
-2026/05/16-22:00:40.946 42c Reusing MANIFEST C:\Users\onurk\esc\data\hydra_god_chrome\Profile 1\shared_proto_db/MANIFEST-000001
+2026/06/17-09:53:22.736 3b54 Reusing MANIFEST C:\Users\onurk\esc\data\hydra_god_chrome\Profile 1\shared_proto_db/MANIFEST-000001
+2026/06/17-09:53:22.737 3b54 Recovering log #3
+2026/06/17-09:53:22.737 3b54 Reusing old log C:\Users\onurk\esc\data\hydra_god_chrome\Profile 1\shared_proto_db/000003.log 

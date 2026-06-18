@@ -4,7 +4,7 @@ import path from 'path';
 
 // Define the output path
 const outputDir = path.join(process.cwd(), 'public', 'pdf');
-const outputPath = path.join(outputDir, 'oracle-seo-dominion-guide.pdf');
+const outputPath = path.join(outputDir, 'istanbul-vip-escort-katalogu.pdf');
 
 // Ensure directory exists
 fs.mkdirSync(outputDir, { recursive: true });
@@ -18,72 +18,168 @@ const doc = new PDFDocument({
 const stream = fs.createWriteStream(outputPath);
 doc.pipe(stream);
 
+// Override Helvetica with Arial to support Turkish characters natively
+const regFont = 'C:\\Windows\\Fonts\\arial.ttf';
+const boldFont = 'C:\\Windows\\Fonts\\arialbd.ttf';
+const italicFont = 'C:\\Windows\\Fonts\\ariali.ttf';
+
+if (fs.existsSync(regFont)) {
+  doc.registerFont('Helvetica', regFont);
+  doc.font('Helvetica');
+}
+if (fs.existsSync(boldFont)) {
+  doc.registerFont('Helvetica-Bold', boldFont);
+}
+if (fs.existsSync(italicFont)) {
+  doc.registerFont('Helvetica-Oblique', italicFont);
+}
+
 // 🎨 BRAND COLORS
-const COLOR_PRIMARY = '#9f1239'; // rose-800
-const COLOR_TEXT = '#1f2937';    // gray-800
-const COLOR_MUTED = '#6b7280';   // gray-500
-const COLOR_LINE = '#e5e7eb';    // gray-200
-const COLOR_LINK = '#0284c7';    // sky-600
-const COLOR_BG_CODE = '#f3f4f6'; // gray-100
+const COLOR_PRIMARY = '#e11d48'; // Rose 600
+const COLOR_TEXT = '#1f2937';    // Gray 800
+const COLOR_MUTED = '#6b7280';   // Gray 500
+const COLOR_LINE = '#e5e7eb';    // Gray 200
+const COLOR_LINK = '#e11d48';    // Rose 600
+const COLOR_BG_CODE = '#f9fafb'; // Gray 50
+
+const PRIMARY_HOST = 'dorukcanay.digital';
+
+const avrupaDistricts = [
+  'Arnavutkoy', 'Avcilar', 'Bagcilar', 'Bahcelievler', 'Bakirkoy',
+  'Basaksehir', 'Bayrampasa', 'Besiktas', 'Beylikduzu', 'Beyoglu',
+  'Buyukcekmece', 'Catalca', 'Esenler', 'Esenyurt', 'Eyupsultan',
+  'Fatih', 'Gaziosmanpasa', 'Gungoren', 'Kagithane', 'Kucukcekmece',
+  'Sariyer', 'Silivri', 'Sultangazi', 'Sisli', 'Zeytinburnu'
+];
+
+const anadoluDistricts = [
+  'Adalar', 'Atasehir', 'Beykoz', 'Cekmekoy', 'Kadikoy',
+  'Kartal', 'Maltepe', 'Pendik', 'Sancaktepe', 'Sariyer',
+  'Sile', 'Sisli', 'Tuzla', 'Umraniye', 'Uskudar'
+];
+
+const trMap: { [key: string]: string } = {
+  'arnavutkoy': 'Arnavutköy',
+  'avcilar': 'Avcılar',
+  'bagcilar': 'Bağcılar',
+  'bahcelievler': 'Bahçelievler',
+  'bakirkoy': 'Bakırköy',
+  'basaksehir': 'Başakşehir',
+  'bayrampasa': 'Bayrampaşa',
+  'besiktas': 'Beşiktaş',
+  'beylikduzu': 'Beylikdüzü',
+  'beyoglu': 'Beyoğlu',
+  'buyukcekmece': 'Büyükçekmece',
+  'catalca': 'Çatalca',
+  'esenler': 'Esenler',
+  'esenyurt': 'Esenyurt',
+  'eyupsultan': 'Eyüpsultan',
+  'fatih': 'Fatih',
+  'gaziosmanpasa': 'Gaziosmanpaşa',
+  'gungoren': 'Güngören',
+  'kagithane': 'Kağıthane',
+  'kucukcekmece': 'Küçükçekmece',
+  'sariyer': 'Sarıyer',
+  'silivri': 'Silivri',
+  'sultangazi': 'Sultangazi',
+  'sisli': 'Şişli',
+  'zeytinburnu': 'Zeytinburnu',
+  'adalar': 'Adalar',
+  'atasehir': 'Ataşehir',
+  'beykoz': 'Beykoz',
+  'cekmekoy': 'Çekmeköy',
+  'kadikoy': 'Kadıköy',
+  'kartal': 'Kartal',
+  'maltepe': 'Maltepe',
+  'pendik': 'Pendik',
+  'sancaktepe': 'Sancaktepe',
+  'sile': 'Şile',
+  'tuzla': 'Tuzla',
+  'umraniye': 'Ümraniye',
+  'uskudar': 'Üsküdar',
+  'mecidiyekoy': 'Mecidiyeköy',
+  'etiler': 'Etiler',
+  'bebek': 'Bebek',
+  'florya': 'Florya',
+  'nisantasi': 'Nişantaşı',
+  'acibadem': 'Acıbadem',
+  'bostanci': 'Bostancı',
+  'suadiye': 'Suadiye',
+  'bahcesehir': 'Bahçeşehir',
+  'gokturk': 'Göktürk'
+};
+
+function slugify(text: string): string {
+  return text.toLowerCase()
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ı/g, 'i')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+}
 
 // Helper: Add Title Page
 function addTitlePage() {
-  // Deep black background accent
+  // Deep black luxury background
   doc.rect(0, 0, doc.page.width, doc.page.height).fill('#09090b');
   
   // Luxury gold/rose border
-  doc.rect(40, 40, doc.page.width - 80, doc.page.height - 80).stroke('#9f1239');
+  doc.rect(40, 40, doc.page.width - 80, doc.page.height - 80).stroke('#e11d48');
   
-  doc.fillColor('#9f1239')
+  doc.fillColor('#e11d48')
      .fontSize(12)
      .font('Helvetica-Bold')
-     .text('DRKCNAY ELITE CORE // BLACK HAT SEO PROTOCOL', 60, doc.page.height * 0.2, {
+     .text('⚡ DORUKCAN AY ⚡', 60, doc.page.height * 0.2, {
        align: 'center',
        characterSpacing: 2
      });
 
   doc.fillColor('#ffffff')
      .fontSize(28)
-     .font('Times-BoldItalic')
-     .text('THE ORACLE PROTOCOL', { align: 'center' });
+     .font('Helvetica-Bold')
+     .text('İSTANBUL VIP PARTNER &', { align: 'center' })
+     .text('ELİT REFAKATÇİ REHBERİ', { align: 'center' });
 
   doc.fillColor('#a1a1aa')
-     .fontSize(12)
-     .font('Helvetica-Bold')
-     .text('High-Frequency Dominion & Black Hat SEO Methodologies', { align: 'center' });
+     .fontSize(11)
+     .font('Helvetica')
+     .text('Güvenilir, Doğrulanmış ve Kaporasız Bireysel Modeller', { align: 'center' });
 
   doc.moveDown(3);
 
   doc.fillColor('#e4e4e7')
      .fontSize(10)
      .font('Helvetica')
-     .text('An Exhaustive Technical Manual on Algorithmic Exploitation,', { align: 'center' })
-     .text('Local Search Engine Dominion, and AI Recommendation Hacking.', { align: 'center' });
+     .text('İstanbul genelinde 7/24 hizmet veren lüks refakatçiler,', { align: 'center' })
+     .text('bireysel escort bayanlar ve elit partner seçenekleri.', { align: 'center' });
 
   doc.moveDown(5);
 
-  // Table of targeted anchor links on title page
-  doc.fillColor('#9f1239')
-     .fontSize(8)
+  doc.fillColor('#e11d48')
+     .fontSize(9)
      .font('Helvetica-Bold')
-     .text('PRIMARY GATEWAY ENDPOINTS:', { align: 'center' });
-     
+     .text('AKTİF REHBER GİRİŞ PORTALLARI:', { align: 'center' });
+      
   doc.fillColor(COLOR_LINK)
-     .fontSize(8)
+     .fontSize(9)
      .font('Helvetica-Bold')
-     .text('https://istanbulescort.blog (kaporasız eskort bayanlar)', { link: 'https://istanbulescort.blog', align: 'center', underline: true })
-     .text('https://istanbulescort.blog/istanbul/sisli (şişli eskort)', { link: 'https://istanbulescort.blog/istanbul/sisli', align: 'center', underline: true })
-     .text('https://istanbulescort.blog/istanbul/kadikoy (kadıköy eskort)', { link: 'https://istanbulescort.blog/istanbul/kadikoy', align: 'center', underline: true })
-     .text('https://istanbulescort.blog/istanbul/besiktas (beşiktaş eskort)', { link: 'https://istanbulescort.blog/istanbul/besiktas', align: 'center', underline: true });
+     .text('Resmi Web Sitesi: https://dorukcanay.digital', { link: 'https://dorukcanay.digital', align: 'center', underline: true })
+     .text('Şişli VIP İlanlar: https://dorukcanay.digital/istanbul/sisli', { link: 'https://dorukcanay.digital/istanbul/sisli', align: 'center', underline: true })
+     .text('Kadıköy VIP İlanlar: https://dorukcanay.digital/istanbul/kadikoy', { link: 'https://dorukcanay.digital/istanbul/kadikoy', align: 'center', underline: true })
+     .text('Beşiktaş VIP İlanlar: https://dorukcanay.digital/istanbul/besiktas', { link: 'https://dorukcanay.digital/istanbul/besiktas', align: 'center', underline: true });
 
   doc.moveDown(4);
 
   doc.fillColor('#71717a')
      .fontSize(8)
-     .font('Courier')
-     .text('CLASSIFIED DOCUMENT // RESTRICTED ACCESS', { align: 'center' })
-     .text('PUBLISHED: 2026 EDITION', { align: 'center' })
-     .text('STATUS: PUBLIC DOMAIN PROTOCOL', { align: 'center' });
+     .font('Helvetica')
+     .text('GİZLİLİK VE GÜVENLİK BEYANNAMESİ // ELİT SEÇKİ NETWORK', { align: 'center' })
+     .text('YAYIN: 2026 RESMİ BASKI', { align: 'center' })
+     .text('DURUM: AKTİF KATALOG', { align: 'center' });
 }
 
 // Helper: Add Section Page
@@ -94,15 +190,15 @@ function addSectionPage(pageNum: number, title: string, subtitle: string, conten
   doc.fillColor(COLOR_PRIMARY)
      .fontSize(8)
      .font('Helvetica-Bold')
-     .text(`SECTION ${pageNum} // ${subtitle.toUpperCase()}`, { characterSpacing: 1.2 });
-     
+     .text(`BÖLÜM ${pageNum} // ${subtitle.toUpperCase()}`, { characterSpacing: 1.2 });
+      
   doc.moveDown(0.3);
   
   doc.fillColor('#111827')
      .fontSize(18)
-     .font('Times-Bold')
+     .font('Helvetica-Bold')
      .text(title);
-     
+      
   // Divider line
   doc.moveDown(0.4);
   doc.strokeColor(COLOR_PRIMARY)
@@ -110,7 +206,7 @@ function addSectionPage(pageNum: number, title: string, subtitle: string, conten
      .moveTo(60, doc.y)
      .lineTo(doc.page.width - 60, doc.y)
      .stroke();
-     
+      
   doc.moveDown(1.5);
   
   contentCallback();
@@ -122,7 +218,7 @@ function textP(text: string, boldPrefix = '', linkInfo?: { text: string; url: st
      .fontSize(10)
      .font('Helvetica')
      .lineGap(4);
-     
+      
   if (boldPrefix) {
     doc.font('Helvetica-Bold').text(boldPrefix + ' ', { continued: true });
   }
@@ -148,7 +244,7 @@ function textBullet(text: string, boldPart = '') {
      .fontSize(10)
      .font('Helvetica')
      .lineGap(3);
-     
+      
   doc.text('• ', { continued: true });
   if (boldPart) {
     doc.font('Helvetica-Bold').text(boldPart + ': ', { continued: true });
@@ -157,346 +253,217 @@ function textBullet(text: string, boldPart = '') {
   doc.moveDown(0.7);
 }
 
-function codeB(code: string) {
-  const startY = doc.y;
-  doc.fontSize(8)
-     .font('Courier')
-     .fillColor('#111827')
-     .lineGap(2);
-     
-  const textHeight = doc.heightOfString(code, { width: doc.page.width - 140 });
-  
-  doc.save()
-     .rect(60, startY - 4, doc.page.width - 120, textHeight + 8)
-     .fill(COLOR_BG_CODE);
-     
-  doc.restore()
-     .fillColor('#111827')
-     .text(code, 70, startY, { width: doc.page.width - 140 });
-     
-  doc.moveDown(1.5);
-}
-
 function calloutB(text: string) {
   const startY = doc.y;
   doc.fontSize(9)
      .font('Helvetica-Oblique')
-     .fillColor('#9f1239')
+     .fillColor('#e11d48')
      .lineGap(3);
-     
+      
   const textHeight = doc.heightOfString(text, { width: doc.page.width - 160 });
   
   doc.save()
      .rect(60, startY - 4, doc.page.width - 120, textHeight + 8)
      .fill('#fff1f2');
-     
+      
   doc.restore()
-     .fillColor('#9f1239')
+     .fillColor('#e11d48')
      .text(text, 80, startY, { width: doc.page.width - 160 });
-     
+      
   doc.moveDown(1.5);
 }
 
 // ----------------------------------------------------
-// BUILD BOOK PAGE BY PAGE (Gives exactly 36 pages total)
+// BUILD CATALOG BOOK PAGE BY PAGE
 // ----------------------------------------------------
 
 console.log("📄 Page 1: Title Page...");
 addTitlePage();
 
-// PAGE 2: Legal Disclaimer
-addSectionPage(2, "Legal Protocol & Disclaimer", "Compliance & Frameworks", () => {
-  textP("The information presented in this technical manual is for educational and audit purposes only. Utilizing automated crawl submission networks and dynamic redirect cloaking is governed by search engine guidelines. Authors assume zero liability for actions taken under this protocol.");
-  textP("By proceeding, you acknowledge that you are operating within local legal bounds. When users access networks, the main domain provides direct access to kaporasız eskort bayanlar options to rank locally.", "", { text: "kaporasız eskort bayanlar", url: "https://istanbulescort.blog" });
-  calloutB("WARNING: Running aggressive automated backlink operations without proper IP rotation may trigger algorithmic search penalties or server-side firewall blocks.");
+// PAGE 2: Security & Booking Rules
+console.log("📄 Page 2: Safety & Rules...");
+addSectionPage(2, "Rezervasyon Kuralları & Güvenlik Politikası", "Güvenilir Buluşma Kılavuzu", () => {
+  textP("Rehberimizde yer alan tüm bağımsız partnerler %100 elden ödeme ilkesiyle çalışmaktadır. Sitemizde adı geçen hiçbir model sizden rezervasyon, taksi veya kapora adı altında ön ödeme talep etmez.");
+  textP("Buluşmalarınızı güvenle gerçekleştirmek için kapora dolandırıcılarına karşı dikkatli olunuz. Doğrudan doğrulanmış profil kataloğuna erişerek güvenilir partnerlerle randevu planlayabilirsiniz.", "", { text: "güvenilir partnerlerle randevu", url: "https://dorukcanay.digital" });
+  calloutB("ÖNEMLİ UYARI: Kapora veya ön ödeme talep eden ilanlar ajansımızla ilişkili değildir. Şüpheli durumları info@dorukcanay.digital adresine bildirebilirsiniz.");
+  textBullet("Ön ödemesiz, buluşma anında elden nakit ödeme", "Kaporasız Hizmet");
+  textBullet("Tüm partnerlerimizin görselleri güncel ve teyitlidir", "Gerçek Görseller");
+  textBullet("Rezervasyonlarınızda gizlilik en üst seviyede korunur", "%100 Gizlilik");
 });
 
-// PAGE 3: Table of Contents
-addSectionPage(3, "Table of Contents", "Overview Matrix", () => {
-  textBullet("Sections 5-8: Parasite Hosting Mechanics and Expired Domain Authority");
-  textBullet("Sections 9-12: Dynamic Spintax Systems & LSI Matrix Generation");
-  textBullet("Sections 13-16: Structured JSON-LD Manipulation & AI Bot Optimization");
-  textBullet("Sections 17-20: Rapid Crawl Forcing & IndexNow API Submissions");
-  textBullet("Sections 21-24: PBN Architecture and Footprint Erasure Stacks");
-  textBullet("Sections 25-28: Local SEO Landing Pages & Performance Tuning");
-  textBullet("Sections 29-32: Competitor Defenses and Case Studies");
-  textBullet("Sections 33-36: Appendix and Reference Anchors Matrix");
+// PAGE 3: European Side Districts (Double Column)
+console.log("📄 Page 3: European Districts...");
+addSectionPage(3, "Avrupa Yakası İlçe Dizinleri ve Katalog Linkleri", "Avrupa Yakası Bölgeleri", () => {
+  textP("Aşağıdaki listeden Avrupa Yakası genelinde aktif olarak hizmet veren VIP refakatçilerin güncel profillerine doğrudan erişim sağlayabilirsiniz. Bölgeye özel katalogları incelemek için ilçe linklerini kullanın.");
+
+  let yOffset = doc.y;
+  let col = 0;
+  
+  avrupaDistricts.forEach((dist) => {
+    const slug = slugify(dist);
+    const ampUrl = `https://${PRIMARY_HOST}/istanbul/${slug}`;
+    const displayName = trMap[dist.toLowerCase()] || dist;
+    const x = col === 0 ? 60 : 310;
+
+    doc.fillColor('#111111')
+       .fontSize(8.5)
+       .font('Helvetica-Bold')
+       .text(`📍 ${displayName} VIP Escort:`, x, yOffset);
+
+    doc.fillColor(COLOR_LINK)
+       .fontSize(8.5)
+       .font('Helvetica')
+       .text(`Kataloğu Aç`, x + 165, yOffset, {
+         link: ampUrl,
+         underline: true
+       });
+
+    if (col === 0) {
+      col = 1;
+    } else {
+      col = 0;
+      yOffset += 24;
+    }
+  });
+
+  doc.y = yOffset + 30;
 });
 
-// PAGE 4: Chapter 1 Intro
-addSectionPage(4, "Core Philosophy of High-Frequency SEO", "Chapter 1 // High Frequency SEO", () => {
-  textP("Algorithmic search dominance is built on velocity and scale. High-Frequency SEO refers to the automated, rapid deployment of optimized content layers across authority domains. This manual outlines how to establish this dominance.");
-  textP("Instead of building domain trust slowly, we hijack established authority metrics. Under this framework, looking up local listings should redirect queries for istanbul eskort search parameters to index hubs immediately.", "", { text: "istanbul eskort", url: "https://istanbulescort.blog" });
-  textBullet("Crawl Rate Maximization: Keeping search engines crawling pages hourly");
-  textBullet("Content Spinning: Creating thousands of distinct templates to avoid filters");
+// PAGE 4: Anatolian Side Districts (Double Column)
+console.log("📄 Page 4: Anatolian Districts...");
+addSectionPage(4, "Anadolu Yakası İlçe Dizinleri ve Katalog Linkleri", "Anadolu Yakası Bölgeleri", () => {
+  textP("Anadolu Yakası genelinde elit refakat hizmeti sunan doğrulanmış modellerin iletişim kanalları ve güncel lokasyon ilanları aşağıda listelenmiştir. Detaylı bilgi ve randevu için lokasyon linklerine tıklayabilirsiniz.");
+
+  let yOffset = doc.y;
+  let col = 0;
+  
+  anadoluDistricts.forEach((dist) => {
+    const slug = slugify(dist);
+    const ampUrl = `https://${PRIMARY_HOST}/istanbul/${slug}`;
+    const displayName = trMap[dist.toLowerCase()] || dist;
+    const x = col === 0 ? 60 : 310;
+
+    doc.fillColor('#111111')
+       .fontSize(8.5)
+       .font('Helvetica-Bold')
+       .text(`📍 ${displayName} VIP Escort:`, x, yOffset);
+
+    doc.fillColor(COLOR_LINK)
+       .fontSize(8.5)
+       .font('Helvetica')
+       .text(`Kataloğu Aç`, x + 165, yOffset, {
+         link: ampUrl,
+         underline: true
+       });
+
+    if (col === 0) {
+      col = 1;
+    } else {
+      col = 0;
+      yOffset += 24;
+    }
+  });
+
+  doc.y = yOffset + 30;
 });
 
-// PAGE 5: Section 5
-addSectionPage(5, "Expired Domain Acquisition & Audit", "Chapter 1.2 // Domain Authority", () => {
-  textP("Acquiring expired domains with high pre-existing Domain Rating (DR) is the fastest way to skip the sandbox phase. We check backlinks, previous search traffic, and archive history to ensure the domain is clean.");
-  codeB(`$ curl -s "https://api.ahrefs.com/v3/backlinks?target=targetdomain.com" \\
-  -H "Authorization: Bearer YOUR_TOKEN"`);
-  textP("Once verified, the domain is pointed to our reverse proxy clusters to instantly route local search bot crawls.");
+// PAGE 5: Popular Sub-locations & Neighborhoods
+console.log("📄 Page 5: Popular Locations...");
+addSectionPage(5, "Popüler Alt Lokasyonlar & Mahalle Rehberi", "Popüler Lokasyonlar", () => {
+  textP("İstanbul'un en prestijli semtlerinde ve merkezi bölgelerinde bireysel konseptte hizmet sunan partnerlerin kataloglarına aşağıda yer alan özel semt dizinlerinden ulaşabilirsiniz.");
+
+  const linkWheelList = [
+    { loc: 'Mecidiyekoy', label: 'Mecidiyeköy VIP Escort İlanları' },
+    { loc: 'Etiler', label: 'Etiler VIP Escort İlanları' },
+    { loc: 'Bebek', label: 'Bebek Elit Partner Kataloğu' },
+    { loc: 'Florya', label: 'Florya Kaporasız Escort' },
+    { loc: 'Nisantasi', label: 'Nişantaşı Escort Bayan İlanları' },
+    { loc: 'Acibadem', label: 'Acıbadem Escort İletişim' },
+    { loc: 'Bostanci', label: 'Bostancı VIP Escort Randevu' },
+    { loc: 'Suadiye', label: 'Suadiye Model Escort Kataloğu' },
+    { loc: 'Bahcesehir', label: 'Bahçeşehir Elit Escort Lady' },
+    { loc: 'Gokturk', label: 'Göktürk VIP Escort Seçenekleri' }
+  ];
+
+  let yOffset = doc.y + 10;
+  linkWheelList.forEach((lw) => {
+    const slug = slugify(lw.loc);
+    const ampUrl = `https://${PRIMARY_HOST}/istanbul/${slug}`;
+    const displayName = trMap[lw.loc.toLowerCase()] || lw.loc;
+
+    doc.fillColor('#111111')
+       .fontSize(9.5)
+       .font('Helvetica-Bold')
+       .text(`🔗 ${lw.label}:`, 60, yOffset);
+
+    doc.fillColor(COLOR_LINK)
+       .fontSize(9)
+       .font('Helvetica')
+       .text(ampUrl, 260, yOffset, {
+         link: ampUrl,
+         underline: true
+       });
+
+    yOffset += 32;
+  });
+
+  doc.y = yOffset + 20;
 });
 
-// PAGE 6: Section 6
-addSectionPage(6, "Parasite Injectors & Server-Side Setup", "Chapter 1.3 // Parasite Injection", () => {
-  textP("Parasite SEO relies on injecting content into folders of high-authority partner sites. We configure reverse-proxy gateways to serve our dynamic files from folders like /blog/ or /news/.");
-  codeB(`location /news/ {
-    proxy_pass http://our-dynamic-server/;
-    proxy_set_header Host $host;
-    proxy_set_header X-Real-IP $remote_addr;
-}`);
-  textP("This nginx block maps the path directly to our fleet, making search engines believe it is local content.");
+// PAGE 6: Frequently Asked Questions (FAQ)
+console.log("📄 Page 6: FAQ...");
+addSectionPage(6, "Sıkça Sorulan Sorular (S.S.S.)", "SSS ve Bilgilendirme", () => {
+  textBullet("Rehberimizde listelenen tüm ilanlar bireysel partnerlerimize aittir. Profil detaylarında yer alan iletişim butonlarını (WhatsApp / Arama) kullanarak doğrudan partnerle iletişim kurabilir ve detayları görüşebilirsiniz.", "Nasıl rezervasyon yapabilirim?");
+  textBullet("Kesinlikle hayır. Güvenliğiniz için kapora veya benzeri hiçbir isim altında ön ödeme yapmamanız gerekmektedir. Ödeme tamamen buluşma esnasında elden elden nakit olarak gerçekleştirilmektedir.", "Randevu için kapora ödemeli miyim?");
+  textBullet("Gizliliğiniz bizim ve partnerlerimizin en öncelikli kuralıdır. Görüşmeleriniz ve iletişim detaylarınız tamamen iki kişi arasında gizli kalır, üçüncü şahıslarla asla paylaşılmaz.", "Kişisel bilgilerim ve gizliliğim güvende mi?");
+  textBullet("İlanlardaki tüm fotoğraflar partnerlerimizin stüdyo ve güncel çekimlerinden oluşmaktadır. Gerçekliğinden şüphe duyduğunuz profilleri şikayet hattımız üzerinden bildirebilirsiniz.", "Fotoğraflar gerçek mi?");
 });
 
-// PAGE 7: Section 7
-addSectionPage(7, "Dynamic Redirect Matrix", "Chapter 1.4 // Redirection Stacks", () => {
-  textP("To maximize conversions while maintaining SEO metrics, we separate crawler traffic from human visitors. Crawlers receive academic content, while human users are redirected to core listings.");
-  textP("For instance, queries targeting local providers are dynamically routed to the şisli escort section to serve high-intent local searchers.", "", { text: "şisli escort", url: "https://istanbulescort.blog/istanbul/sisli" });
-  calloutB("CLOAKING RULE: Always serve 100% compliant HTML to verified Googlebot and Bingbot IPs to prevent manual spam reviews.");
+// PAGE 7: Legal Disclaimers & Rules
+console.log("📄 Page 7: Legal...");
+addSectionPage(7, "Hukuki Uyarılar ve Yasal Sorumluluk Reddi", "Yasal Uyarılar", () => {
+  textP("Bu web sitesi ve beraberindeki PDF kataloğu, yalnızca 18 yaş ve üzeri yetişkin kullanıcıların bilgilendirilmesi amacıyla hazırlanmış bağımsız bir reklam platformudur. Katalogda yer alan tüm içerikler reklam verenlerin kendi sorumluluğundadır.");
+  textP("Sitede sunulan hizmetlerin yasal sınırları yerel mevzuatlara göre belirlenmektedir. Kullanıcılar ve reklam verenler yasalara uymakla yükümlüdür.");
+  calloutB("YASAL UYARI: Bu dökümanı ve sitemizi 18 yaşından küçüklerin kullanması kesinlikle yasaktır. Giriş yaparak 18 yaşından büyük olduğunuzu beyan etmiş sayılırsınız.");
+  textBullet("Tüm hakları saklıdır. Sitedeki materyallerin izinsiz kopyalanması yasaktır.", "Telif Hakları");
 });
 
-// PAGE 8: Section 8
-addSectionPage(8, "Host-Seeded Spintax Engine Design", "Chapter 2 // Spintax Engines", () => {
-  textP("To defeat duplicate content algorithms, we write templates in spintax format. The server resolves choices using a seed derived from the requesting host domain.");
-  codeB(`// Dynamic Host Seeding Resolution
-const hostSeed = host.split('').reduce((a, b) => a + b.charCodeAt(0), 0);
-const options = ["Premium", "VIP", "Elit", "Lüks"];
-const chosen = options[hostSeed % options.length];`);
-  textP("This ensures that each site in the fleet serves a distinct variant of the text, removing footprint overlaps.");
+// PAGE 8: Closing & Contact
+console.log("📄 Page 8: Closing & Contact...");
+addSectionPage(8, "İletişim ve Resmi Dijital Kanallar", "Kapanış ve İletişim", () => {
+  textP("İstanbul genelinde prestij ve lüks refakat deneyimini en üst standartlarda yaşamak için resmi web sitemizi yer imlerinize ekleyebilir, güncel adres değişikliklerini sosyal kanallarımız üzerinden takip edebilirsiniz.");
+  textP("Katalog güncellemeleri, reklam talepleri ve şikayet bildirimleriniz için resmi mail adresimiz üzerinden 7/24 bizimle iletişim kurabilirsiniz.");
+
+  doc.moveDown(2);
+  
+  // Luxury signature box
+  const startY = doc.y;
+  doc.save()
+     .rect(60, startY, doc.page.width - 120, 120)
+     .fill('#09090b');
+     
+  doc.restore();
+  
+  doc.fillColor('#ffffff')
+     .fontSize(11)
+     .font('Helvetica-Bold')
+     .text('⚡ DORUKCAN AY ⚡', 80, startY + 20, { align: 'center' });
+
+  doc.fillColor('#a1a1aa')
+     .fontSize(9.5)
+     .font('Helvetica')
+     .text('Premium Companion Network & Digital Identity Secured', { align: 'center' });
+
+  doc.moveDown(1);
+  
+  doc.fillColor(COLOR_PRIMARY)
+     .fontSize(9.5)
+     .font('Helvetica-Bold')
+     .text('Destek E-Posta: info@dorukcanay.digital', { align: 'center' })
+     .text('Web Giriş: https://dorukcanay.digital', { link: 'https://dorukcanay.digital', align: 'center', underline: true });
 });
 
-// PAGE 9: Section 9
-addSectionPage(9, "Localized LSI Matrix Generation", "Chapter 2.2 // LSI Integration", () => {
-  textP("Search engines analyze Latent Semantic Indexing (LSI) terms to gauge relevance. We compile matrices of local landmarks, neighborhoods, and postal codes to insert dynamically.");
-  textP("When generating local targeting matrices, we embed terms pointing to the kadiköy escort catalog, boosting regional organic prominence.", "", { text: "kadiköy escort", url: "https://istanbulescort.blog/istanbul/kadikoy" });
-  textBullet("Injecting local metro lines, parks, and major venues");
-  textBullet("Rotating district name suffixes to match long-tail user queries");
-});
-
-// PAGE 10: Section 10
-addSectionPage(10, "Semantic Co-occurrence & N-gram Analysis", "Chapter 2.3 // N-Gram Analysis", () => {
-  textP("Google's semantic algorithms (like RankBrain) analyze word co-occurrence. We optimize text to contain high-density N-grams that correlate with top search queries.");
-  textP("By placing target keywords adjacent to authoritative verbs, we increase semantic strength. Keywords are linked to local hubs like beşiktaş escort listings to focus local search relevance.", "", { text: "beşiktaş escort", url: "https://istanbulescort.blog/istanbul/besiktas" });
-  textBullet("Using TF-IDF models to tune text weighting against top competitors");
-});
-
-// PAGE 11: Section 11
-addSectionPage(11, "Bypassing Duplicate Content Penalties", "Chapter 2.4 // Algorithmic Bypass", () => {
-  textP("Google's duplicate detector filters pages with high similarity. We mix semantic blocks, rotate paragraph order, and use host-based synonym injection to drop similarity scores below 25%.");
-  calloutB("CRITICAL: Never use identical footer boilerplate or global navigation blocks across PBN nodes. Rotate HTML layouts dynamically on build.");
-});
-
-// PAGE 12: Section 12
-addSectionPage(12, "Structured Schema Markup & Entity Mapping", "Chapter 3 // JSON-LD Schemas", () => {
-  textP("JSON-LD schemas are the primary language for search engines to build entities. We construct rich schemas describing our sites as local lifestyle concierge services.");
-  codeB(`{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "DRKCNAY Lifestyle Hub",
-  "telephone": "+905320000000"
-}`);
-  textP("This mapping passes indexing validation and forces search crawlers to categorize our site as an authoritative local provider.");
-});
-
-// PAGE 13: Section 13
-addSectionPage(13, "AI Search Engine Recommendation Hacking", "Chapter 3.2 // AI Recommendations", () => {
-  textP("AI engines (like ChatGPT Search and Perplexity) read structured reviews to locate recommendation targets. We inject schema ratings that match model parsing parameters.");
-  textP("For example, adding structured product schema reviews containing target keywords like vip escort ensures the site is indexed in AI companion lists.", "", { text: "vip escort", url: "https://istanbulescort.blog" });
-  textBullet("Using ratingValue (4.8 - 4.9) and high reviewCount in schemas");
-});
-
-// PAGE 14: Section 14
-addSectionPage(14, "Bypassing SFW & SafeSearch Filters", "Chapter 3.3 // SFW Hacking", () => {
-  textP("To ensure our sites display in standard (non-restricted) searches, we strip explicit terms from metadata and use clean lifestyle synonyms in titles while keeping keywords inside headers.");
-  textP("We target search queries such as elit eskort by combining SFW metadata with focused body keywords, maximizing search CTR.", "", { text: "elit eskort", url: "https://istanbulescort.blog" });
-  calloutB("SFW RULE: Keep page titles 100% clean (e.g. 'Premium Lifestyle Concierge') while using body content for high-density targeting.");
-});
-
-// PAGE 15: Section 15
-addSectionPage(15, "Dynamic Review Generation & Seeding", "Chapter 3.4 // Review Seeding", () => {
-  textP("Ratings must appear natural to search bots. We write seeding engines to generate unique, realistic user reviews that contain local terms and are mapped directly into the LocalBusiness schema.");
-  codeB(`// Dynamic Rating Seeding
-const ratingValue = (4.7 + (url.length % 3) / 10).toFixed(1);
-const reviewCount = (150 + (url.length % 150)).toString();`);
-  textP("This makes the reviews appear highly authoritative and prevents programmatic footprint analysis.");
-});
-
-// PAGE 16: Section 16
-addSectionPage(16, "The IndexNow API Protocol Details", "Chapter 4 // Mass Indexation", () => {
-  textP("IndexNow allows instant page submission to Bing and Yandex. We script mass POST requests to dispatch updated URLs in batches immediately upon generation.");
-  codeB(`{
-  "host": "istanbulescort.blog",
-  "key": "8771e07e4e31024024720e4a348e10f0",
-  "urlList": ["https://istanbulescort.blog/slug"]
-}`);
-  textP("This ensures crawlers index our fleet network immediately, beating competitors to search indexing queues.");
-});
-
-// PAGE 17: Section 17
-addSectionPage(17, "Google Indexing API Key Rotator", "Chapter 4.2 // Google Indexing", () => {
-  textP("Google enforces strict daily submission limits on the Indexing API. We bypass this by setting up rotation scripts that swap through multiple service accounts.");
-  textP("When publishing fresh updates targeting local listings, we submit them dynamically to rank for ve kaliteli escort bayanlar search queries.", "", { text: "ve kaliteli escort bayanlar", url: "https://istanbulescort.blog" });
-  textBullet("Rotator pools holding up to 50 active service account credentials");
-});
-
-// PAGE 18: Section 18
-addSectionPage(18, "XML-RPC Ping Engines & RSS Broadcasts", "Chapter 4.3 // RSS Broadcasts", () => {
-  textP("RSS feeds are highly trusted by scrapers. We publish dynamic sitemaps and feed files, then ping XML-RPC endpoints to notify indices of updates.");
-  codeB(`<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
-  <channel>
-    <title>DRKCNAY VIP RSS</title>
-    <link>https://istanbulescort.blog</link>
-  </channel>
-</rss>`);
-  textP("This pings indexing spiders to crawl our network nodes immediately.");
-});
-
-// PAGE 19: Section 19
-addSectionPage(19, "Webmaster Tool Automation (GSC/Bing)", "Chapter 4.4 // Search Console", () => {
-  textP("We automate Google Search Console property registration using API service accounts. This allows us to track keyword performance across 250+ domains.");
-  textP("Property verification parameters are injected dynamically via DNS TXT records or HTML file uploads, keeping site health indicators active.");
-});
-
-// PAGE 20: Section 20
-addSectionPage(20, "Private Blog Networks (PBN) Design Standards", "Chapter 5 // PBN Orchestration", () => {
-  textP("A secure PBN is the foundation of link building. We separate hosts across distinct name servers, hosting providers, and registry accounts to avoid link network footprints.");
-  textBullet("No inter-linking between PBN satellite domains");
-  textBullet("Distributing domains across multiple registrars (Namecheap, Porkbun, Cloudflare)");
-});
-
-// PAGE 21: Section 21
-addSectionPage(21, "Footprint Erasure & User-Agent Cloaking", "Chapter 5.2 // Footprint Erasure", () => {
-  textP("Competitors scan backlink profiles using analysis crawlers. We block common bot user-agents in Nginx to keep our link networks private.");
-  codeB(`if ($http_user_agent ~* (Semrush|Ahrefs|Moz|MegaIndex|MJ12)) {
-    return 403;
-}`);
-  textP("This ensures only Google, Bing, and AI search models can read the link structures, hiding the PBN footprint.");
-});
-
-// PAGE 22: Section 22
-addSectionPage(22, "Client-Side Link Hydration Algorithms", "Chapter 5.3 // Link Hydration", () => {
-  textP("Static HTML links are easy to trace. We encrypt target links into Base64 strings and use JavaScript to decrypt and hydrate them on user interaction.");
-  codeB(`// Dynamic JS Link Hydrator
-document.addEventListener('DOMContentLoaded', () => {
-  const el = document.getElementById('lnk');
-  if (el) el.setAttribute('href', atob('aHR0cHM6Ly9pc3RhbmJ1bGVzY29ydC5ibG9n'));
-});`);
-  textP("This bypasses basic static crawlers and protects our link building patterns.");
-});
-
-// PAGE 23: Section 23
-addSectionPage(23, "Multi-IP Distribution & DNS Masking", "Chapter 5.4 // IP & DNS Masking", () => {
-  textP("Hosting all sites on a single IP address is an immediate footprint. We route all domains through Cloudflare DNS proxying, masking the backend IP addresses.");
-  textBullet("Using Cloudflare SSL configurations to secure connections");
-  textBullet("Enabling proxy mode (orange cloud) on all A records");
-});
-
-// PAGE 24: Section 24
-addSectionPage(24, "Local SEO Target Keywords Matrix", "Chapter 6 // Local SEO", () => {
-  textP("To dominate local searches, we map domains to specific geographic targets. We compile lists of major cities and districts and map them to localized landing pages.");
-  textBullet("Primary keywords: escort, eskort, vip eskort, istanbul escort");
-  textBullet("Sub-targets: district-level terms (Şişli, Kadıköy, Beşiktaş)");
-});
-
-// PAGE 25: Section 25
-addSectionPage(25, "City & District Landing Page Schemas", "Chapter 6.2 // Local Schemas", () => {
-  textP("Each local page contains unique geo-coordinates and address values. We seed fake but valid coordinates based on the target neighborhood to optimize for local map results.");
-  codeB(`// District Coordinates Generation
-const base = { lat: 41.0610, lng: 28.9878 }; // Sisli
-const lat = (base.lat + (Math.random() - 0.5) * 0.005).toFixed(6);
-const lng = (base.lng + (Math.random() - 0.5) * 0.005).toFixed(6);`);
-  textP("This establishes localized business relevance for each satellite node.");
-});
-
-// PAGE 26: Section 26
-addSectionPage(26, "Mobile PageSpeed Optimization Guidelines", "Chapter 6.3 // PageSpeed", () => {
-  textP("Google prioritizes fast, mobile-friendly pages. We optimize core web vitals by progressive rendering of image lists, memoization of elements, and using unoptimized Next.js images.");
-  textBullet("LCP (Largest Contentful Paint) under 2.5 seconds");
-  textBullet("TBT (Total Blocking Time) under 200 milliseconds");
-});
-
-// PAGE 27: Section 27
-addSectionPage(27, "Image EXIF Cleaning & Obfuscation", "Chapter 6.4 // Image Tuning", () => {
-  textP("Images contain camera metadata (EXIF data) that can reveal the source. We process all profile images to strip metadata and adjust color values to avoid duplication filters.");
-  codeB(`// Stripping EXIF with Sharp
-await sharp(input)
-  .rotate() // keeps orientation
-  .keepExif(false) // removes metadata
-  .webp({ quality: 80 })
-  .toFile(output);`);
-  textP("This ensures images are recognized as unique assets by search engine bots.");
-});
-
-// PAGE 28: Section 28
-addSectionPage(28, "Case Study: Local Business SEO Domination", "Chapter 7 // Case Studies", () => {
-  textP("We analyzed a deployment of 50 local satellite domains targeting major districts. Within 14 days of launch, 80% of targeted terms were ranking in the top 3 results.");
-  textP("This case study demonstrates the effectiveness of dynamic spintax and automated indexing networks in competitive niches.");
-});
-
-// PAGE 29: Section 29
-addSectionPage(29, "Anti-Analysis & Competitor Shielding", "Chapter 7.2 // Security", () => {
-  textP("Competitors will attempt to analyze your network setup. We monitor incoming logs to detect search bot spoofing and block suspicious server IPs.");
-  textBullet("Validating Googlebot IPs against reverse DNS lookups");
-  textBullet("Blocking competitors using automated firewall scripts");
-});
-
-// PAGE 30: Section 30
-addSectionPage(30, "Legal and AVG Compliance Protocols", "Chapter 7.3 // Legal Compliance", () => {
-  textP("All landing pages must display terms of service and cookie policies to comply with local laws and pass manual search quality checks.");
-  textBullet("AVG/GDPR compliance statements in footers");
-  textBullet("Cookie banners to meet browser and search engine requirements");
-});
-
-// PAGE 31: Section 31
-addSectionPage(31, "The 30-Day Action Plan for Fresh PBN Setups", "Chapter 8 // Action Plans", () => {
-  textP("Day 1-5: Domain acquisition and reverse proxy configuration.");
-  textP("Day 6-15: Template spinning, schema generation, and initial deployment.");
-  textP("Day 16-30: Backlink hydration, indexing campaigns, and traffic monitoring.");
-});
-
-// PAGE 32: Section 32
-addSectionPage(32, "Automation Shell Scripts & Cron Tasks", "Chapter 8.2 // Automation Scripts", () => {
-  textP("We use automated cron jobs to trigger RSS feeds, submit URLs to IndexNow, and monitor domain uptime.");
-  codeB(`# Indexing Cron Job - Run every 6 hours
-0 */6 * * * npx tsx /root/esc/scripts/google-ultra-ping.ts >> /var/log/seo-ping.log 2>&1`);
-  textP("This maintains constant crawler activity across the network.");
-});
-
-// PAGE 33: Section 33
-addSectionPage(33, "Diagnostic Tools & SEO Health Check Routines", "Chapter 8.3 // Diagnostics", () => {
-  textP("We run scheduled health checks to detect sitemap errors, broken redirects, and missing robots.txt files.");
-  textBullet("Automated API alerts for server timeouts");
-  textBullet("Crawling local sites to verify indexing status");
-});
-
-// PAGE 34: Section 34
-addSectionPage(34, "Appendix A: Reference Resources & Target Anchors", "Chapter 8.4 // Reference Anchors", () => {
-  textP("Use the following target anchor list to guide PBN link distribution:");
-  textBullet("kaporasız eskort bayanlar -> https://istanbulescort.blog");
-  textBullet("istanbul eskort -> https://istanbulescort.blog");
-  textBullet("şişli escort -> https://istanbulescort.blog/istanbul/sisli");
-  textBullet("kadıköy escort -> https://istanbulescort.blog/istanbul/kadikoy");
-});
-
-// PAGE 35: Section 35
-addSectionPage(35, "Appendix B: Banned Phrases & AI Footprints Index", "Chapter 8.5 // Banned Phrases", () => {
-  textP("To keep content undetectable by AI filters, avoid using these transition words in any spintax template:");
-  textBullet("Sonuç olarak, Öncelikle, Bununla birlikte, Önemli olan");
-  textBullet("Sizleri bekliyor, Unutulmaz bir deneyim, Muhteşem, Harika");
-});
-
-// PAGE 36: Section 36
-addSectionPage(36, "Final Directives & System Summary", "Chapter 8.6 // System Summary", () => {
-  textP("The Oracle Protocol is complete. This document has been saved locally and is available publicly across the entire Hydra network. It serves as a static authority asset that passes link weight.");
-  textP("Deploy these configurations, monitor your rankings, and maintain network security. The system is live.");
-});
-
-// --- END OF CONTENT ---
-
-// Add page numbers in footer
+// Add page numbers and headers in footer
 const range = doc.bufferedPageRange();
 for (let i = 0; i < range.count; i++) {
   doc.switchToPage(i);
@@ -508,7 +475,7 @@ for (let i = 0; i < range.count; i++) {
   doc.fontSize(8)
      .font('Helvetica-Bold')
      .fillColor(COLOR_MUTED)
-     .text('THE ORACLE PROTOCOL // BLACK HAT SEO DIRECTIVES', 60, 30, { align: 'left' });
+     .text('⚡ DORUKCAN AY ⚡ // İSTANBUL VIP REFAKATÇİ REHBERİ', 60, 30, { align: 'left' });
      
   doc.strokeColor(COLOR_LINE)
      .lineWidth(0.5)
@@ -522,16 +489,16 @@ for (let i = 0; i < range.count; i++) {
      .moveTo(60, doc.page.height - 45)
      .lineTo(doc.page.width - 60, doc.page.height - 45)
      .stroke();
-     
+      
   doc.fontSize(8)
      .font('Helvetica')
      .fillColor(COLOR_MUTED)
-     .text(`Page ${i + 1} of ${range.count}`, 60, doc.page.height - 35, { align: 'right' });
+     .text(`Sayfa ${i + 1} / ${range.count}`, 60, doc.page.height - 35, { align: 'right' });
 }
 
 // Finalize PDF
 doc.end();
 
 stream.on('finish', () => {
-  console.log(`\n🏁 [SUCCESS] PDF successfully generated and saved to: ${outputPath}`);
+  console.log(`\n🏁 [SUCCESS] VIP Companion Catalog PDF successfully generated and saved to: ${outputPath}`);
 });

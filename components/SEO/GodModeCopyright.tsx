@@ -18,10 +18,10 @@ export function GodModeCopyright() {
     <div className="w-full bg-black border-t border-zinc-900 mt-20 relative overflow-hidden group">
       {/* Background Matrix/Pulse Effect */}
       <div className="absolute inset-0 bg-linear-to-r from-red-900/10 via-black to-red-900/10 opacity-50"></div>
-      
+
       <div className="max-w-7xl mx-auto px-4 py-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
-          
+
           {/* Section 1: Security Notice */}
           <div className="space-y-4">
             <div className="flex items-center justify-center md:justify-start gap-2 text-red-500">
@@ -61,7 +61,7 @@ export function GodModeCopyright() {
               </div>
               <div className="flex justify-between">
                 <span>Bağlantı:</span>
-                <span className="animate-pulse text-rose-600 font-bold uppercase">Güvenli Elit Node</span>
+                <span className="animate-pulse text-rose-600 font-bold uppercase">Güvenli Elit Escort</span>
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ export function GodModeCopyright() {
         </div>
 
         {/* Footer Bottom Line */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
@@ -77,7 +77,7 @@ export function GodModeCopyright() {
         >
           <div className="flex items-center gap-2 mb-4 md:mb-0">
             <Lock className="w-4 h-4" aria-hidden="true" />
-            <span>&copy; {currentYear} DRKCNAY Elite Alt Alan Adı Matrisi. Tüm hakları saklıdır.</span>
+            <span>&copy; {currentYear} ⚡ DORUKCAN AY ⚡</span>
           </div>
           <div className="flex gap-4 font-mono uppercase tracking-widest">
             <a href="https://istanbulescort.blog" className="hover:text-red-500 cursor-crosshair transition-colors text-zinc-300">DRKCNAY ELITE HQ</a>

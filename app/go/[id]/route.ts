@@ -41,15 +41,25 @@ export async function GET(
   }
 
   // 🕵️ Dynamically resolve model profiles to their WhatsApp numbers if missing from database
-  const targetModel = vitrinImages.find(img => cleanId(img.title) === cleanId(id));
-  if (targetModel && targetModel.phone) {
-    const whatsappUrl = `https://wa.me/${targetModel.phone}?text=Merhaba ${targetModel.title}, görüşme için bilgi verir misin?`;
+  const normalizedId = cleanId(id);
+  const targetModel = vitrinImages.find(img => cleanId(img.title) === normalizedId);
+  const hardcodedModels = [
+    'melissa', 'aynur', 'svetlana', 'ceren', 'ayla', 'esila', 'berfin', 'dilan',
+    'jinda', 'narin', 'rojin', 'zilan', 'asya', 'buse', 'cansel', 'damla',
+    'elif', 'figen', 'gizem', 'hande', 'isil', 'kubra', 'leyla', 'merve'
+  ];
+
+  if (targetModel || hardcodedModels.includes(normalizedId)) {
+    const modelTitle = targetModel ? targetModel.title : (id.charAt(0).toUpperCase() + id.slice(1));
+    const targetPhone = (targetModel && targetModel.phone) ? targetModel.phone : '12495448982';
+    const finalPhone = (targetPhone === '905330892496' || targetPhone === '905016355053' || targetPhone === '447426976466' || targetPhone === '905368396114') ? '12495448982' : targetPhone;
+    const whatsappUrl = `https://wa.me/${finalPhone}?text=Merhaba ${modelTitle}, görüşme için bilgi verir misin?`;
     
     const report = `
 🔥 *DİNAMİK WHATSAPP TIKLAMASI (VİTRİN)*
 ━━━━━━━━━━━━━━━━━━━━
 📍 *Kaynak:* \`${host}\`
-🎯 *Model:* \`${targetModel.title}\` (\`${targetModel.phone}\`)
+🎯 *Model:* \`${modelTitle}\` (\`${finalPhone}\`)
 🏙️ *Konum:* ${city}, ${country}
 🔍 *Referer:* \`${referer}\`
 📱 *Cihaz:* \`${ua}\`

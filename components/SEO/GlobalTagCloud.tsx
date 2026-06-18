@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { getDomainConfig } from '@/config/domains';
 import { GeoLogicService } from '@/lib/seo/geo-logic';
+import { slugify } from '@/lib/utils';
 
 interface GlobalTagCloudProps {
   currentHost: string;
@@ -17,7 +18,7 @@ function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
-  const isMoneySite = currentHost === 'istanbulescort.blog' || currentHost === 'vipescorthizmeti.shop' || currentHost === 'escortvip.net';
+  const isMoneySite = currentHost === 'istanbulescort.blog' || currentHost === 'vipescorthizmeti.shop' || currentHost === 'escortvip.net' || currentHost === 'dorukcanay.digital';
   const config = getDomainConfig(currentHost);
 
   // Expanded cities and districts for hyper-local SEO
@@ -48,25 +49,25 @@ export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
   // Generate a cloud of 100 items for "Nuclear Seeding"
   let cloudItems = [];
 
-  // Add 40 City-specific Money Site Backlinks
-  for (let i = 0; i < 40; i++) {
+  const CITIES = ["istanbul", "ankara", "izmir", "antalya", "bursa", "adana", "muğla", "eskişehir", "kocaeli", "mersin", "gaziantep", "kayseri"];
+
+  // Add 100 targeted links (no plain text to prevent keyword stuffing penalties)
+  for (let i = 0; i < 100; i++) {
     const loc = locations[Math.floor(Math.random() * locations.length)];
     const kw = activeKeywords[Math.floor(Math.random() * activeKeywords.length)];
     const text = `${loc} ${kw}`;
+    const locSlug = slugify(loc);
+    
+    const isCity = CITIES.includes(loc.toLowerCase());
+    const path = isCity ? `/${locSlug}` : `/istanbul/${locSlug}`;
+    
+    // Satellites and cloakers link to flagship, money sites link internally
+    const targetBase = isMoneySite ? "" : "https://dorukcanay.digital";
+    const href = `${targetBase}${path}`;
+
     cloudItems.push({
       text: text,
-      isLink: true,
-      href: `https://istanbulescort.blog/${loc}`
-    });
-  }
-
-  // Add 60 aggressive non-link keywords to boost density
-  for (let i = 0; i < 60; i++) {
-    const loc = locations[Math.floor(Math.random() * locations.length)];
-    const kw = activeKeywords[Math.floor(Math.random() * activeKeywords.length)];
-    cloudItems.push({
-      text: `${loc} ${kw}`,
-      isLink: false
+      href: href
     });
   }
 
@@ -76,25 +77,15 @@ export function GlobalTagCloud({ currentHost }: GlobalTagCloudProps) {
     <div className="w-full bg-black border-t border-zinc-900 py-6 px-4">
       <div className="max-w-7xl mx-auto flex flex-wrap justify-center gap-1.5 opacity-60 hover:opacity-100 transition-opacity duration-500">
         {cloudItems.map((item, idx) => {
-          if (item.isLink && !isMoneySite) {
-            return (
-              <Link
-                key={idx}
-                href={item.href!}
-                className="text-[10px] text-zinc-400 hover:text-[#ff8600] uppercase font-bold tracking-tighter whitespace-nowrap transition-colors"
-                title={`${item.text} Ajansı`}
-              >
-                {item.text}
-              </Link>
-            );
-          }
           return (
-            <span
+            <Link
               key={idx}
-              className="text-[10px] text-zinc-500 uppercase font-bold tracking-tighter whitespace-nowrap cursor-default"
+              href={item.href}
+              className="text-[10px] text-zinc-400 hover:text-[#ff8600] uppercase font-bold tracking-tighter whitespace-nowrap transition-colors"
+              title={`${item.text} Ajansı`}
             >
               {item.text}
-            </span>
+            </Link>
           );
         })}
       </div>

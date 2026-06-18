@@ -105,7 +105,7 @@ function parseSpin(text: string, sehir: string, ilce: string, context: { race: s
     });
 }
 
-function generateMarkdownPageContent(sehir: string, ilce: string, pathCounter: number): string {
+function generateMarkdownPageContent(sehir: string, ilce: string, pathCounter: number, verificationCode: string): string {
   const race = getRandomElement(ADULT_RACES);
   const category = getRandomElement(ADULT_CATEGORIES);
   const niche = getRandomElement(ADULT_NICHES);
@@ -198,7 +198,7 @@ ${imageMarkdown}
 title: ${title}
 meta:
   - name: google-site-verification
-    content: qccx44g5S-nkLQjyo5uIjlGz_STmjbpZ6p5mRdZT50U
+    content: ${verificationCode.replace('.html', '')}
 ---
 `;
 
@@ -215,14 +215,14 @@ ${p2}
 `;
 }
 
-function generateLandingPageContent(): string {
+function generateLandingPageContent(verificationCode: string): string {
   const title = `İstanbul Escort & Istanbul Escort Bayan İlanları | Elit ve VIP Randevu Rehberi`;
   
   const frontmatter = `---
 title: ${title}
 meta:
   - name: google-site-verification
-    content: qccx44g5S-nkLQjyo5uIjlGz_STmjbpZ6p5mRdZT50U
+    content: ${verificationCode.replace('.html', '')}
 ---
 `;
 
@@ -325,7 +325,7 @@ export async function buildYeni1Project() {
   fs.mkdirSync(docsDir, { recursive: true });
 
   // Generate and Write Welcome/Landing page (README.md) inside docs/ and root
-  const landingPageContent = generateLandingPageContent();
+  const landingPageContent = generateLandingPageContent(GSC_FILES[0].name);
   fs.writeFileSync(path.join(folderPath, 'README.md'), landingPageContent);
   fs.writeFileSync(path.join(docsDir, 'README.md'), landingPageContent);
 
@@ -367,10 +367,11 @@ Sitemap: https://escort-randevu.stoplight.io/sitemap.xml
     processedDistricts.add(districtSlug);
 
     const districtGroupItems: TocItem[] = [];
+    const distVCode = GSC_FILES[pathCounter % GSC_FILES.length].name;
 
     // 1. Generate District-level Markdown Page (Using -escort in slug/filename)
     const districtFileName = `istanbul-${districtSlug}-escort.md`;
-    const districtFileContent = generateMarkdownPageContent("İstanbul", cleanDistrictName, pathCounter);
+    const districtFileContent = generateMarkdownPageContent("İstanbul", cleanDistrictName, pathCounter, distVCode);
     fs.writeFileSync(path.join(docsDir, districtFileName), districtFileContent);
 
     districtGroupItems.push({
@@ -391,7 +392,8 @@ Sitemap: https://escort-randevu.stoplight.io/sitemap.xml
 
       const neighborhoodFileName = `istanbul-${districtSlug}-${neighborhoodSlug}-escort.md`;
       const searchTarget = `${cleanDistrictName} ${neighborhood.name}`;
-      const neighborhoodFileContent = generateMarkdownPageContent("İstanbul", searchTarget, pathCounter);
+      const nVCode = GSC_FILES[pathCounter % GSC_FILES.length].name;
+      const neighborhoodFileContent = generateMarkdownPageContent("İstanbul", searchTarget, pathCounter, nVCode);
       
       fs.writeFileSync(path.join(docsDir, neighborhoodFileName), neighborhoodFileContent);
 

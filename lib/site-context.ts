@@ -23,12 +23,7 @@ export function getCanonicalHost(host: string): string {
 }
 
 export async function getSiteId(host: string): Promise<string> {
-  let domain = getCanonicalHost(host);
-
-  const mirrors = ['escortvip.net', 'istanbulescort.blog', 'vipescorthizmeti.shop', 'dorukcanay.digital', 'istanbulescort.blog'];
-  if (mirrors.includes(domain)) {
-    domain = 'istanbulescort.blog';
-  }
+  const domain = getCanonicalHost(host);
 
   if (siteCache.has(domain)) {
     return siteCache.get(domain)!;

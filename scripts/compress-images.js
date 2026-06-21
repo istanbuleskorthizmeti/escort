@@ -6,7 +6,7 @@ const Jimp = require('jimp');
 const TARGET_DIR = path.join(__dirname, '..', 'public');
 
 console.log('==============================================');
-echo('⚡ STARTING HYDRA NODE COMPRESSION ENGINE');
+console.log('⚡ STARTING HYDRA NODE COMPRESSION ENGINE');
 console.log('==============================================');
 console.log(`📂 Scanning: ${TARGET_DIR}`);
 

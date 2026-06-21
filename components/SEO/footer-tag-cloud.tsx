@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ISTANBUL_DISTRICTS } from '@/lib/istanbul-aggressive-seo';
 import { slugify } from '@/lib/utils';
@@ -8,6 +8,8 @@ interface FooterTagCloudProps {
 }
 
 export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
+  const [loadCloud, setLoadCloud] = useState(false);
+  const [cloudHtml, setCloudHtml] = useState('');
   const isFlagship = host?.includes('dorukcanay.digital');
   const currentYear = new Date().getFullYear();
 
@@ -50,6 +52,16 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
     return html;
   }, [currentYear]);
 
+  useEffect(() => {
+    // Defer processing and rendering of the heavy tag cloud until after page mount
+    // This removes 5000+ nodes from critical paint path & client hydration step
+    const timer = setTimeout(() => {
+      setCloudHtml(seoTagCloudHtml);
+      setLoadCloud(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [seoTagCloudHtml]);
+
   return (
     <div className="w-full bg-[#050204]/90 border-t border-zinc-900/60 py-16 px-6 mt-20 relative z-30">
       <div className="max-w-7xl mx-auto">
@@ -57,8 +69,8 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
         <div className="text-center mb-10">
           <h2 className="text-(--primary-color) text-xs font-black uppercase tracking-[0.3em] mb-4">
             {isFlagship 
-              ? "DRKCNAY VIP ESCORT AJANSI // BÖLGESEL LİSTE REHBERİ" 
-              : "İSTANBUL VIP PARTNER VE LOKASYON LİSTESİ"
+               ? "DRKCNAY VIP ESCORT AJANSI // BÖLGESEL LİSTE REHBERİ" 
+               : "İSTANBUL VIP PARTNER VE LOKASYON LİSTESİ"
             }
           </h2>
           <p className="text-zinc-500 text-xs max-w-3xl mx-auto leading-relaxed italic">
@@ -75,7 +87,7 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
           
           <div 
             className="max-h-64 overflow-y-auto flex flex-wrap gap-x-4 gap-y-2 text-[9px] font-bold uppercase tracking-wider text-zinc-800 scrollbar-thin scrollbar-thumb-zinc-800 scrollbar-track-transparent pr-2 leading-relaxed"
-            dangerouslySetInnerHTML={{ __html: seoTagCloudHtml }}
+            dangerouslySetInnerHTML={{ __html: loadCloud ? cloudHtml : '' }}
           />
 
           <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-black/80 to-transparent pointer-events-none rounded-b-3xl" />
@@ -103,3 +115,4 @@ export const FooterTagCloud: React.FC<FooterTagCloudProps> = ({ host }) => {
   );
 };
 export default FooterTagCloud;
+

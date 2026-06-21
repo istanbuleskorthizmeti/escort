@@ -1,12 +1,8 @@
 import { NodeSSH } from 'node-ssh';
+import { getSSHConfig } from './lib/ssh-helper';
 
 const ssh = new NodeSSH();
-
-const config = {
-  host: '213.232.235.181',
-  username: 'root',
-  password: '5TVuj6qiHMfh8CxH9O!'
-};
+const config = getSSHConfig();
 
 async function checkClone() {
   try {

@@ -39,17 +39,17 @@ export function MobileAppBanner() {
           {/* Logo & Info */}
           <div className="flex items-center gap-3">
             <div className="flex-shrink-0 flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-tr from-rose-600 to-pink-500 text-white font-extrabold text-lg shadow-lg shadow-rose-500/30">
-              DRK
+              VIP
             </div>
             <div>
               <h4 className="text-white font-bold text-sm tracking-wide flex items-center gap-1.5">
-                Dorukcanay VIP App
+                VIP Concierge
                 <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-semibold px-1.5 py-0.5 rounded-full border border-emerald-500/30">
-                  AKTİF
+                  ONLINE
                 </span>
               </h4>
               <p className="text-zinc-400 text-xs mt-0.5 line-clamp-1">
-                Kaporasız VIP randevu cebinde!
+                7/24 Hızlı Rezervasyon & Canlı Destek
               </p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export function MobileAppBanner() {
               rel="noopener noreferrer"
               className="px-5 py-3 rounded-lg bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-500 hover:to-pink-500 text-white font-bold text-xs shadow-md shadow-rose-600/20 transition-all duration-300 min-h-[44px] flex items-center justify-center"
             >
-              YÜKLE
+              BAĞLAN
             </a>
             
             <button

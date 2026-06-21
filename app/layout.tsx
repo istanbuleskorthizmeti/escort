@@ -88,7 +88,6 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     other: {
       'google': 'notranslate',
-      'apple-itunes-app': 'app-id=1642893041, app-argument=https://istanbulescort.blog',
       'apple-mobile-web-app-status-bar-style': 'black-translucent',
       'format-detection': 'telephone=no',
       'whatsapp-visibility': 'high-intent-escort',
@@ -191,19 +190,6 @@ export default async function RootLayout({
                     "@type": "PostalAddress",
                     "addressLocality": "Istanbul",
                     "addressCountry": "TR"
-                  }
-                },
-                {
-                  "@type": "SoftwareApplication",
-                  "@id": `https://${host}/#app`,
-                  "name": `${brandTitle} VIP Companion App`,
-                  "operatingSystem": "iOS, Android",
-                  "applicationCategory": "LifestyleApplication",
-                  "downloadUrl": `https://${host}/download-app`,
-                  "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "TRY"
                   }
                 }
               ]

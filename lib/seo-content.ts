@@ -50,8 +50,12 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
     });
 
     if (cached && cached.content && cached.content.length > 100) {
+      const { DRKCNAYSpintax } = require("./seo/spintax-engine");
+      const spintax = new DRKCNAYSpintax(host + "-" + locationSlug);
+      const spunContent = spintax.resolve(cached.content);
+
       return {
-        html: cached.content,
+        html: spunContent,
         faqs: [
           { q: `${city} ${neighborhood || district || ""} ${category || ""} VIP escort hizmetleri güvenilir mi?`, a: "DORUKCANAY ELITE güvencesiyle %100 gerçek fotoğraflı ve güvenilir escort hizmeti sunulmaktadır." }
         ]

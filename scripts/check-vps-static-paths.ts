@@ -1,12 +1,8 @@
 import { NodeSSH } from 'node-ssh';
+import { getSSHConfig } from './lib/ssh-helper';
 
 const ssh = new NodeSSH();
-
-const config = {
-  host: '187.77.111.203',
-  username: 'root',
-  password: 'Z4-nN8JfiUIh5,;g'
-};
+const config = getSSHConfig();
 
 async function run() {
   try {

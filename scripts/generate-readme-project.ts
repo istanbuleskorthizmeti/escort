@@ -76,15 +76,18 @@ function generateMarkdownContent(sehir: string, ilce: string, pathCounter: numbe
   const p2 = parseSpin(getRandom(P2_TEMPLATES), sehir, ilce, context);
   const featuredQualities = [getRandom(ADULT_QUALITIES), getRandom(ADULT_QUALITIES), getRandom(ADULT_QUALITIES), getRandom(ADULT_QUALITIES)];
 
-  const p: string[] = [];
+  let profilesShowcase = "\n## 👑 Öne Çıkan VIP Partner İlanları:\n\n";
   for (let i = 0; i < 4; i++) {
     const profile = ORIGINAL_VITRIN[i];
     const profileUrl = `https://${HOST}/go/${slugify(profile.name)}`;
     const imageUrl = `https://${HOST}/_media/vitrin/${profile.img}`;
-    p.push(`**[${profile.name}](https://dorukcanay.digital)** (${profile.race})<br>![${profile.name}](${imageUrl})<br>_${profile.cat}_<br>**[${featuredQualities[i]}](${profileUrl})**`);
+    
+    profilesShowcase += `### 🔞 ${profile.name} (${profile.race})\n` +
+      `*   **Kategori:** ${profile.cat}\n` +
+      `*   **Doğrulama:** **[${featuredQualities[i]}](${profileUrl})**\n` +
+      `*   **Detaylı Bilgi:** **[${profile.name} Profilini İncele](https://dorukcanay.digital)**\n\n` +
+      `![${profile.name} ${profile.cat}](${imageUrl})\n\n---\n\n`;
   }
-
-  const tableGrid = `\n| **🔥 VIP MODEL** | **👑 PREMIUM PARTNER** | **✨ ELİT EŞLİK** | **💎 VIP SEÇENEK** |\n| :---: | :---: | :---: | :---: |\n| ${p[0]} | ${p[1]} | ${p[2]} | ${p[3]} |\n`;
 
   const cleanIlce = ilce ? ` ${ilce}` : "";
   const kws = [
@@ -94,10 +97,7 @@ function generateMarkdownContent(sehir: string, ilce: string, pathCounter: numbe
   ];
 
   const linkUrl = ilce ? `https://${HOST}/istanbul/${slugify(ilce)}` : `https://${HOST}`;
-  const tagCloud = kws.map((k, idx) => {
-    const opacity = (0.35 + (idx % 6) * 0.1).toFixed(2);
-    return `[${k}](${linkUrl}){style="opacity: ${opacity}; font-size: 11px; margin: 4px; display: inline-block;"}`;
-  }).join(' ');
+  const tagCloud = kws.map((k) => `**[${k}](${linkUrl})**`).join(' • ');
 
   const excerpt = ilce
     ? `${ilce} escort arayanlar için kaporasız ve elden ödemeli VIP model ilanları. En popüler ${ilce} eskort bayan vitrini rehberi.`
@@ -121,7 +121,7 @@ metadata:
 
 ${p1}
 
-${tableGrid}
+${profilesShowcase}
 
 ${p2}
 

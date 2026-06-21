@@ -185,7 +185,7 @@ export const config = {
     '/robots.txt',
     '/sitemap.xml',
     '/ilan/:path*',
-    '/((?!api(?:/|$)|_next/static|_next/image|favicon.ico|_media|icon.png|apple-icon.png).*)',
+    '/((?!_next/static|_next/image|favicon.ico|_media|icon.png|apple-icon.png).*)',
   ],
 };
 

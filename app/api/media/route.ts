@@ -1,6 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import NodeCache from 'node-cache';
+
+// Rate limiting cache: 60 seconds TTL
+const ipLimitCache = new NodeCache({ stdTTL: 60, checkperiod: 10 });
+const MAX_REQUESTS_PER_MINUTE = 60;
 
 /**
  * 🕵️‍♂️ HYDRA IMAGE OBFUSCATION ENGINE (MD5 & EXIF Bypass)
@@ -11,24 +16,44 @@ import path from 'path';
 export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
+  // IP Rate Limiting Check
+  const reqAny = request as any;
+  const ip = reqAny.ip || request.headers.get('x-forwarded-for') || '127.0.0.1';
+  const requestCount = (ipLimitCache.get(ip) as number) || 0;
+
+  if (requestCount >= MAX_REQUESTS_PER_MINUTE) {
+    return new NextResponse('Too Many Requests', { status: 429 });
+  }
+
+  ipLimitCache.set(ip, requestCount + 1);
+
   // Try getting parameters via standard request.url fallback first if searchParams is empty
   let src = request.nextUrl.searchParams.get('src') || request.headers.get('x-hydra-src');
   if (!src && request.url) {
     try {
       const parsedUrl = new URL(request.url);
       src = parsedUrl.searchParams.get('src');
-    } catch (e) {}
+    } catch (e) { }
   }
-  
+
   const host = request.headers.get('host') || '';
 
   if (!src) {
     return new NextResponse('Missing src', { status: 400 });
   }
 
-  // Prevent directory traversal attacks
-  const safeSrc = src.replace(/\.\./g, '').replace(/^[/\\]+/, '');
-  const filePath = path.join(process.cwd(), 'public', safeSrc);
+  // Double-guard directory traversal checks
+  if (src.includes('..') || src.includes('\0')) {
+    return new NextResponse('Access Denied', { status: 403 });
+  }
+
+  // Prevent directory traversal attacks using strict path resolution boundary check
+  const publicDir = path.join(process.cwd(), 'public');
+  const filePath = path.resolve(publicDir, src.replace(/^[/\\]+/, ''));
+
+  if (!filePath.startsWith(publicDir)) {
+    return new NextResponse('Access Denied', { status: 403 });
+  }
 
   if (!fs.existsSync(filePath)) {
     return new NextResponse('File Not Found', { status: 404 });
@@ -39,7 +64,7 @@ export async function GET(request: NextRequest) {
 
     // Compute host-specific deterministic checksum modifier
     const hostHash = host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-    
+
     // Append a hidden comment string to shift the file hash uniquely per domain
     const obfuscationPadding = Buffer.from(`\n/* ${host}-${hostHash} */`);
     const obfuscatedBuffer = Buffer.concat([fileBuffer, obfuscationPadding]);
@@ -64,3 +89,4 @@ export async function GET(request: NextRequest) {
     return new NextResponse('Internal Server Error', { status: 500 });
   }
 }
+

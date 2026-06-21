@@ -7,9 +7,8 @@ import { isBlacklisted } from "../../lib/vitrin-blacklist";
 import { siteConfig } from "../../config/site";
 import { generateGoldenAlt } from "../../lib/seo/traffic-monster";
 
-// Collect all images from the advertising profiles (isAd: true)
+// Collect all images from all vitrin profiles
 const ALL_LIVE_PHOTOS = vitrinImages
-  .filter(profile => profile.isAd)
   .reduce((acc, profile) => {
     if (profile.src) acc.push(profile.src);
     if (profile.gallery && Array.isArray(profile.gallery)) {
@@ -36,7 +35,7 @@ export function LivePhotoMarquee({ city = "İstanbul" }: { city?: string }) {
     }
   }, []);
 
-  const limit = isMobile ? 6 : 12;
+  const limit = isMobile ? 12 : 36;
   const visiblePhotos = [...LIVE_PHOTOS, ...LIVE_PHOTOS].slice(0, limit);
 
   const realisticNames = [

@@ -10,6 +10,7 @@ const TARGET_DIR = path.join(DESKTOP_PATH, 'tamkumarbaz');
 const SOURCE_DIR = path.join(DESKTOP_PATH, 'readme-docs');
 const REPO_URL = 'https://github.com/tamkumarbaz/tamkumarbaz.git';
 const GITHUB_PAT = process.env.GITHUB_PAT;
+const INDEX_NOW_KEY = process.env.INDEX_NOW_KEY || "8771e07e4e31024024720e4a348e10f0";
 
 async function run() {
   console.log(`🚀 Starting ReadMe Git-Backed Sync to: ${TARGET_DIR}`);
@@ -60,6 +61,10 @@ async function run() {
 
   // 6. Create custom_pages and custom_blocks placeholders if needed (optional)
   fs.mkdirSync(path.join(TARGET_DIR, 'custom_pages'), { recursive: true });
+
+  // 6.5 Write IndexNow verification file to target directory root
+  console.log(`📝 Writing IndexNow verification file: ${INDEX_NOW_KEY}.txt`);
+  fs.writeFileSync(path.join(TARGET_DIR, `${INDEX_NOW_KEY}.txt`), INDEX_NOW_KEY);
 
   // 7. Write a simple _order.yaml inside docs/istanbul-escorts to establish sequence
   console.log('📝 Writing _order.yaml navigation files...');

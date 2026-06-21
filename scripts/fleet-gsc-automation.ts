@@ -110,7 +110,8 @@ async function runFleetAutomation() {
     const feedsToSubmit = [
       `https://${target.host}/sitemap-index.xml`,
       `https://${target.host}/sitemap.xml`,
-      `https://${target.host}/feed.xml`
+      `https://${target.host}/feed.xml`,
+      `https://${target.host}/rss`
     ];
 
     for (const feedUrl of feedsToSubmit) {
@@ -148,12 +149,13 @@ async function runFleetAutomation() {
     }
 
     // 2. URL Inspection & Selective Indexing API Request
+    const citySlug = target.targetCity || 'istanbul';
     const urlsToInspect = [
       `https://${target.host}/`,
-      `https://${target.host}/istanbul`,
+      `https://${target.host}/${citySlug}`,
     ];
     if (target.targetDistrict) {
-      urlsToInspect.push(`https://${target.host}/istanbul/${target.targetDistrict}`);
+      urlsToInspect.push(`https://${target.host}/${citySlug}/${target.targetDistrict}`);
     }
 
     for (const url of urlsToInspect) {

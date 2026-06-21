@@ -14,12 +14,22 @@ async function run() {
     await ssh.connect(config);
     console.log('✅ SSH Connected to VPS.');
 
-    const localContentPath = path.resolve('lib/seo-content.ts');
-    const remoteContentPath = '/root/esc/lib/seo-content.ts';
+    const filesToUpload = [
+      { local: 'lib/seo-content.ts', remote: '/root/esc/lib/seo-content.ts' },
+      { local: 'lib/telegram.ts', remote: '/root/esc/lib/telegram.ts' },
+      { local: 'config/domains.ts', remote: '/root/esc/config/domains.ts' },
+      { local: 'package.json', remote: '/root/esc/package.json' }
+    ];
 
-    console.log('📤 Uploading updated lib/seo-content.ts to VPS...');
-    await ssh.putFile(localContentPath, remoteContentPath);
-    console.log('✅ Uploaded lib/seo-content.ts.');
+    for (const f of filesToUpload) {
+      console.log(`📤 Uploading updated ${f.local} to VPS...`);
+      await ssh.putFile(path.resolve(f.local), f.remote);
+      console.log(`   ✅ Uploaded.`);
+    }
+
+    console.log('📦 Installing dependencies on VPS (npm install)...');
+    const installRes = await ssh.execCommand('npm install', { cwd: '/root/esc' });
+    console.log('Install Output:\n', installRes.stdout || installRes.stderr);
 
     console.log('🏗️ Building Next.js application on VPS (next build)... This may take 1-2 minutes...');
     const buildRes = await ssh.execCommand('npm run build', { cwd: '/root/esc' });

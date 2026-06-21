@@ -1,3 +1,4 @@
+import { NodeSSH } from 'node-ssh';
 import { getSSHConfig } from './lib/ssh-helper';
 
 const ssh = new NodeSSH();
@@ -323,6 +324,8 @@ async function startIndexing() {
   console.log("🚀 Starting money site (istanbulescort.blog) queue submission...");
   
   const moneySiteUrls = [
+    "https://dorukcanay.digital/",
+    "https://dorukcanay.digital/istanbul",
     "https://istanbulescort.blog/",
     "https://istanbulescort.blog/istanbul"
   ];
@@ -338,14 +341,29 @@ async function startIndexing() {
     'adalar', 'bayrampasa', 'sultangazi'
   ];
 
+  // Prioritize dorukcanay.digital districts first!
+  istanbulDistricts.forEach(dist => {
+    moneySiteUrls.push(\`https://dorukcanay.digital/istanbul/\${dist}\`);
+  });
+
+  // Then add istanbulescort.blog districts
   istanbulDistricts.forEach(dist => {
     moneySiteUrls.push(\`https://istanbulescort.blog/istanbul/\${dist}\`);
   });
 
   try {
     const dbPages = await prisma.pageContent.findMany({
-      where: { site: { domain: 'istanbulescort.blog' } },
-      select: { slug: true }
+      where: {
+        site: {
+          domain: { in: ['dorukcanay.digital', 'istanbulescort.blog'] }
+        }
+      },
+      select: {
+        slug: true,
+        site: {
+          select: { domain: true }
+        }
+      }
     });
     dbPages.forEach(p => {
       let slug = p.slug.toLowerCase().trim();
@@ -355,9 +373,15 @@ async function startIndexing() {
           slug = \`istanbul/\${parts.slice(1).join('/')}\`;
         }
       }
-      const fullUrl = \`https://istanbulescort.blog/\${slug}\`;
+      const domain = p.site?.domain || 'istanbulescort.blog';
+      const fullUrl = \`https://\${domain}/\${slug}\`;
       if (!moneySiteUrls.includes(fullUrl)) {
-        moneySiteUrls.push(fullUrl);
+        if (domain === 'dorukcanay.digital') {
+          // Insert after initial homepage / districts of dorukcanay.digital
+          moneySiteUrls.splice(41, 0, fullUrl);
+        } else {
+          moneySiteUrls.push(fullUrl);
+        }
       }
     });
   } catch (dbErr) {

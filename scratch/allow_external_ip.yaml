@@ -1,3 +1,0 @@
-constraint: constraints/compute.vmExternalIpAccess
-listPolicy:
-  allValues: ALLOW

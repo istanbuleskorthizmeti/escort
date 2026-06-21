@@ -125,7 +125,14 @@ export function middleware(request: NextRequest) {
   const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(ua);
   const isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
 
-  if (isMobile && !isBot) {
+  // 🛡️ Bypass redirect if inside an iframe (like Google Sites parasite page)
+  const secFetchDest = request.headers.get('sec-fetch-dest') || '';
+  const referer = request.headers.get('referer') || '';
+  const isIframe = secFetchDest === 'iframe' || secFetchDest === 'frame' || 
+                   referer.includes('sites.google.com') || 
+                   referer.includes('googleusercontent.com');
+
+  if (isMobile && !isBot && !isIframe) {
     if (
       !pathname.startsWith('/api') &&
       !pathname.startsWith('/_next') &&
@@ -177,7 +184,24 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  const response = NextResponse.next();
+  const isEmbedPath = pathname.startsWith('/embed/') || pathname.startsWith('/widget/') || pathname === '/amp';
+
+  if (isIframe || isEmbedPath) {
+    response.headers.set('X-Frame-Options', 'ALLOWALL');
+    response.headers.set(
+      'Content-Security-Policy',
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors 'self' https://sites.google.com https://*.google.com https://*.googleusercontent.com; object-src 'none';"
+    );
+  } else {
+    response.headers.set('X-Frame-Options', 'DENY');
+    response.headers.set(
+      'Content-Security-Policy',
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-src 'none'; object-src 'none';"
+    );
+  }
+
+  return response;
 }
 
 export const config = {

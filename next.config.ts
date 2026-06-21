@@ -111,20 +111,12 @@ const nextConfig: NextConfig = {
         ]
       },
       {
-        // Tight security headers for all other main portal pages (Deny framing)
+        // Tight security headers for all other main portal pages (Framing configured dynamically in middleware)
         source: '/((?!embed/vitrin|widget/vitrin|amp).*)',
         headers: [
           {
             key: 'X-DNS-Prefetch-Control',
             value: 'on'
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'DENY'
-          },
-          {
-            key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-src 'none'; object-src 'none';"
           },
           {
             key: 'Strict-Transport-Security',

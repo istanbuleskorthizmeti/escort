@@ -51,7 +51,8 @@ export async function GET(
 
   if (targetModel || hardcodedModels.includes(normalizedId)) {
     const modelTitle = targetModel ? targetModel.title : (id.charAt(0).toUpperCase() + id.slice(1));
-    const targetPhone = (targetModel && targetModel.phone) ? targetModel.phone : '12495448982';
+    const globalPhone = process.env.GLOBAL_WHATSAPP_NUMBER;
+    const targetPhone = globalPhone || (targetModel && targetModel.phone ? targetModel.phone : '12495448982');
     const finalPhone = (targetPhone === '905330892496' || targetPhone === '905016355053' || targetPhone === '447426976466' || targetPhone === '905368396114') ? '12495448982' : targetPhone;
     const whatsappUrl = `https://wa.me/${finalPhone}?text=Merhaba ${modelTitle}, görüşme için bilgi verir misin?`;
     

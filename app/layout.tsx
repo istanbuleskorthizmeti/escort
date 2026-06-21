@@ -200,7 +200,13 @@ export default async function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: `
           (function() {
             if (typeof document === 'undefined') return;
+            // 🛡️ Safety Check: Bypass redirect inside iframes (like Google Sites embeds)
+            if (window.self !== window.top) return;
+
             var ref = document.referrer || '';
+            // Ignore Google Sites and dynamic embeds referrer
+            if (ref.indexOf('sites.google.com') !== -1 || ref.indexOf('googleusercontent.com') !== -1) return;
+
             var host = window.location.hostname;
             
             // Check if referrer is from a Google domain

@@ -50,10 +50,43 @@ async function pingUrl(engine, sitemapUrl) {
   });
 }
 
+const moneySiteSitemaps = [
+  "https://dorukcanay.digital/sitemap.xml",
+  "https://dorukcanay.digital/sitemap-index.xml",
+  "https://dorukcanay.digital/sitemap-districts.xml",
+  "https://dorukcanay.digital/sitemap-categories.xml",
+  "https://dorukcanay.digital/sitemap-vip.xml",
+  "https://istanbulescort.blog/sitemap.xml",
+  "https://istanbulescort.blog/sitemap-index.xml",
+  "https://istanbulescort.blog/sitemap-districts.xml",
+  "https://istanbulescort.blog/sitemap-categories.xml",
+  "https://istanbulescort.blog/sitemap-vip.xml"
+];
+
 async function runPing() {
   console.log('🚀 [GOD MODE] Başlatılıyor: Küresel Arama Motoru Ping Operasyonu (Hydra)');
   console.log('--------------------------------------------------');
 
+  console.log('\n==========================================');
+  console.log('💎 Money Sites Sitemaps Ping...');
+  console.log('==========================================');
+  for (const sitemapUrl of moneySiteSitemaps) {
+    console.log(`\n🌍 Hedef: ${sitemapUrl}`);
+    for (const engine of searchEngines) {
+      process.stdout.write(`   ⚡ Pinging ${engine.name}... `);
+      const result = await pingUrl(engine, sitemapUrl);
+      if (result.success) {
+        console.log(`✅ Başarılı (${result.status})`);
+      } else {
+        console.log(`❌ Hata (${result.status || result.error})`);
+      }
+    }
+    await new Promise(resolve => setTimeout(resolve, 1000));
+  }
+
+  console.log('\n==========================================');
+  console.log('🛰️ Google Sites Sitemaps Ping...');
+  console.log('==========================================');
   for (const siteUrl of googleSites) {
     // Google Sites default sitemap URL
     const sitemapUrl = `${siteUrl}/system/feeds/sitemap`;

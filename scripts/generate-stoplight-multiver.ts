@@ -146,13 +146,22 @@ function getRandomElement<T>(arr: T[]): T {
 }
 
 function slugify(text: string): string {
-  return text.toLowerCase()
+  if (!text) return '';
+  return text
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'ı')
+    .replace(/Ğ/g, 'g')
     .replace(/ğ/g, 'g')
+    .replace(/Ü/g, 'u')
     .replace(/ü/g, 'u')
+    .replace(/Ş/g, 's')
     .replace(/ş/g, 's')
-    .replace(/ı/g, 'i')
+    .replace(/Ö/g, 'o')
     .replace(/ö/g, 'o')
+    .replace(/Ç/g, 'c')
     .replace(/ç/g, 'c')
+    .toLowerCase()
+    .replace(/ı/g, 'i')
     .replace(/[^a-z0-9]/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');

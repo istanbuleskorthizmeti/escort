@@ -31,7 +31,27 @@ const P2_TEMPLATES = [
 ];
 
 const getRandom = <T>(arr: T[]): T => arr[Math.floor(Math.random() * arr.length)];
-const slugify = (text: string): string => text.toLowerCase().replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c').replace(/[^a-z0-9]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+const slugify = (text: string): string => {
+  if (!text) return '';
+  return text
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'ı')
+    .replace(/Ğ/g, 'g')
+    .replace(/ğ/g, 'g')
+    .replace(/Ü/g, 'u')
+    .replace(/ü/g, 'u')
+    .replace(/Ş/g, 's')
+    .replace(/ş/g, 's')
+    .replace(/Ö/g, 'o')
+    .replace(/ö/g, 'o')
+    .replace(/Ç/g, 'c')
+    .replace(/ç/g, 'c')
+    .toLowerCase()
+    .replace(/ı/g, 'i')
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
+};
 
 function parseSpin(text: string, sehir: string, ilce: string, context: any): string {
   const combinedLoc = ilce ? `${sehir} ${ilce}` : sehir;
@@ -78,6 +98,14 @@ function generateMarkdownContent(sehir: string, ilce: string, pathCounter: numbe
 
   let profilesShowcase = "\n## 👑 Öne Çıkan VIP Partner İlanları:\n\n";
   for (let i = 0; i < 4; i++) {
+    if (i === 2) {
+      profilesShowcase += `### 📢 Reklam Vermek İçin Tıklayınız!\n` +
+        `*   **Kategori:** Reklam Sponsorluğu\n` +
+        `*   **Doğrulama:** **[Hemen Reklam Ver](https://${HOST}/go/reklam-ver)**\n` +
+        `*   **Detaylı Bilgi:** **[İletişim İçin Tıklayın](https://${HOST}/go/reklam-ver)**\n\n` +
+        `[![Reklam Vermek İçin Tıklayınız!](https://${HOST}/vitrin/reklam-ver-banner.png)](https://${HOST}/go/reklam-ver)\n\n---\n\n`;
+    }
+
     const profile = ORIGINAL_VITRIN[i];
     const profileUrl = `https://${HOST}/go/${slugify(profile.name)}`;
     const imageUrl = `https://${HOST}/_media/vitrin/${profile.img}`;

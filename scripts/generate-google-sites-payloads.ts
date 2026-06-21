@@ -196,13 +196,22 @@ function getRandomElement<T>(arr: T[]): T {
 }
 
 function slugify(text: string): string {
-  return text.toLowerCase()
+  if (!text) return '';
+  return text
+    .replace(/İ/g, 'i')
+    .replace(/I/g, 'ı')
+    .replace(/Ğ/g, 'g')
     .replace(/ğ/g, 'g')
+    .replace(/Ü/g, 'u')
     .replace(/ü/g, 'u')
+    .replace(/Ş/g, 's')
     .replace(/ş/g, 's')
-    .replace(/ı/g, 'i')
+    .replace(/Ö/g, 'o')
     .replace(/ö/g, 'o')
+    .replace(/Ç/g, 'c')
     .replace(/ç/g, 'c')
+    .toLowerCase()
+    .replace(/ı/g, 'i')
     .replace(/[^a-z0-9]/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
@@ -545,6 +554,13 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
 </style>
 </head>
 <body>
+<iframe id="innerFrame" name="innerFrame" 
+  sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
+  frameborder="0" 
+  allowfullscreen="" 
+  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
+</iframe>
 <div class="container">
   <header>
     <h1>${selectedTitle}</h1>
@@ -582,7 +598,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
     <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="footer-btn">🍀 Tüm ${ilce} Escort Kataloğunu Gör</a>
   </div>
 
-  <div class="brand-signature">⚡ DORUKCAN AY ⚡</div>
+  <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
 </div>
 ${schema}
 </body>
@@ -743,6 +759,13 @@ ${schema}
 </style>
 </head>
 <body>
+<iframe id="innerFrame" name="innerFrame" 
+  sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
+  frameborder="0" 
+  allowfullscreen="" 
+  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
+</iframe>
 <div class="wrapper">
   <div class="heading-block">
     <h1>${selectedTitle}</h1>
@@ -780,7 +803,7 @@ ${schema}
     <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="v2-footer-btn">🟢 Tüm ${ilce} Kataloğunu Gör</a>
   </div>
 
-  <div class="brand-signature">⚡ DORUKCAN AY ⚡</div>
+  <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
 </div>
 ${schema}
 </body>
@@ -925,6 +948,13 @@ ${schema}
 </style>
 </head>
 <body>
+<iframe id="innerFrame" name="innerFrame" 
+  sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
+  frameborder="0" 
+  allowfullscreen="" 
+  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
+</iframe>
 <div class="box">
   <h1>${selectedTitle}</h1>
   <p class="lead-desc">${lead}</p>
@@ -958,7 +988,7 @@ ${schema}
 
   <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="footer-btn-gold">🍀 Tüm ${ilce} Kataloğunu Keşfet</a>
 
-  <div class="brand-signature">⚡ DORUKCAN AY ⚡</div>
+  <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
 </div>
 ${schema}
 </body>
@@ -1133,6 +1163,13 @@ ${schema}
 </style>
 </head>
 <body>
+<iframe id="innerFrame" name="innerFrame" 
+  sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
+  frameborder="0" 
+  allowfullscreen="" 
+  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
+</iframe>
 <div class="container">
   <header>
     <h1>${selectedTitle}</h1>
@@ -1176,7 +1213,7 @@ ${schema}
 
   <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="footer-cta-btn">🟢 Tüm ${ilce} Görüşmelerini Listele</a>
 
-  <div class="brand-signature">⚡ DORUKCAN AY ⚡</div>
+  <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
 </div>
 ${schema}
 </body>
@@ -1187,6 +1224,27 @@ ${schema}
     // ----------------------------------------------------
     let profilesHtml = '';
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
+      if (i === 5) {
+        profilesHtml += `
+        <div class="v5-profile-card" style="border-color: #fbbf24;">
+          <div class="v5-img-container">
+            <a href="https://${PRIMARY_HOST}/go/reklam-ver" target="_blank" rel="noopener">
+              <img src="https://${PRIMARY_HOST}/vitrin/reklam-ver-banner.png" alt="Reklam Vermek İçin Tıklayınız!" width="260" height="338" loading="lazy" decoding="async">
+            </a>
+          </div>
+          <div class="v5-profile-info">
+            <h4 class="v5-profile-name" style="color: #fbbf24;">Reklam Vermek İçin Tıklayınız! <svg viewBox="0 0 24 24" width="14" height="14" fill="#fbbf24" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></h4>
+            <p class="v5-profile-cat" style="color: #fbbf24;">Premium Sponsor Reklam</p>
+            <p class="v5-profile-desc">Web sitelerimizde ve sitemizin vitrin bölümlerinde kendi ilanınızı yayınlamak için hemen bizimle iletişime geçin.</p>
+            <div class="v5-profile-tags">
+              <span class="v5-tag">Reklam</span>
+              <span class="v5-tag">Sponsor</span>
+            </div>
+            <a href="https://${PRIMARY_HOST}/go/reklam-ver" target="_blank" rel="noopener" class="v5-profile-btn" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color:#000;">Reklam Ver</a>
+          </div>
+        </div>`;
+      }
+
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -1326,6 +1384,13 @@ ${schema}
 </style>
 </head>
 <body>
+<iframe id="innerFrame" name="innerFrame" 
+  sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
+  frameborder="0" 
+  allowfullscreen="" 
+  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
+</iframe>
 <div class="container">
   <header>
     <h1>${selectedTitle}</h1>
@@ -1358,7 +1423,7 @@ ${schema}
 
   <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="footer-cta-btn">🟢 Tüm ${ilce} Görüşmelerini Listele</a>
 
-  <div class="brand-signature" style="text-align:center; margin-top:30px; font-size:0.8rem; color:var(--text-muted); opacity:0.6; border-top:1px dashed var(--border-color); padding-top:15px; font-weight:600; letter-spacing:1.5px;">⚡ DORUKCAN AY ⚡</div>
+  <div class="brand-signature" style="text-align:center; margin-top:30px; font-size:0.8rem; color:var(--text-muted); opacity:0.6; border-top:1px dashed var(--border-color); padding-top:15px; font-weight:600; letter-spacing:1.5px;">⚡ EŞREF TEK ⚡</div>
 </div>
 ${schema}
 </body>

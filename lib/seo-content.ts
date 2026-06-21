@@ -4,6 +4,9 @@ import { getSiteId } from "@/lib/site-context";
 import { generateGodModeOmniContent } from "./ai-seo";
 import { notifyGoogleIndexing } from "./seo/indexing-api";
 import { SocialBomber } from "./seo/social-bomber";
+import { DRKCNAYSpintax } from "./spintax-engine";
+import { SpintaxEngine } from "./seo/spintax-engine";
+import { googleIndexing } from "./google-indexing";
 
 interface GodModeParams {
   city: string;
@@ -50,7 +53,6 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
     });
 
     if (cached && cached.content && cached.content.length > 100) {
-      const { DRKCNAYSpintax } = require("./seo/spintax-engine");
       const spintax = new DRKCNAYSpintax(host + "-" + locationSlug);
       const spunContent = spintax.resolve(cached.content);
 
@@ -78,7 +80,6 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
 
     // 🚀 [HYDRA INDEXING] Nuclear Broadcast to Google, Bing, and Yandex
     const fullUrl = `https://${host}${locationSlug === 'home' ? '' : '/' + locationSlug}`;
-    const { googleIndexing } = require("./google-indexing");
     googleIndexing.broadcast(fullUrl).catch((e: any) => console.error("Indexing failed:", e));
     SocialBomber.blast(fullUrl, finalTitle).catch((e: any) => console.error("Social Blast failed:", e));
 
@@ -101,7 +102,6 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
     console.error("❌ [HYDRA] Content Generation Failed:", error);
     
     // 🛡️ [FALLBACK] Return a high-quality localized template generated dynamically via SpintaxEngine
-    const { SpintaxEngine } = require("./seo/spintax-engine");
     const fallbackHtml = SpintaxEngine.generateMonsterContent(neighborhood || district || city, host, category || "VIP Escort");
     const fallbackTitle = `${(neighborhood || district || city).toUpperCase()} VIP ESCORT | %100 GERÇEK VE GİZLİ`;
 

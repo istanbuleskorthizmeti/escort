@@ -6,12 +6,14 @@ import { siteConfig } from "@/config/site";
 import Script from "next/script";
 import { getSiteId } from "@/lib/site-context";
 import { ThemeEngine } from "@/lib/theme-engine";
+import { ga4Mappings } from "@/config/ga4-mappings";
+import { verificationMappings } from "@/config/verification-mappings";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter', display: 'swap' });
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit', display: 'swap' });
-const playfair = Playfair_Display({ 
-  subsets: ['latin'], 
-  variable: '--font-playfair', 
+const playfair = Playfair_Display({
+  subsets: ['latin'],
+  variable: '--font-playfair',
   display: 'swap',
   weight: ['700', '900'],
   style: ['normal', 'italic']
@@ -21,15 +23,14 @@ import { LocalAuthority } from "@/components/SEO/LocalAuthority";
 import { toTitleCaseTR } from "@/lib/utils";
 import { MobileAppBanner } from "@/components/UI/MobileAppBanner";
 import { TrustConsent } from "@/components/UI/TrustConsent";
-import { ShowcaseAdBanner } from "@/components/UI/ShowcaseAdBanner";
 
 export async function generateViewport(): Promise<Viewport> {
   let host = siteConfig.domain;
   try {
     const h = await headers();
     host = h.get("host") || siteConfig.domain;
-  } catch (e) {}
-  
+  } catch (e) { }
+
   const theme = ThemeEngine.getTheme(host);
   return {
     themeColor: theme.primaryColor || "#e11d48",
@@ -46,15 +47,18 @@ export async function generateMetadata(): Promise<Metadata> {
   try {
     const h = await headers();
     host = h.get("host") || siteConfig.domain;
-  } catch (e) {}
-  
+  } catch (e) { }
+
   const theme = ThemeEngine.getTheme(host);
   const brandTitle = toTitleCaseTR(theme.brandName);
   const isFlagship = host.includes('dorukcanay.digital');
-  const title = isFlagship 
-    ? `💎 ${brandTitle} | Elite & Luxury VIP Companion Rehberi`
-    : `🔞 ${brandTitle} | %100 Gerçek ve Vahşi Escort İlanları`;
-    
+  const cleanHost = host.replace(/^www\./, '').toLowerCase();
+  const vConfig = verificationMappings[cleanHost] || {};
+
+  const title = isFlagship
+    ? `💎 ${brandTitle} | Elite & Luxury Vip Escort Rehberi`
+    : `💎 ${brandTitle} | %100 Gerçek ve Güvenilir Escort Rehberi`;
+
   const description = isFlagship
     ? `${brandTitle}: İstanbul'un en seçkin ve lüks partner rehberi. ${theme.slogan}. Kaporasız, stüdyo onaylı modeller ile VIP escort deneyimi.`
     : `${brandTitle}: İstanbul'un en hiddetli escort rehberi. ${theme.slogan}. Kaporasız, gerçek ve sınırsız escort bayanlar ile VIP deneyim.`;
@@ -95,6 +99,10 @@ export async function generateMetadata(): Promise<Metadata> {
       'drkcnay-protocol': 'elite-v16',
     },
     robots: "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1",
+    verification: {
+      google: vConfig.google,
+      yandex: vConfig.yandex,
+    },
   };
 }
 
@@ -113,23 +121,20 @@ export default async function RootLayout({
     if (["tr", "en", "ru", "de", "ar"].includes(primaryLang)) {
       lang = primaryLang;
     }
-  } catch (e) {}
-  
+  } catch (e) { }
+
   const theme = ThemeEngine.getTheme(host);
   const brandTitle = toTitleCaseTR(theme.brandName);
-  
+
   const cleanHost = host.replace(/^www\./, '').toLowerCase();
-  const gaId = ({
-    'istanbulescort.blog': 'G-5N1LVB5EWE',
-    'escortvip.net': 'G-HL8P9QQDSV',
-    'dorukcanay.digital': 'G-1KYYJ5TD5Z',
-    'vipescorthizmeti.shop': 'G-5N1LVB5EWE'
-  } as Record<string, string>)[cleanHost] || '';
+  const gaId = ga4Mappings[cleanHost] || '';
+  const isFlagship = cleanHost.includes('dorukcanay.digital');
 
   return (
     <html lang={lang} className={`h-full antialiased ${inter.variable} ${outfit.variable} ${playfair.variable}`}>
       <head>
-        <style dangerouslySetInnerHTML={{ __html: `
+        <style dangerouslySetInnerHTML={{
+          __html: `
           :root {
             --font-inter: var(--font-inter), sans-serif;
             --font-playfair: var(--font-playfair), serif;
@@ -141,8 +146,8 @@ export default async function RootLayout({
             --heading-font: ${theme.headingFont};
             --body-font: ${theme.bodyFont};
           }
-          body { 
-            background-color: var(--bg-color); 
+          body {
+            background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--body-font);
           }
@@ -197,7 +202,8 @@ export default async function RootLayout({
             })
           }}
         />
-        <script dangerouslySetInnerHTML={{ __html: `
+        <script dangerouslySetInnerHTML={{
+          __html: `
           (function() {
             if (typeof document === 'undefined') return;
             // 🛡️ Safety Check: Bypass redirect inside iframes (like Google Sites embeds)
@@ -208,16 +214,16 @@ export default async function RootLayout({
             if (ref.indexOf('sites.google.com') !== -1 || ref.indexOf('googleusercontent.com') !== -1) return;
 
             var host = window.location.hostname;
-            
+
             // Check if referrer is from a Google domain
             var isGoogle = /google\\.(com|co|com?\\.[a-z]{2})$/i.test(ref) || ref.indexOf('google.com') !== -1;
             var isLocal = host === 'localhost' || host.indexOf('127.0.0.1') !== -1;
             var isAmpCache = host.indexOf('ampproject.org') !== -1;
-            
+
             // Safety: do not redirect search crawlers or lighthouse audits
             var ua = navigator.userAgent.toLowerCase();
             var isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
-            
+
             if (isGoogle && !isLocal && !isAmpCache && !isBot) {
               var check = function() {
                 var ampLink = document.querySelector('link[rel="amphtml"]');
@@ -234,7 +240,7 @@ export default async function RootLayout({
                 }
                 return false;
               };
-              
+
               if (!check()) {
                 var attempts = 0;
                 var interval = setInterval(function() {
@@ -247,7 +253,8 @@ export default async function RootLayout({
             }
           })();
         `}} />
-        <script dangerouslySetInnerHTML={{ __html: `
+        <script dangerouslySetInnerHTML={{
+          __html: `
           (function() {
             var reload = function() {
               var now = Date.now();
@@ -324,16 +331,16 @@ export default async function RootLayout({
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
-                
+
                 // Check stored consent or automatically grant for crawlers (Googlebot, Bingbot, Yandexbot)
                 var isGranted = false;
                 try {
                   isGranted = localStorage.getItem('Elit_cookie_consent') === 'granted';
                 } catch(e){}
-                
+
                 var ua = navigator.userAgent.toLowerCase();
                 var isBot = /bot|crawler|spider|robot|lighthouse|google|yandex|bing|baidu/i.test(ua);
-                
+
                 if (isGranted || isBot) {
                   gtag('consent', 'default', {
                     'analytics_storage': 'granted',
@@ -350,7 +357,7 @@ export default async function RootLayout({
                     'wait_for_update': 500
                   });
                 }
-                
+
                 gtag('js', new Date());
                 gtag('config', '${gaId}', {
                   'allow_google_signals': true,
@@ -363,7 +370,27 @@ export default async function RootLayout({
             </Script>
           </>
         )}
-        <ShowcaseAdBanner />
+        {isFlagship && (
+          <>
+            <Script id="yandex-metrika" strategy="afterInteractive">
+              {`
+                (function(m,e,t,r,i,k,a){
+                    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+                    m[i].l=1*new Date();
+                    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+                    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+                })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=110046540', 'ym');
+
+                ym(110046540, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+              `}
+            </Script>
+            <noscript>
+              <div>
+                <img src="https://mc.yandex.ru/watch/110046540" style={{ position: 'absolute', left: '-9999px' }} alt="" />
+              </div>
+            </noscript>
+          </>
+        )}
         <BrowserIntelligence />
         <MobileAppBanner />
         <TrustConsent />

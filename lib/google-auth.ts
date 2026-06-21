@@ -80,7 +80,27 @@ class GoogleAuthService {
         const subject = (keyFile.startsWith('google-key') && !keyFile.includes('sovereign') && !keyFile.includes('strong-return'))
           ? (process.env.GOOGLE_WORKSPACE_EMAIL || undefined) 
           : undefined;
-        const client = new google.auth.JWT(
+
+        if (subject) {
+          const clientWithSubject = new google.auth.JWT(
+            keyData.client_email,
+            undefined,
+            keyData.private_key.replace(/\\n/g, '\n').replace(/\r/g, ''),
+            [
+              'https://www.googleapis.com/auth/blogger',
+              'https://www.googleapis.com/auth/webmasters',
+              'https://www.googleapis.com/auth/indexing',
+              'https://www.googleapis.com/auth/business.manage',
+              'https://www.googleapis.com/auth/analytics',
+              'https://www.googleapis.com/auth/spreadsheets'
+            ],
+            subject
+          );
+          this.serviceAccountClients.push(clientWithSubject);
+          console.log(`🔐 [AUTH] Service Account (Impersonated) initialized: ${keyFile} (${keyData.client_email}) -> ${subject}`);
+        }
+
+        const clientWithoutSubject = new google.auth.JWT(
           keyData.client_email,
           undefined,
           keyData.private_key.replace(/\\n/g, '\n').replace(/\r/g, ''),
@@ -91,15 +111,21 @@ class GoogleAuthService {
             'https://www.googleapis.com/auth/business.manage',
             'https://www.googleapis.com/auth/analytics',
             'https://www.googleapis.com/auth/spreadsheets'
-          ],
-          subject
+          ]
         );
-        this.serviceAccountClients.push(client);
-        console.log(`🔐 [AUTH] Service Account initialized: ${keyFile} (${keyData.client_email})${subject ? ' impersonating ' + subject : ''}`);
+        this.serviceAccountClients.push(clientWithoutSubject);
+        console.log(`🔐 [AUTH] Service Account (Direct) initialized: ${keyFile} (${keyData.client_email})`);
       } catch (err) {
         console.error(`⚠️ [AUTH] Failed to initialize Service Account ${keyFile}:`, err);
       }
     }
+  }
+
+  /**
+   * Helper to get total count of loaded service account clients
+   */
+  getServiceAccountCount(): number {
+    return this.serviceAccountClients.length;
   }
 
   /**
@@ -181,25 +207,30 @@ class GoogleAuthService {
   /**
    * Returns an authorized Google API client, refreshing if necessary.
    */
-  async getAuthorizedClient() {
-    // 1. Try OAuth2 User Tokens First
-    const tokens = await this.getTokens();
-    
-    if (tokens) {
-      this.oauthClient.setCredentials(tokens);
-      this.oauthClient.removeAllListeners('tokens');
-      this.oauthClient.on('tokens', (newTokens) => {
-        this.saveTokens(newTokens as any);
-      });
-      return this.oauthClient;
+  async getAuthorizedClient(clientIndex?: number) {
+    // 1. Try OAuth2 User Tokens First (Only if no specific clientIndex is requested)
+    if (clientIndex === undefined) {
+      const tokens = await this.getTokens();
+      
+      if (tokens) {
+        this.oauthClient.setCredentials(tokens);
+        this.oauthClient.removeAllListeners('tokens');
+        this.oauthClient.on('tokens', (newTokens) => {
+          this.saveTokens(newTokens as any);
+        });
+        return this.oauthClient;
+      }
     }
 
     // 2. Try Service Account Rotation (Local JSON keys)
     if (this.serviceAccountClients.length > 0) {
-      const client = this.serviceAccountClients[this.currentClientIndex];
-      console.log(`🛡️ [AUTH] Using Service Account fallback: Client #${this.currentClientIndex + 1}`);
+      const index = clientIndex !== undefined ? clientIndex : this.currentClientIndex;
+      const client = this.serviceAccountClients[index];
+      console.log(`🛡️ [AUTH] Using Service Account client #${index + 1} (out of ${this.serviceAccountClients.length})`);
       
-      this.currentClientIndex = (this.currentClientIndex + 1) % this.serviceAccountClients.length;
+      if (clientIndex === undefined) {
+        this.currentClientIndex = (this.currentClientIndex + 1) % this.serviceAccountClients.length;
+      }
       return client;
     }
 
@@ -229,23 +260,34 @@ class GoogleAuthService {
    * Urgently requests Google to crawl a specific URL.
    */
   async forceIndexUrl(url: string, type: 'URL_UPDATED' | 'URL_DELETED' = 'URL_UPDATED') {
-    try {
-      const client = await this.getAuthorizedClient();
-      const indexing = google.indexing({ version: 'v3', auth: client });
-      
-      const res = await indexing.urlNotifications.publish({
-        requestBody: {
-          url: url,
-          type: type,
-        },
-      });
-      
-      console.log(`🚀 [INDEXING] Success for ${url}:`, res.data);
-      return res.data;
-    } catch (err: any) {
-      console.error(`❌ [INDEXING] Failed for ${url}:`, err.response?.data || err.message);
-      return null;
+    const totalClients = Math.max(1, this.serviceAccountClients.length);
+    let lastError: any = null;
+
+    for (let attempt = 0; attempt < totalClients; attempt++) {
+      const currentIndex = (this.currentClientIndex + attempt) % totalClients;
+      try {
+        const client = await this.getAuthorizedClient(currentIndex);
+        const indexing = google.indexing({ version: 'v3', auth: client });
+        
+        const res = await indexing.urlNotifications.publish({
+          requestBody: {
+            url: url,
+            type: type,
+          },
+        });
+        
+        console.log(`🚀 [INDEXING] Success for ${url} using Client #${currentIndex + 1}:`, res.data);
+        this.currentClientIndex = (currentIndex + 1) % totalClients;
+        return res.data;
+      } catch (err: any) {
+        const errMsg = err.response?.data || err.message || String(err);
+        console.warn(`⚠️ [INDEXING] Client #${currentIndex + 1} failed for ${url}:`, JSON.stringify(errMsg));
+        lastError = err;
+      }
     }
+
+    console.error(`❌ [INDEXING] All ${totalClients} clients failed for ${url}. Last error:`, lastError?.response?.data || lastError?.message);
+    return null;
   }
 
   /**
@@ -253,21 +295,32 @@ class GoogleAuthService {
    * Notifies Google about a new sitemap for a specific domain.
    */
   async submitSitemap(siteUrl: string, sitemapUrl: string) {
-    try {
-      const client = await this.getAuthorizedClient();
-      const searchconsole = google.searchconsole({ version: 'v1', auth: client });
-      
-      await searchconsole.sitemaps.submit({
-        siteUrl: siteUrl,
-        feedpath: sitemapUrl,
-      });
-      
-      console.log(`📡 [SEARCH CONSOLE] Sitemap submitted: ${sitemapUrl} for ${siteUrl}`);
-      return true;
-    } catch (err: any) {
-      console.error(`❌ [SEARCH CONSOLE] Sitemap submission failed:`, err.response?.data || err.message);
-      return false;
+    const totalClients = Math.max(1, this.serviceAccountClients.length);
+    let lastError: any = null;
+
+    for (let attempt = 0; attempt < totalClients; attempt++) {
+      const currentIndex = (this.currentClientIndex + attempt) % totalClients;
+      try {
+        const client = await this.getAuthorizedClient(currentIndex);
+        const searchconsole = google.searchconsole({ version: 'v1', auth: client });
+        
+        await searchconsole.sitemaps.submit({
+          siteUrl: siteUrl,
+          feedpath: sitemapUrl,
+        });
+        
+        console.log(`📡 [SEARCH CONSOLE] Sitemap submitted successfully using Client #${currentIndex + 1}: ${sitemapUrl} for ${siteUrl}`);
+        this.currentClientIndex = (currentIndex + 1) % totalClients;
+        return true;
+      } catch (err: any) {
+        const errMsg = err.response?.data || err.message || String(err);
+        console.warn(`⚠️ [SEARCH CONSOLE] Client #${currentIndex + 1} sitemap submission failed for ${siteUrl}:`, JSON.stringify(errMsg));
+        lastError = err;
+      }
     }
+
+    console.error(`❌ [SEARCH CONSOLE] All ${totalClients} clients failed sitemap submission for ${siteUrl}. Last error:`, lastError?.response?.data || lastError?.message);
+    return false;
   }
 }
 

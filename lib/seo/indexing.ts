@@ -12,37 +12,44 @@ class GoogleIndexingService {
    * Notifies Google of a new or updated URL for rapid indexing.
    */
   async notifyUrlUpdate(url: string) {
-    try {
-      const auth = await googleAuth.getAuthorizedClient();
-      const accessToken = (await auth.getAccessToken()).token;
+    const maxAttempts = Math.max(1, googleAuth.getServiceAccountCount());
+    let lastError: any = null;
 
-      if (!accessToken) throw new Error("Failed to retrieve Access Token.");
+    for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+      try {
+        const auth = await googleAuth.getAuthorizedClient();
+        const accessToken = (await auth.getAccessToken()).token;
 
-      const response = await ProxyHandler.proxyFetch('https://indexing.googleapis.com/v3/urlNotifications:publish', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${accessToken}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          url: url,
-          type: 'URL_UPDATED'
-        })
-      });
+        if (!accessToken) throw new Error("Failed to retrieve Access Token.");
 
-      const result = await response.json().catch(() => ({}));
+        const response = await ProxyHandler.proxyFetch('https://indexing.googleapis.com/v3/urlNotifications:publish', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            url: url,
+            type: 'URL_UPDATED'
+          })
+        });
 
-      if (!response.ok) {
-        console.warn(`⚠️ [INDEXER] API Error [${response.status}] for ${url}:`, JSON.stringify(result));
-        return { success: false, error: result };
+        const result = await response.json().catch(() => ({}));
+
+        if (!response.ok) {
+          throw new Error(`API Error [${response.status}]: ${JSON.stringify(result)}`);
+        }
+
+        console.log(`✅ [INDEXER] Google notified for: ${url} (Attempt ${attempt}/${maxAttempts})`);
+        return { success: true, data: result };
+      } catch (e: any) {
+        console.warn(`⚠️ [INDEXER] Attempt ${attempt}/${maxAttempts} failed for ${url}:`, e.message);
+        lastError = e;
       }
-
-      console.log(`✅ [INDEXER] Google notified for: ${url}`);
-      return { success: true, data: result };
-    } catch (e: any) {
-      console.error(`❌ [INDEXER] System Failure for ${url}:`, e.message);
-      return { success: false, error: e.message };
     }
+
+    console.error(`❌ [INDEXER] All ${maxAttempts} attempts failed for ${url}. Last error:`, lastError?.message);
+    return { success: false, error: lastError?.message };
   }
 }
 

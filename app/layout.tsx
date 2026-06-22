@@ -4,7 +4,7 @@ import "./globals.css";
 import { headers } from "next/headers";
 import { siteConfig } from "@/config/site";
 import Script from "next/script";
-import { getSiteId } from "@/lib/site-context";
+import { getSiteId, getCanonicalHost } from "@/lib/site-context";
 import { ThemeEngine } from "@/lib/theme-engine";
 import { ga4Mappings } from "@/config/ga4-mappings";
 import { verificationMappings } from "@/config/verification-mappings";
@@ -28,7 +28,8 @@ export async function generateViewport(): Promise<Viewport> {
   let host = siteConfig.domain;
   try {
     const h = await headers();
-    host = h.get("host") || siteConfig.domain;
+    const rawHost = h.get("host") || siteConfig.domain;
+    host = getCanonicalHost(rawHost);
   } catch (e) { }
 
   const theme = ThemeEngine.getTheme(host);
@@ -46,7 +47,8 @@ export async function generateMetadata(): Promise<Metadata> {
   let host = siteConfig.domain;
   try {
     const h = await headers();
-    host = h.get("host") || siteConfig.domain;
+    const rawHost = h.get("host") || siteConfig.domain;
+    host = getCanonicalHost(rawHost);
   } catch (e) { }
 
   const theme = ThemeEngine.getTheme(host);

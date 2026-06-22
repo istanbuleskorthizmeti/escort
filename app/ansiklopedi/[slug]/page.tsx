@@ -208,6 +208,14 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const entry = encyclopediaData[slug];
+  
+  let host = siteConfig.domain;
+  try {
+    const headersList = await headers();
+    const hostHeader = headersList.get("host") || siteConfig.domain;
+    host = getCanonicalHost(hostHeader);
+  } catch (e) {}
+
   if (!entry) {
     const formattedSlug = slug.replace(/-/g, ' ').toUpperCase();
     return { title: `📚 ${formattedSlug} | ELİT ANSİKLOPEDİ | DRKCNAY ${new Date().getFullYear()}` };
@@ -217,7 +225,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: `🛡️ ${entry.title} | Elit Ansiklopedi`,
     description: entry.description,
     alternates: {
-      canonical: `https://${siteConfig.domain}/ansiklopedi/${slug}`,
+      canonical: `https://${host}/ansiklopedi/${slug}`,
     }
   };
 }

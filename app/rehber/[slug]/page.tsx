@@ -2,18 +2,26 @@ import Link from "next/link";
 import { Metadata } from 'next';
 import { notFound } from "next/navigation";
 import { siteConfig } from "@/config/site";
+import { headers } from "next/headers";
+import { getCanonicalHost } from "@/lib/site-context";
 
-export const dynamic = 'force-static';
-export const revalidate = 86400;
+export const dynamic = "force-dynamic";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const title = slug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
 
+  let host = siteConfig.domain;
+  try {
+    const headersList = await headers();
+    const hostHeader = headersList.get("host") || siteConfig.domain;
+    host = getCanonicalHost(hostHeader);
+  } catch (e) {}
+
   return {
     title: `${title} | İstanbul VIP Profesyonel Şehir Rehberi`,
-    description: `${title} üzerine İstanbul'un en seçkin ve teknik detaylarını kapsayan profesyonel yaşam rehberi. Premium erişim standartları istanbulescort.blog'te.`,
-    alternates: { canonical: `https://${siteConfig.domain}/rehber/${slug}` }
+    description: `${title} üzerine İstanbul'un en seçkin ve teknik detaylarını kapsayan profesyonel yaşam rehberi. Premium erişim standartları ${host}'te.`,
+    alternates: { canonical: `https://${host}/rehber/${slug}` }
   };
 }
 

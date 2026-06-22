@@ -3,48 +3,67 @@ import { Metadata } from "next";
 import Navbar from "@/components/UI/Navbar";
 import { PanicButton } from "@/components/UI/ConciergeSuite";
 import { blogPosts } from "@/lib/blog-data";
+import { headers } from "next/headers";
+import { getCanonicalHost } from "@/lib/site-context";
+import { siteConfig } from "@/config/site";
 
-export const dynamic = "force-static";
+export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "⭐ VIP Escort & İstanbul Elit Eskort Rehberi | istanbulescort.blog",
-  description: "Türkiye'nin en seçkin escort bayan profilleri, İstanbul VIP escort hizmetleri, elit eskort rehberi ve kaporasız escort ilanları. 2026 güncel eskort listesi.",
-  keywords: [
-    "escort",
-    "vip escort transfer",
-    "istanbul escort",
-    "vip escort",
-    "elit escort",
-    "kaporasız escort",
-    "rus escort",
-    "üniversiteli escort",
-    "sarışın escort",
-    "istanbul elit escort bayan",
-    "vip escort rehberi",
-    "mutlu son masaj",
-    "istanbul mutlu son",
-    "ankara vip escort",
-    "izmir elit eşlik",
-    "gerçek escort profilleri",
-    "mutlu son deneyimi",
-    "lüks konaklama rehberi",
-    "gece hayatı",
-    "escort ilanları",
-    "vip partner",
-    "masaj salonu",
-    "mutlu son masaj istanbul"
-  ],
-  alternates: {
-    canonical: `https://istanbulescort.blog/rehber`,
-    types: {
-      'application/rss+xml': '/rss.xml',
+export async function generateMetadata(): Promise<Metadata> {
+  let host = siteConfig.domain;
+  try {
+    const headersList = await headers();
+    const hostHeader = headersList.get("host") || siteConfig.domain;
+    host = getCanonicalHost(hostHeader);
+  } catch (e) {}
+
+  return {
+    title: `⭐ VIP Escort & İstanbul Elit Eskort Rehberi | ${host}`,
+    description: `Türkiye'nin en seçkin escort bayan profilleri, İstanbul VIP escort hizmetleri, elit eskort rehberi ve kaporasız escort modelleri. 2026 güncel eskort listesi.`,
+    keywords: [
+      "escort",
+      "vip escort transfer",
+      "istanbul escort",
+      "vip escort",
+      "elit escort",
+      "kaporasız escort",
+      "rus escort",
+      "üniversiteli escort",
+      "sarışın escort",
+      "istanbul elit escort bayan",
+      "vip escort rehberi",
+      "mutlu son masaj",
+      "istanbul mutlu son",
+      "ankara vip escort",
+      "izmir elit eşlik",
+      "gerçek escort profilleri",
+      "mutlu son deneyimi",
+      "lüks konaklama rehberi",
+      "gece hayatı",
+      "vip escort bayanlar",
+      "vip partner",
+      "masaj salonu",
+      "mutlu son masaj istanbul"
+    ],
+    alternates: {
+      canonical: `https://${host}/rehber`,
+      types: {
+        'application/rss+xml': '/rss.xml',
+      },
     },
-  },
-};
+  };
+}
 
 const PROTOCOL_NUMBERS = ["01", "02", "03"];
 
-export default function GuidePage() {
+export default async function GuidePage() {
+  let host = siteConfig.domain;
+  try {
+    const headersList = await headers();
+    const hostHeader = headersList.get("host") || siteConfig.domain;
+    host = getCanonicalHost(hostHeader);
+  } catch (e) {}
+
   return (
     <div className="min-h-screen bg-black text-zinc-100 font-sans selection:bg-rose-600 selection:text-white antialiased overflow-x-hidden">
       {/* STRUCTURED DATA */}
@@ -56,11 +75,11 @@ export default function GuidePage() {
             "@type": "CollectionPage",
             name: "İstanbul VIP Escort Yaşam ve Hizmet Rehberi",
             description: "İstanbul escort, elit eskort ve VIP escort hizmetleri üzerine otoriter rehber. %100 gerçek profiller ve kaporasız hizmet.",
-            url: "https://istanbulescort.blog/rehber",
+            url: `https://${host}/rehber`,
             publisher: {
               "@type": "Organization",
-              name: "istanbulescort.blog",
-              url: "https://istanbulescort.blog"
+              name: host,
+              url: `https://${host}`
             }
           }),
         }}
@@ -196,7 +215,7 @@ export default function GuidePage() {
             <div className="space-y-4">
               <div className="text-[9px] font-black tracking-[0.5em] text-rose-600 uppercase italic">CANLI ESCORT AKIŞI</div>
               <h3 className="text-3xl font-black italic uppercase tracking-tighter">İSTANBUL ESCORT RSS</h3>
-              <p className="text-zinc-500 text-sm italic">Tüm yeni escort bayan ilanları, ilçe ve mahalle güncellemeleri anlık RSS akışınıza iletilir.</p>
+              <p className="text-zinc-500 text-sm italic">Tüm yeni escort bayan profilleri, ilçe ve mahalle güncellemeleri anlık RSS akışınıza iletilir.</p>
             </div>
             <a
               href="/rss.xml"

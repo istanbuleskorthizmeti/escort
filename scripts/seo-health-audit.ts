@@ -52,9 +52,20 @@ function fetchUrl(url: string): Promise<{ status: number; body: string; headers:
 
 
 function extractCanonical(html: string): string | null {
-  const match = html.match(/<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["']/i) ||
-                html.match(/<link[^>]*href=["']([^"']+)["'][^>]*rel=["']canonical["']/i);
-  return match ? match[1] : null;
+  // Use a more relaxed regex to catch canonical tags with different attribute orders and spacings
+  const match = html.match(/<link[^>]+rel=["']canonical["'][^>]+href=["']([^"']+)["']/i) ||
+                html.match(/<link[^>]+href=["']([^"']+)["'][^>]+rel=["']canonical["']/i);
+  if (match) return match[1];
+
+  // Try parsing with a very broad match if attributes are interleaved
+  const linkMatches = html.match(/<link[^>]+>/gi) || [];
+  for (const link of linkMatches) {
+    if (/rel=["']canonical["']/i.test(link)) {
+      const hrefMatch = link.match(/href=["']([^"']+)["']/i);
+      if (hrefMatch) return hrefMatch[1];
+    }
+  }
+  return null;
 }
 
 async function auditHost(host: string) {

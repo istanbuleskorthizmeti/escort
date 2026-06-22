@@ -24,24 +24,29 @@ async function runForceIndexing() {
   console.log('--------------------------------------------------');
 
   for (const siteUrl of googleSites) {
-    const sitemapUrl = `${siteUrl}/system/feeds/sitemap`;
+    // 1. Get base property URL (e.g., https://sites.google.com/dorukcanay.digital/sefakoyistanbul-drkcnay2026/)
+    const cleanUrl = siteUrl.replace('/ana-sayfa', '');
+    const basePropertyUrl = cleanUrl.endsWith('/') ? cleanUrl : `${cleanUrl}/`;
     
-    // Ensure siteUrl ends with slash for Search Console API if needed, 
-    // but the URL Prefix property usually includes it or is flexible. 
-    // Let's add a trailing slash to the siteUrl for the API if it doesn't have one
-    const siteUrlWithSlash = siteUrl.endsWith('/') ? siteUrl : `${siteUrl}/`;
+    // 2. Exact page URL for indexing notification
+    const exactPageUrl = siteUrl;
+    
+    // 3. Sitemap URL format for Google Sites
+    const sitemapUrl = `${basePropertyUrl}system/feeds/sitemap`;
 
-    console.log(`\n🌍 Hedef: ${siteUrlWithSlash}`);
+    console.log(`\n🌍 Target Property: ${basePropertyUrl}`);
+    console.log(`   Page URL: ${exactPageUrl}`);
+    console.log(`   Sitemap URL: ${sitemapUrl}`);
     
     // 1. Submit Sitemap via Search Console API
-    console.log(`📡 Sitemaps API Gönderimi Başlıyor...`);
-    await googleAuth.submitSitemap(siteUrlWithSlash, sitemapUrl);
+    console.log(`   📡 Sitemaps API Gönderimi Başlıyor...`);
+    await googleAuth.submitSitemap(basePropertyUrl, sitemapUrl);
 
-    // 2. Force Index via Indexing API (for instant crawling if supported)
-    console.log(`🚀 Indexing API (URL Notification) Gönderimi Başlıyor...`);
-    await googleAuth.forceIndexUrl(siteUrlWithSlash, 'URL_UPDATED');
+    // 2. Force Index via Indexing API
+    console.log(`   🚀 Indexing API (URL Notification) Gönderimi Başlıyor...`);
+    await googleAuth.forceIndexUrl(exactPageUrl, 'URL_UPDATED');
     
-    // Küçük bir bekleme ekleyelim Google API rate limitlerine takılmamak için
+    // Antispam delay
     await new Promise(resolve => setTimeout(resolve, 2000));
   }
 

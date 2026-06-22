@@ -103,7 +103,12 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
     
     // 🛡️ [FALLBACK] Return a high-quality localized template generated dynamically via SpintaxEngine
     const fallbackHtml = SpintaxEngine.generateMonsterContent(neighborhood || district || city, host, category || "VIP Escort");
-    const fallbackTitle = `${(neighborhood || district || city).toUpperCase()} VIP ESCORT | %100 GERÇEK VE GİZLİ`;
+    let fallbackTitle = `${(neighborhood || district || city).toUpperCase()} VIP ESCORT | %100 GERÇEK VE GİZLİ`;
+
+    if (host.includes('istanbulescort.blog')) {
+      const locTitle = (neighborhood || district || city).toUpperCase();
+      fallbackTitle = `🔥 ${locTitle} Escort Bayan | VIP Ateşli Eskort ❤️🔥`;
+    }
 
     return {
       html: fallbackHtml,

@@ -1,11 +1,61 @@
+import axios from 'axios';
+import fs from 'fs';
+import FormData from 'form-data';
+
 export async function sendTelegramReport(message: string) {
-  // Suppressed globally by user request
-  return;
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  if (!botToken || !chatId) {
+    console.warn("[TELEGRAM] Missing Bot Token or Chat ID in environment.");
+    return;
+  }
+
+  try {
+    const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
+    await axios.post(url, {
+      chat_id: chatId,
+      text: message,
+      parse_mode: 'HTML',
+      disable_web_page_preview: true
+    });
+    console.log("✅ [TELEGRAM] Message sent successfully.");
+  } catch (e: any) {
+    console.error("❌ [TELEGRAM] Failed to send message:", e.response?.data || e.message);
+  }
 }
 
 export async function sendTelegramPhoto(photoPath: string, caption?: string) {
-  // Suppressed globally by user request
-  return;
+  const botToken = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
+
+  if (!botToken || !chatId) {
+    console.warn("[TELEGRAM] Missing Bot Token or Chat ID in environment.");
+    return;
+  }
+
+  try {
+    if (!fs.existsSync(photoPath)) {
+      console.error(`[TELEGRAM] Photo path not found: ${photoPath}`);
+      return;
+    }
+
+    const url = `https://api.telegram.org/bot${botToken}/sendPhoto`;
+    const form = new FormData();
+    form.append('chat_id', chatId);
+    form.append('photo', fs.createReadStream(photoPath));
+    if (caption) {
+      form.append('caption', caption);
+      form.append('parse_mode', 'HTML');
+    }
+
+    await axios.post(url, form, {
+      headers: form.getHeaders()
+    });
+    console.log("✅ [TELEGRAM] Photo sent successfully.");
+  } catch (e: any) {
+    console.error("❌ [TELEGRAM] Failed to send photo:", e.response?.data || e.message);
+  }
 }
 
 export function formatReportMessage(type: string, data: any) {

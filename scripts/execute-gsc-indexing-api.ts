@@ -134,7 +134,7 @@ class IndexingRotator {
     const files = fs.readdirSync(rootDir);
     const keyFiles = files.filter(f => 
       f.endsWith('.json') && 
-      (f.startsWith('google-key') || f.startsWith('hydra-gcp-key'))
+      (f.startsWith('google-key') || f.startsWith('hydra-gcp-key') || f.startsWith('sovereign-spyy'))
     );
 
     console.log(\`🔍 Found \${keyFiles.length} key files on VPS.\`);
@@ -183,13 +183,21 @@ class IndexingRotator {
     }
 
     const domain = new URL(url).hostname;
+    let siteId = domain;
+    if (domain === 'sites.google.com') {
+      const urlParts = url.split('/');
+      if (urlParts.length >= 5) {
+        siteId = \`\${urlParts[2]}/\${urlParts[3]}/\${urlParts[4]}\`;
+      }
+    }
+
     let attempts = 0;
     const maxAttempts = this.clients.length;
 
     while (attempts < maxAttempts) {
       const activeClient = this.clients[this.currentIdx];
 
-      if (activeClient.isExhausted || activeClient.unauthorizedSites.has(domain)) {
+      if (activeClient.isExhausted || activeClient.unauthorizedSites.has(siteId)) {
         this.rotate();
         attempts++;
         continue;
@@ -226,8 +234,8 @@ class IndexingRotator {
           activeClient.isExhausted = true;
           this.rotate();
         } else if (isPermission && errCode === 403) {
-          console.log(\`⚠️ Permission denied for \${activeClient.email} on \${domain}. Rotating...\`);
-          activeClient.unauthorizedSites.add(domain);
+          console.log(\`⚠️ Permission denied for \${activeClient.email} on \${siteId}. Rotating...\`);
+          activeClient.unauthorizedSites.add(siteId);
           this.rotate();
         } else if (!isTransient) {
           console.log(\`❌ Key \${activeClient.email} failed with critical permanent error: \`, errMsg);
@@ -393,11 +401,18 @@ async function startIndexing() {
   // Submit Money Site URLs
   for (const url of moneySiteUrls) {
     const domain = new URL(url).hostname;
+    let siteId = domain;
+    if (domain === 'sites.google.com') {
+      const urlParts = url.split('/');
+      if (urlParts.length >= 5) {
+        siteId = \`\${urlParts[2]}/\${urlParts[3]}/\${urlParts[4]}\`;
+      }
+    }
     const allExhaustedOrUnauthorized = rotator.clients.every(c => 
-      c.isExhausted || c.unauthorizedSites.has(domain)
+      c.isExhausted || c.unauthorizedSites.has(siteId)
     );
     if (allExhaustedOrUnauthorized) {
-      console.warn(\`⚠️ [ROTATOR] All service accounts in the pool are exhausted or unauthorized for \${domain}. Breaking indexing loop.\`);
+      console.warn(\`⚠️ [ROTATOR] All service accounts in the pool are exhausted or unauthorized for \${siteId}. Breaking indexing loop.\`);
       reportMessage += \`⚠️ <b>[KOTA/YETKİ UYARISI]</b> Tüm GSC API kotaları veya yetkileri tükendi! İşlem sonlandırıldı.\\\\n\\\\n\`;
       break;
     }

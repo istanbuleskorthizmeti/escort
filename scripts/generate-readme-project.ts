@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { istanbulCity } from '../lib/locations-registry/istanbul';
+import { callGemini } from './utils/gemini-client';
 
 const HOST = 'istanbulescort.blog';
 const DESKTOP_PATH = 'C:\\Users\\onurk\\Desktop';
@@ -79,7 +80,7 @@ function parseSpin(text: string, sehir: string, ilce: string, context: any): str
   return result.replace(/\s+/g, ' ').replace(/\s+([.,!?;])/g, '$1').trim();
 }
 
-function generateMarkdownContent(sehir: string, ilce: string, pathCounter: number, categorySlug: string): string {
+function generateMarkdownContent(sehir: string, ilce: string, pathCounter: number, categorySlug: string, geminiText: string = ''): string {
   const context = {
     race: getRandom(ADULT_RACES),
     category: getRandom(ADULT_CATEGORIES),
@@ -147,7 +148,7 @@ metadata:
   return `${frontmatter}
 # ${title}
 
-${p1}
+${geminiText ? `> **📍 Coğrafi ve Yerel Rehber:** ${geminiText}\n\n` : ''}${p1}
 
 ${profilesShowcase}
 
@@ -170,7 +171,7 @@ export async function buildReadmeProject(categorySlug: string = DEFAULT_CATEGORY
 
   // 0. General Landing Page for "istanbul-escort" targeting the primary keyword
   console.log("📝 Generating main landing page: istanbul-escort.md");
-  const mainContent = generateMarkdownContent("İstanbul", "", pathCounter, categorySlug);
+  const mainContent = generateMarkdownContent("İstanbul", "", pathCounter, categorySlug, "");
   fs.writeFileSync(path.join(folderPath, `istanbul-escort.md`), mainContent);
   pathCounter++;
 
@@ -184,7 +185,8 @@ export async function buildReadmeProject(categorySlug: string = DEFAULT_CATEGORY
     processedDistricts.add(districtSlug);
 
     // 1. District-level page
-    const distContent = generateMarkdownContent("İstanbul", cleanDistrictName, pathCounter, categorySlug);
+    const geminiText = await callGemini(cleanDistrictName, "");
+    const distContent = generateMarkdownContent("İstanbul", cleanDistrictName, pathCounter, categorySlug, geminiText);
     fs.writeFileSync(path.join(folderPath, `istanbul-${districtSlug}-escort.md`), distContent);
     pathCounter++;
 
@@ -196,7 +198,8 @@ export async function buildReadmeProject(categorySlug: string = DEFAULT_CATEGORY
       processedNeighborhoods.add(neighborhoodSlug);
 
       const searchTarget = `${cleanDistrictName} ${neighborhood.name}`;
-      const nContent = generateMarkdownContent("İstanbul", searchTarget, pathCounter, categorySlug);
+      const nGeminiText = await callGemini(searchTarget, "");
+      const nContent = generateMarkdownContent("İstanbul", searchTarget, pathCounter, categorySlug, nGeminiText);
       fs.writeFileSync(path.join(folderPath, `istanbul-${districtSlug}-${neighborhoodSlug}-escort.md`), nContent);
       pathCounter++;
     }

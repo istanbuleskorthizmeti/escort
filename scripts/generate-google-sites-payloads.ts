@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { istanbulCity } from '../lib/locations-registry/istanbul';
+import { callGemini } from './utils/gemini-client';
 
 /**
  * 🧛‍♂️ GOOGLE SITES HTML PAYLOAD FACTORY (v16.0 - Ultimate Opsec & Anti-Duplicate Edition)
@@ -236,7 +237,7 @@ function parseSpin(text: string, sehir: string, ilce: string, context: { race: s
     });
 }
 
-export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter: number, version: number, title: string, verificationCode: string): string {
+export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter: number, version: number, title: string, verificationCode: string, geminiText: string = ''): string {
   const currentYear = new Date().getFullYear();
   const niche = getRandomElement(ADULT_NICHES);
   const adj = getRandomElement(ADULT_PROFILE_ADJECTIVES);
@@ -265,6 +266,10 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
     const p5 = parseSpin(getRandomElement(V5_P5_TEMPLATES), sehir, ilce, context);
     const p6 = parseSpin(getRandomElement(V5_P6_TEMPLATES), sehir, ilce, context);
     body = `${p2} <br><br> ${p3} <br><br> ${p4} <br><br> ${p5} <br><br> ${p6}`;
+  }
+
+  if (geminiText) {
+    lead = `<div class="gemini-local-guide" style="margin-bottom: 20px; padding: 15px; border-left: 4px solid var(--accent); background: rgba(16, 185, 129, 0.05); font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);"><strong style="color: #fff;">📍 Yerel Rehber & Coğrafi Bilgi:</strong> ${geminiText}</div>${lead}`;
   }
 
   // Generate ~100 targeted keys
@@ -1474,12 +1479,15 @@ export async function buildGoogleSitesPayloads() {
     // Select a dynamic verification code to rotate footprints
     const vCode = GSC_VERIFICATIONS[pathCounter % GSC_VERIFICATIONS.length];
 
+    // Call Gemini API for district description
+    const geminiText = await callGemini(cleanDistrictName, "");
+
     // Write to HTML payload versions
-    const html1 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 1, districtTitle, vCode);
-    const html2 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 2, districtTitle, vCode);
-    const html3 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 3, districtTitle, vCode);
-    const html4 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 4, districtTitle, vCode);
-    const html5 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 5, districtTitle, vCode);
+    const html1 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 1, districtTitle, vCode, geminiText);
+    const html2 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 2, districtTitle, vCode, geminiText);
+    const html3 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 3, districtTitle, vCode, geminiText);
+    const html4 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 4, districtTitle, vCode, geminiText);
+    const html5 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 5, districtTitle, vCode, geminiText);
 
     fs.writeFileSync(path.join(v1Dir, districtFileName), html1);
     fs.writeFileSync(path.join(v2Dir, districtFileName), html2);
@@ -1517,12 +1525,15 @@ export async function buildGoogleSitesPayloads() {
       const targetAmpCacheN = `https://${PRIMARY_HOST}/istanbul/${districtSlug}-${neighborhoodSlug}`;
       const nVCode = GSC_VERIFICATIONS[pathCounter % GSC_VERIFICATIONS.length];
 
+      // Call Gemini API for neighborhood description
+      const nGeminiText = await callGemini(searchTarget, "");
+
       // Write to HTML payload versions
-      const nHtml1 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 1, neighborhoodTitle, nVCode);
-      const nHtml2 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 2, neighborhoodTitle, nVCode);
-      const nHtml3 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 3, neighborhoodTitle, nVCode);
-      const nHtml4 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 4, neighborhoodTitle, nVCode);
-      const nHtml5 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 5, neighborhoodTitle, nVCode);
+      const nHtml1 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 1, neighborhoodTitle, nVCode, nGeminiText);
+      const nHtml2 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 2, neighborhoodTitle, nVCode, nGeminiText);
+      const nHtml3 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 3, neighborhoodTitle, nVCode, nGeminiText);
+      const nHtml4 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 4, neighborhoodTitle, nVCode, nGeminiText);
+      const nHtml5 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 5, neighborhoodTitle, nVCode, nGeminiText);
 
       fs.writeFileSync(path.join(v1Dir, neighborhoodFileName), nHtml1);
       fs.writeFileSync(path.join(v2Dir, neighborhoodFileName), nHtml2);

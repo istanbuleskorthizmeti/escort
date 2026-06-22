@@ -18,7 +18,9 @@ async function run() {
       { local: 'lib/seo-content.ts', remote: '/root/esc/lib/seo-content.ts' },
       { local: 'lib/telegram.ts', remote: '/root/esc/lib/telegram.ts' },
       { local: 'config/domains.ts', remote: '/root/esc/config/domains.ts' },
-      { local: 'package.json', remote: '/root/esc/package.json' }
+      { local: 'package.json', remote: '/root/esc/package.json' },
+      { local: 'lib/seo-metadata.ts', remote: '/root/esc/lib/seo-metadata.ts' },
+      { local: 'components/SEO/SEOContentEngine.tsx', remote: '/root/esc/components/SEO/SEOContentEngine.tsx' }
     ];
 
     for (const f of filesToUpload) {

@@ -91,7 +91,13 @@ function getTargetKeywords(): string[] {
 }
 
 async function simulateVisit(threadId: number, config: Config) {
-  const proxyUrl = ProxyHandler.getProxyUrl('weighted', 'TR');
+  const visitStart = Date.now();
+  let proxyUrl = ProxyHandler.getProxyUrl('weighted', 'TR');
+  
+  if (process.env.DISABLE_PROXIES === 'true') {
+    proxyUrl = null;
+  }
+
   if (!proxyUrl && process.env.FORCE_PROXY === 'true') {
     console.error(`🚨 [OPSEC BLOCK] [THREAD-${threadId}] Strict proxy mode active but no proxy URL loaded. Aborting visit.`);
     return;
@@ -99,9 +105,53 @@ async function simulateVisit(threadId: number, config: Config) {
   const device = DEVICE_PROFILES[Math.floor(Math.random() * DEVICE_PROFILES.length)];
   const behaviorKeys = Object.keys(BEHAVIOR_PROFILES) as BehaviorType[];
   const behavior = BEHAVIOR_PROFILES[behaviorKeys[Math.floor(Math.random() * behaviorKeys.length)]];
-  const keyword = getTargetKeywords()[Math.floor(Math.random() * getTargetKeywords().length)];
+  const domains = config.targetDomain.split(',').map(d => d.trim()).filter(Boolean);
+  
+  // Dynamically load Google Sites to target domain pool
+  const googleSitesPath = path.join(process.cwd(), 'data', 'live_google_sites.json');
+  if (fs.existsSync(googleSitesPath)) {
+    try {
+      const sites: string[] = JSON.parse(fs.readFileSync(googleSitesPath, 'utf8'));
+      if (Array.isArray(sites)) {
+        sites.forEach(siteUrl => {
+          if (siteUrl && !domains.includes(siteUrl)) {
+            domains.push(siteUrl);
+          }
+        });
+      }
+    } catch { /* noop */ }
+  }
 
-  console.log(`🧵 [THREAD-${threadId}] [${behavior.name}] -> Proxy: ${proxyUrl ? 'Active' : 'Direct'} | Device: ${device.name}`);
+  const targetDomain = domains[Math.floor(Math.random() * domains.length)];
+
+  // Dynamic Google Sites localized keywords mapping
+  let keyword = getTargetKeywords()[Math.floor(Math.random() * getTargetKeywords().length)];
+  
+  if (targetDomain.includes('sites.google.com')) {
+    // Extract district name slug from sites URL: sites.google.com/dorukcanay.digital/beylikduzu-vip-escort/ana-sayfa
+    const urlParts = targetDomain.split('/');
+    // Beylikduzu-vip-escort or cekmekoy-escort-drkcnay1-v
+    const slug = urlParts.find(p => p.includes('escort') || p.includes('eskort') || p.includes('vip'));
+    if (slug) {
+      const rawDistrict = slug.split('-')[0]; // Extract first word (e.g. beylikduzu, cekmekoy)
+      const cleanDistrict = rawDistrict
+        .replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ı/g, 'i').replace(/İ/g, 'i')
+        .replace(/ğ/g, 'g').replace(/ö/g, 'o').replace(/ü/g, 'u');
+      
+      const districtTitle = cleanDistrict.charAt(0).toUpperCase() + cleanDistrict.slice(1);
+      
+      const siteKeywords = [
+        `${cleanDistrict} escort`,
+        `${cleanDistrict} eskort`,
+        `${cleanDistrict} vip escort`,
+        `${districtTitle} Escort Bayan`,
+        `kaporasiz escort ${cleanDistrict}`
+      ];
+      keyword = siteKeywords[Math.floor(Math.random() * siteKeywords.length)];
+    }
+  }
+
+  console.log(`🧵 [THREAD-${threadId}] [${behavior.name}] -> Proxy: ${proxyUrl ? 'Active' : 'Direct'} | Device: ${device.name} | Target: ${targetDomain} | Keyword: "${keyword}"`);
   metrics.activeThreads++;
 
   const launchArgs = [
@@ -165,13 +215,24 @@ async function simulateVisit(threadId: number, config: Config) {
     } catch { /* noop */ }
 
     // Search results scan
-    console.log(`🔍 [THREAD-${threadId}] Scanning SERP results...`);
+    console.log(`🔍 [THREAD-${threadId}] Scanning SERP results for target matching: "${targetDomain}"...`);
     const foundLink = await page.evaluate((domain) => {
       const anchors = Array.from(document.querySelectorAll('a'));
       const target = anchors.find(a => {
         if (!a.href) return false;
         const href = a.href.toLowerCase();
-        if (href.includes('google.com') || href.includes('webcache.googleusercontent.com')) return false;
+        
+        // Custom check for Google Sites
+        if (domain.includes('sites.google.com')) {
+          // If we target a specific Google Sites slug, match the path segment
+          const matchSlug = domain.split('sites.google.com/')[1] || '';
+          if (matchSlug && href.includes('sites.google.com/') && href.includes(matchSlug.toLowerCase())) {
+            return true;
+          }
+        }
+        
+        if (href.includes('google.com') && !href.includes('sites.google.com')) return false;
+        if (href.includes('webcache.googleusercontent.com')) return false;
         return href.includes(domain);
       });
       if (target) {
@@ -179,7 +240,7 @@ async function simulateVisit(threadId: number, config: Config) {
         return target.href;
       }
       return null;
-    }, config.targetDomain);
+    }, targetDomain);
 
     if (foundLink) {
       console.log(`🎯 [THREAD-${threadId}] Found target URL in SERP: ${foundLink}`);
@@ -189,11 +250,20 @@ async function simulateVisit(threadId: number, config: Config) {
         const target = anchors.find(a => {
           if (!a.href) return false;
           const href = a.href.toLowerCase();
-          if (href.includes('google.com') || href.includes('webcache.googleusercontent.com')) return false;
+          
+          if (domain.includes('sites.google.com')) {
+            const matchSlug = domain.split('sites.google.com/')[1] || '';
+            if (matchSlug && href.includes('sites.google.com/') && href.includes(matchSlug.toLowerCase())) {
+              return true;
+            }
+          }
+          
+          if (href.includes('google.com') && !href.includes('sites.google.com')) return false;
+          if (href.includes('webcache.googleusercontent.com')) return false;
           return href.includes(domain);
         });
         if (target) target.click();
-      }, config.targetDomain);
+      }, targetDomain);
 
       await page.waitForNavigation({ waitUntil: 'networkidle2', timeout: 45000 }).catch(() => {});
       
@@ -224,6 +294,7 @@ async function simulateVisit(threadId: number, config: Config) {
 
       qualityScore = depth >= 3 ? 'A+' : depth >= 2 ? 'B' : 'C';
       metrics.successfulVisits++;
+      if (proxyUrl) ProxyHandler.reportMetrics(proxyUrl, Date.now() - visitStart, true);
 
       // Save cookie session persistency
       const cookies = await page.cookies();
@@ -233,11 +304,13 @@ async function simulateVisit(threadId: number, config: Config) {
       console.log(`⚠️ [THREAD-${threadId}] Target domain not visible in current SERP page.`);
       qualityScore = 'D';
       metrics.failedVisits++;
+      if (proxyUrl) ProxyHandler.reportMetrics(proxyUrl, Date.now() - visitStart, false);
     }
 
   } catch (err: any) {
     console.error(`❌ [THREAD-${threadId}] Error:`, err.message);
     metrics.failedVisits++;
+    if (proxyUrl) ProxyHandler.reportMetrics(proxyUrl, Date.now() - visitStart, false);
   } finally {
     await browser.close();
     metrics.activeThreads--;

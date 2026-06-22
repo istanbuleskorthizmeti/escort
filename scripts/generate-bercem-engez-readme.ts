@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
 import { istanbulCity } from '../lib/locations-registry/istanbul';
+import { callGemini } from './utils/gemini-client';
 
 const HOST = 'istanbulescort.blog';
 const DESKTOP_PATH = 'C:\\Users\\onurk\\Desktop';
@@ -88,7 +89,7 @@ function parseSpin(text: string, sehir: string, ilce: string, context: any, prim
   return result.replace(/\s+/g, ' ').replace(/\s+([.,!?;])/g, '$1').trim();
 }
 
-function generateMarkdownContent(sehir: string, ilce: string, pathCounter: number, categorySlug: string): string {
+function generateMarkdownContent(sehir: string, ilce: string, pathCounter: number, categorySlug: string, geminiText: string = ''): string {
   const primaryName = FEMALE_NAMES[pathCounter % FEMALE_NAMES.length];
 
   const context = {
@@ -178,7 +179,7 @@ metadata:
   return `${frontmatter}
 # ${title}
 
-${p1}
+${geminiText ? `> **📍 Coğrafi ve Yerel Rehber:** ${geminiText}\n\n` : ''}${p1}
 
 ${profilesShowcase}
 
@@ -200,7 +201,7 @@ export async function buildBercemEngezProject(categorySlug: string = DEFAULT_CAT
 
   // 0. General Landing Page
   console.log("📝 Generating main landing page: bercem-engez.md");
-  const mainContent = generateMarkdownContent("İstanbul", "", pathCounter, categorySlug);
+  const mainContent = generateMarkdownContent("İstanbul", "", pathCounter, categorySlug, "");
   fs.writeFileSync(path.join(folderPath, `bercem-engez.md`), mainContent);
   pathCounter++;
 
@@ -214,7 +215,8 @@ export async function buildBercemEngezProject(categorySlug: string = DEFAULT_CAT
     processedDistricts.add(districtSlug);
 
     // 1. District-level page
-    const distContent = generateMarkdownContent("İstanbul", cleanDistrictName, pathCounter, categorySlug);
+    const geminiText = await callGemini(cleanDistrictName, "");
+    const distContent = generateMarkdownContent("İstanbul", cleanDistrictName, pathCounter, categorySlug, geminiText);
     fs.writeFileSync(path.join(folderPath, `istanbul-${districtSlug}-bercem-engez.md`), distContent);
     pathCounter++;
 
@@ -226,7 +228,8 @@ export async function buildBercemEngezProject(categorySlug: string = DEFAULT_CAT
       processedNeighborhoods.add(neighborhoodSlug);
 
       const searchTarget = `${cleanDistrictName} ${neighborhood.name}`;
-      const nContent = generateMarkdownContent("İstanbul", searchTarget, pathCounter, categorySlug);
+      const nGeminiText = await callGemini(searchTarget, "");
+      const nContent = generateMarkdownContent("İstanbul", searchTarget, pathCounter, categorySlug, nGeminiText);
       fs.writeFileSync(path.join(folderPath, `istanbul-${districtSlug}-${neighborhoodSlug}-bercem-engez.md`), nContent);
       pathCounter++;
     }

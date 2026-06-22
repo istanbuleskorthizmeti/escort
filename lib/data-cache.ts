@@ -28,13 +28,20 @@ export const getVitrinProfiles = cache(async () => {
 
 export const getPageContent = cache(async (slug: string, siteId: string | null) => {
   return unstable_cache(
-    async () => prisma.pageContent.findFirst({
-      where: { 
-        slug, 
-        OR: [{ siteId }, { siteId: null }]
-      },
-      orderBy: { siteId: 'desc' }
-    }),
+    async () => {
+      try {
+        return await prisma.pageContent.findFirst({
+          where: { 
+            slug, 
+            OR: [{ siteId }, { siteId: null }]
+          },
+          orderBy: { siteId: 'desc' }
+        });
+      } catch (dbErr: unknown) {
+        console.error(`⚠️ [DATA-CACHE] Database lookup failed for getPageContent (slug: ${slug}):`, dbErr instanceof Error ? dbErr.message : dbErr);
+        return null;
+      }
+    },
     [`page-content-${slug}-${siteId}`],
     { revalidate: 3600, tags: ['content'] }
   )();

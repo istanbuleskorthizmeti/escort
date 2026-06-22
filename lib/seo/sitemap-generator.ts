@@ -46,11 +46,16 @@ export async function generateSitemapResponse(host: string, file: string): Promi
     }
 
     // 2. Fetch pages from the DB for this site context
-    const dbPages = await prisma.pageContent.findMany({
-      where: { siteId, content: { not: null } },
-      take: 50000,
-      select: { slug: true, updatedAt: true }
-    });
+    let dbPages: { slug: string; updatedAt: Date }[] = [];
+    try {
+      dbPages = await prisma.pageContent.findMany({
+        where: { siteId, content: { not: null } },
+        take: 50000,
+        select: { slug: true, updatedAt: true }
+      });
+    } catch (dbErr: unknown) {
+      console.warn(`⚠️ [SITEMAP-GENERATOR] Database pageContent fetch failed (fallback to static config):`, dbErr instanceof Error ? dbErr.message : dbErr);
+    }
 
     const targetCity = config?.targetCity?.toLowerCase() || 'istanbul';
     const targetDistrict = config?.targetDistrict?.toLowerCase();
@@ -191,10 +196,15 @@ export async function generateSitemapResponse(host: string, file: string): Promi
       const vipPages = filteredPages.filter(p => !p.slug.includes('-'));
       
       // Fetch active profile slugs from AdProfile model in PostgreSQL
-      const activeProfiles = await prisma.adProfile.findMany({
-        where: { isActive: true },
-        select: { name: true, updatedAt: true }
-      });
+      let activeProfiles: { name: string; updatedAt: Date }[] = [];
+      try {
+        activeProfiles = await prisma.adProfile.findMany({
+          where: { isActive: true },
+          select: { name: true, updatedAt: true }
+        });
+      } catch (dbErr: unknown) {
+        console.warn(`⚠️ [SITEMAP-GENERATOR] Database adProfile fetch failed (fallback to empty profiles):`, dbErr instanceof Error ? dbErr.message : dbErr);
+      }
       
       const profileSlugNodes = activeProfiles.map((p: { name: string; updatedAt: Date }) => {
         const slugifiedName = p.name.toLowerCase().trim()
@@ -272,10 +282,15 @@ export async function generateSitemapResponse(host: string, file: string): Promi
 
       // VIP Pages
       const vipPages = filteredPages.filter(p => !p.slug.includes('-'));
-      const activeProfiles = await prisma.adProfile.findMany({
-        where: { isActive: true },
-        select: { name: true, updatedAt: true }
-      });
+      let activeProfiles: { name: string; updatedAt: Date }[] = [];
+      try {
+        activeProfiles = await prisma.adProfile.findMany({
+          where: { isActive: true },
+          select: { name: true, updatedAt: true }
+        });
+      } catch (dbErr: unknown) {
+        console.warn(`⚠️ [SITEMAP-GENERATOR] Database adProfile fetch failed (default sitemap fallback):`, dbErr instanceof Error ? dbErr.message : dbErr);
+      }
       const profileSlugNodes = activeProfiles.map((p: { name: string; updatedAt: Date }) => {
         const slugifiedName = p.name.toLowerCase().trim()
           .replace(/ş/g, 's').replace(/ç/g, 'c').replace(/ı/g, 'i').replace(/İ/g, 'i')

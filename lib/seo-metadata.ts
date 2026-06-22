@@ -104,8 +104,31 @@ export function generateLocationMetadata({
     return parseSpintax(prepared, randomFn);
   };
 
-  const finalTitle = dedupeEscort(formatSpintax(selectedTitleTemplate));
-  const finalDesc = dedupeEscort(formatSpintax(selectedDescTemplate));
+  let finalTitle = dedupeEscort(formatSpintax(selectedTitleTemplate));
+  let finalDesc = dedupeEscort(formatSpintax(selectedDescTemplate));
+
+  if (currentHost.includes('istanbulescort.blog')) {
+    const customTitles = [
+      `🔥 ${locTitle} Escort Bayan | ${locTitle} VIP Ateşli Eskort ❤️🔥`,
+      `👑 ${locTitle} Eskort Kraliçe Randevu | %100 Gerçek & Lüks Partner 💋`,
+      `✨ ${locTitle} VIP Ateşli Eskort | Muhteşem Ve Unutulmaz Geceler 😈`,
+      `💎 ${locTitle} Escort Bayan | Sultan Sınıfı Gizli Ve Lüks Randevu 🌹`,
+      `👑 ${locTitle} Eskort Kraliçe Randevu | Muhteşem VIP Eşlik Hizmeti ✨`,
+      `❤️🔥 ${locTitle} VIP Ateşli Eskort | Unutulmaz Sultan Randevusu 💋`,
+      `😈 ${locTitle} Escort Bayan | Gizli & Ateşli VIP Deneyimi 👑`,
+      `🌹 ${locTitle} Eskort Kraliçe Randevu | %100 Gerçek VIP Sultanlar 💎`
+    ];
+
+    const customDescs = [
+      `❤️ ${fullLocTitle} escort bayan rehberi: Ateşli, gizli ve lüks %100 gerçek VIP kraliçe partnerler. Unutulmaz ve muhteşem bir sultan randevusu için hemen arayın! 🔥`,
+      `👑 ${fullLocTitle} eskort kraliçe randevu: Lüks ve gizli VIP eskortlar ile muhteşem bir deneyim. %100 gerçek ve ateşli sultanlar ile unutulmaz geceler sizi bekliyor! 💋`,
+      `✨ ${fullLocTitle} VIP ateşli eskort ilanları: Gizli, lüks ve %100 gerçek kraliçe partnerler. Muhteşem eskort bayanlar ile unutulmaz anlar yaşamak için hemen tıklayın! 😈`,
+      `💎 ${fullLocTitle} escort bayan: Ateşli ve gizli buluşmalar için lüks VIP kraliçeler. %100 gerçek ve muhteşem sultan randevuları ile unutulmaz dakikalar! 🌹`
+    ];
+
+    finalTitle = customTitles[seed % customTitles.length];
+    finalDesc = customDescs[seed % customDescs.length];
+  }
 
   const keywords = [
     "escort",

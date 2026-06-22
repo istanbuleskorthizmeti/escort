@@ -48,12 +48,17 @@ async function generateDocContent(zone: string): Promise<string> {
 async function runGoogleDocsParasite() {
   console.log("🚀 [GOOGLE-DOCS-PARASITE] Initializing Google APIs...");
   
-  const keyPath = path.join(process.cwd(), 'google-key.json');
+  let keyPath = path.join(process.cwd(), 'google-key-sovereign.json');
   if (!fs.existsSync(keyPath)) {
-    console.error("❌ google-key.json not found!");
+    keyPath = path.join(process.cwd(), 'google-key.json');
+  }
+  
+  if (!fs.existsSync(keyPath)) {
+    console.error("❌ No Google key file found (tried google-key-sovereign.json and google-key.json)!");
     process.exit(1);
   }
 
+  console.log(`🔑 Using credential file: ${path.basename(keyPath)}`);
   const keys = JSON.parse(fs.readFileSync(keyPath, 'utf8'));
   const auth = new google.auth.JWT(
     keys.client_email,

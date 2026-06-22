@@ -185,9 +185,16 @@ export function middleware(request: NextRequest) {
   }
 
   const response = NextResponse.next();
-  const isEmbedPath = pathname.startsWith('/embed/') || pathname.startsWith('/widget/') || pathname === '/amp';
+  const isAmpPath = pathname === '/amp';
+  const isEmbedPath = pathname.startsWith('/embed/') || pathname.startsWith('/widget/');
 
-  if (isIframe || isEmbedPath) {
+  if (isAmpPath) {
+    response.headers.set('X-Frame-Options', 'ALLOWALL');
+    response.headers.set(
+      'Content-Security-Policy',
+      "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.ampproject.org https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.ampproject.org; img-src 'self' data: https: blob: https://cdn.ampproject.org; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://cdn.ampproject.org https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors 'self' https://google.com https://*.google.com https://*.ampproject.org https://sites.google.com https://*.googleusercontent.com; object-src 'none';"
+    );
+  } else if (isIframe || isEmbedPath) {
     response.headers.set('X-Frame-Options', 'ALLOWALL');
     response.headers.set(
       'Content-Security-Policy',

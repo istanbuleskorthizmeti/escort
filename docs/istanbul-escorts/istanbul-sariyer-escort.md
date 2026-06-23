@@ -25,75 +25,75 @@ metadata:
 
 > **📍 Coğrafi ve Yerel Rehber:** Sarıyer mahallesi, konumunun sağladığı avantajlar ve sunduğu kentsel imkanlar ile İstanbul'un gözde yerleşim ve ticaret merkezlerindendir. Ulaşım akslarına olan entegrasyonu sayesinde şehir içi erişimi son derece kolaylaştırır. Sosyal olanakları, canlı sokakları ve modern çevre yapılaşmasıyla 7/24 yaşayan, hem konforlu hem de enerjik yapısını her daim sürdüren bir bölgedir.
 
-**İstanbul Sarıyer** çevresinde tamamen gizli ve elit bir deneyim arayan seçkin misafirlerimiz için **Ayla** VIP refakat seçeneklerini sunuyoruz. Bu platformdaki bağımsız ilanların tamamı, İstanbul genelinde bireysel refakat veren teyitli ve profesyonel modellerden oluşmaktadır.
+**İstanbul Sarıyer** çevresinde tamamen %100 gerçek ve lüks bir deneyim arayan seçkin misafirlerimiz için **Ayla** VIP refakat seçeneklerini sunuyoruz. Bu platformdaki bağımsız ilanların tamamı, İstanbul genelinde VIP escort hizmeti veren teyitli ve profesyonel modellerden oluşmaktadır.
 
 
-## 🌹 İstanbul Sarıyer Öne Çıkan Bağımsız Model Vitrini:
+## 🔥 İstanbul Sarıyer Öne Çıkan Bağımsız Model Vitrini:
 
-| 📸 Görsel | 👑 VIP ESCORT 25 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Pelin - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-90.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="VIP ESCORT 25 - Sarıyer VIP" /> | **İsim / Yaş:** VIP ESCORT 25 (20 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-90.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Pelin - Sarıyer VIP" /> | **İsim / Yaş:** Pelin (20 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 VIP ESCORT 97 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Selin - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-218.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="VIP ESCORT 97 - Sarıyer VIP" /> | **İsim / Yaş:** VIP ESCORT 97 (21 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-218.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Selin - Sarıyer VIP" /> | **İsim / Yaş:** Selin (21 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | 👑 Esila - VIP Bağımsız Refakatçi |
 | :--- | :--- |
 | <img src="https://istanbulescort.blog/_media/vitrin/istanbul-kaporasiz-escort-esila-1.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Esila - Sarıyer VIP" /> | **İsim / Yaş:** Esila (27 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Boşnak - Ateşli, heyecan verici uzman <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 OLGUN LADY 89 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Yasemin - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-210.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="OLGUN LADY 89 - Sarıyer VIP" /> | **İsim / Yaş:** OLGUN LADY 89 (23 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-210.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Yasemin - Sarıyer VIP" /> | **İsim / Yaş:** Yasemin (23 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 ELİT PARTNER 98 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Aslı - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-219.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="ELİT PARTNER 98 - Sarıyer VIP" /> | **İsim / Yaş:** ELİT PARTNER 98 (24 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-219.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Aslı - Sarıyer VIP" /> | **İsim / Yaş:** Aslı (24 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 OLGUN LADY 17 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Begüm - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-70.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="OLGUN LADY 17 - Sarıyer VIP" /> | **İsim / Yaş:** OLGUN LADY 17 (25 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-70.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Begüm - Sarıyer VIP" /> | **İsim / Yaş:** Begüm (25 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 GERÇEK GÖRSELLİ 45 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Didem - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-130.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="GERÇEK GÖRSELLİ 45 - Sarıyer VIP" /> | **İsim / Yaş:** GERÇEK GÖRSELLİ 45 (26 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-130.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Didem - Sarıyer VIP" /> | **İsim / Yaş:** Didem (26 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 ÜNİVERSİTELİ ÇITIR 88 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Elif - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-209.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="ÜNİVERSİTELİ ÇITIR 88 - Sarıyer VIP" /> | **İsim / Yaş:** ÜNİVERSİTELİ ÇITIR 88 (27 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-209.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Elif - Sarıyer VIP" /> | **İsim / Yaş:** Elif (27 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 TÜRBANLI ÇITIR 71 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Gamze - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-182.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="TÜRBANLI ÇITIR 71 - Sarıyer VIP" /> | **İsim / Yaş:** TÜRBANLI ÇITIR 71 (20 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-182.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Gamze - Sarıyer VIP" /> | **İsim / Yaş:** Gamze (20 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 ÜNİVERSİTELİ ÇITIR 28 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Melis - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-96.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="ÜNİVERSİTELİ ÇITIR 28 - Sarıyer VIP" /> | **İsim / Yaş:** ÜNİVERSİTELİ ÇITIR 28 (21 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-96.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Melis - Sarıyer VIP" /> | **İsim / Yaş:** Melis (21 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 OLGUN LADY 65 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Aynur - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-170.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="OLGUN LADY 65 - Sarıyer VIP" /> | **İsim / Yaş:** OLGUN LADY 65 (22 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-170.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Aynur - Sarıyer VIP" /> | **İsim / Yaş:** Aynur (22 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 LÜKS PARTNER 10 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Ayla - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-46.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="LÜKS PARTNER 10 - Sarıyer VIP" /> | **İsim / Yaş:** LÜKS PARTNER 10 (23 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-46.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Ayla - Sarıyer VIP" /> | **İsim / Yaş:** Ayla (23 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 YABANCI MODEL 30 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Esila - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-100.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="YABANCI MODEL 30 - Sarıyer VIP" /> | **İsim / Yaş:** YABANCI MODEL 30 (24 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-100.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Esila - Sarıyer VIP" /> | **İsim / Yaş:** Esila (24 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 YABANCI MODEL 78 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Narin - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-196.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="YABANCI MODEL 78 - Sarıyer VIP" /> | **İsim / Yaş:** YABANCI MODEL 78 (25 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-196.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Narin - Sarıyer VIP" /> | **İsim / Yaş:** Narin (25 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
-| 📸 Görsel | 👑 ANALİZ EDİLMİŞ MODEL 20 - VIP Bağımsız Refakatçi |
+| 📸 Görsel | 👑 Rojîn - VIP Bağımsız Refakatçi |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-79.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="ANALİZ EDİLMİŞ MODEL 20 - Sarıyer VIP" /> | **İsim / Yaş:** ANALİZ EDİLMİŞ MODEL 20 (26 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-79.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Rojîn - Sarıyer VIP" /> | **İsim / Yaş:** Rojîn (26 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 
 
 
-### 😈 Sarıyer Bölgesinde Hizmet Verilen Çevre Mahalleler:
+### 💎 Sarıyer Bölgesinde Hizmet Verilen Çevre Mahalleler:
 Bu sayfadaki bağımsız VIP eskort modellerimiz, **Sarıyer** genelinde ve özellikle aşağıdaki yakın çevre bölgelerinde adrese/otele hizmet sunmaktadır:
 
 *   **İstinye Mahallesi Escort**

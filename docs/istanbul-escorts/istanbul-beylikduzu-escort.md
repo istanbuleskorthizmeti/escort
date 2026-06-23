@@ -1,11 +1,11 @@
 ---
-title: "İstanbul Beylikdüzü Escort Bayan | 👑 Beylikdüzü Eskort Kraliçe Randevu"
+title: "İstanbul Beylikdüzü Escort Bayan | ✨ Beylikdüzü Eskort Kraliçe Randevu"
 excerpt: "Beylikdüzü bölgesinde kaporasız ve elden ödemeli muhteşem DorukcanAY Vip model escort ilanları. En popüler Beylikdüzü eskort bayan vitrini."
 category: "dorukcanay-vip"
 hidden: false
 order: 23
 metadata:
-  title: "İstanbul Beylikdüzü Escort Bayan | 👑 Beylikdüzü Eskort Kraliçe Randevu"
+  title: "İstanbul Beylikdüzü Escort Bayan | ✨ Beylikdüzü Eskort Kraliçe Randevu"
   description: "Beylikdüzü bölgesinde kaporasız ve elden ödemeli muhteşem DorukcanAY Vip model escort ilanları. En popüler Beylikdüzü eskort bayan vitrini."
   robots: "index"
 ---
@@ -13,18 +13,18 @@ metadata:
 
 <meta name="google-site-verification" content="blR9C6PaZE-_yAVhnbK7o9PD1IWmlxQUzVnGMf3fHrI" />
 
-# İstanbul Beylikdüzü Escort Bayan | 👑 Beylikdüzü Eskort Kraliçe Randevu
+# İstanbul Beylikdüzü Escort Bayan | ✨ Beylikdüzü Eskort Kraliçe Randevu
 
 > **📍 Coğrafi ve Yerel Rehber:** Beylikdüzü bölgesi, İstanbul genelinde ulaşım kolaylığı ve merkezi konumuyla öne çıkan dinamik noktalar arasındadır. Metro, metrobüs hatları veya ana otoyol bağlantılarına olan yakınlığı sayesinde hem yerel halk hem de ziyaretçiler için pratik bir erişim sunar. Gelişmiş altyapısı ve canlı sosyal dokusuyla her zaman ilgi çeken ve hareketli yapısını koruyan özel bir semttir.
 
-Her zaman elit ve muhteşem detaylara önem verenlerin ortak tercihi olan **Melis**, **İstanbul Beylikdüzü** bölgesinde eşsiz anlar vadediyor. Kendinizi şımartmak ve hayatın stresini geride bırakmak adına güncel vitrinimizi inceleyebilirsiniz.
+Sıradan ilan sitelerindeki sahte görsellerden sıkıldıysanız, **İstanbul Beylikdüzü** genelinde tamamen gerçek fotoğraflı ve kaporasız çalışan **Melis** Vip vitrinimizi çok beğeneceksiniz. En özel anlarınızı ayrıcalıklı ve güvenli kılmak için buradayız.
 
 
 ## 👑 İstanbul Beylikdüzü Premium Escort İlan Vitrini (İlk 10 Model):
 
 | 📸 Görsel | 👑 Selin - Premium Escort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-79.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Selin - Beylikdüzü Premium" /> | **İsim / Yaş:** Selin (20 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-79.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Selin - Beylikdüzü Premium" /> | **İsim / Yaş:** Selin (20 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | 👑 Ceren - Premium Escort |
 | :--- | :--- |
@@ -32,27 +32,27 @@ Her zaman elit ve muhteşem detaylara önem verenlerin ortak tercihi olan **Meli
 
 | 📸 Görsel | 👑 Özge - Premium Escort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-154.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Özge - Beylikdüzü Premium" /> | **İsim / Yaş:** Özge (22 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-154.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Özge - Beylikdüzü Premium" /> | **İsim / Yaş:** Özge (22 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | 👑 Nihan - Premium Escort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Nihan - Beylikdüzü Premium" /> | **İsim / Yaş:** Nihan (23 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Nihan - Beylikdüzü Premium" /> | **İsim / Yaş:** Nihan (23 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | 👑 Merve - Premium Escort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-214.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Merve - Beylikdüzü Premium" /> | **İsim / Yaş:** Merve (24 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-214.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Merve - Beylikdüzü Premium" /> | **İsim / Yaş:** Merve (24 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | 👑 Lara - Premium Escort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-67.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Lara - Beylikdüzü Premium" /> | **İsim / Yaş:** Lara (25 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-67.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Lara - Beylikdüzü Premium" /> | **İsim / Yaş:** Lara (25 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | 👑 İrem - Premium Escort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-16.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="İrem - Beylikdüzü Premium" /> | **İsim / Yaş:** İrem (26 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-16.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="İrem - Beylikdüzü Premium" /> | **İsim / Yaş:** İrem (26 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | 👑 Hande - Premium Escort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-114.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Hande - Beylikdüzü Premium" /> | **İsim / Yaş:** Hande (27 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-114.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Hande - Beylikdüzü Premium" /> | **İsim / Yaş:** Hande (27 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | 👑 Gizem - Premium Escort |
 | :--- | :--- |
@@ -60,30 +60,30 @@ Her zaman elit ve muhteşem detaylara önem verenlerin ortak tercihi olan **Meli
 
 | 📸 Görsel | 👑 Ece - Premium Escort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-140.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Ece - Beylikdüzü Premium" /> | **İsim / Yaş:** Ece (21 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-140.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Ece - Beylikdüzü Premium" /> | **İsim / Yaş:** Ece (21 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 
 ## 💎 İstanbul Beylikdüzü Gold Escort İlan Vitrini (Ek 5 Model):
 
 | 📸 Görsel | ✨ Ceren - Gold Eskort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-218.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Ceren - Beylikdüzü Gold" /> | **İsim / Yaş:** Ceren (22 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-218.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Ceren - Beylikdüzü Gold" /> | **İsim / Yaş:** Ceren (22 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | ✨ Buse - Gold Eskort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-84.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Buse - Beylikdüzü Gold" /> | **İsim / Yaş:** Buse (23 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-84.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Buse - Beylikdüzü Gold" /> | **İsim / Yaş:** Buse (23 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | ✨ Aylin - Gold Eskort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-26.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Aylin - Beylikdüzü Gold" /> | **İsim / Yaş:** Aylin (24 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-26.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Aylin - Beylikdüzü Gold" /> | **İsim / Yaş:** Aylin (24 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Vip Meeting <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | ✨ Svetlana - Gold Eskort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-88.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Svetlana - Beylikdüzü Gold" /> | **İsim / Yaş:** Svetlana (25 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-88.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Svetlana - Beylikdüzü Gold" /> | **İsim / Yaş:** Svetlana (25 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Private Suite <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 | 📸 Görsel | ✨ Melisa - Gold Eskort |
 | :--- | :--- |
-| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-36.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Melisa - Beylikdüzü Gold" /> | **İsim / Yaş:** Melisa (26 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Elite Residence <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
+| <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-36.webp" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="Melisa - Beylikdüzü Gold" /> | **İsim / Yaş:** Melisa (26 Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** Luxury Hotel <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://wa.me/12495448982)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için iletişime geçiniz: **+1 (249) 544-8982** |
 
 
 

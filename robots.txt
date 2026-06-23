@@ -1,11 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /*/api-next
-Disallow: /cdn-cgi/
-Disallow: /edit/
-Disallow: /*/edit/
-Disallow: /suggested-edits/
-Disallow: /login
-Disallow: /logout
 
 Sitemap: https://istanbul-eskort-hizmeti.readme.io/sitemap.xml

@@ -1,11 +1,11 @@
 ---
-title: "İstanbul Maltepe Escort Bayan | 💎 Maltepe Eskort Kraliçe Randevu"
+title: "İstanbul Maltepe Escort Bayan | 👑 Maltepe Eskort Kraliçe Randevu"
 excerpt: "Maltepe bölgesinde kaporasız ve elden ödemeli VIP DorukcanAY VIP model ilanları. En popüler Maltepe eskort bayan vitrini."
 category: "dorukcanay-vip"
 hidden: false
 order: 11
 metadata:
-  title: "İstanbul Maltepe Escort Bayan | 💎 Maltepe Eskort Kraliçe Randevu"
+  title: "İstanbul Maltepe Escort Bayan | 👑 Maltepe Eskort Kraliçe Randevu"
   description: "Maltepe bölgesinde kaporasız ve elden ödemeli VIP DorukcanAY VIP model ilanları. En popüler Maltepe eskort bayan vitrini."
   robots: "index"
 ---
@@ -13,7 +13,7 @@ metadata:
 
 <meta name="google-site-verification" content="blR9C6PaZE-_yAVhnbK7o9PD1IWmlxQUzVnGMf3fHrI" />
 
-# İstanbul Maltepe Escort Bayan | 💎 Maltepe Eskort Kraliçe Randevu
+# İstanbul Maltepe Escort Bayan | 👑 Maltepe Eskort Kraliçe Randevu
 
 > [!WARNING]
 > **Güvenlik Uyarısı:** DorukcanAY platformundaki tüm bağımsız modeller %100 gerçek görsellere sahiptir ve kapora talep etmez. Ön ödeme isteyen dolandırıcılara itibar etmeyiniz.
@@ -29,168 +29,167 @@ metadata:
 Eğer kendinize unutulmaz, elit ve son derece keyifli bir buluşma hediye etmek istiyorsanız, **İstanbul Maltepe** bireysel escort bayan vitrini beklentilerinizin çok ötesinde bir hizmet sunacaktır. **Merve** ile en seçkin ve lüks ortamları paylaşmak için güncel listelerimizi şimdi detaylıca inceleyin.
 
 
-## 🔥 DorukcanAY Premium Model Vitrini:
+## ✨ DorukcanAY Premium Model Vitrini:
 
-<div class="premium-carousel">
-  <div class="carousel-track">
-    <div class="carousel-card">
+<marquee behavior="scroll" direction="left" scrollamount="6" onmouseover="this.stop();" onmouseout="this.start();" style="background: #0d0d0d; padding: 20px 0; border-radius: 12px; border: 1px solid #222; display: block; overflow: hidden; white-space: nowrap; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9); margin: 30px 0;">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Merve - Eskort Kraliçe Randevu" loading="lazy" />
-          <span class="card-badge">Gerçek Görsel</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Merve - Sultan Refakatçi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">4K Ultra HD</span>
         </div>
-        <div class="card-meta">
-          <h4>Merve <small>(Turkish)</small></h4>
-          <p class="card-desc">Eskort Kraliçe Randevu</p>
-          <span class="card-niche">📍 Elite Residence</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Merve <small style="color: #888; font-size: 0.75rem;">(Russian)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Sultan Refakatçi</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Luxury Hotel</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Merve - VIP Ateşli Eskort" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Merve - Gizemli VIP Partner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Canlı Teyit</span>
         </div>
-        <div class="card-meta">
-          <h4>Merve <small>(Latina)</small></h4>
-          <p class="card-desc">VIP Ateşli Eskort</p>
-          <span class="card-niche">📍 Private Suite</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Merve <small style="color: #888; font-size: 0.75rem;">(Latina)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Gizemli VIP Partner</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Luxury Hotel</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Nihan - Unutulmaz Eşlikçi" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Nihan - Muhteşem Partner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Kaporasız</span>
         </div>
-        <div class="card-meta">
-          <h4>Nihan <small>(Latina)</small></h4>
-          <p class="card-desc">Unutulmaz Eşlikçi</p>
-          <span class="card-niche">📍 Elite Residence</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Nihan <small style="color: #888; font-size: 0.75rem;">(Latina)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Muhteşem Partner</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Luxury Hotel</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Özge - Muhteşem Partner" loading="lazy" />
-          <span class="card-badge">Canlı Teyit</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Özge - Eskort Kraliçe Randevu" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Canlı Teyit</span>
         </div>
-        <div class="card-meta">
-          <h4>Özge <small>(European)</small></h4>
-          <p class="card-desc">Muhteşem Partner</p>
-          <span class="card-niche">📍 Private Suite</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Özge <small style="color: #888; font-size: 0.75rem;">(Turkish)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Eskort Kraliçe Randevu</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Vip Meeting</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Pelin - Gizemli VIP Partner" loading="lazy" />
-          <span class="card-badge">4K Ultra HD</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Pelin - Sultan Refakatçi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Kaporasız</span>
         </div>
-        <div class="card-meta">
-          <h4>Pelin <small>(European)</small></h4>
-          <p class="card-desc">Gizemli VIP Partner</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Pelin <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Sultan Refakatçi</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Private Suite</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Selin - VIP Ateşli Eskort" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Selin - Gizemli VIP Partner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">4K Ultra HD</span>
         </div>
-        <div class="card-meta">
-          <h4>Selin <small>(Latina)</small></h4>
-          <p class="card-desc">VIP Ateşli Eskort</p>
-          <span class="card-niche">📍 Private Suite</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Selin <small style="color: #888; font-size: 0.75rem;">(Latina)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Gizemli VIP Partner</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Vip Meeting</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" alt="Tuğçe - Unutulmaz Eşlikçi" loading="lazy" />
-          <span class="card-badge">Gerçek Görsel</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" alt="Tuğçe - Gizemli VIP Partner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Kaporasız</span>
         </div>
-        <div class="card-meta">
-          <h4>Tuğçe <small>(Latina)</small></h4>
-          <p class="card-desc">Unutulmaz Eşlikçi</p>
-          <span class="card-niche">📍 Private Suite</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Tuğçe <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Gizemli VIP Partner</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Elite Residence</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Yasemin - Eskort Kraliçe Randevu" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Yasemin - Muhteşem Partner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">4K Ultra HD</span>
         </div>
-        <div class="card-meta">
-          <h4>Yasemin <small>(Russian)</small></h4>
-          <p class="card-desc">Eskort Kraliçe Randevu</p>
-          <span class="card-niche">📍 Private Suite</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Yasemin <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Muhteşem Partner</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Private Suite</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Aslı - Nefes Kesen Tanrıça" loading="lazy" />
-          <span class="card-badge">Canlı Teyit</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Aslı - Premium Sarışın Model" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Videolu Onay</span>
         </div>
-        <div class="card-meta">
-          <h4>Aslı <small>(European)</small></h4>
-          <p class="card-desc">Nefes Kesen Tanrıça</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Aslı <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Premium Sarışın Model</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Luxury Hotel</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Begüm - VIP Ateşli Eskort" loading="lazy" />
-          <span class="card-badge">4K Ultra HD</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Begüm - Eskort Kraliçe Randevu" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">4K Ultra HD</span>
         </div>
-        <div class="card-meta">
-          <h4>Begüm <small>(European)</small></h4>
-          <p class="card-desc">VIP Ateşli Eskort</p>
-          <span class="card-niche">📍 Vip Meeting</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Begüm <small style="color: #888; font-size: 0.75rem;">(Russian)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Eskort Kraliçe Randevu</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Vip Meeting</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Didem - Sultan Refakatçi" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Didem - Sultan Refakatçi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Gerçek Görsel</span>
         </div>
-        <div class="card-meta">
-          <h4>Didem <small>(Turkish)</small></h4>
-          <p class="card-desc">Sultan Refakatçi</p>
-          <span class="card-niche">📍 Private Suite</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Didem <small style="color: #888; font-size: 0.75rem;">(Latina)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Sultan Refakatçi</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Vip Meeting</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Elif - Eskort Kraliçe Randevu" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Elif - Nefes Kesen Tanrıça" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Gerçek Görsel</span>
         </div>
-        <div class="card-meta">
-          <h4>Elif <small>(Latina)</small></h4>
-          <p class="card-desc">Eskort Kraliçe Randevu</p>
-          <span class="card-niche">📍 Vip Meeting</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Elif <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Nefes Kesen Tanrıça</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Elite Residence</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card sponsor-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener">
+    <div class="carousel-card sponsor-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #110011; border-radius: 12px; overflow: hidden; border: 1px dashed #ff0055; vertical-align: top; white-space: normal;">
+      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
         <div class="sponsor-banner" style="background: linear-gradient(135deg, #7000ff 0%, #ff0055 100%); height: 230px; display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 15px; text-align: center; color: #fff; box-sizing: border-box;">
           <strong style="font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">📢 REKLAM VER</strong>
           <span style="font-size: 0.8rem; margin: 10px 0; color: #ffe0eb; display: block;">Profilinizi binlerce kişiye ulaştırın</span>
@@ -198,273 +197,168 @@ Eğer kendinize unutulmaz, elit ve son derece keyifli bir buluşma hediye etmek 
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" alt="Gamze - Unutulmaz Eşlikçi" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" alt="Gamze - Unutulmaz Eşlikçi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Kaporasız</span>
         </div>
-        <div class="card-meta">
-          <h4>Gamze <small>(Latina)</small></h4>
-          <p class="card-desc">Unutulmaz Eşlikçi</p>
-          <span class="card-niche">📍 Vip Meeting</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Gamze <small style="color: #888; font-size: 0.75rem;">(Latina)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Unutulmaz Eşlikçi</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Private Suite</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Melis - Unutulmaz Eşlikçi" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Melis - Sultan Refakatçi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Canlı Teyit</span>
         </div>
-        <div class="card-meta">
-          <h4>Melis <small>(European)</small></h4>
-          <p class="card-desc">Unutulmaz Eşlikçi</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Melis <small style="color: #888; font-size: 0.75rem;">(Russian)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Sultan Refakatçi</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Vip Meeting</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Aynur - Unutulmaz Eşlikçi" loading="lazy" />
-          <span class="card-badge">4K Ultra HD</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Aynur - Muhteşem Partner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Gerçek Görsel</span>
         </div>
-        <div class="card-meta">
-          <h4>Aynur <small>(European)</small></h4>
-          <p class="card-desc">Unutulmaz Eşlikçi</p>
-          <span class="card-niche">📍 Elite Residence</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Aynur <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Muhteşem Partner</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Private Suite</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Ayla - VIP Ateşli Eskort" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Ayla - Sultan Refakatçi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">4K Ultra HD</span>
         </div>
-        <div class="card-meta">
-          <h4>Ayla <small>(European)</small></h4>
-          <p class="card-desc">VIP Ateşli Eskort</p>
-          <span class="card-niche">📍 Vip Meeting</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Ayla <small style="color: #888; font-size: 0.75rem;">(Russian)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Sultan Refakatçi</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Elite Residence</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Esila - Unutulmaz Eşlikçi" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Esila - Gizemli VIP Partner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Gerçek Görsel</span>
         </div>
-        <div class="card-meta">
-          <h4>Esila <small>(Latina)</small></h4>
-          <p class="card-desc">Unutulmaz Eşlikçi</p>
-          <span class="card-niche">📍 Vip Meeting</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Esila <small style="color: #888; font-size: 0.75rem;">(Turkish)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Gizemli VIP Partner</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Elite Residence</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Narin - Sultan Refakatçi" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Narin - Nefes Kesen Tanrıça" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Gerçek Görsel</span>
         </div>
-        <div class="card-meta">
-          <h4>Narin <small>(European)</small></h4>
-          <p class="card-desc">Sultan Refakatçi</p>
-          <span class="card-niche">📍 Vip Meeting</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Narin <small style="color: #888; font-size: 0.75rem;">(Turkish)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Nefes Kesen Tanrıça</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Luxury Hotel</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" alt="Rojîn - Nefes Kesen Tanrıça" loading="lazy" />
-          <span class="card-badge">4K Ultra HD</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" alt="Rojîn - Unutulmaz Eşlikçi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">4K Ultra HD</span>
         </div>
-        <div class="card-meta">
-          <h4>Rojîn <small>(Latina)</small></h4>
-          <p class="card-desc">Nefes Kesen Tanrıça</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Rojîn <small style="color: #888; font-size: 0.75rem;">(Latina)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Unutulmaz Eşlikçi</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Private Suite</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Zilan - Nefes Kesen Tanrıça" loading="lazy" />
-          <span class="card-badge">Gerçek Görsel</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Zilan - VIP Ateşli Eskort" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Canlı Teyit</span>
         </div>
-        <div class="card-meta">
-          <h4>Zilan <small>(Russian)</small></h4>
-          <p class="card-desc">Nefes Kesen Tanrıça</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Zilan <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">VIP Ateşli Eskort</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Elite Residence</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Derin - VIP Ateşli Eskort" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Derin - Premium Sarışın Model" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Gerçek Görsel</span>
         </div>
-        <div class="card-meta">
-          <h4>Derin <small>(European)</small></h4>
-          <p class="card-desc">VIP Ateşli Eskort</p>
-          <span class="card-niche">📍 Elite Residence</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Derin <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Premium Sarışın Model</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Vip Meeting</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Melisa - Premium Sarışın Model" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Melisa - Premium Sarışın Model" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Gerçek Görsel</span>
         </div>
-        <div class="card-meta">
-          <h4>Melisa <small>(Turkish)</small></h4>
-          <p class="card-desc">Premium Sarışın Model</p>
-          <span class="card-niche">📍 Vip Meeting</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Melisa <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Premium Sarışın Model</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Elite Residence</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Svetlana - Eskort Kraliçe Randevu" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Svetlana - Unutulmaz Eşlikçi" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Gerçek Görsel</span>
         </div>
-        <div class="card-meta">
-          <h4>Svetlana <small>(European)</small></h4>
-          <p class="card-desc">Eskort Kraliçe Randevu</p>
-          <span class="card-niche">📍 Vip Meeting</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Svetlana <small style="color: #888; font-size: 0.75rem;">(Latina)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Unutulmaz Eşlikçi</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Private Suite</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
+    <div class="carousel-card" style="display: inline-block; width: 190px; margin: 0 10px; background: #151515; border-radius: 12px; overflow: hidden; border: 1px solid #2a2a2a; vertical-align: top; white-space: normal;">
       <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Aylin - Eskort Kraliçe Randevu" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
+        <div class="card-img-wrap" style="position: relative; height: 230px; overflow: hidden;">
+          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Aylin - Gizemli VIP Partner" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;" />
+          <span class="card-badge" style="position: absolute; top: 10px; right: 10px; background: rgba(255, 0, 85, 0.85); color: #fff; padding: 4px 8px; font-size: 0.7rem; font-weight: bold; border-radius: 4px; text-transform: uppercase;">Kaporasız</span>
         </div>
-        <div class="card-meta">
-          <h4>Aylin <small>(Turkish)</small></h4>
-          <p class="card-desc">Eskort Kraliçe Randevu</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
+        <div class="card-meta" style="padding: 12px; background: #151515;">
+          <h4 style="margin: 0 0 5px 0; color: #fff; font-size: 0.95rem; font-weight: bold;">Aylin <small style="color: #888; font-size: 0.75rem;">(European)</small></h4>
+          <p class="card-desc" style="margin: 0 0 8px 0; color: #aaa; font-size: 0.75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Gizemli VIP Partner</p>
+          <span class="card-niche" style="display: inline-block; color: #ff0055; font-size: 0.7rem; font-weight: bold; background: rgba(255, 0, 85, 0.08); padding: 3px 8px; border-radius: 20px; border: 1px solid rgba(255, 0, 85, 0.2);">📍 Private Suite</span>
         </div>
       </a>
     </div>
-    <div class="carousel-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Merve - Unutulmaz Eşlikçi" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
-        </div>
-        <div class="card-meta">
-          <h4>Merve <small>(Latina)</small></h4>
-          <p class="card-desc">Unutulmaz Eşlikçi</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
-        </div>
-      </a>
-    </div>
-    <div class="carousel-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Merve - Sultan Refakatçi" loading="lazy" />
-          <span class="card-badge">Canlı Teyit</span>
-        </div>
-        <div class="card-meta">
-          <h4>Merve <small>(Latina)</small></h4>
-          <p class="card-desc">Sultan Refakatçi</p>
-          <span class="card-niche">📍 Vip Meeting</span>
-        </div>
-      </a>
-    </div>
-    <div class="carousel-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-2.webp" alt="Nihan - VIP Ateşli Eskort" loading="lazy" />
-          <span class="card-badge">4K Ultra HD</span>
-        </div>
-        <div class="card-meta">
-          <h4>Nihan <small>(European)</small></h4>
-          <p class="card-desc">VIP Ateşli Eskort</p>
-          <span class="card-niche">📍 Private Suite</span>
-        </div>
-      </a>
-    </div>
-    <div class="carousel-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-3.webp" alt="Özge - Eskort Kraliçe Randevu" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
-        </div>
-        <div class="card-meta">
-          <h4>Özge <small>(Latina)</small></h4>
-          <p class="card-desc">Eskort Kraliçe Randevu</p>
-          <span class="card-niche">📍 Vip Meeting</span>
-        </div>
-      </a>
-    </div>
-    <div class="carousel-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-4.webp" alt="Pelin - Unutulmaz Eşlikçi" loading="lazy" />
-          <span class="card-badge">Videolu Onay</span>
-        </div>
-        <div class="card-meta">
-          <h4>Pelin <small>(Latina)</small></h4>
-          <p class="card-desc">Unutulmaz Eşlikçi</p>
-          <span class="card-niche">📍 Vip Meeting</span>
-        </div>
-      </a>
-    </div>
-    <div class="carousel-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-5.webp" alt="Selin - Eskort Kraliçe Randevu" loading="lazy" />
-          <span class="card-badge">4K Ultra HD</span>
-        </div>
-        <div class="card-meta">
-          <h4>Selin <small>(Russian)</small></h4>
-          <p class="card-desc">Eskort Kraliçe Randevu</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
-        </div>
-      </a>
-    </div>
-    <div class="carousel-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-6.webp" alt="Tuğçe - Gizemli VIP Partner" loading="lazy" />
-          <span class="card-badge">Kaporasız</span>
-        </div>
-        <div class="card-meta">
-          <h4>Tuğçe <small>(European)</small></h4>
-          <p class="card-desc">Gizemli VIP Partner</p>
-          <span class="card-niche">📍 Private Suite</span>
-        </div>
-      </a>
-    </div>
-    <div class="carousel-card">
-      <a href="https://dorukcanay.digital" target="_blank" rel="noopener" style="text-decoration: none; color: inherit; display: block;">
-        <div class="card-img-wrap">
-          <img src="https://istanbulescort.blog/_media/vitrin/vip-profil-1.webp" alt="Yasemin - Premium Sarışın Model" loading="lazy" />
-          <span class="card-badge">Canlı Teyit</span>
-        </div>
-        <div class="card-meta">
-          <h4>Yasemin <small>(Turkish)</small></h4>
-          <p class="card-desc">Premium Sarışın Model</p>
-          <span class="card-niche">📍 Luxury Hotel</span>
-        </div>
-      </a>
-    </div>
-  </div>
-</div>
+</marquee>
 
 
 
 
-### 🔥 Maltepe Bölgesinde Hizmet Verilen Çevre Mahalleler:
+### 🌹 Maltepe Bölgesinde Hizmet Verilen Çevre Mahalleler:
 Bu sayfadaki bağımsız VIP eskort modellerimiz, **Maltepe** genelinde ve özellikle aşağıdaki yakın çevre bölgelerinde adrese/otele hizmet sunmaktadır:
 
 *   **Küçükyalı Mahallesi Escort**
@@ -480,7 +374,7 @@ Bu sayfadaki bağımsız VIP eskort modellerimiz, **Maltepe** genelinde ve özel
 
 
 
-Buluşma ve rezervasyon süreçlerinde gizlilik ve karşılıklı güven en hassas kuralımızdır. Bu bölgedeki bağımsız VIP modellerimiz, Vip Meeting ortamlarda randevu kabul etmekte ve sizden asla kapora talep etmemektedir. Güvenilir ve risksiz bir randevu için yönlendirme bağlantılarını kullanabilirsiniz.
+Karşılıklı saygı ve güven çerçevesinde gerçekleşen buluşmalarımızda, en ufak bir ön ödeme şartı aranmaz. **İstanbul Maltepe** genelinde dilediğiniz adrese teyitli servis imkanı sunan bağımsız partnerlerimizle güvenli eskort deneyimini yaşayın.
 
 ---
 ### 📍 Popüler Arama Başlıkları:

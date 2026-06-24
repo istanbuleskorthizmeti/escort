@@ -30,39 +30,45 @@ async function run() {
     fs.mkdirSync(USER_DATA_DIR, { recursive: true });
   }
 
-  const chromePath = "C:\\Users\\onurk\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe";
-  const context = await chromium.launchPersistentContext(USER_DATA_DIR, {
-    headless: true,
-    executablePath: chromePath,
-    viewport: { width: 1366, height: 768 }
-  });
-
-  const page = await context.newPage();
+  console.log("🔌 Connecting to running Chrome on port 9222...");
+  const browser = await chromium.connectOverCDP('http://localhost:9222');
+  const contexts = browser.contexts();
   
-  // Forward browser console logs to terminal
-  page.on('console', msg => console.log('   🖥️ [BROWSER CONSOLE]', msg.text()));
+  if (contexts.length === 0) {
+    console.error("❌ No contexts found!");
+    return;
+  }
 
+  const context = contexts[0];
+  
   try {
     // 1. Initial GSC validation / login check
+    const initialPage = await context.newPage();
     console.log('🌐 Opening Search Console homepage...');
-    await page.goto('https://search.google.com/search-console/about', { waitUntil: 'load', timeout: 60000 });
+    await initialPage.goto('https://search.google.com/search-console/about', { waitUntil: 'load', timeout: 60000 });
     
     // Click "Start now" to navigate to main dashboard
     const startNowSelector = 'a[href*="welcome"]';
-    if (await page.locator(startNowSelector).isVisible()) {
-      await page.click(startNowSelector);
-      await page.waitForTimeout(5000);
+    if (await initialPage.locator(startNowSelector).isVisible()) {
+      await initialPage.click(startNowSelector);
+      await initialPage.waitForTimeout(5000);
     }
 
-    if (page.url().includes('signin') || page.url().includes('accounts.google.com')) {
+    if (initialPage.url().includes('signin') || initialPage.url().includes('accounts.google.com')) {
       console.log('⚠️ [ACTION REQUIRED] Please log into your Google Account in the browser window now.');
       console.log('⏳ Waiting for authentication...');
-      await page.waitForFunction(() => !window.location.href.includes('signin') && !window.location.href.includes('accounts.google.com'), { timeout: 0 });
+      await initialPage.waitForFunction(() => !window.location.href.includes('signin') && !window.location.href.includes('accounts.google.com'), { timeout: 0 });
       console.log('✅ Logged in successfully.');
     }
+    await initialPage.close();
 
     for (const siteUrl of sites) {
+      let page;
       try {
+        page = await context.newPage();
+        // Forward browser console logs to terminal
+        page.on('console', msg => console.log('   🖥️ [BROWSER CONSOLE]', msg.text()));
+
         // Format URL for GSC prefix. E.g. https://sites.google.com/dorukcanay.digital/besyol-escort-drkcnay1-v/
         const siteUrlWithSlash = siteUrl.endsWith('/') ? siteUrl : `${siteUrl}/`;
         
@@ -288,6 +294,12 @@ async function run() {
         }
       } catch (err: any) {
         console.error(`   ❌ Failed delegation for ${siteUrl}:`, err.message);
+      } finally {
+        if (page) {
+          try {
+            await page.close();
+          } catch {}
+        }
       }
     }
 
@@ -296,7 +308,7 @@ async function run() {
   } catch (error: any) {
     console.error('❌ GSC permissions automation failed:', error.message);
   } finally {
-    await context.close();
+    await browser.close();
   }
 }
 

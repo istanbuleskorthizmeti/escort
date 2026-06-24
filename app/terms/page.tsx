@@ -3,6 +3,8 @@ import { VerificationBadge } from "@/components/UI/ConciergeSuite";
 import { siteConfig } from "@/config/site";
 
 export default function TermsPage() {
+  const domainName = siteConfig.domain || "dorukcanay.digital";
+
   return (
     <div className="min-h-screen bg-black text-zinc-300 font-sans selection:bg-rose-600 selection:text-white antialiased">
       <Navbar />
@@ -16,7 +18,7 @@ export default function TermsPage() {
             <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">ŞARTLARI</span>
           </h1>
           <p className="text-rose-600/60 text-xs font-black tracking-[0.2em] uppercase italic">
-            Elit Terms of Engagement v4.0 // Last Updated: April 2026
+            Elit Terms of Engagement v4.0 // Last Updated: June 2026
           </p>
         </header>
 
@@ -26,7 +28,7 @@ export default function TermsPage() {
               01. Hizmet Kapsamı ve Egemenlik
             </h2>
             <p className="mb-6">
-              istanbulescort.blog ("Platform"), elit yaşam tarzı ve profesyonel concierge hizmetlerine yönelik bir rehberdir. Kullanıcılar, platformu kullanarak sarsılmaz gizlilik standartlarını ve burada belirtilen Prestij standartlarını kabul etmiş sayılırlar.
+              {domainName} ("Platform"), elit yaşam tarzı ve profesyonel concierge hizmetlerine yönelik bir rehberdir. Kullanıcılar, platformu kullanarak sarsılmaz gizlilik standartlarını ve burada belirtilen Prestij standartlarını kabul etmiş sayılırlar.
             </p>
           </div>
 
@@ -59,7 +61,7 @@ export default function TermsPage() {
 
           <div className="bg-zinc-950/80 p-12 rounded-[3rem] border border-zinc-900 text-center">
             <div className="text-[10px] font-black tracking-[0.5em] text-zinc-700 uppercase mb-4">
-               Official Elit Network // istanbulescort.blog
+               Official Elit Network // {domainName}
             </div>
             <p className="text-xs text-zinc-600 uppercase tracking-widest leading-loose">
                Kullanım şartlarının ihlali durumunda, platformun "Elit Shield" standardı kapsamında erişimi kısıtlama hakkı saklıdır.

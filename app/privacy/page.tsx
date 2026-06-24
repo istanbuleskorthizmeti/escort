@@ -3,6 +3,8 @@ import { VerificationBadge } from "@/components/UI/ConciergeSuite";
 import { siteConfig } from "@/config/site";
 
 export default function PrivacyPage() {
+  const domainName = siteConfig.domain || "dorukcanay.digital";
+
   return (
     <div className="min-h-screen bg-black text-zinc-300 font-sans selection:bg-rose-600 selection:text-white antialiased">
       <Navbar />
@@ -26,7 +28,7 @@ export default function PrivacyPage() {
               01. Hollanda Yargı Yetkisi ve AVG
             </h2>
             <p className="mb-6">
-              istanbulescort.blog, Hollanda merkezli bir platform olup, tüm veri işleme faaliyetlerinde <b>Algemene Verordening Gegevensbescherming (AVG)</b> standartlarını sarsılmaz bir şekilde uygular. Gizliliğiniz, Amsterdam mahkemelerinin yetki alanı ve Hollanda siber güvenlik kanunları ile korunmaktadır.
+              {domainName}, Hollanda merkezli bir platform olup, tüm veri işleme faaliyetlerinde <b>Algemene Verordening Gegevensbescherming (AVG)</b> standartlarını sarsılmaz bir şekilde uygular. Gizliliğiniz, Amsterdam mahkemelerinin yetki alanı ve Hollanda siber güvenlik kanunları ile korunmaktadır.
             </p>
           </div>
 
@@ -69,7 +71,7 @@ export default function PrivacyPage() {
               "Gizlilik bir seçenek değil, egemen bir haktır. Dutch altyapımızla bu hakkı dijital kalenize dönüştürüyoruz."
             </p>
             <div className="text-[10px] font-black tracking-[0.5em] text-rose-600 uppercase">
-              // NO COOKIES // NO TRACKERS // NO COMPROMISE
+              // NO COOKIES // NO TRACKERS // NO COMPROMISE // {domainName.toUpperCase()}
             </div>
           </div>
         </section>

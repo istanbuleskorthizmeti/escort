@@ -1,0 +1,93 @@
+
+	
+
+home
+Genel Bakış
+lightbulb_2
+Analizler
+trending_up
+Performans
+search
+URL denetimi
+Dizin oluşturma
+keyboard_arrow_up
+file_copy
+Sayfa sayısı
+account_tree
+Site Haritaları
+visibility_off
+URL Kaldırma
+Deneyim
+keyboard_arrow_up
+speed
+Önemli Web Verileri
+Güvenlik ve Manuel İşlemler
+keyboard_arrow_down
+link_2
+Bağlantılar
+trophy
+Başarılar
+settings
+Ayarlar
+feedback
+Geri bildirim gönder
+info
+Search Console hakkında
+GizlilikŞartlar
+Ayarlar
+
+robots.txt
+robots.txt dosyaları
+Dosya
+	Kontrol tarihi
+	Durum
+	Boyut
+	Sorunlar	
+https://istanbul-eskort-hizmeti.readme.io/robots.txt	23.06.2026 20:02	
+check_circle_outline
+Getirildi
+	227 bayt	-	
+more_vert
+Sayfa başına satır sayısı:
+5
+10
+25
+50
+100
+250
+500
+1-1 / 1
+
+
+https://istanbul-eskort-hizmeti.readme.io/robots.txt
+23.06.2026 20:02 (en son)
+check_circle_outline
+Getirildi
+Sürümler
+chevron_right
+
+
+1
+User-agent: *
+2
+Allow: /
+3
+Disallow: /*/api-next
+4
+Disallow: /cdn-cgi/
+5
+Disallow: /edit/
+6
+Disallow: /*/edit/
+7
+Disallow: /suggested-edits/
+8
+Disallow: /login
+9
+Disallow: /logout
+10
+​
+11
+Sitemap: https://istanbul-eskort-hizmeti.readme.io/sitemap.xml
+open_in_new
+Canlı robots.txt dosyasını aç

@@ -15,12 +15,12 @@ async function sync() {
     process.exit(1);
   }
 
-  const category = process.env.README_CATEGORY || DEFAULT_CATEGORY;
-  const folderPath = path.join(DESKTOP_PATH, 'readme-docs');
+  const category = process.env.README_CATEGORY || 'dorukcanay-vip';
+  const folderPath = path.join(DESKTOP_PATH, 'readme-docs-dorukcanay');
 
   // Ensure fresh build of local files first
   console.log("🔨 Step 1: Re-building ReadMe Markdown pages locally...");
-  execSync(`npx tsx scripts/generate-readme-project.ts --category=${category}`, { stdio: 'inherit' });
+  execSync(`npx tsx scripts/generate-dorukcanay-readme.ts --category=${category}`, { stdio: 'inherit' });
 
   if (!fs.existsSync(folderPath)) {
     console.error(`❌ Docs folder not found: ${folderPath}`);
@@ -31,10 +31,12 @@ async function sync() {
   try {
     // Execute global rdme command to sync docs folder
     // Uses the API Key to authenticate the sync process securely
-    const cmd = `npx rdme docs:upload "${folderPath}" --key=${README_API_KEY}`;
-    console.log(`🚀 Executing command: rdme docs:upload "${folderPath}"`);
+    const cmd = `echo y | npx rdme docs:upload "${folderPath}" --key=${README_API_KEY}`;
+    console.log(`🚀 Executing command (Pass 1 - Auto-fixing validation issues if any): ${cmd}`);
+    execSync(cmd, { encoding: 'utf8' });
     
-    const output = execSync(cmd, { encoding: 'utf8', input: 'y\n' });
+    console.log(`🚀 Executing command (Pass 2 - Actual Upload): ${cmd}`);
+    const output = execSync(cmd, { encoding: 'utf8' });
     console.log("--- CLI OUTPUT ---");
     console.log(output);
     console.log("🏆 Sync process finished successfully!");

@@ -7,7 +7,7 @@ const config = getSSHConfig();
 async function run() {
   try {
     await ssh.connect(config);
-    console.log('✅ Connected to 187.77.111.203.');
+    console.log('✅ Connected to 31.97.79.34.');
 
     console.log('--- SYSTEM SERVICES ---');
     const systemctlRes = await ssh.execCommand('systemctl status postgresql');

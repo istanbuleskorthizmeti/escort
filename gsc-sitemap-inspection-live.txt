@@ -1,0 +1,77 @@
+
+	
+
+home
+Genel Bakış
+lightbulb_2
+Analizler
+trending_up
+Performans
+search
+URL denetimi
+Dizin oluşturma
+keyboard_arrow_up
+file_copy
+Sayfa sayısı
+account_tree
+Site Haritaları
+visibility_off
+URL Kaldırma
+Deneyim
+keyboard_arrow_up
+speed
+Önemli Web Verileri
+Güvenlik ve Manuel İşlemler
+keyboard_arrow_down
+link_2
+Bağlantılar
+trophy
+Başarılar
+settings
+Ayarlar
+feedback
+Geri bildirim gönder
+info
+Search Console hakkında
+GizlilikŞartlar
+https://istanbul-eskort-hizmeti.readme.io/docs/istanbul-avcilar-escort
+URL Denetimi
+GOOGLE DİZİNİ
+CANLI TEST
+Test zamanı: 23 Haz 2026, 21:33
+
+error
+URL, Google tarafından kullanılamaz
+Bu sayfa dizine eklenemiyor. Dizine eklenmeyen sayfalar Google'da sunulamaz. Sayfanın neden dizine eklenemediğini öğrenmek için aşağıdaki ayrıntılara bakın Daha fazla bilgi
+TEST EDİLEN SAYFAYI GÖSTER
+Sayfa değişti mi?
+DİZİNE EKLENMESİNİ İSTE
+error
+Sayfa kullanılabilirliği
+Sayfa taranamıyor: Robots.txt tarafından engellendi
+
+URL sadece belirli koşullar karşılanırsa dizine eklenecektir
+Bulunma
+Canlı testlerde kontrol edilmedi
+Tarama
+Zaman
+23 Haz 2026 21:33:39
+Tarama aracısı:
+Google Denetleme Aracı akıllı telefon
+Taramaya izin verildi mi?
+error
+Hayır: robots.txt tarafından engellendi
+Sayfa getirme
+error
+Başarısız: Robots.txt tarafından engellendi
+Dizine eklenmesine izin verildi mi?
+Yok
+Dizin oluşturma
+Kullanıcı tarafından beyan edilen standart URL
+Yok
+Google tarafından seçilen standart URL
+
+Yalnızca dizine eklendikten sonra belirlenir
+DAHA FAZLA BİLGİ EDİNİN
+Geliştirmeler ve Deneyim
+Yalnızca dizine eklenmiş URL'lerde geliştirmeler olabilir

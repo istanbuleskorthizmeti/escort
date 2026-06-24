@@ -1,7 +1,7 @@
 import http from 'http';
 
 const options = {
-  hostname: '187.77.111.203',
+  hostname: '31.97.79.34',
   port: 3001,
   path: '/',
   method: 'GET',

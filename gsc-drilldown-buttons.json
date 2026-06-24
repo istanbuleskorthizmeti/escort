@@ -1,0 +1,227 @@
+[
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_7c",
+    "text": "",
+    "ariaLabel": "Ana menü",
+    "ariaHaspopup": null,
+    "html": "<div class=\"gb_7c\" aria-expanded=\"false\" aria-label=\"Ana menü\" role=\"button\" tabindex=\"0\"><svg focusable=\"false\" viewBox=\"0 0 24 24\"><path d=\"M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z\"></path></sv"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_7c gb_ad gb_0",
+    "text": "",
+    "ariaLabel": "Geri dön",
+    "ariaHaspopup": null,
+    "html": "<div class=\"gb_7c gb_ad gb_0\" aria-label=\"Geri dön\" title=\"Geri dön\" role=\"button\" tabindex=\"0\"><svg focusable=\"false\" viewBox=\"0 0 24 24\"><path d=\"M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 1"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_7c gb_k gb_0",
+    "text": "",
+    "ariaLabel": "Kapat",
+    "ariaHaspopup": null,
+    "html": "<div class=\"gb_7c gb_k gb_0\" aria-label=\"Kapat\" role=\"button\" tabindex=\"0\"><svg viewBox=\"0 0 24 24\"><path d=\"M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59"
+  },
+  {
+    "tagName": "BUTTON",
+    "id": "",
+    "className": "gb_Ue",
+    "text": "",
+    "ariaLabel": "Aramayı kapat",
+    "ariaHaspopup": null,
+    "html": "<button class=\"gb_Ue\" aria-label=\"Aramayı kapat\" type=\"button\"><svg focusable=\"false\" height=\"24px\" viewBox=\"0 0 24 24\" width=\"24px\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M0 0h24v24H0z\" fill=\"no"
+  },
+  {
+    "tagName": "BUTTON",
+    "id": "",
+    "className": "gb_Xe",
+    "text": "",
+    "ariaLabel": "Aramayı temizle",
+    "ariaHaspopup": null,
+    "html": "<button class=\"gb_Xe\" aria-label=\"Aramayı temizle\" type=\"button\"><svg focusable=\"false\" height=\"24px\" viewBox=\"0 0 24 24\" width=\"24px\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M19 6.41L17.59 5 12 1"
+  },
+  {
+    "tagName": "BUTTON",
+    "id": "",
+    "className": "gb_We",
+    "text": "",
+    "ariaLabel": "Arama",
+    "ariaHaspopup": null,
+    "html": "<button class=\"gb_We\" aria-label=\"Arama\" role=\"button\"><svg focusable=\"false\" height=\"24px\" viewBox=\"0 0 24 24\" width=\"24px\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M20.49,19l-5.73-5.73C15.53,12.2"
+  },
+  {
+    "tagName": "BUTTON",
+    "id": "",
+    "className": "VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc EyRMmb",
+    "text": "",
+    "ariaLabel": "Geri bildirim",
+    "ariaHaspopup": null,
+    "html": "<button class=\"VfPpkd-Bz112c-LgbsSe yHy1rc eT1oJ mN1ivc EyRMmb\" jscontroller=\"soHxf\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; touchstart:p6p2H; to"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb mUbCce fKz7Od M9Bg4d",
+    "text": "",
+    "ariaLabel": "Yardım",
+    "ariaHaspopup": null,
+    "html": "<div role=\"button\" class=\"U26fgb mUbCce fKz7Od M9Bg4d\" jscontroller=\"VXdfxd\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; c"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb mUbCce fKz7Od ADPhxf M9Bg4d",
+    "text": "",
+    "ariaLabel": "Kullanıcı ayarları",
+    "ariaHaspopup": null,
+    "html": "<div role=\"button\" class=\"U26fgb mUbCce fKz7Od ADPhxf M9Bg4d\" jscontroller=\"VXdfxd\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O2"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb mUbCce fKz7Od hWjaw M9Bg4d",
+    "text": "8",
+    "ariaLabel": "Okunmamış mesaj sayısı: 8",
+    "ariaHaspopup": null,
+    "html": "<div role=\"button\" class=\"U26fgb mUbCce fKz7Od hWjaw M9Bg4d\" jscontroller=\"VXdfxd\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22"
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "gb_C",
+    "text": "",
+    "ariaLabel": "Google uygulamaları",
+    "ariaHaspopup": null,
+    "html": "<a class=\"gb_C\" aria-label=\"Google uygulamaları\" href=\"https://www.google.com.tr/intl/tr/about/products\" aria-expanded=\"false\" role=\"button\" tabindex=\"0\"><svg class=\"gb_H\" aria-hidden=\"true\" focusable"
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "gb_C gb_6a gb_7",
+    "text": "",
+    "ariaLabel": "Google Hesabı: Mehmet Bozkurt  \n(info@dorukcanay.digital)",
+    "ariaHaspopup": null,
+    "html": "<a class=\"gb_C gb_6a gb_7\" aria-expanded=\"false\" aria-label=\"Google Hesabı: Mehmet Bozkurt  \n(info@dorukcanay.digital)\" href=\"https://accounts.google.com/SignOutOptions?hl=tr&amp;continue=https://sear"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "enPWWe",
+    "text": "Arama özelliği",
+    "ariaLabel": "Arama özelliği",
+    "ariaHaspopup": "menu",
+    "html": "<div class=\"enPWWe\" tabindex=\"0\" role=\"button\" aria-haspopup=\"menu\" aria-expanded=\"false\" jsname=\"MOZAcf\" aria-label=\"Arama özelliği\"><div jsname=\"JbQSyc\" class=\"kdYzyc\"><img class=\"KTIGIb gu5Wmc miIA"
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "searchURL denetimi",
+    "ariaLabel": null,
+    "ariaHaspopup": null,
+    "html": "<a tabindex=\"0\" role=\"button\" aria-selected=\"false\" class=\"Lhhaec\" jsname=\"YhhZY\" jsaction=\"click:FtwIM;\"><div class=\"QZ1Moe\"><i class=\"quRWN-Bz112c google-symbols notranslate NL3Fie\" aria-hidden=\"tru"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iAzf0e xniJIb lVp8ke",
+    "text": "keyboard_arrow_downkeyboard_arrow_up",
+    "ariaLabel": "Dizin oluşturma rapor bölümü",
+    "ariaHaspopup": null,
+    "html": "<div class=\"iAzf0e xniJIb lVp8ke\" jsname=\"LgbsSe\" jsaction=\"click:ornU0b(LgbsSe);\" tabindex=\"0\" role=\"button\" aria-expanded=\"true\" aria-label=\"Dizin oluşturma rapor bölümü\"><div class=\"NrEO6d\"><i clas"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iAzf0e xniJIb lVp8ke",
+    "text": "keyboard_arrow_downkeyboard_arrow_up",
+    "ariaLabel": "Deneyim rapor bölümü",
+    "ariaHaspopup": null,
+    "html": "<div class=\"iAzf0e xniJIb lVp8ke\" jsname=\"LgbsSe\" jsaction=\"click:ornU0b(LgbsSe);\" tabindex=\"0\" role=\"button\" aria-expanded=\"true\" aria-label=\"Deneyim rapor bölümü\"><div class=\"NrEO6d\"><i class=\"quRWN"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iAzf0e xniJIb lVp8ke",
+    "text": "keyboard_arrow_downkeyboard_arrow_up",
+    "ariaLabel": "Güvenlik ve Manuel İşlemler rapor bölümü",
+    "ariaHaspopup": null,
+    "html": "<div class=\"iAzf0e xniJIb lVp8ke\" jsname=\"LgbsSe\" jsaction=\"click:ornU0b(LgbsSe);\" tabindex=\"0\" role=\"button\" aria-expanded=\"false\" aria-label=\"Güvenlik ve Manuel İşlemler rapor bölümü\"><div class=\"Nr"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "feedbackGeri bildirim gönder",
+    "ariaLabel": null,
+    "ariaHaspopup": null,
+    "html": "<div class=\"Lhhaec\" jsname=\"Gs5EQ\" tabindex=\"0\" role=\"button\"><div class=\"QZ1Moe\"><i class=\"quRWN-Bz112c google-symbols notranslate NL3Fie\" aria-hidden=\"true\">feedback</i></div><span class=\"QPTmJc\"><s"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "infoSearch Console hakkında",
+    "ariaLabel": null,
+    "ariaHaspopup": null,
+    "html": "<div class=\"Lhhaec\" jsname=\"JgpC3e\" data-help-leftnav-article-id=\"9128668\" data-help-leftnav-fragment=\"additional_tools\" data-help-leftnav-event-label=\"about-search-console\" tabindex=\"0\" role=\"button\""
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb O0WRkf oG5Srb C0oVfc uAbwfe CrPTkb M9Bg4d",
+    "text": "Site haritasını aç",
+    "ariaLabel": null,
+    "ariaHaspopup": null,
+    "html": "<div role=\"button\" class=\"U26fgb O0WRkf oG5Srb C0oVfc uAbwfe CrPTkb M9Bg4d\" jscontroller=\"VXdfxd\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:A"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb mUbCce fKz7Od uAbwfe xxsGM M9Bg4d",
+    "text": "",
+    "ariaLabel": "Site haritasını aç",
+    "ariaHaspopup": null,
+    "html": "<div role=\"button\" class=\"U26fgb mUbCce fKz7Od uAbwfe xxsGM M9Bg4d\" jscontroller=\"VXdfxd\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; b"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb JRtysb WzwrXb rMDdyb",
+    "text": "Site haritasını kaldır",
+    "ariaLabel": "Diğer seçenekler...",
+    "ariaHaspopup": "true",
+    "html": "<div role=\"button\" class=\"U26fgb JRtysb WzwrXb rMDdyb\" jscontroller=\"iSvg6e\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHmuwe; blur:O22p3e; c"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb O0WRkf oG5Srb C0oVfc o82QX M9Bg4d RDPZE",
+    "text": "Sayfa dizine ekleme bölümüne bakın",
+    "ariaLabel": null,
+    "ariaHaspopup": null,
+    "html": "<div role=\"button\" class=\"U26fgb O0WRkf oG5Srb C0oVfc o82QX M9Bg4d RDPZE\" jscontroller=\"VXdfxd\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHm"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb O0WRkf oG5Srb C0oVfc o82QX M9Bg4d RDPZE",
+    "text": "Video sayfasını dizine ekleme bölümüne bakın",
+    "ariaLabel": null,
+    "ariaHaspopup": null,
+    "html": "<div role=\"button\" class=\"U26fgb O0WRkf oG5Srb C0oVfc o82QX M9Bg4d RDPZE\" jscontroller=\"VXdfxd\" jsaction=\"click:cOuCgd; mousedown:UX7yZ; mouseup:lbsD7e; mouseenter:tfO1Yc; mouseleave:JywGue; focus:AHm"
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "lVp8ke ",
+    "text": "Genel HTTP hatası1 örnek1",
+    "ariaLabel": null,
+    "ariaHaspopup": null,
+    "html": "<div class=\"lVp8ke \" jsname=\"LgbsSe\" jsaction=\"click:ornU0b(LgbsSe);\" tabindex=\"0\" role=\"button\" aria-expanded=\"false\"><div class=\"F93BIf\"><span jsslot=\"\" class=\"zlSJbe a6pgHd\"><div class=\"UL5Wee\">Gen"
+  }
+]

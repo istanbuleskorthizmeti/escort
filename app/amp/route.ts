@@ -234,6 +234,20 @@ export async function GET(request: Request) {
   // Select first 12 profiles from vitrinImages to display on AMP
   const ampProfiles = vitrinImages.slice(0, 12);
 
+  // Preload the first two images for LCP speed optimization
+  const preloadTags = ampProfiles.slice(0, 2).map((p, index) => {
+    const isCustomImage = p.src && (p.src.startsWith('http') || p.src.includes('uploads') || !p.src.includes('seo_'));
+    let imageSrc = '';
+    if (isCustomImage) {
+      imageSrc = p.src.startsWith('http') ? p.src : `https://${host}${p.src}`;
+    } else {
+      const safeIdx = (index % 221) + 1;
+      const currentSafeIdx = getSafeVipProfileIdx(safeIdx, index + 1);
+      imageSrc = `https://${host}/${slugify(locationName)}-vip-escort-ilan-${currentSafeIdx}.webp`;
+    }
+    return `<link rel="preload" href="${imageSrc}" as="image">`;
+  }).join('\n');
+
   const html = `<!doctype html>
 <html amp lang="tr">
 <head>
@@ -241,6 +255,7 @@ export async function GET(request: Request) {
   <title>🔞 ${locationName} Escort | ${brandName} VIP Görsel Kataloğu</title>
   <link rel="canonical" href="${canonicalUrl}">
   <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+  ${preloadTags}
   
   <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
   

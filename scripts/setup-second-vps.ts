@@ -5,7 +5,7 @@ const ssh = new NodeSSH();
 const config = {
   host: '31.97.79.34',
   username: 'root',
-  password: '212jeAmind..'
+  password: 'Oym@icdLt?vY8YQy'
 };
 
 async function setupSecondVPS() {
@@ -76,12 +76,12 @@ services:
 
   # --- SERPBEAR (RANK TRACKER) ---
   serpbear:
-    image: pythononwheels/serpbear:latest
+    image: towfiqi/serpbear:latest
     container_name: serpbear
     ports:
       - "8080:3000"
     environment:
-      - USERNAME=admin
+      - USER_NAME=admin
       - PASSWORD=HydraSerpBear2026!
       - SECRET=9e8d7c6b5a4f3e2d1c0b9a8f7e6d5c4b
     volumes:

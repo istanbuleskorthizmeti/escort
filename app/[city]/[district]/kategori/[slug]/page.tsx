@@ -136,7 +136,7 @@ export default async function DistrictCategoryPage({ params }: { params: Promise
             </span>
           </h1>
           <p className="text-zinc-400 text-lg md:text-xl font-medium border-l-4 border-rose-600 pl-6 mb-10">
-            {cityName} {districtName} bölgesinde en lüks {catTitle} deneyimi. %100 gerçek ilanlar.
+            {cityName} {districtName} bölgesinde en lüks {catTitle} deneyimi. %100 gerçek modeller.
           </p>
         </section>
 

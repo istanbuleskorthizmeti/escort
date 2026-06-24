@@ -156,43 +156,9 @@ async function main() {
         continue;
       }
 
-      console.log(`⏳ [${slug}] Generating unique article for ${host}...`);
-
-      const systemPrompt = `
-        [GEMINI ELITE CORE - PERSONA-BASED UNDETECTABLE AI & ACADEMIC EEAT]
-        Görevin: "${entry.title}" konusunu derinlemesine ve son derece akademik/yaşam kültürü kalitesinde ele alan elit bir makale yazmaktır.
-        
-        Yazım Tonu: ${persona.tone}
-        Odak Noktaları: ${persona.focus}
-        Duygu Durumu: ${persona.emotional_state}
-        Yazım Ritmi (Burstiness): Kısa ve keskin cümleler ile uzun betimleme cümlelerinin bir arada kullanıldığı son derece insansı ve akıcı bir tempo.
-        Kelimeler: ${persona.vocabulary.join(', ')}
-        
-        KURALLAR:
-        - Yapay zeka bağlaçları ("Sonuç olarak", "Öncelikle", "Bununla birlikte") KESİNLİKLE YASAKTIR.
-        - Metni zengin H2, H3 alt başlıkları ve HTML paragrafları ile oluştur.
-        - Yazının uzunluğu en az 1200 kelime olmalıdır.
-        - Metin içinde şu 2 linki dofollow olarak ekle:
-          1. <a href="https://istanbulescort.blog">https://istanbulescort.blog</a> (Anchor: "kaporasız eskort bayanlar")
-          2. <a href="https://${host}">https://${host}</a> (Anchor: "${anchorText}")
-      `;
-
-      const userPrompt = `Konu: ${entry.title}. Lütfen bu konuya dair, okuyucuya en lüks dergi kalitesini hissettiren derinlikte, ${personaKey} üslubuna tam uyumlu bir makale gövdesi oluştur. Sadece HTML etiketlerini (p, h2, h3, strong) kullanarak yanıtla. JSON veya markdown kod bloğu kullanma.`;
-
+      console.log(`⏳ [${slug}] Generating unique local article for ${host}...`);
       try {
-        let htmlContent = await omniAI.generate(userPrompt, { systemPrompt, temperature: 0.75, max_tokens: 3000 });
-        
-        if (htmlContent.includes('```html')) {
-          htmlContent = htmlContent.split('```html')[1].split('```')[0].trim();
-        } else if (htmlContent.includes('```')) {
-          htmlContent = htmlContent.split('```')[1].trim();
-        }
-
-        if (htmlContent.length < 300 || htmlContent.includes("seçkin escort hizmetleri ağı")) {
-          throw new Error("Generation returned fallback or too short content.");
-        }
-
-        // Upsert to ensure uniqueness
+        const localHtml = generateLocalArticle(slug, host, anchorText, targetLoc);
         await prisma.pageContent.upsert({
           where: {
             slug_siteId: {
@@ -202,47 +168,18 @@ async function main() {
           },
           update: {
             title: entry.title,
-            content: htmlContent
+            content: localHtml
           },
           create: {
             slug: dbSlug,
             siteId: siteId,
             title: entry.title,
-            content: htmlContent
+            content: localHtml
           }
         });
-
-        console.log(`✨ [${slug}] Successfully generated and stored for ${host}.`);
-        
-        // Wait 1 second to avoid rate limiting
-        await new Promise(resolve => setTimeout(resolve, 1000));
-      } catch (err: any) {
-        console.error(`❌ Failed to generate [${slug}] for ${host}:`, err.message);
-        console.log(`⚙️ [${slug}] Using high-quality local spintax fallback for ${host}...`);
-        try {
-          const localHtml = generateLocalArticle(slug, host, anchorText, targetLoc);
-          await prisma.pageContent.upsert({
-            where: {
-              slug_siteId: {
-                slug: dbSlug,
-                siteId: siteId
-              }
-            },
-            update: {
-              title: entry.title,
-              content: localHtml
-            },
-            create: {
-              slug: dbSlug,
-              siteId: siteId,
-              title: entry.title,
-              content: localHtml
-            }
-          });
-          console.log(`✨ [${slug}] Successfully populated using local generator for ${host}.`);
-        } catch (localErr: any) {
-          console.error(`❌ Local fallback generation failed for [${slug}] on ${host}:`, localErr.message);
-        }
+        console.log(`✨ [${slug}] Successfully populated for ${host}.`);
+      } catch (localErr: any) {
+        console.error(`❌ Local generation failed for [${slug}] on ${host}:`, localErr.message);
       }
     }
   }

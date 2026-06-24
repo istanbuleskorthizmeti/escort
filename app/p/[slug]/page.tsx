@@ -86,8 +86,8 @@ export default async function ProfilePage({ params }: PageProps) {
               {
                 "@type": "JobPosting",
                 "@id": `https://${host}/p/${slug}#jobposting`,
-                "title": `${profile.name} — ${profile.district} VIP Hostes ve Eşlikçi İlanı`,
-                "description": `${profile.name}: ${profile.description}. ${profile.district} bölgesinde VIP misafir karşılama, organizasyon asistanlığı ve elit refakatçi pozisyonu için iş ilanıdır.`,
+                "title": `${profile.name} — ${profile.district} VIP Hostes ve Eşlikçi Profili`,
+                "description": `${profile.name}: ${profile.description}. ${profile.district} bölgesinde VIP misafir karşılama, organizasyon asistanlığı ve elit refakatçi pozisyonu için elit refakatçi profilidir.`,
                 "datePosted": "2026-06-01T08:00:00Z",
                 "validThrough": "2026-12-31T23:59:59Z",
                 "employmentType": "CONTRACTOR",

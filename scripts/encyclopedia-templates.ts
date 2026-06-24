@@ -516,9 +516,10 @@ export function generateLocalArticle(slug: string, host: string, anchorText: str
 
   let html = `<p>${formatText(template.intro)}</p>\n\n`;
 
-  // We have 4 sections in the templates. Let's make sure we interleave the 2 links in the sections!
+  // We have 4 sections in the templates. Let's make sure we interleave the 3 links in the sections!
   // Link 1: <a href="https://istanbulescort.blog">kaporasız eskort bayanlar</a>
   // Link 2: <a href="https://${host}">${anchorText}</a>
+  // Link 3: <a href="https://dorukcanay.digital">istanbul escort</a>
   
   template.sections.forEach((sec, idx) => {
     let content = formatText(sec.content);
@@ -528,6 +529,9 @@ export function generateLocalArticle(slug: string, host: string, anchorText: str
     } else if (idx === 2) {
       // Inject Link 2
       content += ` Bölgesel ayrıcalıklar ve lüks refakatçi detayları için <a href="https://${host}" target="_blank" rel="dofollow">${anchorText}</a> sayfamızı ziyaret edebilirsiniz.`;
+    } else if (idx === 3) {
+      // Inject Link 3
+      content += ` İstanbul genelindeki en prestijli buluşmalar ve bağımsız model portföyü için <a href="https://dorukcanay.digital" target="_blank" rel="dofollow">istanbul escort</a> platformunu rehber edinebilirsiniz.`;
     }
     html += `<h2>${sec.title}</h2>\n<p>${content}</p>\n\n`;
   });

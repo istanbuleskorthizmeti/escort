@@ -4,8 +4,8 @@
 
 $servers = @(
     @{ IP="213.232.235.181"; PW="4TVuj7qiHMfh7CxH6K!"; Name="ESCORT-MAIN"; Cmd="cd /root/esc && git pull origin main && npm run build && pm2 reload all" },
-    @{ IP="187.77.111.203"; PW="Z4-nN8JfiUIh5,;g"; Name="ATTACK-SERVER"; Cmd="pm2 start scripts/nuclear-backlink-bomber.ts --name 'HYDRA-BOMBER' --interpreter=npx -- tsx" },
-    @{ IP="45.93.137.164"; PW="Z4-nN8JfiUIh5,;g"; Name="VOD-SERVER"; Cmd="pm2 start scripts/hydra-conqueror.ts --name 'DIZI-TRAFFIC' -- --mode=passive-redirect" }
+    @{ IP="31.97.79.34"; PW="Oym@icdLt?vY8YQy"; Name="ATTACK-SERVER"; Cmd="pm2 start scripts/nuclear-backlink-bomber.ts --name 'HYDRA-BOMBER' --interpreter=npx -- tsx" },
+    @{ IP="45.93.137.164"; PW="Oym@icdLt?vY8YQy"; Name="VOD-SERVER"; Cmd="pm2 start scripts/hydra-conqueror.ts --name 'DIZI-TRAFFIC' -- --mode=passive-redirect" }
 )
 
 Write-Host "☢️ HYDRA DEPLOYMENT SEQUENCE INITIALIZED ☢️" -ForegroundColor Red

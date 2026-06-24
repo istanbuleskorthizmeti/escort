@@ -1,0 +1,76 @@
+Found 21 links:
+Link 0: text="" href="./search-console?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="gb_je gb_2c gb_ne"
+  HTML: <a class="gb_je gb_2c gb_ne" aria-label="Google Search Console" href="./search-console?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" id="sdgBod"><img class="gb_6c" src="https://ssl.gstatic.com/search-console/scfe/logo_search_console.svg" alt="" aria-hidden="true" role="presentation" style="width:278px;height:40px" data-atf="true" data-iml="1668.7000000029802"></a>
+
+Link 1: text="" href="https://www.google.com.tr/intl/tr/about/products" class="gb_C"
+  HTML: <a class="gb_C" aria-label="Google uygulamaları" href="https://www.google.com.tr/intl/tr/about/products" aria-expanded="false" role="button" tabindex="0"><svg class="gb_H" aria-hidden="true" focusable="false" viewBox="0 0 24 24"><path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path><image src="https://ssl.gstatic.com/gb/images/bar/al-icon.png" alt="" height="24" width="24" style="border:none;display:none \9"></image></svg></a>
+
+Link 2: text="" href="https://accounts.google.com/SignOutOptions?hl=tr&continue=https://search.google.com/search-console/settings/robots-txt%3Fresource_id%3Dhttps://istanbul-eskort-hizmeti.readme.io/&ec=GBRA1AI" class="gb_C gb_6a gb_7"
+  HTML: <a class="gb_C gb_6a gb_7" aria-expanded="false" aria-label="Google Hesabı: Mehmet Bozkurt  
+(info@dorukcanay.digital)" href="https://accounts.google.com/SignOutOptions?hl=tr&amp;continue=https://search.google.com/search-console/settings/robots-txt%3Fresource_id%3Dhttps://istanbul-eskort-hizmeti.readme.io/&amp;ec=GBRA1AI" tabindex="0" role="button"><span class="gb_he"><img class="gb_W gbii" src="https://lh3.google.com/u/0/ogw/AF2bZyh2sazv5BqW6bIDlg8VZtBesoWnNefpDkd4Alx9Ugd6Jg=s32-c-mo" srcset="https://lh3.google.com/u/0/ogw/AF2bZyh2sazv5BqW6bIDlg8VZtBesoWnNefpDkd4Alx9Ugd6Jg=s32-c-mo 1x, https://lh3.google.com/u/0/ogw/AF2bZyh2sazv5BqW6bIDlg8VZtBesoWnNefpDkd4Alx9Ugd6Jg=s64-c-mo 2x " alt="" aria-hidden="true" data-noaft=""></span><div class="gb_Z gb_0" aria-hidden="true"><svg class="gb_Ra" height="14" viewBox="0 0 14 14" width="14" xmlns="http://www.w3.org/2000/svg"><circle class="gb_Sa" cx="7" cy="7" r="7"></circle><path class="gb_Ua" d="M6 10H8V12H6V10ZM6 2H8V8H6V2Z"></path></svg></div></a>
+
+Link 3: text="" href="./search-console?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="gb_je gb_2c gb_ne"
+  HTML: <a class="gb_je gb_2c gb_ne" aria-label="Google Search Console" href="./search-console?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F"><span class="gb_6c gb_me" aria-hidden="true" role="presentation"></span></a>
+
+Link 4: text="home
+Genel Bakış" href="./search-console?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">home</i></div><span class="QPTmJc"><span class="SaG06d">Genel Bakış<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Genel Bakış" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 5: text="lightbulb_2
+Analizler" href="./search-console/performance/insights?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/performance/insights?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie LEqeFd" aria-hidden="true">lightbulb_2</i></div><span class="QPTmJc"><span class="SaG06d">Analizler<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Analizler" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 6: text="trending_up
+Performans" href="./search-console/performance/search-analytics?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/performance/search-analytics?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">trending_up</i></div><span class="QPTmJc"><span class="SaG06d">Performans<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Performans" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 7: text="search
+URL denetimi" href="" class="Lhhaec"
+  HTML: <a tabindex="0" role="button" aria-selected="false" class="Lhhaec" jsname="YhhZY" jsaction="click:FtwIM;"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">search</i></div><span class="QPTmJc"><span class="SaG06d">URL denetimi<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="URL denetimi" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 8: text="file_copy
+Sayfa sayısı" href="./search-console/index?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/index?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">file_copy</i></div><span class="QPTmJc"><span class="SaG06d">Sayfa sayısı<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Sayfa sayısı" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 9: text="account_tree
+Site Haritaları" href="./search-console/sitemaps?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/sitemaps?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">account_tree</i></div><span class="QPTmJc"><span class="SaG06d">Site Haritaları<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Site Haritaları" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 10: text="visibility_off
+URL Kaldırma" href="./search-console/removals?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/removals?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">visibility_off</i></div><span class="QPTmJc"><span class="SaG06d">URL Kaldırma<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="URL Kaldırma" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 11: text="speed
+Önemli Web Verileri" href="./search-console/core-web-vitals?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/core-web-vitals?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">speed</i></div><span class="QPTmJc"><span class="SaG06d">Önemli Web Verileri<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Önemli Web Verileri" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 12: text="" href="./search-console/manual-actions?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/manual-actions?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">flag</i></div><span class="QPTmJc"><span class="SaG06d">Manuel işlemler<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Manuel işlemler" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 13: text="" href="./search-console/security-issues?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/security-issues?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">security</i></div><span class="QPTmJc"><span class="SaG06d">Güvenlik sorunları<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Güvenlik sorunları" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 14: text="link_2
+Bağlantılar" href="./search-console/links?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/links?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY" aria-label="Bağlantı raporu"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">link_2</i></div><span class="QPTmJc"><span class="SaG06d">Bağlantılar<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Bağlantılar" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 15: text="trophy
+Başarılar" href="./search-console/achievements?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/achievements?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="false" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie JOToTe" aria-hidden="true">trophy</i></div><span class="QPTmJc"><span class="SaG06d">Başarılar<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Başarılar" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 16: text="settings
+Ayarlar" href="./search-console/settings?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="Lhhaec"
+  HTML: <a href="./search-console/settings?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" role="link" aria-selected="true" class="Lhhaec" jsname="YhhZY"><div class="QZ1Moe"><i class="quRWN-Bz112c google-symbols notranslate NL3Fie" aria-hidden="true">settings</i></div><span class="QPTmJc"><span class="SaG06d">Ayarlar<div class="d1pwUc" aria-hidden="true" jscontroller="wewYzd" jsaction="focus: eGiyHb; mouseenter: eGiyHb; touchstart: eGiyHb; blur: LfDNce; mouseleave: LfDNce; touchend: LfDNce; touchcancel: LfDNce; click: DQkW7b;" data-text="Ayarlar" data-additional-delay-ms="1100"></div></span></span></a>
+
+Link 17: text="Gizlilik" href="https://myaccount.google.com/privacypolicy?hl=tr" class="G23Ylb"
+  HTML: <a href="https://myaccount.google.com/privacypolicy?hl=tr" target="_blank" class="G23Ylb">Gizlilik</a>
+
+Link 18: text="Şartlar" href="https://myaccount.google.com/termsofservice?hl=tr" class="G23Ylb"
+  HTML: <a href="https://myaccount.google.com/termsofservice?hl=tr" target="_blank" class="G23Ylb">Şartlar</a>
+
+Link 19: text="Ayarlar" href="./search-console/settings?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="hhKiv AefZsb"
+  HTML: <a href="./search-console/settings?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="hhKiv AefZsb" title="Ayarlar">Ayarlar</a>
+
+Link 20: text="arrow_back" href="./search-console/settings?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" class="FKF6mc TpQm9d"
+  HTML: <a class="FKF6mc TpQm9d" href="./search-console/settings?resource_id=https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F" aria-label="Ayarlar"><div class="VTBa7b MbhUzd" jsname="ksKsZd"></div><span jsslot="" class="xjKiLb"><span class="Ce1Y1c" style="top: -12px"><span class="DPvwYc NIb3Dc" aria-hidden="true">arrow_back</span></span></span></a>
+

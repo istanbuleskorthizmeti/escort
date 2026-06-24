@@ -15,7 +15,8 @@ import { getCanonicalHost } from "../../../lib/site-context";
 import { prisma } from "../../../lib/prisma";
 import { omniAI } from "../../../lib/ai-provider";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600; // Cache as static HTML, regenerate in background (ISR)
+export const dynamicParams = true;
 
 async function getProfileBio(slug: string, host: string, name: string, district: string): Promise<string> {
   const dbSlug = `profile-bio-${slug}-${host}`;

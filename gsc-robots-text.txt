@@ -1,0 +1,60 @@
+
+	
+
+home
+Genel Bakış
+lightbulb_2
+Analizler
+trending_up
+Performans
+search
+URL denetimi
+Dizin oluşturma
+keyboard_arrow_up
+file_copy
+Sayfa sayısı
+account_tree
+Site Haritaları
+visibility_off
+URL Kaldırma
+Deneyim
+keyboard_arrow_up
+speed
+Önemli Web Verileri
+Güvenlik ve Manuel İşlemler
+keyboard_arrow_down
+link_2
+Bağlantılar
+trophy
+Başarılar
+settings
+Ayarlar
+feedback
+Geri bildirim gönder
+info
+Search Console hakkında
+GizlilikŞartlar
+Ayarlar
+
+robots.txt
+robots.txt dosyaları
+Dosya
+	Kontrol tarihi
+	Durum
+	Boyut
+	Sorunlar	
+https://istanbul-eskort-hizmeti.readme.io/robots.txt	23.06.2026 20:02	
+check_circle_outline
+Getirildi
+	227 bayt	-	
+more_vert
+Sayfa başına satır sayısı:
+5
+10
+25
+50
+100
+250
+500
+1-1 / 1
+

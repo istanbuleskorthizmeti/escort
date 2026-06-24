@@ -1,0 +1,66 @@
+
+	
+8
+
+home
+Genel Bakış
+lightbulb_2
+Analizler
+trending_up
+Performans
+search
+URL denetimi
+Dizin oluşturma
+keyboard_arrow_up
+file_copy
+Sayfa sayısı
+account_tree
+Site Haritaları
+visibility_off
+URL Kaldırma
+Deneyim
+keyboard_arrow_up
+speed
+Önemli Web Verileri
+lock
+HTTPS
+Güvenlik ve Manuel İşlemler
+keyboard_arrow_down
+link_2
+Bağlantılar
+trophy
+Başarılar
+settings
+Ayarlar
+feedback
+Geri bildirim gönder
+info
+Search Console hakkında
+GizlilikŞartlar
+Site Haritaları
+Yeni bir site haritası ekleyin
+https://sites.google.com/dorukcanay.digital/sefakoyistanbul-drkcnay2026/ana-sayfa/
+Site haritası URL'sini girin
+GÖNDER
+Gönderilen site haritaları
+
+Site haritası
+	Tür
+	Gönderildi
+	Son okuma tarihi
+	Durum
+	
+Keşfedilen sayfalar	
+Keşfedilen videolar	
+/system/feeds/sitemap	Bilinmiyor	23 Haz 2026		Getirilemedi	0	0	
+/sitemap.xml	Bilinmiyor	12 May 2026		Getirilemedi	0	0	
+Sayfa başına satır sayısı:
+5
+10
+25
+50
+100
+250
+500
+1-2 / 2
+

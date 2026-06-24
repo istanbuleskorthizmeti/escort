@@ -6,7 +6,7 @@ const config = getSSHConfig();
 
 async function remediateAndBoost() {
   try {
-    console.log('🚀 [REMEDIATION] Connecting to Alexhost root@187.77.111.203...');
+    console.log('🚀 [REMEDIATION] Connecting to Alexhost root@31.97.79.34...');
     await ssh.connect(config);
     console.log('✅ SSH Connected.');
 

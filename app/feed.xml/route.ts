@@ -17,9 +17,9 @@ export async function GET(request: Request) {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>${host.toUpperCase()} | VIP Escort İlanları</title>
+    <title>${host.toUpperCase()} | VIP Escort Rehberi</title>
     <link>${baseUrl}</link>
-    <description>Kaporasız, %100 onaylı ve gerçek elit model profilleri. En yeni ilanlar.</description>
+    <description>Kaporasız, %100 onaylı ve gerçek elit model profilleri. En yeni profiller.</description>
     <atom:link href="${baseUrl}/feed.xml" rel="self" type="application/rss+xml" />
     <language>tr-TR</language>
     <lastBuildDate>${now.toUTCString()}</lastBuildDate>
@@ -27,7 +27,7 @@ export async function GET(request: Request) {
 
   // Item 1
   xml += `    <item>
-      <title>YENİ: Şişli Kaporasız Escort Bayan İlanı</title>
+      <title>YENİ: Şişli Kaporasız Escort Bayan Profili</title>
       <link>${baseUrl}/istanbul/sisli/kategori/vip-escort</link>
       <guid>${baseUrl}/istanbul/sisli/kategori/vip-escort?ts=${pastDates[0].getTime()}</guid>
       <description>Şişli bölgesinde otele ve eve gelen %100 onaylı yeni vip escort bayan eklendi.</description>

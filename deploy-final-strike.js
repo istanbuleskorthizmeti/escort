@@ -8,7 +8,7 @@ const ssh = new NodeSSH();
 
 async function finalStrike() {
   try {
-    console.log('📡 [GOD MODE] Connecting to Attack Hub (187.77.111.203)...');
+    console.log('📡 [GOD MODE] Connecting to Attack Hub (31.97.79.34)...');
     await ssh.connect({
       host: process.env.ATTACK_SERVER_IP,
       username: process.env.ATTACK_SERVER_USER,

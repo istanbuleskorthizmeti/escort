@@ -1,0 +1,6082 @@
+[
+  {
+    "tagName": "HTML",
+    "id": "",
+    "className": "",
+    "text": "window['ppConfig'] = {productName: 'SearchConsoleAggReportUi', deleteIsEnforced:  true , sealIsEnfor",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1366,
+      "height": 768,
+      "top": 0,
+      "right": 1366,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "BODY",
+    "id": "",
+    "className": "EIlDfe",
+    "text": "window.wiz_progress&&window.wiz_progress();Geri bildirim4window.wiz_progress&&window.wiz_progress(",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1366,
+      "height": 768,
+      "top": 0,
+      "right": 1366,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "yDmH0d",
+    "className": "MCcOAc IqBfM ecJEib EWZcud cjGgHb d8Etdd LcUz9d",
+    "text": "Geri bildirim4window.wiz_progress&&window.wiz_progress();window.wiz_tick&&window.wiz_tick('bwMYJe'",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1366,
+      "height": 768,
+      "top": 0,
+      "right": 1366,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "pGxpHc",
+    "text": "Geri bildirim4window.wiz_progress&&window.wiz_progress();window.wiz_tick&&window.wiz_tick('bwMYJe'",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1366,
+      "height": 64,
+      "top": 0,
+      "right": 1366,
+      "bottom": 64,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "HEADER",
+    "id": "gb",
+    "className": "gb_Na gb_Fb gb_Id gb_0d gb_Vd gb_e gb_7a gb_jd",
+    "text": "Geri bildirim4window.wiz_progress&&window.wiz_progress();window.wiz_tick&&window.wiz_tick('bwMYJe'",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1366,
+      "height": 64,
+      "top": 0,
+      "right": 1366,
+      "bottom": 64,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_Qd gb_Td gb_5d",
+    "text": "Geri bildirim4window.wiz_progress&&window.wiz_progress();window.wiz_tick&&window.wiz_tick('bwMYJe'",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 1366,
+      "height": 64,
+      "top": 0,
+      "right": 1366,
+      "bottom": 64,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_Zd gb_7d gb_Re gb_4e gb_7e",
+    "text": "Geri bildirim4window.wiz_progress&&window.wiz_progress();window.wiz_tick&&window.wiz_tick('bwMYJe'",
+    "rect": {
+      "x": 367,
+      "y": 8,
+      "width": 892,
+      "height": 48,
+      "top": 8,
+      "right": 1259,
+      "bottom": 56,
+      "left": 367
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_v gb_xe",
+    "text": "Geri bildirim4window.wiz_progress&&window.wiz_progress();window.wiz_tick&&window.wiz_tick('bwMYJe'",
+    "rect": {
+      "x": 1115,
+      "y": 8,
+      "width": 144,
+      "height": 48,
+      "top": 8,
+      "right": 1259,
+      "bottom": 56,
+      "left": 1115
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_ze gb_ye",
+    "text": "Geri bildirim",
+    "rect": {
+      "x": 1115,
+      "y": 8,
+      "width": 96,
+      "height": 48,
+      "top": 8,
+      "right": 1211,
+      "bottom": 56,
+      "left": 1115
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gKBiAe",
+    "text": "Geri bildirim",
+    "rect": {
+      "x": 1115,
+      "y": 8,
+      "width": 96,
+      "height": 48,
+      "top": 8,
+      "right": 1211,
+      "bottom": 56,
+      "left": 1115
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "",
+    "rect": {
+      "x": 1115,
+      "y": 8,
+      "width": 48,
+      "height": 48,
+      "top": 8,
+      "right": 1163,
+      "bottom": 56,
+      "left": 1115
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb mUbCce fKz7Od M9Bg4d",
+    "text": "",
+    "rect": {
+      "x": 1115,
+      "y": 8,
+      "width": 48,
+      "height": 48,
+      "top": 8,
+      "right": 1163,
+      "bottom": 56,
+      "left": 1115
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "xjKiLb",
+    "text": "",
+    "rect": {
+      "x": 1127,
+      "y": 43,
+      "width": 24,
+      "height": 17,
+      "top": 43,
+      "right": 1151,
+      "bottom": 60,
+      "left": 1127
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "Ce1Y1c",
+    "text": "",
+    "rect": {
+      "x": 1127,
+      "y": 20,
+      "width": 24,
+      "height": 24,
+      "top": 20,
+      "right": 1151,
+      "bottom": 44,
+      "left": 1127
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "DPvwYc hPjg5d",
+    "text": "",
+    "rect": {
+      "x": 1127,
+      "y": 20,
+      "width": 24,
+      "height": 24,
+      "top": 20,
+      "right": 1151,
+      "bottom": 44,
+      "left": 1127
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_Ae gb_ye",
+    "text": "4window.wiz_progress&&window.wiz_progress();window.wiz_tick&&window.wiz_tick('bwMYJe');",
+    "rect": {
+      "x": 1211,
+      "y": 8,
+      "width": 48,
+      "height": 48,
+      "top": 8,
+      "right": 1259,
+      "bottom": 56,
+      "left": 1211
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "",
+    "text": "4",
+    "rect": {
+      "x": 1211,
+      "y": 43,
+      "width": 48,
+      "height": 17,
+      "top": 43,
+      "right": 1259,
+      "bottom": 60,
+      "left": 1211
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "U26fgb mUbCce fKz7Od hWjaw M9Bg4d",
+    "text": "4",
+    "rect": {
+      "x": 1211,
+      "y": 8,
+      "width": 48,
+      "height": 48,
+      "top": 8,
+      "right": 1259,
+      "bottom": 56,
+      "left": 1211
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "xjKiLb",
+    "text": "4",
+    "rect": {
+      "x": 1223,
+      "y": 43,
+      "width": 24,
+      "height": 17,
+      "top": 43,
+      "right": 1247,
+      "bottom": 60,
+      "left": 1223
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "Ce1Y1c",
+    "text": "4",
+    "rect": {
+      "x": 1223,
+      "y": 20,
+      "width": 24,
+      "height": 24,
+      "top": 20,
+      "right": 1247,
+      "bottom": 44,
+      "left": 1223
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "DPvwYc hWjaw",
+    "text": "",
+    "rect": {
+      "x": 1223,
+      "y": 20,
+      "width": 24,
+      "height": 24,
+      "top": 20,
+      "right": 1247,
+      "bottom": 44,
+      "left": 1223
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "aKsAFd",
+    "text": "4",
+    "rect": {
+      "x": 1235.25,
+      "y": 15,
+      "width": 14.75,
+      "height": 16,
+      "top": 15,
+      "right": 1250,
+      "bottom": 31,
+      "left": 1235.25
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "qpyORb",
+    "text": "4",
+    "rect": {
+      "x": 1235.25,
+      "y": 15,
+      "width": 14.75,
+      "height": 16,
+      "top": 15,
+      "right": 1250,
+      "bottom": 31,
+      "left": 1235.25
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gb_fd gb_cd gb_id gb_ed gb_jd",
+    "text": "Google Search Console",
+    "rect": {
+      "x": -280,
+      "y": 64,
+      "width": 280,
+      "height": 704,
+      "top": 64,
+      "right": 0,
+      "bottom": 768,
+      "left": -280
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": " zsvrBc kfnlEf",
+    "text": "Arama özelliğihomeGenel Bakışlightbulb_2Analizlertrending_upPerformanssearchURL denetimiDizin oluşt",
+    "rect": {
+      "x": 0,
+      "y": 64,
+      "width": 280,
+      "height": 704,
+      "top": 64,
+      "right": 280,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "GM-COPLANAR-DRAWER",
+    "id": "",
+    "className": "SFOjKe-vyw7Sc-QA0Szd",
+    "text": "Arama özelliğihomeGenel Bakışlightbulb_2Analizlertrending_upPerformanssearchURL denetimiDizin oluşt",
+    "rect": {
+      "x": 0,
+      "y": 64,
+      "width": 280,
+      "height": 704,
+      "top": 64,
+      "right": 280,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "UMrnmb-vyw7Sc-Psmogf  UMrnmb-vyw7Sc-QA0Szd-OWXEXe-xTMeO-wcotoc-llTnze",
+    "text": "Arama özelliğihomeGenel Bakışlightbulb_2Analizlertrending_upPerformanssearchURL denetimiDizin oluşt",
+    "rect": {
+      "x": 0,
+      "y": 64,
+      "width": 280,
+      "height": 704,
+      "top": 64,
+      "right": 280,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "UMrnmb-vyw7Sc-E5gUX-bN97Pc ",
+    "text": "Arama özelliğihomeGenel Bakışlightbulb_2Analizlertrending_upPerformanssearchURL denetimiDizin oluşt",
+    "rect": {
+      "x": 0,
+      "y": 64,
+      "width": 280,
+      "height": 704,
+      "top": 64,
+      "right": 280,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "NAV",
+    "id": "",
+    "className": "umT6Nc",
+    "text": "Arama özelliğihomeGenel Bakışlightbulb_2Analizlertrending_upPerformanssearchURL denetimiDizin oluşt",
+    "rect": {
+      "x": 0,
+      "y": 64,
+      "width": 280,
+      "height": 704,
+      "top": 64,
+      "right": 280,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "resource-selector-container",
+    "className": "cK8COe",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 0,
+      "y": 64,
+      "width": 280,
+      "height": 64,
+      "top": 64,
+      "right": 280,
+      "bottom": 128,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 0,
+      "y": 64,
+      "width": 280,
+      "height": 64,
+      "top": 64,
+      "right": 280,
+      "bottom": 128,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "eGqruc axRROb nXJbyb  cPCuX VER7p",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 8,
+      "y": 64,
+      "width": 268,
+      "height": 64,
+      "top": 64,
+      "right": 276,
+      "bottom": 128,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "enPWWe",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 8,
+      "y": 78,
+      "width": 256,
+      "height": 40,
+      "top": 78,
+      "right": 264,
+      "bottom": 118,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "L6J0Pc VOEIyf IjMZm i0JKQb ISBIQe npARZb T7vppb",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 49,
+      "y": 87,
+      "width": 178,
+      "height": 22,
+      "top": 87,
+      "right": 227,
+      "bottom": 109,
+      "left": 49
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "d1dlne WvJxMd",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 49,
+      "y": 87,
+      "width": 178,
+      "height": 22,
+      "top": 87,
+      "right": 227,
+      "bottom": 109,
+      "left": 49
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "rFrNMe Ax4B8 PACruf Lsmgje zKHdkd CDELXb",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 49,
+      "y": 87,
+      "width": 178,
+      "height": 22,
+      "top": 87,
+      "right": 227,
+      "bottom": 109,
+      "left": 49
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "aCsJod oJeWuf",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 49,
+      "y": 87,
+      "width": 178,
+      "height": 22,
+      "top": 87,
+      "right": 227,
+      "bottom": 109,
+      "left": 49
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "aXBtI Wic03c",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 49,
+      "y": 87,
+      "width": 178,
+      "height": 22,
+      "top": 87,
+      "right": 227,
+      "bottom": 109,
+      "left": 49
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Xb9hP",
+    "text": "Arama özelliği",
+    "rect": {
+      "x": 49,
+      "y": 86,
+      "width": 178,
+      "height": 24,
+      "top": 86,
+      "right": 227,
+      "bottom": 110,
+      "left": 49
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "DPvwYc wfDTAc ka6z7b",
+    "text": "",
+    "rect": {
+      "x": 227,
+      "y": 86,
+      "width": 24,
+      "height": 24,
+      "top": 86,
+      "right": 251,
+      "bottom": 110,
+      "left": 227
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "AF33Ee eejsDc",
+    "text": "homeGenel Bakışlightbulb_2Analizlertrending_upPerformanssearchURL denetimiDizin oluşturmakeyboard_ar",
+    "rect": {
+      "x": 0,
+      "y": 128,
+      "width": 280,
+      "height": 640,
+      "top": 128,
+      "right": 280,
+      "bottom": 768,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "homeGenel Bakışlightbulb_2Analizlertrending_upPerformanssearchURL denetimiDizin oluşturmakeyboard_ar",
+    "rect": {
+      "x": 0,
+      "y": 128,
+      "width": 280,
+      "height": 635,
+      "top": 128,
+      "right": 280,
+      "bottom": 763,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "a9v4Mc hjvQdd",
+    "text": "homeGenel Bakışlightbulb_2Analizlertrending_upPerformanssearchURL denetimi",
+    "rect": {
+      "x": 0,
+      "y": 128,
+      "width": 264,
+      "height": 175,
+      "top": 128,
+      "right": 264,
+      "bottom": 303,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "homeGenel Bakış",
+    "rect": {
+      "x": 4,
+      "y": 136,
+      "width": 260,
+      "height": 40,
+      "top": 136,
+      "right": 264,
+      "bottom": 176,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "homeGenel Bakış",
+    "rect": {
+      "x": 8,
+      "y": 136,
+      "width": 256,
+      "height": 40,
+      "top": 136,
+      "right": 264,
+      "bottom": 176,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "home",
+    "rect": {
+      "x": 24,
+      "y": 136,
+      "width": 36,
+      "height": 40,
+      "top": 136,
+      "right": 60,
+      "bottom": 176,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "home",
+    "rect": {
+      "x": 26,
+      "y": 146,
+      "width": 20,
+      "height": 20,
+      "top": 146,
+      "right": 46,
+      "bottom": 166,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 60,
+      "y": 136,
+      "width": 89.8125,
+      "height": 40,
+      "top": 136,
+      "right": 149.8125,
+      "bottom": 176,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 60,
+      "y": 147,
+      "width": 79.8125,
+      "height": 18,
+      "top": 147,
+      "right": 139.8125,
+      "bottom": 165,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "lightbulb_2Analizler",
+    "rect": {
+      "x": 4,
+      "y": 176,
+      "width": 260,
+      "height": 40,
+      "top": 176,
+      "right": 264,
+      "bottom": 216,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "lightbulb_2Analizler",
+    "rect": {
+      "x": 8,
+      "y": 176,
+      "width": 256,
+      "height": 40,
+      "top": 176,
+      "right": 264,
+      "bottom": 216,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "lightbulb_2",
+    "rect": {
+      "x": 24,
+      "y": 176,
+      "width": 36,
+      "height": 40,
+      "top": 176,
+      "right": 60,
+      "bottom": 216,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie LEqeFd",
+    "text": "lightbulb_2",
+    "rect": {
+      "x": 26,
+      "y": 186,
+      "width": 20,
+      "height": 20,
+      "top": 186,
+      "right": 46,
+      "bottom": 206,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Analizler",
+    "rect": {
+      "x": 60,
+      "y": 176,
+      "width": 68.84375,
+      "height": 40,
+      "top": 176,
+      "right": 128.84375,
+      "bottom": 216,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Analizler",
+    "rect": {
+      "x": 60,
+      "y": 187,
+      "width": 58.84375,
+      "height": 18,
+      "top": 187,
+      "right": 118.84375,
+      "bottom": 205,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "trending_upPerformans",
+    "rect": {
+      "x": 4,
+      "y": 216,
+      "width": 260,
+      "height": 40,
+      "top": 216,
+      "right": 264,
+      "bottom": 256,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "trending_upPerformans",
+    "rect": {
+      "x": 8,
+      "y": 216,
+      "width": 256,
+      "height": 40,
+      "top": 216,
+      "right": 264,
+      "bottom": 256,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "trending_up",
+    "rect": {
+      "x": 24,
+      "y": 216,
+      "width": 36,
+      "height": 40,
+      "top": 216,
+      "right": 60,
+      "bottom": 256,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "trending_up",
+    "rect": {
+      "x": 26,
+      "y": 226,
+      "width": 20,
+      "height": 20,
+      "top": 226,
+      "right": 46,
+      "bottom": 246,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Performans",
+    "rect": {
+      "x": 60,
+      "y": 216,
+      "width": 88.390625,
+      "height": 40,
+      "top": 216,
+      "right": 148.390625,
+      "bottom": 256,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Performans",
+    "rect": {
+      "x": 60,
+      "y": 227,
+      "width": 78.390625,
+      "height": 18,
+      "top": 227,
+      "right": 138.390625,
+      "bottom": 245,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "searchURL denetimi",
+    "rect": {
+      "x": 4,
+      "y": 256,
+      "width": 260,
+      "height": 40,
+      "top": 256,
+      "right": 264,
+      "bottom": 296,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "searchURL denetimi",
+    "rect": {
+      "x": 8,
+      "y": 256,
+      "width": 256,
+      "height": 40,
+      "top": 256,
+      "right": 264,
+      "bottom": 296,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "search",
+    "rect": {
+      "x": 24,
+      "y": 256,
+      "width": 36,
+      "height": 40,
+      "top": 256,
+      "right": 60,
+      "bottom": 296,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "search",
+    "rect": {
+      "x": 26,
+      "y": 266,
+      "width": 20,
+      "height": 20,
+      "top": 266,
+      "right": 46,
+      "bottom": 286,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "URL denetimi",
+    "rect": {
+      "x": 60,
+      "y": 256,
+      "width": 100.375,
+      "height": 40,
+      "top": 256,
+      "right": 160.375,
+      "bottom": 296,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "URL denetimi",
+    "rect": {
+      "x": 60,
+      "y": 267,
+      "width": 90.375,
+      "height": 18,
+      "top": 267,
+      "right": 150.375,
+      "bottom": 285,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Sz5MLb a9v4Mc",
+    "text": "Dizin oluşturmakeyboard_arrow_downkeyboard_arrow_upfile_copySayfa sayısıaccount_treeSite Haritalarıv",
+    "rect": {
+      "x": 0,
+      "y": 303,
+      "width": 264,
+      "height": 175,
+      "top": 303,
+      "right": 264,
+      "bottom": 478,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "Dizin oluşturmakeyboard_arrow_downkeyboard_arrow_upfile_copySayfa sayısıaccount_treeSite Haritalarıv",
+    "rect": {
+      "x": 0,
+      "y": 311,
+      "width": 264,
+      "height": 160,
+      "top": 311,
+      "right": 264,
+      "bottom": 471,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "MkIR4d M7JZvf pIeyUb",
+    "text": "Dizin oluşturmakeyboard_arrow_downkeyboard_arrow_upfile_copySayfa sayısıaccount_treeSite Haritalarıv",
+    "rect": {
+      "x": 0,
+      "y": 311,
+      "width": 264,
+      "height": 160,
+      "top": 311,
+      "right": 264,
+      "bottom": 471,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "rRDKcc",
+    "text": "Dizin oluşturmakeyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 0,
+      "y": 311,
+      "width": 264,
+      "height": 40,
+      "top": 311,
+      "right": 264,
+      "bottom": 351,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "F93BIf Gdygde LHwKnf",
+    "text": "Dizin oluşturmakeyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 8,
+      "y": 311,
+      "width": 256,
+      "height": 40,
+      "top": 311,
+      "right": 264,
+      "bottom": 351,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "zlSJbe q1O6j",
+    "text": "Dizin oluşturma",
+    "rect": {
+      "x": 24,
+      "y": 313,
+      "width": 204,
+      "height": 36,
+      "top": 313,
+      "right": 228,
+      "bottom": 349,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "kujBq",
+    "text": "Dizin oluşturma",
+    "rect": {
+      "x": 24,
+      "y": 321,
+      "width": 204,
+      "height": 20,
+      "top": 321,
+      "right": 228,
+      "bottom": 341,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Dizin oluşturma",
+    "rect": {
+      "x": 24,
+      "y": 322,
+      "width": 105.796875,
+      "height": 18,
+      "top": 322,
+      "right": 129.796875,
+      "bottom": 340,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iAzf0e xniJIb lVp8ke",
+    "text": "keyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 228,
+      "y": 313,
+      "width": 36,
+      "height": 36,
+      "top": 313,
+      "right": 264,
+      "bottom": 349,
+      "left": 228
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "TgVGFc",
+    "text": "keyboard_arrow_up",
+    "rect": {
+      "x": 236,
+      "y": 321,
+      "width": 20,
+      "height": 20,
+      "top": 321,
+      "right": 256,
+      "bottom": 341,
+      "left": 236
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate lDZ4hb",
+    "text": "keyboard_arrow_up",
+    "rect": {
+      "x": 236,
+      "y": 321,
+      "width": 20,
+      "height": 20,
+      "top": 321,
+      "right": 256,
+      "bottom": 341,
+      "left": 236
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "V8vvZb FCL9Kb",
+    "text": "file_copySayfa sayısıaccount_treeSite Haritalarıvisibility_offURL Kaldırma",
+    "rect": {
+      "x": 0,
+      "y": 351,
+      "width": 264,
+      "height": 120,
+      "top": 351,
+      "right": 264,
+      "bottom": 471,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "file_copySayfa sayısıaccount_treeSite Haritalarıvisibility_offURL Kaldırma",
+    "rect": {
+      "x": 0,
+      "y": 351,
+      "width": 264,
+      "height": 120,
+      "top": 351,
+      "right": 264,
+      "bottom": 471,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "sfS3Pd",
+    "text": "file_copySayfa sayısıaccount_treeSite Haritalarıvisibility_offURL Kaldırma",
+    "rect": {
+      "x": 0,
+      "y": 351,
+      "width": 264,
+      "height": 120,
+      "top": 351,
+      "right": 264,
+      "bottom": 471,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "",
+    "text": "file_copySayfa sayısıaccount_treeSite Haritalarıvisibility_offURL Kaldırma",
+    "rect": {
+      "x": 0,
+      "y": 351,
+      "width": 264,
+      "height": 120,
+      "top": 351,
+      "right": 264,
+      "bottom": 471,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "file_copySayfa sayısı",
+    "rect": {
+      "x": 4,
+      "y": 351,
+      "width": 260,
+      "height": 40,
+      "top": 351,
+      "right": 264,
+      "bottom": 391,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "file_copySayfa sayısı",
+    "rect": {
+      "x": 8,
+      "y": 351,
+      "width": 256,
+      "height": 40,
+      "top": 351,
+      "right": 264,
+      "bottom": 391,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "file_copy",
+    "rect": {
+      "x": 24,
+      "y": 351,
+      "width": 36,
+      "height": 40,
+      "top": 351,
+      "right": 60,
+      "bottom": 391,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "file_copy",
+    "rect": {
+      "x": 26,
+      "y": 361,
+      "width": 20,
+      "height": 20,
+      "top": 361,
+      "right": 46,
+      "bottom": 381,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Sayfa sayısı",
+    "rect": {
+      "x": 60,
+      "y": 351,
+      "width": 90.09375,
+      "height": 40,
+      "top": 351,
+      "right": 150.09375,
+      "bottom": 391,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Sayfa sayısı",
+    "rect": {
+      "x": 60,
+      "y": 362,
+      "width": 80.09375,
+      "height": 18,
+      "top": 362,
+      "right": 140.09375,
+      "bottom": 380,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "account_treeSite Haritaları",
+    "rect": {
+      "x": 4,
+      "y": 391,
+      "width": 260,
+      "height": 40,
+      "top": 391,
+      "right": 264,
+      "bottom": 431,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "account_treeSite Haritaları",
+    "rect": {
+      "x": 8,
+      "y": 391,
+      "width": 256,
+      "height": 40,
+      "top": 391,
+      "right": 264,
+      "bottom": 431,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "account_tree",
+    "rect": {
+      "x": 24,
+      "y": 391,
+      "width": 36,
+      "height": 40,
+      "top": 391,
+      "right": 60,
+      "bottom": 431,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "account_tree",
+    "rect": {
+      "x": 26,
+      "y": 401,
+      "width": 20,
+      "height": 20,
+      "top": 401,
+      "right": 46,
+      "bottom": 421,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Site Haritaları",
+    "rect": {
+      "x": 60,
+      "y": 391,
+      "width": 103.171875,
+      "height": 40,
+      "top": 391,
+      "right": 163.171875,
+      "bottom": 431,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Site Haritaları",
+    "rect": {
+      "x": 60,
+      "y": 402,
+      "width": 93.171875,
+      "height": 18,
+      "top": 402,
+      "right": 153.171875,
+      "bottom": 420,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "visibility_offURL Kaldırma",
+    "rect": {
+      "x": 4,
+      "y": 431,
+      "width": 260,
+      "height": 40,
+      "top": 431,
+      "right": 264,
+      "bottom": 471,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "visibility_offURL Kaldırma",
+    "rect": {
+      "x": 8,
+      "y": 431,
+      "width": 256,
+      "height": 40,
+      "top": 431,
+      "right": 264,
+      "bottom": 471,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "visibility_off",
+    "rect": {
+      "x": 24,
+      "y": 431,
+      "width": 36,
+      "height": 40,
+      "top": 431,
+      "right": 60,
+      "bottom": 471,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "visibility_off",
+    "rect": {
+      "x": 26,
+      "y": 441,
+      "width": 20,
+      "height": 20,
+      "top": 441,
+      "right": 46,
+      "bottom": 461,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "URL Kaldırma",
+    "rect": {
+      "x": 60,
+      "y": 431,
+      "width": 101.234375,
+      "height": 40,
+      "top": 431,
+      "right": 161.234375,
+      "bottom": 471,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "URL Kaldırma",
+    "rect": {
+      "x": 60,
+      "y": 442,
+      "width": 91.234375,
+      "height": 18,
+      "top": 442,
+      "right": 151.234375,
+      "bottom": 460,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Sz5MLb a9v4Mc",
+    "text": "Deneyimkeyboard_arrow_downkeyboard_arrow_upspeedÖnemli Web Verileri",
+    "rect": {
+      "x": 0,
+      "y": 478,
+      "width": 264,
+      "height": 95,
+      "top": 478,
+      "right": 264,
+      "bottom": 573,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "Deneyimkeyboard_arrow_downkeyboard_arrow_upspeedÖnemli Web Verileri",
+    "rect": {
+      "x": 0,
+      "y": 486,
+      "width": 264,
+      "height": 80,
+      "top": 486,
+      "right": 264,
+      "bottom": 566,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "MkIR4d M7JZvf pIeyUb",
+    "text": "Deneyimkeyboard_arrow_downkeyboard_arrow_upspeedÖnemli Web Verileri",
+    "rect": {
+      "x": 0,
+      "y": 486,
+      "width": 264,
+      "height": 80,
+      "top": 486,
+      "right": 264,
+      "bottom": 566,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "rRDKcc",
+    "text": "Deneyimkeyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 0,
+      "y": 486,
+      "width": 264,
+      "height": 40,
+      "top": 486,
+      "right": 264,
+      "bottom": 526,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "F93BIf Gdygde LHwKnf",
+    "text": "Deneyimkeyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 8,
+      "y": 486,
+      "width": 256,
+      "height": 40,
+      "top": 486,
+      "right": 264,
+      "bottom": 526,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "zlSJbe q1O6j",
+    "text": "Deneyim",
+    "rect": {
+      "x": 24,
+      "y": 488,
+      "width": 204,
+      "height": 36,
+      "top": 488,
+      "right": 228,
+      "bottom": 524,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "kujBq",
+    "text": "Deneyim",
+    "rect": {
+      "x": 24,
+      "y": 496,
+      "width": 204,
+      "height": 20,
+      "top": 496,
+      "right": 228,
+      "bottom": 516,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Deneyim",
+    "rect": {
+      "x": 24,
+      "y": 497,
+      "width": 59.15625,
+      "height": 18,
+      "top": 497,
+      "right": 83.15625,
+      "bottom": 515,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iAzf0e xniJIb lVp8ke",
+    "text": "keyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 228,
+      "y": 488,
+      "width": 36,
+      "height": 36,
+      "top": 488,
+      "right": 264,
+      "bottom": 524,
+      "left": 228
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "TgVGFc",
+    "text": "keyboard_arrow_up",
+    "rect": {
+      "x": 236,
+      "y": 496,
+      "width": 20,
+      "height": 20,
+      "top": 496,
+      "right": 256,
+      "bottom": 516,
+      "left": 236
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate lDZ4hb",
+    "text": "keyboard_arrow_up",
+    "rect": {
+      "x": 236,
+      "y": 496,
+      "width": 20,
+      "height": 20,
+      "top": 496,
+      "right": 256,
+      "bottom": 516,
+      "left": 236
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "V8vvZb FCL9Kb",
+    "text": "speedÖnemli Web Verileri",
+    "rect": {
+      "x": 0,
+      "y": 526,
+      "width": 264,
+      "height": 40,
+      "top": 526,
+      "right": 264,
+      "bottom": 566,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "speedÖnemli Web Verileri",
+    "rect": {
+      "x": 0,
+      "y": 526,
+      "width": 264,
+      "height": 40,
+      "top": 526,
+      "right": 264,
+      "bottom": 566,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "sfS3Pd",
+    "text": "speedÖnemli Web Verileri",
+    "rect": {
+      "x": 0,
+      "y": 526,
+      "width": 264,
+      "height": 40,
+      "top": 526,
+      "right": 264,
+      "bottom": 566,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "",
+    "text": "speedÖnemli Web Verileri",
+    "rect": {
+      "x": 0,
+      "y": 526,
+      "width": 264,
+      "height": 40,
+      "top": 526,
+      "right": 264,
+      "bottom": 566,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "speedÖnemli Web Verileri",
+    "rect": {
+      "x": 4,
+      "y": 526,
+      "width": 260,
+      "height": 40,
+      "top": 526,
+      "right": 264,
+      "bottom": 566,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "speedÖnemli Web Verileri",
+    "rect": {
+      "x": 8,
+      "y": 526,
+      "width": 256,
+      "height": 40,
+      "top": 526,
+      "right": 264,
+      "bottom": 566,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "speed",
+    "rect": {
+      "x": 24,
+      "y": 526,
+      "width": 36,
+      "height": 40,
+      "top": 526,
+      "right": 60,
+      "bottom": 566,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "speed",
+    "rect": {
+      "x": 26,
+      "y": 536,
+      "width": 20,
+      "height": 20,
+      "top": 536,
+      "right": 46,
+      "bottom": 556,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Önemli Web Verileri",
+    "rect": {
+      "x": 60,
+      "y": 526,
+      "width": 143.265625,
+      "height": 40,
+      "top": 526,
+      "right": 203.265625,
+      "bottom": 566,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Önemli Web Verileri",
+    "rect": {
+      "x": 60,
+      "y": 537,
+      "width": 133.265625,
+      "height": 18,
+      "top": 537,
+      "right": 193.265625,
+      "bottom": 555,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Sz5MLb a9v4Mc",
+    "text": "Güvenlik ve Manuel İşlemlerkeyboard_arrow_downkeyboard_arrow_upflagManuel işlemlersecurityGüvenlik s",
+    "rect": {
+      "x": 0,
+      "y": 573,
+      "width": 264,
+      "height": 55,
+      "top": 573,
+      "right": 264,
+      "bottom": 628,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "Güvenlik ve Manuel İşlemlerkeyboard_arrow_downkeyboard_arrow_upflagManuel işlemlersecurityGüvenlik s",
+    "rect": {
+      "x": 0,
+      "y": 581,
+      "width": 264,
+      "height": 40,
+      "top": 581,
+      "right": 264,
+      "bottom": 621,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "MkIR4d M7JZvf",
+    "text": "Güvenlik ve Manuel İşlemlerkeyboard_arrow_downkeyboard_arrow_upflagManuel işlemlersecurityGüvenlik s",
+    "rect": {
+      "x": 0,
+      "y": 581,
+      "width": 264,
+      "height": 40,
+      "top": 581,
+      "right": 264,
+      "bottom": 621,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "rRDKcc",
+    "text": "Güvenlik ve Manuel İşlemlerkeyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 0,
+      "y": 581,
+      "width": 264,
+      "height": 40,
+      "top": 581,
+      "right": 264,
+      "bottom": 621,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "F93BIf Gdygde LHwKnf",
+    "text": "Güvenlik ve Manuel İşlemlerkeyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 8,
+      "y": 581,
+      "width": 256,
+      "height": 40,
+      "top": 581,
+      "right": 264,
+      "bottom": 621,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "zlSJbe q1O6j",
+    "text": "Güvenlik ve Manuel İşlemler",
+    "rect": {
+      "x": 24,
+      "y": 583,
+      "width": 204,
+      "height": 36,
+      "top": 583,
+      "right": 228,
+      "bottom": 619,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "kujBq",
+    "text": "Güvenlik ve Manuel İşlemler",
+    "rect": {
+      "x": 24,
+      "y": 591,
+      "width": 204,
+      "height": 20,
+      "top": 591,
+      "right": 228,
+      "bottom": 611,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Güvenlik ve Manuel İşlemler",
+    "rect": {
+      "x": 24,
+      "y": 592,
+      "width": 189.21875,
+      "height": 18,
+      "top": 592,
+      "right": 213.21875,
+      "bottom": 610,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iAzf0e xniJIb lVp8ke",
+    "text": "keyboard_arrow_downkeyboard_arrow_up",
+    "rect": {
+      "x": 228,
+      "y": 583,
+      "width": 36,
+      "height": 36,
+      "top": 583,
+      "right": 264,
+      "bottom": 619,
+      "left": 228
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "NrEO6d",
+    "text": "keyboard_arrow_down",
+    "rect": {
+      "x": 236,
+      "y": 591,
+      "width": 20,
+      "height": 20,
+      "top": 591,
+      "right": 256,
+      "bottom": 611,
+      "left": 236
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate lDZ4hb",
+    "text": "keyboard_arrow_down",
+    "rect": {
+      "x": 236,
+      "y": 591,
+      "width": 20,
+      "height": 20,
+      "top": 591,
+      "right": 256,
+      "bottom": 611,
+      "left": 236
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "flagManuel işlemlersecurityGüvenlik sorunları",
+    "rect": {
+      "x": 0,
+      "y": 621,
+      "width": 264,
+      "height": 80,
+      "top": 621,
+      "right": 264,
+      "bottom": 701,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "sfS3Pd",
+    "text": "flagManuel işlemlersecurityGüvenlik sorunları",
+    "rect": {
+      "x": 0,
+      "y": 621,
+      "width": 264,
+      "height": 80,
+      "top": 621,
+      "right": 264,
+      "bottom": 701,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "",
+    "text": "flagManuel işlemlersecurityGüvenlik sorunları",
+    "rect": {
+      "x": 0,
+      "y": 621,
+      "width": 264,
+      "height": 80,
+      "top": 621,
+      "right": 264,
+      "bottom": 701,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "flagManuel işlemler",
+    "rect": {
+      "x": 4,
+      "y": 621,
+      "width": 260,
+      "height": 40,
+      "top": 621,
+      "right": 264,
+      "bottom": 661,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "flagManuel işlemler",
+    "rect": {
+      "x": 8,
+      "y": 621,
+      "width": 256,
+      "height": 40,
+      "top": 621,
+      "right": 264,
+      "bottom": 661,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "flag",
+    "rect": {
+      "x": 24,
+      "y": 621,
+      "width": 36,
+      "height": 40,
+      "top": 621,
+      "right": 60,
+      "bottom": 661,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "flag",
+    "rect": {
+      "x": 26,
+      "y": 631,
+      "width": 20,
+      "height": 20,
+      "top": 631,
+      "right": 46,
+      "bottom": 651,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Manuel işlemler",
+    "rect": {
+      "x": 60,
+      "y": 621,
+      "width": 116.6875,
+      "height": 40,
+      "top": 621,
+      "right": 176.6875,
+      "bottom": 661,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Manuel işlemler",
+    "rect": {
+      "x": 60,
+      "y": 632,
+      "width": 106.6875,
+      "height": 18,
+      "top": 632,
+      "right": 166.6875,
+      "bottom": 650,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "securityGüvenlik sorunları",
+    "rect": {
+      "x": 4,
+      "y": 661,
+      "width": 260,
+      "height": 40,
+      "top": 661,
+      "right": 264,
+      "bottom": 701,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "securityGüvenlik sorunları",
+    "rect": {
+      "x": 8,
+      "y": 661,
+      "width": 256,
+      "height": 40,
+      "top": 661,
+      "right": 264,
+      "bottom": 701,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "security",
+    "rect": {
+      "x": 24,
+      "y": 661,
+      "width": 36,
+      "height": 40,
+      "top": 661,
+      "right": 60,
+      "bottom": 701,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "security",
+    "rect": {
+      "x": 26,
+      "y": 671,
+      "width": 20,
+      "height": 20,
+      "top": 671,
+      "right": 46,
+      "bottom": 691,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Güvenlik sorunları",
+    "rect": {
+      "x": 60,
+      "y": 661,
+      "width": 132.625,
+      "height": 40,
+      "top": 661,
+      "right": 192.625,
+      "bottom": 701,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Güvenlik sorunları",
+    "rect": {
+      "x": 60,
+      "y": 672,
+      "width": 122.625,
+      "height": 18,
+      "top": 672,
+      "right": 182.625,
+      "bottom": 690,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "a9v4Mc",
+    "text": "link_2BağlantılartrophyBaşarılarsettingsAyarlar",
+    "rect": {
+      "x": 0,
+      "y": 628,
+      "width": 264,
+      "height": 135,
+      "top": 628,
+      "right": 264,
+      "bottom": 763,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "link_2Bağlantılar",
+    "rect": {
+      "x": 4,
+      "y": 636,
+      "width": 260,
+      "height": 40,
+      "top": 636,
+      "right": 264,
+      "bottom": 676,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "link_2Bağlantılar",
+    "rect": {
+      "x": 8,
+      "y": 636,
+      "width": 256,
+      "height": 40,
+      "top": 636,
+      "right": 264,
+      "bottom": 676,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "link_2",
+    "rect": {
+      "x": 24,
+      "y": 636,
+      "width": 36,
+      "height": 40,
+      "top": 636,
+      "right": 60,
+      "bottom": 676,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "link_2",
+    "rect": {
+      "x": 26,
+      "y": 646,
+      "width": 20,
+      "height": 20,
+      "top": 646,
+      "right": 46,
+      "bottom": 666,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Bağlantılar",
+    "rect": {
+      "x": 60,
+      "y": 636,
+      "width": 83.703125,
+      "height": 40,
+      "top": 636,
+      "right": 143.703125,
+      "bottom": 676,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Bağlantılar",
+    "rect": {
+      "x": 60,
+      "y": 647,
+      "width": 73.703125,
+      "height": 18,
+      "top": 647,
+      "right": 133.703125,
+      "bottom": 665,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "trophyBaşarılar",
+    "rect": {
+      "x": 4,
+      "y": 676,
+      "width": 260,
+      "height": 40,
+      "top": 676,
+      "right": 264,
+      "bottom": 716,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "trophyBaşarılar",
+    "rect": {
+      "x": 8,
+      "y": 676,
+      "width": 256,
+      "height": 40,
+      "top": 676,
+      "right": 264,
+      "bottom": 716,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "trophy",
+    "rect": {
+      "x": 24,
+      "y": 676,
+      "width": 36,
+      "height": 40,
+      "top": 676,
+      "right": 60,
+      "bottom": 716,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie JOToTe",
+    "text": "trophy",
+    "rect": {
+      "x": 26,
+      "y": 686,
+      "width": 20,
+      "height": 20,
+      "top": 686,
+      "right": 46,
+      "bottom": 706,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Başarılar",
+    "rect": {
+      "x": 60,
+      "y": 676,
+      "width": 70.34375,
+      "height": 40,
+      "top": 676,
+      "right": 130.34375,
+      "bottom": 716,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Başarılar",
+    "rect": {
+      "x": 60,
+      "y": 687,
+      "width": 60.34375,
+      "height": 18,
+      "top": 687,
+      "right": 120.34375,
+      "bottom": 705,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "settingsAyarlar",
+    "rect": {
+      "x": 4,
+      "y": 716,
+      "width": 260,
+      "height": 40,
+      "top": 716,
+      "right": 264,
+      "bottom": 756,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "settingsAyarlar",
+    "rect": {
+      "x": 8,
+      "y": 716,
+      "width": 256,
+      "height": 40,
+      "top": 716,
+      "right": 264,
+      "bottom": 756,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "settings",
+    "rect": {
+      "x": 24,
+      "y": 716,
+      "width": 36,
+      "height": 40,
+      "top": 716,
+      "right": 60,
+      "bottom": 756,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "settings",
+    "rect": {
+      "x": 26,
+      "y": 726,
+      "width": 20,
+      "height": 20,
+      "top": 726,
+      "right": 46,
+      "bottom": 746,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Ayarlar",
+    "rect": {
+      "x": 60,
+      "y": 716,
+      "width": 58.328125,
+      "height": 40,
+      "top": 716,
+      "right": 118.328125,
+      "bottom": 756,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Ayarlar",
+    "rect": {
+      "x": 60,
+      "y": 727,
+      "width": 48.328125,
+      "height": 18,
+      "top": 727,
+      "right": 108.328125,
+      "bottom": 745,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "RiJJIe j2F0y",
+    "text": "feedbackGeri bildirim gönderinfoSearch Console hakkındaGizlilikŞartlar",
+    "rect": {
+      "x": 0,
+      "y": 763,
+      "width": 280,
+      "height": 143,
+      "top": 763,
+      "right": 280,
+      "bottom": 906,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "",
+    "text": "feedbackGeri bildirim gönderinfoSearch Console hakkında",
+    "rect": {
+      "x": 0,
+      "y": 763,
+      "width": 280,
+      "height": 95,
+      "top": 763,
+      "right": 280,
+      "bottom": 858,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "KrBCUc a9v4Mc",
+    "text": "feedbackGeri bildirim gönderinfoSearch Console hakkında",
+    "rect": {
+      "x": 0,
+      "y": 763,
+      "width": 264,
+      "height": 95,
+      "top": 763,
+      "right": 264,
+      "bottom": 858,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "feedbackGeri bildirim gönder",
+    "rect": {
+      "x": 4,
+      "y": 771,
+      "width": 260,
+      "height": 40,
+      "top": 771,
+      "right": 264,
+      "bottom": 811,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "feedbackGeri bildirim gönder",
+    "rect": {
+      "x": 8,
+      "y": 771,
+      "width": 256,
+      "height": 40,
+      "top": 771,
+      "right": 264,
+      "bottom": 811,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "feedback",
+    "rect": {
+      "x": 24,
+      "y": 771,
+      "width": 36,
+      "height": 40,
+      "top": 771,
+      "right": 60,
+      "bottom": 811,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "feedback",
+    "rect": {
+      "x": 26,
+      "y": 781,
+      "width": 20,
+      "height": 20,
+      "top": 781,
+      "right": 46,
+      "bottom": 801,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Geri bildirim gönder",
+    "rect": {
+      "x": 60,
+      "y": 771,
+      "width": 145.96875,
+      "height": 40,
+      "top": 771,
+      "right": 205.96875,
+      "bottom": 811,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Geri bildirim gönder",
+    "rect": {
+      "x": 60,
+      "y": 782,
+      "width": 135.96875,
+      "height": 18,
+      "top": 782,
+      "right": 195.96875,
+      "bottom": 800,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "cp8g2d",
+    "text": "infoSearch Console hakkında",
+    "rect": {
+      "x": 4,
+      "y": 811,
+      "width": 260,
+      "height": 40,
+      "top": 811,
+      "right": 264,
+      "bottom": 851,
+      "left": 4
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Lhhaec",
+    "text": "infoSearch Console hakkında",
+    "rect": {
+      "x": 8,
+      "y": 811,
+      "width": 256,
+      "height": 40,
+      "top": 811,
+      "right": 264,
+      "bottom": 851,
+      "left": 8
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "QZ1Moe",
+    "text": "info",
+    "rect": {
+      "x": 24,
+      "y": 811,
+      "width": 36,
+      "height": 40,
+      "top": 811,
+      "right": 60,
+      "bottom": 851,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "quRWN-Bz112c google-symbols notranslate NL3Fie",
+    "text": "info",
+    "rect": {
+      "x": 26,
+      "y": 821,
+      "width": 20,
+      "height": 20,
+      "top": 821,
+      "right": 46,
+      "bottom": 841,
+      "left": 26
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "QPTmJc",
+    "text": "Search Console hakkında",
+    "rect": {
+      "x": 60,
+      "y": 811,
+      "width": 181.734375,
+      "height": 40,
+      "top": 811,
+      "right": 241.734375,
+      "bottom": 851,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "SaG06d",
+    "text": "Search Console hakkında",
+    "rect": {
+      "x": 60,
+      "y": 822,
+      "width": 171.734375,
+      "height": 18,
+      "top": 822,
+      "right": 231.734375,
+      "bottom": 840,
+      "left": 60
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "MpcEge",
+    "text": "GizlilikŞartlar",
+    "rect": {
+      "x": 0,
+      "y": 858,
+      "width": 280,
+      "height": 48,
+      "top": 858,
+      "right": 280,
+      "bottom": 906,
+      "left": 0
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Ders8c",
+    "text": "GizlilikŞartlar",
+    "rect": {
+      "x": 24,
+      "y": 858,
+      "width": 232,
+      "height": 48,
+      "top": 858,
+      "right": 256,
+      "bottom": 906,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "n1XPZb",
+    "text": "GizlilikŞartlar",
+    "rect": {
+      "x": 24,
+      "y": 872,
+      "width": 232,
+      "height": 20,
+      "top": 872,
+      "right": 256,
+      "bottom": 892,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "G23Ylb",
+    "text": "Gizlilik",
+    "rect": {
+      "x": 24,
+      "y": 873,
+      "width": 40.609375,
+      "height": 17,
+      "top": 873,
+      "right": 64.609375,
+      "bottom": 890,
+      "left": 24
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "G23Ylb",
+    "text": "Şartlar",
+    "rect": {
+      "x": 84.203125,
+      "y": 873,
+      "width": 41.359375,
+      "height": 17,
+      "top": 873,
+      "right": 125.5625,
+      "bottom": 890,
+      "left": 84.203125
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "zQTmif SSPGKf eejsDc",
+    "text": "Genel Bakışlightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizl",
+    "rect": {
+      "x": 280,
+      "y": 64,
+      "width": 1086,
+      "height": 704,
+      "top": 64,
+      "right": 1366,
+      "bottom": 768,
+      "left": 280
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "rZqBPb",
+    "text": "Genel Bakışlightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizl",
+    "rect": {
+      "x": 280,
+      "y": 64,
+      "width": 1086,
+      "height": 704,
+      "top": 64,
+      "right": 1366,
+      "bottom": 768,
+      "left": 280
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VUq7Yc",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 378,
+      "y": 64,
+      "width": 988,
+      "height": 65,
+      "top": 64,
+      "right": 1366,
+      "bottom": 129,
+      "left": 378
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "DoV6xc",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 378,
+      "y": 64,
+      "width": 988,
+      "height": 65,
+      "top": 64,
+      "right": 1366,
+      "bottom": 129,
+      "left": 378
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "sVgexf",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 378,
+      "y": 64,
+      "width": 988,
+      "height": 64,
+      "top": 64,
+      "right": 1366,
+      "bottom": 128,
+      "left": 378
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "eJo1Yb",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 378,
+      "y": 64,
+      "width": 964,
+      "height": 64,
+      "top": 64,
+      "right": 1342,
+      "bottom": 128,
+      "left": 378
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "YbiNmb",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 378,
+      "y": 64,
+      "width": 964,
+      "height": 64,
+      "top": 64,
+      "right": 1342,
+      "bottom": 128,
+      "left": 378
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "rxi4pc TNpQ1d",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 378,
+      "y": 64,
+      "width": 112.65625,
+      "height": 64,
+      "top": 64,
+      "right": 490.65625,
+      "bottom": 128,
+      "left": 378
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "hhKiv",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 382,
+      "y": 86,
+      "width": 108.65625,
+      "height": 24,
+      "top": 86,
+      "right": 490.65625,
+      "bottom": 110,
+      "left": 382
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "",
+    "text": "Genel Bakış",
+    "rect": {
+      "x": 382,
+      "y": 85,
+      "width": 108.65625,
+      "height": 25,
+      "top": 85,
+      "right": 490.65625,
+      "bottom": 110,
+      "left": 382
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "OoO4Vb",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 280,
+      "y": 129,
+      "width": 1086,
+      "height": 639,
+      "top": 129,
+      "right": 1366,
+      "bottom": 768,
+      "left": 280
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "shSP",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 306,
+      "y": 153,
+      "width": 1034,
+      "height": 1336,
+      "top": 153,
+      "right": 1340,
+      "bottom": 1489,
+      "left": 306
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iv5Awd",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 404,
+      "y": 153,
+      "width": 912,
+      "height": 1336,
+      "top": 153,
+      "right": 1316,
+      "bottom": 1489,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 404,
+      "y": 153,
+      "width": 912,
+      "height": 1336,
+      "top": 153,
+      "right": 1316,
+      "bottom": 1489,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "B0GcQb",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 404,
+      "y": 153,
+      "width": 912,
+      "height": 56,
+      "top": 153,
+      "right": 1316,
+      "bottom": 209,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 404,
+      "y": 153,
+      "width": 912,
+      "height": 56,
+      "top": 153,
+      "right": 1316,
+      "bottom": 209,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Dwg0Wc",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 404,
+      "y": 153,
+      "width": 912,
+      "height": 56,
+      "top": 153,
+      "right": 1316,
+      "bottom": 209,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-WsjYwc VfPpkd-WsjYwc-OWXEXe-INsAgc KC1dQ Usd1Ac AaN0Dd  VAPw3b",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 404,
+      "y": 153,
+      "width": 912,
+      "height": 56,
+      "top": 153,
+      "right": 1316,
+      "bottom": 209,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "YmnMNe",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alınchevron_rightAnalizlerinizi keş",
+    "rect": {
+      "x": 404,
+      "y": 153,
+      "width": 912,
+      "height": 56,
+      "top": 153,
+      "right": 1316,
+      "bottom": 209,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "qnI7Df",
+    "text": "lightbulb_outlineSitenizin Arama performansıyla ilgili analizler alın",
+    "rect": {
+      "x": 420,
+      "y": 159,
+      "width": 370.890625,
+      "height": 44,
+      "top": 159,
+      "right": 790.890625,
+      "bottom": 203,
+      "left": 420
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "google-material-icons notranslate rZ7UQ",
+    "text": "lightbulb_outline",
+    "rect": {
+      "x": 420,
+      "y": 169,
+      "width": 40,
+      "height": 24,
+      "top": 169,
+      "right": 460,
+      "bottom": 193,
+      "left": 420
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Gqp4R",
+    "text": "Sitenizin Arama performansıyla ilgili analizler alın",
+    "rect": {
+      "x": 460,
+      "y": 169,
+      "width": 314.890625,
+      "height": 24,
+      "top": 169,
+      "right": 774.890625,
+      "bottom": 193,
+      "left": 460
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "k8nDce",
+    "text": "chevron_rightAnalizlerinizi keşfedin",
+    "rect": {
+      "x": 1121.203125,
+      "y": 157,
+      "width": 186.796875,
+      "height": 48,
+      "top": 157,
+      "right": 1308,
+      "bottom": 205,
+      "left": 1121.203125
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-dgl2Hf-ppHlrf-sM5MNb",
+    "text": "chevron_rightAnalizlerinizi keşfedin",
+    "rect": {
+      "x": 1121.203125,
+      "y": 171.703125,
+      "width": 186.796875,
+      "height": 17,
+      "top": 171.703125,
+      "right": 1308,
+      "bottom": 188.703125,
+      "left": 1121.203125
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-Bz112c-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf ksBjEc lKxP2d HDnnrf LQeN7 kSwHqc",
+    "text": "chevron_rightAnalizlerinizi keşfedin",
+    "rect": {
+      "x": 1121.203125,
+      "y": 163,
+      "width": 186.796875,
+      "height": 36,
+      "top": 163,
+      "right": 1308,
+      "bottom": 199,
+      "left": 1121.203125
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "google-material-icons notranslate VfPpkd-kBDsod z4E70b",
+    "text": "chevron_right",
+    "rect": {
+      "x": 1282,
+      "y": 172,
+      "width": 18,
+      "height": 18,
+      "top": 172,
+      "right": 1300,
+      "bottom": 190,
+      "left": 1282
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "VfPpkd-vQzf8d",
+    "text": "Analizlerinizi keşfedin",
+    "rect": {
+      "x": 1129.203125,
+      "y": 172,
+      "width": 144.796875,
+      "height": 18,
+      "top": 172,
+      "right": 1274,
+      "bottom": 190,
+      "left": 1129.203125
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "",
+    "text": "Performanschevron_rightTam raporToplam 105 web arama tıklamasıYükleniyor…4.05.202610.05.202616.05.20",
+    "rect": {
+      "x": 404,
+      "y": 233,
+      "width": 912,
+      "height": 365,
+      "top": 233,
+      "right": 1316,
+      "bottom": 598,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-WsjYwc VfPpkd-WsjYwc-OWXEXe-INsAgc KC1dQ Usd1Ac AaN0Dd  txidre",
+    "text": "Performanschevron_rightTam raporToplam 105 web arama tıklamasıYükleniyor…4.05.202610.05.202616.05.20",
+    "rect": {
+      "x": 404,
+      "y": 233,
+      "width": 912,
+      "height": 365,
+      "top": 233,
+      "right": 1316,
+      "bottom": 598,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "ZxwVRb",
+    "text": "Performanschevron_rightTam rapor",
+    "rect": {
+      "x": 412,
+      "y": 249,
+      "width": 896,
+      "height": 48,
+      "top": 249,
+      "right": 1308,
+      "bottom": 297,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "cPSNDf",
+    "text": "Performans",
+    "rect": {
+      "x": 412,
+      "y": 249,
+      "width": 157.171875,
+      "height": 48,
+      "top": 249,
+      "right": 569.171875,
+      "bottom": 297,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "M5cjKe",
+    "text": "chevron_rightTam rapor",
+    "rect": {
+      "x": 1197.984375,
+      "y": 249,
+      "width": 110.015625,
+      "height": 48,
+      "top": 249,
+      "right": 1308,
+      "bottom": 297,
+      "left": 1197.984375
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-dgl2Hf-ppHlrf-sM5MNb",
+    "text": "chevron_rightTam rapor",
+    "rect": {
+      "x": 1197.984375,
+      "y": 263.703125,
+      "width": 110.015625,
+      "height": 17,
+      "top": 263.703125,
+      "right": 1308,
+      "bottom": 280.703125,
+      "left": 1197.984375
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-Bz112c-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf ksBjEc lKxP2d HDnnrf LQeN7 CorKwc KiNied ASvCGc dn8dnb",
+    "text": "chevron_rightTam rapor",
+    "rect": {
+      "x": 1197.984375,
+      "y": 255,
+      "width": 110.015625,
+      "height": 36,
+      "top": 255,
+      "right": 1308,
+      "bottom": 291,
+      "left": 1197.984375
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "google-material-icons notranslate VfPpkd-kBDsod cBeX7d Auu9lc",
+    "text": "chevron_right",
+    "rect": {
+      "x": 1282,
+      "y": 264,
+      "width": 18,
+      "height": 18,
+      "top": 264,
+      "right": 1300,
+      "bottom": 282,
+      "left": 1282
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "VfPpkd-vQzf8d",
+    "text": "Tam rapor",
+    "rect": {
+      "x": 1205.984375,
+      "y": 264,
+      "width": 68.015625,
+      "height": 18,
+      "top": 264,
+      "right": 1274,
+      "bottom": 282,
+      "left": 1205.984375
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "pOVFVd",
+    "text": "Toplam 105 web arama tıklamasıYükleniyor…4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269",
+    "rect": {
+      "x": 412,
+      "y": 297,
+      "width": 896,
+      "height": 285,
+      "top": 297,
+      "right": 1308,
+      "bottom": 582,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "F6BDp",
+    "text": "Toplam 105 web arama tıklamasıYükleniyor…4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269",
+    "rect": {
+      "x": 412,
+      "y": 297,
+      "width": 896,
+      "height": 285,
+      "top": 297,
+      "right": 1308,
+      "bottom": 582,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "YGrYAf",
+    "text": "Toplam 105 web arama tıklamasıYükleniyor…4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269",
+    "rect": {
+      "x": 412,
+      "y": 297,
+      "width": 896,
+      "height": 285,
+      "top": 297,
+      "right": 1308,
+      "bottom": 582,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Lrwk1b",
+    "text": "Toplam 105 web arama tıklaması",
+    "rect": {
+      "x": 412,
+      "y": 297,
+      "width": 896,
+      "height": 41,
+      "top": 297,
+      "right": 1308,
+      "bottom": 338,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "pVj0Lb",
+    "text": "Toplam 105 web arama tıklaması",
+    "rect": {
+      "x": 428,
+      "y": 309,
+      "width": 224.46875,
+      "height": 29,
+      "top": 309,
+      "right": 652.46875,
+      "bottom": 338,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "itpf1b",
+    "text": "Toplam 105 web arama tıklaması",
+    "rect": {
+      "x": 428,
+      "y": 309,
+      "width": 224.46875,
+      "height": 25,
+      "top": 309,
+      "right": 652.46875,
+      "bottom": 334,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "qL2dyd dzkZrb",
+    "text": "Toplam 105 web arama tıklaması",
+    "rect": {
+      "x": 446,
+      "y": 313,
+      "width": 206.46875,
+      "height": 17,
+      "top": 313,
+      "right": 652.46875,
+      "bottom": 330,
+      "left": 446
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iGcYjc",
+    "text": "Yükleniyor…4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269.06.202615.06.2026181260",
+    "rect": {
+      "x": 412,
+      "y": 338,
+      "width": 896,
+      "height": 244,
+      "top": 338,
+      "right": 1308,
+      "bottom": 582,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "MWewNe fPgIIf ",
+    "text": "Yükleniyor…4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269.06.202615.06.2026181260",
+    "rect": {
+      "x": 428,
+      "y": 354,
+      "width": 880,
+      "height": 212,
+      "top": 354,
+      "right": 1308,
+      "bottom": 566,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "ke9kZe-QLEXN-haAclf ke9kZe-QLEXN ke9kZe-SX9D7d vyDMJf-SX9D7d",
+    "text": "4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269.06.202615.06.2026181260",
+    "rect": {
+      "x": 428,
+      "y": 354,
+      "width": 880,
+      "height": 212,
+      "top": 354,
+      "right": 1308,
+      "bottom": 566,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "svg",
+    "id": "",
+    "className": {},
+    "text": "4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269.06.202615.06.2026181260",
+    "rect": {
+      "x": 428,
+      "y": 354,
+      "width": 880,
+      "height": 212,
+      "top": 354,
+      "right": 1308,
+      "bottom": 566,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269.06.202615.06.2026181260",
+    "rect": {
+      "x": 434.5,
+      "y": 356.8399963378906,
+      "width": 853.5,
+      "height": 200.68002319335938,
+      "top": 356.8399963378906,
+      "right": 1288,
+      "bottom": 557.52001953125,
+      "left": 434.5
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "4.05.202610.05.202616.05.202622.05.202628.05.20263.06.20269.06.202615.06.2026",
+    "rect": {
+      "x": 439.2265625,
+      "y": 540,
+      "width": 781.169921875,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 1220.396484375,
+      "bottom": 557.52001953125,
+      "left": 439.2265625
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "4.05.2026",
+    "rect": {
+      "x": 439.2265625,
+      "y": 540,
+      "width": 53.79296875,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 493.01953125,
+      "bottom": 557.52001953125,
+      "left": 439.2265625
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "4.05.2026",
+    "rect": {
+      "x": 439.2265625,
+      "y": 543.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 493.01953125,
+      "bottom": 557.52001953125,
+      "left": 439.2265625
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "4.05.2026",
+    "rect": {
+      "x": 439.2265625,
+      "y": 543.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 493.01953125,
+      "bottom": 557.52001953125,
+      "left": 439.2265625
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "10.05.2026",
+    "rect": {
+      "x": 538.859375,
+      "y": 540,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 599.396484375,
+      "bottom": 557.52001953125,
+      "left": 538.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "10.05.2026",
+    "rect": {
+      "x": 538.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 599.396484375,
+      "bottom": 557.52001953125,
+      "left": 538.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "10.05.2026",
+    "rect": {
+      "x": 538.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 599.396484375,
+      "bottom": 557.52001953125,
+      "left": 538.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "16.05.2026",
+    "rect": {
+      "x": 642.859375,
+      "y": 540,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 703.396484375,
+      "bottom": 557.52001953125,
+      "left": 642.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "16.05.2026",
+    "rect": {
+      "x": 642.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 703.396484375,
+      "bottom": 557.52001953125,
+      "left": 642.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "16.05.2026",
+    "rect": {
+      "x": 642.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 703.396484375,
+      "bottom": 557.52001953125,
+      "left": 642.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "22.05.2026",
+    "rect": {
+      "x": 745.859375,
+      "y": 540,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 806.396484375,
+      "bottom": 557.52001953125,
+      "left": 745.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "22.05.2026",
+    "rect": {
+      "x": 745.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 806.396484375,
+      "bottom": 557.52001953125,
+      "left": 745.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "22.05.2026",
+    "rect": {
+      "x": 745.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 806.396484375,
+      "bottom": 557.52001953125,
+      "left": 745.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "28.05.2026",
+    "rect": {
+      "x": 849.859375,
+      "y": 540,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 910.396484375,
+      "bottom": 557.52001953125,
+      "left": 849.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "28.05.2026",
+    "rect": {
+      "x": 849.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 910.396484375,
+      "bottom": 557.52001953125,
+      "left": 849.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "28.05.2026",
+    "rect": {
+      "x": 849.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 910.396484375,
+      "bottom": 557.52001953125,
+      "left": 849.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "3.06.2026",
+    "rect": {
+      "x": 956.2265625,
+      "y": 540,
+      "width": 53.79296875,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 1010.01953125,
+      "bottom": 557.52001953125,
+      "left": 956.2265625
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "3.06.2026",
+    "rect": {
+      "x": 956.2265625,
+      "y": 543.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 1010.01953125,
+      "bottom": 557.52001953125,
+      "left": 956.2265625
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "3.06.2026",
+    "rect": {
+      "x": 956.2265625,
+      "y": 543.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 1010.01953125,
+      "bottom": 557.52001953125,
+      "left": 956.2265625
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "9.06.2026",
+    "rect": {
+      "x": 1059.2265625,
+      "y": 540,
+      "width": 53.79296875,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 1113.01953125,
+      "bottom": 557.52001953125,
+      "left": 1059.2265625
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "9.06.2026",
+    "rect": {
+      "x": 1059.2265625,
+      "y": 543.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 1113.01953125,
+      "bottom": 557.52001953125,
+      "left": 1059.2265625
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "9.06.2026",
+    "rect": {
+      "x": 1059.2265625,
+      "y": 543.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 1113.01953125,
+      "bottom": 557.52001953125,
+      "left": 1059.2265625
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "15.06.2026",
+    "rect": {
+      "x": 1159.859375,
+      "y": 540,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 540,
+      "right": 1220.396484375,
+      "bottom": 557.52001953125,
+      "left": 1159.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "15.06.2026",
+    "rect": {
+      "x": 1159.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 1220.396484375,
+      "bottom": 557.52001953125,
+      "left": 1159.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "15.06.2026",
+    "rect": {
+      "x": 1159.859375,
+      "y": 543.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 543.52001953125,
+      "right": 1220.396484375,
+      "bottom": 557.52001953125,
+      "left": 1159.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "181260",
+    "rect": {
+      "x": 434.5,
+      "y": 356.8399963378906,
+      "width": 853.5,
+      "height": 179.99996948242188,
+      "top": 356.8399963378906,
+      "right": 1288,
+      "bottom": 536.8399658203125,
+      "left": 434.5
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "18",
+    "rect": {
+      "x": 434.5,
+      "y": 356.8399963378906,
+      "width": 853.5,
+      "height": 14,
+      "top": 356.8399963378906,
+      "right": 1288,
+      "bottom": 370.8399963378906,
+      "left": 434.5
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "18",
+    "rect": {
+      "x": 434.5,
+      "y": 356.8399963378906,
+      "width": 13.744140625,
+      "height": 14,
+      "top": 356.8399963378906,
+      "right": 448.244140625,
+      "bottom": 370.8399963378906,
+      "left": 434.5
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "18",
+    "rect": {
+      "x": 434.5,
+      "y": 356.8399963378906,
+      "width": 13.744140625,
+      "height": 14,
+      "top": 356.8399963378906,
+      "right": 448.244140625,
+      "bottom": 370.8399963378906,
+      "left": 434.5
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "12",
+    "rect": {
+      "x": 434.5,
+      "y": 412.17333984375,
+      "width": 853.5,
+      "height": 14,
+      "top": 412.17333984375,
+      "right": 1288,
+      "bottom": 426.17333984375,
+      "left": 434.5
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "12",
+    "rect": {
+      "x": 434.5,
+      "y": 412.17333984375,
+      "width": 13.744140625,
+      "height": 14,
+      "top": 412.17333984375,
+      "right": 448.244140625,
+      "bottom": 426.17333984375,
+      "left": 434.5
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "12",
+    "rect": {
+      "x": 434.5,
+      "y": 412.17333984375,
+      "width": 13.744140625,
+      "height": 14,
+      "top": 412.17333984375,
+      "right": 448.244140625,
+      "bottom": 426.17333984375,
+      "left": 434.5
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "6",
+    "rect": {
+      "x": 441.25,
+      "y": 467.50665283203125,
+      "width": 846.75,
+      "height": 14,
+      "top": 467.50665283203125,
+      "right": 1288,
+      "bottom": 481.50665283203125,
+      "left": 441.25
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "6",
+    "rect": {
+      "x": 441.25,
+      "y": 467.50665283203125,
+      "width": 7,
+      "height": 14,
+      "top": 467.50665283203125,
+      "right": 448.25,
+      "bottom": 481.50665283203125,
+      "left": 441.25
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "6",
+    "rect": {
+      "x": 441.25,
+      "y": 467.50665283203125,
+      "width": 7,
+      "height": 14,
+      "top": 467.50665283203125,
+      "right": 448.25,
+      "bottom": 481.50665283203125,
+      "left": 441.25
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "0",
+    "rect": {
+      "x": 441.25,
+      "y": 522.8400268554688,
+      "width": 846.75,
+      "height": 14,
+      "top": 522.8400268554688,
+      "right": 1288,
+      "bottom": 536.8400268554688,
+      "left": 441.25
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "0",
+    "rect": {
+      "x": 441.25,
+      "y": 522.8400268554688,
+      "width": 7,
+      "height": 14,
+      "top": 522.8400268554688,
+      "right": 448.25,
+      "bottom": 536.8400268554688,
+      "left": 441.25
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "0",
+    "rect": {
+      "x": 441.25,
+      "y": 522.8400268554688,
+      "width": 7,
+      "height": 14,
+      "top": 522.8400268554688,
+      "right": 448.25,
+      "bottom": 536.8400268554688,
+      "left": 441.25
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "",
+    "text": "Dizin oluşturmachevron_rightTam raporDizine eklenmeyen 1 sayfaDizine eklenen 2 sayfaYükleniyor…24.03",
+    "rect": {
+      "x": 404,
+      "y": 622,
+      "width": 912,
+      "height": 365,
+      "top": 622,
+      "right": 1316,
+      "bottom": 987,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-WsjYwc VfPpkd-WsjYwc-OWXEXe-INsAgc KC1dQ Usd1Ac AaN0Dd  txidre",
+    "text": "Dizin oluşturmachevron_rightTam raporDizine eklenmeyen 1 sayfaDizine eklenen 2 sayfaYükleniyor…24.03",
+    "rect": {
+      "x": 404,
+      "y": 622,
+      "width": 912,
+      "height": 365,
+      "top": 622,
+      "right": 1316,
+      "bottom": 987,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "ZxwVRb",
+    "text": "Dizin oluşturmachevron_rightTam rapor",
+    "rect": {
+      "x": 412,
+      "y": 638,
+      "width": 896,
+      "height": 48,
+      "top": 638,
+      "right": 1308,
+      "bottom": 686,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "cPSNDf",
+    "text": "Dizin oluşturma",
+    "rect": {
+      "x": 412,
+      "y": 638,
+      "width": 198.234375,
+      "height": 48,
+      "top": 638,
+      "right": 610.234375,
+      "bottom": 686,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "M5cjKe",
+    "text": "chevron_rightTam rapor",
+    "rect": {
+      "x": 1197.984375,
+      "y": 638,
+      "width": 110.015625,
+      "height": 48,
+      "top": 638,
+      "right": 1308,
+      "bottom": 686,
+      "left": 1197.984375
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-dgl2Hf-ppHlrf-sM5MNb",
+    "text": "chevron_rightTam rapor",
+    "rect": {
+      "x": 1197.984375,
+      "y": 652.703125,
+      "width": 110.015625,
+      "height": 17,
+      "top": 652.703125,
+      "right": 1308,
+      "bottom": 669.703125,
+      "left": 1197.984375
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-Bz112c-M1Soyc VfPpkd-LgbsSe-OWXEXe-dgl2Hf ksBjEc lKxP2d HDnnrf LQeN7 CorKwc KiNied ASvCGc dn8dnb",
+    "text": "chevron_rightTam rapor",
+    "rect": {
+      "x": 1197.984375,
+      "y": 644,
+      "width": 110.015625,
+      "height": 36,
+      "top": 644,
+      "right": 1308,
+      "bottom": 680,
+      "left": 1197.984375
+    }
+  },
+  {
+    "tagName": "I",
+    "id": "",
+    "className": "google-material-icons notranslate VfPpkd-kBDsod cBeX7d Auu9lc",
+    "text": "chevron_right",
+    "rect": {
+      "x": 1282,
+      "y": 653,
+      "width": 18,
+      "height": 18,
+      "top": 653,
+      "right": 1300,
+      "bottom": 671,
+      "left": 1282
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "VfPpkd-vQzf8d",
+    "text": "Tam rapor",
+    "rect": {
+      "x": 1205.984375,
+      "y": 653,
+      "width": 68.015625,
+      "height": 18,
+      "top": 653,
+      "right": 1274,
+      "bottom": 671,
+      "left": 1205.984375
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "pOVFVd",
+    "text": "Dizine eklenmeyen 1 sayfaDizine eklenen 2 sayfaYükleniyor…24.03.20263.04.202613.04.202623.04.20263.0",
+    "rect": {
+      "x": 412,
+      "y": 686,
+      "width": 896,
+      "height": 285,
+      "top": 686,
+      "right": 1308,
+      "bottom": 971,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "F6BDp",
+    "text": "Dizine eklenmeyen 1 sayfaDizine eklenen 2 sayfaYükleniyor…24.03.20263.04.202613.04.202623.04.20263.0",
+    "rect": {
+      "x": 412,
+      "y": 686,
+      "width": 896,
+      "height": 285,
+      "top": 686,
+      "right": 1308,
+      "bottom": 971,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "YGrYAf",
+    "text": "Dizine eklenmeyen 1 sayfaDizine eklenen 2 sayfaYükleniyor…24.03.20263.04.202613.04.202623.04.20263.0",
+    "rect": {
+      "x": 412,
+      "y": 686,
+      "width": 896,
+      "height": 285,
+      "top": 686,
+      "right": 1308,
+      "bottom": 971,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "Lrwk1b",
+    "text": "Dizine eklenmeyen 1 sayfaDizine eklenen 2 sayfa",
+    "rect": {
+      "x": 412,
+      "y": 686,
+      "width": 896,
+      "height": 41,
+      "top": 686,
+      "right": 1308,
+      "bottom": 727,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "pVj0Lb",
+    "text": "Dizine eklenmeyen 1 sayfaDizine eklenen 2 sayfa",
+    "rect": {
+      "x": 428,
+      "y": 698,
+      "width": 379.265625,
+      "height": 29,
+      "top": 698,
+      "right": 807.265625,
+      "bottom": 727,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "itpf1b",
+    "text": "Dizine eklenmeyen 1 sayfa",
+    "rect": {
+      "x": 428,
+      "y": 698,
+      "width": 182.703125,
+      "height": 25,
+      "top": 698,
+      "right": 610.703125,
+      "bottom": 723,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "qL2dyd dzkZrb",
+    "text": "Dizine eklenmeyen 1 sayfa",
+    "rect": {
+      "x": 446,
+      "y": 702,
+      "width": 164.703125,
+      "height": 17,
+      "top": 702,
+      "right": 610.703125,
+      "bottom": 719,
+      "left": 446
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "itpf1b",
+    "text": "Dizine eklenen 2 sayfa",
+    "rect": {
+      "x": 650.703125,
+      "y": 698,
+      "width": 156.5625,
+      "height": 25,
+      "top": 698,
+      "right": 807.265625,
+      "bottom": 723,
+      "left": 650.703125
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "qL2dyd dzkZrb",
+    "text": "Dizine eklenen 2 sayfa",
+    "rect": {
+      "x": 668.703125,
+      "y": 702,
+      "width": 138.5625,
+      "height": 17,
+      "top": 702,
+      "right": 807.265625,
+      "bottom": 719,
+      "left": 668.703125
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "iGcYjc",
+    "text": "Yükleniyor…24.03.20263.04.202613.04.202623.04.20263.05.202613.05.202623.05.20262.06.202612.06.202632",
+    "rect": {
+      "x": 412,
+      "y": 727,
+      "width": 896,
+      "height": 244,
+      "top": 727,
+      "right": 1308,
+      "bottom": 971,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "MWewNe ZYXPef bZydGb",
+    "text": "Yükleniyor…24.03.20263.04.202613.04.202623.04.20263.05.202613.05.202623.05.20262.06.202612.06.202632",
+    "rect": {
+      "x": 428,
+      "y": 743,
+      "width": 880,
+      "height": 212,
+      "top": 743,
+      "right": 1308,
+      "bottom": 955,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "ke9kZe-QLEXN-haAclf ke9kZe-QLEXN ke9kZe-SX9D7d vyDMJf-SX9D7d",
+    "text": "24.03.20263.04.202613.04.202623.04.20263.05.202613.05.202623.05.20262.06.202612.06.20263210",
+    "rect": {
+      "x": 428,
+      "y": 743,
+      "width": 880,
+      "height": 212,
+      "top": 743,
+      "right": 1308,
+      "bottom": 955,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "svg",
+    "id": "",
+    "className": {},
+    "text": "24.03.20263.04.202613.04.202623.04.20263.05.202613.05.202623.05.20262.06.202612.06.20263210",
+    "rect": {
+      "x": 428,
+      "y": 743,
+      "width": 880,
+      "height": 212,
+      "top": 743,
+      "right": 1308,
+      "bottom": 955,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "24.03.20263.04.202613.04.202623.04.20263.05.202613.05.202623.05.20262.06.202612.06.20263210",
+    "rect": {
+      "x": 429.859375,
+      "y": 745.8400268554688,
+      "width": 876.537109375,
+      "height": 200.67999267578125,
+      "top": 745.8400268554688,
+      "right": 1306.396484375,
+      "bottom": 946.52001953125,
+      "left": 429.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "24.03.20263.04.202613.04.202623.04.20263.05.202613.05.202623.05.20262.06.202612.06.2026",
+    "rect": {
+      "x": 429.859375,
+      "y": 929,
+      "width": 876.537109375,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 1306.396484375,
+      "bottom": 946.52001953125,
+      "left": 429.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "24.03.2026",
+    "rect": {
+      "x": 429.859375,
+      "y": 929,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 490.396484375,
+      "bottom": 946.52001953125,
+      "left": 429.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "24.03.2026",
+    "rect": {
+      "x": 429.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 490.396484375,
+      "bottom": 946.52001953125,
+      "left": 429.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "24.03.2026",
+    "rect": {
+      "x": 429.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 490.396484375,
+      "bottom": 946.52001953125,
+      "left": 429.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "3.04.2026",
+    "rect": {
+      "x": 535.2265625,
+      "y": 929,
+      "width": 53.79296875,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 589.01953125,
+      "bottom": 946.52001953125,
+      "left": 535.2265625
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "3.04.2026",
+    "rect": {
+      "x": 535.2265625,
+      "y": 932.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 589.01953125,
+      "bottom": 946.52001953125,
+      "left": 535.2265625
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "3.04.2026",
+    "rect": {
+      "x": 535.2265625,
+      "y": 932.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 589.01953125,
+      "bottom": 946.52001953125,
+      "left": 535.2265625
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "13.04.2026",
+    "rect": {
+      "x": 633.859375,
+      "y": 929,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 694.396484375,
+      "bottom": 946.52001953125,
+      "left": 633.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "13.04.2026",
+    "rect": {
+      "x": 633.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 694.396484375,
+      "bottom": 946.52001953125,
+      "left": 633.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "13.04.2026",
+    "rect": {
+      "x": 633.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 694.396484375,
+      "bottom": 946.52001953125,
+      "left": 633.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "23.04.2026",
+    "rect": {
+      "x": 735.859375,
+      "y": 929,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 796.396484375,
+      "bottom": 946.52001953125,
+      "left": 735.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "23.04.2026",
+    "rect": {
+      "x": 735.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 796.396484375,
+      "bottom": 946.52001953125,
+      "left": 735.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "23.04.2026",
+    "rect": {
+      "x": 735.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 796.396484375,
+      "bottom": 946.52001953125,
+      "left": 735.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "3.05.2026",
+    "rect": {
+      "x": 841.2265625,
+      "y": 929,
+      "width": 53.79296875,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 895.01953125,
+      "bottom": 946.52001953125,
+      "left": 841.2265625
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "3.05.2026",
+    "rect": {
+      "x": 841.2265625,
+      "y": 932.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 895.01953125,
+      "bottom": 946.52001953125,
+      "left": 841.2265625
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "3.05.2026",
+    "rect": {
+      "x": 841.2265625,
+      "y": 932.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 895.01953125,
+      "bottom": 946.52001953125,
+      "left": 841.2265625
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "13.05.2026",
+    "rect": {
+      "x": 939.859375,
+      "y": 929,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 1000.396484375,
+      "bottom": 946.52001953125,
+      "left": 939.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "13.05.2026",
+    "rect": {
+      "x": 939.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 1000.396484375,
+      "bottom": 946.52001953125,
+      "left": 939.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "13.05.2026",
+    "rect": {
+      "x": 939.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 1000.396484375,
+      "bottom": 946.52001953125,
+      "left": 939.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "23.05.2026",
+    "rect": {
+      "x": 1041.859375,
+      "y": 929,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 1102.396484375,
+      "bottom": 946.52001953125,
+      "left": 1041.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "23.05.2026",
+    "rect": {
+      "x": 1041.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 1102.396484375,
+      "bottom": 946.52001953125,
+      "left": 1041.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "23.05.2026",
+    "rect": {
+      "x": 1041.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 1102.396484375,
+      "bottom": 946.52001953125,
+      "left": 1041.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "2.06.2026",
+    "rect": {
+      "x": 1147.2265625,
+      "y": 929,
+      "width": 53.79296875,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 1201.01953125,
+      "bottom": 946.52001953125,
+      "left": 1147.2265625
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "2.06.2026",
+    "rect": {
+      "x": 1147.2265625,
+      "y": 932.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 1201.01953125,
+      "bottom": 946.52001953125,
+      "left": 1147.2265625
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "2.06.2026",
+    "rect": {
+      "x": 1147.2265625,
+      "y": 932.52001953125,
+      "width": 53.79296875,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 1201.01953125,
+      "bottom": 946.52001953125,
+      "left": 1147.2265625
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "12.06.2026",
+    "rect": {
+      "x": 1245.859375,
+      "y": 929,
+      "width": 60.537109375,
+      "height": 17.52001953125,
+      "top": 929,
+      "right": 1306.396484375,
+      "bottom": 946.52001953125,
+      "left": 1245.859375
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "12.06.2026",
+    "rect": {
+      "x": 1245.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 1306.396484375,
+      "bottom": 946.52001953125,
+      "left": 1245.859375
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "12.06.2026",
+    "rect": {
+      "x": 1245.859375,
+      "y": 932.52001953125,
+      "width": 60.537109375,
+      "height": 14,
+      "top": 932.52001953125,
+      "right": 1306.396484375,
+      "bottom": 946.52001953125,
+      "left": 1245.859375
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "3210",
+    "rect": {
+      "x": 435.25,
+      "y": 745.8400268554688,
+      "width": 852.75,
+      "height": 179.99993896484375,
+      "top": 745.8400268554688,
+      "right": 1288,
+      "bottom": 925.8399658203125,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "3",
+    "rect": {
+      "x": 435.25,
+      "y": 745.8400268554688,
+      "width": 852.75,
+      "height": 14,
+      "top": 745.8400268554688,
+      "right": 1288,
+      "bottom": 759.8400268554688,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "3",
+    "rect": {
+      "x": 435.25,
+      "y": 745.8400268554688,
+      "width": 7,
+      "height": 14,
+      "top": 745.8400268554688,
+      "right": 442.25,
+      "bottom": 759.8400268554688,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "3",
+    "rect": {
+      "x": 435.25,
+      "y": 745.8400268554688,
+      "width": 7,
+      "height": 14,
+      "top": 745.8400268554688,
+      "right": 442.25,
+      "bottom": 759.8400268554688,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "2",
+    "rect": {
+      "x": 435.25,
+      "y": 801.17333984375,
+      "width": 852.75,
+      "height": 14,
+      "top": 801.17333984375,
+      "right": 1288,
+      "bottom": 815.17333984375,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "2",
+    "rect": {
+      "x": 435.25,
+      "y": 801.17333984375,
+      "width": 7,
+      "height": 14,
+      "top": 801.17333984375,
+      "right": 442.25,
+      "bottom": 815.17333984375,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "2",
+    "rect": {
+      "x": 435.25,
+      "y": 801.17333984375,
+      "width": 7,
+      "height": 14,
+      "top": 801.17333984375,
+      "right": 442.25,
+      "bottom": 815.17333984375,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "1",
+    "rect": {
+      "x": 435.25,
+      "y": 856.5066528320312,
+      "width": 852.75,
+      "height": 14,
+      "top": 856.5066528320312,
+      "right": 1288,
+      "bottom": 870.5066528320312,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "1",
+    "rect": {
+      "x": 435.25,
+      "y": 856.5066528320312,
+      "width": 6.75,
+      "height": 14,
+      "top": 856.5066528320312,
+      "right": 442,
+      "bottom": 870.5066528320312,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "1",
+    "rect": {
+      "x": 435.25,
+      "y": 856.5066528320312,
+      "width": 6.75,
+      "height": 14,
+      "top": 856.5066528320312,
+      "right": 442,
+      "bottom": 870.5066528320312,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "g",
+    "id": "",
+    "className": {},
+    "text": "0",
+    "rect": {
+      "x": 435.25,
+      "y": 911.8400268554688,
+      "width": 852.75,
+      "height": 14,
+      "top": 911.8400268554688,
+      "right": 1288,
+      "bottom": 925.8400268554688,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "text",
+    "id": "",
+    "className": {},
+    "text": "0",
+    "rect": {
+      "x": 435.25,
+      "y": 911.8400268554688,
+      "width": 7,
+      "height": 14,
+      "top": 911.8400268554688,
+      "right": 442.25,
+      "bottom": 925.8400268554688,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "tspan",
+    "id": "",
+    "className": {},
+    "text": "0",
+    "rect": {
+      "x": 435.25,
+      "y": 911.8400268554688,
+      "width": 7,
+      "height": 14,
+      "top": 911.8400268554688,
+      "right": 442.25,
+      "bottom": 925.8400268554688,
+      "left": 435.25
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "",
+    "text": "DeneyimTürİyiİyileştirme gerektirenYavaşTrendHenüz kullanılabilir deneyim verisi yok. Daha fazla bil",
+    "rect": {
+      "x": 404,
+      "y": 1011,
+      "width": 912,
+      "height": 237,
+      "top": 1011,
+      "right": 1316,
+      "bottom": 1248,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-WsjYwc VfPpkd-WsjYwc-OWXEXe-INsAgc KC1dQ Usd1Ac AaN0Dd  txidre Jv3jfc",
+    "text": "DeneyimTürİyiİyileştirme gerektirenYavaşTrendHenüz kullanılabilir deneyim verisi yok. Daha fazla bil",
+    "rect": {
+      "x": 404,
+      "y": 1011,
+      "width": 912,
+      "height": 237,
+      "top": 1011,
+      "right": 1316,
+      "bottom": 1248,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "ZxwVRb",
+    "text": "Deneyim",
+    "rect": {
+      "x": 412,
+      "y": 1027,
+      "width": 896,
+      "height": 48,
+      "top": 1027,
+      "right": 1308,
+      "bottom": 1075,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "cPSNDf",
+    "text": "Deneyim",
+    "rect": {
+      "x": 412,
+      "y": 1027,
+      "width": 127.09375,
+      "height": 48,
+      "top": 1027,
+      "right": 539.09375,
+      "bottom": 1075,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "pOVFVd",
+    "text": "Türİyiİyileştirme gerektirenYavaşTrendHenüz kullanılabilir deneyim verisi yok. Daha fazla bilgi",
+    "rect": {
+      "x": 412,
+      "y": 1075,
+      "width": 896,
+      "height": 149,
+      "top": 1075,
+      "right": 1308,
+      "bottom": 1224,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gHRRre",
+    "text": "Türİyiİyileştirme gerektirenYavaşTrend",
+    "rect": {
+      "x": 412,
+      "y": 1083,
+      "width": 896,
+      "height": 48,
+      "top": 1083,
+      "right": 1308,
+      "bottom": 1131,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "CtOYUe VJARVc  zZF2Uc SsnfW",
+    "text": "Türİyiİyileştirme gerektirenYavaşTrend",
+    "rect": {
+      "x": 412,
+      "y": 1083,
+      "width": 896,
+      "height": 48,
+      "top": 1083,
+      "right": 1308,
+      "bottom": 1131,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "TABLE",
+    "id": "",
+    "className": "i3WFpf",
+    "text": "Türİyiİyileştirme gerektirenYavaşTrend",
+    "rect": {
+      "x": 412,
+      "y": 1083,
+      "width": 896,
+      "height": 48,
+      "top": 1083,
+      "right": 1308,
+      "bottom": 1131,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "THEAD",
+    "id": "",
+    "className": "QUcFSc",
+    "text": "Türİyiİyileştirme gerektirenYavaşTrend",
+    "rect": {
+      "x": 412,
+      "y": 1083,
+      "width": 896,
+      "height": 48,
+      "top": 1083,
+      "right": 1308,
+      "bottom": 1131,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "TR",
+    "id": "",
+    "className": "BYcqmc",
+    "text": "Türİyiİyileştirme gerektirenYavaşTrend",
+    "rect": {
+      "x": 412,
+      "y": 1083,
+      "width": 896,
+      "height": 48,
+      "top": 1083,
+      "right": 1308,
+      "bottom": 1131,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe AB6Eee NrMStd kVcYUd",
+    "text": "Tür",
+    "rect": {
+      "x": 412,
+      "y": 1083,
+      "width": 482.734375,
+      "height": 48,
+      "top": 1083,
+      "right": 894.734375,
+      "bottom": 1131,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "Tür",
+    "rect": {
+      "x": 428,
+      "y": 1104,
+      "width": 18.125,
+      "height": 14,
+      "top": 1104,
+      "right": 446.125,
+      "bottom": 1118,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe kVcYUd",
+    "text": "İyi",
+    "rect": {
+      "x": 930.734375,
+      "y": 1083,
+      "width": 48.734375,
+      "height": 48,
+      "top": 1083,
+      "right": 979.46875,
+      "bottom": 1131,
+      "left": 930.734375
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "İyi",
+    "rect": {
+      "x": 948.734375,
+      "y": 1104,
+      "width": 12.734375,
+      "height": 14,
+      "top": 1104,
+      "right": 961.46875,
+      "bottom": 1118,
+      "left": 948.734375
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe kVcYUd",
+    "text": "İyileştirme gerektiren",
+    "rect": {
+      "x": 979.46875,
+      "y": 1083,
+      "width": 151.28125,
+      "height": 48,
+      "top": 1083,
+      "right": 1130.75,
+      "bottom": 1131,
+      "left": 979.46875
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "İyileştirme gerektiren",
+    "rect": {
+      "x": 997.46875,
+      "y": 1104,
+      "width": 115.28125,
+      "height": 14,
+      "top": 1104,
+      "right": 1112.75,
+      "bottom": 1118,
+      "left": 997.46875
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe kVcYUd",
+    "text": "Yavaş",
+    "rect": {
+      "x": 1130.75,
+      "y": 1083,
+      "width": 67.953125,
+      "height": 48,
+      "top": 1083,
+      "right": 1198.703125,
+      "bottom": 1131,
+      "left": 1130.75
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "Yavaş",
+    "rect": {
+      "x": 1148.75,
+      "y": 1104,
+      "width": 31.953125,
+      "height": 14,
+      "top": 1104,
+      "right": 1180.703125,
+      "bottom": 1118,
+      "left": 1148.75
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe AB6Eee kVcYUd",
+    "text": "Trend",
+    "rect": {
+      "x": 1198.703125,
+      "y": 1083,
+      "width": 67.296875,
+      "height": 48,
+      "top": 1083,
+      "right": 1266,
+      "bottom": 1131,
+      "left": 1198.703125
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "Trend",
+    "rect": {
+      "x": 1216.703125,
+      "y": 1104,
+      "width": 31.296875,
+      "height": 14,
+      "top": 1104,
+      "right": 1248,
+      "bottom": 1118,
+      "left": 1216.703125
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "EQH32",
+    "text": "Henüz kullanılabilir deneyim verisi yok. Daha fazla bilgi",
+    "rect": {
+      "x": 412,
+      "y": 1131,
+      "width": 896,
+      "height": 93,
+      "top": 1131,
+      "right": 1308,
+      "bottom": 1224,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "UNRcRe",
+    "text": "Henüz kullanılabilir deneyim verisi yok. Daha fazla bilgi",
+    "rect": {
+      "x": 700,
+      "y": 1168,
+      "width": 320,
+      "height": 40,
+      "top": 1168,
+      "right": 1020,
+      "bottom": 1208,
+      "left": 700
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "o67cy",
+    "text": "Daha fazla bilgi",
+    "rect": {
+      "x": 828.734375,
+      "y": 1169,
+      "width": 175.46875,
+      "height": 38,
+      "top": 1169,
+      "right": 1004.203125,
+      "bottom": 1207,
+      "left": 828.734375
+    }
+  },
+  {
+    "tagName": "C-WIZ",
+    "id": "",
+    "className": "",
+    "text": "GeliştirmelerTürGeçerliGeçersizTrendHenüz geliştirme yok. Daha fazla bilgi",
+    "rect": {
+      "x": 404,
+      "y": 1272,
+      "width": 912,
+      "height": 217,
+      "top": 1272,
+      "right": 1316,
+      "bottom": 1489,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "VfPpkd-WsjYwc VfPpkd-WsjYwc-OWXEXe-INsAgc KC1dQ Usd1Ac AaN0Dd  txidre Jv3jfc",
+    "text": "GeliştirmelerTürGeçerliGeçersizTrendHenüz geliştirme yok. Daha fazla bilgi",
+    "rect": {
+      "x": 404,
+      "y": 1272,
+      "width": 912,
+      "height": 217,
+      "top": 1272,
+      "right": 1316,
+      "bottom": 1489,
+      "left": 404
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "ZxwVRb",
+    "text": "Geliştirmeler",
+    "rect": {
+      "x": 412,
+      "y": 1288,
+      "width": 896,
+      "height": 48,
+      "top": 1288,
+      "right": 1308,
+      "bottom": 1336,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "cPSNDf",
+    "text": "Geliştirmeler",
+    "rect": {
+      "x": 412,
+      "y": 1288,
+      "width": 170.921875,
+      "height": 48,
+      "top": 1288,
+      "right": 582.921875,
+      "bottom": 1336,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "pOVFVd",
+    "text": "TürGeçerliGeçersizTrendHenüz geliştirme yok. Daha fazla bilgi",
+    "rect": {
+      "x": 412,
+      "y": 1336,
+      "width": 896,
+      "height": 129,
+      "top": 1336,
+      "right": 1308,
+      "bottom": 1465,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "gHRRre",
+    "text": "TürGeçerliGeçersizTrend",
+    "rect": {
+      "x": 412,
+      "y": 1344,
+      "width": 896,
+      "height": 48,
+      "top": 1344,
+      "right": 1308,
+      "bottom": 1392,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "CtOYUe VJARVc  zZF2Uc SsnfW",
+    "text": "TürGeçerliGeçersizTrend",
+    "rect": {
+      "x": 412,
+      "y": 1344,
+      "width": 896,
+      "height": 48,
+      "top": 1344,
+      "right": 1308,
+      "bottom": 1392,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "TABLE",
+    "id": "",
+    "className": "i3WFpf",
+    "text": "TürGeçerliGeçersizTrend",
+    "rect": {
+      "x": 412,
+      "y": 1344,
+      "width": 896,
+      "height": 48,
+      "top": 1344,
+      "right": 1308,
+      "bottom": 1392,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "THEAD",
+    "id": "",
+    "className": "QUcFSc",
+    "text": "TürGeçerliGeçersizTrend",
+    "rect": {
+      "x": 412,
+      "y": 1344,
+      "width": 896,
+      "height": 48,
+      "top": 1344,
+      "right": 1308,
+      "bottom": 1392,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "TR",
+    "id": "",
+    "className": "BYcqmc",
+    "text": "TürGeçerliGeçersizTrend",
+    "rect": {
+      "x": 412,
+      "y": 1344,
+      "width": 896,
+      "height": 48,
+      "top": 1344,
+      "right": 1308,
+      "bottom": 1392,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe AB6Eee NrMStd kVcYUd",
+    "text": "Tür",
+    "rect": {
+      "x": 412,
+      "y": 1344,
+      "width": 629.328125,
+      "height": 48,
+      "top": 1344,
+      "right": 1041.328125,
+      "bottom": 1392,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "Tür",
+    "rect": {
+      "x": 428,
+      "y": 1365,
+      "width": 18.125,
+      "height": 14,
+      "top": 1365,
+      "right": 446.125,
+      "bottom": 1379,
+      "left": 428
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe kVcYUd",
+    "text": "Geçerli",
+    "rect": {
+      "x": 1041.328125,
+      "y": 1344,
+      "width": 74.140625,
+      "height": 48,
+      "top": 1344,
+      "right": 1115.46875,
+      "bottom": 1392,
+      "left": 1041.328125
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "Geçerli",
+    "rect": {
+      "x": 1059.328125,
+      "y": 1365,
+      "width": 38.140625,
+      "height": 14,
+      "top": 1365,
+      "right": 1097.46875,
+      "bottom": 1379,
+      "left": 1059.328125
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe kVcYUd",
+    "text": "Geçersiz",
+    "rect": {
+      "x": 1115.46875,
+      "y": 1344,
+      "width": 83.234375,
+      "height": 48,
+      "top": 1344,
+      "right": 1198.703125,
+      "bottom": 1392,
+      "left": 1115.46875
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "Geçersiz",
+    "rect": {
+      "x": 1133.46875,
+      "y": 1365,
+      "width": 47.234375,
+      "height": 14,
+      "top": 1365,
+      "right": 1180.703125,
+      "bottom": 1379,
+      "left": 1133.46875
+    }
+  },
+  {
+    "tagName": "TH",
+    "id": "",
+    "className": "ZdiZXe AB6Eee kVcYUd",
+    "text": "Trend",
+    "rect": {
+      "x": 1198.703125,
+      "y": 1344,
+      "width": 67.296875,
+      "height": 48,
+      "top": 1344,
+      "right": 1266,
+      "bottom": 1392,
+      "left": 1198.703125
+    }
+  },
+  {
+    "tagName": "SPAN",
+    "id": "",
+    "className": "npD1Gc",
+    "text": "Trend",
+    "rect": {
+      "x": 1216.703125,
+      "y": 1365,
+      "width": 31.296875,
+      "height": 14,
+      "top": 1365,
+      "right": 1248,
+      "bottom": 1379,
+      "left": 1216.703125
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "EQH32",
+    "text": "Henüz geliştirme yok. Daha fazla bilgi",
+    "rect": {
+      "x": 412,
+      "y": 1392,
+      "width": 896,
+      "height": 73,
+      "top": 1392,
+      "right": 1308,
+      "bottom": 1465,
+      "left": 412
+    }
+  },
+  {
+    "tagName": "DIV",
+    "id": "",
+    "className": "UNRcRe",
+    "text": "Henüz geliştirme yok. Daha fazla bilgi",
+    "rect": {
+      "x": 737.71875,
+      "y": 1429,
+      "width": 244.5625,
+      "height": 20,
+      "top": 1429,
+      "right": 982.28125,
+      "bottom": 1449,
+      "left": 737.71875
+    }
+  },
+  {
+    "tagName": "A",
+    "id": "",
+    "className": "kg2xte",
+    "text": "Daha fazla bilgi",
+    "rect": {
+      "x": 881.671875,
+      "y": 1430,
+      "width": 100.609375,
+      "height": 18,
+      "top": 1430,
+      "right": 982.28125,
+      "bottom": 1448,
+      "left": 881.671875
+    }
+  }
+]

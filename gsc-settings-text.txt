@@ -1,0 +1,65 @@
+
+	
+
+home
+Genel Bakış
+lightbulb_2
+Analizler
+trending_up
+Performans
+search
+URL denetimi
+Dizin oluşturma
+keyboard_arrow_up
+file_copy
+Sayfa sayısı
+account_tree
+Site Haritaları
+visibility_off
+URL Kaldırma
+Deneyim
+keyboard_arrow_up
+speed
+Önemli Web Verileri
+Güvenlik ve Manuel İşlemler
+keyboard_arrow_down
+link_2
+Bağlantılar
+trophy
+Başarılar
+settings
+Ayarlar
+feedback
+Geri bildirim gönder
+info
+Search Console hakkında
+GizlilikŞartlar
+Ayarlar
+Genel ayarlar
+Sahipliği doğrulama
+
+Doğrulanmış bir sahipsiniz
+
+Kullanıcılar ve izinler
+Mehmet Bozkurt, sovereign-spyy
+
+İlişkilendirmeler
+Bu mülkle bir hizmeti ilişkilendirin
+
+Adres değişikliği
+Siteniz yeni bir adrese taşındığında Google'a haber verin
+
+Verileri toplu olarak dışa aktar
+Performans verilerini günlük olarak BigQuery'ye aktarma
+
+Tarama
+robots.txt
+Geçerli
+RAPORU AÇ
+Tarama istatistikleri
+Henüz kullanılabilir veri yok
+RAPORU AÇ
+Hakkında
+Mülk, hesaba eklendi
+23 Haziran 2026
+MÜLKÜ KALDIR

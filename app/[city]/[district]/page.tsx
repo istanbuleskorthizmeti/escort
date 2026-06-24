@@ -26,8 +26,19 @@ import { LivePhotoMarquee } from "../../../components/UI/LivePhotoMarquee";
 import { UserReviews } from "../../../components/SEO/UserReviews";
 import { getDeterministicRating } from "../../../lib/seo-schema";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600; // Cache as static HTML, regenerate in background (ISR)
 export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  const topDistricts = [
+    'besiktas', 'sisli', 'beylikduzu', 'kadikoy', 'bakirkoy', 
+    'atasehir', 'esenyurt', 'fatih', 'bagcilar', 'bahcelievler'
+  ];
+  return topDistricts.map(district => ({
+    city: 'istanbul',
+    district
+  }));
+}
 
 interface Params {
   city: string;

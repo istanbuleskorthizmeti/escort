@@ -6,10 +6,10 @@ import { NodeSSH } from 'node-ssh';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '187.77.111.203',
+  host: '31.97.79.34',
   port: 22,
   username: 'root',
-  password: 'Z4-nN8JfiUIh5,;g'
+  password: 'Oym@icdLt?vY8YQy'
 };
 
 const desktopDir = 'C:\\Users\\onurk\\Desktop\\vitrin yeni görsel';
@@ -181,7 +181,7 @@ async function processVitrin() {
     console.log('lib/vitrin-images.ts updated successfully.');
 
     // Connect to server and perform sync
-    console.log('\n🔐 [CONNECTING] Connecting to root@187.77.111.203 for deployment...');
+    console.log('\n🔐 [CONNECTING] Connecting to root@31.97.79.34 for deployment...');
     await ssh.connect(config);
     console.log('✅ Connected.');
 

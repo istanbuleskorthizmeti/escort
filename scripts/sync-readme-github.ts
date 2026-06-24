@@ -6,11 +6,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const DESKTOP_PATH = 'C:\\Users\\onurk\\Desktop';
-const TARGET_DIR = path.join(DESKTOP_PATH, 'tamkumarbaz');
-const SOURCE_DIR = path.join(DESKTOP_PATH, 'readme-docs');
-const REPO_URL = 'https://github.com/tamkumarbaz/tamkumarbaz.git';
+const TARGET_DIR = path.join(DESKTOP_PATH, 'dorukcanay-docs-git');
+const SOURCE_DIR = path.join(DESKTOP_PATH, 'readme-docs-dorukcanay');
+const REPO_URL = process.env.GITHUB_REPO_URL || 'https://github.com/tamkumarbaz/tamkumarbaz.git';
 const GITHUB_PAT = process.env.GITHUB_PAT;
 const INDEX_NOW_KEY = process.env.INDEX_NOW_KEY || "8771e07e4e31024024720e4a348e10f0";
+
+const readmeSubdomain = process.env.README_SUBDOMAIN || "istanbul-eskort-hizmeti";
 
 async function run() {
   console.log(`🚀 Starting ReadMe Git-Backed Sync to: ${TARGET_DIR}`);
@@ -66,6 +68,12 @@ async function run() {
   console.log(`📝 Writing IndexNow verification file: ${INDEX_NOW_KEY}.txt`);
   fs.writeFileSync(path.join(TARGET_DIR, `${INDEX_NOW_KEY}.txt`), INDEX_NOW_KEY);
 
+  console.log(`📝 Writing Google Site Verification HTML file...`);
+  fs.writeFileSync(path.join(TARGET_DIR, `googleblR9C6PaZE-_yAVhnbK7o9PD1IWmlxQUzVnGMf3fHrI.html`), `google-site-verification: googleblR9C6PaZE-_yAVhnbK7o9PD1IWmlxQUzVnGMf3fHrI.html`);
+
+  console.log(`📝 Writing robots.txt file...`);
+  fs.writeFileSync(path.join(TARGET_DIR, `robots.txt`), `User-agent: *\nAllow: /\n\nSitemap: https://${readmeSubdomain}.readme.io/sitemap.xml\n`);
+
   // 7. Write a simple _order.yaml inside docs/istanbul-escorts to establish sequence
   console.log('📝 Writing _order.yaml navigation files...');
   fs.writeFileSync(path.join(TARGET_DIR, 'docs', '_order.yaml'), `istanbul-escorts\n`);
@@ -84,11 +92,10 @@ async function run() {
   const orderList = orderListArray.join('\n');
   fs.writeFileSync(path.join(docsPath, '_order.yaml'), orderList + '\n');
 
-  // 8. Configure Remote URL (Use PAT if present to bypass auth prompt)
   let authenticatedRemote = REPO_URL;
   if (GITHUB_PAT) {
     console.log('🔑 GITHUB_PAT detected in env, injecting to remote URL for seamless push...');
-    authenticatedRemote = `https://${GITHUB_PAT}@github.com/tamkumarbaz/tamkumarbaz.git`;
+    authenticatedRemote = REPO_URL.replace('https://', `https://${GITHUB_PAT}@`);
   }
 
   try {

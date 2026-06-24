@@ -122,7 +122,7 @@ function generateMarkdownContent(sehir: string, ilce: string, pathCounter: numbe
   for (let i = 1; i <= 25; i++) {
     if (i === 13) {
       // Reklam Vermek İçin Tıklayınız! banner cell
-      const cellText = `**Reklam Vermek İçin Tıklayınız!**<br>[![Reklam Ver](https://${HOST}/vitrin/reklam-ver-banner.png)](https://${HOST}/go/reklam-ver)<br>_Kendi ilanınızı ekleyin_<br>_Hemen Reklam Verin_<br>**[İletişim İçin Tıklayın](https://${HOST}/go/reklam-ver)**`;
+      const cellText = `**Reklam Vermek İçin Tıklayınız!**<br />[![Reklam Ver](https://${HOST}/vitrin/reklam-ver-banner.png)](https://${HOST}/go/reklam-ver)<br />_Kendi ilanınızı ekleyin_<br />_Hemen Reklam Verin_<br />**[İletişim İçin Tıklayın](https://${HOST}/go/reklam-ver)**`;
       cells.push(cellText);
       continue;
     }
@@ -139,7 +139,7 @@ function generateMarkdownContent(sehir: string, ilce: string, pathCounter: numbe
       ? `https://${HOST}/_media/vitrin/bercem-engez.png`
       : `https://${HOST}/_media/vitrin/vip-profil-${((profileIndex - 2) % 6) + 1}.webp`;
 
-    const cellText = `**${pName}** (${pRace})<br>![${pName} - ${pAdj}](${pImg})<br>_${pAdj}_<br>_Hizmet: ${pNiche}_<br>**[${pQual}](${pUrl})**`;
+    const cellText = `**${pName}** (${pRace})<br />![${pName} - ${pAdj}](${pImg})<br />_${pAdj}_<br />_Hizmet: ${pNiche}_<br />**[${pQual}](${pUrl})**`;
     cells.push(cellText);
   }
 

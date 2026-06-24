@@ -3,15 +3,15 @@ import { NodeSSH } from 'node-ssh';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '187.77.111.203',
+  host: '31.97.79.34',
   username: 'root',
-  password: 'Z4-nN8JfiUIh5,;g'
+  password: 'Oym@icdLt?vY8YQy'
 };
 
 async function run() {
   try {
     await ssh.connect(config);
-    console.log('✅ Connected to 187.77.111.203.');
+    console.log('✅ Connected to 31.97.79.34.');
 
     console.log('🔄 Overwriting .env on VPS with local variables containing GOOGLE_WORKSPACE_EMAIL...');
     
@@ -43,7 +43,7 @@ HUGGINGFACE_BASE_URL="https://api-inference.huggingface.co/v1"
 HUGGINGFACE_DEFAULT_MODEL="mistralai/Mistral-7B-Instruct-v0.3"
 GOOGLE_PROJECT_ID="karacocuk"
 GOOGLE_PROJECT_NUMBER="117929191270923435802"
-PRODUCTION_SERVER_IP="187.77.111.203"
+PRODUCTION_SERVER_IP="31.97.79.34"
 GOOGLE_CLIENT_ID="279960646827-n81r57arr7ikvjcbs2ooc08om5kppkm7.apps.googleusercontent.com"
 GOOGLE_CLIENT_SECRET="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"
 GOOGLE_REDIRECT_URI="https://escortvip.net/api/auth/callback/google"
@@ -75,9 +75,9 @@ DATABASE_URL="postgresql://vuc2026_user:vuc2026_pass@213.232.235.181:5432/vuc202
 SSH_HOST="213.232.235.181"
 SSH_USER="root"
 SSH_PASSWORD="4TVuj7qiHMfh7CxH6K!"
-ATTACK_SERVER_IP="187.77.111.203"
+ATTACK_SERVER_IP="31.97.79.34"
 ATTACK_SERVER_USER="root"
-ATTACK_SERVER_PASS="Z4-nN8JfiUIh5,;g"`;
+ATTACK_SERVER_PASS="Oym@icdLt?vY8YQy"`;
 
     // Write file directly using ssh
     await ssh.execCommand(`cat << 'EOF' > /root/esc/.env\n${newEnv}\nEOF`);

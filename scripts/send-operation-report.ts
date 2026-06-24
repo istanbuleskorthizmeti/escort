@@ -23,7 +23,7 @@ const report =
   `🎯 <b>PHASE 3: OTONOM LOKAL FETİH (CTR & GPS):</b>\n` +
   `• <b>GPS Spoofing & Residential Proxy:</b> İstanbul'daki 11 kritik bölge (Karaköy, Şişli, Beşiktaş, Kadıköy, Esenyurt, Beylikdüzü, Bakırköy, Ataşehir, Ümraniye, Maltepe, Sarıyer) koordinat düzeyinde simüle edildi.\n` +
   `• tarayıcılarımız konut proxyleri üzerinden sitemizi ziyaret edip yavaş kaydırma etkileşimi yaparak organik yerel trafik sinyalleri (CTR) gönderdi. Ekran görüntüleri diske işlendi.\n\n` +
-  `🚀 <b>REMOTE PRODUCTION DEPLOY (187.77.111.203):</b>\n` +
+  `🚀 <b>REMOTE PRODUCTION DEPLOY (31.97.79.34):</b>\n` +
   `• Tüm yenilenmiş algoritmalar VPS üzerindeki <code>/var/www/escortvip/</code> dizinine sorunsuz yüklenip Next.js Production derlemesi başarıyla tamamlandı.\n` +
   `• PM2 cluster süreçleri ve Nginx konfigürasyon/cache temizlik işlemleri sıfır gecikmeyle uygulandı.\n\n` +
   `<i>#HydraFleet #SEOConquest #GodModeDeployed #CTRShield</i>`;

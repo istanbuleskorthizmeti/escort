@@ -3,7 +3,7 @@ import * as path from 'path';
 import axios from 'axios';
 import { istanbulCity } from '../lib/locations-registry/istanbul';
 
-const HOST = 'escort-randevu.stoplight.io';
+const HOST = 'istanbul-eskort-hizmeti.readme.io';
 const BING_INDEX_NOW = 'https://www.bing.com/indexnow';
 const INDEX_NOW_KEY = '8f7c9e0a2b4d6f8a0c2e4f6a8b0d2e4f';
 

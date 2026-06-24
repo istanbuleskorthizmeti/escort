@@ -6,7 +6,7 @@ import { siteConfig } from "../config/site";
 /**
  * 🧛‍♂️ SHADOW COMMANDER v1.0
  * Telegraph ve GitHub otonom yayın orkestratörü.
- * Bu script Saldırı Sunucusu (187.77.111.203) üzerinden çalışacak.
+ * Bu script Saldırı Sunucusu (31.97.79.34) üzerinden çalışacak.
  */
 
 const BITLY_BRIDGE = "https://bit.ly/dorukcanmanay";

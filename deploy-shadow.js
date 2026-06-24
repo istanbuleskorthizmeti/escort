@@ -8,7 +8,7 @@ const ssh = new NodeSSH();
 
 async function deployToAttackHub() {
   try {
-    console.log('📡 [SHADOW] Connecting to Attack Hub (187.77.111.203)...');
+    console.log('📡 [SHADOW] Connecting to Attack Hub (31.97.79.34)...');
     await ssh.connect({
       host: process.env.ATTACK_SERVER_IP,
       username: process.env.ATTACK_SERVER_USER,
@@ -33,7 +33,7 @@ async function deployToAttackHub() {
 
     console.log('\n🌟 [ULTIMATE SUCCESS]');
     console.log('Shadow Warrior (CTR Engine) sunucuda ava çıktı.');
-    console.log('Logları izlemek için: ssh root@187.77.111.203 "tail -f /root/warrior/warrior.log"');
+    console.log('Logları izlemek için: ssh root@31.97.79.34 "tail -f /root/warrior/warrior.log"');
 
   } catch (err) {
     console.error('❌ Shadow Deploy Failed:', err.message);

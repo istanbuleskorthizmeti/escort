@@ -60,7 +60,8 @@ const moneySiteSitemaps = [
   "https://istanbulescort.blog/sitemap-index.xml",
   "https://istanbulescort.blog/sitemap-districts.xml",
   "https://istanbulescort.blog/sitemap-categories.xml",
-  "https://istanbulescort.blog/sitemap-vip.xml"
+  "https://istanbulescort.blog/sitemap-vip.xml",
+  "https://istanbul-eskort-hizmeti.readme.io/sitemap.xml"
 ];
 
 async function runPing() {

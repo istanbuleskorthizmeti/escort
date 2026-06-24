@@ -27,7 +27,7 @@ export default function DownloadAppPage() {
             ESCORTVIP <span className="text-transparent bg-clip-text bg-linear-to-r from-rose-600 to-rose-400">MOBİL UYGULAMA</span>
           </h1>
           <p className="text-zinc-400 text-sm max-w-xl mx-auto leading-relaxed">
-            Erişim engellerine takılmadan, en yeni VIP profillere ve kaporasız güvenilir escort ilanlarına anında ulaşmak için resmi uygulamamızı cihazınıza yükleyin.
+            Erişim engellerine takılmadan, en yeni VIP profillere ve kaporasız güvenilir escort profillerine anında ulaşmak için resmi uygulamamızı cihazınıza yükleyin.
           </p>
         </header>
 
@@ -91,7 +91,7 @@ export default function DownloadAppPage() {
                   <Info className="w-4 h-4" /> Kaporasız Randevu
                 </div>
                 <p className="text-xs text-zinc-500">
-                  Uygulama üzerinden doğrudan ilan sahiplerine WhatsApp ve arama ile anında, kaporasız randevu talebi.
+                  Uygulama üzerinden doğrudan profil sahiplerine WhatsApp ve arama ile anında, kaporasız randevu talebi.
                 </p>
               </div>
             </div>

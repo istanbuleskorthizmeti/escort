@@ -38,9 +38,8 @@ async function runForceIndexing() {
     console.log(`   Page URL: ${exactPageUrl}`);
     console.log(`   Sitemap URL: ${sitemapUrl}`);
     
-    // 1. Submit Sitemap via Search Console API
-    console.log(`   📡 Sitemaps API Gönderimi Başlıyor...`);
-    await googleAuth.submitSitemap(basePropertyUrl, sitemapUrl);
+    // 1. Skip Sitemap submission (New Google Sites return 404 for /system/feeds/sitemap)
+    console.log(`   📡 Skipping sitemap submission (Not supported on modern Google Sites)`);
 
     // 2. Force Index via Indexing API
     console.log(`   🚀 Indexing API (URL Notification) Gönderimi Başlıyor...`);

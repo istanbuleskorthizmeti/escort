@@ -25,8 +25,14 @@ import { SEOContentEngine } from "../../components/SEO/SEOContentEngine";
 import { UserReviews } from "../../components/SEO/UserReviews";
 import { getDeterministicRating } from "../../lib/seo-schema";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600; // Cache as static HTML, regenerate in background (ISR)
 export const dynamicParams = true;
+
+export async function generateStaticParams() {
+  return [
+    { city: 'istanbul' }
+  ];
+}
 
 export async function generateMetadata({
   params,

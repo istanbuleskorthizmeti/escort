@@ -7,7 +7,7 @@ const config = getSSHConfig();
 
 async function run() {
   try {
-    console.log('🚀 [DEPLOY RE-MED] Connecting to root@187.77.111.203...');
+    console.log('🚀 [DEPLOY RE-MED] Connecting to root@31.97.79.34...');
     await ssh.connect(config);
     console.log('✅ Connected to VPS.');
 

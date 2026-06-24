@@ -266,6 +266,24 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
       "VIP partnerlerimizle randevularınızda <strong>sevgili konsepti, sınırsız eğlence, özel otel eşlik hizmetleri ve çiftlere özel seanslar</strong> sunulmaktadır. Karşılıklı güven ve gizlilik en hassas kuralımızdır.",
       "Metropol genelinde <strong>kaporasız güvenli randevu, otele ve eve gelen genç kız modeller, anal ve oral seanslar</strong> VIP standartlarda gerçekleştirilmektedir. Doğrulanmış telefon numaralarından anında rezervasyon yapabilirsiniz."
     ];
+  } else if (host.includes('istanbulescort.blog') && !isCloaker) {
+    sgeTemplates = [
+      "🔥 <strong>{currentLoc} VIP Ateşli Eskort</strong> ve lüks partner randevu sistemi ❤️🔥. %100 gerçek görselli, kaporasız ve tamamen gizli kraliçeler ile unutulmaz geceler.",
+      "👑 <strong>{currentLoc} Eskort Kraliçe Randevu</strong> ve muhteşem VIP eşlik hizmetleri. Ateşli, gizli, lüks ve %100 gerçek sultanlar 💋.",
+      "✨ En lüks <strong>{currentLoc} Escort Bayan</strong> seçenekleri ile muhteşem ve unutulmaz bir GFE deneyimi. Ön ödemesiz ve %100 gerçek partnerler 😈."
+    ];
+
+    p1Templates = [
+      "Ateşli, gizli ve lüks yaşam stili arayanlar için hazırlanan <span class=\"text-white font-black underline decoration-(--primary-color)/50\">{currentLoc} Escort Bayan</span> vitrinimizdesiniz ❤️🔥. Portalımızdaki tüm kraliçeler %100 gerçek görsellerle akredite edilmiş olup, tamamen kaporasız çalışmaktadır. Unutulmaz ve muhteşem bir sultan randevusu için en yakın modelinizi seçin 💋.",
+      "Seçkin beylerin en hiddetli buluşma noktası olan <span class=\"text-white font-black underline decoration-(--primary-color)/50\">{currentLoc} VIP Ateşli Eskort</span> sayfamızla rüya gibi bir geceye adım atın 👑. Gerçek stüdyo görselleriyle doğrulanmış, otele ve eve servis sağlayan muhteşem modellerimizle gizli randevunuzu anında planlayın ✨.",
+      "Kusursuzluğu hedefleyen lüks <span class=\"text-white font-black underline decoration-(--primary-color)/50\">{currentLoc} Eskort Kraliçe Randevu</span> rehberine hoş geldiniz 💎. %100 gerçek ve güvenilir partnerler ile gizlilik, yüksek hijyen standartları ve unutulmaz anlar sunuyoruz 🌹."
+    ];
+
+    warnTemplates = [
+      "Buluşmalarımızda <strong>GFE (sevgili tadında deneyim), sınırsız oral, derin boğaz, saatlik & gecelik elit eşlik seansları ve lüks fanteziler</strong> konuklarımızın tercihine göre sunulur 😈. Tüm görseller %100 gerçek olup, kapora veya ön ödeme talebi kesinlikle yoktur 🔥.",
+      "VIP partnerlerimizle randevularınızda <strong>sevgili konsepti, sınırsız eğlence, özel otel eşlik hizmetleri ve çiftlere özel seanslar</strong> sunulmaktadır ✨. Karşılıklı güven ve gizlilik en hassas kuralımızdır 👑.",
+      "Metropol genelinde <strong>kaporasız güvenli randevu, otele ve eve gelen genç kız modeller, anal ve oral seanslar</strong> VIP standartlarda gerçekleştirilmektedir 💋. Doğrulanmış telefon numaralarından anında rezervasyon yapabilirsiniz 🌹."
+    ];
   }
 
   const processTemplate = (template: string) => {
@@ -385,6 +403,37 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
                 ))}
               </div>
             </div>
+
+            {host.includes('istanbulescort.blog') && geoData.neighborhoods && (
+              <div className="p-8 bg-zinc-900/30 backdrop-blur-xl border border-(--primary-color)/20 rounded-[3rem]">
+                <h3 className="text-xs font-black text-(--primary-color) uppercase tracking-[0.4em] mb-8 border-b border-zinc-800 pb-4 flex items-center gap-2">
+                  <span>🔥 ATEŞLİ MAHALLE GRUPLARI ✨</span>
+                </h3>
+                <div className="flex flex-col gap-3">
+                  {geoData.neighborhoods.map((neigh) => {
+                    const seedVal = neigh.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+                    const neighTitles = [
+                      `👑 ${neigh} Escort Bayan`,
+                      `🔥 ${neigh} VIP Ateşli Eskort`,
+                      `😈 ${neigh} Eskort Kraliçe`
+                    ];
+                    const selectedNeighTitle = neighTitles[seedVal % neighTitles.length];
+                    const targetDistSlug = slugify(districtName || 'istanbul');
+                    const neighSlug = slugify(neigh);
+                    return (
+                      <Link
+                        key={neigh}
+                        href={`/istanbul/${targetDistSlug}/${neighSlug}`}
+                        className="text-xs font-bold text-zinc-400 hover:text-white transition-colors flex items-center justify-between group"
+                      >
+                        <span>{selectedNeighTitle}</span>
+                        <span className="text-(--primary-color) opacity-0 group-hover:opacity-100 transition-opacity">❤️🔥</span>
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
             <div className="p-8 bg-zinc-900/30 backdrop-blur-xl border border-zinc-800 rounded-[3rem]">
               <h3 className="text-xs font-black text-zinc-500 uppercase tracking-[0.4em] mb-8 border-b border-zinc-800 pb-4">

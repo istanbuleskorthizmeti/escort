@@ -4,9 +4,9 @@ import fs from 'fs';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '187.77.111.203',
+  host: '31.97.79.34',
   username: 'root',
-  password: 'Z4-nN8JfiUIh5,;g'
+  password: 'Oym@icdLt?vY8YQy'
 };
 
 async function run() {

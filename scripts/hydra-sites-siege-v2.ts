@@ -181,6 +181,31 @@ async function executeSiegeStep(page: any, districtSlug: string, round: number, 
     await page.keyboard.press('Enter');
     await new Promise(r => setTimeout(r, 2000));
 
+    // 2.5 Add Native Text Box (Indexable Local SEO Content)
+    console.log("✍️ Adding native Text Box for SEO article...");
+    const textBoxClicked = await page.evaluate(() => {
+        const selectors = ['[aria-label="Text box"]', '[aria-label="Metin kutusu"]', '[data-tooltip="Metin kutusu"]', '[data-tooltip="Text box"]'];
+        for (const sel of selectors) {
+            const el = document.querySelector(sel) as HTMLElement;
+            if (el) { el.click(); return true; }
+        }
+        return false;
+    });
+    if (!textBoxClicked) {
+        console.warn("⚠️ Could not find Text box button, trying button text search...");
+        const textBoxBtn = await findButton(page, 'Text box');
+        const metinBtn = await findButton(page, 'Metin kutusu');
+        if (textBoxBtn) await textBoxBtn.click();
+        else if (metinBtn) await metinBtn.click();
+    }
+    await new Promise(r => setTimeout(r, 4000)); // Wait for text box to be created and focused
+    
+    // Type article text into active text editor
+    const articleText = generateArticleText(districtName, neighbors);
+    console.log(`✍️ Typing SEO article into native text box (${articleText.length} chars)...`);
+    await page.keyboard.type(articleText, { delay: 10 });
+    await new Promise(r => setTimeout(r, 3000));
+
     if (isTraining) await wait("Embed menüsü ve Kod Enjeksiyonu...");
     await page.click('[aria-label="Embed"]');
     await page.waitForSelector('div[role="tablist"] div:nth-child(2)', { timeout: 5000 });
@@ -360,6 +385,23 @@ function generateKeywordCloud(districtSlug: string): string {
     return district.neighborhoods.map(n => {
         return `${district.name} ${n.name} escort, ${n.name} vip partner, ${n.name} elit escort`;
     }).join(", ");
+}
+
+function generateArticleText(district: string, neighbors: string[]): string {
+    const currentYear = new Date().getFullYear();
+    const cleanNeighbors = neighbors.slice(0, 10).join(', ');
+    return `${district} Escort Hizmeti - VIP ve Kaporasız Partnerler ${currentYear}\n\n` +
+           `${district} genelinde kaporasız, ön ödemesiz ve tamamen adreste elden ödemeli çalışan bireysel escort partnerlerin güncel listesine ulaşmak için doğru yerdesiniz. ` +
+           `Tamamı teyitli ve gerçek görsellerden oluşan elit refakatçi alternatiflerimiz, siz değerli misafirlerimize unutulmaz anlar yaşatmak için hazırdır. ` +
+           `${district} escort bayan seçenekleri arasından dilediğiniz profili tercih ederek doğrudan iletişime geçebilir, güvenli randevunuzu hemen oluşturabilirsiniz.\n\n` +
+           `Neden Bizim VIP Partnerlerimiz?\n` +
+           `- %100 Gerçek Görsel Garantisi: Görsellerin tamamı canlı video veya teyit süreçlerinden geçmiş gerçek kişilere aittir.\n` +
+           `- Kaporasız ve Güvenli Hizmet: Ön ödeme yapmadan, kapora dolandırıcılarına bulaşmadan, buluşmada adreste nakit ödeme yapabilirsiniz.\n` +
+           `- Lüks Rezidans & 5 Yıldızlı Otel Servisi: Belirttiğiniz adrese veya otele en kısa sürede ulaşım sağlanır.\n\n` +
+           `Hizmet Bölgeleri ve Semtler:\n` +
+           `Bağımsız partnerlerimizin aktif olarak hizmet verdiği bölgeler: ${district} ve yakın çevresindeki ${cleanNeighbors} semtleri.\n\n` +
+           `Anahtar Kelimeler:\n` +
+           `${district} escort, ${district} eskort, kaporasız ${district} escort, ${district} üniversiteli eskort, ${district} rus escort, ${district} vip eskort.`;
 }
 
 runSiege();

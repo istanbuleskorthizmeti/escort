@@ -5,14 +5,14 @@ import fs from 'fs';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '187.77.111.203',
+  host: '31.97.79.34',
   username: 'root',
-  password: 'Z4-nN8JfiUIh5,;g'
+  password: 'Oym@icdLt?vY8YQy'
 };
 
 async function deployGoogleKey() {
   try {
-    console.log('🚀 [DEPLOY GOOGLE KEY] Connecting to root@187.77.111.203...');
+    console.log('🚀 [DEPLOY GOOGLE KEY] Connecting to root@31.97.79.34...');
     await ssh.connect(config);
     console.log('✅ Connected.');
 

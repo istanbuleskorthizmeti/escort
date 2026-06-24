@@ -35,7 +35,7 @@ export function CloakerFrontend({ districtName, host }: CloakerFrontendProps) {
 
     const logTemplates = [
       `🔍 Target [${inputValue}] analysis requested...`,
-      `🌐 Initiating secure tunnel over 187.77.111.203 node...`,
+      `🌐 Initiating secure tunnel over 31.97.79.34 node...`,
       `📦 Querying local ${loc} registry data indices...`,
       `⚠️ Potential match signatures detected in regional records...`,
       `🔐 Establishing SSL authentication with API HQ...`,
@@ -240,7 +240,7 @@ export function CloakerFrontend({ districtName, host }: CloakerFrontendProps) {
                   {fleetConfig?.domain.split('.')[0].toUpperCase()} MODULE
                 </h1>
                 <p className="text-[9px] text-zinc-500 font-bold uppercase tracking-widest">
-                  🔒 DEEPSEC DEPLOYMENT PORTAL // 187.77.111.203
+                  🔒 DEEPSEC DEPLOYMENT PORTAL // 31.97.79.34
                 </p>
               </div>
             </div>

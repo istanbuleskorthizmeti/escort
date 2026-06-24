@@ -2,6 +2,9 @@ import { google } from 'googleapis';
 import { JWT } from 'google-auth-library';
 import fs from 'fs';
 import path from 'path';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 async function run() {
   console.log('🏁 [ANALYTICS] Loading credentials...');
@@ -95,7 +98,7 @@ async function run() {
       }
 
       // 2. Fetch GA4 property report if configured in environment
-      const propertyId = process.env.GOOGLE_GA4_PROPERTY_ID || '389963655';
+      const propertyId = process.env.GOOGLE_GA4_PROPERTY_ID || '536316143';
       if (propertyId) {
         reportText += `#### 📊 GA4 Property Insights (Property ID: \`${propertyId}\`)\n\n`;
         try {

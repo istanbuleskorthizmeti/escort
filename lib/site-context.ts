@@ -16,7 +16,7 @@ export function getCanonicalHost(host: string): string {
   // Remove trailing dots that could be injected
   domain = domain.replace(/\.+$/, '');
   
-  if (domain === 'localhost' || domain === '127.0.0.1' || domain === '213.232.235.181' || domain === '187.77.111.203' || domain === '45.93.137.164') {
+  if (domain === 'localhost' || domain === '127.0.0.1' || domain === '213.232.235.181' || domain === '31.97.79.34' || domain === '45.93.137.164') {
     return 'istanbulescort.blog';
   }
   return domain;

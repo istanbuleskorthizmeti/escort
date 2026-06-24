@@ -72,6 +72,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
+    "postcss": "^8",
     "@types/form-data": "^2.5.2",
     "@types/node": "^20",
     "@types/pdfkit": "^0.13.9",

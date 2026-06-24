@@ -10,9 +10,9 @@ async function launch() {
   try {
     console.log('📡 [GOD MODE] Connecting to Production Server...');
     await ssh.connect({
-      host: process.env.ATTACK_SERVER_IP || process.env.SSH_HOST || '187.77.111.203',
+      host: process.env.ATTACK_SERVER_IP || process.env.SSH_HOST || '31.97.79.34',
       username: process.env.ATTACK_SERVER_USER || process.env.SSH_USER || 'root',
-      password: process.env.ATTACK_SERVER_PASS || process.env.SSH_PASSWORD || 'Z4-nN8JfiUIh5,;g'
+      password: process.env.ATTACK_SERVER_PASS || process.env.SSH_PASSWORD || 'Oym@icdLt?vY8YQy'
     });
 
     console.log('✅ Connected.');
@@ -56,7 +56,7 @@ async function launch() {
 
     console.log('\n🌟 [MISSION SUCCESS]');
     console.log('Taarruz sunucu tarafında (Alexhost) otonom olarak başladı.');
-    console.log('İlerlemeyi izlemek için: ssh root@187.77.111.203 "tail -f /root/esc/siege.log"');
+    console.log('İlerlemeyi izlemek için: ssh root@31.97.79.34 "tail -f /root/esc/siege.log"');
 
   } catch (err) {
     console.error('❌ Launch Failed:', err.message);

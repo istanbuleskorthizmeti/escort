@@ -2,7 +2,7 @@ const https = require('https');
 
 const CF_TOKEN = 'cfat_JwtaN2nqkC7QxGItIaAbu2nA6TyojAqHS7DWfvpse525d170';
 const OLD_IP = '213.232.235.181';
-const NEW_IP = '187.77.111.203';
+const NEW_IP = '31.97.79.34';
 
 async function apiCall(path, method = 'GET', body = null) {
   return new Promise((resolve, reject) => {

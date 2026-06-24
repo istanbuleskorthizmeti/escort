@@ -4,15 +4,15 @@ import path from 'path';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '187.77.111.203',
+  host: '31.97.79.34',
   port: 22,
   username: 'root',
-  password: 'Z4-nN8JfiUIh5,;g'
+  password: 'Oym@icdLt?vY8YQy'
 };
 
 async function run() {
   try {
-    console.log('🚀 [DEPLOY] Connecting to root@187.77.111.203...');
+    console.log('🚀 [DEPLOY] Connecting to root@31.97.79.34...');
     await ssh.connect(config);
     console.log('✅ Connected.');
 
@@ -52,6 +52,7 @@ async function run() {
       { local: 'app/page.tsx', remote: '/var/www/escortvip/app/page.tsx' },
       { local: 'app/amp/route.ts', remote: '/var/www/escortvip/app/amp/route.ts' },
       { local: 'app/go/[id]/route.ts', remote: '/var/www/escortvip/app/go/[id]/route.ts' },
+      { local: 'app/whatsapp/route.ts', remote: '/var/www/escortvip/app/whatsapp/route.ts' },
       { local: 'app/api/media/route.ts', remote: '/var/www/escortvip/app/api/media/route.ts' },
       { local: 'app/api/media/vitrin/[filename]/route.ts', remote: '/var/www/escortvip/app/api/media/vitrin/[filename]/route.ts' },
       { local: 'lib/seo-metadata.ts', remote: '/var/www/escortvip/lib/seo-metadata.ts' },

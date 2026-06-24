@@ -4,9 +4,9 @@ const ssh = new NodeSSH();
 async function run() {
   try {
     await ssh.connect({
-      host: '187.77.111.203',
+      host: '31.97.79.34',
       username: 'root',
-      password: 'Z4-nN8JfiUIh5,;g'
+      password: 'Oym@icdLt?vY8YQy'
     });
     
     const command = process.argv[2] || 'ls -la /root';

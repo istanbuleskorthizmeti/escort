@@ -3,6 +3,7 @@ import stealth from 'puppeteer-extra-plugin-stealth';
 import path from 'path';
 import fs from 'fs';
 import { TelegramService } from '../lib/crm/telegram';
+import { ISTANBUL_NEIGHBORS } from '../lib/seo/neighborhood-map';
 
 // Anti-Bot Stealth Modülü Aktif
 chromium.use(stealth());
@@ -142,6 +143,36 @@ export class GoogleSitesFactory {
             await editorPage.keyboard.press('Enter');
             await editorPage.waitForTimeout(4000);
 
+            // 2.5 Add Native Text Box (Indexable Local SEO Content)
+            console.log("✍️ Adding native Text Box for SEO article...");
+            const textBoxClicked = await editorPage.evaluate(() => {
+                const selectors = ['[aria-label="Text box"]', '[aria-label="Metin kutusu"]', '[data-tooltip="Metin kutusu"]', '[data-tooltip="Text box"]'];
+                for (const sel of selectors) {
+                    const el = document.querySelector(sel) as HTMLElement;
+                    if (el) { el.click(); return true; }
+                }
+                return false;
+            });
+            if (!textBoxClicked) {
+                console.warn("⚠️ Could not find Text box button via selectors, trying button text search...");
+                const buttons = await editorPage.$$('button');
+                for (const btn of buttons) {
+                    const btnText = await editorPage.evaluate((el: any) => el.textContent, btn);
+                    if (btnText?.toLowerCase().includes('text box') || btnText?.toLowerCase().includes('metin kutusu')) {
+                        await btn.click();
+                        break;
+                    }
+                }
+            }
+            await editorPage.waitForTimeout(4000);
+
+            // Generate and type SEO article
+            const neighbors = ISTANBUL_NEIGHBORS[config.district.toLowerCase()] || [];
+            const articleText = generateArticleText(config.district.charAt(0).toUpperCase() + config.district.slice(1), neighbors);
+            console.log(`✍️ Typing SEO article into native text box (${articleText.length} chars)...`);
+            await editorPage.keyboard.type(articleText, { delay: 10 });
+            await editorPage.waitForTimeout(3000);
+
             // 3. Embed Menüsü
             console.log("🔗 Yerlestirme (Embed) menusu aciliyor...");
             await editorPage.evaluate(() => {
@@ -273,6 +304,23 @@ async function runPlaywrightSiege() {
     } finally {
         await factory.close();
     }
+}
+
+function generateArticleText(district: string, neighbors: string[]): string {
+    const currentYear = new Date().getFullYear();
+    const cleanNeighbors = neighbors.slice(0, 10).join(', ');
+    return `${district} Escort Hizmeti - VIP ve Kaporasız Partnerler ${currentYear}\n\n` +
+           `${district} genelinde kaporasız, ön ödemesiz ve tamamen adreste elden ödemeli çalışan bireysel escort partnerlerin güncel listesine ulaşmak için doğru yerdesiniz. ` +
+           `Tamamı teyitli ve gerçek görsellerden oluşan elit refakatçi alternatiflerimiz, siz değerli misafirlerimize unutulmaz anlar yaşatmak için hazırdır. ` +
+           `${district} escort bayan seçenekleri arasından dilediğiniz profili tercih ederek doğrudan iletişime geçebilir, güvenli randevunuzu hemen oluşturabilirsiniz.\n\n` +
+           `Neden Bizim VIP Partnerlerimiz?\n` +
+           `- %100 Gerçek Görsel Garantisi: Görsellerin tamamı canlı video veya teyit süreçlerinden geçmiş gerçek kişilere aittir.\n` +
+           `- Kaporasız ve Güvenli Hizmet: Ön ödeme yapmadan, kapora dolandırıcılarına bulaşmadan, buluşmada adreste nakit ödeme yapabilirsiniz.\n` +
+           `- Lüks Rezidans & 5 Yıldızlı Otel Servisi: Belirttiğiniz adrese veya otele en kısa sürede ulaşım sağlanır.\n\n` +
+           `Hizmet Bölgeleri ve Semtler:\n` +
+           `Bağımsız partnerlerimizin aktif olarak hizmet verdiği bölgeler: ${district} ve yakın çevresindeki ${cleanNeighbors} semtleri.\n\n` +
+           `Anahtar Kelimeler:\n` +
+           `${district} escort, ${district} eskort, kaporasız ${district} escort, ${district} üniversiteli eskort, ${district} rus escort, ${district} vip eskort.`;
 }
 
 // Only run if executed directly

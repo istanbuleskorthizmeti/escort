@@ -23,7 +23,7 @@ export default function HakkimizdaPage() {
             ÖTESİNDEYİZ.
           </h1>
           <p className="text-zinc-500 text-xl md:text-2xl font-medium max-w-3xl mx-auto leading-relaxed italic">
-            &quot;EscortVIP, sıradan bir ilan dizini değildir. Lüks eşlik dünyasında sarsılmaz bir güven kalesi, dijital bir gizlilik kalkanı ve elit yaşam tarzının mutlak temsilcisidir.&quot;
+            &quot;EscortVIP, sıradan bir dizin değildir. Lüks eşlik dünyasında sarsılmaz bir güven kalesi, dijital bir gizlilik kalkanı ve elit yaşam tarzının mutlak temsilcisidir.&quot;
           </p>
         </section>
 

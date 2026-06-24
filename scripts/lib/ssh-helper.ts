@@ -7,9 +7,9 @@ dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 export const getSSHConfig = () => {
   return {
-    host: process.env.ATTACK_SERVER_IP || '187.77.111.203',
+    host: process.env.ATTACK_SERVER_IP || '31.97.79.34',
     username: process.env.ATTACK_SERVER_USER || 'root',
-    password: process.env.ATTACK_SERVER_PASS || 'Z4-nN8JfiUIh5,;g'
+    password: process.env.ATTACK_SERVER_PASS || 'Oym@icdLt?vY8YQy'
   };
 };
 

@@ -1,5 +1,8 @@
 ---
 title: Welcome to İstanbul Vip Companion Guide
+excerpt: >-
+  İstanbul genelinde en prestijli, %100 gerçek fotoğraflı ve doğrulanmış
+  bağımsız model ilanlarına ulaşabileceğiniz Vip escort rehberimize hoş geldiniz
 hidden: false
 ---
 

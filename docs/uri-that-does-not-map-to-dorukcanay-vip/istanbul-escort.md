@@ -5,6 +5,7 @@ excerpt: >-
   escort ilanları. En popüler İstanbul eskort bayan vitrini.
 category: dorukcanay-vip
 hidden: false
+icon: 😍
 metadata:
   title: İstanbul Escort | %100 Gerçek ve Kaporasız DorukcanAY Vip Hizmeti
   description: >-

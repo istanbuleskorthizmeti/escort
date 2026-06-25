@@ -32,7 +32,7 @@ export class RichSchemaBuilder {
       "priceRange": "$$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": `${options.locationName} VIP Concept Suites`,
+        "streetAddress": `${options.locationName} Merkez Caddesi No:12`,
         "addressLocality": options.locationName,
         "addressRegion": options.city,
         "addressCountry": "TR"

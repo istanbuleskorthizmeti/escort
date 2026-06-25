@@ -76,6 +76,10 @@ export const istanbulCity: City = {
         "slug": "sefakoy"
       },
       {
+        "name": "Beşyol",
+        "slug": "besyol"
+      },
+      {
         "name": "Cennet",
         "slug": "cennet"
       },

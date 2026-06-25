@@ -30,16 +30,14 @@ async function run() {
     fs.mkdirSync(USER_DATA_DIR, { recursive: true });
   }
 
-  console.log("🔌 Connecting to running Chrome on port 9222...");
-  const browser = await chromium.connectOverCDP('http://localhost:9222');
-  const contexts = browser.contexts();
-  
-  if (contexts.length === 0) {
-    console.error("❌ No contexts found!");
-    return;
-  }
+  console.log("🔌 Launching local Chromium with persistent context...");
+  const browser = await chromium.launchPersistentContext(USER_DATA_DIR, {
+    headless: false,
+    viewport: { width: 1280, height: 720 },
+    args: ['--disable-blink-features=AutomationControlled']
+  });
 
-  const context = contexts[0];
+  const context = browser;
   
   try {
     // 1. Initial GSC validation / login check

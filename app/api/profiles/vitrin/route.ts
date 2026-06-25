@@ -12,12 +12,13 @@ export async function GET() {
     
     // Attempting to fetch from pageContent as placeholders or profiles if they exist
     const profiles = [
-      { id: '1', name: 'Hazal', age: 22, image: 'https://istanbulescort.blog/vitrin/hazal_new.png', tier: 'ELITE' },
-      { id: '2', name: 'Albena', age: 24, image: 'https://istanbulescort.blog/images/vip-1.png', tier: 'SUPREME' },
-      { id: '3', name: 'Ceren', age: 21, image: 'https://istanbulescort.blog/images/vip-2.png', tier: 'ELITE' },
-      { id: '4', name: 'Naz', age: 25, image: 'https://istanbulescort.blog/images/vip-3.png', tier: 'SUPREME' },
-      { id: '5', name: 'Buse', age: 23, image: 'https://istanbulescort.blog/vitrin/vip-profil-2.webp', tier: 'ELITE' },
-      { id: '6', name: 'Selda', age: 26, image: 'https://istanbulescort.blog/vitrin/vip-profil-9.webp', tier: 'SUPREME' },
+      { id: '1', name: 'Hazal', age: 22, image: '/_media/vitrin/vip-profil-10.webp', tier: 'ELITE' },
+      { id: 'ad-1', isAdBanner: true, name: 'Google Harita + SEO', title: 'reklam vermek için tıklayınız!', brand: 'DORUKCAN AY', image: '/dorukcanay-logo.jpg', tier: 'OFFSHORE' },
+      { id: '2', name: 'Albena', age: 24, image: '/_media/vitrin/vip-profil-20.webp', tier: 'SUPREME' },
+      { id: '3', name: 'Ceren', age: 21, image: '/_media/vitrin/vip-profil-30.webp', tier: 'ELITE' },
+      { id: '4', name: 'Naz', age: 25, image: '/_media/vitrin/vip-profil-40.webp', tier: 'SUPREME' },
+      { id: '5', name: 'Buse', age: 23, image: '/_media/vitrin/vip-profil-50.webp', tier: 'ELITE' },
+      { id: '6', name: 'Selda', age: 26, image: '/_media/vitrin/vip-profil-60.webp', tier: 'SUPREME' },
     ];
 
     return NextResponse.json(profiles, {

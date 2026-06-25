@@ -6,41 +6,54 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const CLONE_DIR = 'c:\\Users\\onurk\\esc\\temp-clone-tamkumarbaz';
-const DOCS_DIR = path.join(CLONE_DIR, 'docs', 'uri-that-does-not-map-to-dorukcanay-vip');
+const DOCS_DIR = path.join(CLONE_DIR, 'docs', 'istanbul-escort-hizmetleri-2026-drkcn');
 const GITHUB_PAT = process.env.GITHUB_PAT;
 const REPO_URL = 'https://github.com/tamkumarbaz/tamkumarbaz.git';
 
+function walkDirs(dir: string): string[] {
+  let results: string[] = [];
+  if (!fs.existsSync(dir)) return results;
+  const list = fs.readdirSync(dir);
+  list.forEach((file) => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    if (stat && stat.isDirectory()) {
+      results = results.concat(walkDirs(filePath));
+    } else if (file.endsWith('.md')) {
+      results.push(filePath);
+    }
+  });
+  return results;
+}
+
 async function run() {
-  console.log(`🧹 Starting MDX Cleanup for First ReadMe Project in: ${DOCS_DIR}`);
+  const baseDocsDir = path.join(CLONE_DIR, 'docs');
+  console.log(`🧹 Starting recursive MDX Cleanup in: ${baseDocsDir}`);
 
-  if (!fs.existsSync(DOCS_DIR)) {
-    console.error(`❌ Directory not found: ${DOCS_DIR}`);
-    process.exit(1);
-  }
-
-  const files = fs.readdirSync(DOCS_DIR);
+  const mdFiles = walkDirs(baseDocsDir);
   let fixedCount = 0;
 
-  for (const file of files) {
-    if (file.endsWith('.md')) {
-      const filePath = path.join(DOCS_DIR, file);
-      let content = fs.readFileSync(filePath, 'utf8');
-      
-      const originalLength = content.length;
+  for (const filePath of mdFiles) {
+    let content = fs.readFileSync(filePath, 'utf8');
+    const originalContent = content;
 
-      // 1. Remove style block
-      content = content.replace(/<style>[\s\S]*?<\/style>/g, '');
+    // 1. Remove style block
+    content = content.replace(/<style>[\s\S]*?<\/style>/g, '');
 
-      // 2. Replace the div style banner with a clean, MDX-compliant blockquote alert
-      const divRegex = /<div style="background: linear-gradient[\s\S]*?<\/div>/g;
-      const cleanBanner = `> [!IMPORTANT]\n> ### 👑 BAĞIMSIZ MODEL İLANINIZI YAYINLAYIN\n> İstanbul genelinde günlük yüzbinlerce ziyaretçiye ulaşan vitrinimizde yerinizi alın. Kaporasız ve elden ödemeli VIP profilinizle kazanmaya başlayın.\n> **[✨ İLAN VERMEK İÇİN TIKLAYINIZ (Elden Ödemeli)](https://dorukcanay.digital)**`;
-      
-      content = content.replace(divRegex, cleanBanner);
+    // 2. Replace the div style banner with a clean, MDX-compliant blockquote alert
+    const divRegex = /<div style="background: linear-gradient[\s\S]*?<\/div>/g;
+    const cleanBanner = `> [!IMPORTANT]\n> ### 👑 BAĞIMSIZ MODEL İLANINIZI YAYINLAYIN\n> İstanbul genelinde günlük yüzbinlerce ziyaretçiye ulaşan vitrinimizde yerinizi alın. Kaporasız ve elden ödemeli VIP profilinizle kazanmaya başlayın.\n> **[✨ İLAN VERMEK İÇİN TIKLAYINIZ (Elden Ödemeli)](https://dorukcanay.digital)**`;
+    content = content.replace(divRegex, cleanBanner);
 
-      if (content.length !== originalLength) {
-        fs.writeFileSync(filePath, content, 'utf8');
-        fixedCount++;
-      }
+    // 3. Remove Google Verification meta tag
+    content = content.replace(/<meta name="google-site-verification"[\s\S]*?\/>/g, '');
+
+    // 4. Replace unclosed <br> tags with XHTML compliant <br />
+    content = content.replace(/<br>/g, '<br />');
+
+    if (content !== originalContent) {
+      fs.writeFileSync(filePath, content, 'utf8');
+      fixedCount++;
     }
   }
 
@@ -59,7 +72,7 @@ async function run() {
       console.log('ℹ️ No new changes to commit or commit skipped.');
     }
 
-    const token = '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';
+    const token = GITHUB_PAT;
     const authenticatedRemote = REPO_URL.replace('https://', `https://${token}@`);
 
 

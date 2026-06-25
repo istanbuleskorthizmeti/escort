@@ -9,22 +9,16 @@ dotenv.config();
 async function run() {
   console.log('🏁 [ANALYTICS] Loading credentials...');
   
-  const keyFiles = [
-    'hydra-gcp-key.json',
-    'google-key-sovereign.json',
-    'google-key-strong-return.json',
-    'google-key.json'
-  ];
+  const keyFiles = fs.readdirSync(process.cwd())
+    .filter(f => f.endsWith('.json') && (f.startsWith('google-key') || f.startsWith('hydra-gcp')));
+  
+  console.log('Found key files:', keyFiles);
 
   let reportText = `# 📊 Google Search Console & GA4 Performance Insights\n\n`;
   reportText += `Generated on: ${new Date().toISOString()}\n\n`;
 
   for (const file of keyFiles) {
     const keyPath = path.join(process.cwd(), file);
-    if (!fs.existsSync(keyPath)) {
-      reportText += `### ❌ Credential File: ${file}\nFile not found.\n\n---\n`;
-      continue;
-    }
 
     try {
       const keys = JSON.parse(fs.readFileSync(keyPath, 'utf8'));

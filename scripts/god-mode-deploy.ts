@@ -1,23 +1,27 @@
 import { NodeSSH } from 'node-ssh';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
-  username: 'root',
-  password: '5TVuj6qiHMfh8CxH9O!',
+  host: process.env.SSH_HOST || '31.97.79.34',
+  username: process.env.SSH_USER || 'root',
+  password: process.env.SSH_PASSWORD || '',
   readyTimeout: 20000
 };
 
 async function executeDeployment() {
   try {
-    console.log('🔐 [CONNECTING] Connecting to Alexhost Server...');
+    console.log(`🔐 [CONNECTING] Connecting to Server ${config.host}...`);
     await ssh.connect(config);
     console.log('✅ [CONNECTED] Access granted.');
 
+    const pat = process.env.GITHUB_PAT || '';
     const commands = [
       'rm -rf /root/esc',
-      'git clone https://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@github.com/guondyshop-del/hydra-god-mode.git /root/esc',
+      `git clone https://${pat}@github.com/guondyshop-del/hydra-god-mode.git /root/esc`,
       'cd /root/esc && npm install',
       'cd /root/esc && npx prisma generate',
       'cd /root/esc && npx next build',

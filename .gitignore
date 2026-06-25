@@ -82,3 +82,5 @@ scratch/
 /verification-*.png
 /logs/
 /tmp/
+/projex_profile/
+*.png

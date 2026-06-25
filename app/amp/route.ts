@@ -8,8 +8,93 @@ import { getCanonicalHost } from '@/lib/site-context';
 import { slugify, turkishToLower, toTitleCaseTR } from '@/lib/utils';
 import { getSafeVipProfileIdx } from '@/lib/vitrin-blacklist';
 import { DRKCNAYSpintax } from '@/lib/spintax-engine';
+import { cities } from '@/lib/locations';
 import fs from 'fs';
 import path from 'path';
+
+function resolveLocationContext(locParam: string | null, defaultCity: string, defaultDistrict: string): {
+  citySlug: string;
+  districtSlug: string;
+  neighborhoodSlug: string;
+} {
+  if (!locParam) {
+    return {
+      citySlug: defaultCity.toLowerCase(),
+      districtSlug: defaultDistrict.toLowerCase(),
+      neighborhoodSlug: ""
+    };
+  }
+
+  const cleanLoc = locParam.toLowerCase().replace(/-escort$/i, '').replace(/-eskort$/i, '');
+
+  // 1. Is cleanLoc a City?
+  if (cities[cleanLoc]) {
+    return {
+      citySlug: cleanLoc,
+      districtSlug: "",
+      neighborhoodSlug: ""
+    };
+  }
+
+  // 2. Is cleanLoc a District in any City?
+  for (const [cSlug, cityObj] of Object.entries(cities)) {
+    const dist = cityObj.districts.find(d => d.slug === cleanLoc);
+    if (dist) {
+      return {
+        citySlug: cSlug,
+        districtSlug: cleanLoc,
+        neighborhoodSlug: ""
+      };
+    }
+  }
+
+  // 3. Is cleanLoc a Landmark in any City?
+  for (const [cSlug, cityObj] of Object.entries(cities)) {
+    const landmark = cityObj.landmarks?.find(l => l.slug === cleanLoc);
+    if (landmark) {
+      return {
+        citySlug: cSlug,
+        districtSlug: cleanLoc,
+        neighborhoodSlug: ""
+      };
+    }
+  }
+
+  // 4. Is cleanLoc a Neighborhood in any District in any City?
+  for (const [cSlug, cityObj] of Object.entries(cities)) {
+    for (const distObj of cityObj.districts) {
+      const neigh = distObj.neighborhoods.find(n => n.slug === cleanLoc);
+      if (neigh) {
+        return {
+          citySlug: cSlug,
+          districtSlug: distObj.slug,
+          neighborhoodSlug: cleanLoc
+        };
+      }
+    }
+  }
+
+  // 5. Check if it starts with a city prefix (like "tekirdag-cerkezkoy")
+  const cityKeys = Object.keys(cities).sort((a, b) => b.length - a.length);
+  for (const key of cityKeys) {
+    if (cleanLoc.startsWith(`${key}-`)) {
+      const rest = cleanLoc.substring(key.length + 1);
+      return {
+        citySlug: key,
+        districtSlug: rest,
+        neighborhoodSlug: ""
+      };
+    }
+  }
+
+  // Fallback: treat it as a district of the default city
+  return {
+    citySlug: defaultCity.toLowerCase(),
+    districtSlug: cleanLoc,
+    neighborhoodSlug: ""
+  };
+}
+
 function spinTextWithHost(text: string, host: string, brandName: string): string {
   if (!text) return "";
   
@@ -70,45 +155,52 @@ export async function GET(request: Request) {
   const defaultDistrict = domainConfig?.targetDistrict || "İstanbul";
   
   // Resolve location context
-  const rawLoc = locParam || defaultDistrict;
-  const locationName = rawLoc
-    .split('-')
-    .map(word => {
-      // Custom mapping for popular districts to have correct Turkish characters on AMP titles
-      const trMap: { [key: string]: string } = {
-        istanbul: 'İstanbul', kadikoy: 'Kadıköy', besiktas: 'Beşiktaş',
-        sisli: 'Şişli', beylikduzu: 'Beylikdüzü', bakirkoy: 'Bakırköy',
-        atasehir: 'Ataşehir', esenyurt: 'Esenyurt', fatih: 'Fatih',
-        bagcilar: 'Bağcılar', bahcelievler: 'Bahçelievler', umraniye: 'Ümraniye',
-        pendik: 'Pendik', maltepe: 'Maltepe', kartal: 'Kartal',
-        sariyer: 'Sarıyer', uskudar: 'Üsküdar', avcilar: 'Avcılar',
-        kagitthane: 'Kağıthane', sancaktepe: 'Sancaktepe', basaksehir: 'Başakşehir',
-        esenler: 'Esenler', eyupsultan: 'Eyüpsultan', beykoz: 'Beykoz',
-        beyoglu: 'Beyoğlu', cekmekoy: 'Çekmeköy', tuzla: 'Tuzla',
-        arnavutkoy: 'Arnavutköy', gaziosmanpasa: 'Gaziosmanpaşa', sultanbeyli: 'Sultanbeyli',
-        gungoren: 'Güngören', zeytinburnu: 'Zeytinburnu', sile: 'Şile',
-        catalca: 'Çatalca', silivri: 'Silivri', buyukcekmece: 'Büyükçekmece',
-        kucukcekmece: 'Küçükçekmece', adalar: 'Adalar', bayrampasa: 'Bayrampaşa',
-        sultangazi: 'Sultangazi'
-      };
-      const lower = turkishToLower(word);
-      if (trMap[lower]) return trMap[lower];
-      return toTitleCaseTR(word);
-    })
-    .join(' ');
+  const hasLocParam = url.searchParams.has("loc");
+  const defaultCity = domainConfig?.targetCity || "istanbul";
   
+  const { citySlug, districtSlug, neighborhoodSlug } = resolveLocationContext(
+    locParam,
+    defaultCity,
+    defaultDistrict
+  );
+
+  // Set canonical URL pointing to the standard HTML version (aligned with regional /[city]/[district]/[neighborhood] hierarchy)
+  const canonicalUrl = (() => {
+    if (!hasLocParam) return `https://${host}`;
+    if (!districtSlug) return `https://${host}/${citySlug}`;
+    if (!neighborhoodSlug) return `https://${host}/${citySlug}/${districtSlug}`;
+    return `https://${host}/${citySlug}/${districtSlug}/${neighborhoodSlug}`;
+  })();
+
+  // Resolve correct capitalized display name from registry/database
+  let rawLocationName = "";
+  if (!hasLocParam) {
+    rawLocationName = domainConfig?.targetDistrict
+      ? toTitleCaseTR(domainConfig.targetDistrict)
+      : "İstanbul";
+  } else {
+    if (neighborhoodSlug) {
+      const cityObj = cities[citySlug];
+      const distObj = cityObj?.districts.find(d => d.slug === districtSlug);
+      const neighObj = distObj?.neighborhoods.find(n => n.slug === neighborhoodSlug);
+      rawLocationName = neighObj?.name || toTitleCaseTR(neighborhoodSlug);
+    } else if (districtSlug) {
+      const cityObj = cities[citySlug];
+      const distObj = cityObj?.districts.find(d => d.slug === districtSlug)
+        || cityObj?.landmarks?.find(l => l.slug === districtSlug);
+      rawLocationName = distObj?.name || toTitleCaseTR(districtSlug);
+    } else {
+      const cityObj = cities[citySlug];
+      rawLocationName = cityObj?.name || toTitleCaseTR(citySlug);
+    }
+  }
+
+  const locationName = rawLocationName.replace(/\s*(escort|eskort)\s*$/i, '');
+
   const theme = ThemeEngine.getTheme(host);
   const brandName = theme.brandName || "DRKCNAY ELITE";
   const slogan = theme.slogan || "Lüks ve Seçkin VIP Eşlik Hizmeti";
   const primaryColor = theme.primaryColor || "#e11d48";
-  
-  // Set canonical URL pointing to the standard HTML version (aligned with regional /istanbul/[district] hierarchy)
-  const canonicalUrl = (() => {
-    if (!locParam) return `https://${host}`;
-    const cleanLoc = locParam.toLowerCase().replace(/-escort$/i, '').replace(/-eskort$/i, '');
-    if (cleanLoc === 'istanbul') return `https://${host}/istanbul`;
-    return `https://${host}/istanbul/${cleanLoc}`;
-  })();
 
   // Resolve matching Google Sites page from live_google_sites.json
   let relatedSiteLink = "";
@@ -173,12 +265,12 @@ export async function GET(request: Request) {
     const isFlagship = host.includes('dorukcanay.digital');
     
     const flagSpins = [
-      "{[LOC] genelinde {seçkin ve lüks|asillik ve ihtişam dolu} bir {refakatçi deneyimi|VIP partnerlik} sunuyoruz.} {Dorukcanay Elite güvencesi altında, {tamamen doğrulanmış fotoğraflar|profesyonel model vitrini} ile {akıllardan silinmeyecek|unutulmaz} bir seans planlayın.} {Buluşmalarımızda {kesinlikle ön ödeme|hiçbir şekilde kapora} talep edilmeyip, {yüz yüze ve elden ödeme|güvenilir elden ödemeli model} esastır.} {{Gizlilik ve maksimum mahremiyet|Üst düzey güvenlik standartları} altında otele ve eve gelen {seçkin manken ve partnerlerimizle|elit eşlikçilerimizle} {hayal ettiğiniz prestijli geceyi|C-Level buluşmayı} başlatın.}",
-      "{Lüks ve prestijin [LOC] bölgesindeki {en seçkin adresi|tek temsilcisi} olan platformumuzda, {gerçek podyum modelleri|bağımsız elite refakatçiler} sizi bekliyor.} {Ön ödemesiz, kaporasız ve %100 güvenli buluşma prensiplerimizle {7/24 hizmetinizdeyiz|ayrıcalıklı seanslar düzenliyoruz}.} {Eve ve otele servis seçeneklerimizle, {konforunuz ve gizliliğiniz|seçkin mahremiyet standartlarınız} en üst düzeyde korunmaktadır.}"
+      "{[LOC] genelinde {seçkin ve lüks|asillik ve ihtişam dolu} bir {refakatçi deneyimi|VIP partnerlik} sunuyoruz.} {Dorukcanay Elite güvencesi altında, {tamamen doğrulanmış fotoğraflar|profesyonel model vitrini} ile {akıllardan silinmeyecek|unutulmaz} bir seans planlayın.} {Buluşmalarımızda {kesinlikle ön ödeme|hiçbir şekilde kapora} talep edilmeyip, {yüz yüze ve elden ödeme|güvenilir elden ödemeli model} esastır.} {{Gizlilik ve maksimum mahremiyet|Üst düzey güvenlik standartları} altında otele ve eve gelen {seçkin manken ve partnerlerimizle|elit eşlikçilerimizle} {hayal ettiğiniz prestijli geceyi|C-Level buluşmayı} başlatın.} {Ayrıcalıklı ve prestijli bir buluşma için hemen şimdi WhatsApp'tan bize ulaşın.|Lüksün sınırlarını zorlamak için şimdi randevunuzu oluşturun.}",
+      "{Lüks ve prestijin [LOC] bölgesindeki {en seçkin adresi|tek temsilcisi} olan platformumuzda, {gerçek podyum modelleri|bağımsız elite refakatçiler} sizi bekliyor.} {Ön ödemesiz, kaporasız ve %100 güvenli buluşma prensiplerimizle {7/24 hizmetinizdeyiz|ayrıcalıklı seanslar düzenliyoruz}.} {Eve ve otele servis seçeneklerimizle, {konforunuz ve gizliliğiniz|seçkin mahremiyet standartlarınız} en üst düzeyde korunmaktadır.} {Ayrıcalıklı ve prestijli bir buluşma için hemen şimdi WhatsApp'tan bize ulaşın.|Lüksün sınırlarını zorlamak için şimdi randevunuzu oluşturun.}"
     ];
     const standardSpins = [
-      "{[LOC] genelinde {vip eskort bayan|ateşli eskort model} arayanlar için {en elit ve çekici|en seksi} modeller burada listelenmektedir.} {Aradığınız {seçkin partner deneyimine|limitsiz tutkulu geceye} ulaşmak, randevu oluşturmak ve iletişim kurmak için telefon numaralarımız üzerinden {7/24 bizlere ulaşabilirsiniz|WhatsApp üzerinden anında yazabilirsiniz}.} {Rezidans, ev veya otel konseptli tüm görüşmelerimiz tamamen {kaporasız ve yüz yüze|ön ödemesiz elden ödemeli} güvenilir görüşmeler esasına dayanmaktadır.} {Hiçbir ön ödeme veya transfer ücreti talep edilmeden, doğrudan elden ödemeli VIP hizmet alırsınız.} {[LOC] vip eskort, yerli model partnerler ve üniversiteli eskort alternatiflerimizle hayal ettiğiniz geceyi planlayın.}",
-      "{[LOC] escort model arayışınızda, {gerçek ve doğrulanmış resimli|en seçkin} partnerlerle {kaporasız ve depozitosuz|yüz yüze} buluşma fırsatı sunuyoruz.} {Eve ve otele gelen {vip model ve bayan|rus ve yerli eskort} modellerimizle {7/24 aktif görüşme|limitsiz fantezi geceleri} yapabilirsiniz.} {Gizlilik prensipleri altında, %100 elden ödemeli güvenli randevunuzu hemen oluşturun.}"
+      "{[LOC] genelinde {vip eskort bayan|ateşli eskort model} arayanlar için {en elit ve çekici|en seksi} modeller burada listelenmektedir.} {Aradığınız {seçkin partner deneyimine|limitsiz tutkulu geceye} ulaşmak, randevu oluşturmak ve iletişim kurmak için telefon numaralarımız üzerinden {7/24 bizlere ulaşabilirsiniz|WhatsApp üzerinden anında yazabilirsiniz}.} {Rezidans, ev veya otel konseptli tüm görüşmelerimiz tamamen {kaporasız ve yüz yüze|ön ödemesiz elden ödemeli} güvenilir görüşmeler esasına dayanmaktadır.} {Hiçbir ön ödeme veya transfer ücreti talep edilmeden, doğrudan elden ödemeli VIP hizmet alırsınız.} {[LOC] vip eskort, yerli model partnerler ve üniversiteli eskort alternatiflerimizle hayal ettiğiniz geceyi planlayın.} {Gecikmeden WhatsApp üzerinden bizimle iletişime geçin ve rezervasyonunuzu tamamlayın.|Hemen şimdi randevunuzu kesinleştirerek bu eşsiz serüveni başlatın.}",
+      "{[LOC] escort model arayışınızda, {gerçek ve doğrulanmış resimli|en seçkin} partnerlerle {kaporasız ve depozitosuz|yüz yüze} buluşma fırsatı sunuyoruz.} {Eve ve otele gelen {vip model ve bayan|rus ve yerli eskort} modellerimizle {7/24 aktif görüşme|limitsiz fantezi geceleri} yapabilirsiniz.} {Gizlilik prensipleri altında, %100 elden ödemeli güvenli randevunuzu hemen oluşturun.} {VIP modellerimizle unutulmaz anlar yaşamak için hemen şimdi WhatsApp'tan bize yazın.|Hemen bugün yerinizi ayırtın ve farkı yaşayın.}"
     ];
 
     const spins = isFlagship ? flagSpins : standardSpins;
@@ -221,17 +313,15 @@ export async function GET(request: Request) {
   const schemaCategoryTitle = isFlagship
     ? `${brandName.toUpperCase()} PREMIUM PARTNER KATALOĞU`
     : `${brandName.toUpperCase()} VIP ESCORT AJANSI`;
-
   const schema = generateUltraGraphSchema({
     locationName: locationName,
-    city: "İstanbul",
+    city: toTitleCaseTR(citySlug),
     description: schemaDescription,
     url: canonicalUrl,
     categoryTitle: schemaCategoryTitle,
     faqs: uniqueFaqs
   });
 
-  // Select first 12 profiles from vitrinImages to display on AMP
   const ampProfiles = vitrinImages.slice(0, 12);
 
   // Preload the first two images for LCP speed optimization
@@ -464,6 +554,20 @@ export async function GET(request: Request) {
   
   <div class="container">
     <div class="grid">
+      <!-- Showcase Ad Card - Premium Ad Spot -->
+      <div class="card" style="border: 2px dashed rgba(225, 29, 72, 0.4); background: #0c0c0e;">
+        <div class="card-img-wrap" style="height: 0; padding-bottom: 133.33%; position: relative; background: #0e0e11; display: flex; align-items: center; justify-content: center;">
+          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+            <span style="font-size: 60px; font-weight: 200; color: #3f3f46;">+</span>
+          </div>
+        </div>
+        <div class="card-info">
+          <div class="card-badge" style="background: rgba(225, 29, 72, 0.1); color: #e11d48; border: 1px solid rgba(225, 29, 72, 0.2);">VİTRİN'E İLAN EKLEMEK İÇİN</div>
+          <div class="card-title" style="color: #fff; font-size: 15px;">Vitrin'e İlan Eklemek İçin</div>
+          <div class="card-meta" style="color: #a1a1aa;">İletişime Geçin! • ${locationName}</div>
+          <a href="https://wa.me/573009000676?text=Merhaba,%20vitrin%20ilanı%20satın%20almak%20istiyorum." class="btn" style="background: linear-gradient(to top right, #e11d48, #f59e0b); color: #fff;" target="_blank" rel="noopener noreferrer">İletişime Geçin!</a>
+        </div>
+      </div>
       ${ampProfiles.map((p, index) => {
         const isCustomImage = p.src && (p.src.startsWith('http') || p.src.includes('uploads') || !p.src.includes('seo_'));
         

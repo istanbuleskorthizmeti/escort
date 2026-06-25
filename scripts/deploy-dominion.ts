@@ -10,15 +10,16 @@ const config = getSSHConfig();
 async function deployDominion() {
   try {
     const tarFile = 'dominion_bundle.tar.gz';
-    const localDir = process.cwd();
+    const localDir = path.resolve(__dirname, '..');
+    const tarPath = path.join(localDir, tarFile);
 
     console.log('⚡ [ULTRA-PACK] Shrinking project bundle (including .next)...');
     
     const tarCmd = `tar.exe -czf ${tarFile} --exclude=.next --exclude=node_modules --exclude=.git --exclude=.env* --exclude=out --exclude=temp --exclude=*.zip --exclude=*.tar.gz --exclude=artifacts --exclude=.gemini --exclude=scratch --exclude=dominion_bundle.tar.gz --exclude=fast_bundle.zip --exclude=public.tar.gz --exclude=src_bundle.tar.gz --exclude=test_bundle.tar.gz --exclude=mini_src.tar.gz --exclude=hydra_build.tar.gz --exclude=chunk_0.part --exclude=chunk_1.part .`;
     
-    execSync(tarCmd, { stdio: 'inherit' });
+    execSync(tarCmd, { cwd: localDir, stdio: 'inherit' });
     
-    const size = fs.statSync(tarFile).size / (1024 * 1024);
+    const size = fs.statSync(tarPath).size / (1024 * 1024);
     console.log(`📏 [SIZE] Optimized bundle is ${size.toFixed(2)} MB.`);
 
     console.log('🔐 [CONNECTING] Connecting to server...');
@@ -29,7 +30,9 @@ async function deployDominion() {
 
     console.log('🏗️ [UNPACKING] Extracting bundle on server...');
     await ssh.execCommand('mkdir -p /root/esc');
-    await ssh.execCommand(`tar -xzf /root/${tarFile} -C /root/esc`);
+    const extractResult = await ssh.execCommand(`tar -xzf /root/${tarFile} -C /root/esc`);
+    if (extractResult.stdout) console.log(extractResult.stdout);
+    if (extractResult.stderr) console.warn('⚠️ [EXTRACTION WARNING/ERROR]:', extractResult.stderr);
     await ssh.execCommand(`rm /root/${tarFile}`);
 
     console.log('📦 [NPM INSTALL] Installing production dependencies...');
@@ -60,7 +63,7 @@ async function deployDominion() {
 
     console.log('🏁 [SUCCESS] SITES ARE LIVE. GOD MODE DEPLOYMENT COMPLETE.');
     
-    if (fs.existsSync(tarFile)) fs.unlinkSync(tarFile);
+    if (fs.existsSync(tarPath)) fs.unlinkSync(tarPath);
     ssh.dispose();
   } catch (e: unknown) {
     console.error('💥 [DEPLOYMENT FAILED]', e instanceof Error ? e.message : e);

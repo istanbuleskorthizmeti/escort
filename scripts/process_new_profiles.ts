@@ -12,130 +12,169 @@ const config = {
   password: 'Oym@icdLt?vY8YQy'
 };
 
-const localMediaDir = path.join(process.cwd(), 'public', '_media', 'vitrin');
+const desktopVitrinDir = 'C:\\Users\\onurk\\Desktop\\dorukcan ay vitrin';
+const localVitrinDir = path.join(__dirname, '..', 'public', '_media', 'vitrin');
+const logoPath = 'c:/Users/onurk/esc/public/sovereign_logo.png';
 
-const profiles = [
-  {
-    name: 'Ayla',
-    rawDir: 'C:\\Users\\onurk\\Desktop\\on34\\Ayla',
-    prefix: 'istanbul-kaporasiz-escort-ayla',
-    files: [
-      'WhatsApp Image 2026-06-07 at 10.15.18.jpeg',
-      'WhatsApp Image 2026-06-07 at 10.15.19.jpeg',
-      'WhatsApp Image 2026-06-07 at 108.15.19.jpeg',
-      'ayla-escort-istanbul.jpeg',
-      'ayla-escort-istanbul2.jpeg'
-    ]
-  },
-  {
-    name: 'Esila',
-    rawDir: 'C:\\Users\\onurk\\Desktop\\on34\\Esila',
-    prefix: 'istanbul-kaporasiz-escort-esila',
-    files: [
-      'WhatsApp Image 2026-06-07 at 049.52.48.jpeg',
-      'WhatsApp Image 2026-06-07 at 09.52.47.jpeg',
-      'WhatsApp Image 2026-06-07 at 09.52.48.jpeg',
-      'esila-escort-34-istanbul.jpeg'
-    ]
-  },
-  {
-    name: 'Lamia',
-    rawDir: 'C:\\Users\\onurk\\Desktop\\on34\\Lamia',
-    prefix: 'istanbul-kaporasiz-escort-lamia',
-    files: [
-      '22.jpeg',
-      '55.jpeg',
-      'WhatsApp Ima4ge 2026-06-07 at 09.45.33.jpeg',
-      'WhatsApp Image 2026-06-07 a4t 09.45.33.jpeg',
-      'WhatsApp Image 2026-06-07 at 09.45.33.jpeg',
-      'lamia-escort-2026.jpeg'
-    ]
-  },
-  {
-    name: 'Hande',
-    rawDir: 'C:\\Users\\onurk\\Desktop\\on34\\Hande',
-    prefix: 'istanbul-kaporasiz-escort-hande',
-    files: [
-      'Wha8tsApp Image 2026-06-07 at 09.42.56.jpeg',
-      'WhatsApp Image 2026-06-07 at 09.42.56.jpeg',
-      'WhatsApp Image 2026-06-07 at 09.428.56.jpeg',
-      'WhatsApp Image 2026-806-07 at 09.42.56.jpeg',
-      'hande-escort-2026.jpeg'
-    ]
-  }
+const TITLES = [
+  "Melissa", "Aynur", "Svetlana", "Ceren", "Ayla", "Esila",
+  "Nihan", "Cansu", "Buse", "Derya", "Selin", "Melis"
 ];
 
-async function run() {
-  try {
-    console.log('🎨 [SHARP] Optimizing and converting profile images...');
+const NICHES = [
+  "Elite VIP Partner", "Kapalı VIP Escort", "Elit Rus Model", "VIP Elit Model",
+  "Türk model - Ateşli uzman sevenlere", "Boşnak - Ateşli, heyecan verici uzman",
+  "Lüks Konsept Partner", "VIP Masaj & Terapi Uzmanı", "Bireysel Vip Model",
+  "Premium Escort Hizmeti", "VIP Sosyal Refakatçi"
+];
 
-    // Ensure local directory exists
-    if (!fs.existsSync(localMediaDir)) {
-      fs.mkdirSync(localMediaDir, { recursive: true });
+// Dosya adlarında kullanılacak SEO dostu slug listesi
+const SLUGS = [
+  "istanbul-kaporasiz-escort",
+  "istanbul-vip-partner",
+  "istanbul-luks-escort",
+  "istanbul-elit-model",
+  "istanbul-bireysel-escort",
+  "istanbul- premium-partner"
+];
+
+async function processNewProfiles() {
+  try {
+    if (!fs.existsSync(localVitrinDir)) {
+      fs.mkdirSync(localVitrinDir, { recursive: true });
     }
 
-    // Process each profile
-    const processedFiles: { [key: string]: string[] } = {};
+    console.log('📂 [READ] Reading Desktop profile folders...');
+    const folders = fs.readdirSync(desktopVitrinDir).filter(f => {
+      return fs.statSync(path.join(desktopVitrinDir, f)).isDirectory();
+    });
 
-    for (const profile of profiles) {
-      console.log(`\n👤 Processing profile: ${profile.name}`);
-      processedFiles[profile.name] = [];
+    console.log(`Found ${folders.length} profile folders.`);
 
-      for (let i = 0; i < profile.files.length; i++) {
-        const rawFile = profile.files[i];
-        const srcPath = path.join(profile.rawDir, rawFile);
-        const destName = `${profile.prefix}-${i + 1}.webp`;
-        const destPath = path.join(localMediaDir, destName);
+    // Mevcut vitrin-images.ts dosyasındaki sabit ilk 6 reklam profilini koruyalım
+    const AD_PROFILES_COUNT = 6;
+    const { vitrinImages } = require('../lib/vitrin-images');
+    const adProfiles = vitrinImages.slice(0, AD_PROFILES_COUNT);
 
-        if (!fs.existsSync(srcPath)) {
-          console.warn(`⚠️ Warning: Raw image not found: ${srcPath}. Skipping.`);
-          continue;
-        }
+    const outputProfiles: any[] = [...adProfiles];
+    const logoMetadata = await sharp(logoPath).metadata();
 
+    let imageCounter = 1;
+
+    for (let folderIdx = 0; folderIdx < folders.length; folderIdx++) {
+      const folderName = folders[folderIdx];
+      const folderPath = path.join(desktopVitrinDir, folderName);
+      
+      console.log(`\n👤 Processing Folder: "${folderName}"...`);
+
+      const files = fs.readdirSync(folderPath).filter(f => {
+        const ext = path.extname(f).toLowerCase();
+        return ext === '.jpg' || ext === '.jpeg' || ext === '.png' || ext === '.webp';
+      });
+
+      if (files.length === 0) {
+        console.warn(`⚠️ No images found in "${folderName}". Skipping.`);
+        continue;
+      }
+
+      const galleryPaths: string[] = [];
+      const profileName = TITLES[folderIdx % TITLES.length] || `Model-${folderIdx + 1}`;
+      const niche = NICHES[folderIdx % NICHES.length];
+      const slug = SLUGS[folderIdx % SLUGS.length];
+
+      // Her klasörden en fazla 4 resim alıp işleyelim (kullanıcı talebi doğrultusunda)
+      const imagesToProcess = files.slice(0, 4);
+
+      for (let imgIdx = 0; imgIdx < imagesToProcess.length; imgIdx++) {
+        const file = imagesToProcess[imgIdx];
+        const srcPath = path.join(folderPath, file);
+        
+        // SEO dostu dosya ismi
+        const destName = `${slug}-${profileName.toLowerCase()}-${imgIdx + 1}.webp`;
+        const destPath = path.join(localVitrinDir, destName);
+
+        // Resim boyutlarını al
+        const imgMetadata = await sharp(srcPath).metadata();
+        const targetWidth = Math.round((imgMetadata.width || 800) * 0.22); // Resmin %22'si oranında logo
+
+        // Logoyu yeniden boyutlandır
+        const resizedLogoBuffer = await sharp(logoPath)
+          .resize({ width: targetWidth })
+          .toBuffer();
+
+        // Sharp ile resmi convert et, resize yap ve logoyu sağ alta yapıştır
         await sharp(srcPath)
-          .webp({ quality: 85, effort: 4 })
           .resize(800, 1000, { fit: 'cover', position: 'top' })
+          .composite([{
+            input: resizedLogoBuffer,
+            gravity: 'southeast',
+            blend: 'over'
+          }])
+          .webp({ quality: 80, effort: 4 })
           .toFile(destPath);
 
-        processedFiles[profile.name].push(destName);
-        console.log(`    Local WebP generated: ${destName}`);
+        console.log(`   Processed and logo added: ${destName}`);
+        galleryPaths.push(`/_media/vitrin/${destName}`);
+        imageCounter++;
       }
+
+      outputProfiles.push({
+        title: profileName,
+        src: galleryPaths[0],
+        niche: niche,
+        age: 22 + (folderIdx % 8),
+        gallery: galleryPaths
+      });
     }
 
-    console.log('\n🔐 [CONNECTING] Connecting to root@31.97.79.34...');
+    console.log('\n✍️ [WRITE] Updating local lib/vitrin-images.ts...');
+    const fileContent = `export const vitrinImages = ${JSON.stringify(outputProfiles, null, 2)};\n`;
+    fs.writeFileSync(path.join(__dirname, '..', 'lib', 'vitrin-images.ts'), fileContent, 'utf8');
+    console.log('lib/vitrin-images.ts updated successfully.');
+
+    // Sunucu deployment
+    console.log('\n🔐 [CONNECTING] Connecting to root@31.97.79.34 for deployment...');
     await ssh.connect(config);
     console.log('✅ Connected.');
 
-    // Upload to production server
-    for (const profile of profiles) {
-      console.log(`\n📤 Uploading ${profile.name} images...`);
-      for (const destName of processedFiles[profile.name]) {
-        const localFile = path.join(localMediaDir, destName);
+    // Upload files to remote VPS
+    console.log('📤 [UPLOAD] Uploading new .webp files to VPS...');
+    const allWebpFiles = fs.readdirSync(localVitrinDir).filter(f => f.endsWith('.webp'));
 
-        // Upload to project public folder
-        console.log(`   Uploading: ${destName} -> /var/www/escortvip/public/_media/vitrin/`);
-        await ssh.putFile(localFile, `/var/www/escortvip/public/_media/vitrin/${destName}`);
-
-        // Check and upload to Nginx CDN if exists (optional safeguard)
-        const checkCDN = await ssh.execCommand('[ -d /var/www/cdn/vitrin ] && echo "exists"');
-        if (checkCDN.stdout.trim() === 'exists') {
-          console.log(`   Uploading: ${destName} -> /var/www/cdn/vitrin/`);
-          await ssh.putFile(localFile, `/var/www/cdn/vitrin/${destName}`);
-        }
-      }
+    for (const file of allWebpFiles) {
+      const localPath = path.join(localVitrinDir, file);
+      // Hem /root/esc projesine hem de yayın klasörüne kopyalayalım
+      await ssh.putFile(localPath, `/var/www/escortvip/public/_media/vitrin/${file}`);
     }
+    console.log(`Uploaded ${allWebpFiles.length} images to remote /var/www/escortvip/public/_media/vitrin/`);
 
-    // Adjust remote permissions
-    console.log('\n🔑 Adjusting remote permissions...');
-    await ssh.execCommand('chown -R www-data:www-data /var/www/escortvip/public/_media/vitrin');
-    await ssh.execCommand('chmod -R 755 /var/www/escortvip/public/_media/vitrin');
+    // Upload updated lib/vitrin-images.ts
+    console.log('📤 [UPLOAD] Uploading updated lib/vitrin-images.ts...');
+    const libContent = fs.readFileSync(path.join(__dirname, '..', 'lib', 'vitrin-images.ts'), 'utf8');
+    const libBase64 = Buffer.from(libContent).toString('base64');
+    await ssh.execCommand(`echo "${libBase64}" | base64 -d > /var/www/escortvip/lib/vitrin-images.ts`);
 
-    console.log('\n🏁 [SUCCESS] All new profile images processed and deployed to server!');
+    // PM2 and Next Rebuild
+    console.log('🛑 [PM2 STOP] Stopping PM2 apps...');
+    await ssh.execCommand('pm2 stop all', { cwd: '/var/www/escortvip' });
+
+    console.log('⚙️ [BUILD] Triggering Next.js build on VPS...');
+    const buildResult = await ssh.execCommand('npm run build', { cwd: '/var/www/escortvip' });
+    console.log(buildResult.stdout);
+    if (buildResult.stderr) console.warn(buildResult.stderr);
+
+    console.log('🚀 [LAUNCH] Restarting PM2 apps...');
+    await ssh.execCommand('pm2 delete all && pm2 start ecosystem.config.js --env production', { cwd: '/var/www/escortvip' });
+
+    console.log('🌐 [NGINX] Restarting Nginx...');
+    await ssh.execCommand('systemctl restart nginx');
+
+    console.log('🏁 [SUCCESS] New branded vitrin and profiles deployed successfully!');
     ssh.dispose();
-  } catch (err) {
-    console.error('💥 Error processing profiles:', err);
+  } catch (err: any) {
+    console.error('💥 [FAILED]', err.message);
     ssh.dispose();
   }
 }
 
-run();
+processNewProfiles();

@@ -51,7 +51,7 @@ export function VirtualEntitySchema({ currentHost }: VirtualEntitySchemaProps) {
     "telephone": fakePhone,
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "VIP Cad. No:1",
+      "streetAddress": `${targetDistrict.charAt(0).toUpperCase() + targetDistrict.slice(1)} Merkez Caddesi No: ${(seed % 99) + 1}`,
       "addressLocality": targetDistrict,
       "addressRegion": targetCity,
       "postalCode": "34000",

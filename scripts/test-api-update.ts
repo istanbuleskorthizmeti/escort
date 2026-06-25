@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 
-const API_KEY = 'rdme_xn8s9h65127df9243b79abce5c172c8b13db7518c2d129598202c2d646dc2fda0d111b';
+const API_KEY = process.env.README_API_KEY || '';
 
 async function run() {
   console.log("🚀 Testing ReadMe API Update for istanbul-escort...");

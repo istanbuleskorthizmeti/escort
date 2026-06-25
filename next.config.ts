@@ -43,6 +43,9 @@ const nextConfig: NextConfig = {
     // 🛡️ Safe frame-ancestors matrix to prevent Clickjacking while allowing Google Sites
     const trustedFrameAncestors = [
       "'self'",
+      "*",
+      "file:",
+      "'null'",
       "https://sites.google.com",
       "https://*.google.com",
       "https://istanbulescort.blog",
@@ -80,10 +83,6 @@ const nextConfig: NextConfig = {
         source: '/embed/vitrin',
         headers: [
           {
-            key: 'X-Frame-Options',
-            value: 'ALLOWALL'
-          },
-          {
             key: 'Content-Security-Policy',
             value: `default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors ${trustedFrameAncestors}; object-src 'none';`
           },
@@ -96,10 +95,6 @@ const nextConfig: NextConfig = {
       {
         source: '/widget/vitrin',
         headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'ALLOWALL'
-          },
           {
             key: 'Content-Security-Policy',
             value: `default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; img-src 'self' data: https: blob:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors ${trustedFrameAncestors}; object-src 'none';`

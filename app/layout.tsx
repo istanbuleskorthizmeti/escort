@@ -23,6 +23,7 @@ import { LocalAuthority } from "@/components/SEO/LocalAuthority";
 import { toTitleCaseTR } from "@/lib/utils";
 import { MobileAppBanner } from "@/components/UI/MobileAppBanner";
 import { TrustConsent } from "@/components/UI/TrustConsent";
+import { ShowcaseAdBanner } from "@/components/UI/ShowcaseAdBanner";
 
 export async function generateViewport(): Promise<Viewport> {
   let host = siteConfig.domain;
@@ -396,6 +397,7 @@ export default async function RootLayout({
         <BrowserIntelligence />
         <MobileAppBanner />
         <TrustConsent />
+        <ShowcaseAdBanner />
         <div className="flex-1 flex flex-col">
           {children}
         </div>

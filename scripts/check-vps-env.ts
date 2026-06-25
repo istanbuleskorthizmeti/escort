@@ -1,24 +1,23 @@
 import { NodeSSH } from 'node-ssh';
+import { getSSHConfig } from './lib/ssh-helper';
 
 const ssh = new NodeSSH();
+const config = getSSHConfig();
 
 async function run() {
   try {
-    await ssh.connect({
-      host: '31.97.79.34',
-      username: 'root',
-      password: 'Oym@icdLt?vY8YQy'
-    });
-    console.log('✅ Connected.');
+    await ssh.connect(config);
+    console.log('Connected.');
 
-    const envFile = await ssh.execCommand('cat /var/www/escortvip/.env');
-    console.log('--- .env CONTENT ON VPS ---');
-    console.log(envFile.stdout || envFile.stderr);
+    const res = await ssh.execCommand('env');
+    console.log('--- VPS ENV ---');
+    console.log(res.stdout);
 
+    ssh.dispose();
   } catch (err: any) {
     console.error('Error:', err.message);
-  } finally {
     ssh.dispose();
   }
 }
+
 run();

@@ -13,17 +13,23 @@ interface GoogleCredentials {
 }
 
 export class GoogleIndexer {
-  private static getCredentials(): GoogleCredentials | null {
+  private static activeKeyIndex = 0;
+
+  private static getCredentialsPool(): GoogleCredentials[] {
     const rawCreds = process.env.GOOGLE_INDEXING_CREDS;
     if (!rawCreds) {
       console.warn('⚠️ [INDEX-API] GOOGLE_INDEXING_CREDS environment variable is missing.');
-      return null;
+      return [];
     }
     try {
-      return JSON.parse(rawCreds);
+      const parsed = JSON.parse(rawCreds);
+      if (Array.isArray(parsed)) {
+        return parsed;
+      }
+      return [parsed];
     } catch (e) {
       console.error('❌ [INDEX-API] Failed to parse GOOGLE_INDEXING_CREDS JSON.');
-      return null;
+      return [];
     }
   }
 
@@ -70,14 +76,18 @@ export class GoogleIndexer {
    * @param type 'URL_UPDATED' (for new/updated pages) or 'URL_DELETED'
    */
   public static async submitUrl(url: string, type: 'URL_UPDATED' | 'URL_DELETED' = 'URL_UPDATED'): Promise<boolean> {
-    const creds = this.getCredentials();
-    if (!creds) return false;
+    const pool = this.getCredentialsPool();
+    if (pool.length === 0) return false;
+
+    // Rotate keys
+    const creds = pool[this.activeKeyIndex % pool.length];
+    this.activeKeyIndex++;
 
     const token = await this.getOAuthToken(creds);
     if (!token) return false;
 
     try {
-      console.log(`📡 [INDEX-API] Submitting URL to Google Indexer: ${url} (${type})`);
+      console.log(`📡 [INDEX-API] Submitting URL using key index ${this.activeKeyIndex - 1} (${creds.client_email}): ${url} (${type})`);
       const response = await axios.post(
         'https://indexing.googleapis.com/v3/urlNotifications:publish',
         {

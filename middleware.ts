@@ -189,16 +189,16 @@ export function middleware(request: NextRequest) {
   const isEmbedPath = pathname.startsWith('/embed/') || pathname.startsWith('/widget/');
 
   if (isAmpPath) {
-    response.headers.set('X-Frame-Options', 'ALLOWALL');
+    response.headers.delete('X-Frame-Options');
     response.headers.set(
       'Content-Security-Policy',
       "default-src 'self' https:; script-src 'self' 'unsafe-inline' https://cdn.ampproject.org https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.ampproject.org; img-src 'self' data: https: blob: https://cdn.ampproject.org; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://cdn.ampproject.org https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors 'self' https://google.com https://*.google.com https://*.ampproject.org https://sites.google.com https://*.googleusercontent.com; object-src 'none';"
     );
   } else if (isIframe || isEmbedPath) {
-    response.headers.set('X-Frame-Options', 'ALLOWALL');
+    response.headers.delete('X-Frame-Options');
     response.headers.set(
       'Content-Security-Policy',
-      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors 'self' https://sites.google.com https://*.google.com https://*.googleusercontent.com; object-src 'none';"
+      "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https: blob:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://stats.g.doubleclick.net https://*.google-analytics.com; frame-ancestors 'self' * file: 'null' https://sites.google.com https://*.google.com https://*.googleusercontent.com; object-src 'none';"
     );
   } else {
     response.headers.set('X-Frame-Options', 'DENY');

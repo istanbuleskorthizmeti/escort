@@ -50,6 +50,17 @@ const TARGET_RESOURCES = [
       'info@dorukcanay.digital',
       'sovereign-spyy@karacocuk.iam.gserviceaccount.com'
     ]
+  },
+  {
+    id: 'https%3A%2F%2Fistanbul-eskort-hizmeti.readme.io%2F',
+    type: 'SITE',
+    identifier: 'https://istanbul-eskort-hizmeti.readme.io/',
+    owners: [
+      'arap-640@karacocuk.iam.gserviceaccount.com',
+      'hydra-ai-admin@vast-falcon-495301-g5.iam.gserviceaccount.com',
+      'info@dorukcanay.digital',
+      'sovereign-spyy@karacocuk.iam.gserviceaccount.com'
+    ]
   }
 ];
 

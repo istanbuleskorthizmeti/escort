@@ -1,19 +1,47 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import { google } from 'googleapis';
 import { JWT } from 'google-auth-library';
 import fs from 'fs';
 import path from 'path';
+import { googleAuth } from '../lib/google-auth';
 import { DOMAIN_MATRIX } from '../config/domains';
 
 interface GscClient {
   fileName: string;
   email: string;
-  auth: JWT;
+  auth: any;
   verifiedSites: string[];
   indexingQuotaExceeded?: boolean;
 }
 
 async function runFleetAutomation() {
   const isDripFeed = process.env.DRIP_FEED === 'true';
+  const gscClients: GscClient[] = [];
+
+  console.log("🔒 [AUTH] Checking database for OAuth2 User Tokens...");
+  try {
+    const userTokens = await googleAuth.getTokens();
+    if (userTokens) {
+      const auth = await googleAuth.getAuthorizedClient();
+      const sc = google.searchconsole({ version: 'v1', auth });
+      const sitesRes = await sc.sites.list();
+      const verifiedSites = (sitesRes.data.siteEntry || []).map(s => s.siteUrl).filter(Boolean) as string[];
+      
+      gscClients.push({
+        fileName: 'database-oauth2-user-token',
+        email: 'User Account (OAuth2)',
+        auth,
+        verifiedSites,
+        indexingQuotaExceeded: false
+      });
+      console.log(`🔑 Key loaded: OAuth2 User Token | Verified sites: ${verifiedSites.length}`);
+    }
+  } catch (err: any) {
+    console.warn(`⚠️ Failed to initialize OAuth2 User Token: ${err.message}`);
+  }
+
   console.log("🔒 [AUTH] Scanning and initializing all Google API keys...");
 
   const files = fs.readdirSync(process.cwd());
@@ -23,7 +51,6 @@ async function runFleetAutomation() {
   );
 
   console.log(`🔍 Found ${keyFiles.length} potential key files in workspace.`);
-  const gscClients: GscClient[] = [];
 
   for (const file of keyFiles) {
     try {
@@ -57,7 +84,7 @@ async function runFleetAutomation() {
         indexingQuotaExceeded: false
       });
 
-      console.log(`🔑 Key loaded: ${file} (${keys.client_email}) | Verified sites: ${verifiedSites.length}`);
+      console.log(`🔑 Key loaded: ${file} (${keys.client_email}) | Verified sites: ${verifiedSites.length} -> ${JSON.stringify(verifiedSites)}`);
     } catch (err: any) {
       console.warn(`⚠️ Failed to initialize key file ${file}: ${err.message}`);
     }
@@ -153,9 +180,12 @@ async function runFleetAutomation() {
     const urlsToInspect = [
       `https://${target.host}/`,
       `https://${target.host}/${citySlug}`,
+      `https://${target.host}/amp`,
+      `https://${target.host}/amp?loc=${citySlug}`,
     ];
     if (target.targetDistrict) {
       urlsToInspect.push(`https://${target.host}/${citySlug}/${target.targetDistrict}`);
+      urlsToInspect.push(`https://${target.host}/amp?loc=${target.targetDistrict}`);
     }
 
     for (const url of urlsToInspect) {

@@ -43,14 +43,14 @@ export function ShowcaseAdBanner() {
             
             <div className="flex-1">
               <h4 className="text-white font-bold text-xs sm:text-sm tracking-wide flex items-center gap-1.5 group-hover:text-rose-400 transition-colors duration-200">
-                Vitrin Reklamı
+                Vitrin'e İlan Eklemek İçin
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
                 </span>
               </h4>
               <p className="text-zinc-400 text-xs mt-0.5 group-hover:underline decoration-rose-500/30 underline-offset-2">
-                Vitrin reklamı vermek için <span className="text-rose-400 font-bold">tıklayınız</span>
+                İletişime Geçin! <span className="text-rose-400 font-bold">(WhatsApp)</span>
               </p>
             </div>
           </a>

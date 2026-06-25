@@ -59,7 +59,7 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
       return {
         html: spunContent,
         faqs: [
-          { q: `${city} ${neighborhood || district || ""} ${category || ""} VIP escort hizmetleri güvenilir mi?`, a: "DORUKCANAY ELITE güvencesiyle %100 gerçek fotoğraflı ve güvenilir escort hizmeti sunulmaktadır." }
+          { q: `${city} ${neighborhood || district || ""} ${category || ""} VIP escort hizmetleri güvenilir mi?`, a: "DORUKCANAY ELITE güvencesiyle %100 gerçek fotoğraflı ve güvenilir escort hizmeti sunulmaktadır. Hemen şimdi WhatsApp üzerinden yerinizi ayırtın ve VIP deneyimi başlatın." }
         ]
       };
     }
@@ -94,7 +94,7 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
     return {
       html: finalHtml,
       faqs: aiContent.wordpress.faqs || [
-        { q: `${city} bölgesinde escort hizmetleri güvenilir mi?`, a: "DRKCNAY ELITE ile sistemdeki tüm escort profilleri %100 doğrulanmış ve gerçek görsellidir." }
+        { q: `${city} bölgesinde escort hizmetleri güvenilir mi?`, a: "DRKCNAY ELITE ile sistemdeki tüm escort profilleri %100 doğrulanmış ve gerçek görsellidir. Siz de premium bir seans için hemen şimdi bizimle iletişime geçin." }
       ]
     };
 
@@ -113,7 +113,7 @@ export async function generateGodModeContent({ city, district, neighborhood, cat
     return {
       html: fallbackHtml,
       faqs: [
-        { q: `${city} bölgesinde hizmetleriniz devam ediyor mu?`, a: "Evet, tüm bölgelerimizde 7/24 kesintisiz ve güvenilir hizmetimiz devam etmektedir." }
+        { q: `${city} bölgesinde hizmetleriniz devam ediyor mu?`, a: "Evet, tüm bölgelerimizde 7/24 kesintisiz ve güvenilir hizmetimiz devam etmektedir. Ayrıcalıklı randevunuzu oluşturmak için şimdi bize yazın." }
       ]
     };
   }

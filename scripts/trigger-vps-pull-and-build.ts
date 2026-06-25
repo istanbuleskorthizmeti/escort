@@ -1,21 +1,25 @@
 import { NodeSSH } from 'node-ssh';
 
+import dotenv from 'dotenv';
+dotenv.config();
+
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
-  username: 'root',
-  password: '5TVuj6qiHMfh8CxH9O!'
+  host: process.env.SSH_HOST || '31.97.79.34',
+  username: process.env.SSH_USER || 'root',
+  password: process.env.SSH_PASSWORD || ''
 };
 
 async function deploy() {
   try {
-    console.log('🚀 Connecting to production VPS root@213.232.235.181...');
+    console.log(`🚀 Connecting to production VPS root@${config.host}...`);
     await ssh.connect(config);
     console.log('✅ Connected.');
 
     console.log('📡 [REMOTE] Correcting Git remote origin URL to escc.git...');
-    const remoteUrl = 'https://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@github.com/guondyshop-del/escc.git';
+    const pat = process.env.GITHUB_PAT || '';
+    const remoteUrl = `https://${pat}@github.com/guondyshop-del/escc.git`;
     await ssh.execCommand(`git remote set-url origin ${remoteUrl}`, { cwd: '/root/esc' });
 
     console.log('📡 [GIT] Discarding local changes and resetting to origin/main...');

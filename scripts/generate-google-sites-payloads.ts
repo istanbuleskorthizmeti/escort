@@ -237,7 +237,10 @@ function parseSpin(text: string, sehir: string, ilce: string, context: { race: s
     });
 }
 
-export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter: number, version: number, title: string, verificationCode: string, geminiText: string = ''): string {
+export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter: number, version: number, title: string, verificationCode: string, geminiText: string = '', iframePath?: string): string {
+  const targetPath = iframePath || `istanbul/${slugify(ilce)}`;
+  const lastSlug = targetPath.split('/').pop() || 'istanbul';
+  const iframeUrl = `https://${PRIMARY_HOST}/embed/vitrin?city=${lastSlug}`;
   const currentYear = new Date().getFullYear();
   const niche = getRandomElement(ADULT_NICHES);
   const adj = getRandomElement(ADULT_PROFILE_ADJECTIVES);
@@ -290,7 +293,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   const keywordsHtml = uniqueKeywords.map((k, idx) => {
     // Distribute soft opacities (0.35 to 0.9) to make them look like a natural stylized tag cloud
     const opacity = (0.35 + (idx % 6) * 0.1).toFixed(2);
-    return `      <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="tag-link" style="opacity: ${opacity}; font-size: 11px; margin: 4px; display: inline-block;">${k}</a>`;
+    return `      <a href="https://${PRIMARY_HOST}/${targetPath}" class="tag-link" style="opacity: ${opacity}; font-size: 11px; margin: 4px; display: inline-block;">${k}</a>`;
   }).join('\n');
   const hiddenKeywordsHtml = ``; // Banned stealth wrapper eliminated
 
@@ -301,7 +304,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   const faqHtml = `
     <div class="faq-item">
       <div class="faq-q">📍 S: Diğer escort profillerini ve ilan vitrinini nerede bulabilirim?</div>
-      <div class="faq-a">C: Diğer tüm doğrulanmış bağımsız eskort profillerine ve vitrin görsellerine ulaşmak için sayfanın altındaki "Tüm ${ilce} Görüşmelerini Listele" butonuna tıklayarak doğrudan <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" style="color:var(--accent); font-weight:bold;">${PRIMARY_HOST}</a> ana dizinine erişebilirsiniz.</div>
+      <div class="faq-a">C: Diğer tüm doğrulanmış bağımsız eskort profillerine ve vitrin görsellerine ulaşmak için sayfanın altındaki "Tüm ${ilce} Görüşmelerini Listele" butonuna tıklayarak doğrudan <a href="https://${PRIMARY_HOST}/${targetPath}" style="color:var(--accent); font-weight:bold;">${PRIMARY_HOST}</a> ana dizinine erişebilirsiniz.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">💬 S: Profil kartlarındaki simgeler ve ikonlar ne anlama geliyor?</div>
@@ -402,6 +405,27 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
     // VERSION 1: Continuous Smooth Left Marquee
     // ----------------------------------------------------
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
+      if (i === 5) {
+        slidesHtml += `
+      <div class="v1-slide">
+        <div class="v1-card" style="border-color: #ff8600; box-shadow: 0 4px 15px rgba(255, 134, 0, 0.35);">
+          <div class="v1-img-container">
+            <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
+            <span class="v1-badge" style="background: #ff8600; color: #fff;">Sponsor İlan</span>
+          </div>
+          <div class="v1-content">
+            <h4 class="v1-title" style="color: #ff8600;">İlan Vermek İçin</h4>
+            <div class="v1-meta">Google Harita + SEO</div>
+            <div class="v1-tags">
+              <span class="v1-tag" style="color: #ff8600; border-color: #ff8600;">Sponsor</span>
+              <span class="v1-tag" style="color: #ff8600; border-color: #ff8600;">İlan Ver</span>
+            </div>
+            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v1-btn" style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color: #fff;">İletişime Geçiniz</a>
+          </div>
+        </div>
+      </div>`;
+      }
+
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -501,7 +525,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   
   @keyframes marqueeLeftAnimation {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-260px * ${ORIGINAL_VITRIN.length} - 16px * ${ORIGINAL_VITRIN.length})); }
+    100% { transform: translateX(calc(-260px * ${ORIGINAL_VITRIN.length + 1} - 16px * ${ORIGINAL_VITRIN.length + 1})); }
   }
 
   .v1-card {
@@ -563,7 +587,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
   frameborder="0" 
   allowfullscreen="" 
-  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  src="${iframeUrl}"
   style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
 </iframe>
 <div class="container">
@@ -600,7 +624,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   ${hiddenKeywordsHtml}
 
   <div class="footer-cta">
-    <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="footer-btn">🍀 Tüm ${ilce} Escort Kataloğunu Gör</a>
+    <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-btn">🍀 Tüm ${ilce} Escort Kataloğunu Gör</a>
   </div>
 
   <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
@@ -614,6 +638,27 @@ ${schema}
     // VERSION 2: Continuous Smooth Right Marquee
     // ----------------------------------------------------
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
+      if (i === 5) {
+        slidesHtml += `
+      <div class="v2-slide">
+        <div class="v2-card" style="border-color: #ff8600; box-shadow: 0 4px 15px rgba(255, 134, 0, 0.35);">
+          <div class="v2-img-wrapper">
+            <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="280" height="364" loading="lazy" decoding="async">
+            <div class="v2-badge" style="background: #ff8600; color: #fff;">Sponsor</div>
+          </div>
+          <div class="v2-body">
+            <h3 class="v2-card-title" style="color: #ff8600;">İlan Vermek İçin <span class="v2-online-dot" style="background: #ff8600;"></span></h3>
+            <p class="v2-cat-meta">Google Harita + SEO</p>
+            <div class="v2-tag-cloud">
+              <span class="v2-subtag" style="border-color: #ff8600; color: #ff8600;">Sponsor</span>
+              <span class="v2-subtag" style="border-color: #ff8600; color: #ff8600;">İlan Ver</span>
+            </div>
+            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v2-cta-link" style="background: linear-gradient(90deg, #ff8600 0%, #ff5100 100%); color: #fff;">İletişime Geçiniz</a>
+          </div>
+        </div>
+      </div>`;
+      }
+
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -705,7 +750,7 @@ ${schema}
   .v2-slide { flex: 0 0 280px; }
   
   @keyframes marqueeRightAnimation {
-    0% { transform: translateX(calc(-280px * ${ORIGINAL_VITRIN.length} - 16px * ${ORIGINAL_VITRIN.length})); }
+    0% { transform: translateX(calc(-280px * ${ORIGINAL_VITRIN.length + 1} - 16px * ${ORIGINAL_VITRIN.length + 1})); }
     100% { transform: translateX(0); }
   }
   
@@ -768,7 +813,7 @@ ${schema}
   sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
   frameborder="0" 
   allowfullscreen="" 
-  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  src="${iframeUrl}"
   style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
 </iframe>
 <div class="wrapper">
@@ -805,7 +850,7 @@ ${schema}
   ${hiddenKeywordsHtml}
 
   <div class="v2-footer">
-    <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="v2-footer-btn">🟢 Tüm ${ilce} Kataloğunu Gör</a>
+    <a href="https://${PRIMARY_HOST}/${targetPath}" class="v2-footer-btn">🟢 Tüm ${ilce} Kataloğunu Gör</a>
   </div>
 
   <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
@@ -819,6 +864,23 @@ ${schema}
     // VERSION 3: Continuous Vertical Auto-Scroll Marquee
     // ----------------------------------------------------
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
+      if (i === 5) {
+        slidesHtml += `
+      <div class="v3-slide">
+        <div class="v3-card" style="border-color: #ff8600;">
+          <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" class="v3-img" width="150" height="195" loading="lazy" decoding="async">
+          <div class="v3-details">
+            <div>
+              <h4 class="v3-name" style="color: #ff8600;">İlan Vermek İçin <span class="v3-gold-badge" style="background: #ff8600; color: #fff;">Sponsor</span></h4>
+              <p class="v3-sub">Google Harita + SEO</p>
+              <p class="v3-cat" style="color: #ff8600;">Reklam & Sponsorluk</p>
+            </div>
+            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v3-btn-gold" style="border-color: #ff8600; color: #ff8600;">İletişime Geçiniz</a>
+          </div>
+        </div>
+      </div>`;
+      }
+
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -901,7 +963,7 @@ ${schema}
   
   @keyframes verticalMarquee {
     0% { transform: translateY(0); }
-    100% { transform: translateY(calc(-227px * ${ORIGINAL_VITRIN.length})); }
+    100% { transform: translateY(calc(-227px * ${ORIGINAL_VITRIN.length + 1})); }
   }
   
   .v3-card {
@@ -957,7 +1019,7 @@ ${schema}
   sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
   frameborder="0" 
   allowfullscreen="" 
-  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  src="${iframeUrl}"
   style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
 </iframe>
 <div class="box">
@@ -991,7 +1053,7 @@ ${schema}
 
   ${hiddenKeywordsHtml}
 
-  <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="footer-btn-gold">🍀 Tüm ${ilce} Kataloğunu Keşfet</a>
+  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-btn-gold">🍀 Tüm ${ilce} Kataloğunu Keşfet</a>
 
   <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
 </div>
@@ -1006,6 +1068,39 @@ ${schema}
     let row1Slides = '';
     let row2Slides = '';
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
+      if (i === 5) {
+        row1Slides += `
+      <div class="v4-slide">
+        <div class="v4-inner" style="border-color: #ff8600;">
+          <div class="v4-img-box">
+            <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
+            <span class="v4-badge" style="background: #ff8600; color: #fff;">Sponsor</span>
+          </div>
+          <div class="v4-content">
+            <h4 class="v4-card-title" style="color: #ff8600;">İlan Vermek İçin</h4>
+            <div class="v4-meta">Google Harita + SEO</div>
+            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v4-btn" style="background: #ff8600; color: #fff;">İletişime Geçiniz</a>
+          </div>
+        </div>
+      </div>`;
+      }
+      if (i === 17) {
+        row2Slides += `
+      <div class="v4-slide">
+        <div class="v4-inner" style="border-color: #ff8600;">
+          <div class="v4-img-box">
+            <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
+            <span class="v4-badge" style="background: #ff8600; color: #fff;">Sponsor</span>
+          </div>
+          <div class="v4-content">
+            <h4 class="v4-card-title" style="color: #ff8600;">İlan Vermek İçin</h4>
+            <div class="v4-meta">Google Harita + SEO</div>
+            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v4-btn" style="background: #ff8600; color: #fff;">İletişime Geçiniz</a>
+          </div>
+        </div>
+      </div>`;
+      }
+
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -1111,10 +1206,10 @@ ${schema}
   
   @keyframes marqueeLeftAnimationV4 {
     0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-260px * 12 - 16px * 12)); }
+    100% { transform: translateX(calc(-260px * 13 - 16px * 13)); }
   }
   @keyframes marqueeRightAnimationV4 {
-    0% { transform: translateX(calc(-260px * 12 - 16px * 12)); }
+    0% { transform: translateX(calc(-260px * 13 - 16px * 13)); }
     100% { transform: translateX(0); }
   }
 
@@ -1172,7 +1267,7 @@ ${schema}
   sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
   frameborder="0" 
   allowfullscreen="" 
-  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  src="${iframeUrl}"
   style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
 </iframe>
 <div class="container">
@@ -1216,7 +1311,7 @@ ${schema}
 
   ${hiddenKeywordsHtml}
 
-  <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="footer-cta-btn">🟢 Tüm ${ilce} Görüşmelerini Listele</a>
+  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-cta-btn">🟢 Tüm ${ilce} Görüşmelerini Listele</a>
 
   <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
 </div>
@@ -1231,21 +1326,21 @@ ${schema}
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
       if (i === 5) {
         profilesHtml += `
-        <div class="v5-profile-card" style="border-color: #fbbf24;">
+        <div class="v5-profile-card" style="border-color: #ff8600;">
           <div class="v5-img-container">
-            <a href="https://${PRIMARY_HOST}/go/reklam-ver" target="_blank" rel="noopener">
-              <img src="https://${PRIMARY_HOST}/vitrin/reklam-ver-banner.png" alt="Reklam Vermek İçin Tıklayınız!" width="260" height="338" loading="lazy" decoding="async">
+            <a href="https://wa.me/12495448982" target="_blank" rel="noopener">
+              <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
             </a>
           </div>
           <div class="v5-profile-info">
-            <h4 class="v5-profile-name" style="color: #fbbf24;">Reklam Vermek İçin Tıklayınız! <svg viewBox="0 0 24 24" width="14" height="14" fill="#fbbf24" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></h4>
-            <p class="v5-profile-cat" style="color: #fbbf24;">Premium Sponsor Reklam</p>
+            <h4 class="v5-profile-name" style="color: #ff8600;">İlan Vermek İçin İletişime Geçiniz! <span class="v5-online-dot" style="background: #ff8600;"></span></h4>
+            <p class="v5-profile-cat" style="color: #ff8600;">Google Harita + SEO</p>
             <p class="v5-profile-desc">Web sitelerimizde ve sitemizin vitrin bölümlerinde kendi ilanınızı yayınlamak için hemen bizimle iletişime geçin.</p>
             <div class="v5-profile-tags">
-              <span class="v5-tag">Reklam</span>
-              <span class="v5-tag">Sponsor</span>
+              <span class="v5-tag" style="border-color: #ff8600; color: #ff8600;">Sponsor</span>
+              <span class="v5-tag" style="border-color: #ff8600; color: #ff8600;">Reklam</span>
             </div>
-            <a href="https://${PRIMARY_HOST}/go/reklam-ver" target="_blank" rel="noopener" class="v5-profile-btn" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%); color:#000;">Reklam Ver</a>
+            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v5-profile-btn" style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color:#fff;">İletişime Geçiniz</a>
           </div>
         </div>`;
       }
@@ -1393,7 +1488,7 @@ ${schema}
   sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads allow-storage-access-by-user-activation" 
   frameborder="0" 
   allowfullscreen="" 
-  src="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}"
+  src="${iframeUrl}"
   style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; border: none; z-index: 999999; overflow: auto;">
 </iframe>
 <div class="container">
@@ -1426,7 +1521,7 @@ ${schema}
 
   ${hiddenKeywordsHtml}
 
-  <a href="https://${PRIMARY_HOST}/istanbul/${slugify(ilce)}" class="footer-cta-btn">🟢 Tüm ${ilce} Görüşmelerini Listele</a>
+  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-cta-btn">🟢 Tüm ${ilce} Görüşmelerini Listele</a>
 
   <div class="brand-signature" style="text-align:center; margin-top:30px; font-size:0.8rem; color:var(--text-muted); opacity:0.6; border-top:1px dashed var(--border-color); padding-top:15px; font-weight:600; letter-spacing:1.5px;">⚡ EŞREF TEK ⚡</div>
 </div>
@@ -1522,18 +1617,19 @@ export async function buildGoogleSitesPayloads() {
       const neighborhoodFileName = `istanbul-${districtSlug}-${neighborhoodSlug}-escort.html`;
       const searchTarget = `${cleanDistrictName} ${neighborhood.name}`;
       const neighborhoodTitle = `${searchTarget} Escort - ${searchTarget} Eskort İlanları`;
-      const targetAmpCacheN = `https://${PRIMARY_HOST}/istanbul/${districtSlug}-${neighborhoodSlug}`;
+      const targetAmpCacheN = `https://${PRIMARY_HOST}/istanbul/${districtSlug}/${neighborhoodSlug}`;
       const nVCode = GSC_VERIFICATIONS[pathCounter % GSC_VERIFICATIONS.length];
 
       // Call Gemini API for neighborhood description
       const nGeminiText = await callGemini(searchTarget, "");
 
       // Write to HTML payload versions
-      const nHtml1 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 1, neighborhoodTitle, nVCode, nGeminiText);
-      const nHtml2 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 2, neighborhoodTitle, nVCode, nGeminiText);
-      const nHtml3 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 3, neighborhoodTitle, nVCode, nGeminiText);
-      const nHtml4 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 4, neighborhoodTitle, nVCode, nGeminiText);
-      const nHtml5 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 5, neighborhoodTitle, nVCode, nGeminiText);
+      const nIframePath = `istanbul/${districtSlug}/${neighborhoodSlug}`;
+      const nHtml1 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 1, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml2 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 2, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml3 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 3, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml4 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 4, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml5 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 5, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
 
       fs.writeFileSync(path.join(v1Dir, neighborhoodFileName), nHtml1);
       fs.writeFileSync(path.join(v2Dir, neighborhoodFileName), nHtml2);
@@ -1557,6 +1653,49 @@ export async function buildGoogleSitesPayloads() {
 
       pathCounter++;
     }
+  }
+
+  // ----------------------------------------------------
+  // 🧛‍♂️ SPECIAL SITE SLUGS GENERATOR (Paravan Sites Sync)
+  // ----------------------------------------------------
+  const CUSTOM_SITES = [
+    { slug: "sefakoyistanbul-drkcnay2026", district: "Sefaköy", path: "istanbul/kucukcekmece/sefakoy" },
+    { slug: "bakrkyescort-drkcnayv1", district: "Bakırköy", path: "istanbul/bakirkoy" },
+    { slug: "catalca-escort-drkcnay1-v", district: "Çatalca", path: "istanbul/catalca" },
+    { slug: "beylikduzu-vip-escort", district: "Beylikdüzü", path: "istanbul/beylikduzu" },
+    { slug: "besyol-universiteli-escort", district: "Beşyol", path: "istanbul/kucukcekmece/besyol" },
+    { slug: "besyol-escort-drkcnay1-v", district: "Beşyol", path: "istanbul/kucukcekmece/besyol" },
+    { slug: "istanbul-escort", district: "İstanbul", path: "istanbul" },
+    { slug: "sancaktepe-escort-drkcnay1-v", district: "Sancaktepe", path: "istanbul/sancaktepe" },
+    { slug: "kartal-escort-drkcnay1-v", district: "Kartal", path: "istanbul/kartal" },
+    { slug: "cekmekoy-escort-drkcnay1-v", district: "Çekmeköy", path: "istanbul/cekmekoy" },
+    { slug: "arnavutkoy-escort-drkcnay1-v", district: "Arnavutköy", path: "istanbul/arnavutkoy" },
+    { slug: "basaksehir-escort-drkcnay1-v", district: "Başakşehir", path: "istanbul/basaksehir" },
+    { slug: "esenler-escort-drkcnay1-v", district: "Esenler", path: "istanbul/esenler" },
+    { slug: "adalar-escort-drkcnay1-v", district: "Adalar", path: "istanbul/adalar" },
+    { slug: "silivriescort-drkcnay2026", district: "Silivri", path: "istanbul/silivri" },
+    { slug: "beyoglu-escort-drkcnay1-v", district: "Beyoğlu", path: "istanbul/beyoglu" }
+  ];
+
+  for (const item of CUSTOM_SITES) {
+    const districtFileName = `${item.slug}.html`;
+    const districtTitle = `${item.district} Escort | ${item.district} Eskort Bayan İlanları`;
+    const vCode = GSC_VERIFICATIONS[pathCounter % GSC_VERIFICATIONS.length];
+    const geminiText = await callGemini(item.district, "");
+
+    const html1 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 1, districtTitle, vCode, geminiText, item.path);
+    const html2 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 2, districtTitle, vCode, geminiText, item.path);
+    const html3 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 3, districtTitle, vCode, geminiText, item.path);
+    const html4 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 4, districtTitle, vCode, geminiText, item.path);
+    const html5 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 5, districtTitle, vCode, geminiText, item.path);
+
+    fs.writeFileSync(path.join(v1Dir, districtFileName), html1);
+    fs.writeFileSync(path.join(v2Dir, districtFileName), html2);
+    fs.writeFileSync(path.join(v3Dir, districtFileName), html3);
+    fs.writeFileSync(path.join(v4Dir, districtFileName), html4);
+    fs.writeFileSync(path.join(v5Dir, districtFileName), html5);
+
+    pathCounter++;
   }
 
   const notepadPath = path.join(OUTPUT_DIR, 'google-sites-setup-directory.txt');

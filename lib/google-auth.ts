@@ -260,6 +260,28 @@ class GoogleAuthService {
    * Urgently requests Google to crawl a specific URL.
    */
   async forceIndexUrl(url: string, type: 'URL_UPDATED' | 'URL_DELETED' = 'URL_UPDATED') {
+    // 1. Try OAuth2 User Tokens First
+    try {
+      const userTokens = await this.getTokens();
+      if (userTokens) {
+        console.log(`🛡️ [INDEXING] Attempting indexing for ${url} using OAuth2 User Tokens...`);
+        const userClient = await this.getAuthorizedClient();
+        const indexing = google.indexing({ version: 'v3', auth: userClient });
+        const res = await indexing.urlNotifications.publish({
+          requestBody: {
+            url: url,
+            type: type,
+          },
+        });
+        console.log(`🚀 [INDEXING] Success for ${url} using OAuth2 User Tokens:`, res.data);
+        return res.data;
+      }
+    } catch (err: any) {
+      const errMsg = err.response?.data || err.message || String(err);
+      console.warn(`⚠️ [INDEXING] OAuth2 User Tokens failed for ${url}:`, JSON.stringify(errMsg));
+    }
+
+    // 2. Fallback to Service Accounts
     const totalClients = Math.max(1, this.serviceAccountClients.length);
     let lastError: any = null;
 
@@ -295,6 +317,26 @@ class GoogleAuthService {
    * Notifies Google about a new sitemap for a specific domain.
    */
   async submitSitemap(siteUrl: string, sitemapUrl: string) {
+    // 1. Try OAuth2 User Tokens First
+    try {
+      const userTokens = await this.getTokens();
+      if (userTokens) {
+        console.log(`🛡️ [SEARCH CONSOLE] Attempting sitemap submission for ${siteUrl} using OAuth2 User Tokens...`);
+        const userClient = await this.getAuthorizedClient();
+        const searchconsole = google.searchconsole({ version: 'v1', auth: userClient });
+        await searchconsole.sitemaps.submit({
+          siteUrl: siteUrl,
+          feedpath: sitemapUrl,
+        });
+        console.log(`📡 [SEARCH CONSOLE] Sitemap submitted successfully using OAuth2 User Tokens: ${sitemapUrl} for ${siteUrl}`);
+        return true;
+      }
+    } catch (err: any) {
+      const errMsg = err.response?.data || err.message || String(err);
+      console.warn(`⚠️ [SEARCH CONSOLE] OAuth2 User Tokens sitemap submission failed for ${siteUrl}:`, JSON.stringify(errMsg));
+    }
+
+    // 2. Fallback to Service Accounts
     const totalClients = Math.max(1, this.serviceAccountClients.length);
     let lastError: any = null;
 

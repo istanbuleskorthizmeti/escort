@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const prisma = new PrismaClient();
 
-const INDEXNOW_KEY = 'drkcnay-elite-key';
+const INDEXNOW_KEY = '8f7c9e0a2b4d6f8a0c2e4f6a8b0d2e4f';
 const INDEXNOW_ENDPOINTS = [
   'https://yandex.com/indexnow',
   'https://www.bing.com/indexnow',

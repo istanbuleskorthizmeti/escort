@@ -10,7 +10,7 @@ const SOURCE_DIR = path.join(DESKTOP_PATH, 'readme-docs-dorukcanay');
 const CLONE_DIR = 'c:\\Users\\onurk\\esc\\temp-clone-v1.0';
 const INDEX_NOW_KEY = process.env.INDEX_NOW_KEY || "8771e07e4e31024024720e4a348e10f0";
 const GITHUB_PAT = process.env.GITHUB_PAT;
-const REPO_URL = process.env.GITHUB_REPO_URL || 'https://github.com/istanbuleskorthizmeti/escort.git';
+const REPO_URL = process.env.GITHUB_REPO_URL || 'https://github.com/istanbuleskorthizmeti/eskortguvenlik.git';
 
 async function run() {
   console.log(`🚀 Starting ReadMe Git-Backed Sync for v1.0 Branch to: ${CLONE_DIR}`);
@@ -85,7 +85,7 @@ async function run() {
       console.log('ℹ️ No new changes to commit or commit skipped.');
     }
 
-    const token = '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';
+    const token = process.env.ISTANBUL_ESKORT_GITHUB_PAT || '';
     const authenticatedRemote = REPO_URL.replace('https://', `https://${token}@`);
 
 

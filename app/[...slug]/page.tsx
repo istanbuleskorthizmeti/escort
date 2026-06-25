@@ -19,6 +19,8 @@ import { DorukVitrin } from "../../components/SEO/DorukVitrin";
 
 import { getPageContent } from "../../lib/data-cache";
 import { generateUltraGraphSchema } from "../../lib/seo-schema";
+import { SchemaGenerator } from "../../lib/seo/schema-generator";
+import { SeoLinker } from "../../lib/seo/link-wheel";
 
 export const revalidate = 3600;
 
@@ -80,10 +82,19 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
       categoryTitle: "VIP ESCORT VİTRİNİ"
     });
 
+    const localBusinessSchema = SchemaGenerator.generateLocalBusiness({
+      city: "İstanbul",
+      district: cityName,
+      host
+    });
+
+    const linkWheelNodes = SeoLinker.generateNeighborhoodLinkWheel("istanbul", cityName);
+
     return (
       <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
         <link rel="amphtml" href={`https://${host}/amp?loc=${slug}`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: localBusinessSchema.replace(/<\/?script[^>]*>/g, '') }} />
         <Navbar />
         <main className="pt-32 pb-32">
           <div className="max-w-7xl mx-auto px-6">
@@ -103,6 +114,24 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
                   </div>
               </div>
   
+              {/* Dynamic Link Wheel Context Widget */}
+              {linkWheelNodes.length > 0 && (
+                <div className="mt-12 p-6 bg-zinc-950/60 border border-zinc-900 rounded-2xl">
+                  <h3 className="text-sm font-bold text-zinc-500 uppercase tracking-[0.2em] mb-4">Yakındaki Popüler VIP Lokasyonlar</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {linkWheelNodes.map((node, idx) => (
+                      <a
+                        key={idx}
+                        href={node.url}
+                        className="px-4 py-2 bg-zinc-900/40 border border-zinc-800 hover:border-rose-600/40 text-xs font-bold text-zinc-400 hover:text-white rounded-lg transition-all"
+                      >
+                        {node.name}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="mt-24">
                   <div className="inline-flex items-center gap-4 bg-zinc-950/40 border border-rose-600/20 px-8 py-3 rounded-full mb-12">
                       <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
@@ -132,10 +161,19 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
     categoryTitle: "VIP ESCORT PORTALI"
   });
 
+  const localBusinessSchema = SchemaGenerator.generateLocalBusiness({
+    city: "İstanbul",
+    district: cityName,
+    host
+  });
+
+  const linkWheelNodes = SeoLinker.generateNeighborhoodLinkWheel("istanbul", cityName);
+
   return (
     <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
       <link rel="amphtml" href={`https://${host}/amp?loc=${slug}`} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: localBusinessSchema.replace(/<\/?script[^>]*>/g, '') }} />
       <Navbar />
       <main className="pt-32 pb-32">
         <div className="max-w-7xl mx-auto px-6">
@@ -161,6 +199,24 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
                     {/* Botlar zaten yukarıdaki SecureHTML içindeki metni de görüyor */}
                 </article>
             </div>
+
+            {/* Dynamic Link Wheel Context Widget */}
+            {linkWheelNodes.length > 0 && (
+              <div className="mt-12 p-6 bg-zinc-950/60 border border-zinc-900 rounded-2xl">
+                <h3 className="text-sm font-bold text-zinc-500 uppercase tracking-[0.2em] mb-4">Yakındaki Popüler VIP Lokasyonlar</h3>
+                <div className="flex flex-wrap gap-3">
+                  {linkWheelNodes.map((node, idx) => (
+                    <a
+                      key={idx}
+                      href={node.url}
+                      className="px-4 py-2 bg-zinc-900/40 border border-zinc-800 hover:border-rose-600/40 text-xs font-bold text-zinc-400 hover:text-white rounded-lg transition-all"
+                    >
+                      {node.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="mt-24">
                 <div className="inline-flex items-center gap-4 bg-zinc-950/40 border border-rose-600/20 px-8 py-3 rounded-full mb-12">

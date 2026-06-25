@@ -116,7 +116,7 @@ export function generateBranchSchema(branch: BranchData) {
             "longitude": branch.coordinates.lng
         },
         "url": `https://istanbulescort.blog/subeler/${branch.slug}`,
-        "telephone": "+90212XXXXXXX",
+        "telephone": "+90 212 900 06 76",
         "identifier": branch.storeCode
     };
 }

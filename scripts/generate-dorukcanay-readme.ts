@@ -189,9 +189,14 @@ function generateMarkdownContent(
       ? model.src 
       : `https://${HOST}${model.src.startsWith('/') ? '' : '/'}${model.src}`;
 
-    vitrinHtml += `| 📸 Görsel | 👑 ${pName} - Premium Escort |\n`;
-    vitrinHtml += `| :--- | :--- |\n`;
-    vitrinHtml += `| <img src="${pImgSrc}" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="${pName} - ${ilce || 'İstanbul'} Premium" /> | **İsim / Yaş:** ${pName} (${pAge} Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** ${pNiche} <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://dorukcanay.digital/whatsapp)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için: **[✨ İletişime Geç & Detayları Öğren (WhatsApp)](https://dorukcanay.digital/whatsapp)** |\n\n`;
+    vitrinHtml += `### 👑 ${pName} - Premium Escort\n`;
+    vitrinHtml += `![${pName} - ${ilce || 'İstanbul'} Premium](${pImgSrc})\n\n`;
+    vitrinHtml += `*   **İsim / Yaş:** ${pName} (${pAge} Yaşında)\n`;
+    vitrinHtml += `*   **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel\n`;
+    vitrinHtml += `*   **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans\n`;
+    vitrinHtml += `*   **Hizmet Konsepti:** ${pNiche}\n`;
+    vitrinHtml += `*   **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://dorukcanay.digital/whatsapp)**\n`;
+    vitrinHtml += `*   **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için: **[✨ İletişime Geç & Detayları Öğren (WhatsApp)](https://dorukcanay.digital/whatsapp)**\n\n`;
   }
 
   // Section 2: Gold Escort Vitrini (Ek 5 Model)
@@ -216,9 +221,14 @@ function generateMarkdownContent(
       ? model.src 
       : `https://${HOST}${model.src.startsWith('/') ? '' : '/'}${model.src}`;
 
-    vitrinHtml += `| 📸 Görsel | ✨ ${pName} - Gold Eskort |\n`;
-    vitrinHtml += `| :--- | :--- |\n`;
-    vitrinHtml += `| <img src="${pImgSrc}" width="130" height="180" style="border-radius: 8px; object-fit: cover;" alt="${pName} - ${ilce || 'İstanbul'} Gold" /> | **İsim / Yaş:** ${pName} (${pAge} Yaşında) <br> **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel <br> **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans <br> **Hizmet Konsepti:** ${pNiche} <br> **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://dorukcanay.digital/whatsapp)** <br> **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için: **[✨ İletişime Geç & Detayları Öğren (WhatsApp)](https://dorukcanay.digital/whatsapp)** |\n\n`;
+    vitrinHtml += `### ✨ ${pName} - Gold Eskort\n`;
+    vitrinHtml += `![${pName} - ${ilce || 'İstanbul'} Gold](${pImgSrc})\n\n`;
+    vitrinHtml += `*   **İsim / Yaş:** ${pName} (${pAge} Yaşında)\n`;
+    vitrinHtml += `*   **Durum:** 🟢 %100 Doğrulanmış Gerçek Görsel\n`;
+    vitrinHtml += `*   **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans\n`;
+    vitrinHtml += `*   **Hizmet Konsepti:** ${pNiche}\n`;
+    vitrinHtml += `*   **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://dorukcanay.digital/whatsapp)**\n`;
+    vitrinHtml += `*   **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için: **[✨ İletişime Geç & Detayları Öğren (WhatsApp)](https://dorukcanay.digital/whatsapp)**\n\n`;
   }
 
   // Dynamic Neighborhood list insertion for grouping nearby locations
@@ -337,8 +347,6 @@ function generateGoogleSitesLinkHub(): string {
 }
 
   return `${frontmatter}
-
-<meta name="google-site-verification" content="blR9C6PaZE-_yAVhnbK7o9PD1IWmlxQUzVnGMf3fHrI" />
 
 # ${title}
 

@@ -56,20 +56,27 @@ class GeminiUltraProvider {
     if (!apiKey) return this.getFallbackContent();
 
     try {
-      let model = options.model || process.env.LLM_MODEL || 'gemini-2.0-flash';
+      let model = options.model || process.env.LLM_MODEL || 'gemini-2.5-flash';
       if (model.includes('deepseek') || model.includes('gpt') || model.includes('llama') || model.includes('mistral') || model.includes('claude')) {
-        model = process.env.LLM_MODEL || 'gemini-2.0-flash';
+        model = process.env.LLM_MODEL || 'gemini-2.5-flash';
       }
       const url = `${this.getBaseUrl()}/models/${model}:generateContent?key=${apiKey}`;
       
-      console.log(`📡 [GEMINI] Calling API: ${model}`);
+      console.log(`📡 [GEMINI] Calling API: ${model} (isJson=${!!options.isJson})`);
+
+      const generationConfig: any = {
+        temperature: options.temperature !== undefined ? options.temperature : 0.85,
+        maxOutputTokens: options.max_tokens || 4000,
+        topP: 0.95,
+      };
+
+      if (options.isJson) {
+        generationConfig.responseMimeType = "application/json";
+      }
 
       const response = await axios.post(url, {
         contents: [{ parts: [{ text: `${options.systemPrompt || ''}\n\n${prompt}` }] }],
-        generationConfig: {
-          temperature: options.temperature || 0.7,
-          maxOutputTokens: options.max_tokens || 4000,
-        }
+        generationConfig
       }, { timeout: 120000 });
 
       if (response.data.candidates?.[0]?.content?.parts?.[0]?.text) {

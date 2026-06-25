@@ -18,7 +18,7 @@ async function run() {
     let envContent = getEnv.stdout;
 
     // 2. Replace GITHUB_PAT and GITHUB_REPO_URL
-    const newPatLine = 'GITHUB_PAT="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"';
+    const newPatLine = `GITHUB_PAT="${process.env.GITHUB_PAT || ''}"`;
     const newRepoLine = 'GITHUB_REPO_URL="https://github.com/istanbuleskorthizmeti/eskortguvenlik"';
     
     if (envContent.includes('GITHUB_PAT=')) {

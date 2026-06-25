@@ -6,9 +6,9 @@ import fs from 'fs';
 const ssh = new NodeSSH();
 
 const config = {
-  host: '213.232.235.181',
+  host: '31.97.79.34',
   username: 'root',
-  password: '4TVuj7qiHMfh7CxH6K!'
+  password: 'Oym@icdLt?vY8YQy'
 };
 
 async function surgicalUpload() {

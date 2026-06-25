@@ -21,6 +21,7 @@ import { getPageContent } from "../../lib/data-cache";
 import { generateUltraGraphSchema } from "../../lib/seo-schema";
 import { SchemaGenerator } from "../../lib/seo/schema-generator";
 import { SeoLinker } from "../../lib/seo/link-wheel";
+import { resolveLocationContext } from "../../lib/seo/utils";
 
 export const revalidate = 3600;
 
@@ -34,9 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const content = await getPageContent(slug, siteId);
 
   if (!content) {
-    const rawCityPart = slug.includes('/') ? slug.split('/').pop() : slug.split('-')[0];
-    const cityFromName = rawCityPart || "istanbul";
-    const cityName = toTitleCaseTR(cityFromName);
+    const locCtx = resolveLocationContext(slug, "istanbul", "sisli");
+    const cityName = toTitleCaseTR(locCtx.districtSlug || locCtx.citySlug);
     return {
       title: dedupeEscort(`🔞 ${cityName} Escort Bayan | %100 GERÇEK VİTRİN`),
       description: dedupeEscort(`${cityName} genelinde lüks ve seçkin escort model rehberi. Ön ödemesiz, kaporasız ve %100 güvenli buluşmalar için VIP model partnerler.`),
@@ -63,32 +63,32 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
   const domainConfig = getDomainConfig(host);
   const isCloaker = domainConfig?.role === 'CLOAKER';
 
+  const locCtx = resolveLocationContext(slug, "istanbul", "sisli");
+  const cityName = toTitleCaseTR(locCtx.districtSlug || locCtx.citySlug);
+
   if (!content) {
     if (!isBot) {
       permanentRedirect('/');
     }
 
-    const rawCityPart = slug.includes('/') ? slug.split('/').pop() : slug.split('-')[0];
-    const cityFromName = rawCityPart || "istanbul";
-    const cityName = toTitleCaseTR(cityFromName);
     const fallbackTitle = `${cityName} Escort Bayan | VIP Vitrin`;
     const fallbackParagraph = `${cityName} genelinde VIP model partnerler, elite escort hizmetleri ve kaporasız doğrudan elden ödemeli güvenilir buluşmalar. Telefon numaraları ve aktif WhatsApp hattı ile 7/24 randevu planlayın.`;
 
     const schema = generateUltraGraphSchema({
       locationName: cityName,
-      city: "İstanbul",
+      city: toTitleCaseTR(locCtx.citySlug),
       description: fallbackParagraph,
       url: `https://${host}/${slug}`,
       categoryTitle: "VIP ESCORT VİTRİNİ"
     });
 
     const localBusinessSchema = SchemaGenerator.generateLocalBusiness({
-      city: "İstanbul",
+      city: toTitleCaseTR(locCtx.citySlug),
       district: cityName,
       host
     });
 
-    const linkWheelNodes = SeoLinker.generateNeighborhoodLinkWheel("istanbul", cityName);
+    const linkWheelNodes = SeoLinker.generateNeighborhoodLinkWheel(locCtx.citySlug, locCtx.districtSlug, locCtx.neighborhoodSlug);
 
     return (
       <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
@@ -131,7 +131,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
                   </div>
                 </div>
               )}
-
+ 
               <div className="mt-24">
                   <div className="inline-flex items-center gap-4 bg-zinc-950/40 border border-rose-600/20 px-8 py-3 rounded-full mb-12">
                       <span className="w-2.5 h-2.5 bg-rose-600 rounded-full animate-glow-pulse" />
@@ -149,25 +149,21 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
     );
   }
 
-  const rawCityPart = slug.includes('/') ? slug.split('/').pop() : slug.split('-')[0];
-  const cityFromName = rawCityPart || "istanbul";
-  const cityName = toTitleCaseTR(cityFromName);
-
   const schema = generateUltraGraphSchema({
     locationName: content.title || cityName,
-    city: "İstanbul",
+    city: toTitleCaseTR(locCtx.citySlug),
     description: content.content?.substring(0, 160).replace(/<[^>]*>?/gm, '').replace(/[-\u2013\u2014]/g, ' ') || "VIP escort hizmetleri.",
     url: `https://${host}/${slug}`,
     categoryTitle: "VIP ESCORT PORTALI"
   });
 
   const localBusinessSchema = SchemaGenerator.generateLocalBusiness({
-    city: "İstanbul",
+    city: toTitleCaseTR(locCtx.citySlug),
     district: cityName,
     host
   });
 
-  const linkWheelNodes = SeoLinker.generateNeighborhoodLinkWheel("istanbul", cityName);
+  const linkWheelNodes = SeoLinker.generateNeighborhoodLinkWheel(locCtx.citySlug, locCtx.districtSlug, locCtx.neighborhoodSlug);
 
   return (
     <div className="min-h-screen bg-black text-white antialiased selection:bg-rose-600/30">
@@ -230,7 +226,7 @@ export default async function CatchAllPage({ params }: { params: Promise<{ slug:
           <IstanbulConquestMatrix />
         </div>
       </main>
-      <UltraFooter host={host} cityName="İSTANBUL" />
+      <UltraFooter host={host} cityName={turkishToUpper(cityName)} />
     </div>
   );
 }

@@ -79,36 +79,6 @@ export function VitrinWall({ city = 'İstanbul', layoutType = 'grid' }: { city?:
         </div>
       </div>
 
-      <div className={containerClass}>
-        {/* Showcase Ad Card - Premium Ad Spot */}
-        <Link 
-          href="https://wa.me/573009000676?text=Merhaba,%20vitrin%20ilanı%20satın%20almak%20istiyorum." 
-          target="_blank" 
-          rel="noopener noreferrer" 
-          className="relative group border-2 border-dashed border-rose-600/40 hover:border-rose-600 rounded-dynamic overflow-hidden bg-zinc-950/60 aspect-[3/4] shadow-2xl transition-all duration-700 hover:-translate-y-4 hover:shadow-rose-600/20 p-5 flex flex-col justify-between"
-        >
-          <div className="flex justify-between items-start w-full relative z-10">
-            <span className="bg-rose-500/10 text-rose-400 border border-rose-500/30 px-2.5 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest animate-pulse">
-              REKLAM ALANI
-            </span>
-            <span className="text-zinc-700 text-[10px] font-black uppercase">AD</span>
-          </div>
-          
-          <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden my-auto border border-zinc-900 group-hover:border-rose-600/20 bg-zinc-900/40 transition-colors z-10 flex items-center justify-center">
-            <span className="text-zinc-600 group-hover:text-rose-500 text-5xl font-extralight transition-colors duration-500 select-none">
-              +
-            </span>
-          </div>
-
-          <div className="w-full space-y-2 mt-auto relative z-10">
-            <h3 className="text-white font-black text-center text-[10px] sm:text-xs uppercase tracking-wider group-hover:text-rose-500 transition-colors">
-              Vitrin'e İlan Eklemek İçin
-            </h3>
-            <div className="w-full bg-gradient-to-tr from-rose-600 to-amber-500 text-white py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest text-center shadow-md shadow-rose-600/20">
-              İletişime Geçin!
-            </div>
-          </div>
-        </Link>
 
         {shuffledIndices.map((originalIndex, index) => {
           const item = vitrinImages[originalIndex];

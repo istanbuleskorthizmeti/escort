@@ -10,8 +10,8 @@ import * as path from 'path';
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
 // This must be a comma-separated list of PUBLIC channel IDs (e.g., -100123456789)
 const TARGET_CHANNELS = (process.env.TELEGRAM_TARGET_CHANNELS || '').split(',').map(c => c.trim()).filter(Boolean);
-const WHATSAPP_NUMBER = "+12495448982";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Merhaba, detaylı bilgi almak istiyorum.")}`;
+const WHATSAPP_NUMBER = "+905016355053";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER.replace('+', '')}?text=${encodeURIComponent("Merhaba, detaylı bilgi almak istiyorum.")}`;
 
 // We only initialize the Telegraf instance if a token exists.
 const bot = new Telegraf(BOT_TOKEN);

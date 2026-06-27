@@ -48,7 +48,7 @@ export default function TelegramLinkHub() {
           </Link>
 
           <Link 
-            href="https://wa.me/905000000000" 
+            href="https://wa.me/905016355053" 
             className="group flex items-center justify-between bg-zinc-950/80 border border-zinc-900 p-5 rounded-4xl hover:border-green-600 hover:bg-green-600/5 transition-all duration-500 backdrop-blur-3xl"
           >
             <div className="flex items-center gap-4 text-left">

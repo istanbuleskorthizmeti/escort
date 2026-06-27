@@ -472,20 +472,6 @@ export async function GET(request: Request) {
   
   <div class="container">
     <div class="grid">
-      <!-- Showcase Ad Card - Premium Ad Spot -->
-      <div class="card" style="border: 2px dashed rgba(225, 29, 72, 0.4); background: #0c0c0e;">
-        <div class="card-img-wrap" style="height: 0; padding-bottom: 133.33%; position: relative; background: #0e0e11; display: flex; align-items: center; justify-content: center;">
-          <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
-            <span style="font-size: 60px; font-weight: 200; color: #3f3f46;">+</span>
-          </div>
-        </div>
-        <div class="card-info">
-          <div class="card-badge" style="background: rgba(225, 29, 72, 0.1); color: #e11d48; border: 1px solid rgba(225, 29, 72, 0.2);">VİTRİN'E İLAN EKLEMEK İÇİN</div>
-          <div class="card-title" style="color: #fff; font-size: 15px;">Vitrin'e İlan Eklemek İçin</div>
-          <div class="card-meta" style="color: #a1a1aa;">İletişime Geçin! • ${locationName}</div>
-          <a href="https://wa.me/573009000676?text=Merhaba,%20vitrin%20ilanı%20satın%20almak%20istiyorum." class="btn" style="background: linear-gradient(to top right, #e11d48, #f59e0b); color: #fff;" target="_blank" rel="noopener noreferrer">İletişime Geçin!</a>
-        </div>
-      </div>
       ${ampProfiles.map((p, index) => {
         const isCustomImage = p.src && (p.src.startsWith('http') || p.src.includes('uploads') || !p.src.includes('seo_'));
         
@@ -516,7 +502,7 @@ export async function GET(request: Request) {
             <div class="card-badge">${niche}</div>
             <div class="card-title">${title}</div>
             <div class="card-meta">${age} • ${locationName}</div>
-            <a href="https://wa.me/12495448982?text=Merhaba ${title}, ${locationName} görüşmesi için bilgi alabilir miyim?" class="btn" target="_blank" rel="noopener noreferrer">Escort Randevusu Al</a>
+            <a href="https://wa.me/905016355053?text=Merhaba ${title}, ${locationName} görüşmesi için bilgi alabilir miyim?" class="btn" target="_blank" rel="noopener noreferrer">Escort Randevusu Al</a>
           </div>
         </div>
         `;

@@ -41,8 +41,8 @@ export async function GET(request: Request) {
     }
   }).catch((err: any) => console.error('[WHATSAPP] DB Logging failed:', err));
 
-  const whatsappNumber = process.env.GLOBAL_WHATSAPP_NUMBER || "12495448982";
-  const text = encodeURIComponent(`Merhaba, ${host} üzerinden ulaşıyorum. Bilgi almak istiyorum.`);
+  const whatsappNumber = process.env.GLOBAL_WHATSAPP_NUMBER || "905016355053";
+  const text = encodeURIComponent(`Merhaba Dorukcan Ay tarafından İstanbul'dan bağlanıyorum.`);
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${text}`;
   
   return NextResponse.redirect(whatsappLink, 307);

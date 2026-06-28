@@ -236,7 +236,7 @@ export function generateStructuredData(params: MetaParams) {
       "name": `${locName} VIP Escort Hizmetleri`,
       "description": `${locName} lokasyonunda profesyonel kaporasız escort, rus escort ve üniversiteli lüks eşlik hizmeti.`,
       "url": url,
-      "telephone": "+12495448982",
+      "telephone": "+90 501 635 50 53",
       "priceRange": "₺₺₺",
       "address": { "@type": "PostalAddress", "addressLocality": locName, "addressRegion": params.cityName, "addressCountry": "TR" },
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": ratingValue, "reviewCount": reviewCount },

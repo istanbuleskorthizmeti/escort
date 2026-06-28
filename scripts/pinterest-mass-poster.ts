@@ -61,7 +61,7 @@ async function runPinterestPoster() {
       continue;
     }
 
-    const description = `${pageTitle}. Doğrulanmış elit model ilanları, güvenilir ve %100 kaporasız randevu. Tel: +12495448982. #escort #istanbul #vip #kaporasiz #eskort`;
+    const description = `${pageTitle}. Doğrulanmış elit model ilanları, güvenilir ve %100 kaporasız randevu. Tel: +90 501 635 50 53. #escort #istanbul #vip #kaporasiz #eskort`;
 
     try {
       console.log(`🚀 Executing puppeteer pin builder for: "${pageTitle}" using image: ${relativeImagePath}`);

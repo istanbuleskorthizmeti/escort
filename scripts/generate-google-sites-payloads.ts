@@ -31,30 +31,30 @@ const GSC_VERIFICATIONS = [
 
 // 24 Premium Profiles with verified images from PBN database
 const ORIGINAL_VITRIN = [
-  { name: 'Melissa', img: 'istanbul-kaporasiz-escort-melissa-1.webp', race: 'Türk', cat: 'Elite VIP Partner', phone: '12495448982' },
-  { name: 'Aynur', img: 'istanbul-kaporasiz-escort-aynur-1.webp', race: 'Türk', cat: 'VIP Sarışın Model', phone: '12495448982' },
-  { name: 'Svetlana', img: 'istanbul-kaporasiz-escort-svetlana-1.webp', race: 'Rus', cat: 'Elit Rus Model', phone: '12495448982' },
-  { name: 'Ceren', img: 'istanbul-kaporasiz-escort-ceren-1.webp', race: 'Türk', cat: 'VIP Elit Model', phone: '12495448982' },
-  { name: 'Ayla', img: 'istanbul-kaporasiz-escort-ayla-1.webp', race: 'Türk', cat: 'Premium Esmer Lady', phone: '12495448982' },
-  { name: 'Esila', img: 'istanbul-kaporasiz-escort-esila-1.webp', race: 'Boşnak', cat: 'Ateşli Sarışın Partner', phone: '12495448982' },
-  { name: 'Berfin', img: 'vip-profil-1.webp', race: 'Türk', cat: 'Elit Üniversiteli', phone: '12495448982' },
-  { name: 'Dilan', img: 'vip-profil-6.webp', race: 'Türk', cat: 'Premium Esmer Güzeli', phone: '12495448982' },
-  { name: 'Jînda', img: 'vip-profil-11.webp', race: 'Türk', cat: 'Kızıl Fantezi Uzmanı', phone: '12495448982' },
-  { name: 'Narin', img: 'vip-profil-16.webp', race: 'Türk', cat: 'Zarif Çıtır Partner', phone: '12495448982' },
-  { name: 'Rojîn', img: 'vip-profil-21.webp', race: 'Türk', cat: 'VIP Lady Partner', phone: '12495448982' },
-  { name: 'Zilan', img: 'vip-profil-26.webp', race: 'Türk', cat: 'Lüks Sarışın Model', phone: '12495448982' },
-  { name: 'Asya', img: 'vip-profil-31.webp', race: 'Türk', cat: 'Sınırsız Randevu Partneri', phone: '12495448982' },
-  { name: 'Buse', img: 'vip-profil-36.webp', race: 'Türk', cat: 'VIP Üniversiteli Çıtır', phone: '12495448982' },
-  { name: 'Cansel', img: 'vip-profil-41.webp', race: 'Türk', cat: 'Gizemli Fantezi Model', phone: '12495448982' },
-  { name: 'Damla', img: 'vip-profil-46.webp', race: 'Türk', cat: 'Lüks Rezidans Partneri', phone: '12495448982' },
-  { name: 'Elif', img: 'vip-profil-51.webp', race: 'Türk', cat: 'VIP Sarışın Bomba', phone: '12495448982' },
-  { name: 'Figen', img: 'vip-profil-56.webp', race: 'Türk', cat: 'Olgun Lady Uzmanı', phone: '12495448982' },
-  { name: 'Gizem', img: 'vip-profil-61.webp', race: 'Türk', cat: 'Zarif Çıtır Model', phone: '12495448982' },
-  { name: 'Hande', img: 'vip-profil-66.webp', race: 'Türk', cat: 'Ateşli Kızıl Lady', phone: '12495448982' },
-  { name: 'Işıl', img: 'vip-profil-71.webp', race: 'Türk', cat: 'Lüks Rezidans Modeli', phone: '12495448982' },
-  { name: 'Kübra', img: 'vip-profil-76.webp', race: 'Türk', cat: 'VIP Partner Seçeneği', phone: '12495448982' },
-  { name: 'Leyla', img: 'vip-profil-81.webp', race: 'Türk', cat: 'Gizemli Esmer Model', phone: '12495448982' },
-  { name: 'Merve', img: 'vip-profil-86.webp', race: 'Türk', cat: 'Elite VIP Model', phone: '12495448982' }
+  { name: 'Melissa', img: 'istanbul-kaporasiz-escort-melissa-1.webp', race: 'Türk', cat: 'Elite VIP Partner', phone: '905016355053' },
+  { name: 'Aynur', img: 'istanbul-kaporasiz-escort-aynur-1.webp', race: 'Türk', cat: 'VIP Sarışın Model', phone: '905016355053' },
+  { name: 'Svetlana', img: 'istanbul-kaporasiz-escort-svetlana-1.webp', race: 'Rus', cat: 'Elit Rus Model', phone: '905016355053' },
+  { name: 'Ceren', img: 'istanbul-kaporasiz-escort-ceren-1.webp', race: 'Türk', cat: 'VIP Elit Model', phone: '905016355053' },
+  { name: 'Ayla', img: 'istanbul-kaporasiz-escort-ayla-1.webp', race: 'Türk', cat: 'Premium Esmer Lady', phone: '905016355053' },
+  { name: 'Esila', img: 'istanbul-kaporasiz-escort-esila-1.webp', race: 'Boşnak', cat: 'Ateşli Sarışın Partner', phone: '905016355053' },
+  { name: 'Berfin', img: 'vip-profil-1.webp', race: 'Türk', cat: 'Elit Üniversiteli', phone: '905016355053' },
+  { name: 'Dilan', img: 'vip-profil-6.webp', race: 'Türk', cat: 'Premium Esmer Güzeli', phone: '905016355053' },
+  { name: 'Jînda', img: 'vip-profil-11.webp', race: 'Türk', cat: 'Kızıl Fantezi Uzmanı', phone: '905016355053' },
+  { name: 'Narin', img: 'vip-profil-16.webp', race: 'Türk', cat: 'Zarif Çıtır Partner', phone: '905016355053' },
+  { name: 'Rojîn', img: 'vip-profil-21.webp', race: 'Türk', cat: 'VIP Lady Partner', phone: '905016355053' },
+  { name: 'Zilan', img: 'vip-profil-26.webp', race: 'Türk', cat: 'Lüks Sarışın Model', phone: '905016355053' },
+  { name: 'Asya', img: 'vip-profil-31.webp', race: 'Türk', cat: 'Sınırsız Randevu Partneri', phone: '905016355053' },
+  { name: 'Buse', img: 'vip-profil-36.webp', race: 'Türk', cat: 'VIP Üniversiteli Çıtır', phone: '905016355053' },
+  { name: 'Cansel', img: 'vip-profil-41.webp', race: 'Türk', cat: 'Gizemli Fantezi Model', phone: '905016355053' },
+  { name: 'Damla', img: 'vip-profil-46.webp', race: 'Türk', cat: 'Lüks Rezidans Partneri', phone: '905016355053' },
+  { name: 'Elif', img: 'vip-profil-51.webp', race: 'Türk', cat: 'VIP Sarışın Bomba', phone: '905016355053' },
+  { name: 'Figen', img: 'vip-profil-56.webp', race: 'Türk', cat: 'Olgun Lady Uzmanı', phone: '905016355053' },
+  { name: 'Gizem', img: 'vip-profil-61.webp', race: 'Türk', cat: 'Zarif Çıtır Model', phone: '905016355053' },
+  { name: 'Hande', img: 'vip-profil-66.webp', race: 'Türk', cat: 'Ateşli Kızıl Lady', phone: '905016355053' },
+  { name: 'Işıl', img: 'vip-profil-71.webp', race: 'Türk', cat: 'Lüks Rezidans Modeli', phone: '905016355053' },
+  { name: 'Kübra', img: 'vip-profil-76.webp', race: 'Türk', cat: 'VIP Partner Seçeneği', phone: '905016355053' },
+  { name: 'Leyla', img: 'vip-profil-81.webp', race: 'Türk', cat: 'Gizemli Esmer Model', phone: '905016355053' },
+  { name: 'Merve', img: 'vip-profil-86.webp', race: 'Türk', cat: 'Elite VIP Model', phone: '905016355053' }
 ];
 
 const EDITORIAL_DESCRIPTIONS = [
@@ -383,7 +383,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
       "@type": "LocalBusiness",
       "name": "${ilce} VIP Escort Ajansı",
       "image": "https://${PRIMARY_HOST}/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
-      "telephone": "+12495448982",
+      "telephone": "+90 501 635 50 53",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
@@ -420,7 +420,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
               <span class="v1-tag" style="color: #ff8600; border-color: #ff8600;">Sponsor</span>
               <span class="v1-tag" style="color: #ff8600; border-color: #ff8600;">İlan Ver</span>
             </div>
-            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v1-btn" style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color: #fff;">İletişime Geçiniz</a>
+            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v1-btn" style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color: #fff;">İletişime Geçiniz</a>
           </div>
         </div>
       </div>`;
@@ -653,7 +653,7 @@ ${schema}
               <span class="v2-subtag" style="border-color: #ff8600; color: #ff8600;">Sponsor</span>
               <span class="v2-subtag" style="border-color: #ff8600; color: #ff8600;">İlan Ver</span>
             </div>
-            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v2-cta-link" style="background: linear-gradient(90deg, #ff8600 0%, #ff5100 100%); color: #fff;">İletişime Geçiniz</a>
+            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v2-cta-link" style="background: linear-gradient(90deg, #ff8600 0%, #ff5100 100%); color: #fff;">İletişime Geçiniz</a>
           </div>
         </div>
       </div>`;
@@ -875,7 +875,7 @@ ${schema}
               <p class="v3-sub">Google Harita + SEO</p>
               <p class="v3-cat" style="color: #ff8600;">Reklam & Sponsorluk</p>
             </div>
-            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v3-btn-gold" style="border-color: #ff8600; color: #ff8600;">İletişime Geçiniz</a>
+            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v3-btn-gold" style="border-color: #ff8600; color: #ff8600;">İletişime Geçiniz</a>
           </div>
         </div>
       </div>`;
@@ -1079,7 +1079,7 @@ ${schema}
           <div class="v4-content">
             <h4 class="v4-card-title" style="color: #ff8600;">İlan Vermek İçin</h4>
             <div class="v4-meta">Google Harita + SEO</div>
-            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v4-btn" style="background: #ff8600; color: #fff;">İletişime Geçiniz</a>
+            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v4-btn" style="background: #ff8600; color: #fff;">İletişime Geçiniz</a>
           </div>
         </div>
       </div>`;
@@ -1095,7 +1095,7 @@ ${schema}
           <div class="v4-content">
             <h4 class="v4-card-title" style="color: #ff8600;">İlan Vermek İçin</h4>
             <div class="v4-meta">Google Harita + SEO</div>
-            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v4-btn" style="background: #ff8600; color: #fff;">İletişime Geçiniz</a>
+            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v4-btn" style="background: #ff8600; color: #fff;">İletişime Geçiniz</a>
           </div>
         </div>
       </div>`;
@@ -1328,7 +1328,7 @@ ${schema}
         profilesHtml += `
         <div class="v5-profile-card" style="border-color: #ff8600;">
           <div class="v5-img-container">
-            <a href="https://wa.me/12495448982" target="_blank" rel="noopener">
+            <a href="https://wa.me/905016355053" target="_blank" rel="noopener">
               <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
             </a>
           </div>
@@ -1340,7 +1340,7 @@ ${schema}
               <span class="v5-tag" style="border-color: #ff8600; color: #ff8600;">Sponsor</span>
               <span class="v5-tag" style="border-color: #ff8600; color: #ff8600;">Reklam</span>
             </div>
-            <a href="https://wa.me/12495448982" target="_blank" rel="noopener" class="v5-profile-btn" style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color:#fff;">İletişime Geçiniz</a>
+            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v5-profile-btn" style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color:#fff;">İletişime Geçiniz</a>
           </div>
         </div>`;
       }

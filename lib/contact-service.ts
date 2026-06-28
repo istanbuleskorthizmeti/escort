@@ -7,7 +7,7 @@ import { prisma } from "./prisma";
 
 const CONTACT_SETTING_KEY = "global_whatsapp";
 const SHORTLINK_SETTING_KEY = "global_shortlink";
-const DEFAULT_WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP || "12495448982";
+const DEFAULT_WHATSAPP = process.env.NEXT_PUBLIC_WHATSAPP || "905016355053";
 const DEFAULT_SHORTLINK = process.env.NEXT_PUBLIC_SHORTLINK || "https://istanbulescort.blog/wa";
 
 export interface ContactInfo {

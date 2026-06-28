@@ -82,9 +82,9 @@ export function getProperTurkishName(slug: string): string {
 export function getKgrKeywords(city: string, district?: string, neighborhood?: string): string[] {
   const name = getProperTurkishName(neighborhood || district || city);
   return [
-    `${turkishToLower(name)} kaporasız escort telefon numaraları`,
+    `${turkishToLower(name)} ön ödeme talep etmeyen escort iletişim bilgileri`,
     `${turkishToLower(name)} otelde hizmet veren eskort bayanlar`,
-    `${turkishToLower(name)} vip escort bayan whatsapp ilanları`,
+    `${turkishToLower(name)} vip escort bayan sıfır riskli buluşma ilanları`,
     `${turkishToLower(name)} evine gelen üniversiteli eskortlar`
   ];
 }
@@ -149,8 +149,8 @@ function getSemanticEntities(city: string, district?: string, host?: string): st
   
   // Mix in domain specific dynamic LSI terms
   const domainSpecificLsi = [
-    "kaporasız eskort bayan", "buluşmak için bayan", "randevu için model",
-    "otel eskort bayan", "eve gelen eskort bayan", "bireysel eskort bayan"
+    "sıfır riskli buluşma eskort bayan", "buluşmak için bayan", "randevu için model",
+    "otel eskort bayan", "eve gelen eskort bayan", "bireysel eskort bayan", "ön ödeme istemeyen elit eskort"
   ];  const seed = host ? host.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) : Math.floor(Math.random() * 100);
   const shuffled = [...entities, ...domainSpecificLsi].sort(() => {
     const r = Math.sin(seed + Math.random()) * 10000;
@@ -168,7 +168,7 @@ export function generateGoldKeywordsHtml(locationName: string, isCloaker: boolea
   const cleanLoc = locationName.toLowerCase().trim();
   const firstPrefixes = isCloaker 
     ? ["", "türk ", "vip ", "sansürsüz ", "güncel ", "gizli ", "yeni ", "popüler "]
-    : ["", "istanbul ", "vip ", "elit ", "kaporasız ", "bireysel ", "bağımsız ", "seçkin "];
+    : ["", "istanbul ", "vip ", "elit ", "ön ödemesiz ", "bireysel ", "bağımsız ", "seçkin "];
   
   const midKeywords = isCloaker
     ? [`${cleanLoc} ifsa`, `${cleanLoc} ifşa`, `${cleanLoc} skandal`, `${cleanLoc} video`, `${cleanLoc} telegram`]
@@ -216,7 +216,7 @@ export async function generateEliteOmniContent({
   const personaKey = getPersonaForHost(host);
   const persona = PERSONAS[personaKey];
   
-  const targetLength = getBellCurveLength(600, 1000); // 💸 DEEPSEEK COST OPTIMIZED: 600-1000 words max.
+  const targetLength = getBellCurveLength(2500, 4500); // 💸 GOD MODE COPYWRITER: 2500-4500 words for Big Data dominance.
   const targetDensity = (Math.random() * (3.5 - 2.5) + 2.5).toFixed(2);
   const semanticEntities = getSemanticEntities(city, district).join(', ');
   
@@ -285,7 +285,7 @@ export async function generateEliteOmniContent({
     2. <a href="https://${host}">https://${host}</a> (Yerel Otoyol Portalı)
     3. <a href="https://bit.ly/dorukcanmanay">https://bit.ly/dorukcanmanay</a> (Mobil Katalog Kanalı)
     
-    Linklerin anchor text'leri kesinlikle şu ifadelerden biri olmalı: "${locationName} vip escort", "kaporasız eskort bayanlar", "vip escort randevusu", "${locationName} escort bayan", "iletişim ve rezervasyon numarası".
+    Linklerin anchor text'leri kesinlikle şu ifadelerden biri olmalı: "${locationName} vip escort", "ön ödeme talep etmeyen eskort bayanlar", "vip escort randevusu", "${locationName} escort bayan", "iletişim ve rezervasyon numarası".
     
     🔴 GENEL KURALLAR:
     Kural 1: ASLA laf kalabalığı (fluff) yapma. Token tasarrufu ve semantik yoğunluk maksimum olmalı.
@@ -299,9 +299,9 @@ export async function generateEliteOmniContent({
       "wordpress": {
         "title": "🔥 İstanbul ${locationName} Escort - Vip ${locationName} Eskort Bayanlar",
         "content": "HTML İÇERİK (H2, H3, strong ve <a href='...'> etiketlerini MUTLAKA persona biçimlendirme kurallarına göre kullan. Metin içinde VIP bileşenler, GEO tabloları ve ana referans portalımız istanbulescort.blog linki yer almalı.)",
-        "meta": "İstanbul ${locationName} escort ve eskort bayan ilanları. Kaporasız, %100 doğrulanmış gerçek ${locationName} vip partner hizmetleri için hemen tıklayın.",
-        "tags": ["${locationName} escort", "${locationName} eskort", "${locationName} vip escort", "kaporasız", "randevu", "vip partner"],
-        "faqs": [{"q": "İstanbul ${locationName} eskort buluşması kaporasız mı?", "a": "Evet, ${host} platformundaki en seçkin eskort ve bayan modellerimizle buluşmak için ön ödeme veya kapora istenmez. Ödeme elden yapılır."}]
+        "meta": "İstanbul ${locationName} escort ve eskort bayan ilanları. Ön ödeme talep etmeyen, %100 doğrulanmış gerçek ${locationName} vip partner hizmetleri için hemen tıklayın.",
+        "tags": ["${locationName} escort", "${locationName} eskort", "${locationName} vip escort", "sıfır risk", "randevu", "vip partner"],
+        "faqs": [{"q": "İstanbul ${locationName} eskort buluşması güvenli mi?", "a": "Evet, ${host} platformundaki en seçkin eskort ve bayan modellerimizle buluşmak için ön ödeme veya kapora istenmez. Tamamen sıfır riskli elden ödeme prensibi ile çalışılır."}]
       },
       "github": { "readme": "", "gist": "" },
       "wordpress_kgr": ["Bu metinde hedeflenen KGR anahtar kelimeleri dizisidir. Başlık ve içerikteki H2'lerle tam eşleştiğini doğrula."],

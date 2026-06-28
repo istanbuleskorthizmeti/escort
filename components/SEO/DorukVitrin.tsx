@@ -755,8 +755,8 @@ export function DorukVitrin({
             };
 
             const whatsappUrl = item.phone 
-              ? `https://wa.me/${item.phone}?text=Merhaba ${firstName}, görüşme için bilgi verir misin?` 
-              : `${siteConfig.contact.whatsappLink}?text=Merhaba ${firstName}, görüşme için bilgi verir misin?`;
+              ? `https://wa.me/${item.phone}?text=Merhaba Dorukcan Ay tarafından İstanbul'dan bağlanıyorum.` 
+              : `${siteConfig.contact.whatsappLink}?text=Merhaba Dorukcan Ay tarafından İstanbul'dan bağlanıyorum.`;
 
             return (
               <VitrinCard

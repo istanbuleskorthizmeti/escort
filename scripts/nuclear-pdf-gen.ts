@@ -35,7 +35,7 @@ async function generateUltimatePdf() {
 
     const niches = ["Rus", "Üniversiteli", "Olgun", "Sarışın", "Esmer", "Ukraynalı"];
     const districts = ["Şişli", "Beşiktaş", "Bakırköy", "Kadıköy", "Florya", "Beylikdüzü"];
-    const WA_BRIDGE = "https://wa.me/12495448982?text=Merhaba,%20Premium%202026%20Rehberi%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.";
+    const WA_BRIDGE = "https://wa.me/905016355053?text=Merhaba,%20Premium%202026%20Rehberi%20%C3%BCzerinden%20ula%C5%9F%C4%B1yorum.";
     
     console.log("🔗 [CLOAK] Shortening WhatsApp Bridge link via Bitly Engine...");
     const WA_BRIDGE_SHORT = await shortenUrl(WA_BRIDGE);

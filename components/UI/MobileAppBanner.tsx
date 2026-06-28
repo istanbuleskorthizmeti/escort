@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 
 export function MobileAppBanner() {
+  const pathname = usePathname() || "";
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -24,8 +26,13 @@ export function MobileAppBanner() {
 
   if (!isVisible) return null;
 
-  const whatsappNumber = "+12495448982";
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Merhaba, mobil uygulama üzerinden VIP randevu talebi oluşturmak istiyorum.")}`;
+  // SADECE Istanbul, Tekirdag, Gebze ve Anasayfa'da gosterilecek.
+  const isVIPLocation = pathname === "/" || pathname.includes("/istanbul") || pathname.includes("/tekirdag") || pathname.includes("/gebze");
+
+  if (!isVIPLocation) return null;
+
+  const whatsappNumber = "+90 501 635 50 53";
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Merhaba Dorukcan Ay tarafından İstanbul'dan bağlanıyorum.")}`;
 
   return (
     <div className="fixed bottom-4 left-4 right-4 z-50 md:hidden animate-[slideUp_0.4s_ease-out] pointer-events-auto">

@@ -25,7 +25,7 @@ export const siteConfig = {
     telegramGroupLink: "https://t.me/istanbulescorthizmeti",
     googleMapsLink: "https://share.google/cFAGE7BxgtIBcRTNR",
     email: "info@dorukcanay.digital",
-    defaultMessageTemplate: "Merhaba, {location} bölgesindeki DRKCNAY VIP escort profilleri ile ilgili bilgi almak istiyorum."
+    defaultMessageTemplate: "Merhaba Dorukcan Ay tarafından İstanbul'dan bağlanıyorum."
   },
 
   socialOptions: {

@@ -146,7 +146,7 @@ export default function ContactPage() {
                     "image": `https://${siteConfig.domain}/images/districts/bagcilar.png`,
                     "@id": `https://${siteConfig.domain}/contact#gunesli-office`,
                     "url": `https://${siteConfig.domain}/contact`,
-                    "telephone": "+12495448982",
+                    "telephone": "+90 501 635 50 53",
                     "address": {
                       "@type": "PostalAddress",
                       "streetAddress": "Güneşli, Fevzi Çakmak Cd No:6",
@@ -163,7 +163,7 @@ export default function ContactPage() {
                     "department": {
                       "@type": "LocalBusiness",
                       "name": "DRKCNAY Executive Management",
-                      "telephone": "+12495448982"
+                      "telephone": "+90 501 635 50 53"
                     }
                   },
                   {
@@ -173,7 +173,7 @@ export default function ContactPage() {
                     "image": `https://${siteConfig.domain}/images/districts/esenyurt.png`,
                     "@id": `https://${siteConfig.domain}/contact#esenyurt-office`,
                     "url": `https://${siteConfig.domain}/contact`,
-                    "telephone": "+12495448982",
+                    "telephone": "+90 501 635 50 53",
                     "address": {
                       "@type": "PostalAddress",
                       "streetAddress": "Yunus Emre, Mandıra Cd. No:96/1",
@@ -190,7 +190,7 @@ export default function ContactPage() {
                     "department": {
                       "@type": "LocalBusiness",
                       "name": "DRKCNAY Executive Management",
-                      "telephone": "+12495448982"
+                      "telephone": "+90 501 635 50 53"
                     }
                   }
                 ])

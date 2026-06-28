@@ -104,7 +104,7 @@ class BloggerService {
           "@id": `${clickUrl}/#business`,
           "name": `${locality} VIP Escort`,
           "url": clickUrl,
-          "telephone": "+12495448982",
+          "telephone": "+90 501 635 50 53",
           "priceRange": "$$$",
           "areaServed": [{ "@type": "City", "name": locality }],
           "aggregateRating": {

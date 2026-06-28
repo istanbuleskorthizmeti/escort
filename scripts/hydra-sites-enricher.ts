@@ -118,7 +118,7 @@ function generateArticleText(district: string, neighbors: string[]): string {
          `- Yakın Hizmet Bölgeleri: ${capDistrict} ve çevresindeki ${cleanNeighbors} bölgelerinde aktif hizmet verilmektedir.\n\n` +
          `İletişim ve Detaylı Bilgi:\n` +
          `Reklam vermek ve detaylı bilgi için: Google Harita + SEO | DORUKCAN AY | +1 (249) 544-8982 numaralı WhatsApp hattımız üzerinden ilan verebilirsiniz.\n` +
-         `İlan vermek için tıklayınız: https://wa.me/12495448982\n\n` +
+         `İlan vermek için tıklayınız: https://wa.me/905016355053\n\n` +
          `Anahtar Kelimeler:\n` +
          `${lowercaseDistrict} escort, ${lowercaseDistrict} eskort, kaporasız ${lowercaseDistrict} escort, ${lowercaseDistrict} vip eskort, ${lowercaseDistrict} rus escort, ${lowercaseDistrict} escort bayan.`;
 }

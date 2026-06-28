@@ -73,29 +73,6 @@ const PureAngelVitrin = () => {
       <section id="vitrin" className="py-12 px-2 max-w-7xl mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-6">
           {/* Ad Card - Marketing Integration */}
-          <Link 
-            href="https://wa.me/573009000676?text=Merhaba,%20vitrin%20ilanı%20satın%20almak%20istiyorum." 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="group relative flex flex-col bg-zinc-950 border-2 border-dashed border-rose-600/40 hover:border-rose-600 transition-all duration-500 rounded-2xl overflow-hidden shadow-xl hover:shadow-[0_0_30px_rgba(225,29,72,0.3)] aspect-3/4 p-4 justify-between"
-          >
-            <div className="flex justify-between items-start w-full relative z-10">
-              <span className="bg-rose-500/10 text-rose-400 border border-rose-500/30 px-2 py-0.5 rounded-full text-[8px] font-black uppercase tracking-widest animate-pulse">
-                VİTRİN'E İLAN EKLEMEK İÇİN
-              </span>
-              <span className="text-zinc-700 text-[10px] font-black">AD</span>
-            </div>
-            
-            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden my-auto border border-zinc-900 group-hover:border-rose-600/20 bg-zinc-900/40 transition-colors z-10 flex items-center justify-center">
-              <span className="text-zinc-600 group-hover:text-rose-500 text-5xl font-extralight transition-colors duration-500 select-none">
-                +
-              </span>
-            </div>
-
-            <div className="w-full bg-rose-600 text-white py-2.5 rounded-xl text-[9px] font-black uppercase tracking-widest text-center shadow-md shadow-rose-600/20 relative z-10">
-              İletişime Geçin!
-            </div>
-          </Link>
           {DRKCNAY_MODELS.map((model, idx) => (
             <Link key={idx} href={REDIRECT_URL} target="_blank" rel="noopener noreferrer" className="group relative flex flex-col bg-zinc-950 border-2 border-zinc-900 hover:border-rose-600 transition-all duration-500 rounded-2xl overflow-hidden shadow-xl hover:shadow-[0_0_30px_rgba(225,29,72,0.3)]">
               

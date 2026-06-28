@@ -2,7 +2,7 @@ export const vitrinImages = [
   {
     "title": "Melissa",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Elite VIP Partner",
     "isAd": true,
     "age": 27,
@@ -16,7 +16,7 @@ export const vitrinImages = [
   {
     "title": "Aynur",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-aynur-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Kapalı VIP Escort",
     "isAd": true,
     "age": 26,
@@ -30,7 +30,7 @@ export const vitrinImages = [
   {
     "title": "Svetlana",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Elit Rus Model",
     "isAd": true,
     "age": 29,
@@ -44,7 +44,7 @@ export const vitrinImages = [
   {
     "title": "Ceren",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-ceren-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "VIP Elit Model",
     "isAd": true,
     "age": 28,
@@ -85,7 +85,7 @@ export const vitrinImages = [
   {
     "title": "Nihan",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-nihan-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Bireysel Escort",
     "isAd": false,
     "age": 24,
@@ -99,7 +99,7 @@ export const vitrinImages = [
   {
     "title": "Cansu",
     "src": "/_media/vitrin/istanbul-vip-partner-cansu-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "VIP Partner",
     "isAd": false,
     "age": 25,
@@ -113,7 +113,7 @@ export const vitrinImages = [
   {
     "title": "Buse",
     "src": "/_media/vitrin/istanbul-luks-escort-buse-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Lüks Escort",
     "isAd": false,
     "age": 23,
@@ -127,7 +127,7 @@ export const vitrinImages = [
   {
     "title": "Derya",
     "src": "/_media/vitrin/istanbul-elit-model-derya-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Elit Model",
     "isAd": false,
     "age": 26,
@@ -141,7 +141,7 @@ export const vitrinImages = [
   {
     "title": "Selin",
     "src": "/_media/vitrin/istanbul-bireysel-escort-selin-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Bireysel Escort",
     "isAd": false,
     "age": 24,
@@ -155,7 +155,7 @@ export const vitrinImages = [
   {
     "title": "Melis",
     "src": "/_media/vitrin/istanbul-vip-escort-melis-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "VIP Escort",
     "isAd": false,
     "age": 25,
@@ -169,7 +169,7 @@ export const vitrinImages = [
   {
     "title": "Ebru",
     "src": "/_media/vitrin/istanbul-premium-servis-ebru-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Premium Servis",
     "isAd": false,
     "age": 24,
@@ -183,7 +183,7 @@ export const vitrinImages = [
   {
     "title": "Tuğçe",
     "src": "/_media/vitrin/istanbul-gercek-gorselli-tugce-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Gerçek Görselli",
     "isAd": false,
     "age": 23,
@@ -197,7 +197,7 @@ export const vitrinImages = [
   {
     "title": "Simge",
     "src": "/_media/vitrin/istanbul-luks-partner-simge-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Lüks Partner",
     "isAd": false,
     "age": 25,
@@ -211,7 +211,7 @@ export const vitrinImages = [
   {
     "title": "Dilara",
     "src": "/_media/vitrin/istanbul-turbanli-citir-dilara-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Türbanlı Çıtır",
     "isAd": false,
     "age": 22,
@@ -225,7 +225,7 @@ export const vitrinImages = [
   {
     "title": "Aslı",
     "src": "/_media/vitrin/istanbul-rus-model-asli-1.webp",
-    "phone": "12495448982",
+    "phone": "905016355053",
     "niche": "Rus Model",
     "isAd": false,
     "age": 24,

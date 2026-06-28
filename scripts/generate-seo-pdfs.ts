@@ -360,7 +360,7 @@ async function generateSEOPDF(keyword: string, filename: string) {
        .font('Helvetica')
        .text(m.desc, 50, yOffset + 18, { width: 495, lineGap: 3 });
 
-    const wpLink = `https://wa.me/12495448982?text=Merhaba%20${m.name},%20randevu%20hakkinda%20bilgi%20alabilir%20miyim?`;
+    const wpLink = `https://wa.me/905016355053?text=Merhaba%20${m.name},%20randevu%20hakkinda%20bilgi%20alabilir%20miyim?`;
     
     doc.fillColor('#008000')
        .fontSize(10)

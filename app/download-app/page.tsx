@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 };
 
 export default function DownloadAppPage() {
-  const whatsappNumber = "+12495448982";
+  const whatsappNumber = "+90 501 635 50 53";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent("Merhaba, mobil uygulama üzerinden VIP randevu talebi oluşturmak istiyorum.")}`;
 
   return (

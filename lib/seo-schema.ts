@@ -126,7 +126,7 @@ export function getDeterministicRating(seed: string) {
  */
 export function generateAdvancedSchema({ locationName, city, description, url, telephone }: SchemaParams) {
   const { ratingValue, reviewCount } = getDeterministicRating(url);
-  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982";
+  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+90 501 635 50 53";
   const { lat, lon } = getGeoCoordinates(locationName, city);
   const mapUrl = siteConfig.contact.googleMapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationName)}+${encodeURIComponent(city)}`;
 
@@ -272,7 +272,7 @@ export function generateUltraGraphSchema({ locationName, city, description, url,
   const title = `${locationName} Escort - DORUKCANAY ELITE | ${categoryTitle || 'VIP Standart'}`;
 
   const { ratingValue, reviewCount } = getDeterministicRating(url);
-  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+12495448982";
+  const defaultPhone = siteConfig.contact.whatsappNumber ? `+${siteConfig.contact.whatsappNumber}` : "+90 501 635 50 53";
   const { lat, lon } = getGeoCoordinates(locationName, city);
   const mapUrl = siteConfig.contact.googleMapsLink || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(locationName)}+${encodeURIComponent(city)}`;
 

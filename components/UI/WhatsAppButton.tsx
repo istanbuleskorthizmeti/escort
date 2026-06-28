@@ -1,9 +1,12 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { MessageCircle } from "lucide-react";
 import { siteConfig } from "@/config/site";
 
 export function WhatsAppButton() {
+  const pathname = usePathname() || "";
+  
   const handleClick = () => {
     try {
       let intentData = {};
@@ -28,6 +31,11 @@ export function WhatsAppButton() {
       console.error('Tracking failed', e);
     }
   };
+
+  // SADECE Istanbul, Tekirdag, Gebze ve Anasayfa'da gosterilecek.
+  const isVIPLocation = pathname === "/" || pathname.includes("/istanbul") || pathname.includes("/tekirdag") || pathname.includes("/gebze");
+
+  if (!isVIPLocation) return null;
 
   return (
     <a

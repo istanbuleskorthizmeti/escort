@@ -42,17 +42,17 @@ async function processSelectiveVitrin() {
 
     // 11 Organic profiles to be added
     const organicNames = [
-      { name: "Nihan", niche: "Bireysel Escort", phone: "12495448982", age: 24, slug: "istanbul-kaporasiz-escort-nihan" },
-      { name: "Cansu", niche: "VIP Partner", phone: "12495448982", age: 25, slug: "istanbul-vip-partner-cansu" },
-      { name: "Buse", niche: "Lüks Escort", phone: "12495448982", age: 23, slug: "istanbul-luks-escort-buse" },
-      { name: "Derya", niche: "Elit Model", phone: "12495448982", age: 26, slug: "istanbul-elit-model-derya" },
-      { name: "Selin", niche: "Bireysel Escort", phone: "12495448982", age: 24, slug: "istanbul-bireysel-escort-selin" },
-      { name: "Melis", niche: "VIP Escort", phone: "12495448982", age: 25, slug: "istanbul-vip-escort-melis" },
-      { name: "Ebru", niche: "Premium Servis", phone: "12495448982", age: 24, slug: "istanbul-premium-servis-ebru" },
-      { name: "Tuğçe", niche: "Gerçek Görselli", phone: "12495448982", age: 23, slug: "istanbul-gercek-gorselli-tugce" },
-      { name: "Simge", niche: "Lüks Partner", phone: "12495448982", age: 25, slug: "istanbul-luks-partner-simge" },
-      { name: "Dilara", niche: "Türbanlı Çıtır", phone: "12495448982", age: 22, slug: "istanbul-turbanli-citir-dilara" },
-      { name: "Aslı", niche: "Rus Model", phone: "12495448982", age: 24, slug: "istanbul-rus-model-asli" }
+      { name: "Nihan", niche: "Bireysel Escort", phone: "905016355053", age: 24, slug: "istanbul-kaporasiz-escort-nihan" },
+      { name: "Cansu", niche: "VIP Partner", phone: "905016355053", age: 25, slug: "istanbul-vip-partner-cansu" },
+      { name: "Buse", niche: "Lüks Escort", phone: "905016355053", age: 23, slug: "istanbul-luks-escort-buse" },
+      { name: "Derya", niche: "Elit Model", phone: "905016355053", age: 26, slug: "istanbul-elit-model-derya" },
+      { name: "Selin", niche: "Bireysel Escort", phone: "905016355053", age: 24, slug: "istanbul-bireysel-escort-selin" },
+      { name: "Melis", niche: "VIP Escort", phone: "905016355053", age: 25, slug: "istanbul-vip-escort-melis" },
+      { name: "Ebru", niche: "Premium Servis", phone: "905016355053", age: 24, slug: "istanbul-premium-servis-ebru" },
+      { name: "Tuğçe", niche: "Gerçek Görselli", phone: "905016355053", age: 23, slug: "istanbul-gercek-gorselli-tugce" },
+      { name: "Simge", niche: "Lüks Partner", phone: "905016355053", age: 25, slug: "istanbul-luks-partner-simge" },
+      { name: "Dilara", niche: "Türbanlı Çıtır", phone: "905016355053", age: 22, slug: "istanbul-turbanli-citir-dilara" },
+      { name: "Aslı", niche: "Rus Model", phone: "905016355053", age: 24, slug: "istanbul-rus-model-asli" }
     ];
 
     const generatedWebpFilesList: string[] = [];

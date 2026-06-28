@@ -83,9 +83,9 @@ function generatePlainText(district: string, neighbors: string[]): string {
 
   return `📢 İLAN VERMEK VE REKLAM YAYINLAMAK İÇİN TIKLAYINIZ:
 👉 WhatsApp İletişim Hattı: +1 (249) 544-8982
-👉 Tıkla ve İlan Ver: https://wa.me/12495448982
+👉 Tıkla ve İlan Ver: https://wa.me/905016355053
 
-[![DORUKCAN AY Reklam Banner](https://dorukcanay.digital/dorukcanay-logo.jpg)](https://wa.me/12495448982)
+[![DORUKCAN AY Reklam Banner](https://dorukcanay.digital/dorukcanay-logo.jpg)](https://wa.me/905016355053)
 
 ---
 
@@ -106,7 +106,7 @@ Bölgemizde hizmet veren partnerler hiçbir şekilde ön ödeme veya kapora tale
 😈 İletişim ve Detaylı Bilgi 😈
 
 Reklam vermek ve detaylı bilgi için: Google Harita + SEO | DORUKCAN AY | +1 (249) 544-8982 numaralı WhatsApp hattımız üzerinden ilan verebilirsiniz.
-İlan vermek için tıklayınız: https://wa.me/12495448982 💋
+İlan vermek için tıklayınız: https://wa.me/905016355053 💋
 
 🎯 Anahtar Kelimeler:
 👑 [${lowercaseDistrict} escort bayan](${targetUrl})
@@ -131,7 +131,7 @@ function generateHtmlText(district: string, neighbors: string[]): string {
   return `<div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; padding: 15px; border: 1px solid #eee; border-radius: 12px; background: #fff;">
   <!-- 📢 REKLAM BANNER BAŞLANGIÇ -->
   <div style="margin-bottom: 25px; text-align: center;">
-    <a href="https://wa.me/12495448982" target="_blank" style="display: inline-block; text-decoration: none; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 2px solid #ff8600; width: 100%; max-width: 500px;">
+    <a href="https://wa.me/905016355053" target="_blank" style="display: inline-block; text-decoration: none; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.15); border: 2px solid #ff8600; width: 100%; max-width: 500px;">
       <img src="https://dorukcanay.digital/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" style="width: 100%; display: block; height: auto;">
       <div style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color: #fff; padding: 12px; font-weight: bold; font-size: 1.1em; text-transform: uppercase; letter-spacing: 1px;">
         🔥 İlan Vermek İçin Tıklayın 🔥
@@ -164,7 +164,7 @@ function generateHtmlText(district: string, neighbors: string[]): string {
   <h3 style="color: #2c3e50; margin-top: 15px;">😈 İletişim ve Detaylı Bilgi 😈</h3>
   <p>
     Reklam vermek ve detaylı bilgi için: <strong>Google Harita + SEO | DORUKCAN AY | +1 (249) 544-8982</strong> numaralı WhatsApp hattımız üzerinden ilan verebilirsiniz.<br>
-    <strong>İlan vermek için tıklayınız:</strong> <a href="https://wa.me/12495448982" style="color: #27ae60; font-weight: bold; text-decoration: underline;">https://wa.me/12495448982</a> 💋
+    <strong>İlan vermek için tıklayınız:</strong> <a href="https://wa.me/905016355053" style="color: #27ae60; font-weight: bold; text-decoration: underline;">https://wa.me/905016355053</a> 💋
   </p>
 
   <h3 style="color: #2c3e50; margin-top: 15px;">🎯 Anahtar Kelimeler:</h3>

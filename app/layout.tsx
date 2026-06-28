@@ -23,7 +23,7 @@ import { LocalAuthority } from "@/components/SEO/LocalAuthority";
 import { toTitleCaseTR } from "@/lib/utils";
 import { MobileAppBanner } from "@/components/UI/MobileAppBanner";
 import { TrustConsent } from "@/components/UI/TrustConsent";
-import { ShowcaseAdBanner } from "@/components/UI/ShowcaseAdBanner";
+
 
 export async function generateViewport(): Promise<Viewport> {
   let host = siteConfig.domain;
@@ -193,7 +193,7 @@ export default async function RootLayout({
                   "description": `${brandTitle}: İstanbul genelinde kaporasız ve %100 gerçek escort bayan hizmetleri.`,
                   "image": `https://${host}/og-image.jpg`,
                   "url": `https://${host}`,
-                  "telephone": "+12495448982",
+                  "telephone": "+90 501 635 50 53",
                   "priceRange": "₺₺₺",
                   "address": {
                     "@type": "PostalAddress",
@@ -397,7 +397,7 @@ export default async function RootLayout({
         <BrowserIntelligence />
         <MobileAppBanner />
         <TrustConsent />
-        <ShowcaseAdBanner />
+
         <div className="flex-1 flex flex-col">
           {children}
         </div>

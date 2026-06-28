@@ -33,7 +33,7 @@ export function resolveDomainConfig(host: string): DomainConfig {
         ...masterConfig,
         niche,
         slogan: slogans[niche],
-        contactWhatsApp: '+12495448982',
+        contactWhatsApp: '+90 501 635 50 53',
         host: cleanHost
     };
 }

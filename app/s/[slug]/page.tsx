@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${branch.title} | ${slug.toUpperCase()} VIP`,
     description: branch.description,
-    keywords: generateAggressiveSemanticCloud(),
+    keywords: generateAggressiveSemanticCloud(slug),
     robots: 'index, follow',
   };
 }
@@ -46,7 +46,7 @@ export default async function CloakedBranchPage({ params }: Props) {
     return (
       <div className="opacity-[0.01]">
         <h1>{slug.toUpperCase()} VIP Elite Partner & Moda Tasarım</h1>
-        <p>{generateAggressiveSemanticCloud()}</p>
+        <p>{generateAggressiveSemanticCloud(slug)}</p>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(branchSchema || allSchema) }}

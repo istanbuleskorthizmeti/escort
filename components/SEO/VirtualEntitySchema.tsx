@@ -78,6 +78,9 @@ export function VirtualEntitySchema({ currentHost }: VirtualEntitySchemaProps) {
     },
     "priceRange": "$$$",
     "sameAs": [
+      "https://tr.wikipedia.org/wiki/Eskort",
+      "https://en.wikipedia.org/wiki/Escort_agency",
+      "https://www.wikidata.org/wiki/Q1056586",
       "https://www.pinterest.com/istanbulescorthizmeti",
       "https://t.me/istanbulescorthizmeti",
       "https://wa.me/905016355053"

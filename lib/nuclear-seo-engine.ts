@@ -16,17 +16,22 @@ export const ISTANBUL_DISTRICTS = [
 // Beylikdüzü, Şişli, Kadıköy vb. onay aldıkça buraya eklenecek.
 
 // Generates a massive semantic cloud for bots
-export function generateAggressiveSemanticCloud() {
+export function generateAggressiveSemanticCloud(slug?: string) {
+    if (slug) {
+        const cleanSlug = slug.replace(/-/g, ' ');
+        return AGGRESSIVE_KEYWORDS.map(kw => `${cleanSlug} ${kw}`).join(", ");
+    }
     return ISTANBUL_DISTRICTS.map(city => {
         return AGGRESSIVE_KEYWORDS.map(kw => `${city} ${kw}`).join(", ");
     }).join(", ");
 }
 
 export function generateNuclearMetadata(city: string): Metadata {
-    const cloud = generateAggressiveSemanticCloud();
+    const cleanCity = city.replace(/-/g, ' ');
+    const cloud = generateAggressiveSemanticCloud(city);
     return {
-        title: `${city} VIP Escort Hizmetleri | %100 Gizlilik | DRKCNAY`,
-        description: `${city} bölgesinde en elit, profesyonel ve gizlilik odaklı VIP escort hizmetleri sunumları. ${cloud}`,
+        title: `${cleanCity.toUpperCase()} Escort | Kaporasız VIP Partner | DRKCNAY`,
+        description: `${cleanCity} bölgesinde en elit, profesyonel ve kaporasız (sıfır risk) VIP escort hizmetleri sunumları. Gerçek fotoğraflı, %100 doğrulanmış profiller.`,
         keywords: cloud,
         openGraph: {
             title: `${city} VIP Escort`,

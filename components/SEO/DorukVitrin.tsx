@@ -685,9 +685,7 @@ export function DorukVitrin({
               fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ profileName: firstName }) }).catch(() => {});
             };
 
-            const whatsappUrl = item.phone 
-              ? `https://wa.me/${item.phone}?text=Merhaba Dorukcan Ay tarafından İstanbul'dan bağlanıyorum.` 
-              : `${siteConfig.contact.whatsappLink}?text=Merhaba Dorukcan Ay tarafından İstanbul'dan bağlanıyorum.`;
+            const whatsappUrl = `https://wa.me/${siteConfig.contact.whatsappNumber}?text=Merhaba Dorukcan Ay tarafından İstanbul'dan bağlanıyorum.`;
 
             return (
               <VitrinCard

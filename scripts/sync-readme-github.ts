@@ -9,7 +9,7 @@ const DESKTOP_PATH = 'C:\\Users\\onurk\\Desktop';
 const TARGET_DIR = path.join(DESKTOP_PATH, 'dorukcanay-docs-git');
 const SOURCE_DIR = path.join(DESKTOP_PATH, 'readme-docs-dorukcanay');
 const REPO_URL = process.env.GITHUB_REPO_URL || 'https://github.com/tamkumarbaz/tamkumarbaz.git';
-const GITHUB_PAT = process.env.GITHUB_PAT;
+const GITHUB_PAT = process.env.ISTANBUL_ESKORT_GITHUB_PAT || process.env.GITHUB_PAT;
 const INDEX_NOW_KEY = process.env.INDEX_NOW_KEY || "8771e07e4e31024024720e4a348e10f0";
 
 const readmeSubdomain = process.env.README_SUBDOMAIN || "istanbul-eskort-hizmeti";

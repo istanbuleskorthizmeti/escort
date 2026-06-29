@@ -1,5 +1,6 @@
 import React from 'react';
 import { getDomainConfig } from '@/config/domains';
+import { siteConfig } from '@/config/site';
 
 interface VirtualEntitySchemaProps {
   currentHost: string;
@@ -83,7 +84,7 @@ export function VirtualEntitySchema({ currentHost }: VirtualEntitySchemaProps) {
       "https://www.wikidata.org/wiki/Q1056586",
       "https://www.pinterest.com/istanbulescorthizmeti",
       "https://t.me/istanbulescorthizmeti",
-      "https://wa.me/905016355053"
+      `https://wa.me/${siteConfig.contact.whatsappNumber}`
     ]
   };
 

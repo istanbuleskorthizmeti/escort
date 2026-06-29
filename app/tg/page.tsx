@@ -1,6 +1,7 @@
 
 import { Shield, MessageCircle, Send, Globe, Award, Zap } from "lucide-react";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 
 export default function TelegramLinkHub() {
   return (
@@ -48,7 +49,7 @@ export default function TelegramLinkHub() {
           </Link>
 
           <Link 
-            href="https://wa.me/905016355053" 
+            href={`https://wa.me/${siteConfig.contact.whatsappNumber}`} 
             className="group flex items-center justify-between bg-zinc-950/80 border border-zinc-900 p-5 rounded-4xl hover:border-green-600 hover:bg-green-600/5 transition-all duration-500 backdrop-blur-3xl"
           >
             <div className="flex items-center gap-4 text-left">

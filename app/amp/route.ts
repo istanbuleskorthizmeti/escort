@@ -502,7 +502,7 @@ export async function GET(request: Request) {
             <div class="card-badge">${niche}</div>
             <div class="card-title">${title}</div>
             <div class="card-meta">${age} • ${locationName}</div>
-            <a href="https://wa.me/905016355053?text=Merhaba ${title}, ${locationName} görüşmesi için bilgi alabilir miyim?" class="btn" target="_blank" rel="noopener noreferrer">Escort Randevusu Al</a>
+            <a href="https://wa.me/${siteConfig.contact.whatsappNumber}?text=Merhaba ${title}, ${locationName} görüşmesi için bilgi alabilir miyim?" class="btn" target="_blank" rel="noopener noreferrer">Escort Randevusu Al</a>
           </div>
         </div>
         `;

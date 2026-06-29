@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { Zap, ShieldCheck } from 'lucide-react';
+import { siteConfig } from '@/config/site';
 
 // 🏴‍☠️ PROJEX: DRKCNAY VITRIN WIDGET
 // Optimized for Google Sites iframes. No headers, no footers, pure elite conversion.
@@ -46,7 +47,7 @@ export default function VitrinWidget() {
             return (
               <div 
                 key={p.id}
-                onClick={() => window.open('https://wa.me/905016355053', '_parent')}
+                onClick={() => window.open(`https://wa.me/${siteConfig.contact.whatsappNumber}`, '_parent')}
                 className="group relative bg-zinc-950 border border-[#ff8600]/40 rounded-3xl overflow-hidden cursor-pointer active:scale-95 transition-all shadow-[0_0_15px_rgba(255,134,0,0.15)]"
               >
                 <div className="h-56 relative bg-zinc-900 flex items-center justify-center overflow-hidden">

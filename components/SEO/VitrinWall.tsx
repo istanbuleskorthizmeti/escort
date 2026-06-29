@@ -79,7 +79,7 @@ export function VitrinWall({ city = 'İstanbul', layoutType = 'grid' }: { city?:
         </div>
       </div>
 
-
+      <div className={containerClass}>
         {shuffledIndices.map((originalIndex, index) => {
           const item = vitrinImages[originalIndex];
           const imageName = item.src.split('/').pop() || '';

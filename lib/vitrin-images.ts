@@ -4,7 +4,7 @@ export const vitrinImages = [
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
     "phone": "905016355053",
     "niche": "Elite VIP Partner",
-    "isAd": true,
+    "isAd": false,
     "age": 27,
     "gallery": [
       "/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
@@ -18,7 +18,7 @@ export const vitrinImages = [
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-aynur-1.webp",
     "phone": "905016355053",
     "niche": "Kapalı VIP Escort",
-    "isAd": true,
+    "isAd": false,
     "age": 26,
     "gallery": [
       "/_media/vitrin/istanbul-kaporasiz-escort-aynur-1.webp",
@@ -32,7 +32,7 @@ export const vitrinImages = [
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-1.webp",
     "phone": "905016355053",
     "niche": "Elit Rus Model",
-    "isAd": true,
+    "isAd": false,
     "age": 29,
     "gallery": [
       "/_media/vitrin/istanbul-kaporasiz-escort-svetlana-1.webp",
@@ -46,7 +46,7 @@ export const vitrinImages = [
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-ceren-1.webp",
     "phone": "905016355053",
     "niche": "VIP Elit Model",
-    "isAd": true,
+    "isAd": false,
     "age": 28,
     "gallery": [
       "/_media/vitrin/istanbul-kaporasiz-escort-ceren-1.webp",
@@ -59,7 +59,7 @@ export const vitrinImages = [
     "title": "Ayla",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-ayla-1.webp",
     "niche": "Türk model - Ateşli uzman sevenlere",
-    "isAd": true,
+    "isAd": false,
     "age": 25,
     "gallery": [
       "/_media/vitrin/istanbul-kaporasiz-escort-ayla-1.webp",
@@ -73,7 +73,7 @@ export const vitrinImages = [
     "title": "Esila",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-esila-1.webp",
     "niche": "Boşnak - Ateşli, heyecan verici uzman",
-    "isAd": true,
+    "isAd": false,
     "age": 27,
     "gallery": [
       "/_media/vitrin/istanbul-kaporasiz-escort-esila-1.webp",

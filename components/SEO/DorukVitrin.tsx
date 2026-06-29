@@ -407,15 +407,7 @@ function VitrinCard({
         </div>
       </Link>
 
-      {/* 🔴 AD BADGE */}
-      {item.isAd && (
-        <div className="absolute top-3 right-3 z-20">
-          <div className="text-black text-[10px] font-black uppercase tracking-widest px-2 py-1 rounded shadow-lg flex items-center gap-1 border border-black/20 bg-(--primary-color)">
-            <AlertTriangle className="w-3 h-3" />
-            REKLAM
-          </div>
-        </div>
-      )}
+
 
       {renderOverlay()}
     </div>
@@ -467,77 +459,16 @@ export function DorukVitrin({
     return vitrinImages.slice(0, 100);
   }, []);
 
-  const getUniqueAdProfiles = (hostName: string) => {
-    const premiumAds = vitrinImages.filter(img => img.isAd).slice(0, 6);
-    
-    let seed = 2166136261;
-    const seedString = (hostName || 'default') + '-' + (city || '') + '-' + (district || '') + '-' + (neighborhood || '');
-    for (let i = 0; i < seedString.length; i++) {
-      seed = seed ^ seedString.charCodeAt(i);
-      seed = Math.imul(seed, 16777619);
-    }
-    
-    const adNames = [
-      ["Melisa", "Selin", "Derin", "Simge", "Aleyna", "Buse"],
-      ["Aynur", "Cansel", "Sude", "Ece", "Berna", "Ebru"],
-      ["Svetlana", "Milena", "Elena", "Nadia", "Tanya", "Almira"],
-      ["Ceren", "Aleyna", "Dilan", "Gizem", "Öykü", "Damla"],
-      ["Ayla", "Merve", "Aslı", "Didem", "Pelin", "Bengü"],
-      ["Esila", "Hazal", "Yağmur", "Gözde", "Banu", "Tuğba"]
-    ];
-
-    const adNiches = [
-      ["Elite VIP Partner", "Ultra Lux Companion", "Premium Model Escort", "VIP Escort Bayan"],
-      ["Kapalı VIP Escort", "Türbanlı Muhafazakar Eşlikçi", "Kapalı VIP Partner", "Özel Türbanlı Escort"],
-      ["Elit Rus Model", "Premium Slavic Companion", "VIP Yabancı Model", "Premium Rus Escort"],
-      ["VIP Elit Model", "Premium Escort Model", "Lüks Fantezi Partneri", "Elite VIP Companion"],
-      ["Türk model - Ateşli Uzman", "VIP Yerli Eşlikçi", "Ateşli Üniversiteli Model", "Premium Yerli Escort"],
-      ["Boşnak Eşlikçi - Ateşli", "VIP Balkan Güzeli", "Premium Sarışın Model", "Elite Boşnak Partner"]
-    ];
-
-    return premiumAds.map((ad, idx) => {
-      let currentSeed = seed + idx * 37;
-      
-      const namesPool = adNames[idx % adNames.length];
-      const spunName = namesPool[Math.abs(currentSeed) % namesPool.length];
-      
-      const nichesPool = adNiches[idx % adNiches.length];
-      const spunNiche = nichesPool[Math.abs(currentSeed + 7) % nichesPool.length];
-      
-      const baseAge = ad.age || 26;
-      const spunAge = baseAge + (Math.abs(currentSeed + 13) % 3) - 1;
-      
-      let spunGallery = ad.gallery ? [...ad.gallery] : [ad.src];
-      const shiftCount = Math.abs(currentSeed) % spunGallery.length;
-      for (let s = 0; s < shiftCount; s++) {
-        const first = spunGallery.shift();
-        if (first) spunGallery.push(first);
-      }
-      
-      return {
-        ...ad,
-        title: spunName,
-        niche: spunNiche,
-        age: spunAge,
-        src: spunGallery[0],
-        gallery: spunGallery
-      };
-    });
-  };
-
   const getFullPool = (hostName: string, sProfiles: any[]) => {
-    const pinnedAds = getUniqueAdProfiles(hostName);
-    const premiumAdSrcs = vitrinImages.filter(img => img.isAd).map(ad => ad.src);
-    
     let organicPool: any[] = [];
     if (sProfiles && sProfiles.length > 0) {
-      const cleanServer = sProfiles.filter(m => !premiumAdSrcs.includes(m.src));
-      const pool = vitrinImages.filter(img => !img.isAd && !cleanServer.some(m => m.src === img.src));
-      organicPool = [...cleanServer, ...pool];
+      const localSrcs = vitrinImages.map(img => img.src);
+      const serverOnly = sProfiles.filter(m => !localSrcs.includes(m.src));
+      organicPool = [...serverOnly, ...vitrinImages];
     } else {
-      organicPool = vitrinImages.filter(img => !img.isAd);
+      organicPool = [...vitrinImages];
     }
-    
+
     // Host-seeded deterministic shuffle
     let seed = 2166136261;
     const seedString = (hostName || 'default') + '-' + (city || '') + '-' + (district || '') + '-' + (neighborhood || '');
@@ -545,18 +476,18 @@ export function DorukVitrin({
       seed = seed ^ seedString.charCodeAt(i);
       seed = Math.imul(seed, 16777619);
     }
-    
-    const shuffledOrganic = [...organicPool];
+
+    const shuffled = [...organicPool];
     let currentSeed = seed;
-    for (let i = shuffledOrganic.length - 1; i > 0; i--) {
+    for (let i = shuffled.length - 1; i > 0; i--) {
       currentSeed = (currentSeed * 1103515245 + 12345) % 2147483648;
       const j = Math.abs(currentSeed) % (i + 1);
-      const temp = shuffledOrganic[i];
-      shuffledOrganic[i] = shuffledOrganic[j];
-      shuffledOrganic[j] = temp;
+      const temp = shuffled[i];
+      shuffled[i] = shuffled[j];
+      shuffled[j] = temp;
     }
-    
-    return [...pinnedAds, ...shuffledOrganic];
+
+    return shuffled;
   };
 
   const [displayedImages, setDisplayedImages] = useState<any[]>(() => {

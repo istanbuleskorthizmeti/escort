@@ -42,7 +42,7 @@ async function run() {
 
     // 2. Replace the div style banner with a clean, MDX-compliant blockquote alert
     const divRegex = /<div style="background: linear-gradient[\s\S]*?<\/div>/g;
-    const cleanBanner = `> [!IMPORTANT]\n> ### 👑 BAĞIMSIZ MODEL İLANINIZI YAYINLAYIN\n> İstanbul genelinde günlük yüzbinlerce ziyaretçiye ulaşan vitrinimizde yerinizi alın. Kaporasız ve elden ödemeli VIP profilinizle kazanmaya başlayın.\n> **[✨ İLAN VERMEK İÇİN TIKLAYINIZ (Elden Ödemeli)](https://dorukcanay.digital)**`;
+    const cleanBanner = `> [!IMPORTANT]\n> ### 👑 BAĞIMSIZ VIP MODELLER\n> İstanbul genelinde günlük yüzbinlerce ziyaretçiye ulaşan vitrinimizde yer alan doğrulanmış profilleri inceleyin. Kaporasız ve elden ödemeli VIP profillerle görüşün.\n> **[✨ VIP RANDEVU ALMAK İÇİN TIKLAYINIZ (Elden Ödemeli)](https://dorukcanay.digital)**`;
     content = content.replace(divRegex, cleanBanner);
 
     // 3. Remove Google Verification meta tag

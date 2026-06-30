@@ -196,7 +196,7 @@ function generateMarkdownContent(
     vitrinHtml += `*   **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans\n`;
     vitrinHtml += `*   **Hizmet Konsepti:** ${pNiche}\n`;
     vitrinHtml += `*   **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://dorukcanay.digital/whatsapp)**\n`;
-    vitrinHtml += `*   **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için: **[✨ İletişime Geç & Detayları Öğren (WhatsApp)](https://dorukcanay.digital/whatsapp)**\n\n`;
+
   }
 
   // Section 2: Gold Escort Vitrini (Ek 5 Model)
@@ -228,7 +228,7 @@ function generateMarkdownContent(
     vitrinHtml += `*   **Hizmet Alanı:** 🏡 Ev • 🏨 Otel • 🏢 Rezidans\n`;
     vitrinHtml += `*   **Hizmet Konsepti:** ${pNiche}\n`;
     vitrinHtml += `*   **İletişim & Rezervasyon:** **[✨ İletişime Geç & Randevu Al (WhatsApp)](https://dorukcanay.digital/whatsapp)**\n`;
-    vitrinHtml += `*   **Reklam & İlan Bilgisi:** Tüm vitrin profillerini satıyoruz! İlan almak için: **[✨ İletişime Geç & Detayları Öğren (WhatsApp)](https://dorukcanay.digital/whatsapp)**\n\n`;
+
   }
 
   // Dynamic Neighborhood list insertion for grouping nearby locations

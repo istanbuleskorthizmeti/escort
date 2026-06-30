@@ -299,14 +299,24 @@ export function SEOContentEngine({ cityName, districtName, neighborhoodName, hos
     : ["Vip Deneyim", "Sınırsız Hizmet", "Gizli Buluşma", "Elite Escort", "Gerçek Görseller", "Kaporasız İlanlar", "Otele Servis", "Eve Gelen Escort"];
 
   // Generate high-density Gold Keywords list (100+ variations) matching Google Sites payload spec
+  const cleanCity = (cityName || 'istanbul').toLowerCase().trim();
+  const cleanDistrict = (districtName || '').toLowerCase().trim();
   const cleanLoc = (currentLoc || '').toLowerCase().trim();
+
+  // Create "İl İlçe Mahalle" semantic combinations for aggressive local SEO
+  const geoCombinations = Array.from(new Set([
+    cleanLoc,
+    [cleanDistrict, cleanLoc].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).join(' '),
+    [cleanCity, cleanDistrict, cleanLoc].filter(Boolean).filter((v, i, a) => a.indexOf(v) === i).join(' '),
+  ])).filter(Boolean);
+
   const firstPrefixes = isCloaker
     ? ["", "türk ", "vip ", "sansürsüz ", "güncel ", "gizli ", "yeni ", "popüler "]
     : ["", "istanbul ", "vip ", "elit ", "kaporasız ", "bireysel ", "bağımsız ", "seçkin "];
 
   const midKeywords = isCloaker
-    ? [`${cleanLoc} ifsa`, `${cleanLoc} ifşa`, `${cleanLoc} skandal`, `${cleanLoc} video`, `${cleanLoc} telegram`]
-    : [`${cleanLoc} escort`, `${cleanLoc} eskort`, `${cleanLoc} escort bayan`, `${cleanLoc} eskort bayan`];
+    ? geoCombinations.flatMap(geo => [`${geo} ifsa`, `${geo} ifşa`, `${geo} skandal`, `${geo} video`, `${geo} telegram`])
+    : geoCombinations.flatMap(geo => [`${geo} escort`, `${geo} eskort`, `${geo} escort bayan`, `${geo} eskort bayan`]);
 
   const lastSuffixes = isCloaker
     ? ["", " kaseti", " videosu", " arşivi", " izle", " telegram", " sızıntısı"]

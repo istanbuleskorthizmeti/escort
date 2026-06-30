@@ -1,4 +1,4 @@
-export const vitrinImages = [
+﻿export const vitrinImages = [
   {
     "title": "Melissa",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
@@ -17,7 +17,7 @@ export const vitrinImages = [
     "title": "Aynur",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-aynur-1.webp",
     "phone": "905016355053",
-    "niche": "Kapalı VIP Escort",
+    "niche": "KapalÄ± VIP Escort",
     "isAd": false,
     "age": 26,
     "gallery": [
@@ -58,7 +58,7 @@ export const vitrinImages = [
   {
     "title": "Ayla",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-ayla-1.webp",
-    "niche": "Türk model - Ateşli uzman sevenlere",
+    "niche": "TÃ¼rk model - AteÅŸli uzman sevenlere",
     "isAd": false,
     "age": 25,
     "gallery": [
@@ -72,7 +72,7 @@ export const vitrinImages = [
   {
     "title": "Esila",
     "src": "/_media/vitrin/istanbul-kaporasiz-escort-esila-1.webp",
-    "niche": "Boşnak - Ateşli, heyecan verici uzman",
+    "niche": "BoÅŸnak - AteÅŸli, heyecan verici uzman",
     "isAd": false,
     "age": 27,
     "gallery": [
@@ -114,7 +114,7 @@ export const vitrinImages = [
     "title": "Buse",
     "src": "/_media/vitrin/istanbul-luks-escort-buse-1.webp",
     "phone": "905016355053",
-    "niche": "Lüks Escort",
+    "niche": "LÃ¼ks Escort",
     "isAd": false,
     "age": 23,
     "gallery": [
@@ -181,10 +181,10 @@ export const vitrinImages = [
     ]
   },
   {
-    "title": "Tuğçe",
+    "title": "TuÄŸÃ§e",
     "src": "/_media/vitrin/istanbul-gercek-gorselli-tugce-1.webp",
     "phone": "905016355053",
-    "niche": "Gerçek Görselli",
+    "niche": "GerÃ§ek GÃ¶rselli",
     "isAd": false,
     "age": 23,
     "gallery": [
@@ -198,7 +198,7 @@ export const vitrinImages = [
     "title": "Simge",
     "src": "/_media/vitrin/istanbul-luks-partner-simge-1.webp",
     "phone": "905016355053",
-    "niche": "Lüks Partner",
+    "niche": "LÃ¼ks Partner",
     "isAd": false,
     "age": 25,
     "gallery": [
@@ -212,7 +212,7 @@ export const vitrinImages = [
     "title": "Dilara",
     "src": "/_media/vitrin/istanbul-turbanli-citir-dilara-1.webp",
     "phone": "905016355053",
-    "niche": "Türbanlı Çıtır",
+    "niche": "TÃ¼rbanlÄ± Ã‡Ä±tÄ±r",
     "isAd": false,
     "age": 22,
     "gallery": [
@@ -223,7 +223,7 @@ export const vitrinImages = [
     ]
   },
   {
-    "title": "Aslı",
+    "title": "AslÄ±",
     "src": "/_media/vitrin/istanbul-rus-model-asli-1.webp",
     "phone": "905016355053",
     "niche": "Rus Model",
@@ -237,3 +237,4 @@ export const vitrinImages = [
     ]
   }
 ];
+

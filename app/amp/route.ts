@@ -462,6 +462,11 @@ export async function GET(request: Request) {
 <body>
   <header>
     <div class="brand">${brandName.toUpperCase()} <span>ESCORT</span></div>
+    <div style="margin-top:8px; font-size:16px; font-weight:bold; letter-spacing:1px;">
+      <a href="https://wa.me/${siteConfig.contact.whatsappNumber}" style="color:var(--text); text-decoration:none;">
+        <span style="color:#25D366;">📞</span> +90 501 635 50 53
+      </a>
+    </div>
   </header>
   
   <div class="hero">
@@ -502,7 +507,8 @@ export async function GET(request: Request) {
             <div class="card-badge">${niche}</div>
             <div class="card-title">${title}</div>
             <div class="card-meta">${age} • ${locationName}</div>
-            <a href="https://wa.me/${siteConfig.contact.whatsappNumber}?text=Merhaba ${title}, ${locationName} görüşmesi için bilgi alabilir miyim?" class="btn" target="_blank" rel="noopener noreferrer">Escort Randevusu Al</a>
+            <a href="https://wa.me/${siteConfig.contact.whatsappNumber}?text=Merhaba ${title}, ${locationName} görüşmesi için bilgi alabilir miyim?" class="btn" target="_blank" rel="noopener noreferrer">💬 WhatsApp'tan Yazın</a>
+            <div style="text-align:center; margin-top:8px; font-size:11px; color:var(--text-muted);">+90 501 635 50 53</div>
           </div>
         </div>
         `;
@@ -527,7 +533,7 @@ export async function GET(request: Request) {
     <p>© ${new Date().getFullYear()} ${brandName} ESCORT ESKORT GACI NETWORK. TÜM HAKLARI SAKLIDIR.</p>
     <p>
       <a href="${redirectDestinationUrl}">Masaüstü Sürüm</a> | 
-      <a href="https://wa.me/${siteConfig.contact.whatsappNumber}">WhatsApp İletişim</a>
+      <a href="https://wa.me/${siteConfig.contact.whatsappNumber}">📱 +90 501 635 50 53</a>
       ${relatedSiteLink ? ` | <a href="${relatedSiteLink}" target="_blank" rel="noopener">Google Sites Kataloğu</a>` : ''}
     </p>
   </div>

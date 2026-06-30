@@ -24,10 +24,15 @@ async function run() {
   const projectRoot = path.join(__dirname, '..');
   
   // Initialize Auth Client
-  const gscKeyPath = path.join(projectRoot, 'google-key.json');
-  if (!fs.existsSync(gscKeyPath)) {
-    throw new Error('Missing google-key.json for authentication.');
+  const rootDir = process.cwd();
+  const files = fs.readdirSync(rootDir);
+  const keyFile = files.find(f => f.startsWith('google-key') && f.endsWith('.json'));
+
+  if (!keyFile) {
+    throw new Error('No valid google-key*.json found for authentication.');
   }
+  
+  const gscKeyPath = path.join(projectRoot, keyFile);
   const keyData = JSON.parse(fs.readFileSync(gscKeyPath, 'utf8'));
   const auth = new google.auth.JWT(
     keyData.client_email,
@@ -39,7 +44,7 @@ async function run() {
       'https://www.googleapis.com/auth/drive'
     ]
   );
-  console.log(`🔑 [AUTH] Initialized Client: ${keyData.client_email}`);
+  console.log(`🔑 [AUTH] Initialized Client: ${keyData.client_email} via ${keyFile}`);
 
   // Fetch Verified GSC Properties
   const sc = google.searchconsole({ version: 'v1', auth });

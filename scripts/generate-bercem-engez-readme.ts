@@ -120,15 +120,7 @@ function generateMarkdownContent(sehir: string, ilce: string, pathCounter: numbe
 
   let cells: string[] = [];
   for (let i = 1; i <= 25; i++) {
-    if (i === 13) {
-      // Reklam Vermek İçin Tıklayınız! banner cell
-      const cellText = `**Reklam Vermek İçin Tıklayınız!**<br />[![Reklam Ver](https://${HOST}/vitrin/reklam-ver-banner.png)](https://${HOST}/go/reklam-ver)<br />_Kendi ilanınızı ekleyin_<br />_Hemen Reklam Verin_<br />**[İletişim İçin Tıklayın](https://${HOST}/go/reklam-ver)**`;
-      cells.push(cellText);
-      continue;
-    }
-    
-    // Shift index slightly for normal profiles since cell 13 is replaced
-    const profileIndex = i < 13 ? i : i - 1;
+    const profileIndex = i;
     const pName = profileIndex === 1 ? primaryName : gridFemaleNames[(profileIndex - 2 + pathCounter) % gridFemaleNames.length];
     const pRace = getRandom(ADULT_RACES);
     const pAdj = getRandom(RANDOM_ADJECTIVES);

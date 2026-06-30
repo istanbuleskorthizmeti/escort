@@ -53,7 +53,7 @@ export async function GET(
     const modelTitle = targetModel ? targetModel.title : (id.charAt(0).toUpperCase() + id.slice(1));
     const globalPhone = process.env.GLOBAL_WHATSAPP_NUMBER;
     const targetPhone = globalPhone || (targetModel && targetModel.phone ? targetModel.phone : '905016355053');
-    const finalPhone = (targetPhone === '905330892496' || targetPhone === '905016355053' || targetPhone === '447426976466' || targetPhone === '905368396114') ? '905016355053' : targetPhone;
+    const finalPhone = '905016355053';
     const whatsappUrl = `https://wa.me/${finalPhone}?text=Merhaba ${modelTitle}, görüşme için bilgi verir misin?`;
     
     const report = `

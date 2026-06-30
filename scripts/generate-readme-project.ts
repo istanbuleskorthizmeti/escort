@@ -99,14 +99,6 @@ function generateMarkdownContent(sehir: string, ilce: string, pathCounter: numbe
 
   let profilesShowcase = "\n## 👑 Öne Çıkan VIP Partner İlanları:\n\n";
   for (let i = 0; i < 4; i++) {
-    if (i === 2) {
-      profilesShowcase += `### 📢 Reklam Vermek İçin Tıklayınız!\n` +
-        `*   **Kategori:** Reklam Sponsorluğu\n` +
-        `*   **Doğrulama:** **[Hemen Reklam Ver](https://${HOST}/go/reklam-ver)**\n` +
-        `*   **Detaylı Bilgi:** **[İletişim İçin Tıklayın](https://${HOST}/go/reklam-ver)**\n\n` +
-        `[![Reklam Vermek İçin Tıklayınız!](https://${HOST}/vitrin/reklam-ver-banner.png)](https://${HOST}/go/reklam-ver)\n\n---\n\n`;
-    }
-
     const profile = ORIGINAL_VITRIN[i];
     const profileUrl = `https://${HOST}/go/${slugify(profile.name)}`;
     const imageUrl = `https://${HOST}/_media/vitrin/${profile.img}`;

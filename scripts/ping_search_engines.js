@@ -56,13 +56,26 @@ const moneySiteSitemaps = [
   "https://dorukcanay.digital/sitemap-districts.xml",
   "https://dorukcanay.digital/sitemap-categories.xml",
   "https://dorukcanay.digital/sitemap-vip.xml",
+  "https://dorukcanay.digital/feed.xml",
   "https://istanbulescort.blog/sitemap.xml",
   "https://istanbulescort.blog/sitemap-index.xml",
   "https://istanbulescort.blog/sitemap-districts.xml",
   "https://istanbulescort.blog/sitemap-categories.xml",
   "https://istanbulescort.blog/sitemap-vip.xml",
+  "https://istanbulescort.blog/feed.xml",
   "https://istanbul-eskort-hizmeti.readme.io/sitemap.xml"
 ];
+
+// Add Dynamic Subdomains
+const districts = [
+  'besiktas', 'sisli', 'beylikduzu', 'kadikoy', 'bakirkoy', 
+  'atasehir', 'esenyurt', 'fatih', 'bagcilar', 'bahcelievler'
+];
+
+districts.forEach(d => {
+  moneySiteSitemaps.push(`https://${d}.dorukcanay.digital/sitemap.xml`);
+  moneySiteSitemaps.push(`https://${d}.istanbulescort.blog/sitemap.xml`);
+});
 
 async function runPing() {
   console.log('🚀 [GOD MODE] Başlatılıyor: Küresel Arama Motoru Ping Operasyonu (Hydra)');

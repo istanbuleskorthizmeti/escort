@@ -1,18 +1,18 @@
-import * as fs from 'fs';
+﻿import * as fs from 'fs';
 import * as path from 'path';
 import { istanbulCity } from '../lib/locations-registry/istanbul';
 import { callGemini } from './utils/gemini-client';
 
 /**
- * 🧛‍♂️ GOOGLE SITES HTML PAYLOAD FACTORY (v16.0 - Ultimate Opsec & Anti-Duplicate Edition)
+ * ğŸ§›â€â™‚ï¸ GOOGLE SITES HTML PAYLOAD FACTORY (v16.0 - Ultimate Opsec & Anti-Duplicate Edition)
  * Generates 5 highly optimized layout variations for each of the 348 locations.
  * 
- * 🛡️ GOOGLE AMP CACHE BYPASS SPECIFICATION (dorukcanay.digital ONLY):
+ * ğŸ›¡ï¸ GOOGLE AMP CACHE BYPASS SPECIFICATION (dorukcanay.digital ONLY):
  * - Primary Host: dorukcanay.digital (Direct serving & direct media)
  * - Google AMP Cache Host (Unblockable by BTK / TIB):
  *   - Catalog links point directly to the AMP Cache of dorukcanay.digital
  * 
- * 📝 NOTEPAD GENERATOR:
+ * ğŸ“ NOTEPAD GENERATOR:
  * - Creates a comprehensive setup directory (google-sites-setup-directory.txt) next to the payloads
  *   detailing every location's URL, Page Title, Meta Description, Target AMP Cache Link, and Gold Keywords.
  */
@@ -31,165 +31,165 @@ const GSC_VERIFICATIONS = [
 
 // 24 Premium Profiles with verified images from PBN database
 const ORIGINAL_VITRIN = [
-  { name: 'Melissa', img: 'istanbul-kaporasiz-escort-melissa-1.webp', race: 'Türk', cat: 'Elite VIP Partner', phone: '905016355053' },
-  { name: 'Aynur', img: 'istanbul-kaporasiz-escort-aynur-1.webp', race: 'Türk', cat: 'VIP Sarışın Model', phone: '905016355053' },
+  { name: 'Melissa', img: 'istanbul-kaporasiz-escort-melissa-1.webp', race: 'TÃ¼rk', cat: 'Elite VIP Partner', phone: '905016355053' },
+  { name: 'Aynur', img: 'istanbul-kaporasiz-escort-aynur-1.webp', race: 'TÃ¼rk', cat: 'VIP SarÄ±ÅŸÄ±n Model', phone: '905016355053' },
   { name: 'Svetlana', img: 'istanbul-kaporasiz-escort-svetlana-1.webp', race: 'Rus', cat: 'Elit Rus Model', phone: '905016355053' },
-  { name: 'Ceren', img: 'istanbul-kaporasiz-escort-ceren-1.webp', race: 'Türk', cat: 'VIP Elit Model', phone: '905016355053' },
-  { name: 'Ayla', img: 'istanbul-kaporasiz-escort-ayla-1.webp', race: 'Türk', cat: 'Premium Esmer Lady', phone: '905016355053' },
-  { name: 'Esila', img: 'istanbul-kaporasiz-escort-esila-1.webp', race: 'Boşnak', cat: 'Ateşli Sarışın Partner', phone: '905016355053' },
-  { name: 'Berfin', img: 'vip-profil-1.webp', race: 'Türk', cat: 'Elit Üniversiteli', phone: '905016355053' },
-  { name: 'Dilan', img: 'vip-profil-6.webp', race: 'Türk', cat: 'Premium Esmer Güzeli', phone: '905016355053' },
-  { name: 'Jînda', img: 'vip-profil-11.webp', race: 'Türk', cat: 'Kızıl Fantezi Uzmanı', phone: '905016355053' },
-  { name: 'Narin', img: 'vip-profil-16.webp', race: 'Türk', cat: 'Zarif Çıtır Partner', phone: '905016355053' },
-  { name: 'Rojîn', img: 'vip-profil-21.webp', race: 'Türk', cat: 'VIP Lady Partner', phone: '905016355053' },
-  { name: 'Zilan', img: 'vip-profil-26.webp', race: 'Türk', cat: 'Lüks Sarışın Model', phone: '905016355053' },
-  { name: 'Asya', img: 'vip-profil-31.webp', race: 'Türk', cat: 'Sınırsız Randevu Partneri', phone: '905016355053' },
-  { name: 'Buse', img: 'vip-profil-36.webp', race: 'Türk', cat: 'VIP Üniversiteli Çıtır', phone: '905016355053' },
-  { name: 'Cansel', img: 'vip-profil-41.webp', race: 'Türk', cat: 'Gizemli Fantezi Model', phone: '905016355053' },
-  { name: 'Damla', img: 'vip-profil-46.webp', race: 'Türk', cat: 'Lüks Rezidans Partneri', phone: '905016355053' },
-  { name: 'Elif', img: 'vip-profil-51.webp', race: 'Türk', cat: 'VIP Sarışın Bomba', phone: '905016355053' },
-  { name: 'Figen', img: 'vip-profil-56.webp', race: 'Türk', cat: 'Olgun Lady Uzmanı', phone: '905016355053' },
-  { name: 'Gizem', img: 'vip-profil-61.webp', race: 'Türk', cat: 'Zarif Çıtır Model', phone: '905016355053' },
-  { name: 'Hande', img: 'vip-profil-66.webp', race: 'Türk', cat: 'Ateşli Kızıl Lady', phone: '905016355053' },
-  { name: 'Işıl', img: 'vip-profil-71.webp', race: 'Türk', cat: 'Lüks Rezidans Modeli', phone: '905016355053' },
-  { name: 'Kübra', img: 'vip-profil-76.webp', race: 'Türk', cat: 'VIP Partner Seçeneği', phone: '905016355053' },
-  { name: 'Leyla', img: 'vip-profil-81.webp', race: 'Türk', cat: 'Gizemli Esmer Model', phone: '905016355053' },
-  { name: 'Merve', img: 'vip-profil-86.webp', race: 'Türk', cat: 'Elite VIP Model', phone: '905016355053' }
+  { name: 'Ceren', img: 'istanbul-kaporasiz-escort-ceren-1.webp', race: 'TÃ¼rk', cat: 'VIP Elit Model', phone: '905016355053' },
+  { name: 'Ayla', img: 'istanbul-kaporasiz-escort-ayla-1.webp', race: 'TÃ¼rk', cat: 'Premium Esmer Lady', phone: '905016355053' },
+  { name: 'Esila', img: 'istanbul-kaporasiz-escort-esila-1.webp', race: 'BoÅŸnak', cat: 'AteÅŸli SarÄ±ÅŸÄ±n Partner', phone: '905016355053' },
+  { name: 'Berfin', img: 'vip-profil-1.webp', race: 'TÃ¼rk', cat: 'Elit Ãœniversiteli', phone: '905016355053' },
+  { name: 'Dilan', img: 'vip-profil-6.webp', race: 'TÃ¼rk', cat: 'Premium Esmer GÃ¼zeli', phone: '905016355053' },
+  { name: 'JÃ®nda', img: 'vip-profil-11.webp', race: 'TÃ¼rk', cat: 'KÄ±zÄ±l Fantezi UzmanÄ±', phone: '905016355053' },
+  { name: 'Narin', img: 'vip-profil-16.webp', race: 'TÃ¼rk', cat: 'Zarif Ã‡Ä±tÄ±r Partner', phone: '905016355053' },
+  { name: 'RojÃ®n', img: 'vip-profil-21.webp', race: 'TÃ¼rk', cat: 'VIP Lady Partner', phone: '905016355053' },
+  { name: 'Zilan', img: 'vip-profil-26.webp', race: 'TÃ¼rk', cat: 'LÃ¼ks SarÄ±ÅŸÄ±n Model', phone: '905016355053' },
+  { name: 'Asya', img: 'vip-profil-31.webp', race: 'TÃ¼rk', cat: 'SÄ±nÄ±rsÄ±z Randevu Partneri', phone: '905016355053' },
+  { name: 'Buse', img: 'vip-profil-36.webp', race: 'TÃ¼rk', cat: 'VIP Ãœniversiteli Ã‡Ä±tÄ±r', phone: '905016355053' },
+  { name: 'Cansel', img: 'vip-profil-41.webp', race: 'TÃ¼rk', cat: 'Gizemli Fantezi Model', phone: '905016355053' },
+  { name: 'Damla', img: 'vip-profil-46.webp', race: 'TÃ¼rk', cat: 'LÃ¼ks Rezidans Partneri', phone: '905016355053' },
+  { name: 'Elif', img: 'vip-profil-51.webp', race: 'TÃ¼rk', cat: 'VIP SarÄ±ÅŸÄ±n Bomba', phone: '905016355053' },
+  { name: 'Figen', img: 'vip-profil-56.webp', race: 'TÃ¼rk', cat: 'Olgun Lady UzmanÄ±', phone: '905016355053' },
+  { name: 'Gizem', img: 'vip-profil-61.webp', race: 'TÃ¼rk', cat: 'Zarif Ã‡Ä±tÄ±r Model', phone: '905016355053' },
+  { name: 'Hande', img: 'vip-profil-66.webp', race: 'TÃ¼rk', cat: 'AteÅŸli KÄ±zÄ±l Lady', phone: '905016355053' },
+  { name: 'IÅŸÄ±l', img: 'vip-profil-71.webp', race: 'TÃ¼rk', cat: 'LÃ¼ks Rezidans Modeli', phone: '905016355053' },
+  { name: 'KÃ¼bra', img: 'vip-profil-76.webp', race: 'TÃ¼rk', cat: 'VIP Partner SeÃ§eneÄŸi', phone: '905016355053' },
+  { name: 'Leyla', img: 'vip-profil-81.webp', race: 'TÃ¼rk', cat: 'Gizemli Esmer Model', phone: '905016355053' },
+  { name: 'Merve', img: 'vip-profil-86.webp', race: 'TÃ¼rk', cat: 'Elite VIP Model', phone: '905016355053' }
 ];
 
 const EDITORIAL_DESCRIPTIONS = [
-  'Melissa, lüks yaşamı ve elit refakat hizmetlerini benimsemiş seçkin bir partnerdir. Kendisiyle geçireceğiniz her dakika unutulmaz anlara dönüşecektir.',
-  'Aynur, zarif duruşu ve yüksek iletişim becerileriyle ön plana çıkan seçkin bir modeldir. Özel davetlerinizde ve iş toplantılarınızda yanınızda olmaktan keyif alır.',
-  'Svetlana, Rusya\'nın zarafetini ve kusursuz fiziki hatlarını İstanbul\'a taşımış profesyonel bir modeldir. Sınır tanımayan fantezi dünyasıyla hayallerinizi gerçeğe dönüştürür.',
-  'Ceren, samimi tavırları ve doğal güzelliğiyle kalbinizi fethedecek bireysel bir partnerdir. Kendi evinin konforunda veya seçkin otellerde hizmet vermektedir.',
-  'Ayla, esmer teni ve atletik vücuduyla dikkat çeken son derece çekici bir modeldir. Sıcak ve samimi refakat hizmeti sunmaktadır.',
-  'Esila, sarı saçları ve büyüleyici gözleriyle size rüya gibi bir gece yaşatacak Boşnak asıllı bir partnerdir. Hizmette sınır tanımaz.',
-  'Berfin, enerjik yapısı ve cana yakın tavırlarıyla bilinen genç ve çıtır bir partnerdir. Sohbetiyle de gecenize renk katacaktır.',
-  'Dilan, elit zevklere sahip beyler için özenle seçilmiş lüks bir partnerdir. Rezidansında veya otelinizde teyitli hizmet sunar.',
-  'Jînda, kızıl saçlarının büyüsü ve tutkulu karakteriyle sizi baştan çıkaracak tecrübeli bir modeldir. Gizlilik prensibine son derece sadıktır.',
-  'Narin, minyon fiziği ve zarif hatlarıyla narin bir çiçek gibi parlayan bireysel bir refakatçidir. Tatlı sohbetiyle içinizi ısıtır.',
-  'Rojîn, kendinden emin duruşu ve kusursuz diksiyonuyla seçkin beylerin en çok tercih ettiği elit VIP partnerlerdendir.',
-  'Zilan, sarışın güzelliği ve kusursuz fiziğiyle her buluşmada heyecanı zirveye taşıyan profesyonel bir partnerdir.',
-  'Asya, güler yüzlü hizmeti ve sınırsız randevu konseptleriyle unutulmaz bir eskort deneyimi yaşatmak için sizi bekliyor.',
-  'Buse, üniversite eğitimine devam eden, son derece kültürlü ve hoş sohbet bir partnerdir. Özel günlerinize eşlik etmekten keyif alır.',
-  'Cansel, fantezi dünyası geniş ve açık fikirli beyler için harika bir partner seçeneğidir. Randevuda zamanında adreste olur.',
-  'Damla, rezidans konforunda veya lüks otellerde görüşmeyi kabul eden, son derece titiz ve güvenilir bir refakatçidir.',
-  'Elif, göz alıcı fiziği ve pozitif enerjisiyle günün tüm yorgunluğunu unutturacak samimi bir VIP partnerdir.',
-  'Figen, olgun kadın cazibesini ve tecrübesini sonuna kadar hissettirecek seçkin bir partnerdir. Konuşması ve tavırlarıyla sizi büyüleyecek.',
-  'Gizem, çıtır fiziği ve cana yakın tavırlarıyla her buluşmada yüksek memnuniyet sağlayan bağımsız bir modeldir.',
-  'Hande, kızıl saçları ve çekici hatlarıyla sizi fantezi dolu bir dünyaya davet eden son derece aktif bir partnerdir.',
-  'Işıl, pürüzsüz teni ve büyüleyici gülüşüyle her anınızı özel kılacak lüks rezidans partneriniz olmaya adaydır.',
-  'Kübra, eskort rehberimizin en beğenilen üyelerinden olup, tam gizlilik ve maksimum güvenilirlik garantisiyle hizmet verir.',
-  'Leyla, gizemli bakışları ve esmer teninin sıcaklığıyla unutamayacağınız bir refakat deneyimi sunmak için sabırsızlanıyor.',
-  'Merve, elit duruşu ve profesyonel hizmet anlayışıyla her randevuda fark yaratan kusursuz bir VIP modeldir.'
+  'Melissa, lÃ¼ks yaÅŸamÄ± ve elit refakat hizmetlerini benimsemiÅŸ seÃ§kin bir partnerdir. Kendisiyle geÃ§ireceÄŸiniz her dakika unutulmaz anlara dÃ¶nÃ¼ÅŸecektir.',
+  'Aynur, zarif duruÅŸu ve yÃ¼ksek iletiÅŸim becerileriyle Ã¶n plana Ã§Ä±kan seÃ§kin bir modeldir. Ã–zel davetlerinizde ve iÅŸ toplantÄ±larÄ±nÄ±zda yanÄ±nÄ±zda olmaktan keyif alÄ±r.',
+  'Svetlana, Rusya\'nÄ±n zarafetini ve kusursuz fiziki hatlarÄ±nÄ± Ä°stanbul\'a taÅŸÄ±mÄ±ÅŸ profesyonel bir modeldir. SÄ±nÄ±r tanÄ±mayan fantezi dÃ¼nyasÄ±yla hayallerinizi gerÃ§eÄŸe dÃ¶nÃ¼ÅŸtÃ¼rÃ¼r.',
+  'Ceren, samimi tavÄ±rlarÄ± ve doÄŸal gÃ¼zelliÄŸiyle kalbinizi fethedecek bireysel bir partnerdir. Kendi evinin konforunda veya seÃ§kin otellerde hizmet vermektedir.',
+  'Ayla, esmer teni ve atletik vÃ¼cuduyla dikkat Ã§eken son derece Ã§ekici bir modeldir. SÄ±cak ve samimi refakat hizmeti sunmaktadÄ±r.',
+  'Esila, sarÄ± saÃ§larÄ± ve bÃ¼yÃ¼leyici gÃ¶zleriyle size rÃ¼ya gibi bir gece yaÅŸatacak BoÅŸnak asÄ±llÄ± bir partnerdir. Hizmette sÄ±nÄ±r tanÄ±maz.',
+  'Berfin, enerjik yapÄ±sÄ± ve cana yakÄ±n tavÄ±rlarÄ±yla bilinen genÃ§ ve Ã§Ä±tÄ±r bir partnerdir. Sohbetiyle de gecenize renk katacaktÄ±r.',
+  'Dilan, elit zevklere sahip beyler iÃ§in Ã¶zenle seÃ§ilmiÅŸ lÃ¼ks bir partnerdir. RezidansÄ±nda veya otelinizde teyitli hizmet sunar.',
+  'JÃ®nda, kÄ±zÄ±l saÃ§larÄ±nÄ±n bÃ¼yÃ¼sÃ¼ ve tutkulu karakteriyle sizi baÅŸtan Ã§Ä±karacak tecrÃ¼beli bir modeldir. Gizlilik prensibine son derece sadÄ±ktÄ±r.',
+  'Narin, minyon fiziÄŸi ve zarif hatlarÄ±yla narin bir Ã§iÃ§ek gibi parlayan bireysel bir refakatÃ§idir. TatlÄ± sohbetiyle iÃ§inizi Ä±sÄ±tÄ±r.',
+  'RojÃ®n, kendinden emin duruÅŸu ve kusursuz diksiyonuyla seÃ§kin beylerin en Ã§ok tercih ettiÄŸi elit VIP partnerlerdendir.',
+  'Zilan, sarÄ±ÅŸÄ±n gÃ¼zelliÄŸi ve kusursuz fiziÄŸiyle her buluÅŸmada heyecanÄ± zirveye taÅŸÄ±yan profesyonel bir partnerdir.',
+  'Asya, gÃ¼ler yÃ¼zlÃ¼ hizmeti ve sÄ±nÄ±rsÄ±z randevu konseptleriyle unutulmaz bir eskort deneyimi yaÅŸatmak iÃ§in sizi bekliyor.',
+  'Buse, Ã¼niversite eÄŸitimine devam eden, son derece kÃ¼ltÃ¼rlÃ¼ ve hoÅŸ sohbet bir partnerdir. Ã–zel gÃ¼nlerinize eÅŸlik etmekten keyif alÄ±r.',
+  'Cansel, fantezi dÃ¼nyasÄ± geniÅŸ ve aÃ§Ä±k fikirli beyler iÃ§in harika bir partner seÃ§eneÄŸidir. Randevuda zamanÄ±nda adreste olur.',
+  'Damla, rezidans konforunda veya lÃ¼ks otellerde gÃ¶rÃ¼ÅŸmeyi kabul eden, son derece titiz ve gÃ¼venilir bir refakatÃ§idir.',
+  'Elif, gÃ¶z alÄ±cÄ± fiziÄŸi ve pozitif enerjisiyle gÃ¼nÃ¼n tÃ¼m yorgunluÄŸunu unutturacak samimi bir VIP partnerdir.',
+  'Figen, olgun kadÄ±n cazibesini ve tecrÃ¼besini sonuna kadar hissettirecek seÃ§kin bir partnerdir. KonuÅŸmasÄ± ve tavÄ±rlarÄ±yla sizi bÃ¼yÃ¼leyecek.',
+  'Gizem, Ã§Ä±tÄ±r fiziÄŸi ve cana yakÄ±n tavÄ±rlarÄ±yla her buluÅŸmada yÃ¼ksek memnuniyet saÄŸlayan baÄŸÄ±msÄ±z bir modeldir.',
+  'Hande, kÄ±zÄ±l saÃ§larÄ± ve Ã§ekici hatlarÄ±yla sizi fantezi dolu bir dÃ¼nyaya davet eden son derece aktif bir partnerdir.',
+  'IÅŸÄ±l, pÃ¼rÃ¼zsÃ¼z teni ve bÃ¼yÃ¼leyici gÃ¼lÃ¼ÅŸÃ¼yle her anÄ±nÄ±zÄ± Ã¶zel kÄ±lacak lÃ¼ks rezidans partneriniz olmaya adaydÄ±r.',
+  'KÃ¼bra, eskort rehberimizin en beÄŸenilen Ã¼yelerinden olup, tam gizlilik ve maksimum gÃ¼venilirlik garantisiyle hizmet verir.',
+  'Leyla, gizemli bakÄ±ÅŸlarÄ± ve esmer teninin sÄ±caklÄ±ÄŸÄ±yla unutamayacaÄŸÄ±nÄ±z bir refakat deneyimi sunmak iÃ§in sabÄ±rsÄ±zlanÄ±yor.',
+  'Merve, elit duruÅŸu ve profesyonel hizmet anlayÄ±ÅŸÄ±yla her randevuda fark yaratan kusursuz bir VIP modeldir.'
 ];
 
 const ADULT_NICHES = [
   "Outdoor", "Office", "Gym", "Hotel", "Massage", "Spa", "Beach", "Public", "Party", "Club", "Luxury", "Elite", "VIP",
-  "Lüks", "Gizli", "Kaçamak", "Otel", "Rezidans", "Evlere Servis", "Otele Servis", "Kaporasız", "Güvenilir"
+  "LÃ¼ks", "Gizli", "KaÃ§amak", "Otel", "Rezidans", "Evlere Servis", "Otele Servis", "KaporasÄ±z", "GÃ¼venilir"
 ];
 
 const ADULT_PROFILE_ADJECTIVES = [
-  "Ateşli", "Sıcak", "Nefes Kesen", "Baştan Çıkarıcı", "Vahşi", "Doyumsuz", "Kışkırtıcı", "Egzotik",
-  "Tanrıça", "Afet", "Bomba", "Pırlanta", "Elite", "VIP"
+  "AteÅŸli", "SÄ±cak", "Nefes Kesen", "BaÅŸtan Ã‡Ä±karÄ±cÄ±", "VahÅŸi", "Doyumsuz", "KÄ±ÅŸkÄ±rtÄ±cÄ±", "Egzotik",
+  "TanrÄ±Ã§a", "Afet", "Bomba", "PÄ±rlanta", "Elite", "VIP"
 ];
 
 const ADULT_QUALITIES = [
-  "4K Ultra HD", "1080p Full HD", "Sansürsüz", "Gerçek Görsel", "Videolu Onay", "Canlı Teyit", "Kaporasız"
+  "4K Ultra HD", "1080p Full HD", "SansÃ¼rsÃ¼z", "GerÃ§ek GÃ¶rsel", "Videolu Onay", "CanlÄ± Teyit", "KaporasÄ±z"
 ];
 
 const V1_P1_TEMPLATES = [
-  "{sehir} {ilce} civarında kapora vermeden, güvenilir İstanbul escort arayanlar için en yeni ilanları tek sayfada topladık. Buradaki kızlar {sehir} genelinde {hizmet} veren bireysel partnerlerdir.",
-  "{ilce} {ilan} arıyorsanız, doğrudan görüşebileceğiniz teyitli kızların profillerini inceleyin. Ön ödemesiz buluşmalar için en iyi seçenekler listelenmiştir.",
-  "{sehir} {ilce} escort bayan ilanlarında sahteciliğe yer yok. %100 {quality} görseller ve kaporasız buluşma imkanıyla en aktif profiller burada.",
-  "Güvenli ve temiz bir refakat için {sehir} {ilce} escort ilanlarımıza göz atın. Tamamı adreste elden ödeme alan bağımsız kızlardan oluşmaktadır.",
-  "{sehir} {ilce} eskort listesinde yer alan popüler ve {adj} kızlarla doğrudan iletişim kurun. Herhangi bir ön ödeme riski yoktur."
+  "{sehir} {ilce} civarÄ±nda kapora vermeden, gÃ¼venilir Ä°stanbul escort arayanlar iÃ§in en yeni ilanlarÄ± tek sayfada topladÄ±k. Buradaki kÄ±zlar {sehir} genelinde {hizmet} veren bireysel partnerlerdir.",
+  "{ilce} {ilan} arÄ±yorsanÄ±z, doÄŸrudan gÃ¶rÃ¼ÅŸebileceÄŸiniz teyitli kÄ±zlarÄ±n profillerini inceleyin. Ã–n Ã¶demesiz buluÅŸmalar iÃ§in en iyi seÃ§enekler listelenmiÅŸtir.",
+  "{sehir} {ilce} escort bayan ilanlarÄ±nda sahteciliÄŸe yer yok. %100 {quality} gÃ¶rseller ve kaporasÄ±z buluÅŸma imkanÄ±yla en aktif profiller burada.",
+  "GÃ¼venli ve temiz bir refakat iÃ§in {sehir} {ilce} escort ilanlarÄ±mÄ±za gÃ¶z atÄ±n. TamamÄ± adreste elden Ã¶deme alan baÄŸÄ±msÄ±z kÄ±zlardan oluÅŸmaktadÄ±r.",
+  "{sehir} {ilce} eskort listesinde yer alan popÃ¼ler ve {adj} kÄ±zlarla doÄŸrudan iletiÅŸim kurun. Herhangi bir Ã¶n Ã¶deme riski yoktur."
 ];
 
 const V1_P2_TEMPLATES = [
-  "Buluşmalar {niche} konseptinde ve tamamen kaporasızdır. Görsellerin altındaki linklerden kızlara doğrudan ulaşabilirsiniz. İstanbul escort hizmeti için 7/24 teyit alabilirsiniz.",
-  "Önceliğimiz güvenlik ve sorunsuz randevudur. Bu yüzden {sehir} {ilce} eskort listesindeki tüm profiller kapıda elden nakit ödeme kabul eder.",
-  "Paranızı riske atmadan, kapora veya depozito ödemeden {sehir} {ilce} escort modelleriyle görüşün. Kızlar rezidans ya da otel adreslerine servis sağlamaktadır.",
-  "Rehberimizdeki bağımsız kızlar {sehir} genelinde popüler {niche} buluşmalar yapar ve gizliliğinizi korur. İletişim için profillere tıklamanız yeterlidir.",
-  "Gizliliğe önem veren {ilce} escort bayan ilanları, kapora tuzağı olmadan elden ödemeyle çalışır. Kızlarla hızlı randevu için butonları kullanın."
+  "BuluÅŸmalar {niche} konseptinde ve tamamen kaporasÄ±zdÄ±r. GÃ¶rsellerin altÄ±ndaki linklerden kÄ±zlara doÄŸrudan ulaÅŸabilirsiniz. Ä°stanbul escort hizmeti iÃ§in 7/24 teyit alabilirsiniz.",
+  "Ã–nceliÄŸimiz gÃ¼venlik ve sorunsuz randevudur. Bu yÃ¼zden {sehir} {ilce} eskort listesindeki tÃ¼m profiller kapÄ±da elden nakit Ã¶deme kabul eder.",
+  "ParanÄ±zÄ± riske atmadan, kapora veya depozito Ã¶demeden {sehir} {ilce} escort modelleriyle gÃ¶rÃ¼ÅŸÃ¼n. KÄ±zlar rezidans ya da otel adreslerine servis saÄŸlamaktadÄ±r.",
+  "Rehberimizdeki baÄŸÄ±msÄ±z kÄ±zlar {sehir} genelinde popÃ¼ler {niche} buluÅŸmalar yapar ve gizliliÄŸinizi korur. Ä°letiÅŸim iÃ§in profillere tÄ±klamanÄ±z yeterlidir.",
+  "GizliliÄŸe Ã¶nem veren {ilce} escort bayan ilanlarÄ±, kapora tuzaÄŸÄ± olmadan elden Ã¶demeyle Ã§alÄ±ÅŸÄ±r. KÄ±zlarla hÄ±zlÄ± randevu iÃ§in butonlarÄ± kullanÄ±n."
 ];
 
 const V2_P1_TEMPLATES = [
-  "{sehir} {ilce} {ilan} seçenekleriyle günün yorgunluğunu geride bırakın. Kaporasız ve elden ödemeli İstanbul escort profilleri listelenmiştir.",
-  "{sehir} {ilce} bölgesinde kaporasız partner bulmak artık çok kolay. Tamamı doğrulanmış görsellerle en aktif kızlar vitrinde yer alıyor.",
-  "{sehir} {ilce} escort ilanlarında en popüler and {adj} modelleri sizin için seçtik. Sıfır risk ve tam gizlilik esasıyla randevunuzu alın.",
-  "Sıradan ilanlardan sıkılanlar için {sehir} {ilce} eskort vitrinini güncelledik. Bağımsız partnerlerin güncel ilanları aşağıdadır.",
-  "Kendi yerinde veya otelde görüşebileceğiniz {sehir} {ilce} escort kızları, gerçek resimleriyle sizleri bekliyor. Hemen kataloğu inceleyin."
+  "{sehir} {ilce} {ilan} seÃ§enekleriyle gÃ¼nÃ¼n yorgunluÄŸunu geride bÄ±rakÄ±n. KaporasÄ±z ve elden Ã¶demeli Ä°stanbul escort profilleri listelenmiÅŸtir.",
+  "{sehir} {ilce} bÃ¶lgesinde kaporasÄ±z partner bulmak artÄ±k Ã§ok kolay. TamamÄ± doÄŸrulanmÄ±ÅŸ gÃ¶rsellerle en aktif kÄ±zlar vitrinde yer alÄ±yor.",
+  "{sehir} {ilce} escort ilanlarÄ±nda en popÃ¼ler and {adj} modelleri sizin iÃ§in seÃ§tik. SÄ±fÄ±r risk ve tam gizlilik esasÄ±yla randevunuzu alÄ±n.",
+  "SÄ±radan ilanlardan sÄ±kÄ±lanlar iÃ§in {sehir} {ilce} eskort vitrinini gÃ¼ncelledik. BaÄŸÄ±msÄ±z partnerlerin gÃ¼ncel ilanlarÄ± aÅŸaÄŸÄ±dadÄ±r.",
+  "Kendi yerinde veya otelde gÃ¶rÃ¼ÅŸebileceÄŸiniz {sehir} {ilce} escort kÄ±zlarÄ±, gerÃ§ek resimleriyle sizleri bekliyor. Hemen kataloÄŸu inceleyin."
 ];
 
 const V2_P2_TEMPLATES = [
-  "Buluşmalarda güvenlik ve gizlilik kuralları geçerlidir. Semtteki bağımsız VIP kızlar {niche} randevular kabul eder ve kapora istemez. Görüşme için profil linklerini takip edin.",
-  "Kopya ilanlardan uzak durarak {sehir} {ilce} eskort profillerine güvenle ulaşabilirsiniz. Buluşmada nakit ödeme yapılır.",
-  "Kaldığınız otel veya kendi rezidansınızda görüşmek için kaporasız çalışan {sehir} {ilce} escort bayan ilanlarını tercih edin. Parasal kayıp riski yoktur.",
-  "Ön ödemesiz çalışan kızlar {sehir} genelinde en çok tercih edilen {niche} hizmetleri sunar. İletişim numaraları ve detaylar profillerde mevcuttur.",
-  "Güvenli buluşma için kapora istemeyen {ilce} escort bayan ilanlarını seçin. Ödemeyi adreste elden nakit olarak yapabilirsiniz."
+  "BuluÅŸmalarda gÃ¼venlik ve gizlilik kurallarÄ± geÃ§erlidir. Semtteki baÄŸÄ±msÄ±z VIP kÄ±zlar {niche} randevular kabul eder ve kapora istemez. GÃ¶rÃ¼ÅŸme iÃ§in profil linklerini takip edin.",
+  "Kopya ilanlardan uzak durarak {sehir} {ilce} eskort profillerine gÃ¼venle ulaÅŸabilirsiniz. BuluÅŸmada nakit Ã¶deme yapÄ±lÄ±r.",
+  "KaldÄ±ÄŸÄ±nÄ±z otel veya kendi rezidansÄ±nÄ±zda gÃ¶rÃ¼ÅŸmek iÃ§in kaporasÄ±z Ã§alÄ±ÅŸan {sehir} {ilce} escort bayan ilanlarÄ±nÄ± tercih edin. Parasal kayÄ±p riski yoktur.",
+  "Ã–n Ã¶demesiz Ã§alÄ±ÅŸan kÄ±zlar {sehir} genelinde en Ã§ok tercih edilen {niche} hizmetleri sunar. Ä°letiÅŸim numaralarÄ± ve detaylar profillerde mevcuttur.",
+  "GÃ¼venli buluÅŸma iÃ§in kapora istemeyen {ilce} escort bayan ilanlarÄ±nÄ± seÃ§in. Ã–demeyi adreste elden nakit olarak yapabilirsiniz."
 ];
 
 const V3_P1_TEMPLATES = [
-  "{sehir} {ilce} bölgesindeki en aktif bağımsız {secenek} listesi güncellendi. Güvenilir ve gizli İstanbul escort profillerini aşağıda bulabilirsiniz.",
-  "{sehir} {ilce} lokasyonunda {adj} ve tutkulu partner arayanlar için en iyi ilanlar vitrinde. Kızlarla doğrudan WhatsApp üzerinden görüşün.",
-  "Gizlilik prensibiyle çalışan {sehir} {ilce} eskort ilanları arasından seçiminizi yapın. Gerçek resimlerle sorunsuz randevu alın.",
-  "{sehir} {ilce} çevresinde hızlı servis veren bağımsız partnerlerin iletişim bilgilerine bu sayfadan ulaşabilirsiniz.",
-  "{sehir} {ilce} escort arayışınızda tecrübeli ve kaporasız {secenek} alternatifleri burada listelenmiştir."
+  "{sehir} {ilce} bÃ¶lgesindeki en aktif baÄŸÄ±msÄ±z {secenek} listesi gÃ¼ncellendi. GÃ¼venilir ve gizli Ä°stanbul escort profillerini aÅŸaÄŸÄ±da bulabilirsiniz.",
+  "{sehir} {ilce} lokasyonunda {adj} ve tutkulu partner arayanlar iÃ§in en iyi ilanlar vitrinde. KÄ±zlarla doÄŸrudan WhatsApp Ã¼zerinden gÃ¶rÃ¼ÅŸÃ¼n.",
+  "Gizlilik prensibiyle Ã§alÄ±ÅŸan {sehir} {ilce} eskort ilanlarÄ± arasÄ±ndan seÃ§iminizi yapÄ±n. GerÃ§ek resimlerle sorunsuz randevu alÄ±n.",
+  "{sehir} {ilce} Ã§evresinde hÄ±zlÄ± servis veren baÄŸÄ±msÄ±z partnerlerin iletiÅŸim bilgilerine bu sayfadan ulaÅŸabilirsiniz.",
+  "{sehir} {ilce} escort arayÄ±ÅŸÄ±nÄ±zda tecrÃ¼beli ve kaporasÄ±z {secenek} alternatifleri burada listelenmiÅŸtir."
 ];
 
 const V3_P2_TEMPLATES = [
-  "Tüm ilanlarımız teyitli ve gerçek resimlidir. Size en yakın {sehir} {ilce} escort profilini seçip kaporasız elden ödemeyle hemen randevunuzu ayarlayın.",
-  "Sistemdeki tüm kızlar doğrulanmıştır. Herhangi bir ön ödeme yapmadan, adreste elden ödeme güvencesiyle görüşebilirsiniz.",
-  "Buluşmalarda sürpriz ücretler veya kapora talepleri yoktur. {sehir} {ilce} eskort kızlarıyla doğrudan iletişim kurabilirsiniz.",
-  "Güvenilir ve keyifli bir görüşme için yukarıdaki ilanları kullanın. Memnuniyet odaklı çalışan bağımsız modeller aktif hizmet veriyor.",
-  "Kapora ödeme riski olmadan, tamamen elden ödemeyle çalışan {sehir} {ilce} escort partnerleriyle randevunuzu hızlıca oluşturun."
+  "TÃ¼m ilanlarÄ±mÄ±z teyitli ve gerÃ§ek resimlidir. Size en yakÄ±n {sehir} {ilce} escort profilini seÃ§ip kaporasÄ±z elden Ã¶demeyle hemen randevunuzu ayarlayÄ±n.",
+  "Sistemdeki tÃ¼m kÄ±zlar doÄŸrulanmÄ±ÅŸtÄ±r. Herhangi bir Ã¶n Ã¶deme yapmadan, adreste elden Ã¶deme gÃ¼vencesiyle gÃ¶rÃ¼ÅŸebilirsiniz.",
+  "BuluÅŸmalarda sÃ¼rpriz Ã¼cretler veya kapora talepleri yoktur. {sehir} {ilce} eskort kÄ±zlarÄ±yla doÄŸrudan iletiÅŸim kurabilirsiniz.",
+  "GÃ¼venilir ve keyifli bir gÃ¶rÃ¼ÅŸme iÃ§in yukarÄ±daki ilanlarÄ± kullanÄ±n. Memnuniyet odaklÄ± Ã§alÄ±ÅŸan baÄŸÄ±msÄ±z modeller aktif hizmet veriyor.",
+  "Kapora Ã¶deme riski olmadan, tamamen elden Ã¶demeyle Ã§alÄ±ÅŸan {sehir} {ilce} escort partnerleriyle randevunuzu hÄ±zlÄ±ca oluÅŸturun."
 ];
 
 const V4_P1_TEMPLATES = [
-  "{sehir} {ilce} bölgesinde güncel {secenek} ilanları bir araya getirildi. Kaporasız ve elden ödemeli çalışan İstanbul escort partnerleriyle hemen görüşün.",
-  "Teyitli resimler ve güncel ilanlarla {sehir} {ilce} eskort listesini hazırladık. Kızlara doğrudan ulaşmak için profillerdeki linkleri kullanın.",
-  "{sehir} {ilce} bölgesinde kaporasız escort bulmak artık çok kolay. Doğrulanmış profiller arasından dilediğinizi seçip hemen iletişime geçin.",
-  "{sehir} {ilce} escort modelleriyle günün stresini atın. Tamamı kaporasız ve adrese servis veren bağımsız kızlar listelenmiştir.",
-  "{sehir} {ilce} {ilan} listemizden tecrübeli ve güvenilir bağımsız partnerleri inceleyerek randevunuzu teyit edin."
+  "{sehir} {ilce} bÃ¶lgesinde gÃ¼ncel {secenek} ilanlarÄ± bir araya getirildi. KaporasÄ±z ve elden Ã¶demeli Ã§alÄ±ÅŸan Ä°stanbul escort partnerleriyle hemen gÃ¶rÃ¼ÅŸÃ¼n.",
+  "Teyitli resimler ve gÃ¼ncel ilanlarla {sehir} {ilce} eskort listesini hazÄ±rladÄ±k. KÄ±zlara doÄŸrudan ulaÅŸmak iÃ§in profillerdeki linkleri kullanÄ±n.",
+  "{sehir} {ilce} bÃ¶lgesinde kaporasÄ±z escort bulmak artÄ±k Ã§ok kolay. DoÄŸrulanmÄ±ÅŸ profiller arasÄ±ndan dilediÄŸinizi seÃ§ip hemen iletiÅŸime geÃ§in.",
+  "{sehir} {ilce} escort modelleriyle gÃ¼nÃ¼n stresini atÄ±n. TamamÄ± kaporasÄ±z ve adrese servis veren baÄŸÄ±msÄ±z kÄ±zlar listelenmiÅŸtir.",
+  "{sehir} {ilce} {ilan} listemizden tecrÃ¼beli ve gÃ¼venilir baÄŸÄ±msÄ±z partnerleri inceleyerek randevunuzu teyit edin."
 ];
 
 const V4_P2_TEMPLATES = [
-  "Sitemizde sadece kaporasız ve doğrulanmış {sehir} {ilce} eskort profilleri yer alır. Randevuda ödemenizi adreste elden nakit olarak yapabilirsiniz.",
-  "Ön koşul veya rezervasyon ücreti ödemeden doğrudan buluşabileceğiniz {sehir} {ilce} escort modelleriyle görüşmek için linkleri takip edin.",
-  "Sahte resimli ilanlardan uzak durun. Bu sayfada sadece gerçek resimli ve kaporasız çalışan İstanbul escort kızları listelenmektedir.",
-  "Görüşmelerde gizlilik esastır. Kapora dolandırıcılarına bulaşmadan, adreste nakit ödemeyle çalışan teyitli kızlarla görüşün.",
-  "Maddi kayıp yaşamadan, güvenilir ve kaporasız {sehir} {ilce} eskort ilanlarımızla randevunuzu sıfır riskle ayarlayın."
+  "Sitemizde sadece kaporasÄ±z ve doÄŸrulanmÄ±ÅŸ {sehir} {ilce} eskort profilleri yer alÄ±r. Randevuda Ã¶demenizi adreste elden nakit olarak yapabilirsiniz.",
+  "Ã–n koÅŸul veya rezervasyon Ã¼creti Ã¶demeden doÄŸrudan buluÅŸabileceÄŸiniz {sehir} {ilce} escort modelleriyle gÃ¶rÃ¼ÅŸmek iÃ§in linkleri takip edin.",
+  "Sahte resimli ilanlardan uzak durun. Bu sayfada sadece gerÃ§ek resimli ve kaporasÄ±z Ã§alÄ±ÅŸan Ä°stanbul escort kÄ±zlarÄ± listelenmektedir.",
+  "GÃ¶rÃ¼ÅŸmelerde gizlilik esastÄ±r. Kapora dolandÄ±rÄ±cÄ±larÄ±na bulaÅŸmadan, adreste nakit Ã¶demeyle Ã§alÄ±ÅŸan teyitli kÄ±zlarla gÃ¶rÃ¼ÅŸÃ¼n.",
+  "Maddi kayÄ±p yaÅŸamadan, gÃ¼venilir ve kaporasÄ±z {sehir} {ilce} eskort ilanlarÄ±mÄ±zla randevunuzu sÄ±fÄ±r riskle ayarlayÄ±n."
 ];
 
 const V5_P1_TEMPLATES = [
-  "İstanbul {sehir} {ilce} escort ilanları arayan beyler için kaporasız çalışan güncel kızları listeledik. Tamamı doğrulanmış ve gerçek fotoğraflı {sehir} {ilce} eskort modelleri arasından dilediğiniz profille hemen iletişime geçebilirsiniz. Sahte profillerle vakit kaybetmeden doğrudan adrese servis veren bağımsız kızları tercih edin.",
-  "{sehir} {ilce} {ilan} seçenekleriyle kaporasız ve güvenli partner bulmak çok kolay. Bu listede yer alan bağımsız çalışan {ilce} escort kızları, ön ödeme talep etmeden tamamen karşılıklı güven esasıyla randevu kabul etmektedir."
+  "Ä°stanbul {sehir} {ilce} escort ilanlarÄ± arayan beyler iÃ§in kaporasÄ±z Ã§alÄ±ÅŸan gÃ¼ncel kÄ±zlarÄ± listeledik. TamamÄ± doÄŸrulanmÄ±ÅŸ ve gerÃ§ek fotoÄŸraflÄ± {sehir} {ilce} eskort modelleri arasÄ±ndan dilediÄŸiniz profille hemen iletiÅŸime geÃ§ebilirsiniz. Sahte profillerle vakit kaybetmeden doÄŸrudan adrese servis veren baÄŸÄ±msÄ±z kÄ±zlarÄ± tercih edin.",
+  "{sehir} {ilce} {ilan} seÃ§enekleriyle kaporasÄ±z ve gÃ¼venli partner bulmak Ã§ok kolay. Bu listede yer alan baÄŸÄ±msÄ±z Ã§alÄ±ÅŸan {ilce} escort kÄ±zlarÄ±, Ã¶n Ã¶deme talep etmeden tamamen karÅŸÄ±lÄ±klÄ± gÃ¼ven esasÄ±yla randevu kabul etmektedir."
 ];
 
 const V5_P2_TEMPLATES = [
-  "Bölgedeki rezidanslarda ve lüks otellerde görüşebileceğiniz kızlar, hem fizikleri hem de güler yüzlü hizmetleriyle dikkat çekiyor. {sehir} {ilce} escort ilanlarımızda zamanında adreste olan ve gizliliğe önem veren profesyoneller yer alır.",
-  "Sorunsuz bir görüşme ve kaporasız randevu için {sehir} {ilce} eskort kızlarımızı tercih edin. Otelinize veya kendi rezidansınıza teyitli servis imkanı bulunmaktadır."
+  "BÃ¶lgedeki rezidanslarda ve lÃ¼ks otellerde gÃ¶rÃ¼ÅŸebileceÄŸiniz kÄ±zlar, hem fizikleri hem de gÃ¼ler yÃ¼zlÃ¼ hizmetleriyle dikkat Ã§ekiyor. {sehir} {ilce} escort ilanlarÄ±mÄ±zda zamanÄ±nda adreste olan ve gizliliÄŸe Ã¶nem veren profesyoneller yer alÄ±r.",
+  "Sorunsuz bir gÃ¶rÃ¼ÅŸme ve kaporasÄ±z randevu iÃ§in {sehir} {ilce} eskort kÄ±zlarÄ±mÄ±zÄ± tercih edin. Otelinize veya kendi rezidansÄ±nÄ±za teyitli servis imkanÄ± bulunmaktadÄ±r."
 ];
 
 const V5_P3_TEMPLATES = [
-  "Kapora dolandırıcılarından uzak durarak {sehir} {ilce} escort ilanlarındaki doğrulanmış kızlarla görüşün. Buluşma anında elden nakit ödeme sayesinde maddi kayıp riski yaşamadan randevunuzu gerçekleştirebilirsiniz.",
-  "Ön ödeme istemeyen ve adreste ödeme alan {sehir} {ilce} eskort kızlarıyla güvenli şekilde görüşün. Rezervasyon için profil kartlarındaki yönlendirme bağlantılarını kullanın."
+  "Kapora dolandÄ±rÄ±cÄ±larÄ±ndan uzak durarak {sehir} {ilce} escort ilanlarÄ±ndaki doÄŸrulanmÄ±ÅŸ kÄ±zlarla gÃ¶rÃ¼ÅŸÃ¼n. BuluÅŸma anÄ±nda elden nakit Ã¶deme sayesinde maddi kayÄ±p riski yaÅŸamadan randevunuzu gerÃ§ekleÅŸtirebilirsiniz.",
+  "Ã–n Ã¶deme istemeyen ve adreste Ã¶deme alan {sehir} {ilce} eskort kÄ±zlarÄ±yla gÃ¼venli ÅŸekilde gÃ¶rÃ¼ÅŸÃ¼n. Rezervasyon iÃ§in profil kartlarÄ±ndaki yÃ¶nlendirme baÄŸlantÄ±larÄ±nÄ± kullanÄ±n."
 ];
 
 const V5_P4_TEMPLATES = [
-  "Ulaşım yönünden {sehir} {ilce} bölgesi oldukça rahattır. Metro, metrobüs ve ana yollara yakın rezidanslarda veya otellerde kalıyorsanız, partneriniz randevu saatinde gecikme olmadan adresinizde olur.",
-  "İster saatlik ister gecelik randevular için olsun, {sehir} {ilce} eskort kızları en kısa sürede belirttiğiniz adrese ulaşarak keyifli anlarınızı başlatacaktır."
+  "UlaÅŸÄ±m yÃ¶nÃ¼nden {sehir} {ilce} bÃ¶lgesi oldukÃ§a rahattÄ±r. Metro, metrobÃ¼s ve ana yollara yakÄ±n rezidanslarda veya otellerde kalÄ±yorsanÄ±z, partneriniz randevu saatinde gecikme olmadan adresinizde olur.",
+  "Ä°ster saatlik ister gecelik randevular iÃ§in olsun, {sehir} {ilce} eskort kÄ±zlarÄ± en kÄ±sa sÃ¼rede belirttiÄŸiniz adrese ulaÅŸarak keyifli anlarÄ±nÄ±zÄ± baÅŸlatacaktÄ±r."
 ];
 
 const V5_P5_TEMPLATES = [
-  "Görüşme esnasında gizliliğiniz tamamen korunur. Üçüncü şahıslarla hiçbir bilgi paylaşılmaz. Sıkıntısız ve güvenli bir eskort deneyimi için en doğru ilanları sizler için derledik.",
-  "Karşılıklı saygı ve gizlilik çerçevesinde gerçekleşen buluşmalarda, partnerinizle keyifli vakit geçirebilirsiniz. {ilan} alternatifleri içinden en uygun profili seçin."
+  "GÃ¶rÃ¼ÅŸme esnasÄ±nda gizliliÄŸiniz tamamen korunur. ÃœÃ§Ã¼ncÃ¼ ÅŸahÄ±slarla hiÃ§bir bilgi paylaÅŸÄ±lmaz. SÄ±kÄ±ntÄ±sÄ±z ve gÃ¼venli bir eskort deneyimi iÃ§in en doÄŸru ilanlarÄ± sizler iÃ§in derledik.",
+  "KarÅŸÄ±lÄ±klÄ± saygÄ± ve gizlilik Ã§erÃ§evesinde gerÃ§ekleÅŸen buluÅŸmalarda, partnerinizle keyifli vakit geÃ§irebilirsiniz. {ilan} alternatifleri iÃ§inden en uygun profili seÃ§in."
 ];
 
 const V5_P6_TEMPLATES = [
-  "Sonuç olarak, {sehir} {ilce} escort ilanlarında kaporasız ve gerçek resimli kızları sizlerle buluşturuyoruz. Hemen yukarıdaki bağlantıları tıklayarak kızlarla WhatsApp üzerinden sohbet etmeye başlayın.",
-  "Sıradan reklam sitelerindeki sahte resimlerden bıktıysanız, {sehir} {ilce} eskort listemizdeki kaporasız ve doğrulanmış modellerle hemen randevunuzu oluşturun."
+  "SonuÃ§ olarak, {sehir} {ilce} escort ilanlarÄ±nda kaporasÄ±z ve gerÃ§ek resimli kÄ±zlarÄ± sizlerle buluÅŸturuyoruz. Hemen yukarÄ±daki baÄŸlantÄ±larÄ± tÄ±klayarak kÄ±zlarla WhatsApp Ã¼zerinden sohbet etmeye baÅŸlayÄ±n.",
+  "SÄ±radan reklam sitelerindeki sahte resimlerden bÄ±ktÄ±ysanÄ±z, {sehir} {ilce} eskort listemizdeki kaporasÄ±z ve doÄŸrulanmÄ±ÅŸ modellerle hemen randevunuzu oluÅŸturun."
 ];
 
 function getRandomElement<T>(arr: T[]): T {
@@ -199,20 +199,20 @@ function getRandomElement<T>(arr: T[]): T {
 function slugify(text: string): string {
   if (!text) return '';
   return text
-    .replace(/İ/g, 'i')
-    .replace(/I/g, 'ı')
-    .replace(/Ğ/g, 'g')
-    .replace(/ğ/g, 'g')
-    .replace(/Ü/g, 'u')
-    .replace(/ü/g, 'u')
-    .replace(/Ş/g, 's')
-    .replace(/ş/g, 's')
-    .replace(/Ö/g, 'o')
-    .replace(/ö/g, 'o')
-    .replace(/Ç/g, 'c')
-    .replace(/ç/g, 'c')
+    .replace(/Ä°/g, 'i')
+    .replace(/I/g, 'Ä±')
+    .replace(/Ä/g, 'g')
+    .replace(/ÄŸ/g, 'g')
+    .replace(/Ãœ/g, 'u')
+    .replace(/Ã¼/g, 'u')
+    .replace(/Å/g, 's')
+    .replace(/ÅŸ/g, 's')
+    .replace(/Ã–/g, 'o')
+    .replace(/Ã¶/g, 'o')
+    .replace(/Ã‡/g, 'c')
+    .replace(/Ã§/g, 'c')
     .toLowerCase()
-    .replace(/ı/g, 'i')
+    .replace(/Ä±/g, 'i')
     .replace(/[^a-z0-9]/g, '-')
     .replace(/-+/g, '-')
     .replace(/^-|-$/g, '');
@@ -227,10 +227,10 @@ function parseSpin(text: string, sehir: string, ilce: string, context: { race: s
     .replace(/{niche}/g, context.niche)
     .replace(/{adj}/g, context.adj)
     .replace(/{quality}/g, context.quality)
-    .replace(/{secenek}/g, () => getRandomElement(['escort bayan', 'VIP refakatçi', 'bireysel partner']))
-    .replace(/{hizmet}/g, () => getRandomElement(['VIP escort hizmeti', 'doğrulanmış eskort rehberi', 'bireysel refakat']))
-    .replace(/{ilan}/g, () => getRandomElement(['kaporasız escort ilanları', 'bireysel escort bayan vitrini', 'VIP eskort seçenekleri']))
-    .replace(/{luks}/g, () => getRandomElement(['lüks', 'elit', 'ayrıcalıklı', 'gerçek fotoğraflı']))
+    .replace(/{secenek}/g, () => getRandomElement(['escort bayan', 'VIP refakatÃ§i', 'bireysel partner']))
+    .replace(/{hizmet}/g, () => getRandomElement(['VIP escort hizmeti', 'doÄŸrulanmÄ±ÅŸ eskort rehberi', 'bireysel refakat']))
+    .replace(/{ilan}/g, () => getRandomElement(['kaporasÄ±z escort ilanlarÄ±', 'bireysel escort bayan vitrini', 'VIP eskort seÃ§enekleri']))
+    .replace(/{luks}/g, () => getRandomElement(['lÃ¼ks', 'elit', 'ayrÄ±calÄ±klÄ±', 'gerÃ§ek fotoÄŸraflÄ±']))
     .replace(/{([^{}]+)}/g, (_, choices) => {
       const arr = choices.split('|');
       return getRandomElement(arr);
@@ -272,13 +272,13 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   }
 
   if (geminiText) {
-    lead = `<div class="gemini-local-guide" style="margin-bottom: 20px; padding: 15px; border-left: 4px solid var(--accent); background: rgba(16, 185, 129, 0.05); font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);"><strong style="color: #fff;">📍 Yerel Rehber & Coğrafi Bilgi:</strong> ${geminiText}</div>${lead}`;
+    lead = `<div class="gemini-local-guide" style="margin-bottom: 20px; padding: 15px; border-left: 4px solid var(--accent); background: rgba(16, 185, 129, 0.05); font-size: 0.95rem; line-height: 1.6; color: var(--text-muted);"><strong style="color: #fff;">ğŸ“ Yerel Rehber & CoÄŸrafi Bilgi:</strong> ${geminiText}</div>${lead}`;
   }
 
   // Generate ~100 targeted keys
-  const firstPrefixes = ["", "istanbul ", "vip ", "elit ", "kaporasız ", "bireysel ", "bağımsız "];
+  const firstPrefixes = ["", "istanbul ", "vip ", "elit ", "kaporasÄ±z ", "bireysel ", "baÄŸÄ±msÄ±z "];
   const midKeywords = [`${ilce} escort`, `${ilce} eskort`, `${ilce} escort bayan`, `${ilce} eskort bayan`];
-  const lastSuffixes = ["", " ilanları", " fiyatları", " numaraları", " yorumları", " buluşma"];
+  const lastSuffixes = ["", " ilanlarÄ±", " fiyatlarÄ±", " numaralarÄ±", " yorumlarÄ±", " buluÅŸma"];
   
   const goldKeywords: string[] = [];
   for (const prefix of firstPrefixes) {
@@ -303,34 +303,34 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   // FAQ section targeting user concerns (icons, other profiles search, safety, verification)
   const faqHtml = `
     <div class="faq-item">
-      <div class="faq-q">📍 S: Diğer escort profillerini ve ilan vitrinini nerede bulabilirim?</div>
-      <div class="faq-a">C: Diğer tüm doğrulanmış bağımsız eskort profillerine ve vitrin görsellerine ulaşmak için sayfanın altındaki "Tüm ${ilce} Görüşmelerini Listele" butonuna tıklayarak doğrudan <a href="https://${PRIMARY_HOST}/${targetPath}" style="color:var(--accent); font-weight:bold;">${PRIMARY_HOST}</a> ana dizinine erişebilirsiniz.</div>
+      <div class="faq-q">ğŸ“ S: DiÄŸer escort profillerini ve ilan vitrinini nerede bulabilirim?</div>
+      <div class="faq-a">C: DiÄŸer tÃ¼m doÄŸrulanmÄ±ÅŸ baÄŸÄ±msÄ±z eskort profillerine ve vitrin gÃ¶rsellerine ulaÅŸmak iÃ§in sayfanÄ±n altÄ±ndaki "TÃ¼m ${ilce} GÃ¶rÃ¼ÅŸmelerini Listele" butonuna tÄ±klayarak doÄŸrudan <a href="https://${PRIMARY_HOST}/${targetPath}" style="color:var(--accent); font-weight:bold;">${PRIMARY_HOST}</a> ana dizinine eriÅŸebilirsiniz.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">💬 S: Profil kartlarındaki simgeler ve ikonlar ne anlama geliyor?</div>
-      <div class="faq-a">C: Profil kartlarının üst köşelerinde yer alan onay rozetleri ve yıldız ikonları, modellerin canlı video teyidinden geçerek sistemde %100 doğrulanmış, kaporasız ve güvenilir VIP eskort üyesi olduğunu simgeler.</div>
+      <div class="faq-q">ğŸ’¬ S: Profil kartlarÄ±ndaki simgeler ve ikonlar ne anlama geliyor?</div>
+      <div class="faq-a">C: Profil kartlarÄ±nÄ±n Ã¼st kÃ¶ÅŸelerinde yer alan onay rozetleri ve yÄ±ldÄ±z ikonlarÄ±, modellerin canlÄ± video teyidinden geÃ§erek sistemde %100 doÄŸrulanmÄ±ÅŸ, kaporasÄ±z ve gÃ¼venilir VIP eskort Ã¼yesi olduÄŸunu simgeler.</div>
     </div>
     <div class="faq-item">
-      <div class="faq-q">🛡️ S: ${ilce} escort arayanlar güvenli buluşmaya nasıl ulaşır?</div>
-      <div class="faq-a">C: Güvenli eskort buluşması için en kritik kural kapora veya rezervasyon bedeli adı altında hiçbir ön ödeme yapmamaktır. Listemizde yer alan tüm ${ilce} escort bayan üyeleri ödemeyi buluşma anında adreste elden nakit olarak kabul eder.</div>
+      <div class="faq-q">ğŸ›¡ï¸ S: ${ilce} escort arayanlar gÃ¼venli buluÅŸmaya nasÄ±l ulaÅŸÄ±r?</div>
+      <div class="faq-a">C: GÃ¼venli eskort buluÅŸmasÄ± iÃ§in en kritik kural kapora veya rezervasyon bedeli adÄ± altÄ±nda hiÃ§bir Ã¶n Ã¶deme yapmamaktÄ±r. Listemizde yer alan tÃ¼m ${ilce} escort bayan Ã¼yeleri Ã¶demeyi buluÅŸma anÄ±nda adreste elden nakit olarak kabul eder.</div>
     </div>
   `;
 
   // Name arrays for absolute randomization
-  const ERKEK_ISIMLERI = ["Azad", "Baran", "Civan", "Dijwar", "Şervan", "Zinar"];
-  const KIZ_ISIMLERI = ["Berfin", "Dilan", "Jînda", "Narin", "Rojîn", "Zilan"];
-  const SOYADLAR = ["Gewad", "Reşo", "Zaza", "Botan", "Kaya", "Demir", "Çelik"];
+  const ERKEK_ISIMLERI = ["Azad", "Baran", "Civan", "Dijwar", "Åervan", "Zinar"];
+  const KIZ_ISIMLERI = ["Berfin", "Dilan", "JÃ®nda", "Narin", "RojÃ®n", "Zilan"];
+  const SOYADLAR = ["Gewad", "ReÅŸo", "Zaza", "Botan", "Kaya", "Demir", "Ã‡elik"];
 
   const managerName = getRandomElement(ERKEK_ISIMLERI);
   const managerSurname = getRandomElement(SOYADLAR);
   const publisherGirl = getRandomElement(KIZ_ISIMLERI);
 
-  const authorBranding = `${publisherGirl} Hanım`;
+  const authorBranding = `${publisherGirl} HanÄ±m`;
   const seoTitleVariations = [
-    `${authorBranding} ${ilce} Escort İlanları ${currentYear} - %100 Kaporasız`,
-    `${ilce} Premium Escort İlanları ${currentYear} - Elden Ödeme VIP`,
-    `Kaporasız ${ilce} Escort İlanları ${currentYear} - ${managerName} ${managerSurname} Güvencesiyle`,
-    `Bireysel ${ilce} Eskort Bayan İlanları ${currentYear} - Teyitli Vitrin`
+    `${authorBranding} ${ilce} Escort Ä°lanlarÄ± ${currentYear} - %100 KaporasÄ±z`,
+    `${ilce} Premium Escort Ä°lanlarÄ± ${currentYear} - Elden Ã–deme VIP`,
+    `KaporasÄ±z ${ilce} Escort Ä°lanlarÄ± ${currentYear} - ${managerName} ${managerSurname} GÃ¼vencesiyle`,
+    `Bireysel ${ilce} Eskort Bayan Ä°lanlarÄ± ${currentYear} - Teyitli Vitrin`
   ];
   
   const selectedTitle = seoTitleVariations[version % seoTitleVariations.length];
@@ -355,33 +355,33 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Diğer escort profillerini ve ilan vitrinini nerede bulabilirim?",
+          "name": "DiÄŸer escort profillerini ve ilan vitrinini nerede bulabilirim?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Diğer tüm doğrulanmış bağımsız eskort profillerine ve vitrin görsellerine ulaşmak için sayfanın altındaki buton ile doğrudan dorukcanay.digital ana dizinine erişebilirsiniz."
+            "text": "DiÄŸer tÃ¼m doÄŸrulanmÄ±ÅŸ baÄŸÄ±msÄ±z eskort profillerine ve vitrin gÃ¶rsellerine ulaÅŸmak iÃ§in sayfanÄ±n altÄ±ndaki buton ile doÄŸrudan dorukcanay.digital ana dizinine eriÅŸebilirsiniz."
           }
         },
         {
           "@type": "Question",
-          "name": "Profil kartlarındaki simgeler ve ikonlar ne anlama geliyor?",
+          "name": "Profil kartlarÄ±ndaki simgeler ve ikonlar ne anlama geliyor?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Profil kartlarındaki rozet ve onay simgeleri modellerin doğrulanmış, kaporasız ve VIP üye olduğunu gösterir."
+            "text": "Profil kartlarÄ±ndaki rozet ve onay simgeleri modellerin doÄŸrulanmÄ±ÅŸ, kaporasÄ±z ve VIP Ã¼ye olduÄŸunu gÃ¶sterir."
           }
         },
         {
           "@type": "Question",
-          "name": "${ilce} escort arayanlar güvenli buluşmaya nasıl ulaşır?",
+          "name": "${ilce} escort arayanlar gÃ¼venli buluÅŸmaya nasÄ±l ulaÅŸÄ±r?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Kesinlikle kapora veya ön ödeme göndermeyerek, sadece buluşma anında elden ödeme yöntemiyle güvenli buluşma gerçekleştirebilirsiniz."
+            "text": "Kesinlikle kapora veya Ã¶n Ã¶deme gÃ¶ndermeyerek, sadece buluÅŸma anÄ±nda elden Ã¶deme yÃ¶ntemiyle gÃ¼venli buluÅŸma gerÃ§ekleÅŸtirebilirsiniz."
           }
         }
       ]
     },
     {
       "@type": "LocalBusiness",
-      "name": "${ilce} VIP Escort Ajansı",
+      "name": "${ilce} VIP Escort AjansÄ±",
       "image": "https://${PRIMARY_HOST}/_media/vitrin/istanbul-kaporasiz-escort-melissa-1.webp",
       "telephone": "+90 501 635 50 53",
       "priceRange": "$$",
@@ -389,7 +389,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
         "@type": "PostalAddress",
         "streetAddress": "${ilce} Caddesi No 34",
         "addressLocality": "${ilce}",
-        "addressRegion": "İstanbul",
+        "addressRegion": "Ä°stanbul",
         "postalCode": "34000",
         "addressCountry": "TR"
       }
@@ -405,27 +405,6 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
     // VERSION 1: Continuous Smooth Left Marquee
     // ----------------------------------------------------
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
-      if (i === 5) {
-        slidesHtml += `
-      <div class="v1-slide">
-        <div class="v1-card" style="border-color: #ff8600; box-shadow: 0 4px 15px rgba(255, 134, 0, 0.35);">
-          <div class="v1-img-container">
-            <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
-            <span class="v1-badge" style="background: #ff8600; color: #fff;">Sponsor İlan</span>
-          </div>
-          <div class="v1-content">
-            <h4 class="v1-title" style="color: #ff8600;">İlan Vermek İçin</h4>
-            <div class="v1-meta">Google Harita + SEO</div>
-            <div class="v1-tags">
-              <span class="v1-tag" style="color: #ff8600; border-color: #ff8600;">Sponsor</span>
-              <span class="v1-tag" style="color: #ff8600; border-color: #ff8600;">İlan Ver</span>
-            </div>
-            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v1-btn" style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color: #fff;">İletişime Geçiniz</a>
-          </div>
-        </div>
-      </div>`;
-      }
-
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -447,7 +426,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
               <span class="v1-tag">${profile.cat}</span>
               <span class="v1-tag">${mNiche}</span>
             </div>
-            <a href="${profileUrl}" target="_blank" rel="noopener" class="v1-btn">Profili Gör</a>
+            <a href="${profileUrl}" target="_blank" rel="noopener" class="v1-btn">Profili GÃ¶r</a>
           </div>
         </div>
       </div>`;
@@ -594,7 +573,7 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   <header>
     <h1>${selectedTitle}</h1>
     <p class="lead">${lead}</p>
-    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Yazar / Editör: <strong>${dynamicAuthor}</strong></div>
+    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Yazar / EditÃ¶r: <strong>${dynamicAuthor}</strong></div>
   </header>
   
   <div class="v1-marquee">
@@ -605,17 +584,17 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   </div>
 
   <div class="info-box">
-    <h3>🍀 Kaporasız Randevu & %100 Güvenlik Garantisi</h3>
+    <h3>ğŸ€ KaporasÄ±z Randevu & %100 GÃ¼venlik Garantisi</h3>
     <p>${body}</p>
   </div>
 
   <div class="faq-section">
-    <h3 class="faq-title">💬 Sıkça Sorulan Sorular</h3>
+    <h3 class="faq-title">ğŸ’¬ SÄ±kÃ§a Sorulan Sorular</h3>
     ${faqHtml}
   </div>
 
   <div class="keyword-section">
-    <h4 class="keyword-title">📍 İlgili Arama Başlıkları:</h4>
+    <h4 class="keyword-title">ğŸ“ Ä°lgili Arama BaÅŸlÄ±klarÄ±:</h4>
     <div class="keywords">
       ${keywordsHtml}
     </div>
@@ -624,10 +603,10 @@ export function generateGoogleSitesHTML(sehir: string, ilce: string, pathCounter
   ${hiddenKeywordsHtml}
 
   <div class="footer-cta">
-    <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-btn">🍀 Tüm ${ilce} Escort Kataloğunu Gör</a>
+    <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-btn">ğŸ€ TÃ¼m ${ilce} Escort KataloÄŸunu GÃ¶r</a>
   </div>
 
-  <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
+  <div class="brand-signature">âš¡ EÅREF TEK âš¡</div>
 </div>
 ${schema}
 </body>
@@ -638,27 +617,6 @@ ${schema}
     // VERSION 2: Continuous Smooth Right Marquee
     // ----------------------------------------------------
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
-      if (i === 5) {
-        slidesHtml += `
-      <div class="v2-slide">
-        <div class="v2-card" style="border-color: #ff8600; box-shadow: 0 4px 15px rgba(255, 134, 0, 0.35);">
-          <div class="v2-img-wrapper">
-            <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="280" height="364" loading="lazy" decoding="async">
-            <div class="v2-badge" style="background: #ff8600; color: #fff;">Sponsor</div>
-          </div>
-          <div class="v2-body">
-            <h3 class="v2-card-title" style="color: #ff8600;">İlan Vermek İçin <span class="v2-online-dot" style="background: #ff8600;"></span></h3>
-            <p class="v2-cat-meta">Google Harita + SEO</p>
-            <div class="v2-tag-cloud">
-              <span class="v2-subtag" style="border-color: #ff8600; color: #ff8600;">Sponsor</span>
-              <span class="v2-subtag" style="border-color: #ff8600; color: #ff8600;">İlan Ver</span>
-            </div>
-            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v2-cta-link" style="background: linear-gradient(90deg, #ff8600 0%, #ff5100 100%); color: #fff;">İletişime Geçiniz</a>
-          </div>
-        </div>
-      </div>`;
-      }
-
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -675,12 +633,12 @@ ${schema}
           </div>
           <div class="v2-body">
             <h3 class="v2-card-title">${profile.name} <svg viewBox="0 0 24 24" width="14" height="14" fill="#00f0ff" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> <span class="v2-online-dot"></span></h3>
-            <p class="v2-cat-meta">${profile.race} Refakatçi | ${ilce}</p>
+            <p class="v2-cat-meta">${profile.race} RefakatÃ§i | ${ilce}</p>
             <div class="v2-tag-cloud">
               <span class="v2-subtag">${profile.cat}</span>
               <span class="v2-subtag">${mNiche}</span>
             </div>
-            <a href="${profileUrl}" target="_blank" rel="noopener" class="v2-cta-link">Detayları İncele</a>
+            <a href="${profileUrl}" target="_blank" rel="noopener" class="v2-cta-link">DetaylarÄ± Ä°ncele</a>
           </div>
         </div>
       </div>`;
@@ -820,7 +778,7 @@ ${schema}
   <div class="heading-block">
     <h1>${selectedTitle}</h1>
     <p>${lead}</p>
-    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Yazar / Editör: <strong>${dynamicAuthor}</strong></div>
+    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Yazar / EditÃ¶r: <strong>${dynamicAuthor}</strong></div>
   </div>
   
   <div class="v2-marquee-container">
@@ -831,17 +789,17 @@ ${schema}
   </div>
 
   <div class="v2-info">
-    <h3>🌿 Kaporasız Randevu & VIP Standartlar</h3>
+    <h3>ğŸŒ¿ KaporasÄ±z Randevu & VIP Standartlar</h3>
     <p>${body}</p>
   </div>
 
   <div class="faq-block">
-    <h3 class="faq-head">💬 Sıkça Sorulan Sorular</h3>
+    <h3 class="faq-head">ğŸ’¬ SÄ±kÃ§a Sorulan Sorular</h3>
     ${faqHtml}
   </div>
 
   <div class="v2-keywords-box">
-    <h4 class="v2-keywords-title">📍 İlgili Arama Başlıkları:</h4>
+    <h4 class="v2-keywords-title">ğŸ“ Ä°lgili Arama BaÅŸlÄ±klarÄ±:</h4>
     <div class="v2-tags-container">
       ${keywordsHtml.replace(/class="tag-link"/g, 'class="v2-tag-item"')}
     </div>
@@ -850,10 +808,10 @@ ${schema}
   ${hiddenKeywordsHtml}
 
   <div class="v2-footer">
-    <a href="https://${PRIMARY_HOST}/${targetPath}" class="v2-footer-btn">🟢 Tüm ${ilce} Kataloğunu Gör</a>
+    <a href="https://${PRIMARY_HOST}/${targetPath}" class="v2-footer-btn">ğŸŸ¢ TÃ¼m ${ilce} KataloÄŸunu GÃ¶r</a>
   </div>
 
-  <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
+  <div class="brand-signature">âš¡ EÅREF TEK âš¡</div>
 </div>
 ${schema}
 </body>
@@ -864,23 +822,6 @@ ${schema}
     // VERSION 3: Continuous Vertical Auto-Scroll Marquee
     // ----------------------------------------------------
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
-      if (i === 5) {
-        slidesHtml += `
-      <div class="v3-slide">
-        <div class="v3-card" style="border-color: #ff8600;">
-          <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" class="v3-img" width="150" height="195" loading="lazy" decoding="async">
-          <div class="v3-details">
-            <div>
-              <h4 class="v3-name" style="color: #ff8600;">İlan Vermek İçin <span class="v3-gold-badge" style="background: #ff8600; color: #fff;">Sponsor</span></h4>
-              <p class="v3-sub">Google Harita + SEO</p>
-              <p class="v3-cat" style="color: #ff8600;">Reklam & Sponsorluk</p>
-            </div>
-            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v3-btn-gold" style="border-color: #ff8600; color: #ff8600;">İletişime Geçiniz</a>
-          </div>
-        </div>
-      </div>`;
-      }
-
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -895,10 +836,10 @@ ${schema}
           <div class="v3-details">
             <div>
               <h4 class="v3-name">${profile.name} <svg viewBox="0 0 24 24" width="14" height="14" fill="#d4af37" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg> <span class="v3-gold-badge"><svg viewBox="0 0 24 24" width="10" height="10" fill="none" stroke="currentColor" stroke-width="3" style="display:inline-block; vertical-align:middle; margin-right:3px;"><polyline points="20 6 9 17 4 12"></polyline></svg>${mQual}</span></h4>
-              <p class="v3-sub">${profile.race} Refakatçi | ${mNiche}</p>
+              <p class="v3-sub">${profile.race} RefakatÃ§i | ${mNiche}</p>
               <p class="v3-cat">${profile.cat}</p>
             </div>
-            <a href="${profileUrl}" target="_blank" rel="noopener" class="v3-btn-gold">İletişime Geç</a>
+            <a href="${profileUrl}" target="_blank" rel="noopener" class="v3-btn-gold">Ä°letiÅŸime GeÃ§</a>
           </div>
         </div>
       </div>`;
@@ -1025,7 +966,7 @@ ${schema}
 <div class="box">
   <h1>${selectedTitle}</h1>
   <p class="lead-desc">${lead}</p>
-  <div style="font-size:0.8rem; color:var(--text-muted); text-align:center; margin-top:-15px; margin-bottom:25px;">Yazar / Editör: <strong>${dynamicAuthor}</strong></div>
+  <div style="font-size:0.8rem; color:var(--text-muted); text-align:center; margin-top:-15px; margin-bottom:25px;">Yazar / EditÃ¶r: <strong>${dynamicAuthor}</strong></div>
   
   <div class="v3-marquee-vertical">
     <div class="v3-slider-track">
@@ -1035,17 +976,17 @@ ${schema}
   </div>
 
   <div class="v3-box-p">
-    <h4>✅ %100 Doğrulanmış Profil Garantisi</h4>
+    <h4>âœ… %100 DoÄŸrulanmÄ±ÅŸ Profil Garantisi</h4>
     <p>${body}</p>
   </div>
 
   <div class="faq-wrap">
-    <h3 class="faq-wrap-title">💬 Merak Edilenler</h3>
+    <h3 class="faq-wrap-title">ğŸ’¬ Merak Edilenler</h3>
     ${faqHtml.replace(/class="faq-item"/g, 'class="faq-box"').replace(/class="faq-q"/g, 'class="faq-box-q"').replace(/class="faq-a"/g, 'class="faq-box-a"')}
   </div>
 
   <div style="margin-top: 30px;">
-    <h4 class="kw-title">📍 İlgili Arama Başlıkları:</h4>
+    <h4 class="kw-title">ğŸ“ Ä°lgili Arama BaÅŸlÄ±klarÄ±:</h4>
     <div class="kw-tags">
       ${keywordsHtml.replace(/class="tag-link"/g, 'class="kw-tag-item"')}
     </div>
@@ -1053,9 +994,9 @@ ${schema}
 
   ${hiddenKeywordsHtml}
 
-  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-btn-gold">🍀 Tüm ${ilce} Kataloğunu Keşfet</a>
+  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-btn-gold">ğŸ€ TÃ¼m ${ilce} KataloÄŸunu KeÅŸfet</a>
 
-  <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
+  <div class="brand-signature">âš¡ EÅREF TEK âš¡</div>
 </div>
 ${schema}
 </body>
@@ -1068,39 +1009,6 @@ ${schema}
     let row1Slides = '';
     let row2Slides = '';
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
-      if (i === 5) {
-        row1Slides += `
-      <div class="v4-slide">
-        <div class="v4-inner" style="border-color: #ff8600;">
-          <div class="v4-img-box">
-            <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
-            <span class="v4-badge" style="background: #ff8600; color: #fff;">Sponsor</span>
-          </div>
-          <div class="v4-content">
-            <h4 class="v4-card-title" style="color: #ff8600;">İlan Vermek İçin</h4>
-            <div class="v4-meta">Google Harita + SEO</div>
-            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v4-btn" style="background: #ff8600; color: #fff;">İletişime Geçiniz</a>
-          </div>
-        </div>
-      </div>`;
-      }
-      if (i === 17) {
-        row2Slides += `
-      <div class="v4-slide">
-        <div class="v4-inner" style="border-color: #ff8600;">
-          <div class="v4-img-box">
-            <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
-            <span class="v4-badge" style="background: #ff8600; color: #fff;">Sponsor</span>
-          </div>
-          <div class="v4-content">
-            <h4 class="v4-card-title" style="color: #ff8600;">İlan Vermek İçin</h4>
-            <div class="v4-meta">Google Harita + SEO</div>
-            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v4-btn" style="background: #ff8600; color: #fff;">İletişime Geçiniz</a>
-          </div>
-        </div>
-      </div>`;
-      }
-
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -1118,7 +1026,7 @@ ${schema}
           <div class="v4-content">
             <h4 class="v4-card-title">${profile.name} <svg viewBox="0 0 24 24" width="14" height="14" fill="#00bcd4" style="display:inline-block; vertical-align:middle; margin-left:4px;"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></h4>
             <div class="v4-meta">${profile.race} VIP | ${mNiche}</div>
-            <a href="${profileUrl}" target="_blank" rel="noopener" class="v4-btn">Hemen Ulaş</a>
+            <a href="${profileUrl}" target="_blank" rel="noopener" class="v4-btn">Hemen UlaÅŸ</a>
           </div>
         </div>
       </div>`;
@@ -1274,7 +1182,7 @@ ${schema}
   <header>
     <h1>${selectedTitle}</h1>
     <p class="lead-p">${lead}</p>
-    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Yazar / Editör: <strong>${dynamicAuthor}</strong></div>
+    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Yazar / EditÃ¶r: <strong>${dynamicAuthor}</strong></div>
   </header>
 
   <div class="v4-wrapper">
@@ -1293,17 +1201,17 @@ ${schema}
   </div>
 
   <div class="v4-info-box">
-    <h3>🟢 Güvenli ve Kaporasız Elit Görüşmeler</h3>
+    <h3>ğŸŸ¢ GÃ¼venli ve KaporasÄ±z Elit GÃ¶rÃ¼ÅŸmeler</h3>
     <p>${body}</p>
   </div>
 
   <div class="faq-wrap">
-    <h3 class="faq-title">💬 Sıkça Sorulan Sorular</h3>
+    <h3 class="faq-title">ğŸ’¬ SÄ±kÃ§a Sorulan Sorular</h3>
     ${faqHtml}
   </div>
 
   <div class="tags-box">
-    <h4>📍 İlgili Arama Başlıkları:</h4>
+    <h4>ğŸ“ Ä°lgili Arama BaÅŸlÄ±klarÄ±:</h4>
     <div class="tags-list">
       ${keywordsHtml}
     </div>
@@ -1311,9 +1219,9 @@ ${schema}
 
   ${hiddenKeywordsHtml}
 
-  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-cta-btn">🟢 Tüm ${ilce} Görüşmelerini Listele</a>
+  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-cta-btn">ğŸŸ¢ TÃ¼m ${ilce} GÃ¶rÃ¼ÅŸmelerini Listele</a>
 
-  <div class="brand-signature">⚡ EŞREF TEK ⚡</div>
+  <div class="brand-signature">âš¡ EÅREF TEK âš¡</div>
 </div>
 ${schema}
 </body>
@@ -1324,27 +1232,6 @@ ${schema}
     // ----------------------------------------------------
     let profilesHtml = '';
     for (let i = 0; i < ORIGINAL_VITRIN.length; i++) {
-      if (i === 5) {
-        profilesHtml += `
-        <div class="v5-profile-card" style="border-color: #ff8600;">
-          <div class="v5-img-container">
-            <a href="https://wa.me/905016355053" target="_blank" rel="noopener">
-              <img src="https://${PRIMARY_HOST}/_media/vitrin/dorukcanay-logo.jpg" alt="DORUKCAN AY Reklam" width="260" height="338" loading="lazy" decoding="async">
-            </a>
-          </div>
-          <div class="v5-profile-info">
-            <h4 class="v5-profile-name" style="color: #ff8600;">İlan Vermek İçin İletişime Geçiniz! <span class="v5-online-dot" style="background: #ff8600;"></span></h4>
-            <p class="v5-profile-cat" style="color: #ff8600;">Google Harita + SEO</p>
-            <p class="v5-profile-desc">Web sitelerimizde ve sitemizin vitrin bölümlerinde kendi ilanınızı yayınlamak için hemen bizimle iletişime geçin.</p>
-            <div class="v5-profile-tags">
-              <span class="v5-tag" style="border-color: #ff8600; color: #ff8600;">Sponsor</span>
-              <span class="v5-tag" style="border-color: #ff8600; color: #ff8600;">Reklam</span>
-            </div>
-            <a href="https://wa.me/905016355053" target="_blank" rel="noopener" class="v5-profile-btn" style="background: linear-gradient(135deg, #ff8600 0%, #ff5100 100%); color:#fff;">İletişime Geçiniz</a>
-          </div>
-        </div>`;
-      }
-
       const profile = ORIGINAL_VITRIN[i];
       const imageUrl = `https://${PRIMARY_HOST}/_media/vitrin/${profile.img}`;
       const profileUrl = `https://${PRIMARY_HOST}/go/${slugify(profile.name)}`;
@@ -1364,9 +1251,9 @@ ${schema}
           <p class="v5-profile-desc">${EDITORIAL_DESCRIPTIONS[i]}</p>
           <div class="v5-profile-tags">
             <span class="v5-tag">${mNiche}</span>
-            <span class="v5-tag">Kaporasız</span>
+            <span class="v5-tag">KaporasÄ±z</span>
           </div>
-          <a href="${profileUrl}" target="_blank" rel="noopener" class="v5-profile-btn">İletişime Geç</a>
+          <a href="${profileUrl}" target="_blank" rel="noopener" class="v5-profile-btn">Ä°letiÅŸime GeÃ§</a>
         </div>
       </div>`;
     }
@@ -1495,7 +1382,7 @@ ${schema}
   <header>
     <h1>${selectedTitle}</h1>
     <p class="lead-p">${lead}</p>
-    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Yazar / Editör: <strong>${dynamicAuthor}</strong></div>
+    <div style="font-size:0.8rem; color:var(--text-muted); margin-top:10px;">Yazar / EditÃ¶r: <strong>${dynamicAuthor}</strong></div>
   </header>
 
   <div class="v5-grid">
@@ -1503,17 +1390,17 @@ ${schema}
   </div>
 
   <div class="v5-editorial-content">
-    <h3>🍀 VIP Refakat ve Seçkin Hizmet Detayları</h3>
+    <h3>ğŸ€ VIP Refakat ve SeÃ§kin Hizmet DetaylarÄ±</h3>
     <p>${body}</p>
   </div>
 
   <div class="faq-wrap">
-    <h3 class="faq-title">💬 Sıkça Sorulan Sorular</h3>
+    <h3 class="faq-title">ğŸ’¬ SÄ±kÃ§a Sorulan Sorular</h3>
     ${faqHtml}
   </div>
 
   <div class="tags-box">
-    <h4>📍 İlgili Arama Başlıkları:</h4>
+    <h4>ğŸ“ Ä°lgili Arama BaÅŸlÄ±klarÄ±:</h4>
     <div class="tags-list">
       ${keywordsHtml}
     </div>
@@ -1521,9 +1408,9 @@ ${schema}
 
   ${hiddenKeywordsHtml}
 
-  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-cta-btn">🟢 Tüm ${ilce} Görüşmelerini Listele</a>
+  <a href="https://${PRIMARY_HOST}/${targetPath}" class="footer-cta-btn">ğŸŸ¢ TÃ¼m ${ilce} GÃ¶rÃ¼ÅŸmelerini Listele</a>
 
-  <div class="brand-signature" style="text-align:center; margin-top:30px; font-size:0.8rem; color:var(--text-muted); opacity:0.6; border-top:1px dashed var(--border-color); padding-top:15px; font-weight:600; letter-spacing:1.5px;">⚡ EŞREF TEK ⚡</div>
+  <div class="brand-signature" style="text-align:center; margin-top:30px; font-size:0.8rem; color:var(--text-muted); opacity:0.6; border-top:1px dashed var(--border-color); padding-top:15px; font-weight:600; letter-spacing:1.5px;">âš¡ EÅREF TEK âš¡</div>
 </div>
 ${schema}
 </body>
@@ -1532,7 +1419,7 @@ ${schema}
 }
 
 export async function buildGoogleSitesPayloads() {
-  console.log(`🔨 Generating Google Sites HTML Payloads at: ${OUTPUT_DIR}`);
+  console.log(`ğŸ”¨ Generating Google Sites HTML Payloads at: ${OUTPUT_DIR}`);
   
   if (fs.existsSync(OUTPUT_DIR)) {
     fs.rmSync(OUTPUT_DIR, { recursive: true, force: true });
@@ -1555,7 +1442,7 @@ export async function buildGoogleSitesPayloads() {
   const processedDistricts = new Set<string>();
 
   let notepadContent = `========================================================================\n`;
-  notepadContent += `🟢 GOOGLE SITES SYSTEM DIRECTORY & METADATA MAP (dorukcanay.digital Edition)\n`;
+  notepadContent += `ğŸŸ¢ GOOGLE SITES SYSTEM DIRECTORY & METADATA MAP (dorukcanay.digital Edition)\n`;
   notepadContent += `Generated: ${new Date().toISOString()}\n`;
   notepadContent += `Total Locations: 348\n`;
   notepadContent += `========================================================================\n\n`;
@@ -1568,7 +1455,7 @@ export async function buildGoogleSitesPayloads() {
     processedDistricts.add(districtSlug);
 
     const districtFileName = `istanbul-${districtSlug}-escort.html`;
-    const districtTitle = `${cleanDistrictName} Escort | ${cleanDistrictName} Eskort Bayan İlanları`;
+    const districtTitle = `${cleanDistrictName} Escort | ${cleanDistrictName} Eskort Bayan Ä°lanlarÄ±`;
     const targetAmpCache = `https://${PRIMARY_HOST}/istanbul/${districtSlug}`;
 
     // Select a dynamic verification code to rotate footprints
@@ -1578,11 +1465,11 @@ export async function buildGoogleSitesPayloads() {
     const geminiText = await callGemini(cleanDistrictName, "");
 
     // Write to HTML payload versions
-    const html1 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 1, districtTitle, vCode, geminiText);
-    const html2 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 2, districtTitle, vCode, geminiText);
-    const html3 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 3, districtTitle, vCode, geminiText);
-    const html4 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 4, districtTitle, vCode, geminiText);
-    const html5 = generateGoogleSitesHTML("İstanbul", cleanDistrictName, pathCounter, 5, districtTitle, vCode, geminiText);
+    const html1 = generateGoogleSitesHTML("Ä°stanbul", cleanDistrictName, pathCounter, 1, districtTitle, vCode, geminiText);
+    const html2 = generateGoogleSitesHTML("Ä°stanbul", cleanDistrictName, pathCounter, 2, districtTitle, vCode, geminiText);
+    const html3 = generateGoogleSitesHTML("Ä°stanbul", cleanDistrictName, pathCounter, 3, districtTitle, vCode, geminiText);
+    const html4 = generateGoogleSitesHTML("Ä°stanbul", cleanDistrictName, pathCounter, 4, districtTitle, vCode, geminiText);
+    const html5 = generateGoogleSitesHTML("Ä°stanbul", cleanDistrictName, pathCounter, 5, districtTitle, vCode, geminiText);
 
     fs.writeFileSync(path.join(v1Dir, districtFileName), html1);
     fs.writeFileSync(path.join(v2Dir, districtFileName), html2);
@@ -1592,17 +1479,17 @@ export async function buildGoogleSitesPayloads() {
 
     // Extract dynamic lead description
     const leadMatch = html1.match(/<p class="lead-p">([\s\S]*?)<\/p>/) || html1.match(/<p class="lead">([\s\S]*?)<\/p>/) || html1.match(/<p>([\s\S]*?)<\/p>/);
-    const descText = leadMatch ? leadMatch[1].replace(/<[^>]*>/g, '').trim() : `${cleanDistrictName} bölgesinde kaporasız ve %100 gerçek escort bayan ilanları.`;
+    const descText = leadMatch ? leadMatch[1].replace(/<[^>]*>/g, '').trim() : `${cleanDistrictName} bÃ¶lgesinde kaporasÄ±z ve %100 gerÃ§ek escort bayan ilanlarÄ±.`;
 
     // Append district metadata to notepad content
     notepadContent += `------------------------------------------------------------------------\n`;
-    notepadContent += `📍 LOCATION: ${cleanDistrictName} (District)\n`;
-    notepadContent += `📂 GOOGLE SITES PAGE SLUG/URL: istanbul-${districtSlug}-escort\n`;
-    notepadContent += `👑 PAGE TITLE (Başlık): ${districtTitle}\n`;
-    notepadContent += `🚀 TARGET REDIRECT (Canonical): ${targetAmpCache}\n`;
-    notepadContent += `🛡️ VERIFICATION ID (GSC): ${vCode}\n`;
-    notepadContent += `📝 DESCRIPTION: ${descText.replace(/\s+/g, ' ').slice(0, 155)}\n`;
-    notepadContent += `🔑 KEYWORDS: ${cleanDistrictName} escort, ${cleanDistrictName} eskort, istanbul ${cleanDistrictName} escort, kaporasız ${cleanDistrictName} escort, escort, eskort\n`;
+    notepadContent += `ğŸ“ LOCATION: ${cleanDistrictName} (District)\n`;
+    notepadContent += `ğŸ“‚ GOOGLE SITES PAGE SLUG/URL: istanbul-${districtSlug}-escort\n`;
+    notepadContent += `ğŸ‘‘ PAGE TITLE (BaÅŸlÄ±k): ${districtTitle}\n`;
+    notepadContent += `ğŸš€ TARGET REDIRECT (Canonical): ${targetAmpCache}\n`;
+    notepadContent += `ğŸ›¡ï¸ VERIFICATION ID (GSC): ${vCode}\n`;
+    notepadContent += `ğŸ“ DESCRIPTION: ${descText.replace(/\s+/g, ' ').slice(0, 155)}\n`;
+    notepadContent += `ğŸ”‘ KEYWORDS: ${cleanDistrictName} escort, ${cleanDistrictName} eskort, istanbul ${cleanDistrictName} escort, kaporasÄ±z ${cleanDistrictName} escort, escort, eskort\n`;
     notepadContent += `------------------------------------------------------------------------\n\n`;
 
     pathCounter++;
@@ -1616,7 +1503,7 @@ export async function buildGoogleSitesPayloads() {
 
       const neighborhoodFileName = `istanbul-${districtSlug}-${neighborhoodSlug}-escort.html`;
       const searchTarget = `${cleanDistrictName} ${neighborhood.name}`;
-      const neighborhoodTitle = `${searchTarget} Escort - ${searchTarget} Eskort İlanları`;
+      const neighborhoodTitle = `${searchTarget} Escort - ${searchTarget} Eskort Ä°lanlarÄ±`;
       const targetAmpCacheN = `https://${PRIMARY_HOST}/istanbul/${districtSlug}/${neighborhoodSlug}`;
       const nVCode = GSC_VERIFICATIONS[pathCounter % GSC_VERIFICATIONS.length];
 
@@ -1625,11 +1512,11 @@ export async function buildGoogleSitesPayloads() {
 
       // Write to HTML payload versions
       const nIframePath = `istanbul/${districtSlug}/${neighborhoodSlug}`;
-      const nHtml1 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 1, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
-      const nHtml2 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 2, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
-      const nHtml3 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 3, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
-      const nHtml4 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 4, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
-      const nHtml5 = generateGoogleSitesHTML("İstanbul", searchTarget, pathCounter, 5, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml1 = generateGoogleSitesHTML("Ä°stanbul", searchTarget, pathCounter, 1, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml2 = generateGoogleSitesHTML("Ä°stanbul", searchTarget, pathCounter, 2, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml3 = generateGoogleSitesHTML("Ä°stanbul", searchTarget, pathCounter, 3, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml4 = generateGoogleSitesHTML("Ä°stanbul", searchTarget, pathCounter, 4, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
+      const nHtml5 = generateGoogleSitesHTML("Ä°stanbul", searchTarget, pathCounter, 5, neighborhoodTitle, nVCode, nGeminiText, nIframePath);
 
       fs.writeFileSync(path.join(v1Dir, neighborhoodFileName), nHtml1);
       fs.writeFileSync(path.join(v2Dir, neighborhoodFileName), nHtml2);
@@ -1639,16 +1526,16 @@ export async function buildGoogleSitesPayloads() {
 
       // Extract dynamic lead description
       const nLeadMatch = nHtml1.match(/<p class="lead-p">([\s\S]*?)<\/p>/) || nHtml1.match(/<p class="lead">([\s\S]*?)<\/p>/) || nHtml1.match(/<p>([\s\S]*?)<\/p>/);
-      const nDescText = nLeadMatch ? nLeadMatch[1].replace(/<[^>]*>/g, '').trim() : `${searchTarget} escort arayanlar için kaporasız ve elden ödemeli VIP model ilanları.`;
+      const nDescText = nLeadMatch ? nLeadMatch[1].replace(/<[^>]*>/g, '').trim() : `${searchTarget} escort arayanlar iÃ§in kaporasÄ±z ve elden Ã¶demeli VIP model ilanlarÄ±.`;
 
       // Append neighborhood metadata to notepad content
-      notepadContent += `  📍 NEIGHBORHOOD: ${searchTarget}\n`;
-      notepadContent += `  📂 GOOGLE SITES PAGE SLUG/URL: istanbul-${districtSlug}-${neighborhoodSlug}-escort\n`;
-      notepadContent += `  👑 PAGE TITLE (Başlık): ${neighborhoodTitle}\n`;
-      notepadContent += `  🚀 TARGET REDIRECT (Canonical): ${targetAmpCacheN}\n`;
-      notepadContent += `  🛡️ VERIFICATION ID (GSC): ${nVCode}\n`;
-      notepadContent += `  📝 DESCRIPTION: ${nDescText.replace(/\s+/g, ' ').slice(0, 155)}\n`;
-      notepadContent += `  🔑 KEYWORDS: ${searchTarget} escort, ${searchTarget} eskort, ${cleanDistrictName} ${neighborhood.name} escort, escort, eskort\n`;
+      notepadContent += `  ğŸ“ NEIGHBORHOOD: ${searchTarget}\n`;
+      notepadContent += `  ğŸ“‚ GOOGLE SITES PAGE SLUG/URL: istanbul-${districtSlug}-${neighborhoodSlug}-escort\n`;
+      notepadContent += `  ğŸ‘‘ PAGE TITLE (BaÅŸlÄ±k): ${neighborhoodTitle}\n`;
+      notepadContent += `  ğŸš€ TARGET REDIRECT (Canonical): ${targetAmpCacheN}\n`;
+      notepadContent += `  ğŸ›¡ï¸ VERIFICATION ID (GSC): ${nVCode}\n`;
+      notepadContent += `  ğŸ“ DESCRIPTION: ${nDescText.replace(/\s+/g, ' ').slice(0, 155)}\n`;
+      notepadContent += `  ğŸ”‘ KEYWORDS: ${searchTarget} escort, ${searchTarget} eskort, ${cleanDistrictName} ${neighborhood.name} escort, escort, eskort\n`;
       notepadContent += `  ----------------------------------------------------------------------\n\n`;
 
       pathCounter++;
@@ -1656,38 +1543,38 @@ export async function buildGoogleSitesPayloads() {
   }
 
   // ----------------------------------------------------
-  // 🧛‍♂️ SPECIAL SITE SLUGS GENERATOR (Paravan Sites Sync)
+  // ğŸ§›â€â™‚ï¸ SPECIAL SITE SLUGS GENERATOR (Paravan Sites Sync)
   // ----------------------------------------------------
   const CUSTOM_SITES = [
-    { slug: "sefakoyistanbul-drkcnay2026", district: "Sefaköy", path: "istanbul/kucukcekmece/sefakoy" },
-    { slug: "bakrkyescort-drkcnayv1", district: "Bakırköy", path: "istanbul/bakirkoy" },
-    { slug: "catalca-escort-drkcnay1-v", district: "Çatalca", path: "istanbul/catalca" },
-    { slug: "beylikduzu-vip-escort", district: "Beylikdüzü", path: "istanbul/beylikduzu" },
-    { slug: "besyol-universiteli-escort", district: "Beşyol", path: "istanbul/kucukcekmece/besyol" },
-    { slug: "besyol-escort-drkcnay1-v", district: "Beşyol", path: "istanbul/kucukcekmece/besyol" },
-    { slug: "istanbul-escort", district: "İstanbul", path: "istanbul" },
+    { slug: "sefakoyistanbul-drkcnay2026", district: "SefakÃ¶y", path: "istanbul/kucukcekmece/sefakoy" },
+    { slug: "bakrkyescort-drkcnayv1", district: "BakÄ±rkÃ¶y", path: "istanbul/bakirkoy" },
+    { slug: "catalca-escort-drkcnay1-v", district: "Ã‡atalca", path: "istanbul/catalca" },
+    { slug: "beylikduzu-vip-escort", district: "BeylikdÃ¼zÃ¼", path: "istanbul/beylikduzu" },
+    { slug: "besyol-universiteli-escort", district: "BeÅŸyol", path: "istanbul/kucukcekmece/besyol" },
+    { slug: "besyol-escort-drkcnay1-v", district: "BeÅŸyol", path: "istanbul/kucukcekmece/besyol" },
+    { slug: "istanbul-escort", district: "Ä°stanbul", path: "istanbul" },
     { slug: "sancaktepe-escort-drkcnay1-v", district: "Sancaktepe", path: "istanbul/sancaktepe" },
     { slug: "kartal-escort-drkcnay1-v", district: "Kartal", path: "istanbul/kartal" },
-    { slug: "cekmekoy-escort-drkcnay1-v", district: "Çekmeköy", path: "istanbul/cekmekoy" },
-    { slug: "arnavutkoy-escort-drkcnay1-v", district: "Arnavutköy", path: "istanbul/arnavutkoy" },
-    { slug: "basaksehir-escort-drkcnay1-v", district: "Başakşehir", path: "istanbul/basaksehir" },
+    { slug: "cekmekoy-escort-drkcnay1-v", district: "Ã‡ekmekÃ¶y", path: "istanbul/cekmekoy" },
+    { slug: "arnavutkoy-escort-drkcnay1-v", district: "ArnavutkÃ¶y", path: "istanbul/arnavutkoy" },
+    { slug: "basaksehir-escort-drkcnay1-v", district: "BaÅŸakÅŸehir", path: "istanbul/basaksehir" },
     { slug: "esenler-escort-drkcnay1-v", district: "Esenler", path: "istanbul/esenler" },
     { slug: "adalar-escort-drkcnay1-v", district: "Adalar", path: "istanbul/adalar" },
     { slug: "silivriescort-drkcnay2026", district: "Silivri", path: "istanbul/silivri" },
-    { slug: "beyoglu-escort-drkcnay1-v", district: "Beyoğlu", path: "istanbul/beyoglu" }
+    { slug: "beyoglu-escort-drkcnay1-v", district: "BeyoÄŸlu", path: "istanbul/beyoglu" }
   ];
 
   for (const item of CUSTOM_SITES) {
     const districtFileName = `${item.slug}.html`;
-    const districtTitle = `${item.district} Escort | ${item.district} Eskort Bayan İlanları`;
+    const districtTitle = `${item.district} Escort | ${item.district} Eskort Bayan Ä°lanlarÄ±`;
     const vCode = GSC_VERIFICATIONS[pathCounter % GSC_VERIFICATIONS.length];
     const geminiText = await callGemini(item.district, "");
 
-    const html1 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 1, districtTitle, vCode, geminiText, item.path);
-    const html2 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 2, districtTitle, vCode, geminiText, item.path);
-    const html3 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 3, districtTitle, vCode, geminiText, item.path);
-    const html4 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 4, districtTitle, vCode, geminiText, item.path);
-    const html5 = generateGoogleSitesHTML("İstanbul", item.district, pathCounter, 5, districtTitle, vCode, geminiText, item.path);
+    const html1 = generateGoogleSitesHTML("Ä°stanbul", item.district, pathCounter, 1, districtTitle, vCode, geminiText, item.path);
+    const html2 = generateGoogleSitesHTML("Ä°stanbul", item.district, pathCounter, 2, districtTitle, vCode, geminiText, item.path);
+    const html3 = generateGoogleSitesHTML("Ä°stanbul", item.district, pathCounter, 3, districtTitle, vCode, geminiText, item.path);
+    const html4 = generateGoogleSitesHTML("Ä°stanbul", item.district, pathCounter, 4, districtTitle, vCode, geminiText, item.path);
+    const html5 = generateGoogleSitesHTML("Ä°stanbul", item.district, pathCounter, 5, districtTitle, vCode, geminiText, item.path);
 
     fs.writeFileSync(path.join(v1Dir, districtFileName), html1);
     fs.writeFileSync(path.join(v2Dir, districtFileName), html2);
@@ -1702,10 +1589,11 @@ export async function buildGoogleSitesPayloads() {
   fs.writeFileSync(notepadPath, notepadContent);
 
   console.log(`-- AMP Cache Optimized (Anti-Duplicate v16) --`);
-  console.log(`✅ Successfully generated ${pathCounter} locations * 5 versions = ${pathCounter * 5} HTML pages inside version subfolders.`);
-  console.log(`📝 Created comprehensive notepad directory at: ${notepadPath}`);
+  console.log(`âœ… Successfully generated ${pathCounter} locations * 5 versions = ${pathCounter * 5} HTML pages inside version subfolders.`);
+  console.log(`ğŸ“ Created comprehensive notepad directory at: ${notepadPath}`);
 }
 
 if (require.main === module) {
   buildGoogleSitesPayloads().catch(console.error);
 }
+

@@ -351,12 +351,15 @@ async function startIndexing() {
 
   // Prioritize dorukcanay.digital districts first!
   istanbulDistricts.forEach(dist => {
-    moneySiteUrls.push(\`https://dorukcanay.digital/istanbul/\${dist}\`);
+    moneySiteUrls.push(`https://dorukcanay.digital/istanbul/\${dist}`);
+    // Subdomainler dahil
+    moneySiteUrls.push(`https://\${dist}.dorukcanay.digital/`);
+    moneySiteUrls.push(`https://\${dist}.istanbulescort.blog/`);
   });
 
   // Then add istanbulescort.blog districts
   istanbulDistricts.forEach(dist => {
-    moneySiteUrls.push(\`https://istanbulescort.blog/istanbul/\${dist}\`);
+    moneySiteUrls.push(`https://istanbulescort.blog/istanbul/\${dist}`);
   });
 
   try {

@@ -271,3 +271,22 @@ enum LeadStatus {
   EXTERNAL_HUB
 }
 
+// ⚡ GOD MODE: SEO Keyword Matrix for High-Performance Queries
+model KeywordMatrix {
+  id           String   @id @default(cuid())
+  city         String
+  district     String
+  keyword      String   @unique
+  searchVolume Int      @default(0)
+  difficulty   Int      @default(0)
+  cpc          Float    @default(0)
+  intent       String   @default("COMMERCIAL") // COMMERCIAL, INFORMATIONAL, NAVIGATIONAL
+  isTargeted   Boolean  @default(true)
+  metadata     Json?    // Ekstra SERP verilerini (Örn: Rakipler, snippet varlığı) tutmak için
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([city, district])
+  @@index([isTargeted])
+}
+

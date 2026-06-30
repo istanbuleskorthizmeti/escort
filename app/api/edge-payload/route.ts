@@ -30,7 +30,7 @@ export async function POST(req: Request) {
         locationTarget = parts[0] || "İstanbul";
         districtTarget = parts[1] || "";
     } else {
-        // Try to guess from domain (e.g., sisli-escort.online)
+        // Try to guess from domain (e.g., sisli-escort. online)
         const domainParts = domain.split('.')[0].split('-');
         if (domainParts.length > 0) {
             locationTarget = domainParts[0]; // Guess: 'sisli'

@@ -29,7 +29,7 @@ export async function GET(request: Request) {
   xml += `    <item>
       <title>YENİ: Şişli Kaporasız Escort Bayan Profili</title>
       <link>${baseUrl}/istanbul/sisli/kategori/vip-escort</link>
-      <guid>${baseUrl}/istanbul/sisli/kategori/vip-escort?ts=${pastDates[0].getTime()}</guid>
+      <guid>${baseUrl}/istanbul/sisli/kategori/vip-escort? ts=${pastDates[0].getTime()}</guid>
       <description>Şişli bölgesinde otele ve eve gelen %100 onaylı yeni vip escort bayan eklendi.</description>
       <pubDate>${pastDates[0].toUTCString()}</pubDate>
     </item>
@@ -39,7 +39,7 @@ export async function GET(request: Request) {
   xml += `    <item>
       <title>GÜNCEL: Beşiktaş Rus Escort Profil Onaylandı</title>
       <link>${baseUrl}/istanbul/besiktas/kategori/rus-escort</link>
-      <guid>${baseUrl}/istanbul/besiktas/kategori/rus-escort?ts=${pastDates[1].getTime()}</guid>
+      <guid>${baseUrl}/istanbul/besiktas/kategori/rus-escort? ts=${pastDates[1].getTime()}</guid>
       <description>Beşiktaş escort ajansımıza yeni kaporasız Rus escort manken profili eklendi.</description>
       <pubDate>${pastDates[1].toUTCString()}</pubDate>
     </item>
@@ -49,7 +49,7 @@ export async function GET(request: Request) {
   xml += `    <item>
       <title>AKTİF: Kadıköy Eve Gelen Escort Fiyatları Güncellendi</title>
       <link>${baseUrl}/istanbul/kadikoy/kategori/eve-gelen-escort</link>
-      <guid>${baseUrl}/istanbul/kadikoy/kategori/eve-gelen-escort?ts=${pastDates[2].getTime()}</guid>
+      <guid>${baseUrl}/istanbul/kadikoy/kategori/eve-gelen-escort? ts=${pastDates[2].getTime()}</guid>
       <description>Kadıköy bölgesindeki en güvenilir kaporasız eskort fiyatları ve yeni esrot profilleri.</description>
       <pubDate>${pastDates[2].toUTCString()}</pubDate>
     </item>
